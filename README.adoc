@@ -1,0 +1,15 @@
+= swats
+
+SoftWare Architecture Test Suite (SWATS)
+
+This repository contains models used to test Shlaer-Mellor software
+architectures.  It is specifically useful in testing an Ada model
+compiler, however the models can be useful testing other aspects of
+Shlaer-Mellor tooling such as ASL-to-MASL conversion.
+
+The models are xtUML models edited in BridgePoint (and iUML).  The
+action language dialect is ASL.
+
+These models are free for use for any purpose.  Contact the committers
+to learn more.
+

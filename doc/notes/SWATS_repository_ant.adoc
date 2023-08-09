@@ -1,0 +1,39 @@
+= SWATS Repository Populate
+
+xtUML Project Analysis Note
+
+== 1 Abstract
+
+This note documents the population of the SWATS repository.
+
+== 2 Introduction and Background
+
+The SWATS models originate from an engineering team in the UK who
+developed them to test an Ada model compiler.  This continues to be their
+primary function.  The models were composed in a tool called iUML which is
+no longer supported.  The models were ported to xtUML so they could be
+edited with BridgePoint.  The models are oriented around coverage of the
+various features of the modelling language and the tooling to translate
+them.
+
+== 3 Requirements
+
+. Organise a repository to serve as home for the SWATS models.
+. Store each model with BridgePoint/Eclipse project metadata (`.project` file).
+. Include exported MASL/ASL.
+. Include exported WASL.
+. Supply example deployments with generated Ada.
+  .. Include generated Ada as guidance for model compiler developers.
+. Supply Ada support utilities.
+
+== 4 Document References
+
+. [[dr-1]] https://xtuml.org[xtUML.org web site]
+. [[dr-2]] https://github.com/xtuml/bridgepoint[BridgePoint source code git repository]
+. [[dr-3]] https://github.com/xtuml/mcada[MC-Ada (ongoing development) git repository]
+
+---
+
+This work is licensed under the Creative Commons CC0 License
+
+---
