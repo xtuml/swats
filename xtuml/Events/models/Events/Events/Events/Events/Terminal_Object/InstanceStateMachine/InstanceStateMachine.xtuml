@@ -1,0 +1,360 @@
+-- BP 7.1.6 content: InstanceStateMachine syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO SM_ISM
+	VALUES ("77481c3c-e804-4acc-bc41-54937d3eece5",
+	"7cd79b23-df03-419e-a9ab-d47bc604a026");
+INSERT INTO SM_SM
+	VALUES ("77481c3c-e804-4acc-bc41-54937d3eece5",
+	'',
+	0);
+INSERT INTO SM_MOORE
+	VALUES ("77481c3c-e804-4acc-bc41-54937d3eece5");
+INSERT INTO SM_EVTDI
+	VALUES ("e1d6909f-ade9-4a6d-a5f7-0f1377d57d85",
+	"77481c3c-e804-4acc-bc41-54937d3eece5",
+	'Test',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	"b51ad0a3-f440-401d-b1d9-5363db0cc60e",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_EVTDI
+	VALUES ("d4160a26-8c1a-4e2e-aa2d-3b17fa56713b",
+	"77481c3c-e804-4acc-bc41-54937d3eece5",
+	'Test_Number',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	"b51ad0a3-f440-401d-b1d9-5363db0cc60e",
+	"e1d6909f-ade9-4a6d-a5f7-0f1377d57d85");
+INSERT INTO SM_LEVT
+	VALUES ("b51ad0a3-f440-401d-b1d9-5363db0cc60e",
+	"77481c3c-e804-4acc-bc41-54937d3eece5",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_SEVT
+	VALUES ("b51ad0a3-f440-401d-b1d9-5363db0cc60e",
+	"77481c3c-e804-4acc-bc41-54937d3eece5",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_EVT
+	VALUES ("b51ad0a3-f440-401d-b1d9-5363db0cc60e",
+	"77481c3c-e804-4acc-bc41-54937d3eece5",
+	"00000000-0000-0000-0000-000000000000",
+	1,
+	'StartA',
+	0,
+	'',
+	'objTERMINAL1',
+	'');
+INSERT INTO SM_STATE
+	VALUES ("290bd2be-6725-4c06-a388-dac96783ffa8",
+	"77481c3c-e804-4acc-bc41-54937d3eece5",
+	"00000000-0000-0000-0000-000000000000",
+	'Idle',
+	1,
+	0);
+INSERT INTO SM_SEME
+	VALUES ("290bd2be-6725-4c06-a388-dac96783ffa8",
+	"b51ad0a3-f440-401d-b1d9-5363db0cc60e",
+	"77481c3c-e804-4acc-bc41-54937d3eece5",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_STATE
+	VALUES ("f384d2ea-28f4-49b8-9843-78d45ef05a4e",
+	"77481c3c-e804-4acc-bc41-54937d3eece5",
+	"00000000-0000-0000-0000-000000000000",
+	'Terminal_State',
+	2,
+	1);
+INSERT INTO SM_CH
+	VALUES ("f384d2ea-28f4-49b8-9843-78d45ef05a4e",
+	"b51ad0a3-f440-401d-b1d9-5363db0cc60e",
+	"77481c3c-e804-4acc-bc41-54937d3eece5",
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO SM_SEME
+	VALUES ("f384d2ea-28f4-49b8-9843-78d45ef05a4e",
+	"b51ad0a3-f440-401d-b1d9-5363db0cc60e",
+	"77481c3c-e804-4acc-bc41-54937d3eece5",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_NSTXN
+	VALUES ("2a81f841-e816-4e5e-ac02-8fbccddf66d9",
+	"77481c3c-e804-4acc-bc41-54937d3eece5",
+	"290bd2be-6725-4c06-a388-dac96783ffa8",
+	"b51ad0a3-f440-401d-b1d9-5363db0cc60e",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_TXN
+	VALUES ("2a81f841-e816-4e5e-ac02-8fbccddf66d9",
+	"77481c3c-e804-4acc-bc41-54937d3eece5",
+	"f384d2ea-28f4-49b8-9843-78d45ef05a4e",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_MOAH
+	VALUES ("097b16d3-f88b-4ec1-94b2-37e1bae485ac",
+	"77481c3c-e804-4acc-bc41-54937d3eece5",
+	"290bd2be-6725-4c06-a388-dac96783ffa8");
+INSERT INTO SM_AH
+	VALUES ("097b16d3-f88b-4ec1-94b2-37e1bae485ac",
+	"77481c3c-e804-4acc-bc41-54937d3eece5");
+INSERT INTO SM_ACT
+	VALUES ("097b16d3-f88b-4ec1-94b2-37e1bae485ac",
+	"77481c3c-e804-4acc-bc41-54937d3eece5",
+	3,
+	'#None',
+	'',
+	2);
+INSERT INTO SM_MOAH
+	VALUES ("bdc9eb69-1d10-490c-afd0-276454caa296",
+	"77481c3c-e804-4acc-bc41-54937d3eece5",
+	"f384d2ea-28f4-49b8-9843-78d45ef05a4e");
+INSERT INTO SM_AH
+	VALUES ("bdc9eb69-1d10-490c-afd0-276454caa296",
+	"77481c3c-e804-4acc-bc41-54937d3eece5");
+INSERT INTO SM_ACT
+	VALUES ("bdc9eb69-1d10-490c-afd0-276454caa296",
+	"77481c3c-e804-4acc-bc41-54937d3eece5",
+	3,
+	'#-----------------------------------------------------------
+# Terminal state
+#-----------------------------------------------------------
+
+[] = RPT1:Start_Test[Test_Number, "1241-0000-01-0206", "Events", "Terminal", "Terminal state test"]
+
+this.ResultA  = 10
+
+{tob} = find-all Terminal_Object
+
+notob = countof{tob}
+
+# Due to the vaguaries of the queueing system and the fact that
+# the scenario runs to completion before events are de-queued, 
+# for test 1 there will be two instances of Terminal_Object 
+# loitering in the system waiting to be jumped on. 
+# This state will delete one of them, leaving one to fend for itself.
+
+# Then in test two, the final instance will exit stage left.
+
+if Test = 1 and notob = 2 then
+
+   # Report a success, there really isn''t anything else it could be.
+   [] = RPT2:Test_Passed["Terminal", Test_Number, this.ResultA]
+else
+
+   if Test = 2 and notob = 1 then
+      [] = RPT2:Test_Passed["Terminal", Test_Number, this.ResultA]
+   else
+      # There is more than one of this object. There shouldn''t be.
+      [] = RPT3:Test_Failed["Terminal", Test_Number, notob]
+   endif
+
+endif
+   
+# Delete the instance.
+delete this',
+	' This state shall delete it''s own instance, but only 
+ after reporting itself as available for deletion.
+',
+	2);
+INSERT INTO SM_TAH
+	VALUES ("0754d668-852e-484d-9154-a681e1225bf0",
+	"77481c3c-e804-4acc-bc41-54937d3eece5",
+	"2a81f841-e816-4e5e-ac02-8fbccddf66d9");
+INSERT INTO SM_AH
+	VALUES ("0754d668-852e-484d-9154-a681e1225bf0",
+	"77481c3c-e804-4acc-bc41-54937d3eece5");
+INSERT INTO SM_ACT
+	VALUES ("0754d668-852e-484d-9154-a681e1225bf0",
+	"77481c3c-e804-4acc-bc41-54937d3eece5",
+	3,
+	'',
+	'',
+	6);
+INSERT INTO GD_MD
+	VALUES ("18ec2c42-a7f3-48c4-b416-1c8057b86d54",
+	8,
+	"77481c3c-e804-4acc-bc41-54937d3eece5",
+	40,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	200,
+	150,
+	0,
+	'',
+	'Events::Events::Events::Events::Terminal_Object::Instance State Machine');
+INSERT INTO GD_GE
+	VALUES ("64792cc1-68bc-496a-b764-6116648940cf",
+	"18ec2c42-a7f3-48c4-b416-1c8057b86d54",
+	"290bd2be-6725-4c06-a388-dac96783ffa8",
+	41,
+	0,
+	'Events::Events::Events::Events::Terminal_Object::Instance State Machine::Idle');
+INSERT INTO GD_SHP
+	VALUES ("64792cc1-68bc-496a-b764-6116648940cf");
+INSERT INTO GD_NCS
+	VALUES ("64792cc1-68bc-496a-b764-6116648940cf");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"64792cc1-68bc-496a-b764-6116648940cf");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"64792cc1-68bc-496a-b764-6116648940cf",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("64792cc1-68bc-496a-b764-6116648940cf",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_CON
+	VALUES ("3d126f18-5937-4157-895e-b92b83449843",
+	200.000000,
+	0.000000,
+	"64792cc1-68bc-496a-b764-6116648940cf");
+INSERT INTO GD_GE
+	VALUES ("88022f49-cbec-4d6e-9f1f-5a8aa96a779a",
+	"18ec2c42-a7f3-48c4-b416-1c8057b86d54",
+	"f384d2ea-28f4-49b8-9843-78d45ef05a4e",
+	41,
+	0,
+	'Events::Events::Events::Events::Terminal_Object::Instance State Machine::Terminal_State');
+INSERT INTO GD_SHP
+	VALUES ("88022f49-cbec-4d6e-9f1f-5a8aa96a779a");
+INSERT INTO GD_NCS
+	VALUES ("88022f49-cbec-4d6e-9f1f-5a8aa96a779a");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"88022f49-cbec-4d6e-9f1f-5a8aa96a779a");
+INSERT INTO DIM_GE
+	VALUES (220.000000,
+	0.000000,
+	"88022f49-cbec-4d6e-9f1f-5a8aa96a779a",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("88022f49-cbec-4d6e-9f1f-5a8aa96a779a",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_CON
+	VALUES ("9f391e4d-d466-4c0c-998e-0872f74a496e",
+	220.000000,
+	75.000000,
+	"88022f49-cbec-4d6e-9f1f-5a8aa96a779a");
+INSERT INTO GD_GE
+	VALUES ("40d4a807-d4b2-4be0-ba53-69996fcbb4e6",
+	"18ec2c42-a7f3-48c4-b416-1c8057b86d54",
+	"2a81f841-e816-4e5e-ac02-8fbccddf66d9",
+	42,
+	0,
+	'Events::Events::Events::Events::Terminal_Object::Instance State Machine::Idle::objTERMINAL1: StartA');
+INSERT INTO GD_CON
+	VALUES ("40d4a807-d4b2-4be0-ba53-69996fcbb4e6",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("8b1c303b-14a1-42b6-ac24-d9bb90d8f8f6",
+	"40d4a807-d4b2-4be0-ba53-69996fcbb4e6",
+	0,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"8b1c303b-14a1-42b6-ac24-d9bb90d8f8f6");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"8b1c303b-14a1-42b6-ac24-d9bb90d8f8f6",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("8b1c303b-14a1-42b6-ac24-d9bb90d8f8f6",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("939f491a-d50f-4230-87aa-fe5ee35e1c24",
+	"40d4a807-d4b2-4be0-ba53-69996fcbb4e6",
+	2,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"939f491a-d50f-4230-87aa-fe5ee35e1c24");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"939f491a-d50f-4230-87aa-fe5ee35e1c24",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("939f491a-d50f-4230-87aa-fe5ee35e1c24",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("4a839753-1096-49a7-a520-6a39e8ea1e82",
+	"40d4a807-d4b2-4be0-ba53-69996fcbb4e6",
+	1,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"4a839753-1096-49a7-a520-6a39e8ea1e82");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"4a839753-1096-49a7-a520-6a39e8ea1e82",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("4a839753-1096-49a7-a520-6a39e8ea1e82",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_LS
+	VALUES ("2afaad35-169b-44e0-a0ce-0d0d698b74d8",
+	"40d4a807-d4b2-4be0-ba53-69996fcbb4e6",
+	"00000000-0000-0000-0000-000000000000",
+	"2f769086-ad41-47ab-9f3c-8c4fa40941e9",
+	"f0b9063e-bcc6-499f-b495-3ce6461dd26a");
+INSERT INTO DIM_WAY
+	VALUES ("2f769086-ad41-47ab-9f3c-8c4fa40941e9",
+	200.000000,
+	0.000000,
+	"40d4a807-d4b2-4be0-ba53-69996fcbb4e6",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_WAY
+	VALUES ("f0b9063e-bcc6-499f-b495-3ce6461dd26a",
+	220.000000,
+	75.000000,
+	"40d4a807-d4b2-4be0-ba53-69996fcbb4e6",
+	"00000000-0000-0000-0000-000000000000",
+	"2f769086-ad41-47ab-9f3c-8c4fa40941e9");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"40d4a807-d4b2-4be0-ba53-69996fcbb4e6",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("40d4a807-d4b2-4be0-ba53-69996fcbb4e6",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ED
+	VALUES ("3d126f18-5937-4157-895e-b92b83449843",
+	"9f391e4d-d466-4c0c-998e-0872f74a496e",
+	"40d4a807-d4b2-4be0-ba53-69996fcbb4e6");
+INSERT INTO DIM_DIA
+	VALUES ("18ec2c42-a7f3-48c4-b416-1c8057b86d54",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_OBJ_PROXY
+	VALUES ("7cd79b23-df03-419e-a9ab-d47bc604a026",
+	'Terminal_Object',
+	27,
+	'objTERMINAL',
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'../Terminal_Object.xtuml');

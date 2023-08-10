@@ -1,0 +1,386 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("38565321-6af4-4695-94f6-8dd76c81ee24",
+	'Find_Set',
+	12,
+	'objFS',
+	' This object verifies that the following statements maybe peroformed on an existing set:
+ 
+ 	find-one
+ 	find-only
+ 	find
+ 	find-all
+',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("401e078b-c296-486e-baaa-cd632dafc2f4",
+	"38565321-6af4-4695-94f6-8dd76c81ee24",
+	'do_find_set',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'Test = Test_Number
+
+#------------------------------------------------------------------------#
+# Find on sets of instance handles
+#------------------------------------------------------------------------#
+
+# Create an initial set to perform the tests upon
+
+{setA} = find Object_A where idA > 5
+
+#------------------------------------------------------------------------#
+# Test 1 - find-one
+#------------------------------------------------------------------------#
+
+   [] = RPT1:Start_Test[Test, "Null Requid", "Find and Sets", "objFS", "find one on set"]
+
+has_failed = FALSE
+
+#Perform the test
+
+# an_instanceA = find-one {setA}
+
+#Check the an instance is returned
+
+# if an_instanceA = UNDEFINED then
+
+   [] = RPT4:Test_Unsupported[Test]
+
+# else
+
+
+#   if an_instanceA.idA < 6 then
+
+#      [] = RPT3:Test_Failed["objFS", Test,-1]
+#      has_failed = TRUE
+#   else
+#      temp = an_instanceFS.ResultFS + 10
+#      an_instanceFS.ResultFS = temp
+#      [] = RPT2:Test_Passed["objFS", Test,temp]
+
+#   endif
+
+# endif
+
+#------------------------------------------------------------------------#
+# Test 2 - find-one where
+#------------------------------------------------------------------------#
+
+   [Test] = Find_and_Sets1::Increment[Test]
+
+   [] = RPT1:Start_Test[Test, "Null Requid", "Find and Sets", "objFS", "find one  on set where"]
+
+   has_failed = FALSE
+
+   # Perform the test
+
+   # an_instanceA = find-one {setA} where idA > 8
+
+   # Check the an instance is returned
+   # if an_instanceA = UNDEFINED then
+        [] = RPT4:Test_Unsupported[Test]
+   # else
+
+   #   if an_instanceA.idA < 9 then
+   #      [] = RPT3:Test_Failed["objFS", Test,-2]
+   #      has_failed = TRUE
+   #   else
+   #      temp = an_instanceFS.ResultFS + 10
+   #      an_instanceFS.ResultFS = temp
+   #      [] = RPT2:Test_Passed["objFS", Test,temp]
+   #   endif
+
+   # endif
+#------------------------------------------------------------------------#
+# Test 3 - find-only
+#------------------------------------------------------------------------#
+
+   [Test] = Find_and_Sets1::Increment[Test]
+ 
+   [] = RPT1:Start_Test[Test, "Null Requid", "Find and Sets", "objFS", "find  on set only"]
+
+   has_failed = FALSE
+
+   # Perform the test
+
+   # an_instanceA = find-only {setA} where idA = 6
+
+   # Check the an instance is returned
+   # if an_instanceA = UNDEFINED then
+      [] = RPT4:Test_Unsupported[Test]
+   # else
+
+   #   if an_instanceA.idA != 6 then
+   #      [] = RPT3:Test_Failed["objFS", Test,-3]
+   #      has_failed = TRUE
+   #   else
+   #      temp = an_instanceFS.ResultFS + 10
+   #      an_instanceFS.ResultFS = temp
+   #      [] = RPT2:Test_Passed["objFS", Test,temp]
+   #   endif
+
+   # endif
+
+#------------------------------------------------------------------------#
+# Test 4 - find where, using a single condition
+#------------------------------------------------------------------------#
+
+   [Test] = Find_and_Sets1::Increment[Test]
+
+   [] = RPT1:Start_Test[Test, "Null Requid", "Find and Sets", "objFS","find on set where single condition"]
+
+   has_failed = FALSE
+
+   # Perform the test
+
+   # {subsetA} = find {setA} where idA > 7
+
+   # Check that the set contains some instances and that it contains the
+   # correct instances
+
+   # if countof {subsetA} = 0 then
+      [] = RPT4:Test_Unsupported[Test]
+   # else
+
+   #   if countof {subsetA} != 3 then
+   #      [] = RPT3:Test_Failed["objFS", Test,-4]
+   #      has_failed = TRUE
+   #   else
+
+          # Check each instance that is returned
+          # countA = 0
+          #      countB = 0
+          #      countC = 0
+
+          #      for each_instanceA in {subsetA} do
+#         if each_instanceA.idA = 8 then
+#            countA = countA + 1
+#         else
+#            if each_instanceA.idA = 9 then
+#               countB = countB + 1
+#            else
+#               if each_instanceA.idA = 10 then
+#                  countC = countC + 1
+#               else
+
+#                  [] = RPT3:Test_Failed["objFS", Test,-5]
+#                  has_failed = TRUE
+
+#               endif
+#            endif
+#         endif
+#      endfor
+
+      #Check counter values
+#      if (countA != 1)|(countB != 1)|(countC != 1) then
+#         [] = RPT3:Test_Failed["objFS", Test,-6]
+#         has_failed = TRUE
+#      else
+#         temp = an_instanceFS.ResultFS + 10
+#         an_instanceFS.ResultFS = temp
+#      endif
+
+#      if !has_failed then
+#         [] = RPT2:Test_Passed["objFS", Test,0]
+#      endif
+#
+#   endif
+
+#endif
+
+#------------------------------------------------------------------------#
+#Test 5
+#find where, using multiple conditions
+#------------------------------------------------------------------------#
+
+[Test] = Find_and_Sets1::Increment[Test]
+[] = RPT1:Start_Test[Test, "Null Requid", "Find and Sets", "objFS","find on set where multiple conditions"]
+
+has_failed = FALSE
+
+#Perform the test
+# {subsetA} = find {setA} where idA > 8 | idA = 4 | idA = 6
+
+# if countof {subsetA} = 0 then
+
+   [] = RPT4:Test_Unsupported[Test]
+
+# else
+
+
+   #Check that the set contains some instances and that it contains the
+   #correct instances
+#   if countof {subsetA} != 3 then
+#      [] = RPT3:Test_Failed["objFS", Test,-7]
+#      has_failed = TRUE
+#   else
+
+      #Check each instance that is returned
+#      countA = 0
+#      countB = 0
+#      countC = 0
+#      for each_instanceA in {subsetA} do
+#         if each_instanceA.idA = 6 then
+#            countA = countA + 1
+#         else
+#            if each_instanceA.idA = 9 then
+#               countB = countB + 1
+#            else
+#               if each_instanceA.idA = 10 then
+#                  countC = countC + 1
+#               else
+#                  [] = RPT3:Test_Failed["objFS", Test,-8]
+#                  has_failed = TRUE
+#               endif
+#            endif
+#         endif
+#      endfor
+
+      #Check counter values
+#      if (countA != 1)|(countB != 1)|(countC != 1) then
+#         [] = RPT3:Test_Failed["objFS", Test,-9]
+#         has_failed = TRUE
+#      else
+#         temp = an_instanceFS.ResultFS + 10
+#         an_instanceFS.ResultFS = temp
+#      endif
+
+#      if !has_failed then
+#         [] = RPT2:Test_Passed["objFS", Test,0]
+#      endif
+
+#   endif
+
+# endif
+
+
+#------------------------------------------------------------------------#
+
+
+
+Returned_Test = Test',
+	3,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	2,
+	1);
+INSERT INTO O_TPARM
+	VALUES ("d5c1859e-1da8-447b-8d86-27fea10b6f7c",
+	"401e078b-c296-486e-baaa-cd632dafc2f4",
+	'Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("959772d4-0a78-4b58-b6aa-7322cddd6771",
+	"401e078b-c296-486e-baaa-cd632dafc2f4",
+	'an_instanceFS',
+	"962f2d8b-3380-4007-bb1e-6fe50fc93df2",
+	0,
+	'',
+	"d5c1859e-1da8-447b-8d86-27fea10b6f7c",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("962f2d8b-3380-4007-bb1e-6fe50fc93df2",
+	"00000000-0000-0000-0000-000000000000",
+	'inst_ref<Find_Set>',
+	'',
+	'',
+	'../Find_and_Sets.xtuml');
+INSERT INTO O_TPARM
+	VALUES ("42cf065d-1ae9-4c14-926d-9d7cd523c5f7",
+	"401e078b-c296-486e-baaa-cd632dafc2f4",
+	'Returned_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"959772d4-0a78-4b58-b6aa-7322cddd6771",
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("85dcaee5-afcd-4ddd-a9aa-21b6cda68b4c",
+	"38565321-6af4-4695-94f6-8dd76c81ee24");
+INSERT INTO O_BATTR
+	VALUES ("85dcaee5-afcd-4ddd-a9aa-21b6cda68b4c",
+	"38565321-6af4-4695-94f6-8dd76c81ee24");
+INSERT INTO O_ATTR
+	VALUES ("85dcaee5-afcd-4ddd-a9aa-21b6cda68b4c",
+	"38565321-6af4-4695-94f6-8dd76c81ee24",
+	"00000000-0000-0000-0000-000000000000",
+	'idFS',
+	' Preferred identifier.
+',
+	'',
+	'idFS',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("610b287d-5416-4685-a7c4-12e8538ab496",
+	"38565321-6af4-4695-94f6-8dd76c81ee24");
+INSERT INTO O_BATTR
+	VALUES ("610b287d-5416-4685-a7c4-12e8538ab496",
+	"38565321-6af4-4695-94f6-8dd76c81ee24");
+INSERT INTO O_ATTR
+	VALUES ("610b287d-5416-4685-a7c4-12e8538ab496",
+	"38565321-6af4-4695-94f6-8dd76c81ee24",
+	"85dcaee5-afcd-4ddd-a9aa-21b6cda68b4c",
+	'ResultFS',
+	' This attribute is manipulated to indicate that the required operation was successful.
+',
+	'',
+	'ResultFS',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("16a91a35-4c8f-4332-a89d-703242b1f683",
+	"38565321-6af4-4695-94f6-8dd76c81ee24");
+INSERT INTO O_BATTR
+	VALUES ("16a91a35-4c8f-4332-a89d-703242b1f683",
+	"38565321-6af4-4695-94f6-8dd76c81ee24");
+INSERT INTO O_ATTR
+	VALUES ("16a91a35-4c8f-4332-a89d-703242b1f683",
+	"38565321-6af4-4695-94f6-8dd76c81ee24",
+	"610b287d-5416-4685-a7c4-12e8538ab496",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"38565321-6af4-4695-94f6-8dd76c81ee24");
+INSERT INTO O_OIDA
+	VALUES ("85dcaee5-afcd-4ddd-a9aa-21b6cda68b4c",
+	"38565321-6af4-4695-94f6-8dd76c81ee24",
+	0,
+	'idFS');
+INSERT INTO O_ID
+	VALUES (1,
+	"38565321-6af4-4695-94f6-8dd76c81ee24");
+INSERT INTO O_ID
+	VALUES (2,
+	"38565321-6af4-4695-94f6-8dd76c81ee24");
+INSERT INTO PE_PE
+	VALUES ("38565321-6af4-4695-94f6-8dd76c81ee24",
+	1,
+	"df782c0d-01d7-4cdb-867d-1f1ce5d60cb4",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("df782c0d-01d7-4cdb-867d-1f1ce5d60cb4",
+	"00000000-0000-0000-0000-000000000000",
+	"02965de1-ecbb-4bde-9a3e-3ac7d424e4a6",
+	'Find_and_Sets',
+	'',
+	0,
+	'../Find_and_Sets.xtuml');

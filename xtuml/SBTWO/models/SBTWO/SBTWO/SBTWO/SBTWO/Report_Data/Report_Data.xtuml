@@ -1,0 +1,73 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("b3e421b4-3d74-48fa-affe-a16fc1c51160",
+	'Report_Data',
+	2,
+	'RD',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("41ca6dd0-d865-46f8-87e8-e1571cbdd957",
+	"b3e421b4-3d74-48fa-affe-a16fc1c51160");
+INSERT INTO O_BATTR
+	VALUES ("41ca6dd0-d865-46f8-87e8-e1571cbdd957",
+	"b3e421b4-3d74-48fa-affe-a16fc1c51160");
+INSERT INTO O_ATTR
+	VALUES ("41ca6dd0-d865-46f8-87e8-e1571cbdd957",
+	"b3e421b4-3d74-48fa-affe-a16fc1c51160",
+	"00000000-0000-0000-0000-000000000000",
+	'Report_Data_Unique_id',
+	'',
+	'',
+	'Report_Data_Unique_id',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("9ed28e89-4e58-4570-844a-f40b58e8552e",
+	"b3e421b4-3d74-48fa-affe-a16fc1c51160");
+INSERT INTO O_BATTR
+	VALUES ("9ed28e89-4e58-4570-844a-f40b58e8552e",
+	"b3e421b4-3d74-48fa-affe-a16fc1c51160");
+INSERT INTO O_ATTR
+	VALUES ("9ed28e89-4e58-4570-844a-f40b58e8552e",
+	"b3e421b4-3d74-48fa-affe-a16fc1c51160",
+	"41ca6dd0-d865-46f8-87e8-e1571cbdd957",
+	'Reported_Domain_Number',
+	'',
+	'',
+	'Reported_Domain_Number',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"b3e421b4-3d74-48fa-affe-a16fc1c51160");
+INSERT INTO O_OIDA
+	VALUES ("41ca6dd0-d865-46f8-87e8-e1571cbdd957",
+	"b3e421b4-3d74-48fa-affe-a16fc1c51160",
+	0,
+	'Report_Data_Unique_id');
+INSERT INTO O_ID
+	VALUES (1,
+	"b3e421b4-3d74-48fa-affe-a16fc1c51160");
+INSERT INTO O_ID
+	VALUES (2,
+	"b3e421b4-3d74-48fa-affe-a16fc1c51160");
+INSERT INTO PE_PE
+	VALUES ("b3e421b4-3d74-48fa-affe-a16fc1c51160",
+	1,
+	"e9ec07e8-d73b-45b1-923a-aab490b10c6e",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("e9ec07e8-d73b-45b1-923a-aab490b10c6e",
+	"00000000-0000-0000-0000-000000000000",
+	"5f8eec72-0c4f-48d5-9750-6316c31aa8a0",
+	'SBTWO',
+	'',
+	0,
+	'../SBTWO.xtuml');

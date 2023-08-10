@@ -1,0 +1,45 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("48d5f344-1056-4b52-a5b2-967cf4c3a274",
+	"00000000-0000-0000-0000-000000000000",
+	'Function_CallsWhere_Are_We',
+	'');
+INSERT INTO C_EP
+	VALUES ("a1fef405-37a8-4c3f-827c-6c2195f6011f",
+	"48d5f344-1056-4b52-a5b2-967cf4c3a274",
+	0,
+	'What_Env',
+	'',
+	1);
+INSERT INTO C_IO
+	VALUES ("a1fef405-37a8-4c3f-827c-6c2195f6011f",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'What_Env',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("9c2a4338-cbce-453d-8851-47fc8aa6736d",
+	"a1fef405-37a8-4c3f-827c-6c2195f6011f",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Env_Text',
+	'',
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO PE_PE
+	VALUES ("48d5f344-1056-4b52-a5b2-967cf4c3a274",
+	1,
+	"048ed5c1-7a67-4ae7-9333-9fa1918d7a6f",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("048ed5c1-7a67-4ae7-9333-9fa1918d7a6f",
+	"00000000-0000-0000-0000-000000000000",
+	"b0ecd0cc-290d-4c8d-b44d-a65fc69bd1af",
+	'Shared',
+	'',
+	0,
+	'../Shared.xtuml');

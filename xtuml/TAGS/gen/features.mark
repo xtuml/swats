@@ -1,0 +1,10 @@
+Component,version
+Model Class,singleton
+Model Class,multiple
+Model Class,non_initialised
+Model Class,static
+Association,Class_A
+Association,Class_B
+Function,scenario
+Port,hand_coded
+Required Operation,hand_coded

@@ -1,0 +1,55 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("bd4cea4e-3da4-423c-8fcc-cbb9a3a67026",
+	'Domain_A_Object_Super',
+	10,
+	'DOMAIN_A_SUPER',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("75e4c3ea-b4e6-4a84-9b37-b446a3ffb0f9",
+	"bd4cea4e-3da4-423c-8fcc-cbb9a3a67026");
+INSERT INTO O_BATTR
+	VALUES ("75e4c3ea-b4e6-4a84-9b37-b446a3ffb0f9",
+	"bd4cea4e-3da4-423c-8fcc-cbb9a3a67026");
+INSERT INTO O_ATTR
+	VALUES ("75e4c3ea-b4e6-4a84-9b37-b446a3ffb0f9",
+	"bd4cea4e-3da4-423c-8fcc-cbb9a3a67026",
+	"00000000-0000-0000-0000-000000000000",
+	'idSUPER',
+	'',
+	'',
+	'idSUPER',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"bd4cea4e-3da4-423c-8fcc-cbb9a3a67026");
+INSERT INTO O_OIDA
+	VALUES ("75e4c3ea-b4e6-4a84-9b37-b446a3ffb0f9",
+	"bd4cea4e-3da4-423c-8fcc-cbb9a3a67026",
+	0,
+	'idSUPER');
+INSERT INTO O_ID
+	VALUES (1,
+	"bd4cea4e-3da4-423c-8fcc-cbb9a3a67026");
+INSERT INTO O_ID
+	VALUES (2,
+	"bd4cea4e-3da4-423c-8fcc-cbb9a3a67026");
+INSERT INTO PE_PE
+	VALUES ("bd4cea4e-3da4-423c-8fcc-cbb9a3a67026",
+	1,
+	"1bdedca4-aeab-4601-b541-b04d53970124",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("1bdedca4-aeab-4601-b541-b04d53970124",
+	"00000000-0000-0000-0000-000000000000",
+	"64118ad4-4d5f-4328-9fb8-ae68cb350188",
+	'DomainA',
+	'',
+	0,
+	'../DomainA.xtuml');

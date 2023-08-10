@@ -1,0 +1,1021 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("48f9470a-9e24-405c-a343-7fc10a6de05f",
+	"00000000-0000-0000-0000-000000000000",
+	"e05fd001-e388-4210-a0cc-0b5a9a96aa1c",
+	'functions',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("ebd768a5-e2a3-465a-8539-80bf4df1fcc7",
+	112,
+	"48f9470a-9e24-405c-a343-7fc10a6de05f",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'Struct::Struct::Struct::functions');
+INSERT INTO DIM_DIA
+	VALUES ("ebd768a5-e2a3-465a-8539-80bf4df1fcc7",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_SYNC
+	VALUES ("293590f1-61ca-46b0-a76d-8a1de575fcc7",
+	"00000000-0000-0000-0000-000000000000",
+	'Decode_Simple_Structure',
+	'',
+	'[] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Domain synch service", "Decode simple structure"]
+
+Count = 1
+
+# How many in the set
+
+How_Many = countof{Simple_Structure}
+
+for [the_integer, the_real, the_text, the_boolean, the_colour ] in {Simple_Structure} do
+
+
+   local_integer = the_integer
+   local_real    = the_real
+   local_text    = the_text
+   local_boolean = the_boolean
+   local_colour  = the_colour
+
+   # We are only interested in the final value in the set, otherwise
+   # there would be up to ten passes shown in the results file
+   # for this test.
+
+   if Count = How_Many then
+
+      # This is the position in the set that we are interested in
+
+      if local_integer = Object_Instance_Handle.An_Integer and \
+         local_real    = Object_Instance_Handle.A_Real     and \
+         local_text    = Object_Instance_Handle.Some_Text  and \
+         local_boolean = Object_Instance_Handle.A_Boolean  and \
+         local_colour  = Object_Instance_Handle.A_Colour   then
+
+         [] = RPT2:Test_Passed["Structures", Test, Count]
+
+       else
+         [] = RPT3:Test_Failed["Structures", Test, Count]
+       endif
+
+   endif
+
+
+   Count = Count + 1
+
+endfor
+
+
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	2);
+INSERT INTO S_SPARM
+	VALUES ("f19276cf-88fa-4105-9664-bfd22e8c315a",
+	"293590f1-61ca-46b0-a76d-8a1de575fcc7",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("71860b02-0dff-481c-92c0-2ce04d09ce4e",
+	"293590f1-61ca-46b0-a76d-8a1de575fcc7",
+	'Simple_Structure',
+	"679fc160-8aa2-47fb-8735-d6ce70c73c19",
+	0,
+	'',
+	"f19276cf-88fa-4105-9664-bfd22e8c315a",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("679fc160-8aa2-47fb-8735-d6ce70c73c19",
+	"00000000-0000-0000-0000-000000000000",
+	'Simple_Structure_Type',
+	'',
+	'',
+	'../../Shared/Shared.xtuml');
+INSERT INTO S_SPARM
+	VALUES ("95a9d898-c71a-4212-b4fe-f0489782900c",
+	"293590f1-61ca-46b0-a76d-8a1de575fcc7",
+	'Object_Instance_Handle',
+	"774352f7-34c6-463f-9fa6-d2275c32c9b0",
+	0,
+	'',
+	"71860b02-0dff-481c-92c0-2ce04d09ce4e",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("774352f7-34c6-463f-9fa6-d2275c32c9b0",
+	"00000000-0000-0000-0000-000000000000",
+	'inst_ref<Structured_Object>',
+	'',
+	'',
+	'../Struct/Struct.xtuml');
+INSERT INTO PE_PE
+	VALUES ("293590f1-61ca-46b0-a76d-8a1de575fcc7",
+	1,
+	"48f9470a-9e24-405c-a343-7fc10a6de05f",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("15a4d8c6-06c7-49a4-adc9-57ef1a9ed762",
+	"00000000-0000-0000-0000-000000000000",
+	'Decode_Simple_TL_Structure',
+	'',
+	'[] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Domain synch service", "Decode simple TL structure"]
+
+Count = 1
+
+# How many in the set
+
+How_Many = countof{Simple_Structure}
+
+for [the_integer, the_real, the_text, the_boolean] in {Simple_Structure} do
+
+
+   local_integer = the_integer
+   local_real    = the_real
+   local_text    = the_text
+   local_boolean = the_boolean
+
+   # We are only interested in the final value in the set, otherwise
+   # there would be up to ten passes shown in the results file
+   # for this test.
+
+   if Count = How_Many then
+
+      # This is the position in the set that we are interested in
+
+      if local_integer = Object_Instance_Handle.An_Integer and \
+         local_real    = Object_Instance_Handle.A_Real     and \
+         local_text    = Object_Instance_Handle.Some_Text  and \
+         local_boolean = Object_Instance_Handle.A_Boolean  then
+
+         [] = RPT2:Test_Passed["Structures", Test, Count]
+
+       else
+         [] = RPT3:Test_Failed["Structures", Test, Count]
+       endif
+
+   endif
+
+
+   Count = Count + 1
+
+endfor
+
+
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	4);
+INSERT INTO S_SPARM
+	VALUES ("b25dad71-5f8d-4daa-9a7f-e3a60d469d6d",
+	"15a4d8c6-06c7-49a4-adc9-57ef1a9ed762",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("9daf38f5-4dbd-4442-933e-5a933cd55f40",
+	"15a4d8c6-06c7-49a4-adc9-57ef1a9ed762",
+	'Simple_Structure',
+	"0b7d8a4d-5c40-4bd8-a6c0-51275f578595",
+	0,
+	'',
+	"b25dad71-5f8d-4daa-9a7f-e3a60d469d6d",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("0b7d8a4d-5c40-4bd8-a6c0-51275f578595",
+	"00000000-0000-0000-0000-000000000000",
+	'Type_Linked_Simple_Structure_Type',
+	'',
+	'',
+	'../../Shared/Shared.xtuml');
+INSERT INTO S_SPARM
+	VALUES ("028fcd03-6fd8-4183-bcb4-968c97e63604",
+	"15a4d8c6-06c7-49a4-adc9-57ef1a9ed762",
+	'Object_Instance_Handle',
+	"774352f7-34c6-463f-9fa6-d2275c32c9b0",
+	0,
+	'',
+	"9daf38f5-4dbd-4442-933e-5a933cd55f40",
+	'');
+INSERT INTO PE_PE
+	VALUES ("15a4d8c6-06c7-49a4-adc9-57ef1a9ed762",
+	1,
+	"48f9470a-9e24-405c-a343-7fc10a6de05f",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("c8944e74-8005-4438-b1ff-21426d72ccd1",
+	"00000000-0000-0000-0000-000000000000",
+	'Decode_Simple_NTL_Structure',
+	'',
+	'[] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Domain synch service", "Decode simple structure"]
+
+Count = 1
+
+# How many in the set
+
+How_Many = countof{Simple_Structure}
+
+for [the_integer, the_real, the_text, the_boolean] in {Simple_Structure} do
+
+
+   local_integer = the_integer
+   local_real    = the_real
+   local_text    = the_text
+   local_boolean = the_boolean
+
+   # We are only interested in the final value in the set, otherwise
+   # there would be up to ten passes shown in the results file
+   # for this test.
+
+   if Count = How_Many then
+
+      # This is the position in the set that we are interested in
+
+      if local_integer = Object_Instance_Handle.An_Integer and \
+         local_real    = Object_Instance_Handle.A_Real     and \
+         local_text    = Object_Instance_Handle.Some_Text  and \
+         local_boolean = Object_Instance_Handle.A_Boolean  then
+
+         [] = RPT2:Test_Passed["Structures", Test, Count]
+
+       else
+         [] = RPT3:Test_Failed["Structures", Test, Count]
+       endif
+
+   endif
+
+
+   Count = Count + 1
+
+endfor
+
+
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	6);
+INSERT INTO S_SPARM
+	VALUES ("d0eb2402-d40e-4b17-baed-ae5ef9726802",
+	"c8944e74-8005-4438-b1ff-21426d72ccd1",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("1ae40a2d-42f2-4d7e-a808-e7e7ec0d3bdc",
+	"c8944e74-8005-4438-b1ff-21426d72ccd1",
+	'Simple_Structure',
+	"62921169-841d-4f12-8ec7-bbaab67a0732",
+	0,
+	'',
+	"d0eb2402-d40e-4b17-baed-ae5ef9726802",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("62921169-841d-4f12-8ec7-bbaab67a0732",
+	"00000000-0000-0000-0000-000000000000",
+	'Name_and_Type_Linked_Simple_Structure_Type',
+	'',
+	'',
+	'../../Shared/Shared.xtuml');
+INSERT INTO S_SPARM
+	VALUES ("f830546e-1cda-4e94-a91d-0c8946327cb3",
+	"c8944e74-8005-4438-b1ff-21426d72ccd1",
+	'Object_Instance_Handle',
+	"774352f7-34c6-463f-9fa6-d2275c32c9b0",
+	0,
+	'',
+	"1ae40a2d-42f2-4d7e-a808-e7e7ec0d3bdc",
+	'');
+INSERT INTO PE_PE
+	VALUES ("c8944e74-8005-4438-b1ff-21426d72ccd1",
+	1,
+	"48f9470a-9e24-405c-a343-7fc10a6de05f",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("1f5f2ae7-e222-41f1-b538-eccbd5fc5ca2",
+	"00000000-0000-0000-0000-000000000000",
+	'Decode_Three_Level_Nested_Structure',
+	'',
+	'
+[] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Nested structures", "Three levels of nest"]
+
+Test_Has_Passed   = FALSE
+OK_To_Proceed = FALSE
+Failure_Code  = 0
+
+How_Many = countof{One_Level_Nest}
+
+# First compare the contents of the parameter One_Level_Nest to known datum
+
+for [number, colour] in {One_Level_Nest} do
+
+   if colour   = Given_Third_Level_Colour &\
+      number   = Given_Third_Level_Number &\
+      How_Many = How_Many_In_Third  then
+      
+      # The datum and the simple non-nested structure match
+      OK_To_Proceed = TRUE
+
+   else
+      OK_To_Proceed = FALSE
+      Failure_Code  = -1
+   endif
+
+endfor
+
+# Simple structure matches the given data, precautionary check.
+if OK_To_Proceed then
+
+   #Since no equivalence check for structures exists in WACA, let''s ... off road
+
+   # Bear in mind that One_Level_Nest has now been destructively read and
+   # no longer exists. 
+
+   # Decode the whole nine yards.
+
+   # Relying on the calling routine to specify the full structure and also
+   # provide all the count information means that each non-structure entry 
+   # in a set must contain the same data as the previous structure.
+
+   How_Many_First = countof{Three_Level_Nest}
+
+   if How_Many_First = How_Many_In_First then
+
+      # Read from top level set
+      for [{Second_Level}, First_Level_Number ] in {Three_Level_Nest} do
+
+         How_Many_Second = countof{Second_Level}
+
+         if First_Level_Number = Given_First_Level_Number &\
+            How_Many_Second    = How_Many_In_Second then
+
+            # Read from second level intermediary set
+            for [{Third_Level}, Second_Level_Number] in {Second_Level} do
+
+               How_Many_Third = countof{Third_Level}
+
+               if Second_Level_Number = Given_Second_Level_Number &\
+                  How_Many_Third      = How_Many_In_Third then
+
+                  # Read from bottom level third set
+                  for [Third_Level_Number, Third_Level_Colour] in {Third_Level} do
+
+                     if Third_Level_Number = Given_Third_Level_Number &\
+                        Third_Level_Colour = Given_Third_Level_Colour then
+
+                        Test_Has_Passed  = TRUE
+                        Failure_Code = 0
+  
+                     else
+                        Test_Has_Passed = FALSE
+                        Failure_Has_Code = -5
+                     endif
+
+                  endfor
+
+               else
+                  Test_Has_Passed = FALSE
+                  Failure_Code = -4
+               endif
+
+            endfor
+
+         else
+            Test_Has_Passed = FALSE
+            Failure_Code = -3
+         endif
+
+      endfor
+
+   else
+      Failure_Code = -2
+      Test_Has_Passed = FALSE
+   endif
+
+endif
+
+
+if Test_Has_Passed then
+   [] = RPT2:Test_Passed["Three levels of nest", Test, 0]
+else
+   [] = RPT3:Test_Failed["Three levels of nest", Test, Failure_Code]
+endif
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	7);
+INSERT INTO S_SPARM
+	VALUES ("6d595eed-a987-4dc1-9bae-fceeab2942d1",
+	"1f5f2ae7-e222-41f1-b538-eccbd5fc5ca2",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("7071072c-b9e2-4dd7-99dd-17f90977503c",
+	"1f5f2ae7-e222-41f1-b538-eccbd5fc5ca2",
+	'Three_Level_Nest',
+	"d6273905-4f46-4584-b33d-259efe771fca",
+	0,
+	'',
+	"6d595eed-a987-4dc1-9bae-fceeab2942d1",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("d6273905-4f46-4584-b33d-259efe771fca",
+	"00000000-0000-0000-0000-000000000000",
+	'First_Nested_Structure_Type',
+	'',
+	'',
+	'../../Shared/Shared.xtuml');
+INSERT INTO S_SPARM
+	VALUES ("af7e6bd1-cf41-49ab-beec-321cd5f94204",
+	"1f5f2ae7-e222-41f1-b538-eccbd5fc5ca2",
+	'Two_Level_Nest',
+	"f9c50a39-0a9d-4107-a901-fc026f0fc29f",
+	0,
+	'',
+	"7071072c-b9e2-4dd7-99dd-17f90977503c",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("f9c50a39-0a9d-4107-a901-fc026f0fc29f",
+	"00000000-0000-0000-0000-000000000000",
+	'Second_Nested_Structure_Type',
+	'',
+	'',
+	'../../Shared/Shared.xtuml');
+INSERT INTO S_SPARM
+	VALUES ("a8ab9dbb-962c-4cde-ae7a-3164ffa88ef1",
+	"1f5f2ae7-e222-41f1-b538-eccbd5fc5ca2",
+	'One_Level_Nest',
+	"cc05b622-5718-4eb6-bcb1-584527d2aeca",
+	0,
+	'',
+	"af7e6bd1-cf41-49ab-beec-321cd5f94204",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("cc05b622-5718-4eb6-bcb1-584527d2aeca",
+	"00000000-0000-0000-0000-000000000000",
+	'Third_Nested_Structure_Type',
+	'',
+	'',
+	'../../Shared/Shared.xtuml');
+INSERT INTO S_SPARM
+	VALUES ("aa9028b5-14e0-4888-a2e7-8813cd48797d",
+	"1f5f2ae7-e222-41f1-b538-eccbd5fc5ca2",
+	'Given_First_Level_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"a8ab9dbb-962c-4cde-ae7a-3164ffa88ef1",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("822c50d1-9844-49c2-b470-d7bcb50f7f61",
+	"1f5f2ae7-e222-41f1-b538-eccbd5fc5ca2",
+	'How_Many_In_First',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"aa9028b5-14e0-4888-a2e7-8813cd48797d",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("6f6c98fa-65a7-4b78-9f84-e98587e05704",
+	"1f5f2ae7-e222-41f1-b538-eccbd5fc5ca2",
+	'Given_Second_Level_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"822c50d1-9844-49c2-b470-d7bcb50f7f61",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("b90d737f-7d95-4978-876e-fcb96f9d2f02",
+	"1f5f2ae7-e222-41f1-b538-eccbd5fc5ca2",
+	'How_Many_In_Second',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"6f6c98fa-65a7-4b78-9f84-e98587e05704",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("47598473-34e7-4ad3-9b5e-4ec4ca3464fe",
+	"1f5f2ae7-e222-41f1-b538-eccbd5fc5ca2",
+	'Given_Third_Level_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"b90d737f-7d95-4978-876e-fcb96f9d2f02",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("8cf2085e-dba9-4637-802e-edd12068cf4f",
+	"1f5f2ae7-e222-41f1-b538-eccbd5fc5ca2",
+	'How_Many_In_Third',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"47598473-34e7-4ad3-9b5e-4ec4ca3464fe",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("7958a53b-0f75-4468-a400-167442a52082",
+	"1f5f2ae7-e222-41f1-b538-eccbd5fc5ca2",
+	'Given_Third_Level_Colour',
+	"fd8d10c9-2be8-4cc1-994f-8ce4c9bc6bd9",
+	0,
+	'',
+	"8cf2085e-dba9-4637-802e-edd12068cf4f",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("fd8d10c9-2be8-4cc1-994f-8ce4c9bc6bd9",
+	"00000000-0000-0000-0000-000000000000",
+	'Colour_Type',
+	'',
+	'',
+	'../../Shared/Shared.xtuml');
+INSERT INTO PE_PE
+	VALUES ("1f5f2ae7-e222-41f1-b538-eccbd5fc5ca2",
+	1,
+	"48f9470a-9e24-405c-a343-7fc10a6de05f",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("44be24f1-d3e4-4768-a7d3-1aceb193815a",
+	"00000000-0000-0000-0000-000000000000",
+	'Create_Report_Data',
+	'',
+	'# Find out of there already is one of these.
+# It is not inconceivable that a report object still exists from a previous run.
+# Report objects are not deleted at the end of a run, as certain events may
+# still be en-queued.
+
+old_report = find-one Report_Data
+
+if old_report != UNDEFINED then
+   delete old_report
+endif
+
+My_Report = create unique Report_Data with Reported_Domain_Number = 0
+
+[] = RPT6:Domain_Test_Start["Structures"]
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	8);
+INSERT INTO PE_PE
+	VALUES ("44be24f1-d3e4-4768-a7d3-1aceb193815a",
+	1,
+	"48f9470a-9e24-405c-a343-7fc10a6de05f",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("14ce0923-5202-4347-96b2-2faf9684d60a",
+	"00000000-0000-0000-0000-000000000000",
+	'Delete_Report_Data',
+	'',
+	'[] = RPT7:Domain_Test_Finished["Structures"]
+
+# Do not delete the Report_Data object, as there may be still events in
+# the queue.',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	9);
+INSERT INTO PE_PE
+	VALUES ("14ce0923-5202-4347-96b2-2faf9684d60a",
+	1,
+	"48f9470a-9e24-405c-a343-7fc10a6de05f",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("a539dc0f-16b4-4750-9392-c8c74654cf6d",
+	"00000000-0000-0000-0000-000000000000",
+	'Receive_Structure_IH',
+	' Receive a structure containing and IH as a component of that structure.
+',
+	'[] = RPT1:Start_Test[This_Test_Number,"1241-0000-01-1216", "Structures", "Structure and IH", Testing_For]
+[] = RPT8:Specify_Requid[This_Test_Number, "1101-0000-01-0140"]
+
+How_Many_In_Structure = countof {Input_Structure}
+
+if How_Many_In_Structure = Number_Of_Elements then
+
+   # We got as many as we were expecting. Now look and see that the latest
+   # one in the structure has the same unique attribute as the parameter.
+
+   # NB This would be real easy if ''find'' operations where supported for sets,
+   #    but, tough luck, they aren''t.
+
+   Result_Found = FALSE
+   Bean_Counter = 0
+   for [Dereferenced_IH] in {Input_Structure} do
+
+      if Dereferenced_IH != UNDEFINED then
+         Bean_Counter = Bean_Counter + 1
+      endif
+
+      # Found the one we are interested in. Should be the final element in the structure.
+      if Bean_Counter = Number_Of_Elements then
+
+         if Dereferenced_IH.Reference_SO = Unique_Identifier_Of_IH then
+            Result_Found = TRUE
+         endif
+
+         # Bail out of the loop. 
+         break
+ 
+      endif
+
+   endfor
+
+   if Result_Found then
+      [] = RPT2:Test_Passed[Testing_For, This_Test_Number, Unique_Identifier_Of_IH]
+   else
+      [] = RPT3:Test_Failed["Unmatched IH identifier ", This_Test_Number, Unique_Identifier_Of_IH]
+   endif
+
+else
+ 
+   [] = RPT3:Test_Failed["Inconsistent number of elements", This_Test_Number, How_Many_In_Structure]
+
+
+endif
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	1);
+INSERT INTO S_SPARM
+	VALUES ("3e793931-cb7c-44e6-a767-4c35466aa645",
+	"a539dc0f-16b4-4750-9392-c8c74654cf6d",
+	'This_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("d531c315-e142-49d0-940f-eb3d82b7b52f",
+	"a539dc0f-16b4-4750-9392-c8c74654cf6d",
+	'Input_Structure',
+	"2d4ed825-62dd-4b9f-b807-22763bf645bd",
+	0,
+	'',
+	"3e793931-cb7c-44e6-a767-4c35466aa645",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("2d4ed825-62dd-4b9f-b807-22763bf645bd",
+	"00000000-0000-0000-0000-000000000000",
+	'Structure_and_IH_Type',
+	'',
+	'',
+	'../../Shared/Shared.xtuml');
+INSERT INTO S_SPARM
+	VALUES ("9ebec468-f5bb-42b4-8beb-15cae93699cd",
+	"a539dc0f-16b4-4750-9392-c8c74654cf6d",
+	'Number_Of_Elements',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"d531c315-e142-49d0-940f-eb3d82b7b52f",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("c72875b0-7f92-4ed8-aa3a-7ef4f1745ee7",
+	"a539dc0f-16b4-4750-9392-c8c74654cf6d",
+	'Unique_Identifier_Of_IH',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"9ebec468-f5bb-42b4-8beb-15cae93699cd",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("749a292d-a3c3-4731-8222-53ba8ca6469c",
+	"a539dc0f-16b4-4750-9392-c8c74654cf6d",
+	'Testing_For',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"c72875b0-7f92-4ed8-aa3a-7ef4f1745ee7",
+	'');
+INSERT INTO PE_PE
+	VALUES ("a539dc0f-16b4-4750-9392-c8c74654cf6d",
+	1,
+	"48f9470a-9e24-405c-a343-7fc10a6de05f",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("bdc078c6-bc5f-4664-9884-881fd0342c73",
+	"00000000-0000-0000-0000-000000000000",
+	'Receive_Empty_Structure_IH',
+	'',
+	'[] = RPT1:Start_Test[Test_Number, "1241-0000-01-1216", "Structures", "Receive Empty Structure", Testing_For]
+
+How_Many_In_Structure = countof{Empty_Structure}
+
+Bean_Counter = 0
+
+for [An_IH] in {Empty_Structure} do
+
+   Bean_Counter = Bean_Counter + 1
+
+endfor
+
+if Bean_Counter = 0 & \
+   How_Many_In_Structure = 0 then
+
+   Structure_Is_Empty = TRUE
+
+else
+
+   Structure_Is_Empty = FALSE
+
+endif
+
+if Inserted_IH != UNDEFINED then
+
+   append [Inserted_IH] to {Filled_Structure}
+
+   if Structure_Is_Empty then
+
+      [] = RPT2:Test_Passed[Testing_For, Test_Number, Bean_Counter]
+
+   else
+
+      [] = RPT3:Test_Failed["Structure was not empty", Test_Number, Bean_Counter]
+
+   endif
+
+else
+
+   [] = RPT3:Test_Failed["IH does not exist", Test_Number, -1]
+
+endif
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	3);
+INSERT INTO S_SPARM
+	VALUES ("8c9dc174-f22c-4f3d-bb35-5dd150df3854",
+	"bdc078c6-bc5f-4664-9884-881fd0342c73",
+	'Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("3b7bef56-9e17-4935-af69-569b6df2ae1e",
+	"bdc078c6-bc5f-4664-9884-881fd0342c73",
+	'Empty_Structure',
+	"2d4ed825-62dd-4b9f-b807-22763bf645bd",
+	0,
+	'',
+	"8c9dc174-f22c-4f3d-bb35-5dd150df3854",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("9a8339c6-b0e2-4b97-bd70-f45e0d636c42",
+	"bdc078c6-bc5f-4664-9884-881fd0342c73",
+	'Inserted_IH',
+	"774352f7-34c6-463f-9fa6-d2275c32c9b0",
+	0,
+	'',
+	"3b7bef56-9e17-4935-af69-569b6df2ae1e",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("bbea1c85-1232-4798-a6c4-ccfb57a8a6c5",
+	"bdc078c6-bc5f-4664-9884-881fd0342c73",
+	'Testing_For',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"9a8339c6-b0e2-4b97-bd70-f45e0d636c42",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("b546a114-51b1-460b-bedd-ab3d68e850a4",
+	"bdc078c6-bc5f-4664-9884-881fd0342c73",
+	'Filled_Structure',
+	"2d4ed825-62dd-4b9f-b807-22763bf645bd",
+	1,
+	'',
+	"bbea1c85-1232-4798-a6c4-ccfb57a8a6c5",
+	'');
+INSERT INTO PE_PE
+	VALUES ("bdc078c6-bc5f-4664-9884-881fd0342c73",
+	1,
+	"48f9470a-9e24-405c-a343-7fc10a6de05f",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("75d76425-898c-4a8c-8d1c-2ae978c35f3d",
+	"00000000-0000-0000-0000-000000000000",
+	'Test_The_Structure',
+	'',
+	'for [the_integer, the_color] in {Structure_Input} do
+
+   local_integer = the_integer
+   local_color  = the_color
+
+   if local_color = ''Red'' then
+      local_integer = 200
+      local_color   of Colour_Type = ''Blue''
+   endif   
+
+endfor
+
+append [local_integer, local_color] to {The_Return_Structure}
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	5);
+INSERT INTO S_SPARM
+	VALUES ("37501e8b-2208-4370-a445-aca093140404",
+	"75d76425-898c-4a8c-8d1c-2ae978c35f3d",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("65e8d62a-1663-4f5c-ac14-3c8a3f7a7897",
+	"75d76425-898c-4a8c-8d1c-2ae978c35f3d",
+	'Structure_Input',
+	"9182170c-57c6-4c6a-a866-be5551986dd5",
+	0,
+	'',
+	"37501e8b-2208-4370-a445-aca093140404",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("9182170c-57c6-4c6a-a866-be5551986dd5",
+	"00000000-0000-0000-0000-000000000000",
+	'My_Simple_Structure',
+	'',
+	'',
+	'../../Shared/Shared.xtuml');
+INSERT INTO S_SPARM
+	VALUES ("3b63907e-6d15-4f9c-83f9-b490387c4aa7",
+	"75d76425-898c-4a8c-8d1c-2ae978c35f3d",
+	'The_Return_Structure',
+	"9182170c-57c6-4c6a-a866-be5551986dd5",
+	1,
+	'',
+	"65e8d62a-1663-4f5c-ac14-3c8a3f7a7897",
+	'');
+INSERT INTO PE_PE
+	VALUES ("75d76425-898c-4a8c-8d1c-2ae978c35f3d",
+	1,
+	"48f9470a-9e24-405c-a343-7fc10a6de05f",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("f12dc315-f771-4477-88f3-7d70d3bdbdb5",
+	"00000000-0000-0000-0000-000000000000",
+	'Check_Returning_Structure',
+	'',
+	'
+if Integer_Input = 100 then
+   Local_Integer = 200 
+endif
+
+if Real_Input = 1.0 then
+   Local_Real = 2.0
+endif
+
+if String_Input = "Structures Test" then
+  Local_String = "Test Complete"
+endif
+
+if UDT_Input = ''Blue'' then
+   Local_UDT of Colour_Type = ''Green''
+endif
+
+append [Local_Integer, Local_Real, Local_String, Local_UDT] to {Returning_Structure}',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	10);
+INSERT INTO S_SPARM
+	VALUES ("930e5e3d-f1a4-444d-866d-f589f072ef05",
+	"f12dc315-f771-4477-88f3-7d70d3bdbdb5",
+	'Integer_Input',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("e55a302f-f412-46e2-97ec-53dac6546fe4",
+	"f12dc315-f771-4477-88f3-7d70d3bdbdb5",
+	'Real_Input',
+	"ba5eda7a-def5-0000-0000-000000000003",
+	0,
+	'',
+	"930e5e3d-f1a4-444d-866d-f589f072ef05",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("6c7a984c-5f9a-44e7-b8c1-384e3a551dd8",
+	"f12dc315-f771-4477-88f3-7d70d3bdbdb5",
+	'String_Input',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"e55a302f-f412-46e2-97ec-53dac6546fe4",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("293a6334-fde8-40dd-b09b-3ac35eee6f15",
+	"f12dc315-f771-4477-88f3-7d70d3bdbdb5",
+	'UDT_Input',
+	"fd8d10c9-2be8-4cc1-994f-8ce4c9bc6bd9",
+	0,
+	'',
+	"6c7a984c-5f9a-44e7-b8c1-384e3a551dd8",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("06205117-6b94-4d0d-be94-28179ef9e980",
+	"f12dc315-f771-4477-88f3-7d70d3bdbdb5",
+	'Returning_Structure',
+	"5b6bc78d-e14f-4c74-9d44-4a0f78f454ec",
+	1,
+	'',
+	"293a6334-fde8-40dd-b09b-3ac35eee6f15",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("5b6bc78d-e14f-4c74-9d44-4a0f78f454ec",
+	"00000000-0000-0000-0000-000000000000",
+	'My_Second_Structure',
+	'',
+	'',
+	'../../Shared/Shared.xtuml');
+INSERT INTO PE_PE
+	VALUES ("f12dc315-f771-4477-88f3-7d70d3bdbdb5",
+	1,
+	"48f9470a-9e24-405c-a343-7fc10a6de05f",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO PE_PE
+	VALUES ("48f9470a-9e24-405c-a343-7fc10a6de05f",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"85ec7147-246b-41d4-a44d-2673399477b7",
+	7);
+INSERT INTO C_C_PROXY
+	VALUES ("85ec7147-246b-41d4-a44d-2673399477b7",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'Struct',
+	' Mission statement? 
+ You''re having a laugh!
+',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Structures',
+	'../Struct.xtuml');
+INSERT INTO S_SYS_PROXY
+	VALUES ("e05fd001-e388-4210-a0cc-0b5a9a96aa1c",
+	'Struct',
+	1,
+	'../../../Struct.xtuml');

@@ -1,0 +1,123 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("1ceb28d1-0bae-4f63-a286-f907bb773f11",
+	"00000000-0000-0000-0000-000000000000",
+	'Relationships',
+	'');
+INSERT INTO C_EP
+	VALUES ("adddd293-e565-47d2-b71d-cc9bf9bb1c01",
+	"1ceb28d1-0bae-4f63-a286-f907bb773f11",
+	0,
+	'Create_Report_Data',
+	'',
+	1);
+INSERT INTO C_IO
+	VALUES ("adddd293-e565-47d2-b71d-cc9bf9bb1c01",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'Create_Report_Data',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("8d8d97d0-b939-4516-b329-3a5bf47a7f1c",
+	"1ceb28d1-0bae-4f63-a286-f907bb773f11",
+	0,
+	'Delete_Report_Data',
+	'',
+	2);
+INSERT INTO C_IO
+	VALUES ("8d8d97d0-b939-4516-b329-3a5bf47a7f1c",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'Delete_Report_Data',
+	'',
+	0,
+	'',
+	"adddd293-e565-47d2-b71d-cc9bf9bb1c01");
+INSERT INTO C_EP
+	VALUES ("66cbb21b-9f97-444a-bf5d-3dafbecdd8dd",
+	"1ceb28d1-0bae-4f63-a286-f907bb773f11",
+	0,
+	'Memory_Leak_Test_One_To_Many',
+	'',
+	3);
+INSERT INTO C_IO
+	VALUES ("66cbb21b-9f97-444a-bf5d-3dafbecdd8dd",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'Memory_Leak_Test_One_To_Many',
+	'',
+	0,
+	'',
+	"8d8d97d0-b939-4516-b329-3a5bf47a7f1c");
+INSERT INTO C_EP
+	VALUES ("dee88080-abe6-4f24-b53f-e338c24f5c05",
+	"1ceb28d1-0bae-4f63-a286-f907bb773f11",
+	0,
+	'Memory_Leak_Test_Many_To_Many',
+	'',
+	4);
+INSERT INTO C_IO
+	VALUES ("dee88080-abe6-4f24-b53f-e338c24f5c05",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'Memory_Leak_Test_Many_To_Many',
+	'',
+	0,
+	'',
+	"66cbb21b-9f97-444a-bf5d-3dafbecdd8dd");
+INSERT INTO C_EP
+	VALUES ("cacf2ffd-eae5-4d37-8967-c99690a0bcbc",
+	"1ceb28d1-0bae-4f63-a286-f907bb773f11",
+	0,
+	'Get_Instance_State',
+	'',
+	5);
+INSERT INTO C_IO
+	VALUES ("cacf2ffd-eae5-4d37-8967-c99690a0bcbc",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'Get_Instance_State',
+	'',
+	0,
+	'',
+	"dee88080-abe6-4f24-b53f-e338c24f5c05");
+INSERT INTO C_PP
+	VALUES ("8e4984fa-a4a4-471d-8100-9e707e15798c",
+	"cacf2ffd-eae5-4d37-8967-c99690a0bcbc",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'Input_Instance_Value',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("7d802963-e54a-4eca-9aae-f8e8ef97fc10",
+	"cacf2ffd-eae5-4d37-8967-c99690a0bcbc",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'Input_Expected_Value',
+	'',
+	0,
+	'',
+	"8e4984fa-a4a4-471d-8100-9e707e15798c");
+INSERT INTO C_PP
+	VALUES ("15c052ff-9234-4e88-ad63-d78f93670da4",
+	"cacf2ffd-eae5-4d37-8967-c99690a0bcbc",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Free_Text',
+	'',
+	0,
+	'',
+	"7d802963-e54a-4eca-9aae-f8e8ef97fc10");
+INSERT INTO PE_PE
+	VALUES ("1ceb28d1-0bae-4f63-a286-f907bb773f11",
+	1,
+	"22311b26-f345-47a8-9c99-72f389dbd10e",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("22311b26-f345-47a8-9c99-72f389dbd10e",
+	"00000000-0000-0000-0000-000000000000",
+	"6d141527-9fd5-4054-8692-9fc325055afc",
+	'Shared',
+	'',
+	0,
+	'../Shared.xtuml');

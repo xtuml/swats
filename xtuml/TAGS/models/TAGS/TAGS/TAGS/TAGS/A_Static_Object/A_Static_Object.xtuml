@@ -1,0 +1,56 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("2cd38d0b-8f2f-4d87-8da7-6f1f1e391df9",
+	'A_Static_Object',
+	31,
+	'ASO',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("49b9f060-afde-4e5e-adf4-7e6d3f72b646",
+	"2cd38d0b-8f2f-4d87-8da7-6f1f1e391df9");
+INSERT INTO O_BATTR
+	VALUES ("49b9f060-afde-4e5e-adf4-7e6d3f72b646",
+	"2cd38d0b-8f2f-4d87-8da7-6f1f1e391df9");
+INSERT INTO O_ATTR
+	VALUES ("49b9f060-afde-4e5e-adf4-7e6d3f72b646",
+	"2cd38d0b-8f2f-4d87-8da7-6f1f1e391df9",
+	"00000000-0000-0000-0000-000000000000",
+	'Unique_ID',
+	' @@TAGS-V01-0003
+',
+	'',
+	'Unique_ID',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"2cd38d0b-8f2f-4d87-8da7-6f1f1e391df9");
+INSERT INTO O_OIDA
+	VALUES ("49b9f060-afde-4e5e-adf4-7e6d3f72b646",
+	"2cd38d0b-8f2f-4d87-8da7-6f1f1e391df9",
+	0,
+	'Unique_ID');
+INSERT INTO O_ID
+	VALUES (1,
+	"2cd38d0b-8f2f-4d87-8da7-6f1f1e391df9");
+INSERT INTO O_ID
+	VALUES (2,
+	"2cd38d0b-8f2f-4d87-8da7-6f1f1e391df9");
+INSERT INTO PE_PE
+	VALUES ("2cd38d0b-8f2f-4d87-8da7-6f1f1e391df9",
+	1,
+	"1d6b7be0-2f9c-4abe-81bd-3c9c90f2ebe5",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("1d6b7be0-2f9c-4abe-81bd-3c9c90f2ebe5",
+	"00000000-0000-0000-0000-000000000000",
+	"41eb16c7-0f24-4e35-b333-a47fabc90a87",
+	'TAGS',
+	'',
+	0,
+	'../TAGS.xtuml');

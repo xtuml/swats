@@ -1,0 +1,59 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("aea54023-5fa4-407d-b4d1-ac4b4cf0b7c8",
+	'Object_M',
+	26,
+	'objM',
+	' This object was part of a 1-(1c:1c) relationship.
+ Since 1:1 associative relationships are not
+ supported by code builder, it is now a 1-1 relationship.
+',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("1c4409da-8faa-4a60-9a7e-cd6dadc7f678",
+	"aea54023-5fa4-407d-b4d1-ac4b4cf0b7c8");
+INSERT INTO O_BATTR
+	VALUES ("1c4409da-8faa-4a60-9a7e-cd6dadc7f678",
+	"aea54023-5fa4-407d-b4d1-ac4b4cf0b7c8");
+INSERT INTO O_ATTR
+	VALUES ("1c4409da-8faa-4a60-9a7e-cd6dadc7f678",
+	"aea54023-5fa4-407d-b4d1-ac4b4cf0b7c8",
+	"00000000-0000-0000-0000-000000000000",
+	'idM',
+	' Preferred identifier.
+',
+	'',
+	'idM',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"aea54023-5fa4-407d-b4d1-ac4b4cf0b7c8");
+INSERT INTO O_OIDA
+	VALUES ("1c4409da-8faa-4a60-9a7e-cd6dadc7f678",
+	"aea54023-5fa4-407d-b4d1-ac4b4cf0b7c8",
+	0,
+	'idM');
+INSERT INTO O_ID
+	VALUES (1,
+	"aea54023-5fa4-407d-b4d1-ac4b4cf0b7c8");
+INSERT INTO O_ID
+	VALUES (2,
+	"aea54023-5fa4-407d-b4d1-ac4b4cf0b7c8");
+INSERT INTO PE_PE
+	VALUES ("aea54023-5fa4-407d-b4d1-ac4b4cf0b7c8",
+	1,
+	"1a16545d-ab33-4153-84c6-9d8e9f7ca024",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("1a16545d-ab33-4153-84c6-9d8e9f7ca024",
+	"00000000-0000-0000-0000-000000000000",
+	"6d141527-9fd5-4054-8692-9fc325055afc",
+	'Relationships',
+	'',
+	0,
+	'../Relationships.xtuml');

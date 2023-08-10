@@ -1,0 +1,21 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("39da2c3e-9ebe-4938-9432-8862ed7d0ed0",
+	"00000000-0000-0000-0000-000000000000",
+	'DomainBTerminatorB',
+	'');
+INSERT INTO PE_PE
+	VALUES ("39da2c3e-9ebe-4938-9432-8862ed7d0ed0",
+	1,
+	"7d351678-d5cd-4bb9-8366-afd662496de2",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("7d351678-d5cd-4bb9-8366-afd662496de2",
+	"00000000-0000-0000-0000-000000000000",
+	"27630566-912f-47fa-ad2e-ff0c7c689222",
+	'Shared',
+	'',
+	0,
+	'../Shared.xtuml');

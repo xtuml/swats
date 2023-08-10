@@ -1,0 +1,50 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("e497e179-cad7-4c09-a726-50f5d758db18",
+	'Object_Seven',
+	12,
+	'OBJSEVEN',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("99ecb623-3785-4f3d-8b97-ba40ca6bd386",
+	"e497e179-cad7-4c09-a726-50f5d758db18");
+INSERT INTO O_BATTR
+	VALUES ("99ecb623-3785-4f3d-8b97-ba40ca6bd386",
+	"e497e179-cad7-4c09-a726-50f5d758db18");
+INSERT INTO O_ATTR
+	VALUES ("99ecb623-3785-4f3d-8b97-ba40ca6bd386",
+	"e497e179-cad7-4c09-a726-50f5d758db18",
+	"00000000-0000-0000-0000-000000000000",
+	'Attribute_Seven',
+	'',
+	'',
+	'Attribute_Seven',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"e497e179-cad7-4c09-a726-50f5d758db18");
+INSERT INTO O_ID
+	VALUES (1,
+	"e497e179-cad7-4c09-a726-50f5d758db18");
+INSERT INTO O_ID
+	VALUES (2,
+	"e497e179-cad7-4c09-a726-50f5d758db18");
+INSERT INTO PE_PE
+	VALUES ("e497e179-cad7-4c09-a726-50f5d758db18",
+	1,
+	"67e0f233-3dba-469b-862e-33c412acfc41",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("67e0f233-3dba-469b-862e-33c412acfc41",
+	"00000000-0000-0000-0000-000000000000",
+	"b0ecd0cc-290d-4c8d-b44d-a65fc69bd1af",
+	'Function_Calls',
+	'',
+	0,
+	'../Function_Calls.xtuml');

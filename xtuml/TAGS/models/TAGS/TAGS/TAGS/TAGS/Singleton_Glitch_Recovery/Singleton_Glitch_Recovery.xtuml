@@ -1,0 +1,136 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("e09d19ac-1baf-4cbe-8ab3-c6d23baee3ca",
+	'Singleton_Glitch_Recovery',
+	21,
+	'SGR',
+	' This object shall define several attributes, each to be stored in non-initialised memory for so called "glitch recovery". This is a singleton object.
+',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("822185ac-84a9-47e8-b67f-b603a9480dd7",
+	"e09d19ac-1baf-4cbe-8ab3-c6d23baee3ca");
+INSERT INTO O_BATTR
+	VALUES ("822185ac-84a9-47e8-b67f-b603a9480dd7",
+	"e09d19ac-1baf-4cbe-8ab3-c6d23baee3ca");
+INSERT INTO O_ATTR
+	VALUES ("822185ac-84a9-47e8-b67f-b603a9480dd7",
+	"e09d19ac-1baf-4cbe-8ab3-c6d23baee3ca",
+	"00000000-0000-0000-0000-000000000000",
+	'sgr_id',
+	'',
+	'',
+	'sgr_id',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("50539388-3d25-4f95-bc56-ea95c22121e2",
+	"e09d19ac-1baf-4cbe-8ab3-c6d23baee3ca");
+INSERT INTO O_BATTR
+	VALUES ("50539388-3d25-4f95-bc56-ea95c22121e2",
+	"e09d19ac-1baf-4cbe-8ab3-c6d23baee3ca");
+INSERT INTO O_ATTR
+	VALUES ("50539388-3d25-4f95-bc56-ea95c22121e2",
+	"e09d19ac-1baf-4cbe-8ab3-c6d23baee3ca",
+	"822185ac-84a9-47e8-b67f-b603a9480dd7",
+	'An_Integer',
+	'',
+	'',
+	'An_Integer',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("92dfc821-40d4-4112-b1b5-47351c7ff024",
+	"e09d19ac-1baf-4cbe-8ab3-c6d23baee3ca");
+INSERT INTO O_BATTR
+	VALUES ("92dfc821-40d4-4112-b1b5-47351c7ff024",
+	"e09d19ac-1baf-4cbe-8ab3-c6d23baee3ca");
+INSERT INTO O_ATTR
+	VALUES ("92dfc821-40d4-4112-b1b5-47351c7ff024",
+	"e09d19ac-1baf-4cbe-8ab3-c6d23baee3ca",
+	"50539388-3d25-4f95-bc56-ea95c22121e2",
+	'A_Boolean',
+	'',
+	'',
+	'A_Boolean',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("d40c117d-4e48-45dd-b3bf-dfe5c3ea669f",
+	"e09d19ac-1baf-4cbe-8ab3-c6d23baee3ca");
+INSERT INTO O_BATTR
+	VALUES ("d40c117d-4e48-45dd-b3bf-dfe5c3ea669f",
+	"e09d19ac-1baf-4cbe-8ab3-c6d23baee3ca");
+INSERT INTO O_ATTR
+	VALUES ("d40c117d-4e48-45dd-b3bf-dfe5c3ea669f",
+	"e09d19ac-1baf-4cbe-8ab3-c6d23baee3ca",
+	"92dfc821-40d4-4112-b1b5-47351c7ff024",
+	'A_Real',
+	'',
+	'',
+	'A_Real',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000003",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("d8e38809-4bef-4c31-973e-330ed580b87a",
+	"e09d19ac-1baf-4cbe-8ab3-c6d23baee3ca");
+INSERT INTO O_BATTR
+	VALUES ("d8e38809-4bef-4c31-973e-330ed580b87a",
+	"e09d19ac-1baf-4cbe-8ab3-c6d23baee3ca");
+INSERT INTO O_ATTR
+	VALUES ("d8e38809-4bef-4c31-973e-330ed580b87a",
+	"e09d19ac-1baf-4cbe-8ab3-c6d23baee3ca",
+	"d40c117d-4e48-45dd-b3bf-dfe5c3ea669f",
+	'Environment',
+	'',
+	'',
+	'Environment',
+	0,
+	"d4e91364-e0e9-49cb-80e2-31cd135986d0",
+	'',
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("d4e91364-e0e9-49cb-80e2-31cd135986d0",
+	"00000000-0000-0000-0000-000000000000",
+	'Environment_Type',
+	' @@TAGS-01-0009
+',
+	'',
+	'../../types/types.xtuml');
+INSERT INTO O_ID
+	VALUES (0,
+	"e09d19ac-1baf-4cbe-8ab3-c6d23baee3ca");
+INSERT INTO O_OIDA
+	VALUES ("822185ac-84a9-47e8-b67f-b603a9480dd7",
+	"e09d19ac-1baf-4cbe-8ab3-c6d23baee3ca",
+	0,
+	'sgr_id');
+INSERT INTO O_ID
+	VALUES (1,
+	"e09d19ac-1baf-4cbe-8ab3-c6d23baee3ca");
+INSERT INTO O_ID
+	VALUES (2,
+	"e09d19ac-1baf-4cbe-8ab3-c6d23baee3ca");
+INSERT INTO PE_PE
+	VALUES ("e09d19ac-1baf-4cbe-8ab3-c6d23baee3ca",
+	1,
+	"1d6b7be0-2f9c-4abe-81bd-3c9c90f2ebe5",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("1d6b7be0-2f9c-4abe-81bd-3c9c90f2ebe5",
+	"00000000-0000-0000-0000-000000000000",
+	"41eb16c7-0f24-4e35-b333-a47fabc90a87",
+	'TAGS',
+	'',
+	0,
+	'../TAGS.xtuml');

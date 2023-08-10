@@ -1,0 +1,91 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("439175c2-87d4-40d9-a5bc-f2ceaf92d23a",
+	'Active_Tagged_Single_Object',
+	13,
+	'ATSO',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("de9632f5-8b13-4fb8-8684-b8e36149ed36",
+	"439175c2-87d4-40d9-a5bc-f2ceaf92d23a");
+INSERT INTO O_BATTR
+	VALUES ("de9632f5-8b13-4fb8-8684-b8e36149ed36",
+	"439175c2-87d4-40d9-a5bc-f2ceaf92d23a");
+INSERT INTO O_ATTR
+	VALUES ("de9632f5-8b13-4fb8-8684-b8e36149ed36",
+	"439175c2-87d4-40d9-a5bc-f2ceaf92d23a",
+	"00000000-0000-0000-0000-000000000000",
+	'Unique_Identifier',
+	'',
+	'',
+	'Unique_Identifier',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("f8191ef4-8f9f-46f8-9f12-a46641e87b52",
+	"439175c2-87d4-40d9-a5bc-f2ceaf92d23a");
+INSERT INTO O_BATTR
+	VALUES ("f8191ef4-8f9f-46f8-9f12-a46641e87b52",
+	"439175c2-87d4-40d9-a5bc-f2ceaf92d23a");
+INSERT INTO O_ATTR
+	VALUES ("f8191ef4-8f9f-46f8-9f12-a46641e87b52",
+	"439175c2-87d4-40d9-a5bc-f2ceaf92d23a",
+	"de9632f5-8b13-4fb8-8684-b8e36149ed36",
+	'Attribute_One',
+	'',
+	'',
+	'Attribute_One',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("37c97451-9843-4f4c-a841-919b63418e0f",
+	"439175c2-87d4-40d9-a5bc-f2ceaf92d23a");
+INSERT INTO O_BATTR
+	VALUES ("37c97451-9843-4f4c-a841-919b63418e0f",
+	"439175c2-87d4-40d9-a5bc-f2ceaf92d23a");
+INSERT INTO O_ATTR
+	VALUES ("37c97451-9843-4f4c-a841-919b63418e0f",
+	"439175c2-87d4-40d9-a5bc-f2ceaf92d23a",
+	"f8191ef4-8f9f-46f8-9f12-a46641e87b52",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"439175c2-87d4-40d9-a5bc-f2ceaf92d23a");
+INSERT INTO O_OIDA
+	VALUES ("de9632f5-8b13-4fb8-8684-b8e36149ed36",
+	"439175c2-87d4-40d9-a5bc-f2ceaf92d23a",
+	0,
+	'Unique_Identifier');
+INSERT INTO O_ID
+	VALUES (1,
+	"439175c2-87d4-40d9-a5bc-f2ceaf92d23a");
+INSERT INTO O_ID
+	VALUES (2,
+	"439175c2-87d4-40d9-a5bc-f2ceaf92d23a");
+INSERT INTO PE_PE
+	VALUES ("439175c2-87d4-40d9-a5bc-f2ceaf92d23a",
+	1,
+	"1d6b7be0-2f9c-4abe-81bd-3c9c90f2ebe5",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("1d6b7be0-2f9c-4abe-81bd-3c9c90f2ebe5",
+	"00000000-0000-0000-0000-000000000000",
+	"41eb16c7-0f24-4e35-b333-a47fabc90a87",
+	'TAGS',
+	'',
+	0,
+	'../TAGS.xtuml');

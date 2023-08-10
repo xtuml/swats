@@ -1,0 +1,138 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("d33a7647-75b9-4685-ab64-518907193b98",
+	'BornToDie',
+	38,
+	'BTD',
+	' This object verifies Born-To-Die life cycle of an instance.
+',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("89706290-f2fc-4323-891d-312347467620",
+	"d33a7647-75b9-4685-ab64-518907193b98",
+	'Into_Creation',
+	' Cause transition into creation state, for subsequent deletion
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'
+
+#Create an instance
+Identity = 100 + Test
+newBTD = create BornToDie with idBTD = Identity & \
+                               ResultA = 0 & \
+                               Current_State = ''Creation_state''
+
+#Generate this instance
+generate BTD5:DeleteInstance(Test, Test_Number) to newBTD
+
+#------------------------------------------------------------------------#
+',
+	3,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	2,
+	1);
+INSERT INTO O_TPARM
+	VALUES ("52fa5802-8862-416e-b192-ba1387275395",
+	"89706290-f2fc-4323-891d-312347467620",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("ebadd911-4479-4448-b710-0218f276d76c",
+	"89706290-f2fc-4323-891d-312347467620",
+	'Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"52fa5802-8862-416e-b192-ba1387275395",
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("97cac975-6c60-42b0-8b55-bac9e42c6f94",
+	"d33a7647-75b9-4685-ab64-518907193b98");
+INSERT INTO O_BATTR
+	VALUES ("97cac975-6c60-42b0-8b55-bac9e42c6f94",
+	"d33a7647-75b9-4685-ab64-518907193b98");
+INSERT INTO O_ATTR
+	VALUES ("97cac975-6c60-42b0-8b55-bac9e42c6f94",
+	"d33a7647-75b9-4685-ab64-518907193b98",
+	"00000000-0000-0000-0000-000000000000",
+	'idBTD',
+	' Preferred identifier.
+',
+	'',
+	'idBTD',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("7e267c1e-f4ef-4c8f-82da-012dc9a0251f",
+	"d33a7647-75b9-4685-ab64-518907193b98");
+INSERT INTO O_BATTR
+	VALUES ("7e267c1e-f4ef-4c8f-82da-012dc9a0251f",
+	"d33a7647-75b9-4685-ab64-518907193b98");
+INSERT INTO O_ATTR
+	VALUES ("7e267c1e-f4ef-4c8f-82da-012dc9a0251f",
+	"d33a7647-75b9-4685-ab64-518907193b98",
+	"97cac975-6c60-42b0-8b55-bac9e42c6f94",
+	'ResultA',
+	' This attribute is manipulated to indicate that the required operation was successful.
+',
+	'',
+	'ResultA',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("dfc7530a-5b8e-472a-a895-a6428d78151a",
+	"d33a7647-75b9-4685-ab64-518907193b98");
+INSERT INTO O_BATTR
+	VALUES ("dfc7530a-5b8e-472a-a895-a6428d78151a",
+	"d33a7647-75b9-4685-ab64-518907193b98");
+INSERT INTO O_ATTR
+	VALUES ("dfc7530a-5b8e-472a-a895-a6428d78151a",
+	"d33a7647-75b9-4685-ab64-518907193b98",
+	"7e267c1e-f4ef-4c8f-82da-012dc9a0251f",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"d33a7647-75b9-4685-ab64-518907193b98");
+INSERT INTO O_OIDA
+	VALUES ("97cac975-6c60-42b0-8b55-bac9e42c6f94",
+	"d33a7647-75b9-4685-ab64-518907193b98",
+	0,
+	'idBTD');
+INSERT INTO O_ID
+	VALUES (1,
+	"d33a7647-75b9-4685-ab64-518907193b98");
+INSERT INTO O_ID
+	VALUES (2,
+	"d33a7647-75b9-4685-ab64-518907193b98");
+INSERT INTO PE_PE
+	VALUES ("d33a7647-75b9-4685-ab64-518907193b98",
+	1,
+	"a9a21ab3-b305-417c-89c1-c9f52915c70b",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("a9a21ab3-b305-417c-89c1-c9f52915c70b",
+	"00000000-0000-0000-0000-000000000000",
+	"9b3c9b37-3527-4c3a-8648-5c925cc26549",
+	'Events',
+	'',
+	0,
+	'../Events.xtuml');

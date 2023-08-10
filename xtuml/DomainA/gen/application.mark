@@ -1,0 +1,22 @@
+DomainA::DomainA,version,Component,12
+DomainA::DomainA::DomainA::R3,Class_B,Association,"Many_To_Many_Right_Side"
+DomainA::DomainA::DomainA::R3,Class_A,Association,"Many_To_Many_Left_Side"
+DomainA::DomainA::DomainA::R2,Class_B,Association,"One_To_Many_Right_Side"
+DomainA::DomainA::DomainA::R2,Class_A,Association,"One_To_Many_Left_Side"
+DomainA::DomainA::DomainA::R1,Class_B,Association,"One_To_One_Right_Side"
+DomainA::DomainA::DomainA::R1,Class_A,Association,"One_To_One_Left_Side"
+DomainA::DomainA::scenarios::void Pass_Params,scenario,Function,15
+DomainA::DomainA::scenarios::void Passing_IH,scenario,Function,14
+DomainA::DomainA::scenarios::void Enumeration_Across_Lots_Of_Bridges,scenario,Function,13
+DomainA::DomainA::scenarios::void Enumeration_Across_Bridge_Check,scenario,Function,12
+DomainA::DomainA::scenarios::void Finish_DomainA_Tests,scenario,Function,11
+DomainA::DomainA::scenarios::void Start_DomainA_Tests,scenario,Function,10
+DomainA::DomainA::scenarios::void invoke_misc_calls,scenario,Function,9
+DomainA::DomainA::scenarios::void many_to_many_navigation,scenario,Function,8
+DomainA::DomainA::scenarios::void one_to_many_navigation,scenario,Function,7
+DomainA::DomainA::scenarios::void one_to_one_navigation,scenario,Function,6
+DomainA::DomainA::scenarios::void shared_bridge_test,scenario,Function,5
+DomainA::DomainA::scenarios::void single_bridge_test,scenario,Function,4
+DomainA::DomainA::scenarios::void Sync_to_sync,scenario,Function,2
+DomainA::DomainA::scenarios::void Sync_to_event,scenario,Function,3
+DomainA::DomainA::scenarios::void Domain_A_setup,scenario,Function,1

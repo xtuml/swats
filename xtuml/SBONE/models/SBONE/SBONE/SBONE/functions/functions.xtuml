@@ -1,0 +1,242 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("2a8beea4-0110-4f2c-9723-1284b9500de8",
+	"00000000-0000-0000-0000-000000000000",
+	"819ed92c-c48a-499c-8128-b4be558ae92e",
+	'functions',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("b12cf16f-5bdf-4bfa-975f-7ef8c8f3a718",
+	112,
+	"2a8beea4-0110-4f2c-9723-1284b9500de8",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'SBONE::SBONE::SBONE::functions');
+INSERT INTO DIM_DIA
+	VALUES ("b12cf16f-5bdf-4bfa-975f-7ef8c8f3a718",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_SYNC
+	VALUES ("dfaccb76-d4ee-48a5-afc6-0f71481427ee",
+	"00000000-0000-0000-0000-000000000000",
+	'Receive_A_Very_Simple_Structure',
+	'',
+	'
+[] = RPT1:Start_Test[Received_Test, "Null Requid", "SBONE", "DBSS rx a structure", "rx structure and create simple object"]
+
+VSD_One = create Very_Simple_Data_Object with Object_Reference_VSD = Received_Test
+
+# For the purposes of this simple test, we are assuming that there is
+# only one structure in the set.
+
+for [Local_Integer, Local_Real] in {Received_Very_Simple_Structure} do
+
+   VSD_One.Object_Simple_Integer = Local_Integer
+   VSD_One.Object_Simple_Real    = Local_Real
+
+endfor
+
+if VSD_One.Object_Simple_Integer = Received_Control_Integer & \
+   VSD_One.Object_Simple_Real    = Received_Control_Real then
+
+   [] = RPT2:Test_Passed["SBONE rx structure", Received_Test, 0]
+else
+   [] = RPT3:Test_Failed["SBONE rx structure", Received_Test, -1]
+endif
+
+
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	1);
+INSERT INTO S_SPARM
+	VALUES ("e074ef72-b4d0-45d5-b993-8d9450c9bf5f",
+	"dfaccb76-d4ee-48a5-afc6-0f71481427ee",
+	'Received_Very_Simple_Structure',
+	"7cf3bfaf-1a11-42af-b4a4-5be1e01d6775",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("7cf3bfaf-1a11-42af-b4a4-5be1e01d6775",
+	"00000000-0000-0000-0000-000000000000",
+	'Very_Simple_Structure_Type',
+	'',
+	'',
+	'../../Shared/Shared.xtuml');
+INSERT INTO S_SPARM
+	VALUES ("438609f0-cc11-4df9-a781-f4ed6c3abd81",
+	"dfaccb76-d4ee-48a5-afc6-0f71481427ee",
+	'Received_Control_Integer',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"e074ef72-b4d0-45d5-b993-8d9450c9bf5f",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("855621fc-03b3-482d-9295-559e9a08fb3a",
+	"dfaccb76-d4ee-48a5-afc6-0f71481427ee",
+	'Received_Control_Real',
+	"ba5eda7a-def5-0000-0000-000000000003",
+	0,
+	'',
+	"438609f0-cc11-4df9-a781-f4ed6c3abd81",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("bb8f2f80-5282-4634-be13-8ec5eabd2675",
+	"dfaccb76-d4ee-48a5-afc6-0f71481427ee",
+	'Received_Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"855621fc-03b3-482d-9295-559e9a08fb3a",
+	'');
+INSERT INTO PE_PE
+	VALUES ("dfaccb76-d4ee-48a5-afc6-0f71481427ee",
+	1,
+	"2a8beea4-0110-4f2c-9723-1284b9500de8",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("acc3657c-c170-4bb8-90a8-6f305aa0171d",
+	"00000000-0000-0000-0000-000000000000",
+	'Create_Report_Data',
+	'',
+	'# Find out of there already is one of these.
+# It is not inconceivable that a report object still exists from a previous run.
+# Report objects are not deleted at the end of a run, as certain events may
+# still be en-queued.
+
+old_report = find-one Report_Data
+
+if old_report != UNDEFINED then
+   delete old_report
+endif
+
+My_Report = create unique Report_Data with Reported_Domain_Number = 0
+
+[] = RPT6:Domain_Test_Start["Structure Bridge One"]
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	2);
+INSERT INTO PE_PE
+	VALUES ("acc3657c-c170-4bb8-90a8-6f305aa0171d",
+	1,
+	"2a8beea4-0110-4f2c-9723-1284b9500de8",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("3a262deb-eba7-4f67-bbf0-6b98aab92558",
+	"00000000-0000-0000-0000-000000000000",
+	'Delete_Report_Data',
+	'',
+	'[] = RPT7:Domain_Test_Finished["Structure Bridge One"]
+
+# Do not delete the Report_Data object, as there may be still events in
+# the queue.',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	3);
+INSERT INTO PE_PE
+	VALUES ("3a262deb-eba7-4f67-bbf0-6b98aab92558",
+	1,
+	"2a8beea4-0110-4f2c-9723-1284b9500de8",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("14341535-d064-4355-a287-9f674c4ed1b1",
+	"00000000-0000-0000-0000-000000000000",
+	'Append_IH_To_Struct',
+	'',
+	'append [The_IH] to {Returning_Struct}',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	4);
+INSERT INTO S_SPARM
+	VALUES ("4288e700-d000-4cc7-a4f9-300143a83d89",
+	"14341535-d064-4355-a287-9f674c4ed1b1",
+	'The_IH',
+	"9c385ae7-8d11-4b5d-918b-11eee4587ff3",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("9c385ae7-8d11-4b5d-918b-11eee4587ff3",
+	"00000000-0000-0000-0000-000000000000",
+	'inst_ref<Very_Simple_Data_Object>',
+	'',
+	'',
+	'../SBONE/SBONE.xtuml');
+INSERT INTO S_SPARM
+	VALUES ("e4620a4e-9abc-4530-96ad-0bccb2c9eb8e",
+	"14341535-d064-4355-a287-9f674c4ed1b1",
+	'Returning_Struct',
+	"6542ff41-e2e6-45c1-b796-c28430eb2ff8",
+	1,
+	'',
+	"4288e700-d000-4cc7-a4f9-300143a83d89",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("6542ff41-e2e6-45c1-b796-c28430eb2ff8",
+	"00000000-0000-0000-0000-000000000000",
+	'IH_Struct',
+	'',
+	'',
+	'../../Shared/Shared.xtuml');
+INSERT INTO PE_PE
+	VALUES ("14341535-d064-4355-a287-9f674c4ed1b1",
+	1,
+	"2a8beea4-0110-4f2c-9723-1284b9500de8",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO PE_PE
+	VALUES ("2a8beea4-0110-4f2c-9723-1284b9500de8",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"94314c6a-6ec5-4e94-aa83-178a1cf6edec",
+	7);
+INSERT INTO C_C_PROXY
+	VALUES ("94314c6a-6ec5-4e94-aa83-178a1cf6edec",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'SBONE',
+	'',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Structure_Bridge_One',
+	'../SBONE.xtuml');
+INSERT INTO S_SYS_PROXY
+	VALUES ("819ed92c-c48a-499c-8128-b4be558ae92e",
+	'SBONE',
+	1,
+	'../../../SBONE.xtuml');

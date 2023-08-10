@@ -1,0 +1,226 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("8488abb3-8fbf-49ee-93cf-2ccefaf676e2",
+	"00000000-0000-0000-0000-000000000000",
+	"64118ad4-4d5f-4328-9fb8-ae68cb350188",
+	'functions',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("bcd45c2d-4584-428c-9991-5ab8d757f3fb",
+	112,
+	"8488abb3-8fbf-49ee-93cf-2ccefaf676e2",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'DomainA::DomainA::DomainA::functions');
+INSERT INTO DIM_DIA
+	VALUES ("bcd45c2d-4584-428c-9991-5ab8d757f3fb",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_SYNC
+	VALUES ("b169709d-506a-44a5-88a6-0daeae1609c7",
+	"00000000-0000-0000-0000-000000000000",
+	'Create_Report_Object',
+	'',
+	'# Find out of there already is one of these.
+# It is not inconceivable that a report object still exists from a previous run.
+# Report objects are not deleted at the end of a run, as certain events may
+# still be en-queued.
+
+old_report = find-one Report_Data
+
+if old_report != UNDEFINED then
+   delete old_report
+endif
+
+My_Report = create unique Report_Data with Reported_Domain_Number = 0
+
+[] = RPT6:Domain_Test_Start["Multi Domain A"]
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	1);
+INSERT INTO PE_PE
+	VALUES ("b169709d-506a-44a5-88a6-0daeae1609c7",
+	1,
+	"8488abb3-8fbf-49ee-93cf-2ccefaf676e2",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("a6d1e505-3758-4f78-b629-a377f5c813c0",
+	"00000000-0000-0000-0000-000000000000",
+	'Delete_Report_Object',
+	'',
+	'[] = RPT7:Domain_Test_Finished["Multi Domain A"]
+
+# Do not delete the Report_Data object, as there may be still events in
+# the queue.',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	2);
+INSERT INTO PE_PE
+	VALUES ("a6d1e505-3758-4f78-b629-a377f5c813c0",
+	1,
+	"8488abb3-8fbf-49ee-93cf-2ccefaf676e2",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("0d27b1a0-16af-494e-b404-4a95257222c1",
+	"00000000-0000-0000-0000-000000000000",
+	'Check_Enum',
+	'',
+	'switch The_Input_Value
+
+   case ''Sly''
+      The_Return_Value = 11
+   case ''Sandy''
+      The_Return_Value = 12
+   case ''Wes''
+      The_Return_Value = 13
+   default
+      The_Return_Value = -11
+endswitch',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	3);
+INSERT INTO S_SPARM
+	VALUES ("4b980177-468c-47c9-bd06-f074fb8feff2",
+	"0d27b1a0-16af-494e-b404-4a95257222c1",
+	'The_Input_Value',
+	"21a699cb-87b6-4c4e-b372-9b9c83c2bd0a",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("21a699cb-87b6-4c4e-b372-9b9c83c2bd0a",
+	"00000000-0000-0000-0000-000000000000",
+	'Test_Enum_Type',
+	'',
+	'',
+	'../../Shared/Shared.xtuml');
+INSERT INTO S_SPARM
+	VALUES ("f23e3fae-c5cf-4652-bbe9-df6d8f3f2b08",
+	"0d27b1a0-16af-494e-b404-4a95257222c1",
+	'The_Return_Value',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"4b980177-468c-47c9-bd06-f074fb8feff2",
+	'');
+INSERT INTO PE_PE
+	VALUES ("0d27b1a0-16af-494e-b404-4a95257222c1",
+	1,
+	"8488abb3-8fbf-49ee-93cf-2ccefaf676e2",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("9b7eb2c4-b156-4f1f-8bf5-bbf732c54129",
+	"00000000-0000-0000-0000-000000000000",
+	'Check_Service_Params',
+	'',
+	'   [The_Returning_Val] = NAV10:Pass_Parameters[Int_Input, Real_Input, Text_Input, Bool_Input]
+
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	4);
+INSERT INTO S_SPARM
+	VALUES ("792dd209-89bb-43fb-922b-50a246f31c1c",
+	"9b7eb2c4-b156-4f1f-8bf5-bbf732c54129",
+	'Int_Input',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("4eab6d7f-060a-4bbc-a574-7fab7819b586",
+	"9b7eb2c4-b156-4f1f-8bf5-bbf732c54129",
+	'Real_Input',
+	"ba5eda7a-def5-0000-0000-000000000003",
+	0,
+	'',
+	"792dd209-89bb-43fb-922b-50a246f31c1c",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("9c4db8db-59d7-4aea-bd83-9ad3e145e98c",
+	"9b7eb2c4-b156-4f1f-8bf5-bbf732c54129",
+	'Text_Input',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"4eab6d7f-060a-4bbc-a574-7fab7819b586",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("9edeeb7e-4f6f-4cd7-bcaf-9fce2c260e87",
+	"9b7eb2c4-b156-4f1f-8bf5-bbf732c54129",
+	'Bool_Input',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	0,
+	'',
+	"9c4db8db-59d7-4aea-bd83-9ad3e145e98c",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("e6abf132-6977-4c54-a76f-47ba11829b28",
+	"9b7eb2c4-b156-4f1f-8bf5-bbf732c54129",
+	'The_Returning_Val',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"9edeeb7e-4f6f-4cd7-bcaf-9fce2c260e87",
+	'');
+INSERT INTO PE_PE
+	VALUES ("9b7eb2c4-b156-4f1f-8bf5-bbf732c54129",
+	1,
+	"8488abb3-8fbf-49ee-93cf-2ccefaf676e2",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO PE_PE
+	VALUES ("8488abb3-8fbf-49ee-93cf-2ccefaf676e2",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"599aa586-d56e-4473-a511-fb537046fddc",
+	7);
+INSERT INTO C_C_PROXY
+	VALUES ("599aa586-d56e-4473-a511-fb537046fddc",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'DomainA',
+	' For use in multiple domain builds
+',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'DomainA',
+	'../DomainA.xtuml');
+INSERT INTO S_SYS_PROXY
+	VALUES ("64118ad4-4d5f-4328-9fb8-ae68cb350188",
+	'DomainA',
+	1,
+	'../../../DomainA.xtuml');

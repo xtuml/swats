@@ -1,0 +1,76 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("16caf0e8-a873-4bbf-b1eb-89e65d950866",
+	'Object_A',
+	15,
+	'objA',
+	' This object contains data that is manipulated by other objects.
+',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("f76072b9-2b26-4fe4-85b1-b459712e8c82",
+	"16caf0e8-a873-4bbf-b1eb-89e65d950866");
+INSERT INTO O_BATTR
+	VALUES ("f76072b9-2b26-4fe4-85b1-b459712e8c82",
+	"16caf0e8-a873-4bbf-b1eb-89e65d950866");
+INSERT INTO O_ATTR
+	VALUES ("f76072b9-2b26-4fe4-85b1-b459712e8c82",
+	"16caf0e8-a873-4bbf-b1eb-89e65d950866",
+	"00000000-0000-0000-0000-000000000000",
+	'idA',
+	' Preferred identifier.
+',
+	'',
+	'idA',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("d1bc9fcd-1b65-49c1-917b-d05b7d006e41",
+	"16caf0e8-a873-4bbf-b1eb-89e65d950866");
+INSERT INTO O_BATTR
+	VALUES ("d1bc9fcd-1b65-49c1-917b-d05b7d006e41",
+	"16caf0e8-a873-4bbf-b1eb-89e65d950866");
+INSERT INTO O_ATTR
+	VALUES ("d1bc9fcd-1b65-49c1-917b-d05b7d006e41",
+	"16caf0e8-a873-4bbf-b1eb-89e65d950866",
+	"f76072b9-2b26-4fe4-85b1-b459712e8c82",
+	'IntegerA',
+	' An integer.
+',
+	'',
+	'IntegerA',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"16caf0e8-a873-4bbf-b1eb-89e65d950866");
+INSERT INTO O_OIDA
+	VALUES ("f76072b9-2b26-4fe4-85b1-b459712e8c82",
+	"16caf0e8-a873-4bbf-b1eb-89e65d950866",
+	0,
+	'idA');
+INSERT INTO O_ID
+	VALUES (1,
+	"16caf0e8-a873-4bbf-b1eb-89e65d950866");
+INSERT INTO O_ID
+	VALUES (2,
+	"16caf0e8-a873-4bbf-b1eb-89e65d950866");
+INSERT INTO PE_PE
+	VALUES ("16caf0e8-a873-4bbf-b1eb-89e65d950866",
+	1,
+	"df782c0d-01d7-4cdb-867d-1f1ce5d60cb4",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("df782c0d-01d7-4cdb-867d-1f1ce5d60cb4",
+	"00000000-0000-0000-0000-000000000000",
+	"02965de1-ecbb-4bde-9a3e-3ac7d424e4a6",
+	'Find_and_Sets',
+	'',
+	0,
+	'../Find_and_Sets.xtuml');

@@ -1,0 +1,537 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("0236923f-fa2e-4f66-962e-d5c15c55de77",
+	'Find_Single',
+	10,
+	'objFSI',
+	' This object verifies the statements:
+ 
+ 	find-one
+ 	find-only
+',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("81a9cfae-eb03-4c4c-a885-5928845eb998",
+	"0236923f-fa2e-4f66-962e-d5c15c55de77",
+	'do_find_one',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'#------------------------------------------------------------------------#
+# Find-one
+#------------------------------------------------------------------------#
+
+Test_Number = Test
+
+#------------------------------------------------------------------------#
+# Test 1 - FIND-ONE, no instance is returned
+#          The object to which the ''FIND'' is being performed contains no 
+#          instances
+#------------------------------------------------------------------------#
+
+   [] = RPT1:Start_Test [Test_Number, "1103-0000-01-0544", "Find and Sets", "objFSI find one", "on no instances"]
+   [] = RPT8:Specify_Requid [Test_Number, "1241-0000-01-1206"]
+
+   # Perform the test
+   an_instanceB = find-one Object_B
+
+   # Check that no instance is returned
+   if an_instanceB != UNDEFINED then
+      [] = RPT3:Test_Failed["objFSI find one", Test_Number,-1]
+   else
+
+      if an_instanceFSI = UNDEFINED then
+         [] = RPT3:Test_Failed["objFSI", Test_Number, -2]
+      else
+         temp = an_instanceFSI.ResultFSI + 10
+         an_instanceFSI.ResultFSI = temp
+         [] = RPT2:Test_Passed["objFSI find one", Test_Number, temp]
+      endif
+
+   endif
+
+# End Test 1
+
+#------------------------------------------------------------------------#
+# Test 2 - FIND-ONE WHERE, no instance is returned
+#          The object to which the ''FIND'' is being performed contains no 
+#          instances
+#------------------------------------------------------------------------#
+
+   [Test_Number] = Find_and_Sets1::Increment[Test_Number]
+
+   [] = RPT1:Start_Test [Test_Number, "1103-0000-01-0545", "Find and Sets", "objFSI find one", "on no instances"]
+   [] = RPT8:Specify_Requid [Test_Number, "1241-0000-01-1207"]
+
+   # Perform the test
+   an_instanceB = find-one Object_B where idB = 1
+
+   # Check that no instance is returned
+   if an_instanceB != UNDEFINED then
+      [] = RPT3:Test_Failed["objFSI find one", Test_Number,-3]
+   else
+
+      if an_instanceFSI = UNDEFINED then
+         [] = RPT3:Test_Failed["objFSI", Test_Number, -4]
+      else
+         temp = an_instanceFSI.ResultFSI + 10
+         an_instanceFSI.ResultFSI = temp
+         [] = RPT2:Test_Passed["objFSI find one", Test_Number,temp]
+      endif
+
+   endif
+
+# End Test 2
+
+#------------------------------------------------------------------------#
+# Test 3 - FIND-ONE WHERE <single condition>, no instance returned
+#------------------------------------------------------------------------#
+
+   [Test_Number] = Find_and_Sets1::Increment[Test_Number]
+
+   [] = RPT1:Start_Test [Test_Number, "1103-0000-01-0545", "Find and Sets", "objFSI find one", "on no instances"]
+   [] = RPT8:Specify_Requid [Test_Number, "1241-0000-01-1207"]
+
+   # Perform the test
+   an_instanceA = find-one Object_A where IntegerA = 666
+
+   # Check that no instance is returned
+   if an_instanceA != UNDEFINED then
+      [] = RPT3:Test_Failed["objFSI find one", Test_Number,-3]
+   else
+      temp = an_instanceFSI.ResultFSI + 10
+      an_instanceFSI.ResultFSI = temp
+      [] = RPT2:Test_Passed["objFSI find one", Test_Number, temp]
+   endif
+
+# End Test 3
+
+#------------------------------------------------------------------------#
+# Test 4 - FIND-ONE WHERE <multiple conditions>, no instance returned
+#------------------------------------------------------------------------#
+
+   [Test_Number] = Find_and_Sets1::Increment[Test_Number]
+
+   [] = RPT1:Start_Test [Test_Number, "1103-0000-01-0545", "Find and Sets", "objFSI find one", "on no instances"]
+   [] = RPT8:Specify_Requid [Test_Number, "1241-0000-01-1207"]
+
+   # Perform the test
+   an_instanceA = find-one Object_A where IntegerA = 666 & idA = 1
+
+   # Check that no instance is returned
+   if an_instanceA != UNDEFINED then
+      [] = RPT3:Test_Failed["objFSI find one", Test_Number, -4]
+   else
+      temp = an_instanceFSI.ResultFSI + 10
+      an_instanceFSI.ResultFSI = temp
+      [] = RPT2:Test_Passed["objFSI find one", Test_Number, temp]
+   endif
+
+# End Test 4
+
+#------------------------------------------------------------------------#
+# Test 5 - FIND-ONE, an instance is returned
+#------------------------------------------------------------------------#
+
+   [Test_Number] = Find_and_Sets1::Increment[Test_Number]
+
+   [] = RPT1:Start_Test [Test_Number, "1103-0000-01-0544", "Find and Sets", "objFSI find one", "one instance"]
+   [] = RPT8:Specify_Requid [Test_Number, "1241-0000-01-1206"]
+
+   # Perform the test
+   an_instanceA = find-one Object_A
+
+   # Check that an instance is returned
+   if an_instanceA = UNDEFINED then
+      [] = RPT3:Test_Failed["objFSI find one", Test_Number, -5]
+   else
+      temp = an_instanceFSI.ResultFSI + 10
+      an_instanceFSI.ResultFSI = temp
+      [] = RPT2:Test_Passed["objFSI find one", Test_Number, temp]
+   endif
+
+# End Test 5
+
+#------------------------------------------------------------------------#
+# Test 6 - FIND-ONE WHERE <single condition>, an instance is returned
+#------------------------------------------------------------------------#
+
+   [Test_Number] = Find_and_Sets1::Increment[Test_Number]
+
+   [] = RPT1:Start_Test [Test_Number, "1103-0000-01-0545", "Find and Sets", "objFSI find one", "one instance"]
+   [] = RPT8:Specify_Requid [Test_Number, "1241-0000-01-1207"]
+
+   # Perform the test
+   an_instanceA = find-one Object_A where idA = 1
+
+   # Check that an instance is returned
+   if (an_instanceA != UNDEFINED)then
+
+      if (an_instanceA.idA != 1) then
+         [] = RPT3:Test_Failed["objFSI find one", Test_Number, -6]
+      else
+         temp = an_instanceFSI.ResultFSI + 10
+         an_instanceFSI.ResultFSI = temp
+         [] = RPT2:Test_Passed["objFSI find one", Test_Number, temp]
+      endif
+
+   else
+      [] = RPT3:Test_Failed["objFSI find one", Test_Number, -7]
+   endif
+
+# End Test 6
+
+#------------------------------------------------------------------------#
+# Test 7 - FIND-ONE WHERE <both conditions are fulfilled>, an instance is 
+#          returned
+#------------------------------------------------------------------------#
+
+   [Test_Number] = Find_and_Sets1::Increment[Test_Number]
+
+   [] = RPT1:Start_Test [Test_Number, "1103-0000-01-0545", "Find and Sets", "objFSI find one", "one instance"]
+   [] = RPT8:Specify_Requid [Test_Number, "1241-0000-01-1207"]
+
+   # Perform the test
+   an_instanceA = find-one Object_A where idA = 1 | idA = 2
+
+   # Check that an instance is returned
+   if (an_instanceA != UNDEFINED)then
+
+      if (an_instanceA.idA > 2) then
+         [] = RPT3:Test_Failed["objFSI find one", Test_Number, -8]
+      else
+         temp = an_instanceFSI.ResultFSI + 10
+         an_instanceFSI.ResultFSI = temp
+         [] = RPT2:Test_Passed["objFSI find one", Test_Number, temp]
+      endif
+
+   else
+      [] = RPT3:Test_Failed["objFSI find one", Test_Number, -9]
+   endif
+
+# End Test 7
+
+#------------------------------------------------------------------------#
+# Test 8 - FIND-ONE WHERE <only one conditions fulfilled>, an instance is 
+#          returned
+#------------------------------------------------------------------------#
+
+   [Test_Number] = Find_and_Sets1::Increment[Test_Number]
+
+   [] = RPT1:Start_Test [Test_Number, "1103-0000-01-0545", "Find and Sets", "objFSI find one", "one instance"]
+   [] = RPT8:Specify_Requid [Test_Number, "1241-0000-01-1207"]
+
+   # Perform the test
+   an_instanceA = find-one Object_A where idA = 3 | idA = 666
+
+   # Check that an instance is returned
+   if (an_instanceA != UNDEFINED)then
+
+      if(an_instanceA.idA != 3) then
+         [] = RPT3:Test_Failed["objFSI find one", Test_Number, -10]
+      else
+         temp = an_instanceFSI.ResultFSI + 10
+         an_instanceFSI.ResultFSI = temp
+         [] = RPT2:Test_Passed["objFSI find one", Test_Number, temp]
+      endif
+
+   else
+      [] = RPT3:Test_Failed["objFSI find one", Test_Number, -11]
+   endif
+
+# End Test 8
+
+#------------------------------------------------------------------------#
+
+Returned_Number = Test_Number',
+	3,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	2,
+	1);
+INSERT INTO O_TPARM
+	VALUES ("399c0eb4-e017-47cc-a56f-56c838d1b0d4",
+	"81a9cfae-eb03-4c4c-a885-5928845eb998",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("a8d1beaa-1643-431d-a946-35f2fb9e7404",
+	"81a9cfae-eb03-4c4c-a885-5928845eb998",
+	'an_instanceFSI',
+	"e7f712e9-37f2-4461-8121-f28a69630725",
+	0,
+	'',
+	"399c0eb4-e017-47cc-a56f-56c838d1b0d4",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("e7f712e9-37f2-4461-8121-f28a69630725",
+	"00000000-0000-0000-0000-000000000000",
+	'inst_ref<Find_Single>',
+	'',
+	'',
+	'../Find_and_Sets.xtuml');
+INSERT INTO O_TPARM
+	VALUES ("7e6edf60-9e32-4c8b-abc0-7d93af32da49",
+	"81a9cfae-eb03-4c4c-a885-5928845eb998",
+	'Returned_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"a8d1beaa-1643-431d-a946-35f2fb9e7404",
+	'');
+INSERT INTO O_TFR
+	VALUES ("0c875d92-62dd-4e10-905d-328253e0ef32",
+	"0236923f-fa2e-4f66-962e-d5c15c55de77",
+	'do_find_only',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'#------------------------------------------------------------------------#
+# Find-only
+#------------------------------------------------------------------------#
+
+[Host] = WAW1:What_Env[]
+Test = Test_Number
+
+#------------------------------------------------------------------------#
+# Test 1 - FIND-ONLY return the first instance of Object A found
+#------------------------------------------------------------------------#
+
+   [] = RPT1:Start_Test[Test, "1103-0000-01-0546", "Find and Sets", "objFSI find only","Return first inst with find-only"]
+   [] = RPT8:Specify_Requid [Test, "1241-0000-01-1208"]
+
+   Has_Failed = FALSE
+
+   # Perform the test
+
+   if Host = "ISIM" then
+      [] = RPT4:Test_Unsupported[Test]
+   else
+      an_instanceA = find-only Object_A
+
+      # Check that an instance is returned
+      if (an_instanceA = UNDEFINED) then
+         [] = RPT3:Test_Failed["objFSI find only", Test,-4]
+         Has_Failed = TRUE
+      else
+         temp = an_instanceFSI.ResultFSI + 10
+         an_instanceFSI.ResultFSI = temp
+         [] = RPT2:Test_Passed["objFSI find only", Test,temp]
+      endif
+
+   endif
+
+# End Test 1
+
+
+#------------------------------------------------------------------------#
+# Test 2 - FIND-ONLY WHERE <single condition>, an instance is returned
+#------------------------------------------------------------------------#
+
+   [Test] = Find_and_Sets1::Increment[Test]
+
+   [] = RPT1:Start_Test[Test, "1103-0000-01-0547", "Find and Sets", "objFSI find only","a condition an instance ret"]
+   [] = RPT8:Specify_Requid [Test, "1241-0000-01-1209"]
+
+   Has_Failed = FALSE
+
+   # Perform the test
+   an_instanceA = find-only Object_A where idA = 4
+
+   # Check that an instance is returned
+   if (an_instanceA = UNDEFINED)|(an_instanceA.idA != 4)then
+      [] = RPT3:Test_Failed["objFSI find only", Test,-1]
+      Has_Failed = TRUE
+   else
+
+      if an_instanceFSI = UNDEFINED then
+         Has_Failed = TRUE
+         [] = RPT3:Test_Failed["objFSI", Test, -2]
+      else
+         temp = an_instanceFSI.ResultFSI + 10
+         an_instanceFSI.ResultFSI = temp
+         [] = RPT2:Test_Passed["objFSI find only", Test,temp]
+      endif
+
+   endif
+
+# End Test 2
+
+#------------------------------------------------------------------------#
+# Test 3 -  FIND-ONLY WHERE <only one condition fulfilled>, an instance 
+#           is returned
+#------------------------------------------------------------------------#
+
+   [Test] = Find_and_Sets1::Increment[Test]
+
+   [] = RPT1:Start_Test[Test, "1103-0000-01-0547", "Find and Sets", "objFSI find only","a condition an instance ret"]
+   [] = RPT8:Specify_Requid [Test, "1241-0000-01-1209"]
+
+   Has_Failed = FALSE
+
+   # Perform the test
+   an_instanceA = find-only Object_A where IntegerA = 666 | idA = 5
+
+   # Check that an instance is returned
+   if (an_instanceA = UNDEFINED)|(an_instanceA.idA != 5) then
+      [] = RPT3:Test_Failed["objFSI find only", Test,-2]
+      Has_Failed = TRUE
+   else
+      temp = an_instanceFSI.ResultFSI + 10
+      an_instanceFSI.ResultFSI = temp
+      [] = RPT2:Test_Passed["objFSI find only", Test,temp]
+   endif
+
+# End Test 3
+
+#------------------------------------------------------------------------#
+# Test 4 - FIND-ONLY WHERE <multiple conditions fulfilled>, an instance 
+#          is returned
+#------------------------------------------------------------------------#
+
+   [Test] = Find_and_Sets1::Increment[Test]
+
+   [] = RPT1:Start_Test[Test, "1103-0000-01-0547", "Find and Sets", "objFSI find only","mult conditions 1 instance ret"]
+   [] = RPT8:Specify_Requid [Test, "1241-0000-01-1209"]
+
+   Has_Failed = FALSE
+
+   # Perform the test
+   an_instanceA = find-only Object_A where IntegerA = 6 | idA = 6
+
+   # Check that an instance is returned
+   if (an_instanceA = UNDEFINED)|(an_instanceA.idA != 6) then
+      [] = RPT3:Test_Failed["objFSI find only", Test,-3]
+      Has_Failed = TRUE
+   else
+      temp = an_instanceFSI.ResultFSI + 10
+      an_instanceFSI.ResultFSI = temp
+      [] = RPT2:Test_Passed["objFSI find only", Test,temp]
+   endif
+
+# End Test 4
+
+#------------------------------------------------------------------------#
+
+Returned_Number = Test',
+	3,
+	'',
+	"81a9cfae-eb03-4c4c-a885-5928845eb998",
+	2,
+	2);
+INSERT INTO O_TPARM
+	VALUES ("900b5aca-f430-4057-8db6-072a6d239d2f",
+	"0c875d92-62dd-4e10-905d-328253e0ef32",
+	'Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("eba5f536-1f3e-439d-8830-619a960add1c",
+	"0c875d92-62dd-4e10-905d-328253e0ef32",
+	'an_instanceFSI',
+	"e7f712e9-37f2-4461-8121-f28a69630725",
+	0,
+	'',
+	"900b5aca-f430-4057-8db6-072a6d239d2f",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("704e4ef9-0b57-4da6-b95b-04643e9452ac",
+	"0c875d92-62dd-4e10-905d-328253e0ef32",
+	'Returned_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"eba5f536-1f3e-439d-8830-619a960add1c",
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("2c7bc0ee-a46b-450a-a81f-413219a8ed74",
+	"0236923f-fa2e-4f66-962e-d5c15c55de77");
+INSERT INTO O_BATTR
+	VALUES ("2c7bc0ee-a46b-450a-a81f-413219a8ed74",
+	"0236923f-fa2e-4f66-962e-d5c15c55de77");
+INSERT INTO O_ATTR
+	VALUES ("2c7bc0ee-a46b-450a-a81f-413219a8ed74",
+	"0236923f-fa2e-4f66-962e-d5c15c55de77",
+	"00000000-0000-0000-0000-000000000000",
+	'idFSI',
+	' Preferred identifier.
+',
+	'',
+	'idFSI',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("fca25f7e-9aa8-40af-8b41-bc2e33772c16",
+	"0236923f-fa2e-4f66-962e-d5c15c55de77");
+INSERT INTO O_BATTR
+	VALUES ("fca25f7e-9aa8-40af-8b41-bc2e33772c16",
+	"0236923f-fa2e-4f66-962e-d5c15c55de77");
+INSERT INTO O_ATTR
+	VALUES ("fca25f7e-9aa8-40af-8b41-bc2e33772c16",
+	"0236923f-fa2e-4f66-962e-d5c15c55de77",
+	"2c7bc0ee-a46b-450a-a81f-413219a8ed74",
+	'ResultFSI',
+	' This attribute is manipulated to indicate that the required operation was successful.
+',
+	'',
+	'ResultFSI',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("d2308f8f-c980-494b-91f0-fe3b91b6430d",
+	"0236923f-fa2e-4f66-962e-d5c15c55de77");
+INSERT INTO O_BATTR
+	VALUES ("d2308f8f-c980-494b-91f0-fe3b91b6430d",
+	"0236923f-fa2e-4f66-962e-d5c15c55de77");
+INSERT INTO O_ATTR
+	VALUES ("d2308f8f-c980-494b-91f0-fe3b91b6430d",
+	"0236923f-fa2e-4f66-962e-d5c15c55de77",
+	"fca25f7e-9aa8-40af-8b41-bc2e33772c16",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"0236923f-fa2e-4f66-962e-d5c15c55de77");
+INSERT INTO O_OIDA
+	VALUES ("2c7bc0ee-a46b-450a-a81f-413219a8ed74",
+	"0236923f-fa2e-4f66-962e-d5c15c55de77",
+	0,
+	'idFSI');
+INSERT INTO O_ID
+	VALUES (1,
+	"0236923f-fa2e-4f66-962e-d5c15c55de77");
+INSERT INTO O_ID
+	VALUES (2,
+	"0236923f-fa2e-4f66-962e-d5c15c55de77");
+INSERT INTO PE_PE
+	VALUES ("0236923f-fa2e-4f66-962e-d5c15c55de77",
+	1,
+	"df782c0d-01d7-4cdb-867d-1f1ce5d60cb4",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("df782c0d-01d7-4cdb-867d-1f1ce5d60cb4",
+	"00000000-0000-0000-0000-000000000000",
+	"02965de1-ecbb-4bde-9a3e-3ac7d424e4a6",
+	'Find_and_Sets',
+	'',
+	0,
+	'../Find_and_Sets.xtuml');

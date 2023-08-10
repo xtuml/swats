@@ -1,0 +1,175 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("0ce0efb7-90cc-4a49-a183-9d05631b4d46",
+	"00000000-0000-0000-0000-000000000000",
+	"02965de1-ecbb-4bde-9a3e-3ac7d424e4a6",
+	'types',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("e2b3da32-325d-4caf-8299-c23302f7489f",
+	112,
+	"0ce0efb7-90cc-4a49-a183-9d05631b4d46",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	200,
+	150,
+	0,
+	'',
+	'Find_and_Sets::Find_and_Sets::Find_and_Sets::types');
+INSERT INTO GD_GE
+	VALUES ("80868d4e-1670-4ca4-9121-e4b0f4e652d2",
+	"e2b3da32-325d-4caf-8299-c23302f7489f",
+	"8a72c3a5-77c0-4569-846a-ca7413db9181",
+	101,
+	0,
+	'Find_and_Sets::Find_and_Sets::Find_and_Sets::types::Simple_Structure_Type');
+INSERT INTO GD_SHP
+	VALUES ("80868d4e-1670-4ca4-9121-e4b0f4e652d2");
+INSERT INTO GD_NCS
+	VALUES ("80868d4e-1670-4ca4-9121-e4b0f4e652d2");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"80868d4e-1670-4ca4-9121-e4b0f4e652d2");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"80868d4e-1670-4ca4-9121-e4b0f4e652d2",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("80868d4e-1670-4ca4-9121-e4b0f4e652d2",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_GE
+	VALUES ("5b24442f-7ff9-4f42-8aef-1a0f43bafe48",
+	"e2b3da32-325d-4caf-8299-c23302f7489f",
+	"f07e6cd0-7d87-4b01-b1a6-6a1f9bcf9a7f",
+	101,
+	0,
+	'Find_and_Sets::Find_and_Sets::Find_and_Sets::types::Complex_Structure_Type');
+INSERT INTO GD_SHP
+	VALUES ("5b24442f-7ff9-4f42-8aef-1a0f43bafe48");
+INSERT INTO GD_NCS
+	VALUES ("5b24442f-7ff9-4f42-8aef-1a0f43bafe48");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"5b24442f-7ff9-4f42-8aef-1a0f43bafe48");
+INSERT INTO DIM_GE
+	VALUES (220.000000,
+	0.000000,
+	"5b24442f-7ff9-4f42-8aef-1a0f43bafe48",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("5b24442f-7ff9-4f42-8aef-1a0f43bafe48",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_DIA
+	VALUES ("e2b3da32-325d-4caf-8299-c23302f7489f",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_DT
+	VALUES ("8a72c3a5-77c0-4569-846a-ca7413db9181",
+	"00000000-0000-0000-0000-000000000000",
+	'Simple_Structure_Type',
+	'',
+	'');
+INSERT INTO S_SDT
+	VALUES ("8a72c3a5-77c0-4569-846a-ca7413db9181");
+INSERT INTO S_MBR
+	VALUES ("e6d9ca2c-94d2-435a-a4c2-33db4560c207",
+	'an_integer_of_structure',
+	'',
+	"8a72c3a5-77c0-4569-846a-ca7413db9181",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_MBR
+	VALUES ("50730844-8f89-4964-beda-8b193793a087",
+	'a_real_of_structure',
+	'',
+	"8a72c3a5-77c0-4569-846a-ca7413db9181",
+	"ba5eda7a-def5-0000-0000-000000000003",
+	"e6d9ca2c-94d2-435a-a4c2-33db4560c207",
+	'');
+INSERT INTO S_MBR
+	VALUES ("6cc1047c-6fc6-4c25-a2da-56e66f87d854",
+	'some_text_of_structure',
+	'',
+	"8a72c3a5-77c0-4569-846a-ca7413db9181",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	"50730844-8f89-4964-beda-8b193793a087",
+	'');
+INSERT INTO PE_PE
+	VALUES ("8a72c3a5-77c0-4569-846a-ca7413db9181",
+	1,
+	"0ce0efb7-90cc-4a49-a183-9d05631b4d46",
+	"00000000-0000-0000-0000-000000000000",
+	3);
+INSERT INTO S_DT
+	VALUES ("f07e6cd0-7d87-4b01-b1a6-6a1f9bcf9a7f",
+	"00000000-0000-0000-0000-000000000000",
+	'Complex_Structure_Type',
+	'',
+	'');
+INSERT INTO S_SDT
+	VALUES ("f07e6cd0-7d87-4b01-b1a6-6a1f9bcf9a7f");
+INSERT INTO S_MBR
+	VALUES ("39d5f47e-bddf-496f-af81-87deadd12cfa",
+	'Number_Of_Simple_Structures',
+	'',
+	"f07e6cd0-7d87-4b01-b1a6-6a1f9bcf9a7f",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_MBR
+	VALUES ("2a27cd29-5bed-4041-9b2f-9c8e03710826",
+	'list_of_structures',
+	'',
+	"f07e6cd0-7d87-4b01-b1a6-6a1f9bcf9a7f",
+	"8a72c3a5-77c0-4569-846a-ca7413db9181",
+	"39d5f47e-bddf-496f-af81-87deadd12cfa",
+	'');
+INSERT INTO PE_PE
+	VALUES ("f07e6cd0-7d87-4b01-b1a6-6a1f9bcf9a7f",
+	1,
+	"0ce0efb7-90cc-4a49-a183-9d05631b4d46",
+	"00000000-0000-0000-0000-000000000000",
+	3);
+INSERT INTO PE_PE
+	VALUES ("0ce0efb7-90cc-4a49-a183-9d05631b4d46",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"92631859-5fea-42d1-9b79-5f4049127189",
+	7);
+INSERT INTO C_C_PROXY
+	VALUES ("92631859-5fea-42d1-9b79-5f4049127189",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'Find_and_Sets',
+	' Tests finds and set manipulations.
+',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Find_and_Sets',
+	'../Find_and_Sets.xtuml');
+INSERT INTO S_SYS_PROXY
+	VALUES ("02965de1-ecbb-4bde-9a3e-3ac7d424e4a6",
+	'Find_and_Sets',
+	1,
+	'../../../Find_and_Sets.xtuml');

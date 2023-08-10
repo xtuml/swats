@@ -1,0 +1,103 @@
+-- BP 7.1.6 content: InstanceStateMachine syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO SM_ISM
+	VALUES ("ee44f7fa-070a-499a-b4d1-f00d88a44da7",
+	"6393262c-31df-421f-bc7e-179cd3eb415e");
+INSERT INTO SM_SM
+	VALUES ("ee44f7fa-070a-499a-b4d1-f00d88a44da7",
+	'',
+	0);
+INSERT INTO SM_MOORE
+	VALUES ("ee44f7fa-070a-499a-b4d1-f00d88a44da7");
+INSERT INTO SM_LEVT
+	VALUES ("5bd20dc3-6d12-4a0d-bc8f-b8cf4454aee1",
+	"ee44f7fa-070a-499a-b4d1-f00d88a44da7",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_SEVT
+	VALUES ("5bd20dc3-6d12-4a0d-bc8f-b8cf4454aee1",
+	"ee44f7fa-070a-499a-b4d1-f00d88a44da7",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_EVT
+	VALUES ("5bd20dc3-6d12-4a0d-bc8f-b8cf4454aee1",
+	"ee44f7fa-070a-499a-b4d1-f00d88a44da7",
+	"00000000-0000-0000-0000-000000000000",
+	1,
+	'Fault',
+	0,
+	'',
+	'objFM1',
+	'');
+INSERT INTO SM_LEVT
+	VALUES ("9681ba8c-76f0-47a1-b05b-fcf8ef5b97e4",
+	"ee44f7fa-070a-499a-b4d1-f00d88a44da7",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_SEVT
+	VALUES ("9681ba8c-76f0-47a1-b05b-fcf8ef5b97e4",
+	"ee44f7fa-070a-499a-b4d1-f00d88a44da7",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_EVT
+	VALUES ("9681ba8c-76f0-47a1-b05b-fcf8ef5b97e4",
+	"ee44f7fa-070a-499a-b4d1-f00d88a44da7",
+	"00000000-0000-0000-0000-000000000000",
+	2,
+	'Finished',
+	0,
+	'',
+	'objFM2',
+	'');
+INSERT INTO SM_LEVT
+	VALUES ("22e7be72-9efb-4e8b-a88d-915a73bd9dc7",
+	"ee44f7fa-070a-499a-b4d1-f00d88a44da7",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_SEVT
+	VALUES ("22e7be72-9efb-4e8b-a88d-915a73bd9dc7",
+	"ee44f7fa-070a-499a-b4d1-f00d88a44da7",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_EVT
+	VALUES ("22e7be72-9efb-4e8b-a88d-915a73bd9dc7",
+	"ee44f7fa-070a-499a-b4d1-f00d88a44da7",
+	"00000000-0000-0000-0000-000000000000",
+	3,
+	'Start',
+	0,
+	'',
+	'objFM3',
+	'');
+INSERT INTO GD_MD
+	VALUES ("be87289f-a6d9-4546-9d64-747191770dfa",
+	8,
+	"ee44f7fa-070a-499a-b4d1-f00d88a44da7",
+	40,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'Find_and_Sets::Find_and_Sets::Find_and_Sets::Find_and_Sets::Find_Many::Instance State Machine');
+INSERT INTO DIM_DIA
+	VALUES ("be87289f-a6d9-4546-9d64-747191770dfa",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_OBJ_PROXY
+	VALUES ("6393262c-31df-421f-bc7e-179cd3eb415e",
+	'Find_Many',
+	9,
+	'objFM',
+	' This object verifies the statements:
+ 
+ 	find
+ 	find-all
+',
+	"00000000-0000-0000-0000-000000000000",
+	'../Find_Many.xtuml');

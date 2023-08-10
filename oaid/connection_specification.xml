@@ -1,0 +1,14 @@
+<!-- Connection specification file for TACS -->
+<opt>
+<!-- The attributes Source_Id & Destination_Id are not used by WACA -->
+<!-- The following constants have been included merely to aid readability of this file -->
+<!-- CONSTANTS -->
+   <CONSTANT Name="UNIT_NUMBER_1"               Value="1"  />
+   <CONSTANT Name="UNIT_NUMBER_2"               Value="2"  />
+   
+<!-- CONSTANTS -->
+<!--  -->
+<CONNECTION Connection_Identifier="1" Name="Clock_Message" Source_Id="UNIT_NUMBER_2" Destination_Id="UNIT_NUMBER_1" Interface_Port_Number="0xFFF" Ip_Address="ABC" >
+	<INTERFACE Fullname="Clock" Identifier="1" />
+</CONNECTION>
+</opt>

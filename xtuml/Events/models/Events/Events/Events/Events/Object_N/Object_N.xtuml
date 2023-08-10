@@ -1,0 +1,185 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("6b1d9c3e-d4af-4189-9106-7e9367b8352c",
+	'Object_N',
+	12,
+	'objN',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("6da4409a-bde6-40a6-ac73-3b9a5cba9090",
+	"6b1d9c3e-d4af-4189-9106-7e9367b8352c",
+	'GO_Creation_Service',
+	' This Service is automatically created for a Generic Class. It is invoked to create the counterpart Generic Class when a Specific Class is created. Only the action ASL is editable.
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'',
+	3,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	1);
+INSERT INTO O_TPARM
+	VALUES ("8623c8bf-380e-4bb7-a5d3-1b3083a2db85",
+	"6da4409a-bde6-40a6-ac73-3b9a5cba9090",
+	'Specific_Type',
+	"a6158837-27cb-48e9-ba49-95b922b4a173",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("a6158837-27cb-48e9-ba49-95b922b4a173",
+	"00000000-0000-0000-0000-000000000000",
+	'Specific_Classes_JTT',
+	' List of possible Specific Counterparts to Generic Class
+',
+	'',
+	'../../types/types.xtuml');
+INSERT INTO O_TPARM
+	VALUES ("fcfcccb2-b696-41be-ba1d-43d9b47e4b66",
+	"6da4409a-bde6-40a6-ac73-3b9a5cba9090",
+	'Created_Generic_Object',
+	"3a0ba8d9-39b2-40c6-88ca-9d9291d09ab9",
+	1,
+	'',
+	"8623c8bf-380e-4bb7-a5d3-1b3083a2db85",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("3a0ba8d9-39b2-40c6-88ca-9d9291d09ab9",
+	"00000000-0000-0000-0000-000000000000",
+	'inst_ref<Object_N>',
+	'',
+	'',
+	'../Events.xtuml');
+INSERT INTO O_TFR
+	VALUES ("30fdba80-d074-48c9-9c02-f454f84319db",
+	"6b1d9c3e-d4af-4189-9106-7e9367b8352c",
+	'GO_Deletion_Service',
+	' This Service is automatically created for a Generic Class. It is invoked to delete the counterpart Generic Class when a Specific Class is deleted. Only the action ASL is editable.
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	3,
+	'',
+	"6da4409a-bde6-40a6-ac73-3b9a5cba9090",
+	0,
+	2);
+INSERT INTO O_NBATTR
+	VALUES ("3db820d4-4218-41e6-bfdd-93723c45e5ee",
+	"6b1d9c3e-d4af-4189-9106-7e9367b8352c");
+INSERT INTO O_BATTR
+	VALUES ("3db820d4-4218-41e6-bfdd-93723c45e5ee",
+	"6b1d9c3e-d4af-4189-9106-7e9367b8352c");
+INSERT INTO O_ATTR
+	VALUES ("3db820d4-4218-41e6-bfdd-93723c45e5ee",
+	"6b1d9c3e-d4af-4189-9106-7e9367b8352c",
+	"00000000-0000-0000-0000-000000000000",
+	'Reference_N',
+	'',
+	'',
+	'Reference_N',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("003af110-f76b-4d68-8192-fff23ebebd2c",
+	"6b1d9c3e-d4af-4189-9106-7e9367b8352c");
+INSERT INTO O_BATTR
+	VALUES ("003af110-f76b-4d68-8192-fff23ebebd2c",
+	"6b1d9c3e-d4af-4189-9106-7e9367b8352c");
+INSERT INTO O_ATTR
+	VALUES ("003af110-f76b-4d68-8192-fff23ebebd2c",
+	"6b1d9c3e-d4af-4189-9106-7e9367b8352c",
+	"7c1761ec-a3f6-40c0-b9d0-db7bc213812f",
+	'Result_N',
+	'',
+	'',
+	'Result_N',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_REF
+	VALUES ("6b1d9c3e-d4af-4189-9106-7e9367b8352c",
+	"8a8809a3-8c06-4c51-9c46-f0c8d8e36ac1",
+	0,
+	"434d55e5-9d26-4723-82e0-70f361310b54",
+	"9068172c-0997-4cf1-aa08-334b2d022d3a",
+	"6d2bc142-b264-4bce-a01d-0d579260c73c",
+	"a8c4d007-a43e-45f4-9734-a4b85f99643e",
+	"7c1761ec-a3f6-40c0-b9d0-db7bc213812f",
+	"fed2559f-09d6-4b11-bffe-9c1363d626ca",
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Object_M',
+	'Reference_M',
+	'R2');
+INSERT INTO R_RGO_PROXY
+	VALUES ("6b1d9c3e-d4af-4189-9106-7e9367b8352c",
+	"9068172c-0997-4cf1-aa08-334b2d022d3a",
+	"6d2bc142-b264-4bce-a01d-0d579260c73c",
+	'../Events.xtuml');
+INSERT INTO O_RTIDA_PROXY
+	VALUES ("434d55e5-9d26-4723-82e0-70f361310b54",
+	"8a8809a3-8c06-4c51-9c46-f0c8d8e36ac1",
+	0,
+	"9068172c-0997-4cf1-aa08-334b2d022d3a",
+	"a8c4d007-a43e-45f4-9734-a4b85f99643e",
+	'../Events.xtuml');
+INSERT INTO O_RATTR
+	VALUES ("7c1761ec-a3f6-40c0-b9d0-db7bc213812f",
+	"6b1d9c3e-d4af-4189-9106-7e9367b8352c",
+	"434d55e5-9d26-4723-82e0-70f361310b54",
+	"8a8809a3-8c06-4c51-9c46-f0c8d8e36ac1",
+	0,
+	'Reference_M');
+INSERT INTO O_BATTR_PROXY
+	VALUES ("434d55e5-9d26-4723-82e0-70f361310b54",
+	"8a8809a3-8c06-4c51-9c46-f0c8d8e36ac1",
+	'../Object_M/Object_M.xtuml');
+INSERT INTO O_ATTR
+	VALUES ("7c1761ec-a3f6-40c0-b9d0-db7bc213812f",
+	"6b1d9c3e-d4af-4189-9106-7e9367b8352c",
+	"3db820d4-4218-41e6-bfdd-93723c45e5ee",
+	'Reference_M',
+	'',
+	'',
+	'Reference_M',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000007",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"6b1d9c3e-d4af-4189-9106-7e9367b8352c");
+INSERT INTO O_OIDA
+	VALUES ("7c1761ec-a3f6-40c0-b9d0-db7bc213812f",
+	"6b1d9c3e-d4af-4189-9106-7e9367b8352c",
+	0,
+	'Reference_M');
+INSERT INTO O_ID
+	VALUES (1,
+	"6b1d9c3e-d4af-4189-9106-7e9367b8352c");
+INSERT INTO O_ID
+	VALUES (2,
+	"6b1d9c3e-d4af-4189-9106-7e9367b8352c");
+INSERT INTO PE_PE
+	VALUES ("6b1d9c3e-d4af-4189-9106-7e9367b8352c",
+	1,
+	"a9a21ab3-b305-417c-89c1-c9f52915c70b",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("a9a21ab3-b305-417c-89c1-c9f52915c70b",
+	"00000000-0000-0000-0000-000000000000",
+	"9b3c9b37-3527-4c3a-8648-5c925cc26549",
+	'Events',
+	'',
+	0,
+	'../Events.xtuml');

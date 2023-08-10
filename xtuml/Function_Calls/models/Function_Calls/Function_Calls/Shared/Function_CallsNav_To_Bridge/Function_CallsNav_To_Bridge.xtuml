@@ -1,0 +1,147 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("06f36a36-d8b1-4619-bf5f-4910084bc859",
+	"00000000-0000-0000-0000-000000000000",
+	'Function_CallsNav_To_Bridge',
+	'');
+INSERT INTO C_EP
+	VALUES ("c0486896-4702-4cd2-bb11-3754947cf7d7",
+	"06f36a36-d8b1-4619-bf5f-4910084bc859",
+	0,
+	'Big_Bridge_Navigation',
+	'',
+	1);
+INSERT INTO C_IO
+	VALUES ("c0486896-4702-4cd2-bb11-3754947cf7d7",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'Big_Bridge_Navigation',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("f04a52ca-623b-4946-8288-9c570660f816",
+	"c0486896-4702-4cd2-bb11-3754947cf7d7",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'Test',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("e4059d8f-120c-4813-95b2-24622248d447",
+	"06f36a36-d8b1-4619-bf5f-4910084bc859",
+	0,
+	'Call_Domain_Sync_Service',
+	'',
+	2);
+INSERT INTO C_IO
+	VALUES ("e4059d8f-120c-4813-95b2-24622248d447",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'Call_Domain_Sync_Service',
+	'',
+	0,
+	'',
+	"c0486896-4702-4cd2-bb11-3754947cf7d7");
+INSERT INTO C_PP
+	VALUES ("233436ff-0fbb-46ef-8a05-e134a8197de4",
+	"e4059d8f-120c-4813-95b2-24622248d447",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'Test',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("16107f70-a938-4433-9f73-91db4d0e1276",
+	"e4059d8f-120c-4813-95b2-24622248d447",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'InputValue1',
+	'',
+	0,
+	'',
+	"233436ff-0fbb-46ef-8a05-e134a8197de4");
+INSERT INTO C_PP
+	VALUES ("88305d98-097f-4a5a-8fba-5cb1b9964149",
+	"e4059d8f-120c-4813-95b2-24622248d447",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'InputValue2',
+	'',
+	0,
+	'',
+	"16107f70-a938-4433-9f73-91db4d0e1276");
+INSERT INTO C_PP
+	VALUES ("028f09ef-afea-4aa2-b69b-3ebb16985cfe",
+	"e4059d8f-120c-4813-95b2-24622248d447",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'InputValue3',
+	'',
+	0,
+	'',
+	"88305d98-097f-4a5a-8fba-5cb1b9964149");
+INSERT INTO C_EP
+	VALUES ("de2e77b0-eb77-413e-ab2d-dfd753630c2d",
+	"06f36a36-d8b1-4619-bf5f-4910084bc859",
+	0,
+	'Call_Object_Sync_Service',
+	'',
+	3);
+INSERT INTO C_IO
+	VALUES ("de2e77b0-eb77-413e-ab2d-dfd753630c2d",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'Call_Object_Sync_Service',
+	'',
+	0,
+	'',
+	"e4059d8f-120c-4813-95b2-24622248d447");
+INSERT INTO C_PP
+	VALUES ("1e50a8b9-b22c-4531-af1f-4213110ee5e5",
+	"de2e77b0-eb77-413e-ab2d-dfd753630c2d",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'Test',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("58a02b32-a07c-42a1-99be-2e7c98366093",
+	"de2e77b0-eb77-413e-ab2d-dfd753630c2d",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Text_Input',
+	'',
+	0,
+	'',
+	"1e50a8b9-b22c-4531-af1f-4213110ee5e5");
+INSERT INTO C_PP
+	VALUES ("a3c9f992-9d91-49af-8ddf-f0c21a34ddec",
+	"de2e77b0-eb77-413e-ab2d-dfd753630c2d",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'The_Integer',
+	'',
+	0,
+	'',
+	"58a02b32-a07c-42a1-99be-2e7c98366093");
+INSERT INTO C_PP
+	VALUES ("ae3616bf-b660-4a96-a3b2-5b7c2d3d2a27",
+	"de2e77b0-eb77-413e-ab2d-dfd753630c2d",
+	"ba5eda7a-def5-0000-0000-000000000003",
+	'The_Real',
+	'',
+	0,
+	'',
+	"a3c9f992-9d91-49af-8ddf-f0c21a34ddec");
+INSERT INTO PE_PE
+	VALUES ("06f36a36-d8b1-4619-bf5f-4910084bc859",
+	1,
+	"048ed5c1-7a67-4ae7-9333-9fa1918d7a6f",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("048ed5c1-7a67-4ae7-9333-9fa1918d7a6f",
+	"00000000-0000-0000-0000-000000000000",
+	"b0ecd0cc-290d-4c8d-b44d-a65fc69bd1af",
+	'Shared',
+	'',
+	0,
+	'../Shared.xtuml');

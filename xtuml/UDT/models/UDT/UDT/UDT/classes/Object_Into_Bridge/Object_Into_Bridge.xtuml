@@ -1,0 +1,124 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("3806520c-7d8b-4b18-809d-ad8a2d4cbcd4",
+	'Object_Into_Bridge',
+	3,
+	'OIB',
+	' Pass the instance handle of this object into a bridge
+',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("dc8467c1-31ac-4040-a18f-cde613ee01e4",
+	"3806520c-7d8b-4b18-809d-ad8a2d4cbcd4");
+INSERT INTO O_BATTR
+	VALUES ("dc8467c1-31ac-4040-a18f-cde613ee01e4",
+	"3806520c-7d8b-4b18-809d-ad8a2d4cbcd4");
+INSERT INTO O_ATTR
+	VALUES ("dc8467c1-31ac-4040-a18f-cde613ee01e4",
+	"3806520c-7d8b-4b18-809d-ad8a2d4cbcd4",
+	"00000000-0000-0000-0000-000000000000",
+	'Unique_Identifier',
+	'',
+	'',
+	'Unique_Identifier',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("6b0802c8-d3fd-4d2a-aff9-163545276eaf",
+	"3806520c-7d8b-4b18-809d-ad8a2d4cbcd4");
+INSERT INTO O_BATTR
+	VALUES ("6b0802c8-d3fd-4d2a-aff9-163545276eaf",
+	"3806520c-7d8b-4b18-809d-ad8a2d4cbcd4");
+INSERT INTO O_ATTR
+	VALUES ("6b0802c8-d3fd-4d2a-aff9-163545276eaf",
+	"3806520c-7d8b-4b18-809d-ad8a2d4cbcd4",
+	"dc8467c1-31ac-4040-a18f-cde613ee01e4",
+	'A_Number',
+	'',
+	'',
+	'A_Number',
+	0,
+	"6fb71944-8ece-48f5-9c3e-b07a99027fcc",
+	'',
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("6fb71944-8ece-48f5-9c3e-b07a99027fcc",
+	"00000000-0000-0000-0000-000000000000",
+	'Subset_1_Of_Integer',
+	'',
+	'',
+	'../../types/types.xtuml');
+INSERT INTO O_NBATTR
+	VALUES ("a520f6e2-b3b1-4b53-b07f-a8d85f1296a2",
+	"3806520c-7d8b-4b18-809d-ad8a2d4cbcd4");
+INSERT INTO O_BATTR
+	VALUES ("a520f6e2-b3b1-4b53-b07f-a8d85f1296a2",
+	"3806520c-7d8b-4b18-809d-ad8a2d4cbcd4");
+INSERT INTO O_ATTR
+	VALUES ("a520f6e2-b3b1-4b53-b07f-a8d85f1296a2",
+	"3806520c-7d8b-4b18-809d-ad8a2d4cbcd4",
+	"6b0802c8-d3fd-4d2a-aff9-163545276eaf",
+	'Some_Enumeration',
+	'',
+	'',
+	'Some_Enumeration',
+	0,
+	"7b21be71-92d0-4bd5-9ce6-80d56a7ca3cf",
+	'',
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("7b21be71-92d0-4bd5-9ce6-80d56a7ca3cf",
+	"00000000-0000-0000-0000-000000000000",
+	'Simple_Enumeration_Type',
+	'',
+	'',
+	'../../../Shared/Shared.xtuml');
+INSERT INTO O_NBATTR
+	VALUES ("d199a8de-652a-46dc-b5a3-623c4642c75c",
+	"3806520c-7d8b-4b18-809d-ad8a2d4cbcd4");
+INSERT INTO O_BATTR
+	VALUES ("d199a8de-652a-46dc-b5a3-623c4642c75c",
+	"3806520c-7d8b-4b18-809d-ad8a2d4cbcd4");
+INSERT INTO O_ATTR
+	VALUES ("d199a8de-652a-46dc-b5a3-623c4642c75c",
+	"3806520c-7d8b-4b18-809d-ad8a2d4cbcd4",
+	"a520f6e2-b3b1-4b53-b07f-a8d85f1296a2",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"3806520c-7d8b-4b18-809d-ad8a2d4cbcd4");
+INSERT INTO O_OIDA
+	VALUES ("dc8467c1-31ac-4040-a18f-cde613ee01e4",
+	"3806520c-7d8b-4b18-809d-ad8a2d4cbcd4",
+	0,
+	'Unique_Identifier');
+INSERT INTO O_ID
+	VALUES (1,
+	"3806520c-7d8b-4b18-809d-ad8a2d4cbcd4");
+INSERT INTO O_ID
+	VALUES (2,
+	"3806520c-7d8b-4b18-809d-ad8a2d4cbcd4");
+INSERT INTO PE_PE
+	VALUES ("3806520c-7d8b-4b18-809d-ad8a2d4cbcd4",
+	1,
+	"8cff59dd-44fc-48ce-8aff-7ae0bf398c4c",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("8cff59dd-44fc-48ce-8aff-7ae0bf398c4c",
+	"00000000-0000-0000-0000-000000000000",
+	"f9c4d01b-d0c3-46a0-ae22-2d7ee9b5042e",
+	'classes',
+	'',
+	0,
+	'../classes.xtuml');

@@ -1,0 +1,60 @@
+TAGS::TAGS,version,Component,7
+TAGS::TAGS::TAGS::Just_Multiple,multiple,Model Class,"2"
+TAGS::TAGS::TAGS::A_Multiple_Static_Object,multiple,Model Class,"2"
+TAGS::TAGS::TAGS::A_Multiple_Static_Object,static,Model Class,""
+TAGS::TAGS::TAGS::A_Single_Static_Object,singleton,Model Class,""
+TAGS::TAGS::TAGS::A_Single_Static_Object,static,Model Class,""
+TAGS::TAGS::TAGS::A_Static_Object,static,Model Class,""
+TAGS::TAGS::TAGS::Multiplicity_Single_Glitch_Recovery_Object,non_initialised,Model Class,""
+TAGS::TAGS::TAGS::Multiplicity_Single_Glitch_Recovery_Object,multiple,Model Class,"1"
+TAGS::TAGS::TAGS::Active_Tagged_Subtype_Three,multiple,Model Class,"1"
+TAGS::TAGS::TAGS::Active_Tagged_Subtype_Two,singleton,Model Class,""
+TAGS::TAGS::TAGS::Active_Tagged_Subtype_One,multiple,Model Class,"2"
+TAGS::TAGS::TAGS::Active_Tagged_Supertype,singleton,Model Class,""
+TAGS::TAGS::TAGS::Active_Tagged_Single_Assoc,multiple,Model Class,"9"
+TAGS::TAGS::TAGS::Active_Tagged_Many_Right,multiple,Model Class,"3"
+TAGS::TAGS::TAGS::Active_Tagged_Many_Left,multiple,Model Class,"3"
+TAGS::TAGS::TAGS::Multiplicity_Glitch_Recovery,non_initialised,Model Class,""
+TAGS::TAGS::TAGS::Multiplicity_Glitch_Recovery,multiple,Model Class,"3"
+TAGS::TAGS::TAGS::Singleton_Glitch_Recovery,singleton,Model Class,""
+TAGS::TAGS::TAGS::Singleton_Glitch_Recovery,non_initialised,Model Class,""
+TAGS::TAGS::TAGS::Subtype_1,multiple,Model Class,"2"
+TAGS::TAGS::TAGS::Tagged_Many_Supertype,multiple,Model Class,"1"
+TAGS::TAGS::TAGS::Tagged_Single_Assoc,multiple,Model Class,"9"
+TAGS::TAGS::TAGS::Tagged_Many_Right,multiple,Model Class,"3"
+TAGS::TAGS::TAGS::Tagged_Many_Left,multiple,Model Class,"3"
+TAGS::TAGS::TAGS::Active_Tagged_Many_Objects,multiple,Model Class,"3"
+TAGS::TAGS::TAGS::Active_Tagged_Single_Object,singleton,Model Class,""
+TAGS::TAGS::TAGS::Many_Tagged_Objects,multiple,Model Class,"3"
+TAGS::TAGS::TAGS::Single_Tagged_Object,singleton,Model Class,"1"
+TAGS::TAGS::TAGS::A_Passive_Array_Of_Three_Objects,multiple,Model Class,"3"
+TAGS::TAGS::TAGS::An_Active_Array_Of_Three_Objects,multiple,Model Class,"3"
+TAGS::TAGS::TAGS::An_Active_Array_Of_One_Object,multiple,Model Class,"1"
+TAGS::TAGS::TAGS::A_Passive_Array_Of_One_Object,multiple,Model Class,"1"
+TAGS::TAGS::TAGS::A_Passive_Static_Object,singleton,Model Class,"1"
+TAGS::TAGS::TAGS::An_Active_Object,singleton,Model Class,"2"
+TAGS::TAGS::TAGS::R5,Class_B,Association,"Active_Tagged_Many_Right"
+TAGS::TAGS::TAGS::R5,Class_A,Association,"Active_Tagged_Many_Left"
+TAGS::TAGS::TAGS::R3,Class_B,Association,"Tagged_Many_Right"
+TAGS::TAGS::TAGS::R3,Class_A,Association,"Tagged_Many_Left"
+TAGS::TAGS::TAGS::R2,Class_B,Association,"Active_Tagged_Many_Objects"
+TAGS::TAGS::TAGS::R2,Class_A,Association,"Active_Tagged_Single_Object"
+TAGS::TAGS::TAGS::R1,Class_B,Association,"Many_Tagged_Objects"
+TAGS::TAGS::TAGS::R1,Class_A,Association,"Single_Tagged_Object"
+TAGS::TAGS::scenarios::void Perform_Static_Tests,scenario,Function,12
+TAGS::TAGS::scenarios::void Perform_Super_Sub_Tests,scenario,Function,11
+TAGS::TAGS::scenarios::void Perform_Many_To_Many_Navigations,scenario,Function,10
+TAGS::TAGS::scenarios::void Perform_Glitch_Recovery_Tests,scenario,Function,9
+TAGS::TAGS::scenarios::void Perform_Terminator_Tag_Tests,scenario,Function,8
+TAGS::TAGS::scenarios::void Perform_Single_To_Many_Navigations,scenario,Function,7
+TAGS::TAGS::scenarios::void Perform_Active_Array_Tests,scenario,Function,6
+TAGS::TAGS::scenarios::void Finish_TAGGED_Tests,scenario,Function,5
+TAGS::TAGS::scenarios::void Perform_Passive_Array_Tests,scenario,Function,4
+TAGS::TAGS::scenarios::void Perform_Active_Object_Tests,scenario,Function,3
+TAGS::TAGS::scenarios::void Perform_Passive_Static_Tests,scenario,Function,2
+TAGS::TAGS::scenarios::void Start_TAGGED_Tests,scenario,Function,1
+TAGS::TAGS::Tagged_Terminator,hand_coded,Port,""
+TAGS::TAGS::Tagged_Terminator::TAGSTagged_Terminator::void A_Tagged_Dummy_Terminator_Two(integer integer),hand_coded,Required Operation,""
+TAGS::TAGS::Tagged_Terminator::TAGSTagged_Terminator::void A_Tagged_Dummy_Terminator_One(integer integer),hand_coded,Required Operation,""
+TAGS::TAGS::Tagged_Terminator::TAGSTagged_Terminator::void A_Tagged_Project_Terminator(integer integer),hand_coded,Required Operation,"1"
+TAGS::TAGS::Tagged_Terminator::TAGSTagged_Terminator::void A_Tagged_Local_Terminator(integer integer),hand_coded,Required Operation,"1"

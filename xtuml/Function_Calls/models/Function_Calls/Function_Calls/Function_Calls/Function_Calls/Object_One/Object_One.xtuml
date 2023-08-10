@@ -1,0 +1,115 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("ee8547db-88c2-4325-9eb6-923a320c4acb",
+	'Object_One',
+	5,
+	'OBJONE',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("e0ccbb39-0355-4d45-affc-75f22a101d64",
+	"ee8547db-88c2-4325-9eb6-923a320c4acb",
+	'Get_From_Bridge',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'if Text_Input = "From Bridge" then
+
+   if Integer_Input = 100 then
+
+      if Real_Input = 99.9 then
+         [] = RPT2:Test_Passed["Object Sync from bridge", Test, 0]
+      else
+         [] = RPT3:Test_Failed["Object Sync from bridge", Test, -10]
+      endif
+
+   else
+      [] = RPT3:Test_Failed["Object Sync from bridge", Test, -20]
+   endif
+
+else
+   [] = RPT3:Test_Failed["Object Sync from bridge", Test, -30]
+endif',
+	3,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	2,
+	1);
+INSERT INTO O_TPARM
+	VALUES ("200c1230-cdf7-42de-90e2-9c1460f12161",
+	"e0ccbb39-0355-4d45-affc-75f22a101d64",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("7761f471-b990-4ceb-b550-ddc74a9b0396",
+	"e0ccbb39-0355-4d45-affc-75f22a101d64",
+	'Text_Input',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"200c1230-cdf7-42de-90e2-9c1460f12161",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("8c7e55ed-6079-462e-9cdd-9c6ff445342b",
+	"e0ccbb39-0355-4d45-affc-75f22a101d64",
+	'Integer_Input',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"7761f471-b990-4ceb-b550-ddc74a9b0396",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("7e22a065-1f01-4f38-a542-6373a80c3de3",
+	"e0ccbb39-0355-4d45-affc-75f22a101d64",
+	'Real_Input',
+	"ba5eda7a-def5-0000-0000-000000000003",
+	0,
+	'',
+	"8c7e55ed-6079-462e-9cdd-9c6ff445342b",
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("6a0ac487-6907-44f4-af36-ed28d72617c6",
+	"ee8547db-88c2-4325-9eb6-923a320c4acb");
+INSERT INTO O_BATTR
+	VALUES ("6a0ac487-6907-44f4-af36-ed28d72617c6",
+	"ee8547db-88c2-4325-9eb6-923a320c4acb");
+INSERT INTO O_ATTR
+	VALUES ("6a0ac487-6907-44f4-af36-ed28d72617c6",
+	"ee8547db-88c2-4325-9eb6-923a320c4acb",
+	"00000000-0000-0000-0000-000000000000",
+	'Attribute_One',
+	'',
+	'',
+	'Attribute_One',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"ee8547db-88c2-4325-9eb6-923a320c4acb");
+INSERT INTO O_ID
+	VALUES (1,
+	"ee8547db-88c2-4325-9eb6-923a320c4acb");
+INSERT INTO O_ID
+	VALUES (2,
+	"ee8547db-88c2-4325-9eb6-923a320c4acb");
+INSERT INTO PE_PE
+	VALUES ("ee8547db-88c2-4325-9eb6-923a320c4acb",
+	1,
+	"67e0f233-3dba-469b-862e-33c412acfc41",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("67e0f233-3dba-469b-862e-33c412acfc41",
+	"00000000-0000-0000-0000-000000000000",
+	"b0ecd0cc-290d-4c8d-b44d-a65fc69bd1af",
+	'Function_Calls',
+	'',
+	0,
+	'../Function_Calls.xtuml');

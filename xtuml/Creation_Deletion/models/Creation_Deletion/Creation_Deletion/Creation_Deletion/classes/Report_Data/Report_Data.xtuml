@@ -1,0 +1,75 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("e406704d-f3ed-455b-9b29-e86c9178ca17",
+	'Report_Data',
+	14,
+	'RD',
+	' This object shall be replicated in all domains existing within the Software Architecture Test Suite that use the Reporter Domain.
+',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("0b9b8a3d-ec08-4519-a620-bcfda4300b97",
+	"e406704d-f3ed-455b-9b29-e86c9178ca17");
+INSERT INTO O_BATTR
+	VALUES ("0b9b8a3d-ec08-4519-a620-bcfda4300b97",
+	"e406704d-f3ed-455b-9b29-e86c9178ca17");
+INSERT INTO O_ATTR
+	VALUES ("0b9b8a3d-ec08-4519-a620-bcfda4300b97",
+	"e406704d-f3ed-455b-9b29-e86c9178ca17",
+	"00000000-0000-0000-0000-000000000000",
+	'Report_Data_Unique_id',
+	'',
+	'',
+	'Report_Data_Unique_id',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("f87337b9-ada3-4d2d-b3fe-b51e015ac027",
+	"e406704d-f3ed-455b-9b29-e86c9178ca17");
+INSERT INTO O_BATTR
+	VALUES ("f87337b9-ada3-4d2d-b3fe-b51e015ac027",
+	"e406704d-f3ed-455b-9b29-e86c9178ca17");
+INSERT INTO O_ATTR
+	VALUES ("f87337b9-ada3-4d2d-b3fe-b51e015ac027",
+	"e406704d-f3ed-455b-9b29-e86c9178ca17",
+	"0b9b8a3d-ec08-4519-a620-bcfda4300b97",
+	'Reported_Domain_Number',
+	' Unique identifer for this domain as foar as the Reporter domain is concerned.
+',
+	'',
+	'Reported_Domain_Number',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"e406704d-f3ed-455b-9b29-e86c9178ca17");
+INSERT INTO O_OIDA
+	VALUES ("0b9b8a3d-ec08-4519-a620-bcfda4300b97",
+	"e406704d-f3ed-455b-9b29-e86c9178ca17",
+	0,
+	'Report_Data_Unique_id');
+INSERT INTO O_ID
+	VALUES (1,
+	"e406704d-f3ed-455b-9b29-e86c9178ca17");
+INSERT INTO O_ID
+	VALUES (2,
+	"e406704d-f3ed-455b-9b29-e86c9178ca17");
+INSERT INTO PE_PE
+	VALUES ("e406704d-f3ed-455b-9b29-e86c9178ca17",
+	1,
+	"c852afc7-98ac-4492-988b-0303d2b80eff",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("c852afc7-98ac-4492-988b-0303d2b80eff",
+	"00000000-0000-0000-0000-000000000000",
+	"10f28eec-2c10-4bed-b362-3203399c1025",
+	'classes',
+	'',
+	0,
+	'../classes.xtuml');

@@ -1,0 +1,59 @@
+Relationships::Relationships,version,Component,19
+Relationships::Relationships::Relationships::R32,Class_B,Association,"Sub_Sub_L6"
+Relationships::Relationships::Relationships::R32,Class_A,Association,"Object_K"
+Relationships::Relationships::Relationships::R23,Class_B,Association,"Ref_Att_ObjA"
+Relationships::Relationships::Relationships::R23,Class_A,Association,"Ref_Att_ObjA"
+Relationships::Relationships::Relationships::R17,Class_B,Association,"Ref_Att_ObjA"
+Relationships::Relationships::Relationships::R17,Class_A,Association,"Ref_Att_ObjA"
+Relationships::Relationships::Relationships::R16,Class_B,Association,"Bottom_Many"
+Relationships::Relationships::Relationships::R16,Class_A,Association,"LMRM_Assoc"
+Relationships::Relationships::Relationships::R15,Class_B,Association,"Right_Many"
+Relationships::Relationships::Relationships::R15,Class_A,Association,"Left_Many"
+Relationships::Relationships::Relationships::R14,Class_B,Association,"Right_Object"
+Relationships::Relationships::Relationships::R14,Class_A,Association,"Middle_Object"
+Relationships::Relationships::Relationships::R12,Class_B,Association,"Middle_Object"
+Relationships::Relationships::Relationships::R12,Class_A,Association,"Left_Object"
+Relationships::Relationships::Relationships::R10,Class_B,Association,"Many_Above"
+Relationships::Relationships::Relationships::R10,Class_A,Association,"Many_Right"
+Relationships::Relationships::Relationships::R8,Class_B,Association,"Many_Far_Right"
+Relationships::Relationships::Relationships::R8,Class_A,Association,"Many_Right"
+Relationships::Relationships::Relationships::R7,Class_B,Association,"Many_Right"
+Relationships::Relationships::Relationships::R7,Class_A,Association,"Middle"
+Relationships::Relationships::Relationships::R6,Class_B,Association,"Middle"
+Relationships::Relationships::Relationships::R6,Class_A,Association,"Far_Left"
+Relationships::Relationships::Relationships::R4,Class_B,Association,"Object_G"
+Relationships::Relationships::Relationships::R4,Class_A,Association,"Object_G"
+Relationships::Relationships::Relationships::R2,Class_B,Association,"Object_G"
+Relationships::Relationships::Relationships::R2,Class_A,Association,"Object_G"
+Relationships::Relationships::Relationships::R22,Class_B,Association,"Object_R"
+Relationships::Relationships::Relationships::R22,Class_A,Association,"Object_P"
+Relationships::Relationships::Relationships::R21,Class_B,Association,"Object_R"
+Relationships::Relationships::Relationships::R21,Class_A,Association,"Object_Q"
+Relationships::Relationships::Relationships::R20,Class_B,Association,"Object_Q"
+Relationships::Relationships::Relationships::R20,Class_A,Association,"Object_P"
+Relationships::Relationships::Relationships::R19,Class_B,Association,"Object_O"
+Relationships::Relationships::Relationships::R19,Class_A,Association,"Object_D"
+Relationships::Relationships::Relationships::R18,Class_B,Association,"Object_M"
+Relationships::Relationships::Relationships::R18,Class_A,Association,"Object_B"
+Relationships::Relationships::Relationships::R13,Class_B,Association,"Object_G"
+Relationships::Relationships::Relationships::R13,Class_A,Association,"Object_G"
+Relationships::Relationships::Relationships::R11,Class_B,Association,"Object_G"
+Relationships::Relationships::Relationships::R11,Class_A,Association,"Object_G"
+Relationships::Relationships::Relationships::R5,Class_B,Association,"Object_E"
+Relationships::Relationships::Relationships::R5,Class_A,Association,"Object_F"
+Relationships::Relationships::Relationships::R3,Class_B,Association,"Object_D"
+Relationships::Relationships::Relationships::R3,Class_A,Association,"Object_C"
+Relationships::Relationships::Relationships::R1,Class_B,Association,"Object_B"
+Relationships::Relationships::Relationships::R1,Class_A,Association,"Object_A"
+Relationships::Relationships::scenarios::void Nav_From_Sets,scenario,Function,7
+Relationships::Relationships::scenarios::void Composed_Relationships_Tests,scenario,Function,1
+Relationships::Relationships::scenarios::void Reflexive_Tests,scenario,Function,12
+Relationships::Relationships::scenarios::void Super_Sub_Tests,scenario,Function,11
+Relationships::Relationships::scenarios::void Many_to_Many_Assoc_Tests,scenario,Function,10
+Relationships::Relationships::scenarios::void One_to_Many_Assoc_Tests,scenario,Function,9
+Relationships::Relationships::scenarios::void One_to_One_Tests,scenario,Function,8
+Relationships::Relationships::scenarios::void Test_Relationships_For_Left_Many,scenario,Function,6
+Relationships::Relationships::scenarios::void Middle_Object_Relationship_Tests,scenario,Function,4
+Relationships::Relationships::scenarios::void Perform_Nav_to_Set,scenario,Function,5
+Relationships::Relationships::scenarios::void Finish_Relationship_Tests,scenario,Function,3
+Relationships::Relationships::scenarios::void Start_Relationhip_Tests,scenario,Function,2

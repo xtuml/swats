@@ -1,0 +1,109 @@
+-- BP 7.1.6 content: InstanceStateMachine syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO SM_ISM
+	VALUES ("052f9c7f-298d-4dd0-bd15-ba1ecf90321e",
+	"cfddb49e-4f64-40f7-bd62-70a7fd725385");
+INSERT INTO SM_SM
+	VALUES ("052f9c7f-298d-4dd0-bd15-ba1ecf90321e",
+	'',
+	0);
+INSERT INTO SM_MOORE
+	VALUES ("052f9c7f-298d-4dd0-bd15-ba1ecf90321e");
+INSERT INTO SM_EVTDI
+	VALUES ("921feaea-0be5-45d3-b951-f0426baa8d1b",
+	"052f9c7f-298d-4dd0-bd15-ba1ecf90321e",
+	'Test',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	"7c616160-a179-4c6b-b2b4-892194ec175c",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_LEVT
+	VALUES ("66cc5bf7-c2b4-49f9-a7ab-2ebc10bdaea3",
+	"052f9c7f-298d-4dd0-bd15-ba1ecf90321e",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_SEVT
+	VALUES ("66cc5bf7-c2b4-49f9-a7ab-2ebc10bdaea3",
+	"052f9c7f-298d-4dd0-bd15-ba1ecf90321e",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_EVT
+	VALUES ("66cc5bf7-c2b4-49f9-a7ab-2ebc10bdaea3",
+	"052f9c7f-298d-4dd0-bd15-ba1ecf90321e",
+	"00000000-0000-0000-0000-000000000000",
+	1,
+	'Fault',
+	0,
+	'',
+	'objP1',
+	'');
+INSERT INTO SM_LEVT
+	VALUES ("3df2fbb3-00d2-4439-a201-38b8cde6f3b8",
+	"052f9c7f-298d-4dd0-bd15-ba1ecf90321e",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_SEVT
+	VALUES ("3df2fbb3-00d2-4439-a201-38b8cde6f3b8",
+	"052f9c7f-298d-4dd0-bd15-ba1ecf90321e",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_EVT
+	VALUES ("3df2fbb3-00d2-4439-a201-38b8cde6f3b8",
+	"052f9c7f-298d-4dd0-bd15-ba1ecf90321e",
+	"00000000-0000-0000-0000-000000000000",
+	2,
+	'Finished',
+	0,
+	'',
+	'objP2',
+	'');
+INSERT INTO SM_LEVT
+	VALUES ("7c616160-a179-4c6b-b2b4-892194ec175c",
+	"052f9c7f-298d-4dd0-bd15-ba1ecf90321e",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_SEVT
+	VALUES ("7c616160-a179-4c6b-b2b4-892194ec175c",
+	"052f9c7f-298d-4dd0-bd15-ba1ecf90321e",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_EVT
+	VALUES ("7c616160-a179-4c6b-b2b4-892194ec175c",
+	"052f9c7f-298d-4dd0-bd15-ba1ecf90321e",
+	"00000000-0000-0000-0000-000000000000",
+	3,
+	'StartA',
+	0,
+	'',
+	'objP3',
+	'');
+INSERT INTO GD_MD
+	VALUES ("1d2a698e-ab94-45a8-93e9-e00f72e60ee8",
+	8,
+	"052f9c7f-298d-4dd0-bd15-ba1ecf90321e",
+	40,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'Relationships::Relationships::Relationships::Relationships::Object_P::Instance State Machine');
+INSERT INTO DIM_DIA
+	VALUES ("1d2a698e-ab94-45a8-93e9-e00f72e60ee8",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_OBJ_PROXY
+	VALUES ("cfddb49e-4f64-40f7-bd62-70a7fd725385",
+	'Object_P',
+	30,
+	'objP',
+	' This object forms part of a composed relationship.
+',
+	"00000000-0000-0000-0000-000000000000",
+	'../Object_P.xtuml');

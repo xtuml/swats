@@ -1,0 +1,73 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("b9beda23-c15f-4891-a598-53931dc9e9f3",
+	'Report_Data',
+	4,
+	'RD',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("49b45ee4-e664-463f-bb65-728f617f6859",
+	"b9beda23-c15f-4891-a598-53931dc9e9f3");
+INSERT INTO O_BATTR
+	VALUES ("49b45ee4-e664-463f-bb65-728f617f6859",
+	"b9beda23-c15f-4891-a598-53931dc9e9f3");
+INSERT INTO O_ATTR
+	VALUES ("49b45ee4-e664-463f-bb65-728f617f6859",
+	"b9beda23-c15f-4891-a598-53931dc9e9f3",
+	"00000000-0000-0000-0000-000000000000",
+	'Report_Data_Unique_id',
+	'',
+	'',
+	'Report_Data_Unique_id',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("33f77571-5dc0-4fb0-9ad2-e31cb5ab1960",
+	"b9beda23-c15f-4891-a598-53931dc9e9f3");
+INSERT INTO O_BATTR
+	VALUES ("33f77571-5dc0-4fb0-9ad2-e31cb5ab1960",
+	"b9beda23-c15f-4891-a598-53931dc9e9f3");
+INSERT INTO O_ATTR
+	VALUES ("33f77571-5dc0-4fb0-9ad2-e31cb5ab1960",
+	"b9beda23-c15f-4891-a598-53931dc9e9f3",
+	"49b45ee4-e664-463f-bb65-728f617f6859",
+	'Reported_Domain_Number',
+	'',
+	'',
+	'Reported_Domain_Number',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"b9beda23-c15f-4891-a598-53931dc9e9f3");
+INSERT INTO O_OIDA
+	VALUES ("49b45ee4-e664-463f-bb65-728f617f6859",
+	"b9beda23-c15f-4891-a598-53931dc9e9f3",
+	0,
+	'Report_Data_Unique_id');
+INSERT INTO O_ID
+	VALUES (1,
+	"b9beda23-c15f-4891-a598-53931dc9e9f3");
+INSERT INTO O_ID
+	VALUES (2,
+	"b9beda23-c15f-4891-a598-53931dc9e9f3");
+INSERT INTO PE_PE
+	VALUES ("b9beda23-c15f-4891-a598-53931dc9e9f3",
+	1,
+	"67e0f233-3dba-469b-862e-33c412acfc41",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("67e0f233-3dba-469b-862e-33c412acfc41",
+	"00000000-0000-0000-0000-000000000000",
+	"b0ecd0cc-290d-4c8d-b44d-a65fc69bd1af",
+	'Function_Calls',
+	'',
+	0,
+	'../Function_Calls.xtuml');

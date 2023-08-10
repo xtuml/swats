@@ -1,0 +1,252 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("c7edd3de-a622-41ab-b4c9-f5f3ba528ef4",
+	"00000000-0000-0000-0000-000000000000",
+	"e05fd001-e388-4210-a0cc-0b5a9a96aa1c",
+	'classes',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("507587f7-6bf5-4898-b05c-d84f606ad0d9",
+	112,
+	"c7edd3de-a622-41ab-b4c9-f5f3ba528ef4",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	200,
+	150,
+	0,
+	'',
+	'Struct::Struct::Struct::classes');
+INSERT INTO GD_GE
+	VALUES ("98262df7-a982-4589-9e4a-e414daf17ddc",
+	"507587f7-6bf5-4898-b05c-d84f606ad0d9",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945",
+	21,
+	0,
+	'Struct::Struct::Struct::classes::Structured_Object');
+INSERT INTO GD_SHP
+	VALUES ("98262df7-a982-4589-9e4a-e414daf17ddc");
+INSERT INTO GD_NCS
+	VALUES ("98262df7-a982-4589-9e4a-e414daf17ddc");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"98262df7-a982-4589-9e4a-e414daf17ddc");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"98262df7-a982-4589-9e4a-e414daf17ddc",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("98262df7-a982-4589-9e4a-e414daf17ddc",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_GE
+	VALUES ("d7ac0c96-1cfa-4ca7-ac22-fbb63ccadd0f",
+	"507587f7-6bf5-4898-b05c-d84f606ad0d9",
+	"476badb6-4c5c-4070-b959-053aba32742b",
+	21,
+	0,
+	'Struct::Struct::Struct::classes::Report_Data');
+INSERT INTO GD_SHP
+	VALUES ("d7ac0c96-1cfa-4ca7-ac22-fbb63ccadd0f");
+INSERT INTO GD_NCS
+	VALUES ("d7ac0c96-1cfa-4ca7-ac22-fbb63ccadd0f");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"d7ac0c96-1cfa-4ca7-ac22-fbb63ccadd0f");
+INSERT INTO DIM_GE
+	VALUES (220.000000,
+	0.000000,
+	"d7ac0c96-1cfa-4ca7-ac22-fbb63ccadd0f",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("d7ac0c96-1cfa-4ca7-ac22-fbb63ccadd0f",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_GE
+	VALUES ("87780b94-4dbb-4a29-9f38-dccefca22419",
+	"507587f7-6bf5-4898-b05c-d84f606ad0d9",
+	"b246d4de-ded0-45ad-83a9-08ab8cde9b38",
+	21,
+	0,
+	'Struct::Struct::Struct::classes::Test_Data');
+INSERT INTO GD_SHP
+	VALUES ("87780b94-4dbb-4a29-9f38-dccefca22419");
+INSERT INTO GD_NCS
+	VALUES ("87780b94-4dbb-4a29-9f38-dccefca22419");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"87780b94-4dbb-4a29-9f38-dccefca22419");
+INSERT INTO DIM_GE
+	VALUES (440.000000,
+	0.000000,
+	"87780b94-4dbb-4a29-9f38-dccefca22419",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("87780b94-4dbb-4a29-9f38-dccefca22419",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_DIA
+	VALUES ("507587f7-6bf5-4898-b05c-d84f606ad0d9",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_DT
+	VALUES ("774352f7-34c6-463f-9fa6-d2275c32c9b0",
+	"00000000-0000-0000-0000-000000000000",
+	'inst_ref<Structured_Object>',
+	'',
+	'');
+INSERT INTO S_IRDT
+	VALUES ("774352f7-34c6-463f-9fa6-d2275c32c9b0",
+	0,
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945");
+INSERT INTO O_OBJ_PROXY
+	VALUES ("ff15d4ff-218a-4304-abe2-8a7bcaaa2945",
+	'Structured_Object',
+	2,
+	'SO',
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'./Structured_Object/Structured_Object.xtuml');
+INSERT INTO PE_PE
+	VALUES ("774352f7-34c6-463f-9fa6-d2275c32c9b0",
+	1,
+	"c7edd3de-a622-41ab-b4c9-f5f3ba528ef4",
+	"00000000-0000-0000-0000-000000000000",
+	3);
+INSERT INTO S_DT
+	VALUES ("a65927f2-827d-424c-8e10-5b6dcdf85230",
+	"00000000-0000-0000-0000-000000000000",
+	'inst_ref_set<Structured_Object>',
+	'',
+	'');
+INSERT INTO S_IRDT
+	VALUES ("a65927f2-827d-424c-8e10-5b6dcdf85230",
+	1,
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945");
+INSERT INTO PE_PE
+	VALUES ("a65927f2-827d-424c-8e10-5b6dcdf85230",
+	1,
+	"c7edd3de-a622-41ab-b4c9-f5f3ba528ef4",
+	"00000000-0000-0000-0000-000000000000",
+	3);
+INSERT INTO S_DT
+	VALUES ("5d4969bc-be87-46c6-b653-fbb9a14a7d43",
+	"00000000-0000-0000-0000-000000000000",
+	'inst_ref<Report_Data>',
+	'',
+	'');
+INSERT INTO S_IRDT
+	VALUES ("5d4969bc-be87-46c6-b653-fbb9a14a7d43",
+	0,
+	"476badb6-4c5c-4070-b959-053aba32742b");
+INSERT INTO O_OBJ_PROXY
+	VALUES ("476badb6-4c5c-4070-b959-053aba32742b",
+	'Report_Data',
+	3,
+	'RD',
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'./Report_Data/Report_Data.xtuml');
+INSERT INTO PE_PE
+	VALUES ("5d4969bc-be87-46c6-b653-fbb9a14a7d43",
+	1,
+	"c7edd3de-a622-41ab-b4c9-f5f3ba528ef4",
+	"00000000-0000-0000-0000-000000000000",
+	3);
+INSERT INTO S_DT
+	VALUES ("481bf092-9718-4bb7-a48b-23be90880e8a",
+	"00000000-0000-0000-0000-000000000000",
+	'inst_ref_set<Report_Data>',
+	'',
+	'');
+INSERT INTO S_IRDT
+	VALUES ("481bf092-9718-4bb7-a48b-23be90880e8a",
+	1,
+	"476badb6-4c5c-4070-b959-053aba32742b");
+INSERT INTO PE_PE
+	VALUES ("481bf092-9718-4bb7-a48b-23be90880e8a",
+	1,
+	"c7edd3de-a622-41ab-b4c9-f5f3ba528ef4",
+	"00000000-0000-0000-0000-000000000000",
+	3);
+INSERT INTO S_DT
+	VALUES ("819acf6b-ec9e-4523-8197-c2cd0ef64c0b",
+	"00000000-0000-0000-0000-000000000000",
+	'inst_ref<Test_Data>',
+	'',
+	'');
+INSERT INTO S_IRDT
+	VALUES ("819acf6b-ec9e-4523-8197-c2cd0ef64c0b",
+	0,
+	"b246d4de-ded0-45ad-83a9-08ab8cde9b38");
+INSERT INTO O_OBJ_PROXY
+	VALUES ("b246d4de-ded0-45ad-83a9-08ab8cde9b38",
+	'Test_Data',
+	4,
+	'TD',
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'./Test_Data/Test_Data.xtuml');
+INSERT INTO PE_PE
+	VALUES ("819acf6b-ec9e-4523-8197-c2cd0ef64c0b",
+	1,
+	"c7edd3de-a622-41ab-b4c9-f5f3ba528ef4",
+	"00000000-0000-0000-0000-000000000000",
+	3);
+INSERT INTO S_DT
+	VALUES ("27df898b-661a-4765-ae8c-f6cf5be135d4",
+	"00000000-0000-0000-0000-000000000000",
+	'inst_ref_set<Test_Data>',
+	'',
+	'');
+INSERT INTO S_IRDT
+	VALUES ("27df898b-661a-4765-ae8c-f6cf5be135d4",
+	1,
+	"b246d4de-ded0-45ad-83a9-08ab8cde9b38");
+INSERT INTO PE_PE
+	VALUES ("27df898b-661a-4765-ae8c-f6cf5be135d4",
+	1,
+	"c7edd3de-a622-41ab-b4c9-f5f3ba528ef4",
+	"00000000-0000-0000-0000-000000000000",
+	3);
+INSERT INTO PE_PE
+	VALUES ("c7edd3de-a622-41ab-b4c9-f5f3ba528ef4",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"85ec7147-246b-41d4-a44d-2673399477b7",
+	7);
+INSERT INTO C_C_PROXY
+	VALUES ("85ec7147-246b-41d4-a44d-2673399477b7",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'Struct',
+	' Mission statement? 
+ You''re having a laugh!
+',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Structures',
+	'../Struct.xtuml');
+INSERT INTO S_SYS_PROXY
+	VALUES ("e05fd001-e388-4210-a0cc-0b5a9a96aa1c",
+	'Struct',
+	1,
+	'../../../Struct.xtuml');

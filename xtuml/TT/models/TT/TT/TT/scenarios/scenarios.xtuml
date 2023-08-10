@@ -1,0 +1,81 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("9268f322-2e66-4d63-94c3-59674c5cccc8",
+	"00000000-0000-0000-0000-000000000000",
+	"7d1bef29-9e30-4977-be43-53e35fcca33f",
+	'scenarios',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("886bf490-7587-4037-895f-fc81fe0f5948",
+	112,
+	"9268f322-2e66-4d63-94c3-59674c5cccc8",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'TT::TT::TT::scenarios');
+INSERT INTO DIM_DIA
+	VALUES ("886bf490-7587-4037-895f-fc81fe0f5948",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_SYNC
+	VALUES ("96a86326-0cef-4621-b762-6c3de29d0496",
+	"00000000-0000-0000-0000-000000000000",
+	'start_timer_tests',
+	' start timer tests
+',
+	'the_test_scheduler = create unique Test_Scheduler with \ 
+                                      Current_State = ''idle'' & \
+                                      current_test_number = 0
+
+generate TS1:ready() to the_test_scheduler',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	1);
+INSERT INTO PE_PE
+	VALUES ("96a86326-0cef-4621-b762-6c3de29d0496",
+	1,
+	"9268f322-2e66-4d63-94c3-59674c5cccc8",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO PE_PE
+	VALUES ("9268f322-2e66-4d63-94c3-59674c5cccc8",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"39d6a799-5e52-493a-b09a-f0887ce7fbf9",
+	7);
+INSERT INTO C_C_PROXY
+	VALUES ("39d6a799-5e52-493a-b09a-f0887ce7fbf9",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'TT',
+	' This Domain is for testing the timer features of the software architecture.
+',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Test_Timers',
+	'../TT.xtuml');
+INSERT INTO S_SYS_PROXY
+	VALUES ("7d1bef29-9e30-4977-be43-53e35fcca33f",
+	'TT',
+	1,
+	'../../../TT.xtuml');

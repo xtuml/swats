@@ -1,0 +1,164 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("0e916254-f60a-4413-bab6-afc9ae28cbb5",
+	"00000000-0000-0000-0000-000000000000",
+	"6d141527-9fd5-4054-8692-9fc325055afc",
+	'types',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("30bd45c3-2fcf-49bf-afe2-d2e862db5769",
+	112,
+	"0e916254-f60a-4413-bab6-afc9ae28cbb5",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	200,
+	150,
+	0,
+	'',
+	'Relationships::Relationships::Relationships::types');
+INSERT INTO GD_GE
+	VALUES ("c3667a3e-33c6-4654-a49f-9c6a74b053eb",
+	"30bd45c3-2fcf-49bf-afe2-d2e862db5769",
+	"487f70ea-2706-427d-bf49-0f5517347b54",
+	51,
+	0,
+	'Relationships::Relationships::Relationships::types::fred');
+INSERT INTO GD_SHP
+	VALUES ("c3667a3e-33c6-4654-a49f-9c6a74b053eb");
+INSERT INTO GD_NCS
+	VALUES ("c3667a3e-33c6-4654-a49f-9c6a74b053eb");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"c3667a3e-33c6-4654-a49f-9c6a74b053eb");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"c3667a3e-33c6-4654-a49f-9c6a74b053eb",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("c3667a3e-33c6-4654-a49f-9c6a74b053eb",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_GE
+	VALUES ("fb34d6dd-4f10-4cd1-b62e-cebaa257cb9e",
+	"30bd45c3-2fcf-49bf-afe2-d2e862db5769",
+	"fa08ef31-e184-4f04-823b-117baa2f1db8",
+	52,
+	0,
+	'Relationships::Relationships::Relationships::types::Colour');
+INSERT INTO GD_SHP
+	VALUES ("fb34d6dd-4f10-4cd1-b62e-cebaa257cb9e");
+INSERT INTO GD_NCS
+	VALUES ("fb34d6dd-4f10-4cd1-b62e-cebaa257cb9e");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"fb34d6dd-4f10-4cd1-b62e-cebaa257cb9e");
+INSERT INTO DIM_GE
+	VALUES (220.000000,
+	0.000000,
+	"fb34d6dd-4f10-4cd1-b62e-cebaa257cb9e",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("fb34d6dd-4f10-4cd1-b62e-cebaa257cb9e",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_DIA
+	VALUES ("30bd45c3-2fcf-49bf-afe2-d2e862db5769",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_DT
+	VALUES ("fa08ef31-e184-4f04-823b-117baa2f1db8",
+	"00000000-0000-0000-0000-000000000000",
+	'Colour',
+	' Colour is a user defined type, for the purpose of verifing enumeration.
+',
+	'');
+INSERT INTO S_EDT
+	VALUES ("fa08ef31-e184-4f04-823b-117baa2f1db8");
+INSERT INTO S_ENUM
+	VALUES ("89edcb1c-65b6-44fc-ab57-408dd1323c83",
+	'Red',
+	'',
+	"fa08ef31-e184-4f04-823b-117baa2f1db8",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_ENUM
+	VALUES ("ed135908-8502-46f3-b86b-660718d931a5",
+	'Green',
+	'',
+	"fa08ef31-e184-4f04-823b-117baa2f1db8",
+	"89edcb1c-65b6-44fc-ab57-408dd1323c83");
+INSERT INTO S_ENUM
+	VALUES ("afcf4712-2556-4aec-aa43-c92559aafc72",
+	'Black',
+	'',
+	"fa08ef31-e184-4f04-823b-117baa2f1db8",
+	"ed135908-8502-46f3-b86b-660718d931a5");
+INSERT INTO PE_PE
+	VALUES ("fa08ef31-e184-4f04-823b-117baa2f1db8",
+	1,
+	"0e916254-f60a-4413-bab6-afc9ae28cbb5",
+	"00000000-0000-0000-0000-000000000000",
+	3);
+INSERT INTO S_DT
+	VALUES ("487f70ea-2706-427d-bf49-0f5517347b54",
+	"00000000-0000-0000-0000-000000000000",
+	'fred',
+	'',
+	'');
+INSERT INTO S_UDT
+	VALUES ("487f70ea-2706-427d-bf49-0f5517347b54",
+	"d7be8be3-df3e-469f-9f9b-72c78250b6d7",
+	0,
+	'real');
+INSERT INTO S_DT_PROXY
+	VALUES ("d7be8be3-df3e-469f-9f9b-72c78250b6d7",
+	"00000000-0000-0000-0000-000000000000",
+	'MASLtype',
+	'',
+	'',
+	'../../../types/types.xtuml');
+INSERT INTO PE_PE
+	VALUES ("487f70ea-2706-427d-bf49-0f5517347b54",
+	1,
+	"0e916254-f60a-4413-bab6-afc9ae28cbb5",
+	"00000000-0000-0000-0000-000000000000",
+	3);
+INSERT INTO PE_PE
+	VALUES ("0e916254-f60a-4413-bab6-afc9ae28cbb5",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"449322c5-7172-4e3b-867d-33ca1b774dd2",
+	7);
+INSERT INTO C_C_PROXY
+	VALUES ("449322c5-7172-4e3b-867d-33ca1b774dd2",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'Relationships',
+	' Tests Relationship manipulations.
+',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Relationships',
+	'../Relationships.xtuml');
+INSERT INTO S_SYS_PROXY
+	VALUES ("6d141527-9fd5-4054-8692-9fc325055afc",
+	'Relationships',
+	1,
+	'../../../Relationships.xtuml');

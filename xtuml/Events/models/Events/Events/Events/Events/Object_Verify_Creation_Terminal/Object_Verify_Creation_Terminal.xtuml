@@ -1,0 +1,92 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("a44f94c7-115f-447e-8700-d11c0b61db76",
+	'Object_Verify_Creation_Terminal',
+	28,
+	'objVERCETL',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("b02e630b-ad8b-4aab-b731-eeec9e1957b7",
+	"a44f94c7-115f-447e-8700-d11c0b61db76");
+INSERT INTO O_BATTR
+	VALUES ("b02e630b-ad8b-4aab-b731-eeec9e1957b7",
+	"a44f94c7-115f-447e-8700-d11c0b61db76");
+INSERT INTO O_ATTR
+	VALUES ("b02e630b-ad8b-4aab-b731-eeec9e1957b7",
+	"a44f94c7-115f-447e-8700-d11c0b61db76",
+	"00000000-0000-0000-0000-000000000000",
+	'ReferenceCETL',
+	' Referential attribute.
+',
+	'',
+	'ReferenceCETL',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("50b6070d-0097-4e0e-bb0a-b9c808905a7d",
+	"a44f94c7-115f-447e-8700-d11c0b61db76");
+INSERT INTO O_BATTR
+	VALUES ("50b6070d-0097-4e0e-bb0a-b9c808905a7d",
+	"a44f94c7-115f-447e-8700-d11c0b61db76");
+INSERT INTO O_ATTR
+	VALUES ("50b6070d-0097-4e0e-bb0a-b9c808905a7d",
+	"a44f94c7-115f-447e-8700-d11c0b61db76",
+	"b02e630b-ad8b-4aab-b731-eeec9e1957b7",
+	'ResultA',
+	'',
+	'',
+	'ResultA',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("a4781c8b-212f-4297-ad61-996a2dc270e7",
+	"a44f94c7-115f-447e-8700-d11c0b61db76");
+INSERT INTO O_BATTR
+	VALUES ("a4781c8b-212f-4297-ad61-996a2dc270e7",
+	"a44f94c7-115f-447e-8700-d11c0b61db76");
+INSERT INTO O_ATTR
+	VALUES ("a4781c8b-212f-4297-ad61-996a2dc270e7",
+	"a44f94c7-115f-447e-8700-d11c0b61db76",
+	"50b6070d-0097-4e0e-bb0a-b9c808905a7d",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"a44f94c7-115f-447e-8700-d11c0b61db76");
+INSERT INTO O_OIDA
+	VALUES ("b02e630b-ad8b-4aab-b731-eeec9e1957b7",
+	"a44f94c7-115f-447e-8700-d11c0b61db76",
+	0,
+	'ReferenceCETL');
+INSERT INTO O_ID
+	VALUES (1,
+	"a44f94c7-115f-447e-8700-d11c0b61db76");
+INSERT INTO O_ID
+	VALUES (2,
+	"a44f94c7-115f-447e-8700-d11c0b61db76");
+INSERT INTO PE_PE
+	VALUES ("a44f94c7-115f-447e-8700-d11c0b61db76",
+	1,
+	"a9a21ab3-b305-417c-89c1-c9f52915c70b",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("a9a21ab3-b305-417c-89c1-c9f52915c70b",
+	"00000000-0000-0000-0000-000000000000",
+	"9b3c9b37-3527-4c3a-8648-5c925cc26549",
+	'Events',
+	'',
+	0,
+	'../Events.xtuml');

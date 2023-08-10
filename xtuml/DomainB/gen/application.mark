@@ -1,0 +1,8 @@
+DomainB::DomainB,version,Component,12
+DomainB::DomainB::DomainB::R1,Class_B,Association,"Object_D"
+DomainB::DomainB::DomainB::R1,Class_A,Association,"Object_C"
+DomainB::DomainB::scenarios::void Check_Enumeration_Across_Domain_B,scenario,Function,5
+DomainB::DomainB::scenarios::void Finish_DomainB_Tests,scenario,Function,4
+DomainB::DomainB::scenarios::void Start_DomainB_Tests,scenario,Function,3
+DomainB::DomainB::scenarios::void Perform_domain_B_nav_tests,scenario,Function,2
+DomainB::DomainB::scenarios::void Domain_B_setup,scenario,Function,1

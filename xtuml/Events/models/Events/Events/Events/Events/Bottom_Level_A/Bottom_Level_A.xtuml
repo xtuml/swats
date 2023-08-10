@@ -1,0 +1,106 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("cafcf06c-5f3b-4ae2-9f54-3ee01a5d428c",
+	'Bottom_Level_A',
+	48,
+	'BLA',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("1e568e5e-6ce7-414a-8be1-773c53cf1c30",
+	"cafcf06c-5f3b-4ae2-9f54-3ee01a5d428c");
+INSERT INTO O_BATTR
+	VALUES ("1e568e5e-6ce7-414a-8be1-773c53cf1c30",
+	"cafcf06c-5f3b-4ae2-9f54-3ee01a5d428c");
+INSERT INTO O_ATTR
+	VALUES ("1e568e5e-6ce7-414a-8be1-773c53cf1c30",
+	"cafcf06c-5f3b-4ae2-9f54-3ee01a5d428c",
+	"00000000-0000-0000-0000-000000000000",
+	'BLA_id',
+	'',
+	'',
+	'BLA_id',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_REF
+	VALUES ("cafcf06c-5f3b-4ae2-9f54-3ee01a5d428c",
+	"b7a1b0c1-9cf8-439d-b16b-70f31273f825",
+	0,
+	"d9f466c8-c62f-47c4-98da-00de57cedf42",
+	"22f17ae5-021c-46f8-b961-4de2567d689f",
+	"a6c418e0-093d-4b07-92b4-7241e0589250",
+	"991eda9d-7a17-48dd-aba3-c393a26a2681",
+	"1051717f-3f70-4bbc-98fe-416910c87332",
+	"3567026b-5138-4772-950f-f08459fb10ba",
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Sub_Level_3_A',
+	'SL3A_id',
+	'R15');
+INSERT INTO R_RGO_PROXY
+	VALUES ("cafcf06c-5f3b-4ae2-9f54-3ee01a5d428c",
+	"22f17ae5-021c-46f8-b961-4de2567d689f",
+	"a6c418e0-093d-4b07-92b4-7241e0589250",
+	'../Events.xtuml');
+INSERT INTO O_RTIDA_PROXY
+	VALUES ("d9f466c8-c62f-47c4-98da-00de57cedf42",
+	"b7a1b0c1-9cf8-439d-b16b-70f31273f825",
+	0,
+	"22f17ae5-021c-46f8-b961-4de2567d689f",
+	"991eda9d-7a17-48dd-aba3-c393a26a2681",
+	'../Events.xtuml');
+INSERT INTO O_RATTR
+	VALUES ("1051717f-3f70-4bbc-98fe-416910c87332",
+	"cafcf06c-5f3b-4ae2-9f54-3ee01a5d428c",
+	"d9f466c8-c62f-47c4-98da-00de57cedf42",
+	"b7a1b0c1-9cf8-439d-b16b-70f31273f825",
+	1,
+	'SL3A_id');
+INSERT INTO O_BATTR_PROXY
+	VALUES ("d9f466c8-c62f-47c4-98da-00de57cedf42",
+	"b7a1b0c1-9cf8-439d-b16b-70f31273f825",
+	'../Sub_Level_3_A/Sub_Level_3_A.xtuml');
+INSERT INTO O_ATTR
+	VALUES ("1051717f-3f70-4bbc-98fe-416910c87332",
+	"cafcf06c-5f3b-4ae2-9f54-3ee01a5d428c",
+	"1e568e5e-6ce7-414a-8be1-773c53cf1c30",
+	'SL3A_id',
+	'',
+	'',
+	'SL3A_id',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000007",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"cafcf06c-5f3b-4ae2-9f54-3ee01a5d428c");
+INSERT INTO O_OIDA
+	VALUES ("1e568e5e-6ce7-414a-8be1-773c53cf1c30",
+	"cafcf06c-5f3b-4ae2-9f54-3ee01a5d428c",
+	0,
+	'BLA_id');
+INSERT INTO O_ID
+	VALUES (1,
+	"cafcf06c-5f3b-4ae2-9f54-3ee01a5d428c");
+INSERT INTO O_ID
+	VALUES (2,
+	"cafcf06c-5f3b-4ae2-9f54-3ee01a5d428c");
+INSERT INTO PE_PE
+	VALUES ("cafcf06c-5f3b-4ae2-9f54-3ee01a5d428c",
+	1,
+	"a9a21ab3-b305-417c-89c1-c9f52915c70b",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("a9a21ab3-b305-417c-89c1-c9f52915c70b",
+	"00000000-0000-0000-0000-000000000000",
+	"9b3c9b37-3527-4c3a-8648-5c925cc26549",
+	'Events',
+	'',
+	0,
+	'../Events.xtuml');

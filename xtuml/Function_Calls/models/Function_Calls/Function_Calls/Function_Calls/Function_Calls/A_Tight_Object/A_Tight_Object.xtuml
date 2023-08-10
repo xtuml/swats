@@ -1,0 +1,87 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("abc18256-606b-4338-ae1e-e1fe18fcb993",
+	'A_Tight_Object',
+	15,
+	'ATO',
+	' Object used for proving that passive objects created and passed into services in a tight loop are dealt with.
+',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("f7551f70-7bea-4e37-9f23-93193265f18c",
+	"abc18256-606b-4338-ae1e-e1fe18fcb993");
+INSERT INTO O_BATTR
+	VALUES ("f7551f70-7bea-4e37-9f23-93193265f18c",
+	"abc18256-606b-4338-ae1e-e1fe18fcb993");
+INSERT INTO O_ATTR
+	VALUES ("f7551f70-7bea-4e37-9f23-93193265f18c",
+	"abc18256-606b-4338-ae1e-e1fe18fcb993",
+	"00000000-0000-0000-0000-000000000000",
+	'Start_Value',
+	'',
+	'',
+	'Start_Value',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("029275d4-306c-4b32-9718-272b01269d82",
+	"abc18256-606b-4338-ae1e-e1fe18fcb993");
+INSERT INTO O_BATTR
+	VALUES ("029275d4-306c-4b32-9718-272b01269d82",
+	"abc18256-606b-4338-ae1e-e1fe18fcb993");
+INSERT INTO O_ATTR
+	VALUES ("029275d4-306c-4b32-9718-272b01269d82",
+	"abc18256-606b-4338-ae1e-e1fe18fcb993",
+	"f7551f70-7bea-4e37-9f23-93193265f18c",
+	'Increment_Value',
+	'',
+	'',
+	'Increment_Value',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("65bda433-7e44-45f4-80bc-021c69ba8c76",
+	"abc18256-606b-4338-ae1e-e1fe18fcb993");
+INSERT INTO O_BATTR
+	VALUES ("65bda433-7e44-45f4-80bc-021c69ba8c76",
+	"abc18256-606b-4338-ae1e-e1fe18fcb993");
+INSERT INTO O_ATTR
+	VALUES ("65bda433-7e44-45f4-80bc-021c69ba8c76",
+	"abc18256-606b-4338-ae1e-e1fe18fcb993",
+	"029275d4-306c-4b32-9718-272b01269d82",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"abc18256-606b-4338-ae1e-e1fe18fcb993");
+INSERT INTO O_ID
+	VALUES (1,
+	"abc18256-606b-4338-ae1e-e1fe18fcb993");
+INSERT INTO O_ID
+	VALUES (2,
+	"abc18256-606b-4338-ae1e-e1fe18fcb993");
+INSERT INTO PE_PE
+	VALUES ("abc18256-606b-4338-ae1e-e1fe18fcb993",
+	1,
+	"67e0f233-3dba-469b-862e-33c412acfc41",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("67e0f233-3dba-469b-862e-33c412acfc41",
+	"00000000-0000-0000-0000-000000000000",
+	"b0ecd0cc-290d-4c8d-b44d-a65fc69bd1af",
+	'Function_Calls',
+	'',
+	0,
+	'../Function_Calls.xtuml');

@@ -1,0 +1,55 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("ab45a1d8-d085-48eb-9eba-c17d2cb7e47b",
+	'Left_Object',
+	20,
+	'LO',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("944d1fdc-d28c-4d53-b48b-212b18230fbe",
+	"ab45a1d8-d085-48eb-9eba-c17d2cb7e47b");
+INSERT INTO O_BATTR
+	VALUES ("944d1fdc-d28c-4d53-b48b-212b18230fbe",
+	"ab45a1d8-d085-48eb-9eba-c17d2cb7e47b");
+INSERT INTO O_ATTR
+	VALUES ("944d1fdc-d28c-4d53-b48b-212b18230fbe",
+	"ab45a1d8-d085-48eb-9eba-c17d2cb7e47b",
+	"00000000-0000-0000-0000-000000000000",
+	'idLO',
+	'',
+	'',
+	'idLO',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"ab45a1d8-d085-48eb-9eba-c17d2cb7e47b");
+INSERT INTO O_OIDA
+	VALUES ("944d1fdc-d28c-4d53-b48b-212b18230fbe",
+	"ab45a1d8-d085-48eb-9eba-c17d2cb7e47b",
+	0,
+	'idLO');
+INSERT INTO O_ID
+	VALUES (1,
+	"ab45a1d8-d085-48eb-9eba-c17d2cb7e47b");
+INSERT INTO O_ID
+	VALUES (2,
+	"ab45a1d8-d085-48eb-9eba-c17d2cb7e47b");
+INSERT INTO PE_PE
+	VALUES ("ab45a1d8-d085-48eb-9eba-c17d2cb7e47b",
+	1,
+	"1a16545d-ab33-4153-84c6-9d8e9f7ca024",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("1a16545d-ab33-4153-84c6-9d8e9f7ca024",
+	"00000000-0000-0000-0000-000000000000",
+	"6d141527-9fd5-4054-8692-9fc325055afc",
+	'Relationships',
+	'',
+	0,
+	'../Relationships.xtuml');

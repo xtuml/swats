@@ -1,0 +1,80 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("5a4ef7b8-19d2-4fad-9033-a92fdf589061",
+	'Flavoured_Object',
+	7,
+	'flavoured',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("fb2dd1ac-eca6-4927-8237-6f410798f6b6",
+	"5a4ef7b8-19d2-4fad-9033-a92fdf589061");
+INSERT INTO O_BATTR
+	VALUES ("fb2dd1ac-eca6-4927-8237-6f410798f6b6",
+	"5a4ef7b8-19d2-4fad-9033-a92fdf589061");
+INSERT INTO O_ATTR
+	VALUES ("fb2dd1ac-eca6-4927-8237-6f410798f6b6",
+	"5a4ef7b8-19d2-4fad-9033-a92fdf589061",
+	"00000000-0000-0000-0000-000000000000",
+	'Flavoured',
+	'',
+	'',
+	'Flavoured',
+	0,
+	"f487df9f-b2b2-4cef-b6db-fc614d9af582",
+	'',
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("f487df9f-b2b2-4cef-b6db-fc614d9af582",
+	"00000000-0000-0000-0000-000000000000",
+	'Flavoured_Type',
+	'',
+	'',
+	'../../types/types.xtuml');
+INSERT INTO O_NBATTR
+	VALUES ("42026315-6ec4-41ac-bf37-2c0eb703fe65",
+	"5a4ef7b8-19d2-4fad-9033-a92fdf589061");
+INSERT INTO O_BATTR
+	VALUES ("42026315-6ec4-41ac-bf37-2c0eb703fe65",
+	"5a4ef7b8-19d2-4fad-9033-a92fdf589061");
+INSERT INTO O_ATTR
+	VALUES ("42026315-6ec4-41ac-bf37-2c0eb703fe65",
+	"5a4ef7b8-19d2-4fad-9033-a92fdf589061",
+	"fb2dd1ac-eca6-4927-8237-6f410798f6b6",
+	'How_Spicy',
+	'',
+	'',
+	'How_Spicy',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"5a4ef7b8-19d2-4fad-9033-a92fdf589061");
+INSERT INTO O_OIDA
+	VALUES ("fb2dd1ac-eca6-4927-8237-6f410798f6b6",
+	"5a4ef7b8-19d2-4fad-9033-a92fdf589061",
+	0,
+	'Flavoured');
+INSERT INTO O_ID
+	VALUES (1,
+	"5a4ef7b8-19d2-4fad-9033-a92fdf589061");
+INSERT INTO O_ID
+	VALUES (2,
+	"5a4ef7b8-19d2-4fad-9033-a92fdf589061");
+INSERT INTO PE_PE
+	VALUES ("5a4ef7b8-19d2-4fad-9033-a92fdf589061",
+	1,
+	"c852afc7-98ac-4492-988b-0303d2b80eff",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("c852afc7-98ac-4492-988b-0303d2b80eff",
+	"00000000-0000-0000-0000-000000000000",
+	"10f28eec-2c10-4bed-b362-3203399c1025",
+	'classes',
+	'',
+	0,
+	'../classes.xtuml');

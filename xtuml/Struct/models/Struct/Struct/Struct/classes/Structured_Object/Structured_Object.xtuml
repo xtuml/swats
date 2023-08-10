@@ -1,0 +1,880 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("ff15d4ff-218a-4304-abe2-8a7bcaaa2945",
+	'Structured_Object',
+	2,
+	'SO',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("2b9c32c6-7328-4a8d-9484-16526cb34c04",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945",
+	'Create_Simple_Structure',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'[] = RPT1:Start_Test[Test,"1241-0000-01-1212", "Structures", "objSO", "Construct simple structure"]
+
+How_Many = countof {Returned_Simple_Structure}
+
+loop_counter = How_Many + 1
+
+Failure_Value = 0
+
+Termination_Condition = loop_counter + 5
+
+# Add five elements into the set
+
+loop
+
+   # This is supposed to be a set, therefore, stuff several
+   # version of the input data into it.
+   # This will be determined by the test number at the time.
+   append [Object_Instance_Handle.An_Integer, \
+           Object_Instance_Handle.A_Real,   \
+           Object_Instance_Handle.Some_Text, \ 
+           Object_Instance_Handle.A_Boolean, \
+           Object_Instance_Handle.A_Colour]   \
+   to {Returned_Simple_Structure}
+
+   loop_counter = loop_counter + 1
+
+   breakif loop_counter = Termination_Condition
+
+endloop
+
+How_Many_Now = countof {Returned_Simple_Structure}   
+
+
+# All tests
+
+ 
+[] = RPT2:Test_Passed[Object_Instance_Handle.Some_Text, Test, How_Many_Now]
+
+',
+	3,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	2,
+	1);
+INSERT INTO O_TPARM
+	VALUES ("74564ec6-2e7a-44f8-8310-34118e4cf115",
+	"2b9c32c6-7328-4a8d-9484-16526cb34c04",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("450e58da-6c4b-440c-b210-f990d20e642b",
+	"2b9c32c6-7328-4a8d-9484-16526cb34c04",
+	'Object_Instance_Handle',
+	"774352f7-34c6-463f-9fa6-d2275c32c9b0",
+	0,
+	'',
+	"74564ec6-2e7a-44f8-8310-34118e4cf115",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("774352f7-34c6-463f-9fa6-d2275c32c9b0",
+	"00000000-0000-0000-0000-000000000000",
+	'inst_ref<Structured_Object>',
+	'',
+	'',
+	'../classes.xtuml');
+INSERT INTO O_TPARM
+	VALUES ("2315b2e8-682d-4ab1-93c9-e0e0c173738f",
+	"2b9c32c6-7328-4a8d-9484-16526cb34c04",
+	'Returned_Simple_Structure',
+	"679fc160-8aa2-47fb-8735-d6ce70c73c19",
+	1,
+	'',
+	"450e58da-6c4b-440c-b210-f990d20e642b",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("679fc160-8aa2-47fb-8735-d6ce70c73c19",
+	"00000000-0000-0000-0000-000000000000",
+	'Simple_Structure_Type',
+	'',
+	'',
+	'../../../Shared/Shared.xtuml');
+INSERT INTO O_TFR
+	VALUES ("63f18a03-1633-46db-99f3-97a364cf1cbb",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945",
+	'Decode_Simple_Structure',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	' 
+[] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Structured Object Synch Service", "Decode simple data structures"]
+
+# How many in the set
+How_Many = countof {A_Structure}
+
+Count = 1
+
+# Look at the final entry in the list only.
+if Final_Entry_Only = TRUE then
+
+   for [the_integer, the_real, the_text, the_boolean, the_colour] in {A_Structure} do
+
+      local_integer = the_integer
+      local_real    = the_real
+      local_text    = the_text
+      local_boolean = the_boolean
+      local_colour  = the_colour
+
+      # Force a look at the penultimate entry in the set.
+      Termination_Condition = How_Many - 1
+
+      # Only look at the final entry
+      if Count = Termination_Condition then 
+
+         if local_integer = Instance_Handle.An_Integer and \
+            local_real    = Instance_Handle.A_Real     and \
+            local_text    = Instance_Handle.Some_Text  and \
+            local_boolean = Instance_Handle.A_Boolean  and \
+            local_colour  = Instance_Handle.A_Colour   then
+
+            [] = RPT2:Test_Passed[Instance_Handle.Some_Text, Test, Count]
+
+         else
+  
+            [] = RPT3:Test_Failed[Instance_Handle.Some_Text, Test, Count]
+
+         endif
+
+      endif
+
+      Count = Count + 1
+
+      # Don''t want to read all the entries, just all but one of them.
+      # This so that we can append into the set again on the next iteration.
+
+      breakif Count = How_Many
+
+   endfor
+
+# Look at all entries
+else
+
+   Has_Passed = TRUE
+   Passed_Count = 0
+
+   for [the_integer, the_real, the_text, the_boolean, the_colour] in {A_Structure} do
+
+      local_integer = the_integer
+      local_real    = the_real
+      local_text    = the_text
+      local_boolean = the_boolean
+      local_colour  = the_colour
+
+      if local_integer = Instance_Handle.An_Integer and \
+         local_real    = Instance_Handle.A_Real     and \
+         local_text    = Instance_Handle.Some_Text  and \
+         local_boolean = Instance_Handle.A_Boolean  and \
+         local_colour  = Instance_Handle.A_Colour   then
+
+         Passed_Count = Passed_Count + 1
+
+      else
+
+         Has_Passed = FALSE
+         Passed_Count = Passed_Count - 1
+  
+       endif
+
+      Count = Count + 1
+
+   endfor
+
+   if Has_Passed = TRUE then
+
+      [] = RPT2:Test_Passed[Instance_Handle.Some_Text, Test, Passed_Count]
+
+   else
+
+      [] = RPT3:Test_Failed[Instance_Handle.Some_Text, Test, Passed_Count]
+
+   endif
+
+endif
+',
+	3,
+	'',
+	"2b9c32c6-7328-4a8d-9484-16526cb34c04",
+	2,
+	2);
+INSERT INTO O_TPARM
+	VALUES ("12c22d6a-4d17-4d37-8635-2a1657541240",
+	"63f18a03-1633-46db-99f3-97a364cf1cbb",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("4374580b-0f80-4303-9368-dea5cfef5e91",
+	"63f18a03-1633-46db-99f3-97a364cf1cbb",
+	'A_Structure',
+	"679fc160-8aa2-47fb-8735-d6ce70c73c19",
+	0,
+	'',
+	"12c22d6a-4d17-4d37-8635-2a1657541240",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("5bc975ba-1942-44ef-a9f8-8e05451d0aa5",
+	"63f18a03-1633-46db-99f3-97a364cf1cbb",
+	'Instance_Handle',
+	"774352f7-34c6-463f-9fa6-d2275c32c9b0",
+	0,
+	'',
+	"4374580b-0f80-4303-9368-dea5cfef5e91",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("e9d76797-abc3-45d3-81e0-b16b37e0e261",
+	"63f18a03-1633-46db-99f3-97a364cf1cbb",
+	'Final_Entry_Only',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	0,
+	'',
+	"5bc975ba-1942-44ef-a9f8-8e05451d0aa5",
+	'');
+INSERT INTO O_TFR
+	VALUES ("3a73bd1d-86f7-479c-893b-11395645c963",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945",
+	'Create_Complex_Structure',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'',
+	3,
+	'',
+	"63f18a03-1633-46db-99f3-97a364cf1cbb",
+	0,
+	3);
+INSERT INTO O_TFR
+	VALUES ("55f03c05-ba95-4531-a7e6-8e4a37c02184",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945",
+	'Decode_Complex_Structure',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'',
+	3,
+	'',
+	"3a73bd1d-86f7-479c-893b-11395645c963",
+	0,
+	4);
+INSERT INTO O_TFR
+	VALUES ("a549308f-56e8-4f5b-9501-8703885a8f1e",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945",
+	'Create_Simple_TL_Structure',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'[] = RPT1:Start_Test[Test,"1241-0000-01-1212", "Structures", "objSO", "Construct Type Linked simple structure"]
+
+How_Many = countof {Returned_Simple_Structure}
+
+loop_counter = How_Many + 1
+
+Failure_Value = 0
+
+Termination_Condition = loop_counter + 5
+
+# Add five elements into the set
+
+loop
+
+   # This is supposed to be a set, therefore, stuff several
+   # version of the input data into it.
+   # This will be determined by the test number at the time.
+   append [Object_Instance_Handle.An_Integer, \
+           Object_Instance_Handle.A_Real,   \
+           Object_Instance_Handle.Some_Text, \ 
+           Object_Instance_Handle.A_Boolean]   \
+   to {Returned_Simple_Structure}
+
+   loop_counter = loop_counter + 1
+
+   breakif loop_counter = Termination_Condition
+
+endloop
+
+How_Many_Now = countof {Returned_Simple_Structure}   
+
+
+# All tests
+   
+[] = RPT2:Test_Passed[Object_Instance_Handle.Some_Text, Test, How_Many_Now]
+',
+	3,
+	'',
+	"55f03c05-ba95-4531-a7e6-8e4a37c02184",
+	2,
+	5);
+INSERT INTO O_TPARM
+	VALUES ("1595d706-0b26-4647-a320-6f40764ffd9f",
+	"a549308f-56e8-4f5b-9501-8703885a8f1e",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("ff7189f2-787d-450c-93d5-7a2e58dd29f3",
+	"a549308f-56e8-4f5b-9501-8703885a8f1e",
+	'Object_Instance_Handle',
+	"774352f7-34c6-463f-9fa6-d2275c32c9b0",
+	0,
+	'',
+	"1595d706-0b26-4647-a320-6f40764ffd9f",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("16df5f48-66b5-40a3-b8ed-801530f3e98c",
+	"a549308f-56e8-4f5b-9501-8703885a8f1e",
+	'Returned_Simple_Structure',
+	"0b7d8a4d-5c40-4bd8-a6c0-51275f578595",
+	1,
+	'',
+	"ff7189f2-787d-450c-93d5-7a2e58dd29f3",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("0b7d8a4d-5c40-4bd8-a6c0-51275f578595",
+	"00000000-0000-0000-0000-000000000000",
+	'Type_Linked_Simple_Structure_Type',
+	'',
+	'',
+	'../../../Shared/Shared.xtuml');
+INSERT INTO O_TFR
+	VALUES ("ad8dbda1-d62b-4ab9-9a54-eb1486972a56",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945",
+	'Decode_Simple_TL_Structure',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	' 
+[] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Structured Object Synch Service", "Decode simple TL data structures"]
+
+# How many in the set
+How_Many = countof {A_Structure}
+
+Count = 1
+
+# Look at the final entry in the list only.
+if Final_Entry_Only = TRUE then
+
+   for [the_integer, the_real, the_text, the_boolean] in {A_Structure} do
+
+      local_integer = the_integer
+      local_real    = the_real
+      local_text    = the_text
+      local_boolean = the_boolean
+
+      # Force a look at the penultimate entry in the set.
+      Termination_Condition = How_Many - 1
+
+      # Only look at the final entry
+      if Count = Termination_Condition then 
+
+         if local_integer = Instance_Handle.An_Integer and \
+            local_real    = Instance_Handle.A_Real     and \
+            local_text    = Instance_Handle.Some_Text  and \
+            local_boolean = Instance_Handle.A_Boolean  then
+
+            [] = RPT2:Test_Passed[Instance_Handle.Some_Text, Test, Count]
+
+         else
+  
+            [] = RPT3:Test_Failed[Instance_Handle.Some_Text, Test, Count]
+
+         endif
+
+      endif
+
+      Count = Count + 1
+
+      # Don''t want to read all the entries, just all but one of them.
+      # This so that we can append into the set again on the next iteration.
+
+      breakif Count = How_Many
+
+   endfor
+
+# Look at all entries
+else
+
+   Passed_Count = 0
+
+   Local_Test_Passed = TRUE
+
+   for [the_integer, the_real, the_text, the_boolean] in {A_Structure} do
+
+      local_integer = the_integer
+      local_real    = the_real
+      local_text    = the_text
+      local_boolean = the_boolean
+
+      if local_integer = Instance_Handle.An_Integer and \
+         local_real    = Instance_Handle.A_Real     and \
+         local_text    = Instance_Handle.Some_Text  and \
+         local_boolean = Instance_Handle.A_Boolean  then
+
+         Passed_Count = Passed_Count + 1
+
+      else
+
+         Passed_Count = Passed_Count - 1
+         Local_Test_Passed = FALSE 
+ 
+       endif
+
+      Count = Count + 1
+
+   endfor
+
+   if Local_Test_Passed = TRUE then
+
+      [] = RPT2:Test_Passed[Instance_Handle.Some_Text, Test, Passed_Count]
+
+   else
+
+      [] = RPT3:Test_Failed[Instance_Handle.Some_Text, Test, Passed_Count]
+
+   endif
+
+endif
+',
+	3,
+	'',
+	"a549308f-56e8-4f5b-9501-8703885a8f1e",
+	2,
+	6);
+INSERT INTO O_TPARM
+	VALUES ("add867c7-3842-4db0-97ff-345771f1f0c1",
+	"ad8dbda1-d62b-4ab9-9a54-eb1486972a56",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("ca4a0c16-7a77-4533-9aae-4ed15dc54519",
+	"ad8dbda1-d62b-4ab9-9a54-eb1486972a56",
+	'A_Structure',
+	"0b7d8a4d-5c40-4bd8-a6c0-51275f578595",
+	0,
+	'',
+	"add867c7-3842-4db0-97ff-345771f1f0c1",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("249bdd19-49e1-44c2-b0b8-bd11bdba48bf",
+	"ad8dbda1-d62b-4ab9-9a54-eb1486972a56",
+	'Instance_Handle',
+	"774352f7-34c6-463f-9fa6-d2275c32c9b0",
+	0,
+	'',
+	"ca4a0c16-7a77-4533-9aae-4ed15dc54519",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("7542781d-f889-4057-a3da-a01ff7023ba9",
+	"ad8dbda1-d62b-4ab9-9a54-eb1486972a56",
+	'Final_Entry_Only',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	0,
+	'',
+	"249bdd19-49e1-44c2-b0b8-bd11bdba48bf",
+	'');
+INSERT INTO O_TFR
+	VALUES ("65eeb61a-a412-41b1-a91b-ec0961694d63",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945",
+	'Create_Simple_NTL_Structure',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'[] = RPT1:Start_Test[Test,"1241-0000-01-1212", "Structures", "objSO", "Construct simple NTL structure"]
+
+How_Many = countof {Returned_Simple_Structure}
+
+loop_counter = How_Many + 1
+
+Failure_Value = 0
+
+Termination_Condition = loop_counter + 5
+
+# Add five elements into the set
+
+loop
+
+   # This is supposed to be a set, therefore, stuff several
+   # version of the input data into it.
+   # This will be determined by the test number at the time.
+   append [Object_Instance_Handle.An_Integer, \
+           Object_Instance_Handle.A_Real,   \
+           Object_Instance_Handle.Some_Text, \ 
+           Object_Instance_Handle.A_Boolean]   \
+   to {Returned_Simple_Structure}
+
+   loop_counter = loop_counter + 1
+
+   breakif loop_counter = Termination_Condition
+
+endloop
+
+How_Many_Now = countof {Returned_Simple_Structure}   
+
+
+# All tests
+   
+[] = RPT2:Test_Passed[Object_Instance_Handle.Some_Text, Test, How_Many_Now]
+',
+	3,
+	'',
+	"ad8dbda1-d62b-4ab9-9a54-eb1486972a56",
+	2,
+	7);
+INSERT INTO O_TPARM
+	VALUES ("7201d272-5840-4fa3-b370-dbc537bee7d2",
+	"65eeb61a-a412-41b1-a91b-ec0961694d63",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("8817170b-6f2d-4819-afbb-1ddba7764435",
+	"65eeb61a-a412-41b1-a91b-ec0961694d63",
+	'Object_Instance_Handle',
+	"774352f7-34c6-463f-9fa6-d2275c32c9b0",
+	0,
+	'',
+	"7201d272-5840-4fa3-b370-dbc537bee7d2",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("ab135951-600c-404f-ad1f-db0af39960b1",
+	"65eeb61a-a412-41b1-a91b-ec0961694d63",
+	'Returned_Simple_Structure',
+	"62921169-841d-4f12-8ec7-bbaab67a0732",
+	1,
+	'',
+	"8817170b-6f2d-4819-afbb-1ddba7764435",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("62921169-841d-4f12-8ec7-bbaab67a0732",
+	"00000000-0000-0000-0000-000000000000",
+	'Name_and_Type_Linked_Simple_Structure_Type',
+	'',
+	'',
+	'../../../Shared/Shared.xtuml');
+INSERT INTO O_TFR
+	VALUES ("70d89924-eeb6-4e66-93dd-6164bc6452c0",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945",
+	'Decode_Simple_NTL_Structure',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	' 
+
+# How many in the set
+How_Many = countof {A_Structure}
+
+Count = 1
+
+# Look at the final entry in the list only.
+if Final_Entry_Only = TRUE then
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Structured Object Synch Service", "Decode simple final NTL data structure"]
+
+   for [the_integer, the_real, the_text, the_boolean] in {A_Structure} do
+
+      local_integer = the_integer
+      local_real    = the_real
+      local_text    = the_text
+      local_boolean = the_boolean
+
+      # Force a look at the penultimate entry in the set.
+      Termination_Condition = How_Many - 1
+
+      # Only look at the final entry
+      if Count = Termination_Condition then 
+
+         if local_integer = Instance_Handle.An_Integer and \
+            local_real    = Instance_Handle.A_Real     and \
+            local_text    = Instance_Handle.Some_Text  and \
+            local_boolean = Instance_Handle.A_Boolean  then
+
+            [] = RPT2:Test_Passed[Instance_Handle.Some_Text, Test, Count]
+
+         else
+  
+            [] = RPT3:Test_Failed[Instance_Handle.Some_Text, Test, Count]
+
+         endif
+
+      endif
+
+      Count = Count + 1
+
+      # Don''t want to read all the entries, just all but one of them.
+      # This so that we can append into the set again on the next iteration.
+
+      breakif Count = How_Many
+
+   endfor
+
+# Look at all entries
+else
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Structured Object Synch Service", "Decode simple all NTL data structures"]
+
+   Has_Passed = TRUE
+   Passed_Count = 0
+
+
+   for [the_integer, the_real, the_text, the_boolean] in {A_Structure} do
+
+      local_integer = the_integer
+      local_real    = the_real
+      local_text    = the_text
+      local_boolean = the_boolean
+
+      if local_integer = Instance_Handle.An_Integer and \
+         local_real    = Instance_Handle.A_Real     and \
+         local_text    = Instance_Handle.Some_Text  and \
+         local_boolean = Instance_Handle.A_Boolean  then
+
+         Passed_Count = Passed_Count + 1
+
+      else
+
+         Has_Passed   = FALSE
+         Passed_Count = Passed_Count - 1
+
+  
+       endif
+
+      Count = Count + 1
+
+   endfor
+
+   if Has_Passed = TRUE then
+
+      [] = RPT2:Test_Passed[Instance_Handle.Some_Text, Test, Passed_Count]
+
+   else
+
+      [] = RPT3:Test_Failed[Instance_Handle.Some_Text, Test, Passed_Count]
+
+   endif
+
+
+endif
+',
+	3,
+	'',
+	"65eeb61a-a412-41b1-a91b-ec0961694d63",
+	2,
+	8);
+INSERT INTO O_TPARM
+	VALUES ("0e860d7a-8a64-4154-8f76-acffb89e7997",
+	"70d89924-eeb6-4e66-93dd-6164bc6452c0",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("d5aca705-f38e-47bb-808e-c1dfb1b393ea",
+	"70d89924-eeb6-4e66-93dd-6164bc6452c0",
+	'A_Structure',
+	"62921169-841d-4f12-8ec7-bbaab67a0732",
+	0,
+	'',
+	"0e860d7a-8a64-4154-8f76-acffb89e7997",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("386742d2-a004-4089-a8ca-4f59264ee3b1",
+	"70d89924-eeb6-4e66-93dd-6164bc6452c0",
+	'Instance_Handle',
+	"774352f7-34c6-463f-9fa6-d2275c32c9b0",
+	0,
+	'',
+	"d5aca705-f38e-47bb-808e-c1dfb1b393ea",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("928577bc-278d-4480-a826-154e1d85b3bc",
+	"70d89924-eeb6-4e66-93dd-6164bc6452c0",
+	'Final_Entry_Only',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	0,
+	'',
+	"386742d2-a004-4089-a8ca-4f59264ee3b1",
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("7d91a385-6f47-43af-a027-d89b3d7213b6",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945");
+INSERT INTO O_BATTR
+	VALUES ("7d91a385-6f47-43af-a027-d89b3d7213b6",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945");
+INSERT INTO O_ATTR
+	VALUES ("7d91a385-6f47-43af-a027-d89b3d7213b6",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945",
+	"00000000-0000-0000-0000-000000000000",
+	'Reference_SO',
+	'',
+	'',
+	'Reference_SO',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("e19b08ee-0d0b-4546-8f64-4ca4677c1d55",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945");
+INSERT INTO O_BATTR
+	VALUES ("e19b08ee-0d0b-4546-8f64-4ca4677c1d55",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945");
+INSERT INTO O_ATTR
+	VALUES ("e19b08ee-0d0b-4546-8f64-4ca4677c1d55",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945",
+	"7d91a385-6f47-43af-a027-d89b3d7213b6",
+	'An_Integer',
+	'',
+	'',
+	'An_Integer',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("15ca445f-5b71-4cdb-aa97-51cf2e15bdd1",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945");
+INSERT INTO O_BATTR
+	VALUES ("15ca445f-5b71-4cdb-aa97-51cf2e15bdd1",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945");
+INSERT INTO O_ATTR
+	VALUES ("15ca445f-5b71-4cdb-aa97-51cf2e15bdd1",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945",
+	"e19b08ee-0d0b-4546-8f64-4ca4677c1d55",
+	'A_Real',
+	'',
+	'',
+	'A_Real',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000003",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("716142a2-a68c-4c84-8496-f653afbaec7f",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945");
+INSERT INTO O_BATTR
+	VALUES ("716142a2-a68c-4c84-8496-f653afbaec7f",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945");
+INSERT INTO O_ATTR
+	VALUES ("716142a2-a68c-4c84-8496-f653afbaec7f",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945",
+	"15ca445f-5b71-4cdb-aa97-51cf2e15bdd1",
+	'Some_Text',
+	'',
+	'',
+	'Some_Text',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("47d47654-1f77-4d82-895a-4605117f6a9e",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945");
+INSERT INTO O_BATTR
+	VALUES ("47d47654-1f77-4d82-895a-4605117f6a9e",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945");
+INSERT INTO O_ATTR
+	VALUES ("47d47654-1f77-4d82-895a-4605117f6a9e",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945",
+	"716142a2-a68c-4c84-8496-f653afbaec7f",
+	'A_Boolean',
+	'',
+	'',
+	'A_Boolean',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("0f994a06-85c1-4349-a8cf-3acef7b5543e",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945");
+INSERT INTO O_BATTR
+	VALUES ("0f994a06-85c1-4349-a8cf-3acef7b5543e",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945");
+INSERT INTO O_ATTR
+	VALUES ("0f994a06-85c1-4349-a8cf-3acef7b5543e",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945",
+	"47d47654-1f77-4d82-895a-4605117f6a9e",
+	'A_Colour',
+	'',
+	'',
+	'A_Colour',
+	0,
+	"fd8d10c9-2be8-4cc1-994f-8ce4c9bc6bd9",
+	'',
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("fd8d10c9-2be8-4cc1-994f-8ce4c9bc6bd9",
+	"00000000-0000-0000-0000-000000000000",
+	'Colour_Type',
+	'',
+	'',
+	'../../../Shared/Shared.xtuml');
+INSERT INTO O_NBATTR
+	VALUES ("da5eacd0-4c67-4668-8ea8-5a59bdfd482f",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945");
+INSERT INTO O_BATTR
+	VALUES ("da5eacd0-4c67-4668-8ea8-5a59bdfd482f",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945");
+INSERT INTO O_ATTR
+	VALUES ("da5eacd0-4c67-4668-8ea8-5a59bdfd482f",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945",
+	"0f994a06-85c1-4349-a8cf-3acef7b5543e",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945");
+INSERT INTO O_OIDA
+	VALUES ("7d91a385-6f47-43af-a027-d89b3d7213b6",
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945",
+	0,
+	'Reference_SO');
+INSERT INTO O_ID
+	VALUES (1,
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945");
+INSERT INTO O_ID
+	VALUES (2,
+	"ff15d4ff-218a-4304-abe2-8a7bcaaa2945");
+INSERT INTO PE_PE
+	VALUES ("ff15d4ff-218a-4304-abe2-8a7bcaaa2945",
+	1,
+	"c7edd3de-a622-41ab-b4c9-f5f3ba528ef4",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("c7edd3de-a622-41ab-b4c9-f5f3ba528ef4",
+	"00000000-0000-0000-0000-000000000000",
+	"e05fd001-e388-4210-a0cc-0b5a9a96aa1c",
+	'classes',
+	'',
+	0,
+	'../classes.xtuml');

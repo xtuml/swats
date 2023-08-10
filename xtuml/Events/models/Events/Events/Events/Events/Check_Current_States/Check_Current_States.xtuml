@@ -1,0 +1,73 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("41556fd9-c402-4ef8-9dec-625bc0ccd7bb",
+	'Check_Current_States',
+	70,
+	'CCS',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("56192de3-cef4-4381-bfc4-55855d98c6d2",
+	"41556fd9-c402-4ef8-9dec-625bc0ccd7bb");
+INSERT INTO O_BATTR
+	VALUES ("56192de3-cef4-4381-bfc4-55855d98c6d2",
+	"41556fd9-c402-4ef8-9dec-625bc0ccd7bb");
+INSERT INTO O_ATTR
+	VALUES ("56192de3-cef4-4381-bfc4-55855d98c6d2",
+	"41556fd9-c402-4ef8-9dec-625bc0ccd7bb",
+	"1ea73297-ce7e-4803-bae0-ed56425d131a",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("1ea73297-ce7e-4803-bae0-ed56425d131a",
+	"41556fd9-c402-4ef8-9dec-625bc0ccd7bb");
+INSERT INTO O_BATTR
+	VALUES ("1ea73297-ce7e-4803-bae0-ed56425d131a",
+	"41556fd9-c402-4ef8-9dec-625bc0ccd7bb");
+INSERT INTO O_ATTR
+	VALUES ("1ea73297-ce7e-4803-bae0-ed56425d131a",
+	"41556fd9-c402-4ef8-9dec-625bc0ccd7bb",
+	"00000000-0000-0000-0000-000000000000",
+	'ccs_id',
+	'',
+	'',
+	'ccs_id',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"41556fd9-c402-4ef8-9dec-625bc0ccd7bb");
+INSERT INTO O_OIDA
+	VALUES ("1ea73297-ce7e-4803-bae0-ed56425d131a",
+	"41556fd9-c402-4ef8-9dec-625bc0ccd7bb",
+	0,
+	'ccs_id');
+INSERT INTO O_ID
+	VALUES (1,
+	"41556fd9-c402-4ef8-9dec-625bc0ccd7bb");
+INSERT INTO O_ID
+	VALUES (2,
+	"41556fd9-c402-4ef8-9dec-625bc0ccd7bb");
+INSERT INTO PE_PE
+	VALUES ("41556fd9-c402-4ef8-9dec-625bc0ccd7bb",
+	1,
+	"a9a21ab3-b305-417c-89c1-c9f52915c70b",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("a9a21ab3-b305-417c-89c1-c9f52915c70b",
+	"00000000-0000-0000-0000-000000000000",
+	"9b3c9b37-3527-4c3a-8648-5c925cc26549",
+	'Events',
+	'',
+	0,
+	'../Events.xtuml');

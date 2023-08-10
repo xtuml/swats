@@ -1,0 +1,75 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("aa3986fc-b6eb-4690-9c2c-1968e8b2b2d0",
+	'The_Environment',
+	2,
+	'ENV',
+	' This data object shall contain the environment information for where this system is executing. Either ISIM or WACA.
+',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("47806b85-7b18-435d-a10d-4b7de748f911",
+	"aa3986fc-b6eb-4690-9c2c-1968e8b2b2d0");
+INSERT INTO O_BATTR
+	VALUES ("47806b85-7b18-435d-a10d-4b7de748f911",
+	"aa3986fc-b6eb-4690-9c2c-1968e8b2b2d0");
+INSERT INTO O_ATTR
+	VALUES ("47806b85-7b18-435d-a10d-4b7de748f911",
+	"aa3986fc-b6eb-4690-9c2c-1968e8b2b2d0",
+	"00000000-0000-0000-0000-000000000000",
+	'Unique_Identifier',
+	'',
+	'',
+	'Unique_Identifier',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("b79034ae-645a-410a-81d3-36402093fb3b",
+	"aa3986fc-b6eb-4690-9c2c-1968e8b2b2d0");
+INSERT INTO O_BATTR
+	VALUES ("b79034ae-645a-410a-81d3-36402093fb3b",
+	"aa3986fc-b6eb-4690-9c2c-1968e8b2b2d0");
+INSERT INTO O_ATTR
+	VALUES ("b79034ae-645a-410a-81d3-36402093fb3b",
+	"aa3986fc-b6eb-4690-9c2c-1968e8b2b2d0",
+	"47806b85-7b18-435d-a10d-4b7de748f911",
+	'Where_Are_We',
+	' Where are we 
+',
+	'',
+	'Where_Are_We',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"aa3986fc-b6eb-4690-9c2c-1968e8b2b2d0");
+INSERT INTO O_OIDA
+	VALUES ("47806b85-7b18-435d-a10d-4b7de748f911",
+	"aa3986fc-b6eb-4690-9c2c-1968e8b2b2d0",
+	0,
+	'Unique_Identifier');
+INSERT INTO O_ID
+	VALUES (1,
+	"aa3986fc-b6eb-4690-9c2c-1968e8b2b2d0");
+INSERT INTO O_ID
+	VALUES (2,
+	"aa3986fc-b6eb-4690-9c2c-1968e8b2b2d0");
+INSERT INTO PE_PE
+	VALUES ("aa3986fc-b6eb-4690-9c2c-1968e8b2b2d0",
+	1,
+	"d19ca4f2-e1eb-451f-a3be-94c83e067505",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("d19ca4f2-e1eb-451f-a3be-94c83e067505",
+	"00000000-0000-0000-0000-000000000000",
+	"91f31d87-193f-4b1a-b022-f1a69c2f11ca",
+	'FTE',
+	'',
+	0,
+	'../FTE.xtuml');

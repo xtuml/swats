@@ -1,0 +1,552 @@
+--*************************************************************************************
+--*                            UNCLASSIFIED                                           *
+--*************************************************************************************
+--*                            BAE SYSTEMS PROPRIETARY                                *
+--*************************************************************************************
+--*          Export Control Restrictions: NONE                                        *
+--*************************************************************************************
+--*                                                                                   *
+--*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*                                                                                   *
+--*************************************************************************************
+--*                                                                                   *
+--* No contract-specific restrictions are in place for this code-generated file.      *
+--*                                                                                   *
+--*************************************************************************************
+--*                                                                                   *
+--* File Name:               SBONE_Scenario2.ada
+--* Drawing Number:          Refer to release documentation                           *
+--* Version:                 As detailed by Configuration Management System           *
+--* Version Date:            As detailed by Configuration Management System           *
+--* Creation Date:           As detailed by Configuration Management System           *
+--* Section/Unit:            Refer to release documentation                           *
+--* Description              
+--*                          Send_To_Bridge_And_Back_To_SBONE
+--*                          
+--* Comments:                Header written by ASL Translator
+--*                                                                                   *
+--*************************************************************************************
+--*                            SUPPLEMENTAL INFORMATION                               *
+--*                            ------------------------                               *
+--*  OVERVIEW                                                                         *
+--*  --------                                                                         *
+--*
+--*  ERROR HANDLING                                                                   *
+--*  --------------                                                                   *
+--*  None                                                                             *
+--*                                                                                   *
+--*  SAFETY         : None                                                            *
+--*  ------                                                                           *
+--*                                                                                   *
+--*  BUILD INFORMATION                                                                *
+--*  -----------------                                                                *
+--*                                                                                   *
+--* Domain Name              : Structure_Bridge_One
+--* Domain Key Letter        : SBONE
+--* Domain Version           : 0
+--*                                                                                   *
+--*  Build Target       : Dos
+--*  Clock Type         : INTERNAL
+--*  Debugging is       : Off
+--*  Trace is           : Off
+--
+-- with list for all objects, relationships, services and types used within this code fragment
+
+-- List of objects used
+with Root_Object.SBONE.VSD;
+with Root_Object.SBONE.SBD;
+with Root_Object.SBONE.TD;
+
+-- List of bridges used
+with SBONE_ITGWO4_The_IH_Struct_Across_Bridge_Bridge;
+with SBONE_RPT3_Test_Failed_Bridge;
+with SBONE_RPT2_Test_Passed_Bridge;
+with SBONE_ITGWO1_Across_The_Great_Divide_Bridge;
+with SBONE_RPT1_Start_Test_Bridge;
+
+-- List of domain types used
+with SBONE_Domain_Types;
+with SBONE_Domain_Types.Ops;
+use type SBONE_Domain_Types.VSD_Struct;
+use type SBONE_Domain_Types.Source_Structure_Type;
+use type SBONE_Domain_Types.Colour_Type;
+
+with Application_Types;
+use type Application_Types.Base_Integer_Type;
+use type Application_Types.Base_Float_Type;
+use type Application_Types.Base_Text_Type;
+use type Application_Types.Time_Unit;
+
+with Root_Object;
+use type Root_Object.Object_Access;
+
+   
+   procedure SBONE_Scenario2 is
+   
+      
+      my_test      : Root_Object.Object_Access;
+      Object_One   : Root_Object.Object_Access;
+      Object_Two   : Root_Object.Object_Access;
+      Object_Three : Root_Object.Object_Access;
+      Simple_ObjA  : Root_Object.Object_Access;
+      Simple_ObjB  : Root_Object.Object_Access;
+      Simple_ObjC  : Root_Object.Object_Access;
+      
+      Source_Structure_One   : SBONE_Domain_Types.Source_Structure_Type;
+      Source_Structure_Two   : SBONE_Domain_Types.Source_Structure_Type;
+      Source_Structure_Three : SBONE_Domain_Types.Source_Structure_Type;
+      Returned_Structure_1   : SBONE_Domain_Types.Source_Structure_Type;
+      Returned_Structure_2   : SBONE_Domain_Types.Source_Structure_Type;
+      Returned_Structure_3   : SBONE_Domain_Types.Source_Structure_Type;
+      Decomposed_Struct      : SBONE_Domain_Types.VSD_Struct;
+      
+      A_Real : Application_Types.Base_Float_Type := 1.0;
+      
+      Test                  : Application_Types.Base_Integer_Type := 1;
+      Elements_In_Structure : Application_Types.Base_Integer_Type := 1;
+      Local_Test            : Application_Types.Base_Integer_Type := 1;
+      ValA                  : Application_Types.Base_Integer_Type := 1;
+      ValB                  : Application_Types.Base_Integer_Type := 1;
+      ValC                  : Application_Types.Base_Integer_Type := 1;
+      ValD                  : Application_Types.Base_Integer_Type := 1;
+      A_Ref                 : Application_Types.Base_Integer_Type := 1;
+      A_Int                 : Application_Types.Base_Integer_Type := 1;
+      
+      Result : Boolean := Application_Types.Boolean_first;
+      
+   begin
+      my_test := Root_Object.SBONE.TD.Unconditional_Find_One;
+      
+      --  Define a local data structure to be passed via a bridge
+      --  into a destination domain.
+      -- {Source_Structure_One} is Source_Structure_Type
+      SBONE_Domain_Types.Ops.Initialise (Source_Structure_One);
+      
+      -- {Source_Structure_Two} is Source_Structure_Type
+      SBONE_Domain_Types.Ops.Initialise (Source_Structure_Two);
+      
+      -- {Source_Structure_Three} is Source_Structure_Type
+      SBONE_Domain_Types.Ops.Initialise (Source_Structure_Three);
+      
+      -- {Returned_Structure_1} is Source_Structure_Type
+      SBONE_Domain_Types.Ops.Initialise (Returned_Structure_1);
+      
+      -- {Returned_Structure_2} is Source_Structure_Type
+      SBONE_Domain_Types.Ops.Initialise (Returned_Structure_2);
+      
+      -- {Returned_Structure_3} is Source_Structure_Type
+      SBONE_Domain_Types.Ops.Initialise (Returned_Structure_3);
+      
+      Test := Root_Object.SBONE.TD.SBONE_TD_type(my_test.all).This_Test_Number;
+      
+      
+      -- --------------------------------------------------------------------------
+      --  Test 1
+      -- --------------------------------------------------------------------------
+      
+      SBONE_RPT1_Start_Test_Bridge.SBONE_RPT1_Start_Test (
+         Test_Number     => Test,
+         Requid          => "Null Requid                     ",
+         Invoking_Domain => "Source Structure Bridge         ",
+         Invoking_Object => "Scenario                        ",
+         Purpose         => "Send 1 structure to bridge      ");
+      
+      
+      Object_One := Root_Object.SBONE.SBD.Create;
+      Root_Object.SBONE.SBD.SBONE_SBD_Type(Object_One.all).Reference   := Test;
+      Root_Object.SBONE.SBD.SBONE_SBD_Type(Object_One.all).The_Integer := 1;
+      Root_Object.SBONE.SBD.SBONE_SBD_Type(Object_One.all).The_Real    := 2.0;
+      Root_Object.SBONE.SBD.SBONE_SBD_Type(Object_One.all).The_String  := "three                           ";
+      Root_Object.SBONE.SBD.SBONE_SBD_Type(Object_One.all).The_Colour  := SBONE_Domain_Types.Red;
+      Root_Object.SBONE.SBD.SBONE_SBD_Type(Object_One.all).The_Boolean := False;
+      
+      --
+      -- start of append members to structure
+      SBONE_Domain_Types.Ops.Append (
+         A_Source_Integer => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_One.all).The_Integer,
+         A_Source_Real    => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_One.all).The_Real,
+         A_Source_Text    => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_One.all).The_String,
+         A_Source_Boolean => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_One.all).The_Boolean,
+         A_Source_Colour  => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_One.all).The_Colour, 
+         To_Structure     => Source_Structure_One);
+      -- end of append members to structure
+      --
+      
+      
+      Elements_In_Structure := 1;
+      
+      
+      --  Pass this lot into the bridge.
+      
+      Result     := False;
+      Local_Test := Test + 1;
+      
+      
+      SBONE_ITGWO1_Across_The_Great_Divide_Bridge.SBONE_ITGWO1_Across_The_Great_Divide (
+         Test                  => Local_Test,
+         A_Structure_To_Send   => Source_Structure_One,
+         Control_Integer       => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_One.all).The_Integer,
+         Control_Real          => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_One.all).The_Real,
+         Control_String        => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_One.all).The_String,
+         Control_Enum          => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_One.all).The_Colour,
+         Control_Boolean       => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_One.all).The_Boolean,
+         Elements_In_Structure => Elements_In_Structure,
+         Result                => Result,
+         A_Structure_To_Return => Returned_Structure_1);
+      
+      
+      if Result =  True then
+         
+         SBONE_RPT2_Test_Passed_Bridge.SBONE_RPT2_Test_Passed (
+            Test_Object_Domain => "Source 1 Structure sent         ",
+            Test_Number        => Test,
+            Test_Value         => 0);
+         
+      else
+         SBONE_RPT3_Test_Failed_Bridge.SBONE_RPT3_Test_Failed (
+            Failed_Domain_Object => "Source 1 Structure sent         ",
+            Failed_Test_Number   => Test,
+            Failed_Test_Value    => -1);
+         
+      end if;
+      
+      
+      Test := Test + 2;
+      
+      
+      --  End Test 1
+      -- --------------------------------------------------------------------------
+      --  Test 2
+      -- --------------------------------------------------------------------------
+      
+      SBONE_RPT1_Start_Test_Bridge.SBONE_RPT1_Start_Test (
+         Test_Number     => Test,
+         Requid          => "Null Requid                     ",
+         Invoking_Domain => "Source Structure Bridge         ",
+         Invoking_Object => "Scenario                        ",
+         Purpose         => "Send 2 structures to bridge     ");
+      
+      
+      Object_Two := Root_Object.SBONE.SBD.Create;
+      Root_Object.SBONE.SBD.SBONE_SBD_Type(Object_Two.all).Reference   := Test;
+      Root_Object.SBONE.SBD.SBONE_SBD_Type(Object_Two.all).The_Integer := 4;
+      Root_Object.SBONE.SBD.SBONE_SBD_Type(Object_Two.all).The_Real    := 5.0;
+      Root_Object.SBONE.SBD.SBONE_SBD_Type(Object_Two.all).The_String  := "six                             ";
+      Root_Object.SBONE.SBD.SBONE_SBD_Type(Object_Two.all).The_Colour  := SBONE_Domain_Types.Blue;
+      Root_Object.SBONE.SBD.SBONE_SBD_Type(Object_Two.all).The_Boolean := True;
+      
+      --
+      -- start of append members to structure
+      SBONE_Domain_Types.Ops.Append (
+         A_Source_Integer => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_One.all).The_Integer,
+         A_Source_Real    => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_One.all).The_Real,
+         A_Source_Text    => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_One.all).The_String,
+         A_Source_Boolean => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_One.all).The_Boolean,
+         A_Source_Colour  => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_One.all).The_Colour, 
+         To_Structure     => Source_Structure_Two);
+      -- end of append members to structure
+      --
+      
+      --
+      -- start of append members to structure
+      SBONE_Domain_Types.Ops.Append (
+         A_Source_Integer => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_Two.all).The_Integer,
+         A_Source_Real    => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_Two.all).The_Real,
+         A_Source_Text    => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_Two.all).The_String,
+         A_Source_Boolean => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_Two.all).The_Boolean,
+         A_Source_Colour  => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_Two.all).The_Colour, 
+         To_Structure     => Source_Structure_Two);
+      -- end of append members to structure
+      --
+      
+      
+      Elements_In_Structure := 2;
+      
+      
+      --  Pass this lot into the bridge.
+      
+      Local_Test := Test + 1;
+      Result     := False;
+      
+      
+      SBONE_ITGWO1_Across_The_Great_Divide_Bridge.SBONE_ITGWO1_Across_The_Great_Divide (
+         Test                  => Local_Test,
+         A_Structure_To_Send   => Source_Structure_Two,
+         Control_Integer       => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_Two.all).The_Integer,
+         Control_Real          => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_Two.all).The_Real,
+         Control_String        => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_Two.all).The_String,
+         Control_Enum          => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_Two.all).The_Colour,
+         Control_Boolean       => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_Two.all).The_Boolean,
+         Elements_In_Structure => Elements_In_Structure,
+         Result                => Result,
+         A_Structure_To_Return => Returned_Structure_2);
+      
+      
+      if Result =  True then
+         
+         SBONE_RPT2_Test_Passed_Bridge.SBONE_RPT2_Test_Passed (
+            Test_Object_Domain => "Source 2 Structures sent        ",
+            Test_Number        => Test,
+            Test_Value         => 0);
+         
+      else
+         SBONE_RPT3_Test_Failed_Bridge.SBONE_RPT3_Test_Failed (
+            Failed_Domain_Object => "Source 2 Structures sent        ",
+            Failed_Test_Number   => Test,
+            Failed_Test_Value    => -1);
+         
+      end if;
+      
+      
+      Test := Test + 2;
+      
+      
+      --  End Test 2
+      -- --------------------------------------------------------------------------
+      --  Test 3
+      -- --------------------------------------------------------------------------
+      
+      SBONE_RPT1_Start_Test_Bridge.SBONE_RPT1_Start_Test (
+         Test_Number     => Test,
+         Requid          => "Null Requid                     ",
+         Invoking_Domain => "Source Structure Bridge         ",
+         Invoking_Object => "Scenario                        ",
+         Purpose         => "Send 3 structures to bridge     ");
+      
+      
+      Object_Three := Root_Object.SBONE.SBD.Create;
+      Root_Object.SBONE.SBD.SBONE_SBD_Type(Object_Three.all).Reference   := Test;
+      Root_Object.SBONE.SBD.SBONE_SBD_Type(Object_Three.all).The_Integer := 7;
+      Root_Object.SBONE.SBD.SBONE_SBD_Type(Object_Three.all).The_Real    := 8.0;
+      Root_Object.SBONE.SBD.SBONE_SBD_Type(Object_Three.all).The_String  := "nine                            ";
+      Root_Object.SBONE.SBD.SBONE_SBD_Type(Object_Three.all).The_Colour  := SBONE_Domain_Types.Blue;
+      Root_Object.SBONE.SBD.SBONE_SBD_Type(Object_Three.all).The_Boolean := True;
+      
+      --
+      -- start of append members to structure
+      SBONE_Domain_Types.Ops.Append (
+         A_Source_Integer => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_One.all).The_Integer,
+         A_Source_Real    => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_One.all).The_Real,
+         A_Source_Text    => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_One.all).The_String,
+         A_Source_Boolean => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_One.all).The_Boolean,
+         A_Source_Colour  => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_One.all).The_Colour, 
+         To_Structure     => Source_Structure_Three);
+      -- end of append members to structure
+      --
+      
+      --
+      -- start of append members to structure
+      SBONE_Domain_Types.Ops.Append (
+         A_Source_Integer => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_Two.all).The_Integer,
+         A_Source_Real    => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_Two.all).The_Real,
+         A_Source_Text    => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_Two.all).The_String,
+         A_Source_Boolean => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_Two.all).The_Boolean,
+         A_Source_Colour  => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_Two.all).The_Colour, 
+         To_Structure     => Source_Structure_Three);
+      -- end of append members to structure
+      --
+      
+      --
+      -- start of append members to structure
+      SBONE_Domain_Types.Ops.Append (
+         A_Source_Integer => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_Three.all).The_Integer,
+         A_Source_Real    => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_Three.all).The_Real,
+         A_Source_Text    => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_Three.all).The_String,
+         A_Source_Boolean => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_Three.all).The_Boolean,
+         A_Source_Colour  => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_Three.all).The_Colour, 
+         To_Structure     => Source_Structure_Three);
+      -- end of append members to structure
+      --
+      
+      
+      Elements_In_Structure := 3;
+      
+      
+      --  Pass this lot into the bridge.
+      
+      Result     := False;
+      Local_Test := Test + 1;
+      
+      
+      SBONE_ITGWO1_Across_The_Great_Divide_Bridge.SBONE_ITGWO1_Across_The_Great_Divide (
+         Test                  => Local_Test,
+         A_Structure_To_Send   => Source_Structure_Three,
+         Control_Integer       => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_Three.all).The_Integer,
+         Control_Real          => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_Three.all).The_Real,
+         Control_String        => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_Three.all).The_String,
+         Control_Enum          => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_Three.all).The_Colour,
+         Control_Boolean       => Root_Object.SBONE.SBD.SBONE_SBD_type(Object_Three.all).The_Boolean,
+         Elements_In_Structure => Elements_In_Structure,
+         Result                => Result,
+         A_Structure_To_Return => Returned_Structure_3);
+      
+      
+      if Result =  True then
+         
+         SBONE_RPT2_Test_Passed_Bridge.SBONE_RPT2_Test_Passed (
+            Test_Object_Domain => "Source 3 Structures sent        ",
+            Test_Number        => Test,
+            Test_Value         => 0);
+         
+      else
+         SBONE_RPT3_Test_Failed_Bridge.SBONE_RPT3_Test_Failed (
+            Failed_Domain_Object => "Source 3 Structures sent        ",
+            Failed_Test_Number   => Test,
+            Failed_Test_Value    => -1);
+         
+      end if;
+      
+      
+      Test := Test + 2;
+      
+      --  End Test 3
+      -- --------------------------------------------------------------------------
+      --  Test 4
+      -- --------------------------------------------------------------------------
+      
+      SBONE_RPT1_Start_Test_Bridge.SBONE_RPT1_Start_Test (
+         Test_Number     => Test,
+         Requid          => "Null Requid                     ",
+         Invoking_Domain => "Source Structure Bridge         ",
+         Invoking_Object => "Scenario                        ",
+         Purpose         => "Struct IH to bridge             ");
+      
+      -- {Decomposed_Struct} is VSD_Struct
+      SBONE_Domain_Types.Ops.Initialise (Decomposed_Struct);
+      
+      ValA := 0;
+      ValB := 0;
+      ValC := 0;
+      ValD := 0;
+      
+      Simple_ObjA := Root_Object.SBONE.VSD.Create;
+      Root_Object.SBONE.VSD.SBONE_VSD_Type(Simple_ObjA.all).Object_Reference_VSD  := 1;
+      Root_Object.SBONE.VSD.SBONE_VSD_Type(Simple_ObjA.all).Object_Simple_Integer := 1;
+      Root_Object.SBONE.VSD.SBONE_VSD_Type(Simple_ObjA.all).Object_Simple_Real    := 1.0;
+      
+      
+      Simple_ObjB := Root_Object.SBONE.VSD.Create;
+      Root_Object.SBONE.VSD.SBONE_VSD_Type(Simple_ObjB.all).Object_Reference_VSD  := 2;
+      Root_Object.SBONE.VSD.SBONE_VSD_Type(Simple_ObjB.all).Object_Simple_Integer := 2;
+      Root_Object.SBONE.VSD.SBONE_VSD_Type(Simple_ObjB.all).Object_Simple_Real    := 2.0;
+      
+      
+      Simple_ObjC := Root_Object.SBONE.VSD.Create;
+      Root_Object.SBONE.VSD.SBONE_VSD_Type(Simple_ObjC.all).Object_Reference_VSD  := 3;
+      Root_Object.SBONE.VSD.SBONE_VSD_Type(Simple_ObjC.all).Object_Simple_Integer := 3;
+      Root_Object.SBONE.VSD.SBONE_VSD_Type(Simple_ObjC.all).Object_Simple_Real    := 3.0;
+      
+      
+      SBONE_ITGWO4_The_IH_Struct_Across_Bridge_Bridge.SBONE_ITGWO4_The_IH_Struct_Across_Bridge (
+         The_IHA           => Simple_ObjA,
+         The_IHB           => Simple_ObjB,
+         The_IHC           => Simple_ObjC,
+         Decomposed_Struct => Decomposed_Struct);
+      
+      --
+      -- start of unpacking structure
+      
+      declare
+         use type Root_Object.Object_List.Node_Access_Type;
+      begin
+         SBONE_Domain_Types.Ops.Go_To_Start (Decomposed_Struct);
+         for i in 1 .. SBONE_Domain_Types.Ops.Count_Of (In_Structure => Decomposed_Struct) loop
+            SBONE_Domain_Types.Ops.Extract (
+               A_Ref_Type       => A_Ref,
+               A_Int_Type       => A_Int,
+               A_Real_Type      => A_Real,
+               From_Structure   => Decomposed_Struct);
+            
+            
+            if A_Ref =  1 then
+               
+               if A_Int =  1 then
+                  
+                  if A_Real =  1.0 then
+                     ValA := 10;
+                  else
+                     ValA := -10;
+                  end if;
+                  
+               else
+                  ValA := -11;
+               end if;
+               
+            else
+               
+               if A_Ref =  2 then
+                  
+                  if A_Int =  2 then
+                     
+                     if A_Real =  2.0 then
+                        ValB := 20;
+                     else
+                        ValB := -20;
+                     end if;
+                     
+                  else
+                     ValB := -21;
+                  end if;
+                  
+               else
+                  
+                  if A_Ref =  3 then
+                     
+                     if A_Int =  3 then
+                        
+                        if A_Real =  3.0 then
+                           ValC := 30;
+                        else
+                           ValC := -3;
+                        end if;
+                        
+                     else
+                        ValC := -31;
+                     end if;
+                     
+                  else
+                     ValD := -40;
+                  end if;
+                  
+               end if;
+               
+            end if;
+            
+         end loop; -- end of i in 1 .. SBONE_Domain_Types.Ops.Count_Of (In_Structure => Decomposed_Struct) loop
+         
+      end;
+      -- end of unpacking structure
+      --
+      
+      
+      if ValA =  10 and then
+         ValB =  20 and then
+         ValC =  30 and then
+         ValD =  0 then
+         
+         SBONE_RPT2_Test_Passed_Bridge.SBONE_RPT2_Test_Passed (
+            Test_Object_Domain => "Struct IH to bridge             ",
+            Test_Number        => Test,
+            Test_Value         => 0);
+         
+      else
+         SBONE_RPT3_Test_Failed_Bridge.SBONE_RPT3_Test_Failed (
+            Failed_Domain_Object => "Struct IH to bridge             ",
+            Failed_Test_Number   => Test,
+            Failed_Test_Value    => -10);
+         
+      end if;
+      
+      Test := Test + 1;
+      
+      
+      --  End Test 4
+      -- --------------------------------------------------------------------------
+      
+      Root_Object.SBONE.TD.SBONE_TD_type(my_test.all).This_Test_Number := Test;
+      
+   end SBONE_Scenario2;
+   
+--
+-- End of file SBONE_Scenario2.ada
+--

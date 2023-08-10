@@ -1,0 +1,13 @@
+UDT::UDT,version,Component,6
+UDT::UDT::classes::R1,Class_B,Association,"Test_Data"
+UDT::UDT::classes::R1,Class_A,Association,"Test_Data"
+UDT::UDT::scenarios::void Check_Constraint_Type,scenario,Function,10
+UDT::UDT::scenarios::void Enum_Scenario,scenario,Function,9
+UDT::UDT::scenarios::void Timer_Enum_Scenario,scenario,Function,8
+UDT::UDT::scenarios::void Events_UDT_Scenario,scenario,Function,7
+UDT::UDT::scenarios::void Terminator_Type_Scenario,scenario,Function,6
+UDT::UDT::scenarios::void Predeclared_Integer_Scenario,scenario,Function,5
+UDT::UDT::scenarios::void Real_Numbers_Scenario,scenario,Function,4
+UDT::UDT::scenarios::void Finish_UDT_Tests,scenario,Function,3
+UDT::UDT::scenarios::void Start_UDT_Tests,scenario,Function,2
+UDT::UDT::scenarios::void Integer_Number_Scenarios,scenario,Function,1

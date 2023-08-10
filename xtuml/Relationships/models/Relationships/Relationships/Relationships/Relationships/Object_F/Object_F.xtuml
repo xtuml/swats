@@ -1,0 +1,75 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("dcea1b4e-9fb6-4ccf-9aac-fff848002485",
+	'Object_F',
+	8,
+	'objF',
+	' This object forms part of a 1-(Mc:Mc) relationship.
+',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("f5e82504-5232-4679-bd93-d6e57db077b5",
+	"dcea1b4e-9fb6-4ccf-9aac-fff848002485");
+INSERT INTO O_BATTR
+	VALUES ("f5e82504-5232-4679-bd93-d6e57db077b5",
+	"dcea1b4e-9fb6-4ccf-9aac-fff848002485");
+INSERT INTO O_ATTR
+	VALUES ("f5e82504-5232-4679-bd93-d6e57db077b5",
+	"dcea1b4e-9fb6-4ccf-9aac-fff848002485",
+	"00000000-0000-0000-0000-000000000000",
+	'idF',
+	' Preferred identifier.
+',
+	'',
+	'idF',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("67f81a0d-950c-41b7-bd03-4c20a91ea560",
+	"dcea1b4e-9fb6-4ccf-9aac-fff848002485");
+INSERT INTO O_BATTR
+	VALUES ("67f81a0d-950c-41b7-bd03-4c20a91ea560",
+	"dcea1b4e-9fb6-4ccf-9aac-fff848002485");
+INSERT INTO O_ATTR
+	VALUES ("67f81a0d-950c-41b7-bd03-4c20a91ea560",
+	"dcea1b4e-9fb6-4ccf-9aac-fff848002485",
+	"f5e82504-5232-4679-bd93-d6e57db077b5",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"dcea1b4e-9fb6-4ccf-9aac-fff848002485");
+INSERT INTO O_OIDA
+	VALUES ("f5e82504-5232-4679-bd93-d6e57db077b5",
+	"dcea1b4e-9fb6-4ccf-9aac-fff848002485",
+	0,
+	'idF');
+INSERT INTO O_ID
+	VALUES (1,
+	"dcea1b4e-9fb6-4ccf-9aac-fff848002485");
+INSERT INTO O_ID
+	VALUES (2,
+	"dcea1b4e-9fb6-4ccf-9aac-fff848002485");
+INSERT INTO PE_PE
+	VALUES ("dcea1b4e-9fb6-4ccf-9aac-fff848002485",
+	1,
+	"1a16545d-ab33-4153-84c6-9d8e9f7ca024",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("1a16545d-ab33-4153-84c6-9d8e9f7ca024",
+	"00000000-0000-0000-0000-000000000000",
+	"6d141527-9fd5-4054-8692-9fc325055afc",
+	'Relationships',
+	'',
+	0,
+	'../Relationships.xtuml');

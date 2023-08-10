@@ -1,0 +1,102 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("a7a0db3a-df5c-49b7-bdf6-4c9e83c3d4f8",
+	"00000000-0000-0000-0000-000000000000",
+	'TAGSUntagged_Terminator',
+	'');
+INSERT INTO C_EP
+	VALUES ("1ee99a51-1ac1-4bae-bd96-bd88500214bf",
+	"a7a0db3a-df5c-49b7-bdf6-4c9e83c3d4f8",
+	0,
+	'An_Untagged_Local_Terminator',
+	'',
+	1);
+INSERT INTO C_IO
+	VALUES ("1ee99a51-1ac1-4bae-bd96-bd88500214bf",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'An_Untagged_Local_Terminator',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("caf39d27-d81c-4ab8-b793-596bf66477fb",
+	"1ee99a51-1ac1-4bae-bd96-bd88500214bf",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'Incoming_Parameter_2',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("a3e65f1b-b098-41a3-beff-576e5b31dd3b",
+	"1ee99a51-1ac1-4bae-bd96-bd88500214bf",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'Outgoing_Parameter_2',
+	'',
+	1,
+	'',
+	"caf39d27-d81c-4ab8-b793-596bf66477fb");
+INSERT INTO C_EP
+	VALUES ("ee0122d5-01ac-4863-8fd2-8536f3913f6b",
+	"a7a0db3a-df5c-49b7-bdf6-4c9e83c3d4f8",
+	0,
+	'An_Untagged_Project_Terminator',
+	'',
+	2);
+INSERT INTO C_IO
+	VALUES ("ee0122d5-01ac-4863-8fd2-8536f3913f6b",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'An_Untagged_Project_Terminator',
+	'',
+	0,
+	'',
+	"1ee99a51-1ac1-4bae-bd96-bd88500214bf");
+INSERT INTO C_PP
+	VALUES ("8069d56e-625d-4a56-881c-124ff7fb9cbc",
+	"ee0122d5-01ac-4863-8fd2-8536f3913f6b",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'Incoming_Parameter_4',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("43538a46-8531-4b62-8f62-d426d899b223",
+	"ee0122d5-01ac-4863-8fd2-8536f3913f6b",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'Outgoing_Parameter_4',
+	'',
+	1,
+	'',
+	"8069d56e-625d-4a56-881c-124ff7fb9cbc");
+INSERT INTO C_EP
+	VALUES ("48bd98ff-7d84-45a3-846a-22b6aa5adfdd",
+	"a7a0db3a-df5c-49b7-bdf6-4c9e83c3d4f8",
+	0,
+	'Untagged_Operational_Terminator',
+	'',
+	3);
+INSERT INTO C_IO
+	VALUES ("48bd98ff-7d84-45a3-846a-22b6aa5adfdd",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'Untagged_Operational_Terminator',
+	'',
+	0,
+	'',
+	"ee0122d5-01ac-4863-8fd2-8536f3913f6b");
+INSERT INTO PE_PE
+	VALUES ("a7a0db3a-df5c-49b7-bdf6-4c9e83c3d4f8",
+	1,
+	"69f79c2c-ccd8-4232-9379-306de0db8387",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("69f79c2c-ccd8-4232-9379-306de0db8387",
+	"00000000-0000-0000-0000-000000000000",
+	"41eb16c7-0f24-4e35-b333-a47fabc90a87",
+	'Shared',
+	'',
+	0,
+	'../Shared.xtuml');

@@ -1,0 +1,201 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("a22d7bd3-a5c3-42f8-958c-e5fd634aad8a",
+	"00000000-0000-0000-0000-000000000000",
+	'TTTimer',
+	'');
+INSERT INTO C_EP
+	VALUES ("03e85fb3-bb6e-4bdf-9e64-114af227fbef",
+	"a22d7bd3-a5c3-42f8-958c-e5fd634aad8a",
+	0,
+	'Set_Timer',
+	'',
+	0);
+INSERT INTO C_IO
+	VALUES ("03e85fb3-bb6e-4bdf-9e64-114af227fbef",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'Set_Timer',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("b5c42cdb-46ec-4310-adc1-e6c79b057640",
+	"03e85fb3-bb6e-4bdf-9e64-114af227fbef",
+	"8a05e03e-891a-40cb-a286-1bc864c20706",
+	'Timer_ID',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_DT_PROXY
+	VALUES ("8a05e03e-891a-40cb-a286-1bc864c20706",
+	"00000000-0000-0000-0000-000000000000",
+	'Timer_ID',
+	'',
+	'',
+	'../Shared.xtuml');
+INSERT INTO C_PP
+	VALUES ("1dea9328-0245-4d81-b9cf-10bdace580c3",
+	"03e85fb3-bb6e-4bdf-9e64-114af227fbef",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'Time_Remaining',
+	'',
+	0,
+	'',
+	"b5c42cdb-46ec-4310-adc1-e6c79b057640");
+INSERT INTO C_PP
+	VALUES ("f5e65953-6138-4439-8c43-493fe9e99736",
+	"03e85fb3-bb6e-4bdf-9e64-114af227fbef",
+	"1eb6225c-ed48-4699-8965-7dc66676e2d3",
+	'Granularity',
+	'',
+	0,
+	'',
+	"1dea9328-0245-4d81-b9cf-10bdace580c3");
+INSERT INTO S_DT_PROXY
+	VALUES ("1eb6225c-ed48-4699-8965-7dc66676e2d3",
+	"00000000-0000-0000-0000-000000000000",
+	'Time_Unit',
+	' Used to define the granularity of Time
+',
+	'',
+	'../Shared.xtuml');
+INSERT INTO C_PP
+	VALUES ("e0beaa87-69f3-4d39-a5a0-c7864029441a",
+	"03e85fb3-bb6e-4bdf-9e64-114af227fbef",
+	"d84beabb-b99c-48d7-a9ff-ac8244d5b798",
+	'Event_ID',
+	'',
+	0,
+	'',
+	"f5e65953-6138-4439-8c43-493fe9e99736");
+INSERT INTO S_DT_PROXY
+	VALUES ("d84beabb-b99c-48d7-a9ff-ac8244d5b798",
+	"00000000-0000-0000-0000-000000000000",
+	'event',
+	'',
+	'',
+	'../Shared.xtuml');
+INSERT INTO C_PP
+	VALUES ("129c73e7-495f-4958-9afa-431c1ebda487",
+	"03e85fb3-bb6e-4bdf-9e64-114af227fbef",
+	"36df511b-d621-4335-b1ea-03623ab2aeaf",
+	'Instance_ID',
+	'',
+	0,
+	'',
+	"e0beaa87-69f3-4d39-a5a0-c7864029441a");
+INSERT INTO S_DT_PROXY
+	VALUES ("36df511b-d621-4335-b1ea-03623ab2aeaf",
+	"00000000-0000-0000-0000-000000000000",
+	'instance',
+	'',
+	'',
+	'../Shared.xtuml');
+INSERT INTO C_EP
+	VALUES ("f7ca3f0b-789a-42c8-acaa-507ead0b42b1",
+	"a22d7bd3-a5c3-42f8-958c-e5fd634aad8a",
+	0,
+	'Reset_Timer',
+	'',
+	0);
+INSERT INTO C_IO
+	VALUES ("f7ca3f0b-789a-42c8-acaa-507ead0b42b1",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'Reset_Timer',
+	'',
+	0,
+	'',
+	"03e85fb3-bb6e-4bdf-9e64-114af227fbef");
+INSERT INTO C_PP
+	VALUES ("589af63d-1f99-453d-8694-f7ff39ad4d7c",
+	"f7ca3f0b-789a-42c8-acaa-507ead0b42b1",
+	"8a05e03e-891a-40cb-a286-1bc864c20706",
+	'Timer_ID',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("e9ee11d9-59f5-42a9-8888-28318f562a9c",
+	"a22d7bd3-a5c3-42f8-958c-e5fd634aad8a",
+	0,
+	'Set_Absolute_Timer',
+	'',
+	0);
+INSERT INTO C_IO
+	VALUES ("e9ee11d9-59f5-42a9-8888-28318f562a9c",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'Set_Absolute_Timer',
+	'',
+	0,
+	'',
+	"f7ca3f0b-789a-42c8-acaa-507ead0b42b1");
+INSERT INTO C_PP
+	VALUES ("7aaaa871-739e-4950-aa2e-a2ffc2a5a3dc",
+	"e9ee11d9-59f5-42a9-8888-28318f562a9c",
+	"8a05e03e-891a-40cb-a286-1bc864c20706",
+	'Timer_ID',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("3c6a61d0-28c4-44fd-8f7c-820b53ba08e7",
+	"e9ee11d9-59f5-42a9-8888-28318f562a9c",
+	"ba5eda7a-def5-0000-0000-000000000010",
+	'Actual_Date',
+	'',
+	0,
+	'',
+	"7aaaa871-739e-4950-aa2e-a2ffc2a5a3dc");
+INSERT INTO C_PP
+	VALUES ("a597afa2-3238-4e54-b780-cafa4d11e7bf",
+	"e9ee11d9-59f5-42a9-8888-28318f562a9c",
+	"01d40616-42f0-4e23-9332-e9ec80ee0f93",
+	'Actual_Time',
+	'',
+	0,
+	'',
+	"3c6a61d0-28c4-44fd-8f7c-820b53ba08e7");
+INSERT INTO S_DT_PROXY
+	VALUES ("01d40616-42f0-4e23-9332-e9ec80ee0f93",
+	"00000000-0000-0000-0000-000000000000",
+	'duration',
+	'',
+	'',
+	'../../../types/types.xtuml');
+INSERT INTO C_PP
+	VALUES ("2d3a0fd8-e351-4ca4-b5a3-6c9862871ba9",
+	"e9ee11d9-59f5-42a9-8888-28318f562a9c",
+	"d84beabb-b99c-48d7-a9ff-ac8244d5b798",
+	'Event_ID',
+	'',
+	0,
+	'',
+	"a597afa2-3238-4e54-b780-cafa4d11e7bf");
+INSERT INTO C_PP
+	VALUES ("76b1198f-8d48-4f4e-9cce-9186cabbd4c1",
+	"e9ee11d9-59f5-42a9-8888-28318f562a9c",
+	"36df511b-d621-4335-b1ea-03623ab2aeaf",
+	'Instance_ID',
+	'',
+	0,
+	'',
+	"2d3a0fd8-e351-4ca4-b5a3-6c9862871ba9");
+INSERT INTO PE_PE
+	VALUES ("a22d7bd3-a5c3-42f8-958c-e5fd634aad8a",
+	1,
+	"792d4277-64c8-4b5f-9623-1056606d397f",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("792d4277-64c8-4b5f-9623-1056606d397f",
+	"00000000-0000-0000-0000-000000000000",
+	"7d1bef29-9e30-4977-be43-53e35fcca33f",
+	'Shared',
+	'',
+	0,
+	'../Shared.xtuml');

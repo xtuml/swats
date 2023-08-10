@@ -1,0 +1,102 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("97a974d0-0e18-4862-b3c1-5045f09a64af",
+	'Requirement_Identifier_For_Test',
+	9,
+	'RI',
+	' This object shall store all the requirement identifiers associated with a specific test.
+',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("03e81b19-dc7b-4920-8586-3857af635154",
+	"97a974d0-0e18-4862-b3c1-5045f09a64af");
+INSERT INTO O_BATTR
+	VALUES ("03e81b19-dc7b-4920-8586-3857af635154",
+	"97a974d0-0e18-4862-b3c1-5045f09a64af");
+INSERT INTO O_ATTR
+	VALUES ("03e81b19-dc7b-4920-8586-3857af635154",
+	"97a974d0-0e18-4862-b3c1-5045f09a64af",
+	"00000000-0000-0000-0000-000000000000",
+	'requid',
+	'',
+	'',
+	'requid',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'',
+	'');
+INSERT INTO O_REF
+	VALUES ("97a974d0-0e18-4862-b3c1-5045f09a64af",
+	"8aafe371-6950-4209-b885-1fc13837ee40",
+	0,
+	"66ce9d46-01fb-4521-8a33-2eba0efe8f7c",
+	"c6746df0-bdd0-4d09-8135-cd2920123720",
+	"9ca76437-c254-4477-ab6c-577d28887ab8",
+	"9273126a-087f-4684-a599-369f0eb8042b",
+	"2bff4a88-c4ea-490f-a8cc-a583c2f8437a",
+	"5d6ab31a-1a42-4f82-9519-c9c45ed785fa",
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Test_Details',
+	'Domain_Number',
+	'R7.''defines_test_requirement''');
+INSERT INTO R_RGO_PROXY
+	VALUES ("97a974d0-0e18-4862-b3c1-5045f09a64af",
+	"c6746df0-bdd0-4d09-8135-cd2920123720",
+	"9ca76437-c254-4477-ab6c-577d28887ab8",
+	'../RP.xtuml');
+INSERT INTO O_RTIDA_PROXY
+	VALUES ("66ce9d46-01fb-4521-8a33-2eba0efe8f7c",
+	"8aafe371-6950-4209-b885-1fc13837ee40",
+	0,
+	"c6746df0-bdd0-4d09-8135-cd2920123720",
+	"9273126a-087f-4684-a599-369f0eb8042b",
+	'../RP.xtuml');
+INSERT INTO O_RATTR
+	VALUES ("2bff4a88-c4ea-490f-a8cc-a583c2f8437a",
+	"97a974d0-0e18-4862-b3c1-5045f09a64af",
+	"7365d7fc-e669-4183-8685-d988a031a327",
+	"92b447a4-d982-4422-8d7c-91ed8870fa10",
+	0,
+	'Domain_Number');
+INSERT INTO O_BATTR_PROXY
+	VALUES ("7365d7fc-e669-4183-8685-d988a031a327",
+	"92b447a4-d982-4422-8d7c-91ed8870fa10",
+	'../Domain_Details/Domain_Details.xtuml');
+INSERT INTO O_ATTR
+	VALUES ("2bff4a88-c4ea-490f-a8cc-a583c2f8437a",
+	"97a974d0-0e18-4862-b3c1-5045f09a64af",
+	"03e81b19-dc7b-4920-8586-3857af635154",
+	'Domain_Number',
+	'',
+	'',
+	'Domain_Number',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000007",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"97a974d0-0e18-4862-b3c1-5045f09a64af");
+INSERT INTO O_ID
+	VALUES (1,
+	"97a974d0-0e18-4862-b3c1-5045f09a64af");
+INSERT INTO O_ID
+	VALUES (2,
+	"97a974d0-0e18-4862-b3c1-5045f09a64af");
+INSERT INTO PE_PE
+	VALUES ("97a974d0-0e18-4862-b3c1-5045f09a64af",
+	1,
+	"f6571647-b875-45a6-b11d-1f1c2da4d391",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("f6571647-b875-45a6-b11d-1f1c2da4d391",
+	"00000000-0000-0000-0000-000000000000",
+	"9d158e79-1971-4f46-9816-625db585c03b",
+	'RP',
+	'',
+	0,
+	'../RP.xtuml');

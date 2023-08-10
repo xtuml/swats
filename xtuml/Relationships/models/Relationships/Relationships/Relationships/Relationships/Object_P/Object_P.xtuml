@@ -1,0 +1,141 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("cfddb49e-4f64-40f7-bd62-70a7fd725385",
+	'Object_P',
+	30,
+	'objP',
+	' This object forms part of a composed relationship.
+',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("6cce523e-29bd-4d3f-920d-12f1b70e8aac",
+	"cfddb49e-4f64-40f7-bd62-70a7fd725385",
+	'ObjP_Navigation',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'#-------------------------------------------------------------------#
+#
+# Composed relationships
+#
+#-------------------------------------------------------------------#
+
+# Initialise the fault flag
+
+[] = RPT1:Start_Test[Test, "Null Requid", "Relationships", "ObjP", "Composed Relationships"]
+
+# Test 1
+# Navigate from a single instance handle as the source
+#End Test 1
+
+#-------------------------------------------------------------------#
+
+#Test 2
+#Navigate from a set of instance handles as the source
+#End Test 2
+
+#-------------------------------------------------------------------#
+
+[] = RPT4:Test_Unsupported[Test]
+
+#-------------------------------------------------------------------#
+',
+	3,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	2,
+	1);
+INSERT INTO O_TPARM
+	VALUES ("7dcdbe26-0bc1-4a09-85ba-f5ac42bcab9c",
+	"6cce523e-29bd-4d3f-920d-12f1b70e8aac",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("c8e6f92a-928f-47cb-813a-70848582200c",
+	"cfddb49e-4f64-40f7-bd62-70a7fd725385");
+INSERT INTO O_BATTR
+	VALUES ("c8e6f92a-928f-47cb-813a-70848582200c",
+	"cfddb49e-4f64-40f7-bd62-70a7fd725385");
+INSERT INTO O_ATTR
+	VALUES ("c8e6f92a-928f-47cb-813a-70848582200c",
+	"cfddb49e-4f64-40f7-bd62-70a7fd725385",
+	"00000000-0000-0000-0000-000000000000",
+	'idP',
+	' Preferred identifier.
+',
+	'',
+	'idP',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("47fd83a1-ef40-4f07-95aa-6ec51aa3a35e",
+	"cfddb49e-4f64-40f7-bd62-70a7fd725385");
+INSERT INTO O_BATTR
+	VALUES ("47fd83a1-ef40-4f07-95aa-6ec51aa3a35e",
+	"cfddb49e-4f64-40f7-bd62-70a7fd725385");
+INSERT INTO O_ATTR
+	VALUES ("47fd83a1-ef40-4f07-95aa-6ec51aa3a35e",
+	"cfddb49e-4f64-40f7-bd62-70a7fd725385",
+	"c8e6f92a-928f-47cb-813a-70848582200c",
+	'ResultA',
+	' This attribute is manipulted to indicate that the required operation was successful.
+',
+	'',
+	'ResultA',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("e8bbc47b-93bb-455e-9726-1e7ed2bce2b4",
+	"cfddb49e-4f64-40f7-bd62-70a7fd725385");
+INSERT INTO O_BATTR
+	VALUES ("e8bbc47b-93bb-455e-9726-1e7ed2bce2b4",
+	"cfddb49e-4f64-40f7-bd62-70a7fd725385");
+INSERT INTO O_ATTR
+	VALUES ("e8bbc47b-93bb-455e-9726-1e7ed2bce2b4",
+	"cfddb49e-4f64-40f7-bd62-70a7fd725385",
+	"47fd83a1-ef40-4f07-95aa-6ec51aa3a35e",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"cfddb49e-4f64-40f7-bd62-70a7fd725385");
+INSERT INTO O_OIDA
+	VALUES ("c8e6f92a-928f-47cb-813a-70848582200c",
+	"cfddb49e-4f64-40f7-bd62-70a7fd725385",
+	0,
+	'idP');
+INSERT INTO O_ID
+	VALUES (1,
+	"cfddb49e-4f64-40f7-bd62-70a7fd725385");
+INSERT INTO O_ID
+	VALUES (2,
+	"cfddb49e-4f64-40f7-bd62-70a7fd725385");
+INSERT INTO PE_PE
+	VALUES ("cfddb49e-4f64-40f7-bd62-70a7fd725385",
+	1,
+	"1a16545d-ab33-4153-84c6-9d8e9f7ca024",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("1a16545d-ab33-4153-84c6-9d8e9f7ca024",
+	"00000000-0000-0000-0000-000000000000",
+	"6d141527-9fd5-4054-8692-9fc325055afc",
+	'Relationships',
+	'',
+	0,
+	'../Relationships.xtuml');

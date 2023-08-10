@@ -1,0 +1,45 @@
+
+project creation_deletion_1a_Dos is
+
+   for Source_Dirs use ("source\**");
+   for Object_Dir use "compile";
+   for Main use ("application_control.adb");
+   for Exec_Dir use ".";
+   type Run_Time_Checks_Type is
+      ("Run_Time_Checks_Off", "Run_Time_Checks_On");
+   Run_Time_Checks : Run_Time_Checks_Type := external ("run_time_checks", "Run_Time_Checks_On");
+   package Builder is
+
+   end Builder;
+
+   package Compiler is
+
+      case Run_Time_Checks is
+
+         when "Run_Time_Checks_Off" =>
+
+            for Default_Switches ("ada") use ("-gnatf", "-g", "-gnatp", "-gnatVn");
+            for Switches ("comms-*.ad*") use ("-gnatf", "-g", "-gnatVn");
+            for Switches ("*_incoming-connection.ad*") use ("-gnatf", "-g", "-gnatVn");
+            for Switches ("*_incoming_connection.ad*") use ("-gnatf", "-g", "-gnatVn");
+            for Switches ("*_incoming-decoder.ad*") use ("-gnatf", "-g", "-gnatVn");
+            for Switches ("*_outgoing_connection.ad*") use ("-gnatf", "-g", "-gnatVn");
+            
+         when "Run_Time_Checks_On" =>
+
+            for Default_Switches ("ada") use ("-gnatf", "-g", "-gnatVn");
+            for Switches ("amf.adb") use ("-gnatf", "-g", "-gnatVn", "-gnatp");
+            for Switches ("root_object-srtc-tit*.adb") use ("-gnatf", "-g", "-gnatVn", "-gnatp");
+
+      end case;
+
+   end Compiler;
+
+   package Binder is
+
+            for Default_Switches ("ada") use ("-E");
+
+   end Binder;
+
+end creation_deletion_1a_Dos;
+

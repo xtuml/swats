@@ -1,0 +1,112 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("bfecb49e-714c-42f3-ad1a-b11f6af07f8a",
+	'SuperA',
+	30,
+	'SprA',
+	' Supertype object.
+',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("da372e62-b443-4c03-83aa-bc83817651fb",
+	"bfecb49e-714c-42f3-ad1a-b11f6af07f8a");
+INSERT INTO O_BATTR
+	VALUES ("da372e62-b443-4c03-83aa-bc83817651fb",
+	"bfecb49e-714c-42f3-ad1a-b11f6af07f8a");
+INSERT INTO O_ATTR
+	VALUES ("da372e62-b443-4c03-83aa-bc83817651fb",
+	"bfecb49e-714c-42f3-ad1a-b11f6af07f8a",
+	"00000000-0000-0000-0000-000000000000",
+	'idA',
+	' Preferred identifier.
+',
+	'',
+	'idA',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("bbc1af97-4382-49d5-ae8e-3bfa5565663b",
+	"bfecb49e-714c-42f3-ad1a-b11f6af07f8a");
+INSERT INTO O_BATTR
+	VALUES ("bbc1af97-4382-49d5-ae8e-3bfa5565663b",
+	"bfecb49e-714c-42f3-ad1a-b11f6af07f8a");
+INSERT INTO O_ATTR
+	VALUES ("bbc1af97-4382-49d5-ae8e-3bfa5565663b",
+	"bfecb49e-714c-42f3-ad1a-b11f6af07f8a",
+	"da372e62-b443-4c03-83aa-bc83817651fb",
+	'ResultA',
+	' This attribute is manipulated to indicate that the required operation was successful.
+',
+	'',
+	'ResultA',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("52991bc3-8c3e-40da-90b5-0ed65bf4f726",
+	"bfecb49e-714c-42f3-ad1a-b11f6af07f8a");
+INSERT INTO O_BATTR
+	VALUES ("52991bc3-8c3e-40da-90b5-0ed65bf4f726",
+	"bfecb49e-714c-42f3-ad1a-b11f6af07f8a");
+INSERT INTO O_ATTR
+	VALUES ("52991bc3-8c3e-40da-90b5-0ed65bf4f726",
+	"bfecb49e-714c-42f3-ad1a-b11f6af07f8a",
+	"bbc1af97-4382-49d5-ae8e-3bfa5565663b",
+	'Reference_ID',
+	'',
+	'',
+	'Reference_ID',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("352ae62a-5b98-4255-904f-7c4f175276a7",
+	"bfecb49e-714c-42f3-ad1a-b11f6af07f8a");
+INSERT INTO O_BATTR
+	VALUES ("352ae62a-5b98-4255-904f-7c4f175276a7",
+	"bfecb49e-714c-42f3-ad1a-b11f6af07f8a");
+INSERT INTO O_ATTR
+	VALUES ("352ae62a-5b98-4255-904f-7c4f175276a7",
+	"bfecb49e-714c-42f3-ad1a-b11f6af07f8a",
+	"52991bc3-8c3e-40da-90b5-0ed65bf4f726",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"bfecb49e-714c-42f3-ad1a-b11f6af07f8a");
+INSERT INTO O_OIDA
+	VALUES ("da372e62-b443-4c03-83aa-bc83817651fb",
+	"bfecb49e-714c-42f3-ad1a-b11f6af07f8a",
+	0,
+	'idA');
+INSERT INTO O_ID
+	VALUES (1,
+	"bfecb49e-714c-42f3-ad1a-b11f6af07f8a");
+INSERT INTO O_ID
+	VALUES (2,
+	"bfecb49e-714c-42f3-ad1a-b11f6af07f8a");
+INSERT INTO PE_PE
+	VALUES ("bfecb49e-714c-42f3-ad1a-b11f6af07f8a",
+	1,
+	"a9a21ab3-b305-417c-89c1-c9f52915c70b",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("a9a21ab3-b305-417c-89c1-c9f52915c70b",
+	"00000000-0000-0000-0000-000000000000",
+	"9b3c9b37-3527-4c3a-8648-5c925cc26549",
+	'Events',
+	'',
+	0,
+	'../Events.xtuml');
