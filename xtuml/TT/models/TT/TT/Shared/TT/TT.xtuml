@@ -1,0 +1,51 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("490658e0-b21c-4e95-988a-0a49c89c71d4",
+	"00000000-0000-0000-0000-000000000000",
+	'TT',
+	'');
+INSERT INTO C_EP
+	VALUES ("7d218666-1e8e-4ba1-a80d-486204cfd6d3",
+	"490658e0-b21c-4e95-988a-0a49c89c71d4",
+	0,
+	'create_report_data',
+	'',
+	1);
+INSERT INTO C_IO
+	VALUES ("7d218666-1e8e-4ba1-a80d-486204cfd6d3",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'create_report_data',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("85d224f8-fd6d-4e4a-b8cc-6e26428b288b",
+	"490658e0-b21c-4e95-988a-0a49c89c71d4",
+	0,
+	'delete_report_data',
+	'',
+	2);
+INSERT INTO C_IO
+	VALUES ("85d224f8-fd6d-4e4a-b8cc-6e26428b288b",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'delete_report_data',
+	'',
+	0,
+	'',
+	"7d218666-1e8e-4ba1-a80d-486204cfd6d3");
+INSERT INTO PE_PE
+	VALUES ("490658e0-b21c-4e95-988a-0a49c89c71d4",
+	1,
+	"792d4277-64c8-4b5f-9623-1056606d397f",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("792d4277-64c8-4b5f-9623-1056606d397f",
+	"00000000-0000-0000-0000-000000000000",
+	"7d1bef29-9e30-4977-be43-53e35fcca33f",
+	'Shared',
+	'',
+	0,
+	'../Shared.xtuml');

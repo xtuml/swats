@@ -1,0 +1,8 @@
+TT::TT,version,Component,7
+TT::TT::TT::R4,Class_B,Association,"Test"
+TT::TT::TT::R4,Class_A,Association,"Test"
+TT::TT::TT::R3,Class_B,Association,"Report_Data"
+TT::TT::TT::R3,Class_A,Association,"Test_Scheduler"
+TT::TT::TT::R1,Class_B,Association,"Test"
+TT::TT::TT::R1,Class_A,Association,"Test_Scheduler"
+TT::TT::scenarios::void start_timer_tests,scenario,Function,1

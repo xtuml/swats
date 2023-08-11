@@ -1,0 +1,951 @@
+-- BP 7.1.6 content: Component syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_C
+	VALUES ("94314c6a-6ec5-4e94-aa83-178a1cf6edec",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'SBONE',
+	'',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Structure_Bridge_One');
+INSERT INTO GD_MD
+	VALUES ("c5926d9a-eea3-4328-ae7c-2026980cb4af",
+	111,
+	"94314c6a-6ec5-4e94-aa83-178a1cf6edec",
+	98,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	200,
+	150,
+	0,
+	'',
+	'SBONE::SBONE::SBONE');
+INSERT INTO GD_GE
+	VALUES ("918ae2dd-6f5f-4167-9f87-062394cee5c3",
+	"c5926d9a-eea3-4328-ae7c-2026980cb4af",
+	"94314c6a-6ec5-4e94-aa83-178a1cf6edec",
+	103,
+	0,
+	'SBONE::SBONE::SBONE');
+INSERT INTO GD_SHP
+	VALUES ("918ae2dd-6f5f-4167-9f87-062394cee5c3");
+INSERT INTO GD_CTR
+	VALUES ("918ae2dd-6f5f-4167-9f87-062394cee5c3");
+INSERT INTO DIM_ND
+	VALUES (1692.000000,
+	800.000000,
+	"918ae2dd-6f5f-4167-9f87-062394cee5c3");
+INSERT INTO DIM_GE
+	VALUES (4100.000000,
+	3100.000000,
+	"918ae2dd-6f5f-4167-9f87-062394cee5c3",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("918ae2dd-6f5f-4167-9f87-062394cee5c3",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_CON
+	VALUES ("28846085-4d07-47c5-98b4-03e6de005bfe",
+	5792.000000,
+	3100.000000,
+	"918ae2dd-6f5f-4167-9f87-062394cee5c3");
+INSERT INTO DIM_CON
+	VALUES ("22de0986-846c-458f-a39a-7e296e9251ad",
+	5792.000000,
+	3120.000000,
+	"918ae2dd-6f5f-4167-9f87-062394cee5c3");
+INSERT INTO DIM_CON
+	VALUES ("f51c7abe-b479-402b-8e2e-bddfb0a56de8",
+	5792.000000,
+	3140.000000,
+	"918ae2dd-6f5f-4167-9f87-062394cee5c3");
+INSERT INTO GD_GE
+	VALUES ("b6d52132-032f-44c2-a56f-4140620f58e9",
+	"c5926d9a-eea3-4328-ae7c-2026980cb4af",
+	"eca79cce-86a1-4733-9eed-94d5a5fd0bcf",
+	108,
+	0,
+	'SBONE::SBONE::SBONE::SBONE');
+INSERT INTO GD_SHP
+	VALUES ("b6d52132-032f-44c2-a56f-4140620f58e9");
+INSERT INTO GD_NCS
+	VALUES ("b6d52132-032f-44c2-a56f-4140620f58e9");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"b6d52132-032f-44c2-a56f-4140620f58e9");
+INSERT INTO DIM_GE
+	VALUES (4920.000000,
+	3100.000000,
+	"b6d52132-032f-44c2-a56f-4140620f58e9",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("b6d52132-032f-44c2-a56f-4140620f58e9",
+	0,
+	"918ae2dd-6f5f-4167-9f87-062394cee5c3");
+INSERT INTO GD_GE
+	VALUES ("d8cd59b8-5357-4bca-b4e8-613f791e8fb9",
+	"c5926d9a-eea3-4328-ae7c-2026980cb4af",
+	"25a49f19-400d-41d6-8c6c-3b4bea6e0c7b",
+	108,
+	0,
+	'SBONE::SBONE::SBONE::types');
+INSERT INTO GD_SHP
+	VALUES ("d8cd59b8-5357-4bca-b4e8-613f791e8fb9");
+INSERT INTO GD_NCS
+	VALUES ("d8cd59b8-5357-4bca-b4e8-613f791e8fb9");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"d8cd59b8-5357-4bca-b4e8-613f791e8fb9");
+INSERT INTO DIM_GE
+	VALUES (5140.000000,
+	3100.000000,
+	"d8cd59b8-5357-4bca-b4e8-613f791e8fb9",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("d8cd59b8-5357-4bca-b4e8-613f791e8fb9",
+	0,
+	"918ae2dd-6f5f-4167-9f87-062394cee5c3");
+INSERT INTO GD_GE
+	VALUES ("077f4e98-6c15-4bde-9dd2-7be070f45d09",
+	"c5926d9a-eea3-4328-ae7c-2026980cb4af",
+	"2a8beea4-0110-4f2c-9723-1284b9500de8",
+	108,
+	0,
+	'SBONE::SBONE::SBONE::functions');
+INSERT INTO GD_SHP
+	VALUES ("077f4e98-6c15-4bde-9dd2-7be070f45d09");
+INSERT INTO GD_NCS
+	VALUES ("077f4e98-6c15-4bde-9dd2-7be070f45d09");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"077f4e98-6c15-4bde-9dd2-7be070f45d09");
+INSERT INTO DIM_GE
+	VALUES (5360.000000,
+	3100.000000,
+	"077f4e98-6c15-4bde-9dd2-7be070f45d09",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("077f4e98-6c15-4bde-9dd2-7be070f45d09",
+	0,
+	"918ae2dd-6f5f-4167-9f87-062394cee5c3");
+INSERT INTO GD_GE
+	VALUES ("d0178da4-000f-4bd6-b2af-0ecf9df82043",
+	"c5926d9a-eea3-4328-ae7c-2026980cb4af",
+	"2abd64d7-5706-48fd-9d74-5184796cfe80",
+	108,
+	0,
+	'SBONE::SBONE::SBONE::scenarios');
+INSERT INTO GD_SHP
+	VALUES ("d0178da4-000f-4bd6-b2af-0ecf9df82043");
+INSERT INTO GD_NCS
+	VALUES ("d0178da4-000f-4bd6-b2af-0ecf9df82043");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"d0178da4-000f-4bd6-b2af-0ecf9df82043");
+INSERT INTO DIM_GE
+	VALUES (5580.000000,
+	3100.000000,
+	"d0178da4-000f-4bd6-b2af-0ecf9df82043",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("d0178da4-000f-4bd6-b2af-0ecf9df82043",
+	0,
+	"918ae2dd-6f5f-4167-9f87-062394cee5c3");
+INSERT INTO GD_GE
+	VALUES ("bb60f492-41a8-4f4d-98de-7a553b337c35",
+	"c5926d9a-eea3-4328-ae7c-2026980cb4af",
+	"5d78594a-1962-4a22-ab7a-6a999dcb7956",
+	94,
+	0,
+	'SBONE::SBONE::SBONE::SBONE::SBONE');
+INSERT INTO GD_CON
+	VALUES ("bb60f492-41a8-4f4d-98de-7a553b337c35",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("f797b3ae-d9b0-4abc-9f17-9424fdfeb531",
+	"bb60f492-41a8-4f4d-98de-7a553b337c35",
+	0,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"f797b3ae-d9b0-4abc-9f17-9424fdfeb531");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"f797b3ae-d9b0-4abc-9f17-9424fdfeb531",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("f797b3ae-d9b0-4abc-9f17-9424fdfeb531",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("1ce4c49a-de0f-4778-9508-6dfc3448f252",
+	"bb60f492-41a8-4f4d-98de-7a553b337c35",
+	2,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"1ce4c49a-de0f-4778-9508-6dfc3448f252");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"1ce4c49a-de0f-4778-9508-6dfc3448f252",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("1ce4c49a-de0f-4778-9508-6dfc3448f252",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("ec53226f-a1eb-4a20-9759-e279eb81c115",
+	"bb60f492-41a8-4f4d-98de-7a553b337c35",
+	1,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"ec53226f-a1eb-4a20-9759-e279eb81c115");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"ec53226f-a1eb-4a20-9759-e279eb81c115",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("ec53226f-a1eb-4a20-9759-e279eb81c115",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_LS
+	VALUES ("2824be23-235d-4ef2-aafb-ffb30d4b0922",
+	"bb60f492-41a8-4f4d-98de-7a553b337c35",
+	"00000000-0000-0000-0000-000000000000",
+	"f193359e-e04f-43c7-a545-6916bd735c1f",
+	"83ea299a-9ff6-4b0d-9399-603ae69db861");
+INSERT INTO DIM_WAY
+	VALUES ("f193359e-e04f-43c7-a545-6916bd735c1f",
+	5792.000000,
+	3100.000000,
+	"bb60f492-41a8-4f4d-98de-7a553b337c35",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_WAY
+	VALUES ("83ea299a-9ff6-4b0d-9399-603ae69db861",
+	5892.000000,
+	3100.000000,
+	"bb60f492-41a8-4f4d-98de-7a553b337c35",
+	"00000000-0000-0000-0000-000000000000",
+	"f193359e-e04f-43c7-a545-6916bd735c1f");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"bb60f492-41a8-4f4d-98de-7a553b337c35",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("bb60f492-41a8-4f4d-98de-7a553b337c35",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ED
+	VALUES ("28846085-4d07-47c5-98b4-03e6de005bfe",
+	"00000000-0000-0000-0000-000000000000",
+	"bb60f492-41a8-4f4d-98de-7a553b337c35");
+INSERT INTO GD_GE
+	VALUES ("6df58f67-0c01-4994-be85-e7bbf565da5a",
+	"c5926d9a-eea3-4328-ae7c-2026980cb4af",
+	"bc7285a0-d462-4c85-a51a-a2089fdc6c00",
+	93,
+	0,
+	'SBONE::SBONE::SBONE::Into_The_Great_Wide_Open::SBONEInto_The_Great_Wide_Open');
+INSERT INTO GD_CON
+	VALUES ("6df58f67-0c01-4994-be85-e7bbf565da5a",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("2bd8855d-e4e0-4f8e-a69f-ed5d7e0832db",
+	"6df58f67-0c01-4994-be85-e7bbf565da5a",
+	0,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"2bd8855d-e4e0-4f8e-a69f-ed5d7e0832db");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"2bd8855d-e4e0-4f8e-a69f-ed5d7e0832db",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("2bd8855d-e4e0-4f8e-a69f-ed5d7e0832db",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("5fd251e9-7ff2-4b74-9238-609fde700561",
+	"6df58f67-0c01-4994-be85-e7bbf565da5a",
+	2,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"5fd251e9-7ff2-4b74-9238-609fde700561");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"5fd251e9-7ff2-4b74-9238-609fde700561",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("5fd251e9-7ff2-4b74-9238-609fde700561",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("be600fc6-ee92-4bf8-9a48-b927a4dd4b4d",
+	"6df58f67-0c01-4994-be85-e7bbf565da5a",
+	1,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"be600fc6-ee92-4bf8-9a48-b927a4dd4b4d");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"be600fc6-ee92-4bf8-9a48-b927a4dd4b4d",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("be600fc6-ee92-4bf8-9a48-b927a4dd4b4d",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_LS
+	VALUES ("e7356b20-763b-4be8-81ea-8855ee6c97b2",
+	"6df58f67-0c01-4994-be85-e7bbf565da5a",
+	"00000000-0000-0000-0000-000000000000",
+	"3c9f12a7-afb3-41f3-9301-86436f7c3867",
+	"cf7b8ab8-0574-4f46-a4e8-7378538e073f");
+INSERT INTO DIM_WAY
+	VALUES ("3c9f12a7-afb3-41f3-9301-86436f7c3867",
+	5792.000000,
+	3120.000000,
+	"6df58f67-0c01-4994-be85-e7bbf565da5a",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_WAY
+	VALUES ("cf7b8ab8-0574-4f46-a4e8-7378538e073f",
+	5892.000000,
+	3120.000000,
+	"6df58f67-0c01-4994-be85-e7bbf565da5a",
+	"00000000-0000-0000-0000-000000000000",
+	"3c9f12a7-afb3-41f3-9301-86436f7c3867");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"6df58f67-0c01-4994-be85-e7bbf565da5a",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("6df58f67-0c01-4994-be85-e7bbf565da5a",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ED
+	VALUES ("22de0986-846c-458f-a39a-7e296e9251ad",
+	"00000000-0000-0000-0000-000000000000",
+	"6df58f67-0c01-4994-be85-e7bbf565da5a");
+INSERT INTO GD_GE
+	VALUES ("aa9eaaa2-9ec0-459c-bb36-35260ed5a550",
+	"c5926d9a-eea3-4328-ae7c-2026980cb4af",
+	"e77a47da-9939-419d-9375-748dab145d66",
+	93,
+	0,
+	'SBONE::SBONE::SBONE::Report::SBONEReport');
+INSERT INTO GD_CON
+	VALUES ("aa9eaaa2-9ec0-459c-bb36-35260ed5a550",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("9ed48068-4bfc-431b-970a-87a70ebd151b",
+	"aa9eaaa2-9ec0-459c-bb36-35260ed5a550",
+	0,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"9ed48068-4bfc-431b-970a-87a70ebd151b");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"9ed48068-4bfc-431b-970a-87a70ebd151b",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("9ed48068-4bfc-431b-970a-87a70ebd151b",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("cfa55299-13fa-48ea-848b-6b89048e1d7c",
+	"aa9eaaa2-9ec0-459c-bb36-35260ed5a550",
+	2,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"cfa55299-13fa-48ea-848b-6b89048e1d7c");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"cfa55299-13fa-48ea-848b-6b89048e1d7c",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("cfa55299-13fa-48ea-848b-6b89048e1d7c",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("ca0bd081-0840-4a81-987f-d78986f25945",
+	"aa9eaaa2-9ec0-459c-bb36-35260ed5a550",
+	1,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"ca0bd081-0840-4a81-987f-d78986f25945");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"ca0bd081-0840-4a81-987f-d78986f25945",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("ca0bd081-0840-4a81-987f-d78986f25945",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_LS
+	VALUES ("3df11c1a-65fc-43df-b93f-a416422ab2d5",
+	"aa9eaaa2-9ec0-459c-bb36-35260ed5a550",
+	"00000000-0000-0000-0000-000000000000",
+	"f73ef68f-ee0c-4cba-8ba0-32ac55c67a3a",
+	"8db0985b-0d47-436e-88d9-ffe396794a51");
+INSERT INTO DIM_WAY
+	VALUES ("f73ef68f-ee0c-4cba-8ba0-32ac55c67a3a",
+	5792.000000,
+	3140.000000,
+	"aa9eaaa2-9ec0-459c-bb36-35260ed5a550",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_WAY
+	VALUES ("8db0985b-0d47-436e-88d9-ffe396794a51",
+	5892.000000,
+	3140.000000,
+	"aa9eaaa2-9ec0-459c-bb36-35260ed5a550",
+	"00000000-0000-0000-0000-000000000000",
+	"f73ef68f-ee0c-4cba-8ba0-32ac55c67a3a");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"aa9eaaa2-9ec0-459c-bb36-35260ed5a550",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("aa9eaaa2-9ec0-459c-bb36-35260ed5a550",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ED
+	VALUES ("f51c7abe-b479-402b-8e2e-bddfb0a56de8",
+	"00000000-0000-0000-0000-000000000000",
+	"aa9eaaa2-9ec0-459c-bb36-35260ed5a550");
+INSERT INTO DIM_DIA
+	VALUES ("c5926d9a-eea3-4328-ae7c-2026980cb4af",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PO
+	VALUES ("dce38457-5250-4151-a7be-5639020f71bd",
+	"94314c6a-6ec5-4e94-aa83-178a1cf6edec",
+	'SBONE',
+	0,
+	0,
+	'');
+INSERT INTO C_IR
+	VALUES ("5d78594a-1962-4a22-ab7a-6a999dcb7956",
+	"baf40abd-9264-46c2-a451-cd6c81f6950d",
+	"00000000-0000-0000-0000-000000000000",
+	"dce38457-5250-4151-a7be-5639020f71bd");
+INSERT INTO C_P
+	VALUES ("5d78594a-1962-4a22-ab7a-6a999dcb7956",
+	'SBONE',
+	'Unnamed_Interface',
+	'',
+	'SBONE::SBONE::SBONE');
+INSERT INTO SPR_PEP
+	VALUES ("4396eefb-2f3b-46ca-affb-9af42f57dd62",
+	"d53b6618-276f-491f-96fb-f55ab9458e14",
+	"5d78594a-1962-4a22-ab7a-6a999dcb7956");
+INSERT INTO SPR_PO
+	VALUES ("4396eefb-2f3b-46ca-affb-9af42f57dd62",
+	'Receive_A_Very_Simple_Structure',
+	'',
+	'',
+	3,
+	6,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("d53b6618-276f-491f-96fb-f55ab9458e14",
+	"baf40abd-9264-46c2-a451-cd6c81f6950d",
+	0,
+	'Receive_A_Very_Simple_Structure',
+	'',
+	1,
+	'../Shared/SBONE/SBONE.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("e0ce45e8-b567-4425-849a-93d1f95e36c9",
+	"a5395d65-96e6-4e35-bd20-b52522b6192b",
+	"5d78594a-1962-4a22-ab7a-6a999dcb7956");
+INSERT INTO SPR_PO
+	VALUES ("e0ce45e8-b567-4425-849a-93d1f95e36c9",
+	'Create_Report_Data',
+	'',
+	'',
+	3,
+	6,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("a5395d65-96e6-4e35-bd20-b52522b6192b",
+	"baf40abd-9264-46c2-a451-cd6c81f6950d",
+	0,
+	'Create_Report_Data',
+	'',
+	2,
+	'../Shared/SBONE/SBONE.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("04ad64ed-f492-45d9-99a9-93d446ca12a1",
+	"e4f204f5-56ae-4a75-842d-2320d92e22c5",
+	"5d78594a-1962-4a22-ab7a-6a999dcb7956");
+INSERT INTO SPR_PO
+	VALUES ("04ad64ed-f492-45d9-99a9-93d446ca12a1",
+	'Delete_Report_Data',
+	'',
+	'',
+	3,
+	6,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("e4f204f5-56ae-4a75-842d-2320d92e22c5",
+	"baf40abd-9264-46c2-a451-cd6c81f6950d",
+	0,
+	'Delete_Report_Data',
+	'',
+	3,
+	'../Shared/SBONE/SBONE.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("3f78baa7-7832-4607-aa8d-e9e23bb69b43",
+	"88d21b51-40c2-4974-b6ea-3f24663d3714",
+	"5d78594a-1962-4a22-ab7a-6a999dcb7956");
+INSERT INTO SPR_PO
+	VALUES ("3f78baa7-7832-4607-aa8d-e9e23bb69b43",
+	'Append_IH_To_Struct',
+	'',
+	'',
+	3,
+	6,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("88d21b51-40c2-4974-b6ea-3f24663d3714",
+	"baf40abd-9264-46c2-a451-cd6c81f6950d",
+	0,
+	'Append_IH_To_Struct',
+	'',
+	4,
+	'../Shared/SBONE/SBONE.xtuml');
+INSERT INTO C_I_PROXY
+	VALUES ("baf40abd-9264-46c2-a451-cd6c81f6950d",
+	"00000000-0000-0000-0000-000000000000",
+	'SBONE',
+	'',
+	'../Shared/SBONE/SBONE.xtuml');
+INSERT INTO C_PO
+	VALUES ("407775fe-4f34-4c43-802f-ef993a475c40",
+	"94314c6a-6ec5-4e94-aa83-178a1cf6edec",
+	'Into_The_Great_Wide_Open',
+	0,
+	0,
+	'ITGWO');
+INSERT INTO C_IR
+	VALUES ("bc7285a0-d462-4c85-a51a-a2089fdc6c00",
+	"5aa5a1a9-05d6-4726-bddb-24ab0cfdabba",
+	"00000000-0000-0000-0000-000000000000",
+	"407775fe-4f34-4c43-802f-ef993a475c40");
+INSERT INTO C_R
+	VALUES ("bc7285a0-d462-4c85-a51a-a2089fdc6c00",
+	'SBONEInto_The_Great_Wide_Open',
+	'',
+	'Unnamed_Interface',
+	'SBONE::Into_The_Great_Wide_Open::SBONEInto_The_Great_Wide_Open');
+INSERT INTO SPR_REP
+	VALUES ("78a280fd-5a8b-45e5-869d-ff3b609e048a",
+	"bbe926e8-4a68-47d2-b3b9-e2445fb9409c",
+	"bc7285a0-d462-4c85-a51a-a2089fdc6c00");
+INSERT INTO SPR_RO
+	VALUES ("78a280fd-5a8b-45e5-869d-ff3b609e048a",
+	'Across_The_Great_Divide',
+	'',
+	'# Receive a structure and the control data from the other domain.
+
+
+{Copied_Structure} is Source_Structure_Type
+
+
+[] = RPT1:Start_Test[Test, "null requid", "Local Source Structure Bridge", "Use local defn of bridge", "Decode received structure"]
+
+Has_Passed = FALSE
+Failure_Code = 0
+
+How_Many_Sets = countof{A_Structure_To_Send}
+
+
+if How_Many_Sets = Elements_In_Structure then
+
+   Count = 1
+
+   for [local_integer, local_real, local_string, local_boolean, local_colour] in {A_Structure_To_Send} do
+
+      # Copy the contents into a locally defined structure.
+      append [local_integer, local_real, local_string, local_boolean, local_colour] to {Copied_Structure}
+
+      # Look at the last entry only.
+      if Count = How_Many_Sets then 
+
+         if local_integer = Control_Integer then
+
+            if local_real = Control_Real then
+
+               if local_string = Control_String then
+
+                  if local_colour = Control_Enum then
+
+                     if local_boolean = Control_Boolean then
+
+                        Has_Passed = TRUE
+                        [] = RPT2:Test_Passed ["Local Structure correctly received", Test, 0]
+
+                     else
+                        # Boolean incorrectly decoded
+                        Has_Passed = TRUE
+                        Failure_Code = -6
+                     endif
+
+                  else
+                     # Enumeration incorrectly decoded
+                     Has_Passed = FALSE
+                     Failure_Code = -5
+                  endif
+
+               else
+                  # String incorrectly decoded
+                  Has_Passed = FALSE
+                  Failure_Code = -4
+               endif
+
+            else
+               # Real incorrectly decoded
+               Has_Passed = FALSE
+               Failure_Code = -3
+            endif
+
+         else
+            # Integer incorrectly decoded
+            Has_Passed = FALSE
+            Failure_Code = -2
+         endif
+
+      else
+         # Not interested in this entry. Control data will only match up with the 
+         # last entry in the set.
+         Count        = Count + 1
+         Has_Passed   = FALSE
+         Failure_Code = 0
+      endif
+
+   # Loop around the entries in the set of structures.
+   endfor
+
+else
+   # Conflict in the number of sets found and the number
+   # specified by the source domain.
+   Has_Passed = FALSE
+   Failure_Code = -1
+endif
+
+if Has_Passed = FALSE then
+   [] = RPT3:Test_Failed["Local Structure corrupted", Test, Failure_Code]
+endif
+
+Result = Has_Passed',
+	3,
+	2,
+	1);
+INSERT INTO C_EP_PROXY
+	VALUES ("bbe926e8-4a68-47d2-b3b9-e2445fb9409c",
+	"5aa5a1a9-05d6-4726-bddb-24ab0cfdabba",
+	0,
+	'Across_The_Great_Divide',
+	'',
+	1,
+	'../Shared/SBONEInto_The_Great_Wide_Open/SBONEInto_The_Great_Wide_Open.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("c2ac85ec-8c6b-42dd-9d89-a9717d87478c",
+	"473ea463-4285-4a64-8f8a-f24c8ffcc817",
+	"bc7285a0-d462-4c85-a51a-a2089fdc6c00");
+INSERT INTO SPR_RO
+	VALUES ("c2ac85ec-8c6b-42dd-9d89-a9717d87478c",
+	'Wide_Blue_Yonder',
+	'',
+	'',
+	3,
+	2,
+	2);
+INSERT INTO C_EP_PROXY
+	VALUES ("473ea463-4285-4a64-8f8a-f24c8ffcc817",
+	"5aa5a1a9-05d6-4726-bddb-24ab0cfdabba",
+	0,
+	'Wide_Blue_Yonder',
+	'',
+	2,
+	'../Shared/SBONEInto_The_Great_Wide_Open/SBONEInto_The_Great_Wide_Open.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("1631d4e8-efe1-48aa-a016-5e2af9bfbc1d",
+	"d94881e5-73d8-43ea-8420-8375d41ee6f6",
+	"bc7285a0-d462-4c85-a51a-a2089fdc6c00");
+INSERT INTO SPR_RO
+	VALUES ("1631d4e8-efe1-48aa-a016-5e2af9bfbc1d",
+	'Test_Structure_In_Bridge',
+	'',
+	'',
+	3,
+	2,
+	3);
+INSERT INTO C_EP_PROXY
+	VALUES ("d94881e5-73d8-43ea-8420-8375d41ee6f6",
+	"5aa5a1a9-05d6-4726-bddb-24ab0cfdabba",
+	0,
+	'Test_Structure_In_Bridge',
+	'',
+	3,
+	'../Shared/SBONEInto_The_Great_Wide_Open/SBONEInto_The_Great_Wide_Open.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("89709f47-79f7-4455-a69e-5be6f4242284",
+	"e2c2ea14-9f2e-42ba-a8bf-6fa1d5c12b82",
+	"bc7285a0-d462-4c85-a51a-a2089fdc6c00");
+INSERT INTO SPR_RO
+	VALUES ("89709f47-79f7-4455-a69e-5be6f4242284",
+	'The_IH_Struct_Across_Bridge',
+	'',
+	'',
+	3,
+	2,
+	4);
+INSERT INTO C_EP_PROXY
+	VALUES ("e2c2ea14-9f2e-42ba-a8bf-6fa1d5c12b82",
+	"5aa5a1a9-05d6-4726-bddb-24ab0cfdabba",
+	0,
+	'The_IH_Struct_Across_Bridge',
+	'',
+	4,
+	'../Shared/SBONEInto_The_Great_Wide_Open/SBONEInto_The_Great_Wide_Open.xtuml');
+INSERT INTO C_I_PROXY
+	VALUES ("5aa5a1a9-05d6-4726-bddb-24ab0cfdabba",
+	"00000000-0000-0000-0000-000000000000",
+	'SBONEInto_The_Great_Wide_Open',
+	'',
+	'../Shared/SBONEInto_The_Great_Wide_Open/SBONEInto_The_Great_Wide_Open.xtuml');
+INSERT INTO C_PO
+	VALUES ("dbd06d95-9e6f-4e67-ad6f-a73e2a41aff8",
+	"94314c6a-6ec5-4e94-aa83-178a1cf6edec",
+	'Report',
+	0,
+	0,
+	'RPT');
+INSERT INTO C_IR
+	VALUES ("e77a47da-9939-419d-9375-748dab145d66",
+	"beb30e1d-007a-471f-b1cd-8e1eb201e607",
+	"00000000-0000-0000-0000-000000000000",
+	"dbd06d95-9e6f-4e67-ad6f-a73e2a41aff8");
+INSERT INTO C_R
+	VALUES ("e77a47da-9939-419d-9375-748dab145d66",
+	'SBONEReport',
+	'',
+	'Unnamed_Interface',
+	'SBONE::Report::SBONEReport');
+INSERT INTO SPR_REP
+	VALUES ("146817b5-da2a-4fb2-971d-0475479389dd",
+	"cc42c81d-58d1-499d-bd5d-3745c4783524",
+	"e77a47da-9939-419d-9375-748dab145d66");
+INSERT INTO SPR_RO
+	VALUES ("146817b5-da2a-4fb2-971d-0475479389dd",
+	'Start_Test',
+	'',
+	'',
+	3,
+	2,
+	1);
+INSERT INTO C_EP_PROXY
+	VALUES ("cc42c81d-58d1-499d-bd5d-3745c4783524",
+	"beb30e1d-007a-471f-b1cd-8e1eb201e607",
+	0,
+	'Start_Test',
+	'',
+	1,
+	'../Shared/SBONEReport/SBONEReport.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("a1e4935a-d2d3-467c-ba9a-ccac53754906",
+	"04dbbb18-88a5-4204-98dc-6ebb615d410b",
+	"e77a47da-9939-419d-9375-748dab145d66");
+INSERT INTO SPR_RO
+	VALUES ("a1e4935a-d2d3-467c-ba9a-ccac53754906",
+	'Test_Passed',
+	'',
+	'',
+	3,
+	2,
+	2);
+INSERT INTO C_EP_PROXY
+	VALUES ("04dbbb18-88a5-4204-98dc-6ebb615d410b",
+	"beb30e1d-007a-471f-b1cd-8e1eb201e607",
+	0,
+	'Test_Passed',
+	'',
+	2,
+	'../Shared/SBONEReport/SBONEReport.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("bd681fb9-e8d4-4893-ab12-90da9a0113a1",
+	"da049e7e-ae52-41de-bda0-a233ffb1cb12",
+	"e77a47da-9939-419d-9375-748dab145d66");
+INSERT INTO SPR_RO
+	VALUES ("bd681fb9-e8d4-4893-ab12-90da9a0113a1",
+	'Test_Failed',
+	'',
+	'',
+	3,
+	2,
+	3);
+INSERT INTO C_EP_PROXY
+	VALUES ("da049e7e-ae52-41de-bda0-a233ffb1cb12",
+	"beb30e1d-007a-471f-b1cd-8e1eb201e607",
+	0,
+	'Test_Failed',
+	'',
+	3,
+	'../Shared/SBONEReport/SBONEReport.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("e78cf53e-7937-4ed5-92f8-8c252b113ccf",
+	"c25ab141-22ce-48bc-af7d-fa2b44685f60",
+	"e77a47da-9939-419d-9375-748dab145d66");
+INSERT INTO SPR_RO
+	VALUES ("e78cf53e-7937-4ed5-92f8-8c252b113ccf",
+	'Test_Unsupported',
+	'',
+	'',
+	3,
+	2,
+	4);
+INSERT INTO C_EP_PROXY
+	VALUES ("c25ab141-22ce-48bc-af7d-fa2b44685f60",
+	"beb30e1d-007a-471f-b1cd-8e1eb201e607",
+	0,
+	'Test_Unsupported',
+	'',
+	4,
+	'../Shared/SBONEReport/SBONEReport.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("ceae04c7-8e82-4ec8-9c31-e1b53b7ac63d",
+	"a161b964-799e-4cac-889e-bf5ae2991b62",
+	"e77a47da-9939-419d-9375-748dab145d66");
+INSERT INTO SPR_RO
+	VALUES ("ceae04c7-8e82-4ec8-9c31-e1b53b7ac63d",
+	'Test_Text',
+	'',
+	'',
+	3,
+	2,
+	5);
+INSERT INTO C_EP_PROXY
+	VALUES ("a161b964-799e-4cac-889e-bf5ae2991b62",
+	"beb30e1d-007a-471f-b1cd-8e1eb201e607",
+	0,
+	'Test_Text',
+	'',
+	5,
+	'../Shared/SBONEReport/SBONEReport.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("6683448a-d85c-4f01-81f7-0b7083b894a7",
+	"ddb1f27f-ca5d-449b-a29c-bde2b0fea498",
+	"e77a47da-9939-419d-9375-748dab145d66");
+INSERT INTO SPR_RO
+	VALUES ("6683448a-d85c-4f01-81f7-0b7083b894a7",
+	'Domain_Test_Start',
+	'',
+	'',
+	3,
+	2,
+	6);
+INSERT INTO C_EP_PROXY
+	VALUES ("ddb1f27f-ca5d-449b-a29c-bde2b0fea498",
+	"beb30e1d-007a-471f-b1cd-8e1eb201e607",
+	0,
+	'Domain_Test_Start',
+	'',
+	6,
+	'../Shared/SBONEReport/SBONEReport.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("1b09b332-147c-47b9-8852-2a1dc18a9960",
+	"5fd21f1f-b991-4e4c-b50c-a89e8a1415f3",
+	"e77a47da-9939-419d-9375-748dab145d66");
+INSERT INTO SPR_RO
+	VALUES ("1b09b332-147c-47b9-8852-2a1dc18a9960",
+	'Domain_Test_Finished',
+	'',
+	'',
+	3,
+	2,
+	7);
+INSERT INTO C_EP_PROXY
+	VALUES ("5fd21f1f-b991-4e4c-b50c-a89e8a1415f3",
+	"beb30e1d-007a-471f-b1cd-8e1eb201e607",
+	0,
+	'Domain_Test_Finished',
+	'',
+	7,
+	'../Shared/SBONEReport/SBONEReport.xtuml');
+INSERT INTO C_I_PROXY
+	VALUES ("beb30e1d-007a-471f-b1cd-8e1eb201e607",
+	"00000000-0000-0000-0000-000000000000",
+	'SBONEReport',
+	'',
+	'../Shared/SBONEReport/SBONEReport.xtuml');
+INSERT INTO PE_PE
+	VALUES ("94314c6a-6ec5-4e94-aa83-178a1cf6edec",
+	1,
+	"f7875c49-b9f1-4ded-8e44-427178e19cd0",
+	"00000000-0000-0000-0000-000000000000",
+	2);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("f7875c49-b9f1-4ded-8e44-427178e19cd0",
+	"819ed92c-c48a-499c-8128-b4be558ae92e",
+	"819ed92c-c48a-499c-8128-b4be558ae92e",
+	'SBONE',
+	'masl_domain',
+	0,
+	'../SBONE.xtuml');

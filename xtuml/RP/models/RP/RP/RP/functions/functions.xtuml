@@ -1,0 +1,1102 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("5881eddd-8ac1-49b2-9dae-e9e4fd068a66",
+	"00000000-0000-0000-0000-000000000000",
+	"9d158e79-1971-4f46-9816-625db585c03b",
+	'functions',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("4f6d7a10-22c9-45cb-8580-b83310f0f563",
+	112,
+	"5881eddd-8ac1-49b2-9dae-e9e4fd068a66",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'RP::RP::RP::functions');
+INSERT INTO DIM_DIA
+	VALUES ("4f6d7a10-22c9-45cb-8580-b83310f0f563",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_SYNC
+	VALUES ("f7051834-a46f-4845-ac45-2243ac757a5e",
+	"00000000-0000-0000-0000-000000000000",
+	'Test_Passed',
+	' Same function as domain based synch service.
+',
+	'Invoking_Domain_Number = Passed_Domain_Number
+
+the_test = Passed_Test_Number
+
+the_val  = Passed_Test_Result_Value
+
+the_domain = Passed_Domain
+
+[] = DD1:A_Test_Has_Passed[the_test, Invoking_Domain_Number, the_val, the_domain]
+
+$INLINE
+fprintf(stderr, "Test Number %d %s has PASSED with  %d\n",
+        the_test, the_domain, the_val);
+$ENDINLINE
+
+
+# $ADA_INLINE
+# with Ada.Text_IO;
+#
+# 
+# -- Ada.Text_IO.Put_Line("Object " & the_domain & 
+# --                     " Test Number " & integer''image(integer(the_test)) & 
+# --                     " has PASSED with " & integer''image(integer(the_val)));
+#
+# $END_ADAINLINE
+
+
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	1);
+INSERT INTO S_SPARM
+	VALUES ("0adecc5f-586e-4b0f-af71-335af3d3e7e9",
+	"f7051834-a46f-4845-ac45-2243ac757a5e",
+	'Passed_Domain',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("f8f73e71-f615-4e00-b090-65992658748a",
+	"f7051834-a46f-4845-ac45-2243ac757a5e",
+	'Passed_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"0adecc5f-586e-4b0f-af71-335af3d3e7e9",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("0308acaa-633b-400e-8143-a0e6aadc325e",
+	"f7051834-a46f-4845-ac45-2243ac757a5e",
+	'Passed_Test_Result_Value',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"f8f73e71-f615-4e00-b090-65992658748a",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("fb8da3b6-4099-4ce2-9798-712623236351",
+	"f7051834-a46f-4845-ac45-2243ac757a5e",
+	'Passed_Domain_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"0308acaa-633b-400e-8143-a0e6aadc325e",
+	'');
+INSERT INTO PE_PE
+	VALUES ("f7051834-a46f-4845-ac45-2243ac757a5e",
+	1,
+	"5881eddd-8ac1-49b2-9dae-e9e4fd068a66",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("e8f89d6d-864a-4460-9980-6ec7ab8af152",
+	"00000000-0000-0000-0000-000000000000",
+	'Test_Failed',
+	'',
+	'the_test = the_test_no
+the_val = the_test_value
+
+the_domain = Failed_Domain
+
+the_domain_number = Failed_Domain_Number
+
+[] = DD2:A_Test_Has_Failed[the_test, the_domain_number, the_val, the_domain]
+
+$INLINE
+fprintf(stderr, "Test Number %d has **** FAILED **** with %d\n",
+        the_test, the_val);
+$ENDINLINE
+
+#$ADA_INLINE
+# with Ada.Text_IO;
+#
+# -- Ada.Text_IO.New_Line(1);
+# -- Ada.Text_IO.Put_Line("Object " & the_domain & 
+# --                    " Test Number " & integer''image(integer(the_test)) & 
+# --                    " has **** FAILED **** with " & integer''image(integer(the_val)));
+# -- Ada.Text_IO.New_Line(1);
+#$END_ADAINLINE
+
+
+
+
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	2);
+INSERT INTO S_SPARM
+	VALUES ("529bb653-a2d6-4ee6-8bec-2ea5301c334f",
+	"e8f89d6d-864a-4460-9980-6ec7ab8af152",
+	'Failed_Domain',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("67fb278d-d13e-422a-87da-0c5057d9ba2d",
+	"e8f89d6d-864a-4460-9980-6ec7ab8af152",
+	'the_test_no',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"529bb653-a2d6-4ee6-8bec-2ea5301c334f",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("8fff7c3f-2116-4c31-85b8-d11781fc02dd",
+	"e8f89d6d-864a-4460-9980-6ec7ab8af152",
+	'the_test_value',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"67fb278d-d13e-422a-87da-0c5057d9ba2d",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("c6e2dda7-0411-4ed8-acc3-4a584d0834ff",
+	"e8f89d6d-864a-4460-9980-6ec7ab8af152",
+	'Failed_Domain_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"8fff7c3f-2116-4c31-85b8-d11781fc02dd",
+	'');
+INSERT INTO PE_PE
+	VALUES ("e8f89d6d-864a-4460-9980-6ec7ab8af152",
+	1,
+	"5881eddd-8ac1-49b2-9dae-e9e4fd068a66",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("5b4dcc14-a763-49d5-9432-b777296bd95f",
+	"00000000-0000-0000-0000-000000000000",
+	'Test_Unsupported',
+	'',
+	'the_test = Unsupported_Test_Number
+
+the_domain = Unsupported_Domain_Number
+
+[] = DD3:A_Test_Is_Unsupported[the_test, the_domain]
+
+$INLINE
+fprintf(stderr, "Test Number %d is UNSUPPORTED\n",
+        the_test);
+$ENDINLINE
+
+
+#$ADA_INLINE
+# with Ada.Text_IO;
+#
+# 
+# -- Ada.Text_IO.Put_Line("Test Number " & integer''image(integer(the_test)) & 
+# --                     " is UNSUPPORTED");
+#
+#$END_ADAINLINE
+
+
+
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	3);
+INSERT INTO S_SPARM
+	VALUES ("a7bce04d-5087-49c1-8133-74ce020ae74f",
+	"5b4dcc14-a763-49d5-9432-b777296bd95f",
+	'Unsupported_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("b0283972-78a4-4083-abd9-14cbf197dc21",
+	"5b4dcc14-a763-49d5-9432-b777296bd95f",
+	'Unsupported_Domain_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"a7bce04d-5087-49c1-8133-74ce020ae74f",
+	'');
+INSERT INTO PE_PE
+	VALUES ("5b4dcc14-a763-49d5-9432-b777296bd95f",
+	1,
+	"5881eddd-8ac1-49b2-9dae-e9e4fd068a66",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("06a67ffc-a319-498c-8513-f15c29e2e235",
+	"00000000-0000-0000-0000-000000000000",
+	'Test_Description',
+	'',
+	'#match_found = FALSE
+
+the_domain = Write_Invoker_Domain_Name
+
+the_test_number = Write_Test_Number
+
+the_purpose = Write_Test_Purpose
+
+the_object = Write_Object
+
+the_requid = Write_Requid
+
+the_domain_number = Write_Invoker_Domain_Number
+
+The_Domain_Details = find-one Domain_Details where Domain_Number = the_domain_number
+
+
+Found_The_Test_Details = FALSE
+
+if The_Domain_Details != UNDEFINED then
+  
+   # Have we already got this Test Details?
+
+   {Set_Of_Already_Reported_Test_Details} = The_Domain_Details -> R8.Test_Details
+
+   for Each_Known_Test_Detail in {Set_Of_Already_Reported_Test_Details} do
+
+      if Each_Known_Test_Detail.The_Test_No = the_test_number then
+
+         Found_The_Test_Details = TRUE
+
+         # Got another test details for this test
+         [] = RP9::Test_Anomalous_Behaviour[the_test_number, "Duplicated test details received"]
+
+      endif
+
+   endfor
+
+
+   # Haven''t already got this one
+   if Found_The_Test_Details = FALSE then
+
+
+      The_Test_Details = create Test_Details with \
+          Test_Purpose  = the_purpose &\
+          Tested_Object = the_object  &\
+          The_Test_No   = the_test_number &\
+          Result_Found  = FALSE
+
+      # Create new requirement identifier for test object and link it.
+
+      New_Requid_For_Test = create Requirement_Identifier_For_Test with requid = the_requid
+
+      link The_Domain_Details R8 The_Test_Details
+
+      link The_Test_Details R7 New_Requid_For_Test
+
+      # Stash the requirement identifier so it can be checked off against the specified
+      # requirements for this test run.
+
+      [] = RP10::Specify_Requid[the_domain_number, the_test_number, the_requid]
+
+
+      $INLINE
+       fprintf(stderr, " \n");
+       fprintf(stderr,"***************************************************************************\n");
+       fprintf(stderr, "Test Number           : %d\n", the_test_number);
+       fprintf(stderr, "Requirment identifier : %s\n", the_requid);
+       fprintf(stderr, "Domain                : %s\n", the_domain);
+       fprintf(stderr, "Invoker object        : %s\n", the_object);
+       fprintf(stderr, "Testing for           : %s\n", the_purpose);
+       fprintf(stderr, " \n");
+      $ENDINLINE
+
+   endif
+
+else
+
+   # Got another test details for this test
+   [] = RP7::Report_Run_Time_Error["No domain details reported"]
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	4);
+INSERT INTO S_SPARM
+	VALUES ("e53beb05-0f6e-45b0-b665-96f1b1f45ba1",
+	"06a67ffc-a319-498c-8513-f15c29e2e235",
+	'Write_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("43c267a2-77c1-4255-b69c-8a6fba572cb7",
+	"06a67ffc-a319-498c-8513-f15c29e2e235",
+	'Write_Requid',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"e53beb05-0f6e-45b0-b665-96f1b1f45ba1",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("3ec22742-67af-4a20-a14a-2c3c9a3a0999",
+	"06a67ffc-a319-498c-8513-f15c29e2e235",
+	'Write_Invoker_Domain_Name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"43c267a2-77c1-4255-b69c-8a6fba572cb7",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("79d349b2-191a-4318-b346-03d79714afc7",
+	"06a67ffc-a319-498c-8513-f15c29e2e235",
+	'Write_Object',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"3ec22742-67af-4a20-a14a-2c3c9a3a0999",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("1c40b5a8-f84d-4384-a8e4-36e3d9ef6f1f",
+	"06a67ffc-a319-498c-8513-f15c29e2e235",
+	'Write_Test_Purpose',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"79d349b2-191a-4318-b346-03d79714afc7",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("563ddd37-cd96-43c4-adb7-bc394d77c086",
+	"06a67ffc-a319-498c-8513-f15c29e2e235",
+	'Write_Invoker_Domain_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"1c40b5a8-f84d-4384-a8e4-36e3d9ef6f1f",
+	'');
+INSERT INTO PE_PE
+	VALUES ("06a67ffc-a319-498c-8513-f15c29e2e235",
+	1,
+	"5881eddd-8ac1-49b2-9dae-e9e4fd068a66",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("b707bd7a-0a2d-450b-a59d-455d841d1b58",
+	"00000000-0000-0000-0000-000000000000",
+	'Test_Text',
+	' Free form description for a test
+',
+	'the_test_number = Text_Test_Number
+the_text        = Free_Text
+
+This_Domain = find-one Domain_Details where Domain_Number = Domain_No
+
+$INLINE
+fprintf(stderr, " \n");
+fprintf(stderr, "TEXT NOTE\n");
+fprintf(stderr, "Test Number %d  %s\n", the_test_number, the_text);
+fprintf(stderr, " \n");
+$ENDINLINE
+
+#$ADA_INLINE
+# with Ada.Text_IO;
+#
+# -- Ada.Text_IO.New_Line(1);
+# -- Ada.Text_IO.Put_Line("TEXT NOTE");
+# -- Ada.Text_IO.Put_Line("Test Number "  & integer''image(integer(the_test_number)) );
+# -- Ada.Text_IO.Put("  "  & the_text);
+# -- Ada.Text_IO.New_Line(1);
+#
+#$END_ADAINLINE
+
+
+{Matching_Test_Details_Set} = This_Domain -> R8.Test_Details
+for The_Test in {Matching_Test_Details_Set} do
+    breakif The_Test.The_Test_No = Domain_No
+endfor
+
+if The_Test != UNDEFINED then
+
+   The_Domain_Details = The_Test -> R8.Domain_Details
+
+   if The_Domain_Details != UNDEFINED then
+
+      The_Supporting_Comment = create Supporting_Comments with Comment_ID  = Domain_No &\
+                                                               The_Comment = the_text  &\
+                                                               The_Test_No = the_test_number
+
+         link The_Supporting_Comment R9 The_Domain_Details
+
+   else
+      [] = RP9::Test_Anomalous_Behaviour[Domain_No, "Domain and Test unlinked"]
+   endif
+
+else
+   [] = RP9::Test_Anomalous_Behaviour[Domain_No, "Received a comment for unknown test"]
+endif
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	5);
+INSERT INTO S_SPARM
+	VALUES ("3f1ddea2-3999-4b0f-abf1-4bec45161b7e",
+	"b707bd7a-0a2d-450b-a59d-455d841d1b58",
+	'Domain_No',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("971154f0-702d-4cd9-bd81-91971c0f470a",
+	"b707bd7a-0a2d-450b-a59d-455d841d1b58",
+	'Text_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"3f1ddea2-3999-4b0f-abf1-4bec45161b7e",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("b1431b5a-dcb2-4555-bec3-83c3a98f4658",
+	"b707bd7a-0a2d-450b-a59d-455d841d1b58",
+	'Free_Text',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"971154f0-702d-4cd9-bd81-91971c0f470a",
+	'');
+INSERT INTO PE_PE
+	VALUES ("b707bd7a-0a2d-450b-a59d-455d841d1b58",
+	1,
+	"5881eddd-8ac1-49b2-9dae-e9e4fd068a66",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("a8654f9e-66c3-49ba-9c7e-add1eb1cbc9d",
+	"00000000-0000-0000-0000-000000000000",
+	'Create_New_Domain_Test',
+	' This service shall create a unique object for reporting a test pass or fail.
+ It shall report its'' own unique identifer to the invoking domain, returned via the bridge. This is so that the reporting domain can specify which object to report into. There can be more than one object in existance at any one time. THis is due to the way the event queue is asynchronous, and service invocations are sysnchronous.
+ 
+',
+	'
+# Create new domain test
+
+new_domain_test = create unique Domain_Details with \
+   Domain_Name               = Invoker_Domain_Name &\
+   Last_Reported_Test_Number = 0 &\
+   Current_State             = ''Idle''
+
+new_pass = create A_Test_That_Passed with \
+    Passed_Counter = 0
+
+new_fail = create A_Test_That_Failed with \
+   Failed_Counter = 0
+
+new_unsupported = create A_Test_That_Is_Unsupported with \
+   Unsupported_Counter = 0
+
+new_duplicated = create Duplicated_Result with \ 
+   Duplicated_Test_Count = 0
+
+
+# if the Test Suite object has been created, link it to this domain details
+The_Test_Suite = find-one Test_Suite
+
+if The_Test_Suite != UNDEFINED then
+   link new_domain_test R10 The_Test_Suite 
+endif
+
+link new_domain_test R1 new_pass
+link new_domain_test R2 new_fail
+link new_domain_test R3 new_unsupported
+link new_domain_test R4 new_duplicated
+
+
+Unique_ID = new_domain_test.Domain_Number
+
+
+Domain_Unique_Identifier = Unique_ID',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	6);
+INSERT INTO S_SPARM
+	VALUES ("00aaa2cf-43e8-47fa-b5c3-4bbacddc0e74",
+	"a8654f9e-66c3-49ba-9c7e-add1eb1cbc9d",
+	'Invoker_Domain_Name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("2cc1dcd8-0544-4c03-abf5-13f1aa94dba2",
+	"a8654f9e-66c3-49ba-9c7e-add1eb1cbc9d",
+	'Domain_Unique_Identifier',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"00aaa2cf-43e8-47fa-b5c3-4bbacddc0e74",
+	'');
+INSERT INTO PE_PE
+	VALUES ("a8654f9e-66c3-49ba-9c7e-add1eb1cbc9d",
+	1,
+	"5881eddd-8ac1-49b2-9dae-e9e4fd068a66",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("e2351336-af20-41ee-9001-f6b379e1dc8b",
+	"00000000-0000-0000-0000-000000000000",
+	'Report_Run_Time_Error',
+	'',
+	'the_detail = Detail
+
+
+
+$INLINE
+ fprintf(stderr, "\n");
+ fprintf(stderr,"======================= RUN TIME ERROR ENCOUNTERED =======================\n");
+ fprintf(stderr, "\n");
+ fprintf(stderr, "Report : %s\n", the_detail);
+ fprintf(stderr, " \n");
+ fprintf(stderr,"======================= ************************** =======================\n");
+ fprintf(stderr, "\n");
+$ENDINLINE
+
+
+#$ADA_INLINE
+# with Ada.Text_IO;
+# Ada.Text_IO.New_Line(1);
+# Ada.Text_IO.Put_Line("======================= RUN TIME ERROR ENCOUNTERED =======================");
+# Ada.Text_IO.New_Line(1);
+# Ada.Text_IO.Put_Line("Report : "  & the_detail );
+# Ada.Text_IO.New_Line(1);
+# Ada.Text_IO.Put_Line("======================= ************************** =======================");
+# Ada.Text_IO.New_Line(1);
+
+#$END_ADAINLINE
+
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	7);
+INSERT INTO S_SPARM
+	VALUES ("8d6aa4ac-de2b-4524-b6bc-eb3c8bfe1589",
+	"e2351336-af20-41ee-9001-f6b379e1dc8b",
+	'Detail',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO PE_PE
+	VALUES ("e2351336-af20-41ee-9001-f6b379e1dc8b",
+	1,
+	"5881eddd-8ac1-49b2-9dae-e9e4fd068a66",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("86f6b1b9-2350-4635-88ca-c998933a2a71",
+	"00000000-0000-0000-0000-000000000000",
+	'Domain_Tests_Have_Finished',
+	'',
+	'#Find the only domain currently in existence.
+
+The_Domain_Details = find-one Domain_Details where Domain_Number = Domain_Identifer
+
+if The_Domain_Details != UNDEFINED then
+
+   if The_Domain_Details.Domain_Name = Completed_Domain_Name then
+
+      generate DD1:Tests_Have_Finished() to The_Domain_Details
+
+   else
+
+      [] = RP7::Report_Run_Time_Error["Mismatched domains to report from"]
+
+
+   endif
+
+
+else
+
+   [] = RP7::Report_Run_Time_Error["No domain found to report from"]
+
+endif
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	8);
+INSERT INTO S_SPARM
+	VALUES ("4468221f-fa7c-4b7a-b19c-619913b14b43",
+	"86f6b1b9-2350-4635-88ca-c998933a2a71",
+	'Completed_Domain_Name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("39c0a30c-2173-48e0-a3fd-c0532193a251",
+	"86f6b1b9-2350-4635-88ca-c998933a2a71",
+	'Domain_Identifer',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"4468221f-fa7c-4b7a-b19c-619913b14b43",
+	'');
+INSERT INTO PE_PE
+	VALUES ("86f6b1b9-2350-4635-88ca-c998933a2a71",
+	1,
+	"5881eddd-8ac1-49b2-9dae-e9e4fd068a66",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("cc9d5175-e598-431d-8183-cc7e10956c55",
+	"00000000-0000-0000-0000-000000000000",
+	'Test_Anomalous_Behaviour',
+	'',
+	'the_detail = Anomalous_Detail
+the_test_number = Anomalous_Test_Number
+
+
+$INLINE
+ fprintf(stderr, "\n");
+ fprintf(stderr,"ANOMALOUS BEHAVIOUR DETECTED \n");
+ fprintf(stderr, "\n");
+ fprintf(stderr, "Test Number %d Report : %s\n", the_test_number, the_detail );
+ fprintf(stderr, " \n");
+ fprintf(stderr,"**************************** \n");
+ fprintf(stderr, "\n");
+$ENDINLINE
+
+
+
+# with Ada.Text_IO;
+# Ada.Text_IO.New_Line(1);
+# Ada.Text_IO.Put_Line("ANOMALOUS BEHAVIOUR DETECTED");
+# Ada.Text_IO.New_Line(1);
+# Ada.Text_IO.Put_Line("Test Number " & integer''image(integer(the_test_number)) & " Report : "  & the_detail );
+# Ada.Text_IO.New_Line(1);
+# Ada.Text_IO.Put_Line("****************************");
+# Ada.Text_IO.New_Line(1);
+
+
+
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	9);
+INSERT INTO S_SPARM
+	VALUES ("55048773-d7b3-45d3-9e8c-f4be9b9572ca",
+	"cc9d5175-e598-431d-8183-cc7e10956c55",
+	'Anomalous_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("d69638d2-6795-4e57-897a-8dcdc682114d",
+	"cc9d5175-e598-431d-8183-cc7e10956c55",
+	'Anomalous_Detail',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"55048773-d7b3-45d3-9e8c-f4be9b9572ca",
+	'');
+INSERT INTO PE_PE
+	VALUES ("cc9d5175-e598-431d-8183-cc7e10956c55",
+	1,
+	"5881eddd-8ac1-49b2-9dae-e9e4fd068a66",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("4564387e-0cda-4696-b326-f7b44b1f61f3",
+	"00000000-0000-0000-0000-000000000000",
+	'Specify_Requid',
+	' This service shall allow the calling domain specify a requirement identifier for a given domain and test.
+',
+	'# The Action for this domain synchronous service is simple.
+# It requires that a test is already defined, i.e. start test has already been 
+# sent.  Having established this, link in the new requirement identifier
+# for that test. There can be many requids associated with a given test.
+
+This_Domain = find-one Domain_Details where Domain_Number = Requid_Domain_Number
+
+#The_Test = find-one Test_Details where Domain_Number = Requid_Domain_Number &\
+#                                       The_Test_No   = Requid_Test_Number
+
+{Matching_Test_Details_Set} = This_Domain -> R8.Test_Details
+for The_Test in {Matching_Test_Details_Set} do
+    breakif The_Test.The_Test_No = Requid_Test_Number
+endfor
+
+
+if The_Test != UNDEFINED then
+
+   The_Domain_Details = The_Test -> R8.Domain_Details
+
+   if The_Domain_Details != UNDEFINED then
+
+      Requid_Domain_Name = The_Domain_Details.Domain_Name
+
+
+      # ''tick off'' the requid against the listed requids through Test_Suite
+      # and Requirements objects.
+
+      Match = FALSE
+
+      The_Test_Suite = find-one Test_Suite
+
+      if The_Test_Suite != UNDEFINED then
+
+         # Grab all the known requirments in this test run
+         {Set_Of_Specified_Requids} = The_Test_Suite -> R11.All_Requirements_In_Test_Suite
+
+         for A_Requirement in {Set_Of_Specified_Requids} do
+
+            # If we find what we are looking for, update the test status
+            if A_Requirement.REQUID = Requid_Identifier then
+
+               # This is the first test in the test run to meet this requirement.
+               # There may well be more.
+               if A_Requirement.Requid_Test_Status = ''Not_Tested'' then
+
+                  A_Requirement.Requid_Test_Status = ''Tested''
+
+               endif
+
+               # This requirement has already been met, but that is not to say
+               # that this current tests doesn''t also meet the requirement.
+
+               # Create a new instance of the requirment met object and link it
+               # via a 1:M relationship to the All_Reqs. object
+
+               new_requid_met = create unique Requirement_Met
+        
+               new_requid_met.Domain_Number       = Requid_Domain_Number
+               new_requid_met.Domain_Name         = Requid_Domain_Name
+               new_requid_met.Meeting_Test_Number = Requid_Test_Number
+               new_requid_met.Requid_Test_Result  = ''Unknown''
+
+               link new_requid_met R12 A_Requirement
+
+               Match = TRUE
+
+               #Found the requid
+               break
+
+            endif
+
+         endfor
+
+         if !Match then
+            [] = RP7::Report_Run_Time_Error["Requirement identifier not specified for this run"] 
+         endif
+
+      endif
+
+   else
+
+      [] = RP9::Test_Anomalous_Behaviour[Requid_Test_Number, "Domain and Test unlinked"]
+
+   endif
+
+else
+
+   [] = RP9::Test_Anomalous_Behaviour[Requid_Test_Number, "Received a requid for unknown test"]
+
+
+endif
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	10);
+INSERT INTO S_SPARM
+	VALUES ("c88f2232-f06c-4a8a-b6dc-2694fb75058b",
+	"4564387e-0cda-4696-b326-f7b44b1f61f3",
+	'Requid_Domain_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("b2f36392-57dd-43ae-b780-7cf70b7227c6",
+	"4564387e-0cda-4696-b326-f7b44b1f61f3",
+	'Requid_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"c88f2232-f06c-4a8a-b6dc-2694fb75058b",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("b51cb61c-e434-42f9-a965-00cda3486e9d",
+	"4564387e-0cda-4696-b326-f7b44b1f61f3",
+	'Requid_Identifier',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"b2f36392-57dd-43ae-b780-7cf70b7227c6",
+	'');
+INSERT INTO PE_PE
+	VALUES ("4564387e-0cda-4696-b326-f7b44b1f61f3",
+	1,
+	"5881eddd-8ac1-49b2-9dae-e9e4fd068a66",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("027a181a-b09b-48c1-a990-e3fc99624a5d",
+	"00000000-0000-0000-0000-000000000000",
+	'Add_All_Requids',
+	'',
+	'# The idea here is that a new requid shall be for the full test suite, however
+# many domains make it up.
+
+# When a start test for a domain is received, it shall be compared against the 
+# list of requirements for the full test suite.
+
+# In this way all specified requirements for a test suite can be ''checked off''
+# against the known list.
+
+# This service allows the specification of a requirement for the test suite.
+
+this_suite = find-one Test_Suite
+
+if this_suite != UNDEFINED then
+
+   new_requirement = create unique All_Requirements_In_Test_Suite with REQUID = New_Requid
+
+   link this_suite R11 new_requirement
+
+   $INLINE
+   fprintf(stderr,"Adding the following requirement   %s\n", New_Requid);
+   $ENDINLINE
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	12);
+INSERT INTO S_SPARM
+	VALUES ("69437a8a-6c32-4acd-ae76-cdb20aaa6b2f",
+	"027a181a-b09b-48c1-a990-e3fc99624a5d",
+	'New_Requid',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO PE_PE
+	VALUES ("027a181a-b09b-48c1-a990-e3fc99624a5d",
+	1,
+	"5881eddd-8ac1-49b2-9dae-e9e4fd068a66",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("50045782-8386-435a-b7f2-702439a012e7",
+	"00000000-0000-0000-0000-000000000000",
+	'Requirement_Tracker',
+	'',
+	'Requid_Tracker = find-one Test_Suite
+
+if Requid_Tracker != UNDEFINED then
+
+
+   {The_Match} = find Requirement_Met where Domain_Number = Updated_Domain_ID &\
+      Meeting_Test_Number = Updated_Test_Number
+
+   if countof{The_Match} != 0 then
+
+      for each_match in {The_Match} do
+
+         if each_match.Requid_Test_Result = ''Unknown'' then
+
+            each_match.Requid_Test_Result = Updated_Result
+
+         else
+
+            [] = RP7::Report_Run_Time_Error["Requirement already reported for this domain and test"]
+
+         endif 
+      endfor
+
+ 
+#   The_Match = find-one Requirement_Met where Domain_Number = Updated_Domain_ID &\
+#      Meeting_Test_Number = Updated_Test_Number
+
+#   if The_Match != UNDEFINED then
+
+#      if The_Match.Requid_Test_Result = ''Unknown'' then
+
+#         The_Match.Requid_Test_Result = Updated_Result
+
+#      else
+
+#         [] = RP7::Report_Run_Time_Error["Requirement already reported for this domain and test"]
+
+#      endif   
+
+# Temporarily ignore this for the moment. Reinstate it later.
+#   else
+#      [] = RP7::Report_Run_Time_Error["Can''t find the matching requirement"]
+
+   endif   
+
+
+
+#else
+
+   # If it is not here, then we are not tracking requirements in this
+   # This is not an error condition, so ignore.
+
+
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	13);
+INSERT INTO S_SPARM
+	VALUES ("532bd2b2-1f00-4d66-bf25-b6bcf5431204",
+	"50045782-8386-435a-b7f2-702439a012e7",
+	'Updated_Domain_ID',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("e91d2535-1dd1-44c7-9bc1-647186a11094",
+	"50045782-8386-435a-b7f2-702439a012e7",
+	'Updated_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"532bd2b2-1f00-4d66-bf25-b6bcf5431204",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("fe1e8194-98b8-47e1-84d2-d029b8610c02",
+	"50045782-8386-435a-b7f2-702439a012e7",
+	'Updated_Result',
+	"19a134d6-cc41-4dfd-be6d-495e56ecae8d",
+	0,
+	'',
+	"e91d2535-1dd1-44c7-9bc1-647186a11094",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("19a134d6-cc41-4dfd-be6d-495e56ecae8d",
+	"00000000-0000-0000-0000-000000000000",
+	'Result_Type',
+	'',
+	'',
+	'../../Shared/Shared.xtuml');
+INSERT INTO PE_PE
+	VALUES ("50045782-8386-435a-b7f2-702439a012e7",
+	1,
+	"5881eddd-8ac1-49b2-9dae-e9e4fd068a66",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("33ff9658-81a7-4293-b079-031d5467be0c",
+	"00000000-0000-0000-0000-000000000000",
+	'Perform_Req_Analysis',
+	'',
+	'
+$INLINE
+fprintf(stderr,"Captured requirements analysis started\n");
+$ENDINLINE
+
+#$ADA_INLINE
+#
+#   with Test_Suite_Text_IO;
+#
+#   Test_Suite_Text_IO.Dump_String(Value => "Captured requirements analysis started");
+#
+#$END_ADAINLINE
+
+The_Test_Suite = find-one Test_Suite
+
+if The_Test_Suite != UNDEFINED then
+
+   generate TS3:Go() to The_Test_Suite
+
+else
+
+   [] = RP7::Report_Run_Time_Error["Requirements capture not enabled, analysis impossible"]
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	11);
+INSERT INTO PE_PE
+	VALUES ("33ff9658-81a7-4293-b079-031d5467be0c",
+	1,
+	"5881eddd-8ac1-49b2-9dae-e9e4fd068a66",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO PE_PE
+	VALUES ("5881eddd-8ac1-49b2-9dae-e9e4fd068a66",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"763148bc-6e75-489c-a316-48384d850e69",
+	7);
+INSERT INTO C_C_PROXY
+	VALUES ("763148bc-6e75-489c-a316-48384d850e69",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'RP',
+	' Consistent reports of test results
+',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Report',
+	'../RP.xtuml');
+INSERT INTO S_SYS_PROXY
+	VALUES ("9d158e79-1971-4f46-9816-625db585c03b",
+	'RP',
+	1,
+	'../../../RP.xtuml');

@@ -1,0 +1,2699 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("5ef6725d-bcd7-4754-ae00-eb6fb13de358",
+	"00000000-0000-0000-0000-000000000000",
+	"41eb16c7-0f24-4e35-b333-a47fabc90a87",
+	'functions',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("72aed08c-0cdd-46da-891e-4372ea347033",
+	112,
+	"5ef6725d-bcd7-4754-ae00-eb6fb13de358",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'TAGS::TAGS::TAGS::functions');
+INSERT INTO DIM_DIA
+	VALUES ("72aed08c-0cdd-46da-891e-4372ea347033",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_SYNC
+	VALUES ("20429c3d-23ea-47a5-970d-21b0ccc52a1f",
+	"00000000-0000-0000-0000-000000000000",
+	'Perform_Unique_Passive_Singleton_Object_Tests',
+	'',
+	'# A_Passive_Static_Object should be tagged as SINGLETON.
+# ie. it should only be created once.
+
+
+Local_Test = Test
+
+Failure_Code = 0
+
+My_Test_Data = find-one Test_Data
+
+if My_Test_Data.Environment = ''WACA'' then
+   Supported = TRUE
+else
+   Supported = FALSE
+endif
+
+#--------------------------------------------------------------------------
+# Test 1
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Local_Test, "1241-0000-01-0128", "TAGGING", "Singleton UNIQUE passive object", "Create one singleton instances"]
+
+   The_Passive_Object = create unique A_Passive_Static_Object with Size = 1
+
+   # Further attempts to create an object of this sort should be met with
+   # complete indifference by WACA.
+
+   # Another_Passive_Object = create A_Passive_Static_Object with Size = 2 & Unique_Identifier = 2
+
+   if The_Passive_Object      = UNDEFINED then
+      # Test Failed
+      Failure_Code = -1
+   endif
+
+   [] = TAGS5::Report_Now[Test, "Create one singleton instance", Failure_Code, Supported]
+
+   Local_Test = Local_Test + 1
+
+# End Test 1
+
+#--------------------------------------------------------------------------
+# Test 2
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Local_Test, "Null Requid", "TAGGING", "Singleton UNIQUE passive object", "Create another singleton instances"]
+
+   # Creation of another singleton object will cause unpredictable actions by WACA, therefor this
+   # test is unsupported for the moment.
+
+   # Another_Passive_Object = create A_Passive_Static_Object with Size = 2 & Unique_Identifier = 2
+
+
+   [] = RPT4:Test_Unsupported[Local_Test]
+
+   Local_Test = Local_Test + 1
+
+# End Test 2
+
+#--------------------------------------------------------------------------
+# Test 3
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Local_Test, "1241-0000-01-0128", "TAGGING", "Singleton UNIQUE passive object", "How many"]
+
+   # A SINGLETON object is still around from previous test.
+   # Check to see if the attempt to create another one has
+   # messed up the set information.
+ 
+   {Set_of_Singletons} = find-all A_Passive_Static_Object
+
+   How_Many = countof {Set_of_Singletons}
+
+   if How_Many != 1 then 
+      Failure_Code = How_Many
+   endif
+
+   [] = TAGS5::Report_Now[Local_Test, "How many", Failure_Code, Supported]
+
+   Local_Test = Local_Test + 1
+
+# End Test 3
+
+#--------------------------------------------------------------------------
+# Test 4
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Local_Test, "1241-0000-01-0128", "TAGGING", "Singleton UNIQUE passive object", "Delete passive object"]
+
+   # Now let''s try and delete the object
+
+   delete The_Passive_Object
+
+   {Set_of_Singletons} = find-all A_Passive_Static_Object
+
+   How_Many = countof {Set_of_Singletons}
+
+   if How_Many != 0 then 
+      Failure_Code = How_Many
+   endif
+
+   [] = TAGS5::Report_Now[Local_Test, "Delete passive object", Failure_Code, Supported]
+
+   Local_Test = Local_Test + 1
+
+# End Test 4
+
+#--------------------------------------------------------------------------
+# Test 5
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Local_Test, "1241-0000-01-0128", "TAGGING", "Singleton UNIQUE passive object", "Create new passive object"]
+
+   # Having sucessfully deleted the passive static object
+   # let''s make the attempt to create a new one
+
+   A_New_Passive_Object = create unique A_Passive_Static_Object with Size = 3
+
+   if A_New_Passive_Object = UNDEFINED then
+      # Test Failed
+      Failure_Code = -4
+   endif
+
+   [] = TAGS5::Report_Now[Local_Test, "Create new passive object", Failure_Code, Supported]
+
+   Local_Test = Local_Test + 1
+
+   Failure_Code = 0
+
+# End Test 5
+
+
+#--------------------------------------------------------------------------
+# Test 6
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Local_Test, "Null Requid", "TAGGING", "Singleton UNIQUE passive object", "Delete all passive objects"]
+
+   # Tidy up here.
+   if A_New_Passive_Object != UNDEFINED then
+      delete A_New_Passive_Object
+   endif
+
+   if The_Passive_Object != UNDEFINED then
+      delete The_Passive_Object
+   endif
+
+   {Set_of_Singletons} = find-all A_Passive_Static_Object
+
+   How_Many = countof {Set_of_Singletons}
+
+   if How_Many != 0 then 
+      Failure_Code = How_Many
+   endif
+
+   [] = TAGS5::Report_Now[Local_Test, "Delete all passive objects", Failure_Code, Supported]
+
+# End Test 6
+
+#--------------------------------------------------------------------------
+
+Returned_Test_Number = Local_Test
+
+
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	1);
+INSERT INTO S_SPARM
+	VALUES ("e2f6644c-1027-40e7-a893-9bd040b46372",
+	"20429c3d-23ea-47a5-970d-21b0ccc52a1f",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("032b3170-b3f6-4782-b0e0-ded0a6be68f0",
+	"20429c3d-23ea-47a5-970d-21b0ccc52a1f",
+	'Returned_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"e2f6644c-1027-40e7-a893-9bd040b46372",
+	'');
+INSERT INTO PE_PE
+	VALUES ("20429c3d-23ea-47a5-970d-21b0ccc52a1f",
+	1,
+	"5ef6725d-bcd7-4754-ae00-eb6fb13de358",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("9acf457b-b593-4359-b062-b10ffcc3acf7",
+	"00000000-0000-0000-0000-000000000000",
+	'Create_Report_Data',
+	'',
+	'# Find out if there already is one of these.
+# It is not inconceivable that a report object still exists from a previous run.
+# Report objects are not deleted at the end of a run, as certain events may
+# still be en-queued.
+
+old_report = find-one Report_Data
+
+if old_report != UNDEFINED then
+   delete old_report
+endif
+
+My_Report = create unique Report_Data with Reported_Domain_Number = 0
+
+[] = RPT6:Domain_Test_Start["TAGGING"]
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	2);
+INSERT INTO PE_PE
+	VALUES ("9acf457b-b593-4359-b062-b10ffcc3acf7",
+	1,
+	"5ef6725d-bcd7-4754-ae00-eb6fb13de358",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("037293a3-5267-4f21-9c13-a83458f9f312",
+	"00000000-0000-0000-0000-000000000000",
+	'Delete_Report_Domain',
+	'',
+	'This_Report = find-one Report_Data
+
+if This_Report != UNDEFINED then
+   This_Domain_Identifier = This_Report.Reported_Domain_Number
+else
+   This_Domain_Identifier = -1
+endif
+
+[] = RPT7:Domain_Test_Finished["TAGGING", This_Domain_Identifier]
+
+# There are no events en-queued in this domain.
+
+# Events are not tagged currently, or at least there is no call to do, yet.
+
+if This_Domain_Identifier != -1 then
+   delete This_Report
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	3);
+INSERT INTO PE_PE
+	VALUES ("037293a3-5267-4f21-9c13-a83458f9f312",
+	1,
+	"5ef6725d-bcd7-4754-ae00-eb6fb13de358",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("2e5e202f-d439-491b-a953-8d881d34d90e",
+	"00000000-0000-0000-0000-000000000000",
+	'Perform_Passive_Singleton_Object_Tests',
+	'',
+	'#--------------------------------------------------------------------------
+# A_Passive_Static_Object should be tagged as SINGLETON.
+# ie. it should only be created once.
+#--------------------------------------------------------------------------
+
+Local_Test = Test
+
+Failure_Code = 0
+
+My_Test_Data = find-one Test_Data
+
+if My_Test_Data.Environment = ''WACA'' then
+   Supported = TRUE
+else
+   Supported = FALSE
+endif
+
+
+#--------------------------------------------------------------------------
+# Test 1
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Local_Test, "1241-0000-01-0128", "TAGGING", "Singleton passive object", "Create one singleton instance"]
+
+   The_Passive_Object = create A_Passive_Static_Object with  Unique_Identifier = 5 & Size = 1
+
+   # Further attempts to create an object of this sort should be met with
+   # complete indifference by WACA.
+
+   # Another_Passive_Object = create A_Passive_Static_Object with Unique_Identifier = 6 & Size = 2
+
+   if The_Passive_Object = UNDEFINED then
+      Failure_Code = -5
+   endif
+
+   [] = TAGS5::Report_Now[Test, "Create one singleton instance", Failure_Code, Supported]
+
+   Local_Test = Local_Test + 1
+
+# End Test 1
+
+#--------------------------------------------------------------------------
+# Test 2
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Local_Test, "Null Requid", "TAGGING", "Singleton passive object", "Create another singleton instance"]
+
+   #Another_Passive_Object = create A_Passive_Static_Object with Unique_Identifier = 6 & Size = 2
+
+   [] = RPT4:Test_Unsupported[Local_Test]
+
+   Local_Test = Local_Test + 1
+
+# End Test 2
+
+#--------------------------------------------------------------------------
+# Test 3
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Local_Test, "1241-0000-01-0128", "TAGGING", "Singleton passive object", "How many"]
+
+   # A SINGLETON object is still around from previous test.
+   # Check to see if the attempt to create another one has
+   # messed up the set information.
+
+   {Set_of_Singletons} = find-all A_Passive_Static_Object
+
+   How_Many = countof {Set_of_Singletons}
+
+   if How_Many != 1 then 
+      Failure_Code = How_Many
+   endif
+
+   [] = TAGS5::Report_Now[Local_Test, "How many", Failure_Code, Supported]
+
+   Local_Test = Local_Test + 1
+
+# End Test 3
+
+#--------------------------------------------------------------------------
+# Test 4
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Local_Test, "1241-0000-01-0128", "TAGGING", "Singleton passive object", "Delete passive object"]
+
+   # Now let''s try and delete the object
+   delete The_Passive_Object
+
+   {Set_of_Singletons} = find-all A_Passive_Static_Object
+
+   How_Many = countof {Set_of_Singletons}
+
+   if How_Many != 0 then 
+      Failure_Code = How_Many
+   endif
+
+   [] = TAGS5::Report_Now[Local_Test, "Delete passive object", Failure_Code, Supported]
+
+   Local_Test = Local_Test + 1
+
+# End Test 4
+
+#--------------------------------------------------------------------------
+# Test 5
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Local_Test, "1241-0000-01-0128", "TAGGING", "Singleton passive object", "Create new passive object"]
+
+   # Having sucessfully deleted the passive static object
+   # let''s make the attempt to create a new one
+   A_New_Passive_Object = create A_Passive_Static_Object with Unique_Identifier = 8 & Size = 3
+
+   if A_New_Passive_Object = UNDEFINED then
+      Failure_Code = -8
+   endif
+
+   [] = TAGS5::Report_Now[Local_Test, "Create new passive object", Failure_Code, Supported]
+
+   Local_Test = Local_Test + 1
+
+   Failure_Code = 0
+
+# End Test 5
+
+#--------------------------------------------------------------------------
+# Test 6
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Local_Test, "Null Requid", "TAGGING", "Singleton passive object", "Delete all passive objects"]
+
+   # Tidy up here.
+   if A_New_Passive_Object != UNDEFINED then
+      delete A_New_Passive_Object
+   endif
+
+   if The_Passive_Object != UNDEFINED then
+      delete The_Passive_Object
+   endif
+
+   {Set_of_Singletons} = find-all A_Passive_Static_Object
+
+   How_Many = countof {Set_of_Singletons}
+
+   if How_Many != 0 then 
+      Failure_Code = How_Many
+   endif
+
+   [] = TAGS5::Report_Now[Local_Test, "Delete all passive objects", Failure_Code, Supported]
+
+# End Test 6
+
+#--------------------------------------------------------------------------
+
+Returned_Test_Number = Local_Test',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	4);
+INSERT INTO S_SPARM
+	VALUES ("d39eac6d-cad1-4efc-8e72-687b1ff52e63",
+	"2e5e202f-d439-491b-a953-8d881d34d90e",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("018d7c1e-a4d4-4e34-a07f-890a6a585411",
+	"2e5e202f-d439-491b-a953-8d881d34d90e",
+	'Returned_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"d39eac6d-cad1-4efc-8e72-687b1ff52e63",
+	'');
+INSERT INTO PE_PE
+	VALUES ("2e5e202f-d439-491b-a953-8d881d34d90e",
+	1,
+	"5ef6725d-bcd7-4754-ae00-eb6fb13de358",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("f94ff1a7-fdec-4c7b-b871-2ea8f926e339",
+	"00000000-0000-0000-0000-000000000000",
+	'Report_Now',
+	' Test requirement Tag
+ @@TAGS-01-0001
+',
+	'if Failure = 0 then
+   [] = RPT2:Test_Passed[Testing_For, Test_Number, Failure]
+else
+
+   if It_Is_Supported then
+      [] = RPT3:Test_Failed[Testing_For, Test_Number, Failure]
+   else
+      [] = RPT4:Test_Unsupported[Test_Number]
+   endif
+
+endif
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	5);
+INSERT INTO S_SPARM
+	VALUES ("10d9b66a-1f35-4954-96b7-893e994d7681",
+	"f94ff1a7-fdec-4c7b-b871-2ea8f926e339",
+	'Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("e85d8526-7016-4b2d-b060-fc58f5015d89",
+	"f94ff1a7-fdec-4c7b-b871-2ea8f926e339",
+	'Testing_For',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"10d9b66a-1f35-4954-96b7-893e994d7681",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("bda6d3a6-1d8d-4ae9-ba45-2db9a64efa81",
+	"f94ff1a7-fdec-4c7b-b871-2ea8f926e339",
+	'Failure',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"e85d8526-7016-4b2d-b060-fc58f5015d89",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("52b49b4e-c0d2-4cb2-be30-b13c9bc0439d",
+	"f94ff1a7-fdec-4c7b-b871-2ea8f926e339",
+	'It_Is_Supported',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	0,
+	'',
+	"bda6d3a6-1d8d-4ae9-ba45-2db9a64efa81",
+	'');
+INSERT INTO PE_PE
+	VALUES ("f94ff1a7-fdec-4c7b-b871-2ea8f926e339",
+	1,
+	"5ef6725d-bcd7-4754-ae00-eb6fb13de358",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("44ac98c2-efa3-48cd-93ee-e48aefb9860e",
+	"00000000-0000-0000-0000-000000000000",
+	'Set_Environment',
+	' C insert to set attribute for I-SIM
+ operation
+',
+	'Local_Input = Input_Test_Data
+
+# Call terminator bridge
+[Environment_Variable] = ET2:Env_Number[]
+
+Local_Input.Number = Environment_Variable
+
+Output_Test_Data = Local_Input
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	6);
+INSERT INTO S_SPARM
+	VALUES ("1909c5a8-f751-4947-a4ac-4335f4731489",
+	"44ac98c2-efa3-48cd-93ee-e48aefb9860e",
+	'Input_Test_Data',
+	"4a0d0af1-389e-4a59-ab75-1a58a41887c4",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("4a0d0af1-389e-4a59-ab75-1a58a41887c4",
+	"00000000-0000-0000-0000-000000000000",
+	'inst_ref<Test_Data>',
+	'',
+	'',
+	'../TAGS/TAGS.xtuml');
+INSERT INTO S_SPARM
+	VALUES ("c95c88bb-2345-4d66-b6b8-51f93b909f8a",
+	"44ac98c2-efa3-48cd-93ee-e48aefb9860e",
+	'Output_Test_Data',
+	"4a0d0af1-389e-4a59-ab75-1a58a41887c4",
+	1,
+	'',
+	"1909c5a8-f751-4947-a4ac-4335f4731489",
+	'');
+INSERT INTO PE_PE
+	VALUES ("44ac98c2-efa3-48cd-93ee-e48aefb9860e",
+	1,
+	"5ef6725d-bcd7-4754-ae00-eb6fb13de358",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("35ee78c0-c93b-4622-a5f9-a95f80c5800f",
+	"00000000-0000-0000-0000-000000000000",
+	'Perform_Passive_Array_of_3_Objects_Tests',
+	'',
+	'
+Test_Has_Passed  = FALSE
+Failure_Code = -1
+
+Test = Start_Test_Number
+
+#--------------------------------------------------------------------------
+# Test 1 - Create three passive data objects
+#--------------------------------------------------------------------------
+
+   count = 1
+   loop
+      Obj = create unique A_Passive_Array_Of_Three_Objects 
+      breakif count = 3
+      count = count + 1
+   endloop
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0128", "TAGGING", "Passive Array 3 UNIQUE object", "Create three"]
+
+   # Return count of A_Passive_Array_Of_Three_Objects
+   {set_of_objects} = find-all A_Passive_Array_Of_Three_Objects
+
+   total_count = countof {set_of_objects}
+
+   if total_count = 3 then
+      Test_Has_Passed  = TRUE
+      Failure_Code = 0
+   else
+      Test_Has_Passed  = FALSE
+      Failure_Code = -1
+   endif
+
+   [] = TAGS5::Report_Now[Test, "Create three", Failure_Code, Supported]
+
+   Test = Test + 1
+
+# End Test 1
+
+#--------------------------------------------------------------------------
+# Test 2
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0128", "TAGGING", "Passive Array 3 UNIQUE object", "Delete one"]
+
+   # Delete 1 of passive objects
+
+   Any_Object = find-one A_Passive_Array_Of_Three_Objects
+
+   delete Any_Object
+
+   {set_of_objects} = find-all A_Passive_Array_Of_Three_Objects
+   total_count = countof {set_of_objects}
+
+   if total_count = 2 then
+      Test_Has_Passed  = TRUE
+      Failure_Code = 0
+   else
+      Test_Has_Passed  = FALSE
+      Failure_Code = -1
+   endif
+
+   [] = TAGS5::Report_Now[Test, "Create three", Failure_Code, Supported]
+
+   Test = Test + 1
+
+# End Test 2
+
+#--------------------------------------------------------------------------
+# Test 3 - Create extra passive object, total of three
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0128", "TAGGING", "Passive Array 3 UNIQUE object", "Create one more"]
+
+   replacement_object = create unique A_Passive_Array_Of_Three_Objects
+
+   # Return count of A_Passive_Array_Of_Three_Objects
+   {set_of_objects} = find-all A_Passive_Array_Of_Three_Objects
+
+   total_count = countof {set_of_objects}
+
+   if total_count = 3 then
+      Test_Has_Passed  = TRUE
+      Failure_Code = 0
+   else
+      Test_Has_Passed  = FALSE
+      Failure_Code = -1
+   endif
+
+   [] = TAGS5::Report_Now[Test, "Create three", Failure_Code, Supported]
+
+   Test = Test + 1
+
+# End Test 3
+
+#--------------------------------------------------------------------------
+# Test 4 - Attempt to create fourth object
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "Null Requid", "TAGGING", "Passive Array 3 UNIQUE object", "Create illegal object"]
+
+   # Unsupported
+
+   # illegal_object = create unique A_Passive_Array_Of_Three_Objects
+   # Return count of A_Passive_Array_Of_Three_Objects
+   # {set_of_objects} = find-all A_Passive_Array_Of_Three_Objects
+   # total_count = countof {set_of_objects}
+   # Check for null
+   # if illegal_object = UNDEFINED then 
+   #   if total_count = 3 then
+   #      Test_Has_Passed  = TRUE
+   #      Failure_Code = 0
+   #   else
+   #      Test_Has_Passed  = FALSE
+   #      Failure_Code = -1
+   #   endif
+   # else
+   #   Test_Has_Passed = FALSE
+   #   Failure_Code = -2
+   # endif
+   # [] = TAGS5::Report_Now[Test, "Create illegal object", Failure_Code, Supported]
+ 
+   [] = RPT4:Test_Unsupported[Test]
+
+   Test = Test + 1
+
+# End Test 4
+
+#--------------------------------------------------------------------------
+# Test 5 - Attempt to delete all objects
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0128", "TAGGING", "Passive Array 3 UNIQUE object", "Delete all objects"]
+
+   # Return count of A_Passive_Array_Of_Three_Objects
+
+   {set_of_objects} = find-all A_Passive_Array_Of_Three_Objects
+   total_count = countof {set_of_objects}
+
+   if total_count = 3 then
+      # Delete all objects
+      for each_object in {set_of_objects} do
+         delete each_object
+      endfor
+
+      {set_of_objects} = find-all A_Passive_Array_Of_Three_Objects
+      total_count = countof {set_of_objects}
+
+      if total_count = 0 then
+         new_object = create unique A_Passive_Array_Of_Three_Objects
+
+         # Check that it is defined
+         if new_object != UNDEFINED then
+            {set_of_objects} = find-all A_Passive_Array_Of_Three_Objects
+            total_count = countof {set_of_objects}
+
+            # and only one now exists
+            if total_count = 1 then 
+               Test_Has_Passed = TRUE
+               Failure_Code = 0
+            else
+               Test_Has_Passed = FALSE
+               Failure_Code = -4
+            endif
+
+         else
+            Test_Has_Passed = FALSE
+            Failure_Code = -3
+         endif
+
+      else
+         Test_Has_Passed = FALSE
+         Failure_Code = -2
+      endif
+
+   else
+      Test_Has_Passed  = FALSE
+      Failure_Code = -1
+   endif
+
+   [] = TAGS5::Report_Now[Test, "Delete all objects", Failure_Code, Supported]
+
+   Test = Test + 1
+
+# End Test 5
+
+#--------------------------------------------------------------------------
+# Test 6
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "Null Requid", "TAGGING", "Passive Array 3 UNIQUE object", "Delete final object"]
+
+   # This won''t exist if the previous test failed due to it being unsupported.
+   if Supported and Test_Has_Passed then
+      # Delete new object, leaving none.
+      # But only if the previous test worked and was supposed to.
+      delete new_object
+      {set_of_objects} = find-all A_Passive_Array_Of_Three_Objects
+      total_count = countof {set_of_objects}
+
+      # None exist
+      if total_count = 0 then 
+         Test_Has_Passed = TRUE
+         Failure_Code = 0
+      else
+         Test_Has_Passed = FALSE
+         Failure_Code = total_count
+      endif
+
+   else
+      Test_Has_Passed = FALSE
+      Failure_Code = -1
+   endif
+
+   [] = TAGS5::Report_Now[Test, "Delete final object", Failure_Code, Supported]
+
+# End Test 6
+
+#--------------------------------------------------------------------------
+
+Final_Test_Number = Test
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	7);
+INSERT INTO S_SPARM
+	VALUES ("410cf5de-952d-434e-94c8-0b698498f7c6",
+	"35ee78c0-c93b-4622-a5f9-a95f80c5800f",
+	'Start_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("17dba437-d149-47b5-b7bc-79917e183a82",
+	"35ee78c0-c93b-4622-a5f9-a95f80c5800f",
+	'Supported',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	0,
+	'',
+	"410cf5de-952d-434e-94c8-0b698498f7c6",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("8678595c-0b10-46d2-843c-4d21ae827900",
+	"35ee78c0-c93b-4622-a5f9-a95f80c5800f",
+	'Final_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"17dba437-d149-47b5-b7bc-79917e183a82",
+	'');
+INSERT INTO PE_PE
+	VALUES ("35ee78c0-c93b-4622-a5f9-a95f80c5800f",
+	1,
+	"5ef6725d-bcd7-4754-ae00-eb6fb13de358",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("1ad2f9c3-2cc9-481c-8993-1f138d422925",
+	"00000000-0000-0000-0000-000000000000",
+	'Perform_Passive_Array_of_1_Object_Tests',
+	'',
+	'Test_Has_Passed  = FALSE
+Failure_Code = -1
+
+Test = Start_Test_Number
+
+#--------------------------------------------------------------------------
+# Test 1 - Create one passive data object
+#--------------------------------------------------------------------------
+
+   Obj = create unique A_Passive_Array_Of_One_Object
+ 
+   [] = RPT1:Start_Test[Test, "Null Requid", "TAGGING", "Passive Array 1 UNIQUE object", "Create one"]
+
+   # Return count of A_Passive_Array_Of_One_Object
+   {set_of_objects} = find-all A_Passive_Array_Of_One_Object
+   total_count = countof {set_of_objects}
+
+   if total_count = 1 then
+      Test_Has_Passed  = TRUE
+      Failure_Code = 0
+   else
+      Test_Has_Passed  = FALSE
+      Failure_Code = -1
+   endif
+
+   [] = TAGS5::Report_Now[Test, "Create one", Failure_Code, Supported]
+
+   Test = Test + 1
+
+# Test 1
+
+#--------------------------------------------------------------------------
+# Test 2
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "Null Requid", "TAGGING", "Passive Array 1 UNIQUE object", "Delete one"]
+
+   # Delete 1 of passive objects
+   Any_Object = find-one A_Passive_Array_Of_One_Object
+   delete Any_Object
+
+   {set_of_objects} = find-all A_Passive_Array_Of_One_Object
+   total_count = countof {set_of_objects}
+
+   if total_count = 0 then
+      Test_Has_Passed  = TRUE
+      Failure_Code = 0
+   else
+      Test_Has_Passed  = FALSE
+      Failure_Code = -1
+   endif
+
+   [] = TAGS5::Report_Now[Test, "Delete one", Failure_Code, Supported]
+
+   Test = Test + 1
+
+# End Test 2
+
+#--------------------------------------------------------------------------
+# Test 3 - Create extra passive object, total of one
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "Null Requid", "TAGGING", "Passive Array 1 UNIQUE object", "Create one more"]
+
+   replacement_object = create unique A_Passive_Array_Of_One_Object
+
+   # Return count of A_Passive_Array_Of_One_Object
+
+   {set_of_objects} = find-all A_Passive_Array_Of_One_Object
+   total_count = countof {set_of_objects}
+
+   if total_count = 1 then
+      Test_Has_Passed  = TRUE
+      Failure_Code = 0
+   else
+      Test_Has_Passed  = FALSE
+      Failure_Code = -1
+   endif
+
+   [] = TAGS5::Report_Now[Test, "Create one more",  Failure_Code, Supported]
+
+   Test = Test + 1
+
+# End Test 3
+
+#--------------------------------------------------------------------------
+# Test 4 - Attempt to create second object
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "Null Requid", "TAGGING", "Passive Array 1 UNIQUE object", "Create illegal object"]
+
+   # illegal_object = create unique A_Passive_Array_Of_One_Object
+   # Return count of A_Passive_Array_Of_One_Object
+   # {set_of_objects} = find-all A_Passive_Array_Of_One_Object
+   # total_count = countof {set_of_objects}
+   # Check for null
+   # if illegal_object = UNDEFINED then 
+   #   if total_count = 1 then
+   #      Test_Has_Passed  = TRUE
+   #      Failure_Code = 0
+   #   else
+   #      Test_Has_Passed  = FALSE
+   #      Failure_Code = -1
+   #   endif
+   # else
+   #   Test_Has_Passed = FALSE
+   #   Failure_Code = -2
+   # endif
+   # [] = TAGS5::Report_Now[Test, "Create illegal object", Failure_Code, Supported]
+
+   [] = RPT4:Test_Unsupported[Test]
+ 
+   Test = Test + 1
+
+# End Test 4
+
+#--------------------------------------------------------------------------
+# Test 5
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "Null Requid", "TAGGING", "Passive Array 1 UNIQUE object", "Delete all objects"]
+
+   # Return count of A_Passive_Array_Of_One_Object
+
+   {set_of_objects} = find-all A_Passive_Array_Of_One_Object
+   total_count = countof {set_of_objects}
+
+   if total_count = 1 then
+
+      for each_object in {set_of_objects} do
+         delete each_object
+      endfor
+
+      {set_of_objects} = find-all A_Passive_Array_Of_One_Object
+      total_count = countof {set_of_objects}
+
+      if total_count = 0 then
+         new_object = create unique A_Passive_Array_Of_One_Object
+
+         # Check that it is defined
+         if new_object != UNDEFINED then
+            {set_of_objects} = find-all A_Passive_Array_Of_One_Object
+            total_count = countof {set_of_objects}
+
+            # and only one now exists
+            if total_count = 1 then 
+               Test_Has_Passed = TRUE
+               Failure_Code = 0
+            else
+               Test_Has_Passed = FALSE
+               Failure_Code = -4
+            endif
+
+         else
+            Test_Has_Passed = FALSE
+            Failure_Code = -3
+         endif
+
+      else
+         Test_Has_Passed = FALSE
+         Failure_Code = -2
+      endif
+
+   else
+      Test_Has_Passed  = FALSE
+      Failure_Code = -1
+   endif
+
+   [] = TAGS5::Report_Now[Test, "Delete all objects", Failure_Code, Supported]
+
+   Test = Test + 1
+
+# End Test 5
+
+#--------------------------------------------------------------------------
+# Test 6
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "Null Requid", "TAGGING", "Passive Array 1 UNIQUE object", "Delete final object"]
+
+   # This won''t exist if the previous test failed due to it being unsupported.
+   if Supported and Test_Has_Passed then
+      delete new_object
+
+      {set_of_objects} = find-all A_Passive_Array_Of_One_Object
+      total_count = countof {set_of_objects}
+
+      if total_count = 0 then 
+         Test_Has_Passed = TRUE
+         Failure_Code = 0
+      else
+         Test_Has_Passed = FALSE
+         Failure_Code = -2
+      endif
+
+   else
+      Test_Has_Passed = FALSE
+      Failure_Code = -1
+   endif
+
+   [] = TAGS5::Report_Now[Test, "Delete final object", Failure_Code, Supported]
+
+# End Test 6
+
+#--------------------------------------------------------------------------
+
+Final_Test_Number = Test
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	8);
+INSERT INTO S_SPARM
+	VALUES ("fce87e70-d157-409a-a264-af93326ebdad",
+	"1ad2f9c3-2cc9-481c-8993-1f138d422925",
+	'Start_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("969367b0-86c1-435e-8b55-6c769113f851",
+	"1ad2f9c3-2cc9-481c-8993-1f138d422925",
+	'Supported',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	0,
+	'',
+	"fce87e70-d157-409a-a264-af93326ebdad",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("b073104e-4322-4a93-a4d1-f2fa0f25cdcb",
+	"1ad2f9c3-2cc9-481c-8993-1f138d422925",
+	'Final_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"969367b0-86c1-435e-8b55-6c769113f851",
+	'');
+INSERT INTO PE_PE
+	VALUES ("1ad2f9c3-2cc9-481c-8993-1f138d422925",
+	1,
+	"5ef6725d-bcd7-4754-ae00-eb6fb13de358",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("a8a355c3-18b8-4375-a9a9-998f1cb633da",
+	"00000000-0000-0000-0000-000000000000",
+	'Perform_One_To_Many_Tests',
+	'',
+	'# @@TAGS-01-0002
+
+my_test = find-one Test_Data
+
+Test = my_test.Number
+
+Supported = FALSE
+
+if my_test.Environment = ''WACA'' then
+   Supported = TRUE
+endif
+
+Single_Tag     = create unique Single_Tagged_Object with Attribute_One = Test
+First_Of_Many  = create unique Many_Tagged_Objects  with Attribute_Two = Test
+Second_Of_Many = create unique Many_Tagged_Objects  with Attribute_Two = Test
+Third_Of_Many  = create unique Many_Tagged_Objects  with Attribute_Two = Test
+
+
+link Single_Tag R1 First_Of_Many
+link Single_Tag R1 Second_Of_Many
+link Single_Tag R1 Third_Of_Many
+
+#--------------------------------------------------------------------------
+# Test 1
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0128", "Tagging", "1 to M Relationships", "Create three"]
+
+   {Set_Of_Many} = Single_Tag -> R1.Many_Tagged_Objects
+
+   How_Many = countof {Set_Of_Many}
+
+   Failure_Value = How_Many - 3
+
+   [] = TAGS5::Report_Now[Test, "Create three", Failure_Value, Supported]
+
+   Test = Test + 1
+
+# End Test 1
+
+#--------------------------------------------------------------------------
+# Test 2
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "Null Requid", "Tagging", "1 to M Relationships", "Create one more"]
+
+   # Create one more ih of Many_Tagged_Objects. 
+
+   #Fourth_Of_Many  = create unique Many_Tagged_Objects  with Attribute_Two = Test
+
+   #if Fourth_Of_Many = UNDEFINED then
+   #   Failure_Value = 0
+   #else
+   #   Failure_Value = 1
+   #   delete Fourth_Of_Many
+   #endif
+
+   #[] = TAGS5::Report_Now[Test, "Create one more", Failure_Value, Supported]
+
+   [] = RPT4:Test_Unsupported[Test]
+
+   Test = Test + 1
+
+# End Test 2
+
+#--------------------------------------------------------------------------
+# Test 3 - Unlink one of three, and check that the navigation now returns 
+#          two instances.
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0128", "Tagging", "1 to M Relationships", "Unlink one & navigate"]
+
+   # NB. Unlinked only, not deleted.
+   unlink First_Of_Many R1 Single_Tag
+
+   {Set_Of_Many} = Single_Tag -> R1.Many_Tagged_Objects
+
+   How_Many_Navigation = countof {Set_Of_Many}
+
+   Failure_Value = How_Many_Navigation - 2
+
+   [] = TAGS5::Report_Now[Test, "Unlink one & navigate", Failure_Value, Supported]
+
+   Test = Test + 1
+
+# End Test 3
+
+#--------------------------------------------------------------------------
+# Test 4 - Unlink one of three, and check that the FIND-ALL still returns 
+#          three instances.
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0128", "Tagging", "1 to M Relationships", "Unlink & find-all "]
+
+   # NB. Unlinked only, not deleted.
+   {Find_Many} = find-all Many_Tagged_Objects
+
+   How_Many_Find = countof {Find_Many}
+   Failure_Value = How_Many_Find - 3
+
+   [] = TAGS5::Report_Now[Test, "Unlink & find-all", Failure_Value, Supported]
+
+   Test = Test + 1
+
+# End Test 4
+
+#--------------------------------------------------------------------------
+# Test 5 - Just because First_Of_Many has been unlinked, there still should 
+#          be a restriction on the number created. So let''s try it.
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "Null Requid", "Tagging", "1 to M Relationships", "Create one more"]
+
+   #Fourth_Of_Many = create unique Many_Tagged_Objects  with Attribute_Two = Test
+
+   #if Fourth_Of_Many = UNDEFINED then
+   #   Failure_Value = 0
+   #else
+   #   Failure_Value = 1
+   #   delete Fourth_Of_Many
+   #endif
+
+   #[] = TAGS5::Report_Now[Test, "Create one more", Failure_Value, Supported]
+
+   [] = RPT4:Test_Unsupported[Test]
+
+   Test = Test + 1
+
+# End Test 5
+
+#--------------------------------------------------------------------------
+# Test 6 - Now delete First_Of_Many and FIND-ALL on set.
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0128", "Tagging", "1 to M Relationships", "Delete First instance & find"]
+
+   delete First_Of_Many
+   {Find_Many} = find-all Many_Tagged_Objects
+   How_Many_Find = countof {Find_Many}
+
+   Failure_Value = How_Many_Find - 2
+
+   [] = TAGS5::Report_Now[Test, "Delete First instance & find", Failure_Value, Supported]
+
+   Test = Test + 1
+
+# End Test 6
+
+#--------------------------------------------------------------------------
+# Test 7 - Perform Navigation to set 
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0128", "Tagging", "1 to M Relationships", "Delete First instance & Navigate"]
+
+   {Set_Of_Many} = Single_Tag -> R1.Many_Tagged_Objects
+
+   How_Many_Navigation = countof {Set_Of_Many}
+
+   Failure_Value = How_Many_Navigation - 2
+
+   [] = TAGS5::Report_Now[Test, "Delete First instance & navigate", Failure_Value, Supported]
+
+   Test = Test + 1
+
+# End Test 7
+
+#--------------------------------------------------------------------------
+# Test 8 - ...and then create a replacement.
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0128", "Tagging", "1 to M Relationships", "Replace deleted instance"]
+
+   Replacement_First_Of_Many = create unique Many_Tagged_Objects  with Attribute_Two = Test
+
+   if Replacement_First_Of_Many = UNDEFINED then
+      Failure_Value = 1
+   else
+      link Single_Tag R1 Replacement_First_Of_Many
+
+      {Find_Many} = find-all Many_Tagged_Objects
+ 
+      How_Many_Find = countof {Find_Many}
+
+      {Set_Of_Many} = Single_Tag -> R1.Many_Tagged_Objects
+
+      How_Many_Navigation = countof {Set_Of_Many}
+
+      # Magic number six arrived at :
+      # Two sets of three instances expected, hence six.
+      Failure_Value = (How_Many_Find + How_Many_Navigation) - 6
+   endif
+
+   [] = TAGS5::Report_Now[Test, "Replace deleted instance", Failure_Value, Supported]
+  
+   Test = Test + 1
+
+# End Test 8
+
+#--------------------------------------------------------------------------
+# Test 9 - Tidy up and finish.
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0128", "Tagging", "1 to M Relationships", "Unlink and delete all"]
+
+   for each_instance in {Set_Of_Many} do
+      # Make sure that each instance is currently linked to the single instance
+      # and then unlink it.
+
+      # This is a navigate from an instance to the single instance end of the one to many
+      # relationship.
+
+      # There is a formalised relationship between this instance and the single end.
+      # Get rid of it.
+      unlink Single_Tag R1 each_instance
+
+      delete each_instance
+   endfor
+
+   {Remaining} = Single_Tag -> R1.Many_Tagged_Objects
+
+   How_Many_Remaining = countof {Remaining}
+
+   if How_Many_Remaining = 0 then
+      delete Single_Tag
+   else
+      [] = RPT5:Test_Text[How_Many_Remaining, "Still left linked"]
+   endif
+
+   {Find_Many} = find-all Many_Tagged_Objects
+   {Find_Single} = find-all Single_Tagged_Object
+
+   How_Many_Find   = countof {Find_Many}
+   How_Single_Find = countof {Find_Single}
+
+   # Should be zero.
+   Failure_Value = How_Many_Find + How_Single_Find
+
+   [] = TAGS5::Report_Now[Test, "Unlink and delete all", Failure_Value, Supported]
+
+Test = Test + 1
+
+# End Test 9
+
+#--------------------------------------------------------------------------
+
+my_test.Number = Test
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	9);
+INSERT INTO PE_PE
+	VALUES ("a8a355c3-18b8-4375-a9a9-998f1cb633da",
+	1,
+	"5ef6725d-bcd7-4754-ae00-eb6fb13de358",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("b89894d5-333e-440d-92d8-3827a038018f",
+	"00000000-0000-0000-0000-000000000000",
+	'Perform_Active_One_To_Many_Tests',
+	'',
+	'my_test = find-one Test_Data
+
+Test = my_test.Number
+
+Supported = FALSE
+
+if my_test.Environment = ''WACA'' then
+   Supported = TRUE
+endif
+
+Single_Tag     = create unique Active_Tagged_Single_Object with Attribute_One = Test & Current_State = ''Idle''
+First_Of_Many  = create unique Active_Tagged_Many_Objects  with Attribute_Two = Test & Current_State = ''Idle''
+Second_Of_Many = create unique Active_Tagged_Many_Objects  with Attribute_Two = Test & Current_State = ''Idle''
+Third_Of_Many  = create unique Active_Tagged_Many_Objects  with Attribute_Two = Test & Current_State = ''Idle''
+
+link First_Of_Many  R2 Single_Tag
+link Second_Of_Many R2 Single_Tag
+link Third_Of_Many  R2 Single_Tag
+
+#--------------------------------------------------------------------------
+# Test 1
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "Null Requid", "Tagging", "1 to M Active Relationships", "Create three"]
+
+   {Set_Of_Many} = Single_Tag -> R2.Active_Tagged_Many_Objects
+
+   How_Many = countof {Set_Of_Many}
+
+   Failure_Value = How_Many - 3
+
+   [] = TAGS5::Report_Now[Test, "Create three", Failure_Value, Supported]
+
+   Test = Test + 1
+
+# End Test 1
+
+#--------------------------------------------------------------------------
+# Test 2
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "Null Requid", "Tagging", "1 to M Active Relationships", "Create one more"]
+
+   # Create one more ih of Many_Tagged_Objects. 
+
+   #Fourth_Of_Many  = create unique Active_Tagged_Many_Objects  with Attribute_Two = Test & Current_State = ''Idle''
+
+   #if Fourth_Of_Many = UNDEFINED then
+   #   Failure_Value = 0
+   #else
+   #   Failure_Value = 1
+   #   delete Fourth_Of_Many
+   #endif
+
+   #[] = TAGS5::Report_Now[Test, "Create one more", Failure_Value, Supported]
+
+   [] = RPT4:Test_Unsupported[Test]
+
+   Test = Test + 1
+
+# End Test 2
+
+#--------------------------------------------------------------------------
+# Test 3 - Unlink one of three, and check that the navigation now returns 
+#          two instances.
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "Null Requid", "Tagging", "1 to M Active Relationships", "Unlink one & navigate"]
+
+   unlink First_Of_Many R2 Single_Tag
+
+   {Set_Of_Many} = Single_Tag -> R2.Active_Tagged_Many_Objects
+
+   How_Many_Navigation = countof {Set_Of_Many}
+
+   Failure_Value = How_Many_Navigation - 2
+
+   [] = TAGS5::Report_Now[Test, "Unlink one & navigate", Failure_Value, Supported]
+
+   Test = Test + 1
+
+# End Test 3
+
+#--------------------------------------------------------------------------
+# Test 4 - Unlink one of three, and check that the FIND-ALL still returns 
+#          three instances.
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "Null Requid", "Tagging", "1 to M Active Relationships", "Unlink & find-all "]
+
+   {Find_Many} = find-all Active_Tagged_Many_Objects
+
+   How_Many_Find = countof {Find_Many}
+
+   Failure_Value = How_Many_Find - 3
+
+   [] = TAGS5::Report_Now[Test, "Unlink & find-all", Failure_Value, Supported]
+
+   Test = Test + 1
+
+# End Test 4
+
+#--------------------------------------------------------------------------
+# Test 5 - Just because First_Of_Many has been unlinked, there still should 
+#          be a restriction on the number created. So let''s try it.
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "Null Requid", "Tagging", "1 to M Active Relationships", "Create one more"]
+
+   #Fourth_Of_Many = create unique Active_Tagged_Many_Objects  with Attribute_Two = Test  & Current_State = ''Idle''
+
+   #if Fourth_Of_Many = UNDEFINED then
+   #   Failure_Value = 0
+   #else
+   #   Failure_Value = 1
+   #   delete Fourth_Of_Many
+   #endif
+
+   #[] = TAGS5::Report_Now[Test, "Create one more", Failure_Value, Supported]
+
+   [] = RPT4:Test_Unsupported[Test]
+
+   Test = Test + 1
+
+# End Test 5
+
+#--------------------------------------------------------------------------
+# Test 6 - Now delete First_Of_Many and FIND-ALL on set.
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "Null Requid", "Tagging", "1 to M Active Relationships", "Delete First instance & find"]
+
+   delete First_Of_Many
+
+   {Find_Many} = find-all Active_Tagged_Many_Objects
+
+   How_Many_Find = countof {Find_Many}
+
+   Failure_Value = How_Many_Find - 2
+
+   [] = TAGS5::Report_Now[Test, "Delete First instance & find", Failure_Value, Supported]
+
+   Test = Test + 1
+
+# End Test 6
+
+#--------------------------------------------------------------------------
+# Test 7 - Perform Navigation to set 
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "Null Requid", "Tagging", "1 to M Active Relationships", "Delete First instance & Navigate"]
+
+   {Set_Of_Many} = Single_Tag -> R2.Active_Tagged_Many_Objects
+
+   How_Many_Navigation = countof {Set_Of_Many}
+
+   Failure_Value = How_Many_Navigation - 2
+
+   [] = TAGS5::Report_Now[Test, "Delete First instance & navigate", Failure_Value, Supported]
+
+   Test = Test + 1
+
+# End Test 7
+
+#--------------------------------------------------------------------------
+# Test 8 - ...and then create a replacement.
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "Null Requid", "Tagging", "1 to M Active Relationships", "Replace deleted instance"]
+
+   Replacement_First_Of_Many = create unique Active_Tagged_Many_Objects  with Attribute_Two = Test & Current_State = ''Idle''
+
+   if Replacement_First_Of_Many = UNDEFINED then
+      Failure_Value = 1
+   else
+      link Single_Tag R2 Replacement_First_Of_Many
+
+      {Find_Many} = find-all Active_Tagged_Many_Objects
+
+      How_Many_Find = countof {Find_Many}
+
+      {Set_Of_Many} = Single_Tag -> R2.Active_Tagged_Many_Objects
+
+      How_Many_Navigation = countof {Set_Of_Many}
+ 
+      # Magic number six arrived at :
+      # Two sets of three instances expected, hence six.
+      Failure_Value = (How_Many_Find + How_Many_Navigation) - 6
+   endif
+
+   [] = TAGS5::Report_Now[Test, "Replace deleted instance", Failure_Value, Supported]
+
+   Test = Test + 1
+
+# End Test 8
+
+#--------------------------------------------------------------------------
+# Test 9 - Tidy up and finish.
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "Null Requid", "Tagging", "1 to M Active Relationships", "Unlink and delete all"]
+
+   for each_instance in {Set_Of_Many} do
+
+      # Make sure that each instance is currently linked to the single instance
+      # and then unlink it.
+
+      # This is a navigate from an instance to the single instance end of the one to many
+      # relationship.
+
+      # There is a formalised relationship between this instance and the single end.
+      # Get rid of it.
+      unlink Single_Tag R2 each_instance
+
+      delete each_instance
+
+   endfor
+
+   {Remaining} = Single_Tag -> R2.Active_Tagged_Many_Objects
+
+   How_Many_Remaining = countof {Remaining}
+
+   if How_Many_Remaining = 0 then
+      delete Single_Tag
+   else
+      [] = RPT5:Test_Text[How_Many_Remaining, "Still left linked"]
+   endif
+
+   {Find_Many} = find-all Active_Tagged_Many_Objects
+   {Find_Single} = find-all Active_Tagged_Single_Object
+
+   How_Many_Find   = countof {Find_Many}
+   How_Single_Find = countof {Find_Single}
+
+   # Should be zero.
+   Failure_Value = How_Many_Find + How_Single_Find
+
+   [] = TAGS5::Report_Now[Test, "Unlink and delete all", Failure_Value, Supported]
+
+   Test = Test + 1
+
+# End Test 9
+
+#--------------------------------------------------------------------------
+# Test 10 - Prove that the active object can be generated to
+#--------------------------------------------------------------------------
+
+   Active_Single_End = create unique Active_Tagged_Single_Object with Attribute_One = Test & Current_State = ''Idle''
+   Active_Many_End_1 = create unique Active_Tagged_Many_Objects  with Attribute_Two = Test & Current_State = ''Idle''
+
+   link Active_Single_End R2 Active_Many_End_1
+
+   generate ATSO1:Run(Test) to Active_Single_End
+
+   Test = Test + 1
+
+# End Test 10 
+
+#--------------------------------------------------------------------------
+# Test 11 - Prove that the other end can still be generated to, too!
+#--------------------------------------------------------------------------
+
+   generate ATMO1:Go(Test) to Active_Many_End_1
+
+   Test = Test + 1
+
+# End Test 11
+
+#--------------------------------------------------------------------------
+
+my_test.Number = Test',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	10);
+INSERT INTO PE_PE
+	VALUES ("b89894d5-333e-440d-92d8-3827a038018f",
+	1,
+	"5ef6725d-bcd7-4754-ae00-eb6fb13de358",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("6eb78d19-bc33-45d0-83c7-d5168fd04fe8",
+	"00000000-0000-0000-0000-000000000000",
+	'Perform_Passive_Many_To_Many_Tests',
+	'',
+	'my_test = find-one Test_Data
+
+Test = my_test.Number
+Failure_Value = 0
+
+Supported = TRUE
+
+#--------------------------------------------------------------------------
+# Test 1
+#--------------------------------------------------------------------------
+
+   Left_One      = create unique Tagged_Many_Left  with Attribute_One   = Test
+   Right_One     = create unique Tagged_Many_Right with Attribute_Two   = Test
+   Assoc_One_One = create Tagged_Single_Assoc with Attribute_Three = Test
+
+   link Left_One R3 Right_One using Assoc_One_One
+
+   # navigate to prove link
+
+   {Set_Of_Right} = Left_One -> R3.Tagged_Many_Right
+
+   Number_In_Set = countof {Set_Of_Right}
+
+   Expected_Number = 1
+
+   Failure_Value = Number_In_Set - Expected_Number
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0128", "Tagging", "M to M Passive Relationships", "Create first three"]
+
+   [] = TAGS5::Report_Now[Test, "Create all three", Failure_Value, Supported]
+
+   Test = Test + 1
+
+# End Test 1
+
+#--------------------------------------------------------------------------
+# Test 2
+#--------------------------------------------------------------------------
+
+   Left_Two      = create unique Tagged_Many_Left  with Attribute_One   = Test
+   Right_Two     = create unique Tagged_Many_Right with Attribute_Two   = Test
+   Assoc_Two_Two = create Tagged_Single_Assoc with Attribute_Three = Test
+
+   link Left_Two R3 Right_Two using Assoc_Two_Two
+
+   # navigate to prove link
+
+   {Set_Of_Right} = Left_Two -> R3.Tagged_Many_Right
+
+   Number_In_Set = countof {Set_Of_Right}
+
+   Expected_Number = 1
+
+   Failure_Value = Number_In_Set - Expected_Number
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0128", "Tagging", "M to M Passive Relationships", "Create second three"]
+
+   [] = TAGS5::Report_Now[Test, "Create all three", Failure_Value, Supported]
+
+   Test = Test + 1
+
+# End Test 2
+
+#--------------------------------------------------------------------------
+# Test 3
+#--------------------------------------------------------------------------
+
+   Left_Three      = create unique Tagged_Many_Left  with Attribute_One   = Test
+   Right_Three     = create unique Tagged_Many_Right with Attribute_Two   = Test
+   Assoc_Three_Three = create Tagged_Single_Assoc with Attribute_Three = Test
+
+   link Left_Three R3 Right_Three using Assoc_Three_Three
+
+   # navigate to prove link
+   {Set_Of_Right} = Left_Three -> R3.Tagged_Many_Right
+
+   Number_In_Set = countof {Set_Of_Right}
+
+   Expected_Number = 1
+
+   Failure_Value = Number_In_Set - Expected_Number
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0128", "Tagging", "M to M Passive Relationships", "Create third three"]
+
+   [] = TAGS5::Report_Now[Test, "Create all three", Failure_Value, Supported]
+
+   Test = Test + 1
+
+# End Test 3
+
+#--------------------------------------------------------------------------
+# Test 4
+#--------------------------------------------------------------------------
+
+   Assoc_One_Two = create Tagged_Single_Assoc with Attribute_Three = Test
+
+   link Left_One R3 Right_Two using Assoc_One_Two
+
+   # navigate to prove link
+   {Set_Of_Right} = Left_One -> R3.Tagged_Many_Right
+
+   Number_In_Set = countof {Set_Of_Right}
+
+   Expected_Number = 2
+
+   Failure_Value = Number_In_Set - Expected_Number
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0128", "Tagging", "M to M Passive Relationships", "Link one to two via three"]
+
+   [] = TAGS5::Report_Now[Test, "Create all three", Failure_Value, Supported]
+
+   Test = Test + 1
+
+# End Test 4
+
+#--------------------------------------------------------------------------
+# Test 5
+#--------------------------------------------------------------------------
+
+   Assoc_One_Three = create Tagged_Single_Assoc with Attribute_Three = Test
+
+   link Left_One R3 Right_Three using Assoc_One_Three
+
+   # navigate to prove link
+   {Set_Of_Right} = Left_One -> R3.Tagged_Many_Right
+
+   Number_In_Set = countof {Set_Of_Right}
+
+   Expected_Number = 3
+
+   Failure_Value = Number_In_Set - Expected_Number
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0128", "Tagging", "M to M Passive Relationships", "Link one to three "]
+
+   [] = TAGS5::Report_Now[Test, "Create all three", Failure_Value, Supported]
+
+   Test = Test + 1
+
+# End Test 5
+
+#--------------------------------------------------------------------------
+# Test 6 
+#--------------------------------------------------------------------------
+
+   Assoc_Two_One = create Tagged_Single_Assoc with Attribute_Three = Test
+
+   link Left_Two R3 Right_One using Assoc_Two_One
+
+   # navigate to prove link
+   {Set_Of_Right} = Left_Two -> R3.Tagged_Many_Right
+
+   Number_In_Set = countof {Set_Of_Right}
+
+   Expected_Number = 2
+
+   Failure_Value = Number_In_Set - Expected_Number
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0128", "Tagging", "M to M Passive Relationships", "Link two to one"]
+
+   [] = TAGS5::Report_Now[Test, "Create all three", Failure_Value, Supported]
+  
+   Test = Test + 1
+
+# End Test 6 
+
+#--------------------------------------------------------------------------
+# Test 7
+#--------------------------------------------------------------------------
+
+   Assoc_Two_Three = create Tagged_Single_Assoc with Attribute_Three = Test
+
+   link Left_Two R3 Right_Three using Assoc_Two_Three
+
+   # navigate to prove link
+   {Set_Of_Right} = Left_Two -> R3.Tagged_Many_Right
+
+   Number_In_Set = countof {Set_Of_Right}
+
+   Expected_Number = 3
+
+   Failure_Value = Number_In_Set - Expected_Number
+   
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0128", "Tagging", "M to M Passive Relationships", "Link two to three"]
+
+   [] = TAGS5::Report_Now[Test, "Create all three", Failure_Value, Supported]
+
+   Test = Test + 1
+
+# End Test 7
+
+#--------------------------------------------------------------------------
+# Test 8 
+#--------------------------------------------------------------------------
+
+   Assoc_Three_One = create Tagged_Single_Assoc with Attribute_Three = Test
+
+   link Left_Three R3 Right_One using Assoc_Three_One
+
+   # navigate to prove link
+   {Set_Of_Right} = Left_Three -> R3.Tagged_Many_Right
+
+   Number_In_Set = countof {Set_Of_Right}
+
+   Expected_Number = 2
+
+   Failure_Value = Number_In_Set - Expected_Number
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0128", "Tagging", "M to M Passive Relationships", "Link three to one"]
+
+   [] = TAGS5::Report_Now[Test, "Create all three", Failure_Value, Supported]
+
+   Test = Test + 1
+
+#--------------------------------------------------------------------------
+# Test 9 
+#--------------------------------------------------------------------------
+
+   Assoc_Three_Two = create Tagged_Single_Assoc with Attribute_Three = Test
+
+   link Left_Three R3 Right_Two using Assoc_Three_Two
+
+   # navigate to prove link
+   {Set_Of_Right} = Left_Three -> R3.Tagged_Many_Right
+
+   Number_In_Set = countof {Set_Of_Right}
+
+   Expected_Number = 3
+
+   Failure_Value = Number_In_Set - Expected_Number
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0128", "Tagging", "M to M Passive Relationships", "Link three to two"]
+
+   [] = TAGS5::Report_Now[Test, "Create all three", Failure_Value, Supported]
+
+   Test = Test + 1
+
+#--------------------------------------------------------------------------
+
+my_test.Number = Test',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	11);
+INSERT INTO PE_PE
+	VALUES ("6eb78d19-bc33-45d0-83c7-d5168fd04fe8",
+	1,
+	"5ef6725d-bcd7-4754-ae00-eb6fb13de358",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("af4541e1-473f-4978-b41c-554263d2ef41",
+	"00000000-0000-0000-0000-000000000000",
+	'Perform_Passive_Super_Sub_Tests',
+	'',
+	'my_test = find-one Test_Data
+
+this_test = my_test.Number
+
+supported = TRUE
+
+#--------------------------------------------------------------------------
+# Test 1
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[this_test, "1241-0000-01-0128", "Tagged", "Passive Super Sub types", "One Super Sub relationship"]
+
+   # Create one of one super type objects
+   Super1 = create unique Tagged_Many_Supertype with Supertype_Data = this_test
+
+   #create one of two sub type 1 objects
+   Sub1_1 = create Subtype_1 with Subtype_1_Data = this_test 
+
+   link Super1 R4 Sub1_1
+
+   # Navigate from the super to the sub, and compare the data attribute
+   view_of_sub1 = Super1 -> R4.Subtype_1
+
+   failure_value = view_of_sub1.Subtype_1_Data - Super1.Supertype_Data
+
+   [] = TAGS5::Report_Now[this_test, "One Super Sub relationship", failure_value, supported]
+
+   this_test = this_test + 1
+
+# End Test 1
+
+#--------------------------------------------------------------------------
+# Test 2
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[this_test, "1241-0000-01-0128", "Tagged", "Passive Super Sub types", "Other Super Sub relationship"]
+
+   # Create second of two sub type 1 objects
+   Sub1_2 = create Subtype_1 with Subtype_1_Data = this_test
+
+   # unlink first sub type from super type
+   unlink Super1 R4 Sub1_1
+
+   # Update super 1 data
+   Super1.Supertype_Data = this_test
+
+   #link second subtype to supertype
+   link Super1 R4 Sub1_2
+
+   # Navigate from the super to the sub, and compare the data attribute
+   view_of_sub1 = Super1 -> R4.Subtype_1
+
+   failure_value = view_of_sub1.Subtype_1_Data - Super1.Supertype_Data
+
+   [] = TAGS5::Report_Now[this_test, "Other Super Sub relationship", failure_value, supported]
+
+   this_test = this_test + 1
+
+# End Test 2
+
+#--------------------------------------------------------------------------
+# Test 3
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[this_test, "1241-0000-01-0128", "Tagged", "Passive Super Sub types", "Migrate Super Sub relationship"]
+
+   # Create sub type 2 object
+   Sub2 = create Subtype_2 with Subtype_2_Data = this_test
+
+   # unlink first sub type from super type
+   unlink Super1 R4 Sub1_2
+
+   # Update super 1 data
+   Super1.Supertype_Data = this_test
+
+   #link second subtype to supertype
+   link Super1 R4 Sub2
+
+   # Navigate from the super to the sub, and compare the data attribute
+   view_of_sub2 = Super1 -> R4.Subtype_2
+
+   failure_value = view_of_sub2.Subtype_2_Data - Super1.Supertype_Data
+
+   [] = TAGS5::Report_Now[this_test, "Migrate Super Sub relationship", failure_value, supported]
+
+   this_test = this_test + 1
+
+# End Test 3
+
+#--------------------------------------------------------------------------
+
+my_test.Number = this_test',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	12);
+INSERT INTO PE_PE
+	VALUES ("af4541e1-473f-4978-b41c-554263d2ef41",
+	1,
+	"5ef6725d-bcd7-4754-ae00-eb6fb13de358",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("f300d5e8-45d7-44eb-a8e0-e734cb9c188c",
+	"00000000-0000-0000-0000-000000000000",
+	'Perform_Active_Many_To_Many_Tests',
+	'',
+	'my_test = find-one Test_Data
+
+Test = my_test.Number
+Failure_Value = 0
+
+Supported = TRUE
+
+#--------------------------------------------------------------------------
+# Test 1
+#--------------------------------------------------------------------------
+
+   Left_One      = create unique Active_Tagged_Many_Left  with Attribute_One   = Test & Current_State = ''Idle''
+   Right_One     = create unique Active_Tagged_Many_Right with Attribute_Two   = Test & Current_State = ''Idle''
+   Assoc_One_One = create Active_Tagged_Single_Assoc with Attribute_Three = Test & Current_State = ''Idle''
+
+   link Left_One R5 Right_One using Assoc_One_One
+
+   # navigate to prove link
+   {Set_Of_Right} = Left_One -> R5.Active_Tagged_Many_Right
+
+   Number_In_Set = countof {Set_Of_Right}
+
+   Expected_Number = 1
+
+   Failure_Value = Number_In_Set - Expected_Number
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0128", "Tagging", "M to M Active Relationships", "Create first three"]
+
+   [] = TAGS5::Report_Now[Test, "Create all three", Failure_Value, Supported]
+
+   Test = Test + 1
+
+# End Test 1
+
+#--------------------------------------------------------------------------
+# Test 2
+#--------------------------------------------------------------------------
+
+   generate ATML1:Go(Test) to Left_One
+
+   Test = Test + 1
+
+# End Test 2
+
+#--------------------------------------------------------------------------
+# Test 3
+#--------------------------------------------------------------------------
+
+   generate ATMR1:Go(Test) to Right_One
+
+   Test = Test + 1
+
+# End Test 3
+
+#--------------------------------------------------------------------------
+# Test 4
+#--------------------------------------------------------------------------
+
+   generate ATSASSOC1:Go(Test) to Assoc_One_One
+
+   Test = Test + 1
+
+# End Test 4
+
+#--------------------------------------------------------------------------
+# Test 5
+#--------------------------------------------------------------------------
+
+   Left_Two      = create unique Active_Tagged_Many_Left  with Attribute_One   = Test & Current_State = ''Idle''
+   Right_Two     = create unique Active_Tagged_Many_Right with Attribute_Two   = Test & Current_State = ''Idle''
+   Assoc_Two_Two = create  Active_Tagged_Single_Assoc with Attribute_Three = Test & Current_State = ''Idle''
+ 
+   link Left_Two R5 Right_Two using Assoc_Two_Two
+
+   # navigate to prove link
+   {Set_Of_Right} = Left_Two -> R5.Active_Tagged_Many_Right
+
+   Number_In_Set = countof {Set_Of_Right}
+
+   Expected_Number = 1
+
+   Failure_Value = Number_In_Set - Expected_Number
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0128", "Tagging", "M to M Active Relationships", "Create second three"]
+
+   [] = TAGS5::Report_Now[Test, "Create all three", Failure_Value, Supported]
+
+   Test = Test + 1
+
+# End Test 5
+
+#--------------------------------------------------------------------------
+# Test 6 
+#--------------------------------------------------------------------------
+
+   generate ATML1:Go(Test) to Left_Two
+ 
+   Test = Test + 1
+
+# End Test 6
+
+#--------------------------------------------------------------------------
+# Test 7
+#--------------------------------------------------------------------------
+
+   generate ATMR1:Go(Test) to Right_Two
+
+   Test = Test + 1
+
+# End Test 7
+
+#--------------------------------------------------------------------------
+# Test 8 
+#--------------------------------------------------------------------------
+
+   generate ATSASSOC1:Go(Test) to Assoc_Two_Two
+
+   Test = Test + 1
+
+# End Test 8
+
+#--------------------------------------------------------------------------
+# Test 9 
+#--------------------------------------------------------------------------
+
+   Left_Three      = create unique Active_Tagged_Many_Left  with Attribute_One = Test & Current_State = ''Idle''
+   Right_Three     = create unique Active_Tagged_Many_Right with Attribute_Two = Test & Current_State = ''Idle''
+   Assoc_Three_Three = create Active_Tagged_Single_Assoc with Attribute_Three = Test & Current_State = ''Idle''
+
+   link Left_Three R5 Right_Three using Assoc_Three_Three
+
+   # navigate to prove link
+   {Set_Of_Right} = Left_Three -> R5.Active_Tagged_Many_Right
+
+   Number_In_Set = countof {Set_Of_Right}
+   
+   Expected_Number = 1
+
+   Failure_Value = Number_In_Set - Expected_Number
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0128", "Tagging", "M to M Active Relationships", "Create third three"]
+
+   [] = TAGS5::Report_Now[Test, "Create all three", Failure_Value, Supported]
+
+   Test = Test + 1
+
+# End Test 9
+
+#--------------------------------------------------------------------------
+# Test 10
+#--------------------------------------------------------------------------
+
+   generate ATML1:Go(Test) to Left_Three
+
+   Test = Test + 1
+
+# Test 10
+
+#--------------------------------------------------------------------------
+# Test 11
+#--------------------------------------------------------------------------
+
+   generate ATMR1:Go(Test) to Right_Three
+
+   Test = Test + 1
+
+# End Test 11
+
+#--------------------------------------------------------------------------
+# Test 12
+#--------------------------------------------------------------------------
+
+   generate ATSASSOC1:Go(Test) to Assoc_Three_Three
+  
+   Test = Test + 1
+
+# End Test 12
+
+#--------------------------------------------------------------------------
+# Test 13
+#--------------------------------------------------------------------------
+
+   Assoc_One_Two = create Active_Tagged_Single_Assoc with Attribute_Three = Test  & Current_State = ''Idle''
+
+   link Left_One R5 Right_Two using Assoc_One_Two
+
+   # navigate to prove link
+   {Set_Of_Right} = Left_One -> R5.Active_Tagged_Many_Right
+
+   Number_In_Set = countof {Set_Of_Right}
+
+   Expected_Number = 2
+
+   Failure_Value = Number_In_Set - Expected_Number
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0128", "Tagging", "M to M Active Relationships", "Link one to two via three"]
+
+   [] = TAGS5::Report_Now[Test, "Create all three", Failure_Value, Supported]
+
+   Test = Test + 1
+
+# End Test 13
+
+#--------------------------------------------------------------------------
+# Test 14
+#--------------------------------------------------------------------------
+
+   generate ATSASSOC1:Go(Test) to Assoc_One_Two
+  
+   Test = Test + 1
+
+#--------------------------------------------------------------------------
+# Test 15
+#--------------------------------------------------------------------------
+
+   Assoc_One_Three = create Active_Tagged_Single_Assoc with Attribute_Three = Test & Current_State = ''Idle''
+
+   link Left_One R5 Right_Three using Assoc_One_Three
+
+   # navigate to prove link
+
+   {Set_Of_Right} = Left_One -> R5.Active_Tagged_Many_Right
+
+   Number_In_Set = countof {Set_Of_Right}
+
+   Expected_Number = 3
+
+   Failure_Value = Number_In_Set - Expected_Number
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0128", "Tagging", "M to M Active Relationships", "Link one to three "]
+
+   [] = TAGS5::Report_Now[Test, "Create all three", Failure_Value, Supported]
+
+   Test = Test + 1
+
+# End Test 15
+
+#--------------------------------------------------------------------------
+# Test 16
+#--------------------------------------------------------------------------
+
+   generate ATSASSOC1:Go(Test) to Assoc_One_Three
+
+   Test = Test + 1
+
+# End Test 16
+
+#--------------------------------------------------------------------------
+# Test 17
+#--------------------------------------------------------------------------
+
+   Assoc_Two_One = create Active_Tagged_Single_Assoc with Attribute_Three = Test & Current_State = ''Idle''
+
+   link Left_Two R5 Right_One using Assoc_Two_One
+
+   # navigate to prove link
+   {Set_Of_Right} = Left_Two -> R5.Active_Tagged_Many_Right
+
+   Number_In_Set = countof {Set_Of_Right}
+
+   Expected_Number = 2
+
+   Failure_Value = Number_In_Set - Expected_Number
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0128", "Tagging", "M to M Active Relationships", "Link two to one"]
+
+   [] = TAGS5::Report_Now[Test, "Create all three", Failure_Value, Supported]
+
+   Test = Test + 1
+
+
+# End Test 17
+
+#--------------------------------------------------------------------------
+# Test 18
+#--------------------------------------------------------------------------
+
+   generate ATSASSOC1:Go(Test) to Assoc_Two_One
+  
+   Test = Test + 1
+
+# End Test 18
+
+#--------------------------------------------------------------------------
+# Test 19
+#--------------------------------------------------------------------------
+
+   Assoc_Two_Three = create Active_Tagged_Single_Assoc with Attribute_Three = Test & Current_State = ''Idle''
+
+   link Left_Two R5 Right_Three using Assoc_Two_Three
+
+   # navigate to prove link
+   {Set_Of_Right} = Left_Two -> R5.Active_Tagged_Many_Right
+
+   Number_In_Set = countof {Set_Of_Right}
+
+   Expected_Number = 3
+
+   Failure_Value = Number_In_Set - Expected_Number
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0128", "Tagging", "M to M Active Relationships", "Link two to three"]
+
+   [] = TAGS5::Report_Now[Test, "Create all three", Failure_Value, Supported]
+
+   Test = Test + 1
+
+# End Test 19
+
+#--------------------------------------------------------------------------
+# Test 20
+#--------------------------------------------------------------------------
+
+   generate ATSASSOC1:Go(Test) to Assoc_Two_Three
+
+   Test = Test + 1
+
+# End Test 20
+
+#--------------------------------------------------------------------------
+# Test 21
+#--------------------------------------------------------------------------
+
+   Assoc_Three_One = create Active_Tagged_Single_Assoc with Attribute_Three = Test & Current_State = ''Idle''
+
+   link Left_Three R5 Right_One using Assoc_Three_One
+
+   # navigate to prove link
+   {Set_Of_Right} = Left_Three -> R5.Active_Tagged_Many_Right
+
+   Number_In_Set = countof {Set_Of_Right}
+
+   Expected_Number = 2
+
+   Failure_Value = Number_In_Set - Expected_Number
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0128", "Tagging", "M to M Active Relationships", "Link three to one"]
+
+   [] = TAGS5::Report_Now[Test, "Create all three", Failure_Value, Supported]
+
+   Test = Test + 1
+
+# End Test 21
+
+#--------------------------------------------------------------------------
+# Test 22
+#--------------------------------------------------------------------------
+
+   generate ATSASSOC1:Go(Test) to Assoc_Three_One
+
+   Test = Test + 1
+
+# End Test 22
+
+#--------------------------------------------------------------------------
+# Test 23
+#--------------------------------------------------------------------------
+
+   Assoc_Three_Two = create Active_Tagged_Single_Assoc with Attribute_Three = Test & Current_State = ''Idle''
+
+   link Left_Three R5 Right_Two using Assoc_Three_Two
+
+   # navigate to prove link
+   {Set_Of_Right} = Left_Three -> R5.Active_Tagged_Many_Right
+
+   Number_In_Set = countof {Set_Of_Right}
+
+   Expected_Number = 3
+
+   Failure_Value = Number_In_Set - Expected_Number
+   
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0128", "Tagging", "M to M Active Relationships", "Link three to two"]
+
+   [] = TAGS5::Report_Now[Test, "Create all three", Failure_Value, Supported]
+
+   Test = Test + 1
+
+# End Test 23
+
+#--------------------------------------------------------------------------
+# Test 24
+#--------------------------------------------------------------------------
+
+   generate ATSASSOC1:Go(Test) to Assoc_Three_Two
+
+   Test = Test + 1
+
+# End Test 24
+
+#--------------------------------------------------------------------------
+
+my_test.Number = Test
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	13);
+INSERT INTO PE_PE
+	VALUES ("f300d5e8-45d7-44eb-a8e0-e734cb9c188c",
+	1,
+	"5ef6725d-bcd7-4754-ae00-eb6fb13de358",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("ea63697a-6f6a-4379-9bcc-de05dd02f699",
+	"00000000-0000-0000-0000-000000000000",
+	'Perform_Active_Super_Sub_Tests',
+	'',
+	'my_test = find-one Test_Data
+
+this_test = my_test.Number
+
+supported = TRUE
+
+#--------------------------------------------------------------------------
+# Test 1
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[this_test, "1241-0000-01-0128", "Tagged", "Active Super Sub types", "Active One Super Sub relationship"]
+
+   # Create one of one super type objects
+   Super1 = create unique Active_Tagged_Supertype with Supertype_Data = this_test
+
+   # create one of two sub type 1 objects
+   Index_For_Subtype = this_test + 1
+
+   # Increase index for test by one more than the test number so that the sub type, when it processes
+   # the polymorphically delivered event, will report a different test number. This is so that the report
+   # will be distinguished by the reporter domain as a separate test.
+
+   Sub1_1 = create Active_Tagged_Subtype_One with Subtype_One_Data = this_test & Test_No = Index_For_Subtype 
+
+   link Super1 R6 Sub1_1
+
+   # Navigate from the super to the sub, and compare the data attribute
+   view_of_sub1 = Super1 -> R6.Active_Tagged_Subtype_One
+
+   failure_value = view_of_sub1.Subtype_One_Data - Super1.Supertype_Data
+
+   [] = TAGS5::Report_Now[this_test, "Active One Super Sub relationship", failure_value, supported]
+
+   this_test = this_test + 1
+
+# End Test 1
+
+#--------------------------------------------------------------------------
+# Test 2
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[this_test, "1241-0000-01-0128", "Tagged", "Active Super Sub types", "Other Super Sub relationship"]
+
+   Index_For_Subtype = this_test + 1
+  
+   # Create second of two sub type 1 objects
+   Sub1_2 = create Active_Tagged_Subtype_One with Subtype_One_Data = this_test & Test_No = Index_For_Subtype & Current_State = ''Idle''
+
+   # unlink first sub type from super type
+   unlink Super1 R6 Sub1_1
+
+   # Update super type data so that it matches new sub type.
+   Super1.Supertype_Data = this_test
+
+   # link second subtype to supertype
+   link Super1 R6 Sub1_2
+
+   # Navigate from the super to the sub, and compare the data attribute
+   view_of_sub1 = Super1 -> R6.Active_Tagged_Subtype_One
+
+   failure_value = view_of_sub1.Subtype_One_Data - Super1.Supertype_Data 
+
+   [] = TAGS5::Report_Now[this_test, "Other Super Sub relationship", failure_value, supported]
+
+   this_test = this_test + 1
+
+#--------------------------------------------------------------------------
+# Test 3
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[this_test, "1241-0000-01-0128", "Tagged", "Active Super Sub types", "Migrate Super Sub relationship"]
+
+   Index_For_Subtype = this_test + 1
+
+   # Create sub type 2 object
+   Sub2 = create Active_Tagged_Subtype_Two with Subtype_Two_Data = this_test & Test_No = Index_For_Subtype & Current_State = ''Idle''
+
+   # unlink first sub type from super type
+   unlink Super1 R6 Sub1_2
+  
+   # Update super type data so that it matches new sub type.
+   Super1.Supertype_Data = this_test
+
+   # link second subtype to supertype
+   link Super1 R6 Sub2
+
+   # Navigate from the super to the sub, and compare the data attribute
+   view_of_sub2 = Super1 -> R6.Active_Tagged_Subtype_Two
+
+   failure_value = view_of_sub2.Subtype_Two_Data - Super1.Supertype_Data
+
+   [] = TAGS5::Report_Now[this_test, "Migrate Super Sub relationship", failure_value, supported]
+
+   this_test = this_test + 1
+
+# End Test 3
+
+
+#--------------------------------------------------------------------------
+# Test 4
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[this_test, "1241-0000-01-0128", "Tagged", "Active Super Sub types", "Migrate Super Sub relationship again"]
+
+   Index_For_Subtype = this_test + 1
+
+   # Create sub type 2 object
+   Sub3 = create Active_Tagged_Subtype_Three with Subtype_Three_Data = this_test & Test_No = Index_For_Subtype & Current_State = ''Idle''
+
+   # unlink first sub type from super type
+   unlink Super1 R6 Sub2
+
+   # Update super type data so that it matches new sub type.
+   Super1.Supertype_Data = this_test
+
+   # link second subtype to supertype
+   link Super1 R6 Sub3
+
+   # Navigate from the super to the sub, and compare the data attribute
+   view_of_sub3 = Super1 -> R6.Active_Tagged_Subtype_Three
+
+   failure_value = view_of_sub3.Subtype_Three_Data - Super1.Supertype_Data
+
+   [] = TAGS5::Report_Now[this_test, "Migrate Super Sub relationship", failure_value, supported]
+
+   this_test = this_test + 1
+
+# End Test 4
+
+#--------------------------------------------------------------------------
+
+my_test.Number = this_test
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	14);
+INSERT INTO PE_PE
+	VALUES ("ea63697a-6f6a-4379-9bcc-de05dd02f699",
+	1,
+	"5ef6725d-bcd7-4754-ae00-eb6fb13de358",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("41b07782-d00d-44a3-b698-7a101462d16c",
+	"00000000-0000-0000-0000-000000000000",
+	'Perform_Tests_On_Static_Object',
+	'',
+	'my_test = find-one Test_Data
+
+this_test = my_test.Number
+
+supported = TRUE
+
+#--------------------------------------------------------------------------
+# Test 1 - Create a static object. By inspection check that there is no
+#          delete option generated for this object
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[this_test, "1241-0000-01-0132", "Tagged", "TAGGING", "Create a STATIC object"]
+   [] = RPT8:Specify_Requid[this_test, "1241-0000-01-0127"]
+   [] = RPT5:Test_Text [this_test, "Must be tested by inspection"]
+
+   firstStatic = create A_Static_Object with Unique_ID = 1
+
+   if firstStatic != UNDEFINED and firstStatic.Unique_ID = 1 then
+      [] = RPT2:Test_Passed["Create STATIC oject", this_test, 0]
+   else
+      [] = RPT3:Test_Failed["Create STATIC oject", this_test, -1]
+   endif
+
+   this_test = this_test + 1
+
+# End Test 1
+
+#--------------------------------------------------------------------------
+# Test 2 - Create a single static object. By inspection check that there is
+#          no delete option generated for this object
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[this_test, "1241-0000-01-0132", "Tagged", "TAGGING", "Create a SINGLE STATIC object"] 
+   [] = RPT8:Specify_Requid[this_test, "1241-0000-01-0127"]
+   [] = RPT5:Test_Text [this_test, "Can only be tested by inspection"]
+
+   firstSingleStatic = create A_Single_Static_Object with Unique_ID = 1
+
+   if firstSingleStatic != UNDEFINED and firstSingleStatic.Unique_ID = 1 then
+      [] = RPT2:Test_Passed["Create SINGLE STATIC oject", this_test, 0]
+   else
+      [] = RPT3:Test_Failed["Create SINGLE STATIC oject", this_test, -1]
+   endif
+
+   this_test = this_test + 1
+
+# End Test 2
+
+#--------------------------------------------------------------------------
+# Test 3
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[this_test, "1241-0000-01-0132", "Tagged", "TAGGING", "Create a MULTIPLE STATIC objects"]
+   [] = RPT8:Specify_Requid[this_test, "1241-0000-01-0127"]
+   [] = RPT5:Test_Text [this_test, "Can only be tested by inspection"]
+
+   firstMultiStatic = create A_Multiple_Static_Object with Unique_ID = 1
+
+   if firstMultiStatic != UNDEFINED and firstMultiStatic.Unique_ID = 1 then
+      [] = RPT2:Test_Passed["Create MULTIPLE STATIC oject", this_test, 0]
+   else
+      [] = RPT3:Test_Failed["Create MULTIPLE STATIC oject", this_test, -1]
+   endif
+
+   this_test = this_test + 1
+
+# End Test 3
+
+#--------------------------------------------------------------------------
+
+my_test.Number = this_test',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	15);
+INSERT INTO PE_PE
+	VALUES ("41b07782-d00d-44a3-b698-7a101462d16c",
+	1,
+	"5ef6725d-bcd7-4754-ae00-eb6fb13de358",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO PE_PE
+	VALUES ("5ef6725d-bcd7-4754-ae00-eb6fb13de358",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"1e18b001-d1aa-44ad-915a-971bba4e4799",
+	7);
+INSERT INTO C_C_PROXY
+	VALUES ("1e18b001-d1aa-44ad-915a-971bba4e4799",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'TAGS',
+	' Bodges? We don need no stinkin bodges!
+',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Tagging',
+	'../TAGS.xtuml');
+INSERT INTO S_SYS_PROXY
+	VALUES ("41eb16c7-0f24-4e35-b333-a47fabc90a87",
+	'TAGS',
+	1,
+	'../../../TAGS.xtuml');

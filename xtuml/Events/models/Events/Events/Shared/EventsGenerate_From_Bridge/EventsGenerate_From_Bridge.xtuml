@@ -1,0 +1,61 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("1bb2854e-f043-4eef-a250-0c39745beb73",
+	"00000000-0000-0000-0000-000000000000",
+	'EventsGenerate_From_Bridge',
+	'');
+INSERT INTO C_EP
+	VALUES ("db762a56-9722-4d57-941e-ddaf2d3d8708",
+	"1bb2854e-f043-4eef-a250-0c39745beb73",
+	0,
+	'Generate_Event',
+	'',
+	1);
+INSERT INTO C_IO
+	VALUES ("db762a56-9722-4d57-941e-ddaf2d3d8708",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'Generate_Event',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("d6d2a93f-4a20-4640-842a-b4d47f42ce23",
+	"db762a56-9722-4d57-941e-ddaf2d3d8708",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'Test_No',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("3424be7f-cd64-404b-accd-58cfc2fe13b9",
+	"db762a56-9722-4d57-941e-ddaf2d3d8708",
+	"47f9112f-19f7-49a2-839c-0bfcbfe6fdb0",
+	'The_IH',
+	'',
+	0,
+	'',
+	"d6d2a93f-4a20-4640-842a-b4d47f42ce23");
+INSERT INTO S_DT_PROXY
+	VALUES ("47f9112f-19f7-49a2-839c-0bfcbfe6fdb0",
+	"00000000-0000-0000-0000-000000000000",
+	'inst_ref<Object_X>',
+	'',
+	'',
+	'../../Events/Events/Events.xtuml');
+INSERT INTO PE_PE
+	VALUES ("1bb2854e-f043-4eef-a250-0c39745beb73",
+	1,
+	"11a2f67d-9a3a-47e0-bd58-d67089286528",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("11a2f67d-9a3a-47e0-bd58-d67089286528",
+	"00000000-0000-0000-0000-000000000000",
+	"9b3c9b37-3527-4c3a-8648-5c925cc26549",
+	'Shared',
+	'',
+	0,
+	'../Shared.xtuml');

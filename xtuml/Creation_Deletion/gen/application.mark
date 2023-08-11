@@ -1,0 +1,8 @@
+Creation_Deletion::Creation_Deletion,version,Component,15
+Creation_Deletion::Creation_Deletion::classes::R2,Class_B,Association,"Enemy"
+Creation_Deletion::Creation_Deletion::classes::R2,Class_A,Association,"Doctor"
+Creation_Deletion::Creation_Deletion::classes::R1,Class_B,Association,"Flavoured_Object"
+Creation_Deletion::Creation_Deletion::classes::R1,Class_A,Association,"Coloured_Object"
+Creation_Deletion::Creation_Deletion::scenarios::void Finish_Creation_Deletion_Tests,scenario,Function,3
+Creation_Deletion::Creation_Deletion::scenarios::void Start_Creation_Deletion_Tests,scenario,Function,2
+Creation_Deletion::Creation_Deletion::scenarios::void Perform_Creation_Deletion_Tests,scenario,Function,1

@@ -1,0 +1,117 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("5fe79a5c-7111-4f61-aa42-20ca31b83d06",
+	"00000000-0000-0000-0000-000000000000",
+	"91f31d87-193f-4b1a-b022-f1a69c2f11ca",
+	'scenarios',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("1003d66a-f84d-4e8b-b128-5441b9a6930b",
+	112,
+	"5fe79a5c-7111-4f61-aa42-20ca31b83d06",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'FTE::FTE::FTE::scenarios');
+INSERT INTO DIM_DIA
+	VALUES ("1003d66a-f84d-4e8b-b128-5441b9a6930b",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_SYNC
+	VALUES ("af199a75-3c4e-44c2-bd0d-5c685e8c7f0d",
+	"00000000-0000-0000-0000-000000000000",
+	'Establish_The_Environment',
+	' Establish_The_Environment
+',
+	'This_Environment = create unique The_Environment with Where_Are_We = "WACA"
+
+Test_Data = 0
+
+$INLINE
+
+   Test_Data = 1;
+
+   fprintf(stderr,"***** Setting I-SIM environment *****\n");
+
+$ENDINLINE
+
+if Test_Data = 1 then
+   This_Environment.Where_Are_We = "ISIM"
+endif
+
+
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	1);
+INSERT INTO PE_PE
+	VALUES ("af199a75-3c4e-44c2-bd0d-5c685e8c7f0d",
+	1,
+	"5fe79a5c-7111-4f61-aa42-20ca31b83d06",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("d8369659-1fbc-45f2-81d6-5330d5e08839",
+	"00000000-0000-0000-0000-000000000000",
+	'Find_The_Environment',
+	' Find_The_Environment
+',
+	'[Results_String] = FTE1::Environment_String[]
+
+[Results_Int] = FTE2::Environment_Number[]
+
+
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	2);
+INSERT INTO PE_PE
+	VALUES ("d8369659-1fbc-45f2-81d6-5330d5e08839",
+	1,
+	"5fe79a5c-7111-4f61-aa42-20ca31b83d06",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO PE_PE
+	VALUES ("5fe79a5c-7111-4f61-aa42-20ca31b83d06",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"7eb8c298-5f70-4d88-8824-1ddc470dea59",
+	7);
+INSERT INTO C_C_PROXY
+	VALUES ("7eb8c298-5f70-4d88-8824-1ddc470dea59",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'FTE',
+	' 	
+',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Find_The_Environment',
+	'../FTE.xtuml');
+INSERT INTO S_SYS_PROXY
+	VALUES ("91f31d87-193f-4b1a-b022-f1a69c2f11ca",
+	'FTE',
+	1,
+	'../../../FTE.xtuml');

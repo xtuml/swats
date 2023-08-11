@@ -1,0 +1,71 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("8ec9457a-6eb3-4699-a511-d47c0f74bc34",
+	"00000000-0000-0000-0000-000000000000",
+	'TAGSEnv_Terminator',
+	'');
+INSERT INTO C_EP
+	VALUES ("39d6c247-288d-4240-8b2e-d45d919f0ec1",
+	"8ec9457a-6eb3-4699-a511-d47c0f74bc34",
+	0,
+	'Env_String',
+	' @@TAGS-01-0007
+',
+	1);
+INSERT INTO C_IO
+	VALUES ("39d6c247-288d-4240-8b2e-d45d919f0ec1",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'Env_String',
+	' @@TAGS-01-0007
+',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("d4ce0c63-d2d4-4b9a-a54b-3eceec503a8b",
+	"39d6c247-288d-4240-8b2e-d45d919f0ec1",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Env_Text',
+	'',
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("9d4267e1-97e3-448f-9ed5-47a92a9c748c",
+	"8ec9457a-6eb3-4699-a511-d47c0f74bc34",
+	0,
+	'Env_Number',
+	'',
+	2);
+INSERT INTO C_IO
+	VALUES ("9d4267e1-97e3-448f-9ed5-47a92a9c748c",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'Env_Number',
+	'',
+	0,
+	'',
+	"39d6c247-288d-4240-8b2e-d45d919f0ec1");
+INSERT INTO C_PP
+	VALUES ("416aef74-3b1a-4ca3-873d-d72f239b7d57",
+	"9d4267e1-97e3-448f-9ed5-47a92a9c748c",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'Env_Integer',
+	'',
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO PE_PE
+	VALUES ("8ec9457a-6eb3-4699-a511-d47c0f74bc34",
+	1,
+	"69f79c2c-ccd8-4232-9379-306de0db8387",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("69f79c2c-ccd8-4232-9379-306de0db8387",
+	"00000000-0000-0000-0000-000000000000",
+	"41eb16c7-0f24-4e35-b333-a47fabc90a87",
+	'Shared',
+	'',
+	0,
+	'../Shared.xtuml');

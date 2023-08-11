@@ -1,0 +1,73 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("1010aab8-e1f6-4422-abe2-c19b134936dc",
+	'Report_Data',
+	4,
+	'RD',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("5af10a2f-0a01-4894-873c-ead9a6f76b3d",
+	"1010aab8-e1f6-4422-abe2-c19b134936dc");
+INSERT INTO O_BATTR
+	VALUES ("5af10a2f-0a01-4894-873c-ead9a6f76b3d",
+	"1010aab8-e1f6-4422-abe2-c19b134936dc");
+INSERT INTO O_ATTR
+	VALUES ("5af10a2f-0a01-4894-873c-ead9a6f76b3d",
+	"1010aab8-e1f6-4422-abe2-c19b134936dc",
+	"00000000-0000-0000-0000-000000000000",
+	'Report_Data_Unique_id',
+	'',
+	'',
+	'Report_Data_Unique_id',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("df7a8aac-2cc1-4657-80ec-1e451d74c2b7",
+	"1010aab8-e1f6-4422-abe2-c19b134936dc");
+INSERT INTO O_BATTR
+	VALUES ("df7a8aac-2cc1-4657-80ec-1e451d74c2b7",
+	"1010aab8-e1f6-4422-abe2-c19b134936dc");
+INSERT INTO O_ATTR
+	VALUES ("df7a8aac-2cc1-4657-80ec-1e451d74c2b7",
+	"1010aab8-e1f6-4422-abe2-c19b134936dc",
+	"5af10a2f-0a01-4894-873c-ead9a6f76b3d",
+	'Reported_Domain_Number',
+	'',
+	'',
+	'Reported_Domain_Number',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"1010aab8-e1f6-4422-abe2-c19b134936dc");
+INSERT INTO O_OIDA
+	VALUES ("5af10a2f-0a01-4894-873c-ead9a6f76b3d",
+	"1010aab8-e1f6-4422-abe2-c19b134936dc",
+	0,
+	'Report_Data_Unique_id');
+INSERT INTO O_ID
+	VALUES (1,
+	"1010aab8-e1f6-4422-abe2-c19b134936dc");
+INSERT INTO O_ID
+	VALUES (2,
+	"1010aab8-e1f6-4422-abe2-c19b134936dc");
+INSERT INTO PE_PE
+	VALUES ("1010aab8-e1f6-4422-abe2-c19b134936dc",
+	1,
+	"8cff59dd-44fc-48ce-8aff-7ae0bf398c4c",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("8cff59dd-44fc-48ce-8aff-7ae0bf398c4c",
+	"00000000-0000-0000-0000-000000000000",
+	"f9c4d01b-d0c3-46a0-ae22-2d7ee9b5042e",
+	'classes',
+	'',
+	0,
+	'../classes.xtuml');

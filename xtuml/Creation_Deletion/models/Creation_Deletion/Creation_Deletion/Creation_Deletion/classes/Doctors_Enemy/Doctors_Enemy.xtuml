@@ -1,0 +1,159 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("984453cf-636e-4d0d-b7bd-09e81d48e4f7",
+	'Doctors_Enemy',
+	13,
+	'drenemy',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("ae980dd2-5691-48ac-b9ca-b372cac93fe0",
+	"984453cf-636e-4d0d-b7bd-09e81d48e4f7");
+INSERT INTO O_BATTR
+	VALUES ("ae980dd2-5691-48ac-b9ca-b372cac93fe0",
+	"984453cf-636e-4d0d-b7bd-09e81d48e4f7");
+INSERT INTO O_ATTR
+	VALUES ("ae980dd2-5691-48ac-b9ca-b372cac93fe0",
+	"984453cf-636e-4d0d-b7bd-09e81d48e4f7",
+	"f9eb8d01-40ce-466a-8531-04a05eefa6b1",
+	'battlefield_arena',
+	'',
+	'',
+	'battlefield_arena',
+	0,
+	"99fff263-54ed-4f5c-9986-7a51354c487d",
+	'',
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("99fff263-54ed-4f5c-9986-7a51354c487d",
+	"00000000-0000-0000-0000-000000000000",
+	'battlefield_arena_type',
+	'',
+	'',
+	'../../types/types.xtuml');
+INSERT INTO O_REF
+	VALUES ("984453cf-636e-4d0d-b7bd-09e81d48e4f7",
+	"bc90e4a8-cad9-470c-a38b-2f133ee1c1a1",
+	0,
+	"be74b8a6-64c6-4b4f-9759-489c0cb7fcf0",
+	"a6f618f8-088f-47f8-89ee-99eca74ace70",
+	"3f861663-8c75-4786-8a90-f093f560703e",
+	"75c5bece-afbd-478d-a2e6-bd66efe85f9d",
+	"f9eb8d01-40ce-466a-8531-04a05eefa6b1",
+	"3223ba60-c948-4c8f-82e9-3ac9321cffa6",
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Doctor',
+	'Actor',
+	'R2.''wants_to_kill''');
+INSERT INTO R_RGO_PROXY
+	VALUES ("984453cf-636e-4d0d-b7bd-09e81d48e4f7",
+	"a6f618f8-088f-47f8-89ee-99eca74ace70",
+	"3f861663-8c75-4786-8a90-f093f560703e",
+	'../classes.xtuml');
+INSERT INTO O_RTIDA_PROXY
+	VALUES ("be74b8a6-64c6-4b4f-9759-489c0cb7fcf0",
+	"bc90e4a8-cad9-470c-a38b-2f133ee1c1a1",
+	0,
+	"a6f618f8-088f-47f8-89ee-99eca74ace70",
+	"75c5bece-afbd-478d-a2e6-bd66efe85f9d",
+	'../classes.xtuml');
+INSERT INTO O_RATTR
+	VALUES ("f9eb8d01-40ce-466a-8531-04a05eefa6b1",
+	"984453cf-636e-4d0d-b7bd-09e81d48e4f7",
+	"be74b8a6-64c6-4b4f-9759-489c0cb7fcf0",
+	"bc90e4a8-cad9-470c-a38b-2f133ee1c1a1",
+	0,
+	'Actor');
+INSERT INTO O_BATTR_PROXY
+	VALUES ("be74b8a6-64c6-4b4f-9759-489c0cb7fcf0",
+	"bc90e4a8-cad9-470c-a38b-2f133ee1c1a1",
+	'../Doctor/Doctor.xtuml');
+INSERT INTO O_ATTR
+	VALUES ("f9eb8d01-40ce-466a-8531-04a05eefa6b1",
+	"984453cf-636e-4d0d-b7bd-09e81d48e4f7",
+	"54cbf0ce-3c89-4bf1-acc2-cabe456df8e0",
+	'Actor',
+	'',
+	'',
+	'Actor',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000007",
+	'',
+	'');
+INSERT INTO O_REF
+	VALUES ("984453cf-636e-4d0d-b7bd-09e81d48e4f7",
+	"b646de12-2263-4551-81a9-4e3d9e56e5b3",
+	0,
+	"3c64c3c1-3c02-4e28-973a-0cf9f10f7753",
+	"a6f618f8-088f-47f8-89ee-99eca74ace70",
+	"3f861663-8c75-4786-8a90-f093f560703e",
+	"34c5cc9c-a4f6-4557-a43d-b4664a068c5b",
+	"54cbf0ce-3c89-4bf1-acc2-cabe456df8e0",
+	"6d6eb691-b40f-4b43-a292-a7fb37492f75",
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Enemy',
+	'Humanoid',
+	'R2.''is_afraid_of''');
+INSERT INTO O_RTIDA_PROXY
+	VALUES ("3c64c3c1-3c02-4e28-973a-0cf9f10f7753",
+	"b646de12-2263-4551-81a9-4e3d9e56e5b3",
+	0,
+	"a6f618f8-088f-47f8-89ee-99eca74ace70",
+	"34c5cc9c-a4f6-4557-a43d-b4664a068c5b",
+	'../classes.xtuml');
+INSERT INTO O_RATTR
+	VALUES ("54cbf0ce-3c89-4bf1-acc2-cabe456df8e0",
+	"984453cf-636e-4d0d-b7bd-09e81d48e4f7",
+	"3c64c3c1-3c02-4e28-973a-0cf9f10f7753",
+	"b646de12-2263-4551-81a9-4e3d9e56e5b3",
+	0,
+	'Humanoid');
+INSERT INTO O_BATTR_PROXY
+	VALUES ("3c64c3c1-3c02-4e28-973a-0cf9f10f7753",
+	"b646de12-2263-4551-81a9-4e3d9e56e5b3",
+	'../Enemy/Enemy.xtuml');
+INSERT INTO O_ATTR
+	VALUES ("54cbf0ce-3c89-4bf1-acc2-cabe456df8e0",
+	"984453cf-636e-4d0d-b7bd-09e81d48e4f7",
+	"00000000-0000-0000-0000-000000000000",
+	'Humanoid',
+	'',
+	'',
+	'Humanoid',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000007",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"984453cf-636e-4d0d-b7bd-09e81d48e4f7");
+INSERT INTO O_OIDA
+	VALUES ("54cbf0ce-3c89-4bf1-acc2-cabe456df8e0",
+	"984453cf-636e-4d0d-b7bd-09e81d48e4f7",
+	0,
+	'Humanoid');
+INSERT INTO O_ID
+	VALUES (1,
+	"984453cf-636e-4d0d-b7bd-09e81d48e4f7");
+INSERT INTO O_ID
+	VALUES (2,
+	"984453cf-636e-4d0d-b7bd-09e81d48e4f7");
+INSERT INTO PE_PE
+	VALUES ("984453cf-636e-4d0d-b7bd-09e81d48e4f7",
+	1,
+	"c852afc7-98ac-4492-988b-0303d2b80eff",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("c852afc7-98ac-4492-988b-0303d2b80eff",
+	"00000000-0000-0000-0000-000000000000",
+	"10f28eec-2c10-4bed-b362-3203399c1025",
+	'classes',
+	'',
+	0,
+	'../classes.xtuml');

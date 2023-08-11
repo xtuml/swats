@@ -1,0 +1,57 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("2251e385-7f3c-49be-ba7b-6c9c70ca5038",
+	'Object_A',
+	2,
+	'objA',
+	' This object forms part of a normal 1c:1c relationship.
+',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("240da752-d3c3-4a76-965d-a28d4991df05",
+	"2251e385-7f3c-49be-ba7b-6c9c70ca5038");
+INSERT INTO O_BATTR
+	VALUES ("240da752-d3c3-4a76-965d-a28d4991df05",
+	"2251e385-7f3c-49be-ba7b-6c9c70ca5038");
+INSERT INTO O_ATTR
+	VALUES ("240da752-d3c3-4a76-965d-a28d4991df05",
+	"2251e385-7f3c-49be-ba7b-6c9c70ca5038",
+	"00000000-0000-0000-0000-000000000000",
+	'idA',
+	' Preferred identifier.
+',
+	'',
+	'idA',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"2251e385-7f3c-49be-ba7b-6c9c70ca5038");
+INSERT INTO O_OIDA
+	VALUES ("240da752-d3c3-4a76-965d-a28d4991df05",
+	"2251e385-7f3c-49be-ba7b-6c9c70ca5038",
+	0,
+	'idA');
+INSERT INTO O_ID
+	VALUES (1,
+	"2251e385-7f3c-49be-ba7b-6c9c70ca5038");
+INSERT INTO O_ID
+	VALUES (2,
+	"2251e385-7f3c-49be-ba7b-6c9c70ca5038");
+INSERT INTO PE_PE
+	VALUES ("2251e385-7f3c-49be-ba7b-6c9c70ca5038",
+	1,
+	"1a16545d-ab33-4153-84c6-9d8e9f7ca024",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("1a16545d-ab33-4153-84c6-9d8e9f7ca024",
+	"00000000-0000-0000-0000-000000000000",
+	"6d141527-9fd5-4054-8692-9fc325055afc",
+	'Relationships',
+	'',
+	0,
+	'../Relationships.xtuml');

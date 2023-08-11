@@ -1,0 +1,163 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("5801e243-cdfb-4ba0-a8f4-e9db01d32069",
+	"00000000-0000-0000-0000-000000000000",
+	'Find_and_Sets',
+	'');
+INSERT INTO C_EP
+	VALUES ("8eb08cb9-3ddb-44dc-b4f4-3ce95e7d8046",
+	"5801e243-cdfb-4ba0-a8f4-e9db01d32069",
+	0,
+	'Increment',
+	'',
+	1);
+INSERT INTO C_IO
+	VALUES ("8eb08cb9-3ddb-44dc-b4f4-3ce95e7d8046",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'Increment',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("a3ccbcec-557f-4453-ba1b-87b0a5bfe7dd",
+	"8eb08cb9-3ddb-44dc-b4f4-3ce95e7d8046",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'Incremental',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("d2c0320f-2656-4768-bfd6-f9cb96b097f3",
+	"8eb08cb9-3ddb-44dc-b4f4-3ce95e7d8046",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'Incremented',
+	'',
+	1,
+	'',
+	"a3ccbcec-557f-4453-ba1b-87b0a5bfe7dd");
+INSERT INTO C_EP
+	VALUES ("33994cdc-3826-490c-a839-00a192ce9f95",
+	"5801e243-cdfb-4ba0-a8f4-e9db01d32069",
+	0,
+	'Create_Report_Object',
+	'',
+	2);
+INSERT INTO C_IO
+	VALUES ("33994cdc-3826-490c-a839-00a192ce9f95",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'Create_Report_Object',
+	'',
+	0,
+	'',
+	"8eb08cb9-3ddb-44dc-b4f4-3ce95e7d8046");
+INSERT INTO C_EP
+	VALUES ("6f9bcc7a-4853-45e5-b483-62d3ea1129c4",
+	"5801e243-cdfb-4ba0-a8f4-e9db01d32069",
+	0,
+	'Delete_Report_Object',
+	'',
+	3);
+INSERT INTO C_IO
+	VALUES ("6f9bcc7a-4853-45e5-b483-62d3ea1129c4",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'Delete_Report_Object',
+	'',
+	0,
+	'',
+	"33994cdc-3826-490c-a839-00a192ce9f95");
+INSERT INTO C_EP
+	VALUES ("b78cc142-8dfa-4c63-aacb-7282c9e57b9b",
+	"5801e243-cdfb-4ba0-a8f4-e9db01d32069",
+	0,
+	'Check_Enum',
+	'',
+	4);
+INSERT INTO C_IO
+	VALUES ("b78cc142-8dfa-4c63-aacb-7282c9e57b9b",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'Check_Enum',
+	'',
+	0,
+	'',
+	"6f9bcc7a-4853-45e5-b483-62d3ea1129c4");
+INSERT INTO C_PP
+	VALUES ("7ef26dab-0eb6-4af1-8897-19ef439acde4",
+	"b78cc142-8dfa-4c63-aacb-7282c9e57b9b",
+	"c5b8e651-dd7d-4ba6-8e65-7dce10c5e06b",
+	'The_Input_Value',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_DT_PROXY
+	VALUES ("c5b8e651-dd7d-4ba6-8e65-7dce10c5e06b",
+	"00000000-0000-0000-0000-000000000000",
+	'New_Enum_Type',
+	'',
+	'',
+	'../Shared.xtuml');
+INSERT INTO C_PP
+	VALUES ("b7178583-a435-456e-b277-8c5a583f2396",
+	"b78cc142-8dfa-4c63-aacb-7282c9e57b9b",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'The_Return_Value',
+	'',
+	1,
+	'',
+	"7ef26dab-0eb6-4af1-8897-19ef439acde4");
+INSERT INTO C_EP
+	VALUES ("03203d05-4da2-44c4-a392-4a02d736e339",
+	"5801e243-cdfb-4ba0-a8f4-e9db01d32069",
+	0,
+	'Insert_Mem_Leak_Test',
+	'',
+	5);
+INSERT INTO C_IO
+	VALUES ("03203d05-4da2-44c4-a392-4a02d736e339",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'Insert_Mem_Leak_Test',
+	'',
+	0,
+	'',
+	"b78cc142-8dfa-4c63-aacb-7282c9e57b9b");
+INSERT INTO C_EP
+	VALUES ("6b4f1ce7-6913-4d16-a832-6036a5a273f7",
+	"5801e243-cdfb-4ba0-a8f4-e9db01d32069",
+	0,
+	'FindAllTest',
+	'',
+	6);
+INSERT INTO C_IO
+	VALUES ("6b4f1ce7-6913-4d16-a832-6036a5a273f7",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'FindAllTest',
+	'',
+	0,
+	'',
+	"03203d05-4da2-44c4-a392-4a02d736e339");
+INSERT INTO C_PP
+	VALUES ("bda3043f-ae83-4616-ac93-640bb11336d5",
+	"6b4f1ce7-6913-4d16-a832-6036a5a273f7",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'noInst',
+	'',
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO PE_PE
+	VALUES ("5801e243-cdfb-4ba0-a8f4-e9db01d32069",
+	1,
+	"1933a06e-5b6c-4064-b210-b42a7dbc51b4",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("1933a06e-5b6c-4064-b210-b42a7dbc51b4",
+	"00000000-0000-0000-0000-000000000000",
+	"02965de1-ecbb-4bde-9a3e-3ac7d424e4a6",
+	'Shared',
+	'',
+	0,
+	'../Shared.xtuml');

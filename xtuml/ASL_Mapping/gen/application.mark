@@ -1,0 +1,8 @@
+ASL_Mapping::ASL_Mapping,version,Component,19
+ASL_Mapping::ASL_Mapping::ASL_Mapping::R2,Class_B,Association,"Another_Right"
+ASL_Mapping::ASL_Mapping::ASL_Mapping::R2,Class_A,Association,"LeftRight"
+ASL_Mapping::ASL_Mapping::ASL_Mapping::R1,Class_B,Association,"Right"
+ASL_Mapping::ASL_Mapping::ASL_Mapping::R1,Class_A,Association,"Left"
+ASL_Mapping::ASL_Mapping::scenarios::void Finish_ASL_Mapping_Tests,scenario,Function,3
+ASL_Mapping::ASL_Mapping::scenarios::void Start_ASL_Mapping_Tests,scenario,Function,2
+ASL_Mapping::ASL_Mapping::scenarios::void Perform_ASL_Mapping_Tests,scenario,Function,1

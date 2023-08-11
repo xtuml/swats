@@ -1,0 +1,136 @@
+-- BP 7.1.6 content: InstanceStateMachine syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO SM_ISM
+	VALUES ("fffd363d-63a5-4ecf-ac3d-19d0e3bcd2fb",
+	"dcea1b4e-9fb6-4ccf-9aac-fff848002485");
+INSERT INTO SM_SM
+	VALUES ("fffd363d-63a5-4ecf-ac3d-19d0e3bcd2fb",
+	'',
+	0);
+INSERT INTO SM_MOORE
+	VALUES ("fffd363d-63a5-4ecf-ac3d-19d0e3bcd2fb");
+INSERT INTO SM_LEVT
+	VALUES ("807edce0-f61b-4ae4-ab17-f43cf4567e7e",
+	"fffd363d-63a5-4ecf-ac3d-19d0e3bcd2fb",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_SEVT
+	VALUES ("807edce0-f61b-4ae4-ab17-f43cf4567e7e",
+	"fffd363d-63a5-4ecf-ac3d-19d0e3bcd2fb",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_EVT
+	VALUES ("807edce0-f61b-4ae4-ab17-f43cf4567e7e",
+	"fffd363d-63a5-4ecf-ac3d-19d0e3bcd2fb",
+	"00000000-0000-0000-0000-000000000000",
+	1,
+	'One2One',
+	0,
+	'',
+	'objF1',
+	'');
+INSERT INTO SM_LEVT
+	VALUES ("5424481b-5afa-4eab-a0a5-43a7ba2a1e07",
+	"fffd363d-63a5-4ecf-ac3d-19d0e3bcd2fb",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_SEVT
+	VALUES ("5424481b-5afa-4eab-a0a5-43a7ba2a1e07",
+	"fffd363d-63a5-4ecf-ac3d-19d0e3bcd2fb",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_EVT
+	VALUES ("5424481b-5afa-4eab-a0a5-43a7ba2a1e07",
+	"fffd363d-63a5-4ecf-ac3d-19d0e3bcd2fb",
+	"00000000-0000-0000-0000-000000000000",
+	2,
+	'Finished',
+	0,
+	'',
+	'objF2',
+	'');
+INSERT INTO SM_LEVT
+	VALUES ("c9c30d7b-7cda-41e8-842c-68449e15a495",
+	"fffd363d-63a5-4ecf-ac3d-19d0e3bcd2fb",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_SEVT
+	VALUES ("c9c30d7b-7cda-41e8-842c-68449e15a495",
+	"fffd363d-63a5-4ecf-ac3d-19d0e3bcd2fb",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_EVT
+	VALUES ("c9c30d7b-7cda-41e8-842c-68449e15a495",
+	"fffd363d-63a5-4ecf-ac3d-19d0e3bcd2fb",
+	"00000000-0000-0000-0000-000000000000",
+	3,
+	'ERROR',
+	0,
+	'',
+	'objF3',
+	'');
+INSERT INTO SM_LEVT
+	VALUES ("b14d1d83-2d8a-4380-a332-a8ad91542deb",
+	"fffd363d-63a5-4ecf-ac3d-19d0e3bcd2fb",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_SEVT
+	VALUES ("b14d1d83-2d8a-4380-a332-a8ad91542deb",
+	"fffd363d-63a5-4ecf-ac3d-19d0e3bcd2fb",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_EVT
+	VALUES ("b14d1d83-2d8a-4380-a332-a8ad91542deb",
+	"fffd363d-63a5-4ecf-ac3d-19d0e3bcd2fb",
+	"00000000-0000-0000-0000-000000000000",
+	4,
+	'Many2Many',
+	0,
+	'',
+	'objF4',
+	'');
+INSERT INTO SM_LEVT
+	VALUES ("b59ecd52-ed4e-4d14-87d1-e3671205034e",
+	"fffd363d-63a5-4ecf-ac3d-19d0e3bcd2fb",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_SEVT
+	VALUES ("b59ecd52-ed4e-4d14-87d1-e3671205034e",
+	"fffd363d-63a5-4ecf-ac3d-19d0e3bcd2fb",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_EVT
+	VALUES ("b59ecd52-ed4e-4d14-87d1-e3671205034e",
+	"fffd363d-63a5-4ecf-ac3d-19d0e3bcd2fb",
+	"00000000-0000-0000-0000-000000000000",
+	5,
+	'One2Many',
+	0,
+	'',
+	'objF5',
+	'');
+INSERT INTO GD_MD
+	VALUES ("c0c61a27-a6f2-4606-9da2-acd75a2cd7b5",
+	8,
+	"fffd363d-63a5-4ecf-ac3d-19d0e3bcd2fb",
+	40,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'Relationships::Relationships::Relationships::Relationships::Object_F::Instance State Machine');
+INSERT INTO DIM_DIA
+	VALUES ("c0c61a27-a6f2-4606-9da2-acd75a2cd7b5",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_OBJ_PROXY
+	VALUES ("dcea1b4e-9fb6-4ccf-9aac-fff848002485",
+	'Object_F',
+	8,
+	'objF',
+	' This object forms part of a 1-(Mc:Mc) relationship.
+',
+	"00000000-0000-0000-0000-000000000000",
+	'../Object_F.xtuml');

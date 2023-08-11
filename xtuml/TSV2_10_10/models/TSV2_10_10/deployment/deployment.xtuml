@@ -1,0 +1,4382 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("ae937f63-82a4-4545-86c7-d5a5326d368f",
+	"c6ac2e0b-70e6-4024-9a94-5e4dd1c4e7df",
+	"c6ac2e0b-70e6-4024-9a94-5e4dd1c4e7df",
+	'deployment',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("5f5f5ef9-0d54-47d3-87a2-6d3942313add",
+	112,
+	"ae937f63-82a4-4545-86c7-d5a5326d368f",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	200,
+	150,
+	0,
+	'',
+	'TSV2_10_10::deployment');
+INSERT INTO GD_GE
+	VALUES ("61b3a976-f380-413d-99a3-ea531ffff3a5",
+	"5f5f5ef9-0d54-47d3-87a2-6d3942313add",
+	"9def5655-8169-48e6-947a-0cf9dd1631df",
+	209,
+	0,
+	'TSV2_10_10::deployment::Structures_Build_Set');
+INSERT INTO GD_SHP
+	VALUES ("61b3a976-f380-413d-99a3-ea531ffff3a5");
+INSERT INTO GD_NCS
+	VALUES ("61b3a976-f380-413d-99a3-ea531ffff3a5");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"61b3a976-f380-413d-99a3-ea531ffff3a5");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"61b3a976-f380-413d-99a3-ea531ffff3a5",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("61b3a976-f380-413d-99a3-ea531ffff3a5",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_GE
+	VALUES ("3b2d88f5-efde-47c7-96c2-26e71c9b0941",
+	"5f5f5ef9-0d54-47d3-87a2-6d3942313add",
+	"de6035d7-7004-4f4f-bdc9-22c7b5a9a2fd",
+	108,
+	0,
+	'TSV2_10_10::deployment::Shared');
+INSERT INTO GD_SHP
+	VALUES ("3b2d88f5-efde-47c7-96c2-26e71c9b0941");
+INSERT INTO GD_NCS
+	VALUES ("3b2d88f5-efde-47c7-96c2-26e71c9b0941");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"3b2d88f5-efde-47c7-96c2-26e71c9b0941");
+INSERT INTO DIM_GE
+	VALUES (220.000000,
+	0.000000,
+	"3b2d88f5-efde-47c7-96c2-26e71c9b0941",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("3b2d88f5-efde-47c7-96c2-26e71c9b0941",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_DIA
+	VALUES ("5f5f5ef9-0d54-47d3-87a2-6d3942313add",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO D_DEPL
+	VALUES ("9def5655-8169-48e6-947a-0cf9dd1631df",
+	'Structures_Build_Set',
+	'',
+	'Structures_Build_Set');
+INSERT INTO D_TERM
+	VALUES ("d8fc8eb0-0efd-4fa3-aaee-de42661bb08c",
+	"9def5655-8169-48e6-947a-0cf9dd1631df",
+	'FTE',
+	'',
+	'FTE',
+	'',
+	1,
+	'FTE',
+	'Find_The_Environment');
+INSERT INTO D_TSVC
+	VALUES ("1ffb2177-fe8f-4372-9174-d163fd2dd198",
+	"d8fc8eb0-0efd-4fa3-aaee-de42661bb08c",
+	'Environment_String',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("583eeec4-35b9-4a71-85d4-a23801b91065",
+	"1ffb2177-fe8f-4372-9174-d163fd2dd198",
+	'This_Environment',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("64b54d16-e11b-45df-a32e-bab6a34cdb6e",
+	"d8fc8eb0-0efd-4fa3-aaee-de42661bb08c",
+	'Environment_Number',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("6e522ed6-08ed-4a99-ab46-a0965981f059",
+	"64b54d16-e11b-45df-a32e-bab6a34cdb6e",
+	'Env_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TERM
+	VALUES ("469b6f70-04c8-4608-883b-736f50ee0c44",
+	"9def5655-8169-48e6-947a-0cf9dd1631df",
+	'RP',
+	'',
+	'RP',
+	'',
+	1,
+	'RP',
+	'Report');
+INSERT INTO D_TSVC
+	VALUES ("8b868c54-a002-4d0a-8296-3bbe3ae9020c",
+	"469b6f70-04c8-4608-883b-736f50ee0c44",
+	'Test_Passed',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("da0bce8a-80b4-4b73-ae59-52c33636afd1",
+	"8b868c54-a002-4d0a-8296-3bbe3ae9020c",
+	'Passed_Domain',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("19a6eef6-60f9-41f4-aff7-e9243be95290",
+	"8b868c54-a002-4d0a-8296-3bbe3ae9020c",
+	'Passed_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"da0bce8a-80b4-4b73-ae59-52c33636afd1",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("85541d13-4042-4b9c-8953-974d083ff3d3",
+	"8b868c54-a002-4d0a-8296-3bbe3ae9020c",
+	'Passed_Test_Result_Value',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"19a6eef6-60f9-41f4-aff7-e9243be95290",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("60ea0958-76f1-4a82-bb75-d6ef159e2cef",
+	"8b868c54-a002-4d0a-8296-3bbe3ae9020c",
+	'Passed_Domain_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"85541d13-4042-4b9c-8953-974d083ff3d3",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("e686ae7f-035e-494d-a49c-9b5b3a34f5b1",
+	"469b6f70-04c8-4608-883b-736f50ee0c44",
+	'Test_Failed',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("e537785e-c2d2-4a14-b046-cc8b6a61e063",
+	"e686ae7f-035e-494d-a49c-9b5b3a34f5b1",
+	'Failed_Domain',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("6c79a787-a631-4fd7-b92f-1ffe16ae74c5",
+	"e686ae7f-035e-494d-a49c-9b5b3a34f5b1",
+	'the_test_no',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"e537785e-c2d2-4a14-b046-cc8b6a61e063",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("e1d9d247-1df0-4d58-a886-82fc5fa4a1d1",
+	"e686ae7f-035e-494d-a49c-9b5b3a34f5b1",
+	'the_test_value',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"6c79a787-a631-4fd7-b92f-1ffe16ae74c5",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("eebd51c4-ead1-4601-8a1a-fe8f8485f2d9",
+	"e686ae7f-035e-494d-a49c-9b5b3a34f5b1",
+	'Failed_Domain_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"e1d9d247-1df0-4d58-a886-82fc5fa4a1d1",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("f56d3685-3bdc-4f15-8ce5-b08a7a4cd2be",
+	"469b6f70-04c8-4608-883b-736f50ee0c44",
+	'Test_Unsupported',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("95596e61-3cbb-4f9f-99f0-35d2f8b0b04d",
+	"f56d3685-3bdc-4f15-8ce5-b08a7a4cd2be",
+	'Unsupported_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("8bc07c61-e5dc-4159-8792-7e20f15c3ff3",
+	"f56d3685-3bdc-4f15-8ce5-b08a7a4cd2be",
+	'Unsupported_Domain_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"95596e61-3cbb-4f9f-99f0-35d2f8b0b04d",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("b50d06fb-cc41-4305-b0e9-11b859b543d0",
+	"469b6f70-04c8-4608-883b-736f50ee0c44",
+	'Test_Description',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("9542a5f0-098c-4b17-97b0-817e9ae82363",
+	"b50d06fb-cc41-4305-b0e9-11b859b543d0",
+	'Write_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("acea61fb-0a8a-4514-94eb-3a38ed3444c7",
+	"b50d06fb-cc41-4305-b0e9-11b859b543d0",
+	'Write_Requid',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"9542a5f0-098c-4b17-97b0-817e9ae82363",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("f15712c1-32db-4f4f-b6c5-5db71d3f37ca",
+	"b50d06fb-cc41-4305-b0e9-11b859b543d0",
+	'Write_Invoker_Domain_Name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"acea61fb-0a8a-4514-94eb-3a38ed3444c7",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("08c6c994-8843-42fc-af31-867a744a2d2b",
+	"b50d06fb-cc41-4305-b0e9-11b859b543d0",
+	'Write_Object',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"f15712c1-32db-4f4f-b6c5-5db71d3f37ca",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("f5b9faf5-b53f-4869-975c-c7630dc4a51f",
+	"b50d06fb-cc41-4305-b0e9-11b859b543d0",
+	'Write_Test_Purpose',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"08c6c994-8843-42fc-af31-867a744a2d2b",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("7b0cb8ed-3fc2-4e66-90c2-bf79ffee7106",
+	"b50d06fb-cc41-4305-b0e9-11b859b543d0",
+	'Write_Invoker_Domain_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"f5b9faf5-b53f-4869-975c-c7630dc4a51f",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("ad8992fa-d5fb-43e3-a543-115f02320eae",
+	"469b6f70-04c8-4608-883b-736f50ee0c44",
+	'Test_Text',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("5adde14f-1769-4197-9ce6-6204c2887095",
+	"ad8992fa-d5fb-43e3-a543-115f02320eae",
+	'Domain_No',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("2dae2e1d-3226-492d-9955-08953723d791",
+	"ad8992fa-d5fb-43e3-a543-115f02320eae",
+	'Text_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"5adde14f-1769-4197-9ce6-6204c2887095",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("7c04fff3-2727-4c00-9404-388cf2f241d2",
+	"ad8992fa-d5fb-43e3-a543-115f02320eae",
+	'Free_Text',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"2dae2e1d-3226-492d-9955-08953723d791",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("1a6c8e7b-a815-4cfa-9eb6-9f7b59c17604",
+	"469b6f70-04c8-4608-883b-736f50ee0c44",
+	'Create_New_Domain_Test',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("fea6e3c7-c0d1-4c4f-83f8-65a6a28eda86",
+	"1a6c8e7b-a815-4cfa-9eb6-9f7b59c17604",
+	'Invoker_Domain_Name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("df0ee785-3726-4a5b-a5ac-e894dee98096",
+	"1a6c8e7b-a815-4cfa-9eb6-9f7b59c17604",
+	'Domain_Unique_Identifier',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"fea6e3c7-c0d1-4c4f-83f8-65a6a28eda86",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("7f3b7ea3-6253-4287-bcdf-69930d6e63cd",
+	"469b6f70-04c8-4608-883b-736f50ee0c44",
+	'Report_Run_Time_Error',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("3014a583-f5d0-4eb7-85c4-639d81c8eb2d",
+	"7f3b7ea3-6253-4287-bcdf-69930d6e63cd",
+	'Detail',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("ea2d0f03-8692-4208-80db-3278591070c4",
+	"469b6f70-04c8-4608-883b-736f50ee0c44",
+	'Domain_Tests_Have_Finished',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("5040a13b-9d85-42ae-825b-62c3d66351ec",
+	"ea2d0f03-8692-4208-80db-3278591070c4",
+	'Completed_Domain_Name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("555d43b6-0e3b-40ca-8b7d-335bd445c9ed",
+	"ea2d0f03-8692-4208-80db-3278591070c4",
+	'Domain_Identifer',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"5040a13b-9d85-42ae-825b-62c3d66351ec",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("a33f9b28-e159-4f75-bbaa-c6f1e2ec178f",
+	"469b6f70-04c8-4608-883b-736f50ee0c44",
+	'Test_Anomalous_Behaviour',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("fe67b8e0-09ef-4c07-9873-1d5fa918c2ea",
+	"a33f9b28-e159-4f75-bbaa-c6f1e2ec178f",
+	'Anomalous_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("af61c46c-b827-4e62-a5e0-7beba97eadc9",
+	"a33f9b28-e159-4f75-bbaa-c6f1e2ec178f",
+	'Anomalous_Detail',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"fe67b8e0-09ef-4c07-9873-1d5fa918c2ea",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("b03a3dd2-c1dc-4f3a-a14c-c1c7b899b1c1",
+	"469b6f70-04c8-4608-883b-736f50ee0c44",
+	'Specify_Requid',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("31968789-cb43-4937-a847-af3ff7cde320",
+	"b03a3dd2-c1dc-4f3a-a14c-c1c7b899b1c1",
+	'Requid_Domain_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("8b7ceb65-27da-4389-a9b3-c00e73be66ec",
+	"b03a3dd2-c1dc-4f3a-a14c-c1c7b899b1c1",
+	'Requid_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"31968789-cb43-4937-a847-af3ff7cde320",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("58265ad4-a3ae-4092-9737-69004515e909",
+	"b03a3dd2-c1dc-4f3a-a14c-c1c7b899b1c1",
+	'Requid_Identifier',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"8b7ceb65-27da-4389-a9b3-c00e73be66ec",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("8d053000-41f7-46ef-bf7a-2c916df1ea21",
+	"469b6f70-04c8-4608-883b-736f50ee0c44",
+	'Add_All_Requids',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("0b7b3dac-a7e4-4681-ae9d-cba28716fc12",
+	"8d053000-41f7-46ef-bf7a-2c916df1ea21",
+	'New_Requid',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("107b568b-422f-4ca7-9976-e15cb8210bcc",
+	"469b6f70-04c8-4608-883b-736f50ee0c44",
+	'Requirement_Tracker',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("5b878315-3160-44dc-882b-07a60acb64e1",
+	"107b568b-422f-4ca7-9976-e15cb8210bcc",
+	'Updated_Domain_ID',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("3df7b7c1-e939-40b0-8bcf-c81d39fe877f",
+	"107b568b-422f-4ca7-9976-e15cb8210bcc",
+	'Updated_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"5b878315-3160-44dc-882b-07a60acb64e1",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("aba59eac-729c-4b3e-a8cd-fbda822ea99b",
+	"107b568b-422f-4ca7-9976-e15cb8210bcc",
+	'Updated_Result',
+	"2c39dc56-cd37-44c4-9a68-b8651150e76a",
+	0,
+	'',
+	"3df7b7c1-e939-40b0-8bcf-c81d39fe877f",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("2c39dc56-cd37-44c4-9a68-b8651150e76a",
+	"00000000-0000-0000-0000-000000000000",
+	'RP::Result_Type',
+	'',
+	'',
+	'./Shared/Shared.xtuml');
+INSERT INTO D_TSVC
+	VALUES ("454e463f-ef2f-463e-9f65-71ef1eaf9d5b",
+	"469b6f70-04c8-4608-883b-736f50ee0c44",
+	'Perform_Req_Analysis',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TERM
+	VALUES ("707a9335-81c8-4e60-8e77-1845a7473df8",
+	"9def5655-8169-48e6-947a-0cf9dd1631df",
+	'Struct::Report',
+	'',
+	'Struct',
+	'Report',
+	0,
+	'Struct',
+	'RPT');
+INSERT INTO D_TSVC
+	VALUES ("6061424f-9da5-41f7-87ad-bacc58fa48a6",
+	"707a9335-81c8-4e60-8e77-1845a7473df8",
+	'Start_Test',
+	'',
+	'local_test_number = Test_Number
+local_requid = Requid
+local_invoking_domain = Invoking_Domain
+local_invoking_object = Invoking_Object
+local_purpose = Purpose
+
+# Find the reporter object for this domain, there will be only one.
+
+The_Reporter_Object = find-one Report_Data
+
+
+if The_Reporter_Object = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["ST Calling domain has not created Report_Data"]
+
+   $ENDUSE
+
+else
+
+   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
+
+   $USE RP
+  
+      [] = RP4::Test_Description[local_test_number, local_requid, local_invoking_domain, local_invoking_object, local_purpose, Unique_Domain_ID]
+
+   $ENDUSE
+
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	1);
+INSERT INTO D_TSPARM
+	VALUES ("42a9daf8-e54d-4072-b6af-d7913998dc2b",
+	"6061424f-9da5-41f7-87ad-bacc58fa48a6",
+	'Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("3c63be58-4b17-40db-9773-a98411ed09da",
+	"6061424f-9da5-41f7-87ad-bacc58fa48a6",
+	'Requid',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"42a9daf8-e54d-4072-b6af-d7913998dc2b",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("f13ccb2a-b944-4110-ae52-820b916403e3",
+	"6061424f-9da5-41f7-87ad-bacc58fa48a6",
+	'Invoking_Domain',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"3c63be58-4b17-40db-9773-a98411ed09da",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("5c31d2de-2466-4900-b223-3a95e3d9536f",
+	"6061424f-9da5-41f7-87ad-bacc58fa48a6",
+	'Invoking_Object',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"f13ccb2a-b944-4110-ae52-820b916403e3",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("e486f034-4460-4094-acd6-a30261d9bdb7",
+	"6061424f-9da5-41f7-87ad-bacc58fa48a6",
+	'Purpose',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"5c31d2de-2466-4900-b223-3a95e3d9536f",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("713a9672-71b4-4a8f-b530-a082000889e9",
+	"707a9335-81c8-4e60-8e77-1845a7473df8",
+	'Test_Passed',
+	'',
+	'local_test_number = Test_Number
+local_test_value = Test_Value
+local_object_domain = Test_Object_Domain
+
+# Find the reporter object for this domain, there will be only one.
+
+The_Reporter_Object = find-one Report_Data
+
+
+if The_Reporter_Object = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["TP Calling domain has not created Report_Data"]
+
+   $ENDUSE
+
+else
+
+   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
+ 
+   $USE RP
+
+   [] = RP1::Test_Passed[local_object_domain, local_test_number, local_test_value, Unique_Domain_ID]
+
+   $ENDUSE
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	2);
+INSERT INTO D_TSPARM
+	VALUES ("132987b3-8b8e-43bb-bfcb-ca336d39f0e8",
+	"713a9672-71b4-4a8f-b530-a082000889e9",
+	'Test_Object_Domain',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("7836ddb0-e50e-4c9f-9795-d2c6e0a71a8f",
+	"713a9672-71b4-4a8f-b530-a082000889e9",
+	'Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"132987b3-8b8e-43bb-bfcb-ca336d39f0e8",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("f5df7903-9991-4191-8631-0a101b2b42b1",
+	"713a9672-71b4-4a8f-b530-a082000889e9",
+	'Test_Value',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"7836ddb0-e50e-4c9f-9795-d2c6e0a71a8f",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("3c53b9ac-ab51-4cac-b7bf-a6e67925faa8",
+	"707a9335-81c8-4e60-8e77-1845a7473df8",
+	'Test_Failed',
+	'',
+	'local_test_number = Failed_Test_Number
+local_test_value = Failed_Test_Value
+local_object_domain = Failed_Domain_Object
+
+# Find the reporter object for this domain, there will be only one.
+
+The_Reporter_Object = find-one Report_Data
+
+if The_Reporter_Object = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["TF Calling domain has not created Report_Data"]
+
+   $ENDUSE
+
+else
+
+   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
+
+
+   $USE RP
+
+   [] = RP2::Test_Failed[local_object_domain, local_test_number, local_test_value, Unique_Domain_ID]
+
+   $ENDUSE
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	3);
+INSERT INTO D_TSPARM
+	VALUES ("f9b2259b-648d-42af-906b-1a93917de697",
+	"3c53b9ac-ab51-4cac-b7bf-a6e67925faa8",
+	'Failed_Domain_Object',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("1b687a32-2785-4e2e-8510-199798537dcc",
+	"3c53b9ac-ab51-4cac-b7bf-a6e67925faa8",
+	'Failed_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"f9b2259b-648d-42af-906b-1a93917de697",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("0e85feda-e1fb-42cc-9039-4765e7ac371f",
+	"3c53b9ac-ab51-4cac-b7bf-a6e67925faa8",
+	'Failed_Test_Value',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"1b687a32-2785-4e2e-8510-199798537dcc",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("b6b190b1-97e8-47b5-a708-0e5676ef78df",
+	"707a9335-81c8-4e60-8e77-1845a7473df8",
+	'Test_Unsupported',
+	'',
+	'local_test_number = Unsupported_Test_Number
+
+
+# Find the reporter object for this domain, there will be only one.
+
+The_Reporter_Object = find-one Report_Data
+
+
+if The_Reporter_Object = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["TU Calling domain has not created Report_Data"]
+
+   $ENDUSE
+else
+
+   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
+
+   $USE RP
+
+   [] = RP3::Test_Unsupported[local_test_number, Unique_Domain_ID]
+
+   $ENDUSE
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	4);
+INSERT INTO D_TSPARM
+	VALUES ("5a657de1-c70a-404a-b70b-d46f176faee6",
+	"b6b190b1-97e8-47b5-a708-0e5676ef78df",
+	'Unsupported_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("fcbb046b-72c6-44de-b7a8-19ec6b9b2e9b",
+	"707a9335-81c8-4e60-8e77-1845a7473df8",
+	'Test_Text',
+	'',
+	'local_test_number = Test_Number
+local_text = Free_Text
+
+#$USE RP
+
+#   [] = RP5::Test_Text[local_test_number, local_text]
+
+#$ENDUSE
+
+#-----------------------------------------------
+# New stuff
+#-----------------------------------------------
+
+# Find the reporter object for this domain, there will be only one.
+The_Reporter_Object = find-one Report_Data
+
+if The_Reporter_Object = UNDEFINED then
+
+   $USE RP
+      [] = RP7::Report_Run_Time_Error["TP Calling domain has not created Report_Data"]
+   $ENDUSE
+
+else
+
+   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
+ 
+   $USE RP
+      [] = RP5::Test_Text[Unique_Domain_ID, local_test_number, local_text]
+   $ENDUSE
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	5);
+INSERT INTO D_TSPARM
+	VALUES ("6e26bb92-20a9-4cb5-884a-8c1fa7b4cd1f",
+	"fcbb046b-72c6-44de-b7a8-19ec6b9b2e9b",
+	'Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("f87dd21c-f7a8-455e-a2fd-d96ba36cf5ee",
+	"fcbb046b-72c6-44de-b7a8-19ec6b9b2e9b",
+	'Free_Text',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"6e26bb92-20a9-4cb5-884a-8c1fa7b4cd1f",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("1a58cec3-2f5e-47bf-a89e-7b4c48025b2a",
+	"707a9335-81c8-4e60-8e77-1845a7473df8",
+	'Domain_Test_Start',
+	'',
+	'local_text = This_Domain_Name
+
+
+$USE RP
+
+   [New_Domain_Number] = RP6::Create_New_Domain_Test[local_text]
+
+$ENDUSE
+
+
+# Can''t create in a bridge, so find this object and update it. Rely on the invoker
+# domain to have created this object prior to this call.
+
+My_Report = find-one Report_Data
+
+if My_Report = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["DTS Calling domain has not created Report_Data"]
+
+   $ENDUSE
+
+else
+
+   My_Report.Reported_Domain_Number = New_Domain_Number
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	6);
+INSERT INTO D_TSPARM
+	VALUES ("b7ca95d1-5ba5-4835-a74d-8c3664fe9d86",
+	"1a58cec3-2f5e-47bf-a89e-7b4c48025b2a",
+	'This_Domain_Name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("27d305eb-edba-4678-888a-85fd8d87b579",
+	"707a9335-81c8-4e60-8e77-1845a7473df8",
+	'Domain_Test_Finished',
+	'',
+	'local_text = This_Domain_Name
+
+My_Report = find-one Report_Data
+
+if My_Report = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["DTF Calling domain has not created Report_Data"]
+
+   $ENDUSE
+
+else
+
+   local_domain_number = My_Report.Reported_Domain_Number
+
+endif
+
+
+$USE RP
+
+   [] = RP8::Domain_Tests_Have_Finished[local_text, local_domain_number]
+
+
+$ENDUSE',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	7);
+INSERT INTO D_TSPARM
+	VALUES ("d78e2897-fd69-4f76-9673-d582dd73f6a7",
+	"27d305eb-edba-4678-888a-85fd8d87b579",
+	'This_Domain_Name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("344c7a3e-5951-4c68-a685-50477beb23ba",
+	"707a9335-81c8-4e60-8e77-1845a7473df8",
+	'Specify_Requid',
+	'',
+	'local_test_number = Requid_Test_Number
+local_requid_value = The_Requid_Itself
+
+# Find the reporter object for this domain, there will be only one.
+
+The_Reporter_Object = find-one Report_Data
+
+
+if The_Reporter_Object = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["TP Calling domain has not created Report_Data"]
+
+   $ENDUSE
+
+else
+
+   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
+ 
+   $USE RP
+
+   [] = RP10::Specify_Requid [Unique_Domain_ID, local_test_number, local_requid_value]
+
+   $ENDUSE
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	8);
+INSERT INTO D_TSPARM
+	VALUES ("c5138ab9-f5d3-4b8c-a2b3-47f5a2f100cc",
+	"344c7a3e-5951-4c68-a685-50477beb23ba",
+	'Requid_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("b109c28d-7015-4ce4-bdab-62cc984eaad4",
+	"344c7a3e-5951-4c68-a685-50477beb23ba",
+	'The_Requid_Itself',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"c5138ab9-f5d3-4b8c-a2b3-47f5a2f100cc",
+	'');
+INSERT INTO D_TERM
+	VALUES ("0b11ca7b-2c09-4bc0-ba98-03feec142850",
+	"9def5655-8169-48e6-947a-0cf9dd1631df",
+	'Struct::Env_Terminator',
+	'',
+	'Struct',
+	'Env_Terminator',
+	0,
+	'Struct',
+	'ET');
+INSERT INTO D_TSVC
+	VALUES ("984594ec-1a1c-4210-843a-6727bcb6be43",
+	"0b11ca7b-2c09-4bc0-ba98-03feec142850",
+	'Env_String',
+	'',
+	'Local_Env_Text = " "
+
+$USE FTE
+
+   [Local_Env_Text] = FTE1::Environment_String[]
+
+$ENDUSE
+
+Env_Text = Local_Env_Text',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	1);
+INSERT INTO D_TSPARM
+	VALUES ("ceb9f49c-e3b0-49e3-9674-e19d57599858",
+	"984594ec-1a1c-4210-843a-6727bcb6be43",
+	'Env_Text',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("b5bc4e6e-6f49-479c-84dc-908c3c57dc39",
+	"0b11ca7b-2c09-4bc0-ba98-03feec142850",
+	'Env_Number',
+	'',
+	'Local_Env_Integer = 99
+
+$USE FTE
+
+
+   [Local_Env_Integer] = FTE2::Environment_Number[]
+
+$ENDUSE
+
+Env_Integer = Local_Env_Integer',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	2);
+INSERT INTO D_TSPARM
+	VALUES ("445fb6bb-eb10-4ab1-aab5-e02c18559cfe",
+	"b5bc4e6e-6f49-479c-84dc-908c3c57dc39",
+	'Env_Integer',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TERM
+	VALUES ("b904faad-822d-44c6-b22c-bf831f34972d",
+	"9def5655-8169-48e6-947a-0cf9dd1631df",
+	'Struct',
+	'',
+	'Struct',
+	'',
+	1,
+	'Struct',
+	'Structures');
+INSERT INTO D_TSVC
+	VALUES ("b68a883e-53a0-4d39-bf93-857bd5d9fe97",
+	"b904faad-822d-44c6-b22c-bf831f34972d",
+	'Decode_Simple_Structure',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("5ad60925-7abf-4074-b828-ad26c82bd01e",
+	"b68a883e-53a0-4d39-bf93-857bd5d9fe97",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("25b655ea-a3ce-4007-aa09-6b097a3e446d",
+	"b68a883e-53a0-4d39-bf93-857bd5d9fe97",
+	'Simple_Structure',
+	"62b9dbba-f599-4a54-b16d-64b5ffd8b626",
+	0,
+	'',
+	"5ad60925-7abf-4074-b828-ad26c82bd01e",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("62b9dbba-f599-4a54-b16d-64b5ffd8b626",
+	"00000000-0000-0000-0000-000000000000",
+	'Struct::Simple_Structure_Type',
+	'',
+	'',
+	'./Shared/Shared.xtuml');
+INSERT INTO D_TSPARM
+	VALUES ("52245763-2b4c-4228-8e5a-1309ca84a91b",
+	"b68a883e-53a0-4d39-bf93-857bd5d9fe97",
+	'Object_Instance_Handle',
+	"6c240ae5-d212-4acc-aa94-3d7a14d26d05",
+	0,
+	'',
+	"25b655ea-a3ce-4007-aa09-6b097a3e446d",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("6c240ae5-d212-4acc-aa94-3d7a14d26d05",
+	"00000000-0000-0000-0000-000000000000",
+	'inst_ref<Structured_Object>',
+	'',
+	'',
+	'./Shared/Shared.xtuml');
+INSERT INTO D_TSVC
+	VALUES ("c26047fd-151d-42e3-a086-b9c57ff79f43",
+	"b904faad-822d-44c6-b22c-bf831f34972d",
+	'Decode_Simple_TL_Structure',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("094a9021-20a7-4c1f-9341-a43735d6bd99",
+	"c26047fd-151d-42e3-a086-b9c57ff79f43",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("11388225-ae6e-46e5-b3e1-ce8be1828fc7",
+	"c26047fd-151d-42e3-a086-b9c57ff79f43",
+	'Simple_Structure',
+	"e6625051-81ba-4dee-ac37-8919b51350da",
+	0,
+	'',
+	"094a9021-20a7-4c1f-9341-a43735d6bd99",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("e6625051-81ba-4dee-ac37-8919b51350da",
+	"00000000-0000-0000-0000-000000000000",
+	'Struct::Type_Linked_Simple_Structure_Type',
+	'',
+	'',
+	'./Shared/Shared.xtuml');
+INSERT INTO D_TSPARM
+	VALUES ("44e8f051-fd5e-44ba-a9c5-ce3bcbbf20bf",
+	"c26047fd-151d-42e3-a086-b9c57ff79f43",
+	'Object_Instance_Handle',
+	"6c240ae5-d212-4acc-aa94-3d7a14d26d05",
+	0,
+	'',
+	"11388225-ae6e-46e5-b3e1-ce8be1828fc7",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("47ce3742-e3e5-4176-ba51-dbb2632b3e20",
+	"b904faad-822d-44c6-b22c-bf831f34972d",
+	'Decode_Simple_NTL_Structure',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("484782ab-bcf9-4e74-b48b-67609d6222d5",
+	"47ce3742-e3e5-4176-ba51-dbb2632b3e20",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("1bac971a-38e7-4bd4-8175-1ae9b45dbd41",
+	"47ce3742-e3e5-4176-ba51-dbb2632b3e20",
+	'Simple_Structure',
+	"976572c6-2dfc-4df9-a875-fc023aa699e0",
+	0,
+	'',
+	"484782ab-bcf9-4e74-b48b-67609d6222d5",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("976572c6-2dfc-4df9-a875-fc023aa699e0",
+	"00000000-0000-0000-0000-000000000000",
+	'Struct::Name_and_Type_Linked_Simple_Structure_Type',
+	'',
+	'',
+	'./Shared/Shared.xtuml');
+INSERT INTO D_TSPARM
+	VALUES ("16b5ea84-5078-4f88-a2dd-0cbb1ef3f525",
+	"47ce3742-e3e5-4176-ba51-dbb2632b3e20",
+	'Object_Instance_Handle',
+	"6c240ae5-d212-4acc-aa94-3d7a14d26d05",
+	0,
+	'',
+	"1bac971a-38e7-4bd4-8175-1ae9b45dbd41",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("f4014ad8-52c6-4607-888e-39e9eb20d17e",
+	"b904faad-822d-44c6-b22c-bf831f34972d",
+	'Decode_Three_Level_Nested_Structure',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("8a5dc235-151d-4087-bcd9-785a98d0c2de",
+	"f4014ad8-52c6-4607-888e-39e9eb20d17e",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("17d09db0-9ade-4164-834c-69bfb4bda070",
+	"f4014ad8-52c6-4607-888e-39e9eb20d17e",
+	'Three_Level_Nest',
+	"a3d23bde-ef6b-4004-be82-dc0ca245abfd",
+	0,
+	'',
+	"8a5dc235-151d-4087-bcd9-785a98d0c2de",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("a3d23bde-ef6b-4004-be82-dc0ca245abfd",
+	"00000000-0000-0000-0000-000000000000",
+	'Struct::First_Nested_Structure_Type',
+	'',
+	'',
+	'./Shared/Shared.xtuml');
+INSERT INTO D_TSPARM
+	VALUES ("24cd9f4b-51e4-4a2b-93fe-777f8f13db17",
+	"f4014ad8-52c6-4607-888e-39e9eb20d17e",
+	'Two_Level_Nest',
+	"944e87d4-518b-4744-a307-6de4fc448329",
+	0,
+	'',
+	"17d09db0-9ade-4164-834c-69bfb4bda070",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("944e87d4-518b-4744-a307-6de4fc448329",
+	"00000000-0000-0000-0000-000000000000",
+	'Struct::Second_Nested_Structure_Type',
+	'',
+	'',
+	'./Shared/Shared.xtuml');
+INSERT INTO D_TSPARM
+	VALUES ("208daf16-ecae-4e5b-9580-a0d1ee76bfe9",
+	"f4014ad8-52c6-4607-888e-39e9eb20d17e",
+	'One_Level_Nest',
+	"b14b5f31-877c-47c1-afc7-ce812bd99210",
+	0,
+	'',
+	"24cd9f4b-51e4-4a2b-93fe-777f8f13db17",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("b14b5f31-877c-47c1-afc7-ce812bd99210",
+	"00000000-0000-0000-0000-000000000000",
+	'Struct::Third_Nested_Structure_Type',
+	'',
+	'',
+	'./Shared/Shared.xtuml');
+INSERT INTO D_TSPARM
+	VALUES ("4520708d-0135-4bbb-b24e-88d15c07e7e2",
+	"f4014ad8-52c6-4607-888e-39e9eb20d17e",
+	'Given_First_Level_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"208daf16-ecae-4e5b-9580-a0d1ee76bfe9",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("90685839-be9d-4426-b797-67547630634b",
+	"f4014ad8-52c6-4607-888e-39e9eb20d17e",
+	'How_Many_In_First',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"4520708d-0135-4bbb-b24e-88d15c07e7e2",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("fd8edee1-5992-45eb-8b79-056ba5ce2533",
+	"f4014ad8-52c6-4607-888e-39e9eb20d17e",
+	'Given_Second_Level_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"90685839-be9d-4426-b797-67547630634b",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("c1d86a91-c8a5-4725-bba7-7db1a18a6a32",
+	"f4014ad8-52c6-4607-888e-39e9eb20d17e",
+	'How_Many_In_Second',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"fd8edee1-5992-45eb-8b79-056ba5ce2533",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("171f9cd6-4a2e-40cf-930e-902bdfe82890",
+	"f4014ad8-52c6-4607-888e-39e9eb20d17e",
+	'Given_Third_Level_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"c1d86a91-c8a5-4725-bba7-7db1a18a6a32",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("2bd6de31-c6a6-4949-8fb5-3176a5578c6a",
+	"f4014ad8-52c6-4607-888e-39e9eb20d17e",
+	'How_Many_In_Third',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"171f9cd6-4a2e-40cf-930e-902bdfe82890",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("47203475-f20f-489c-8738-f7c308414653",
+	"f4014ad8-52c6-4607-888e-39e9eb20d17e",
+	'Given_Third_Level_Colour',
+	"364dab24-ebe3-4a95-a3ac-ef2f3963d21f",
+	0,
+	'',
+	"2bd6de31-c6a6-4949-8fb5-3176a5578c6a",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("364dab24-ebe3-4a95-a3ac-ef2f3963d21f",
+	"00000000-0000-0000-0000-000000000000",
+	'Struct::Colour_Type',
+	'',
+	'',
+	'./Shared/Shared.xtuml');
+INSERT INTO D_TSVC
+	VALUES ("7d4d76b7-55a5-4a3e-b748-c9aa24679d59",
+	"b904faad-822d-44c6-b22c-bf831f34972d",
+	'Create_Report_Data',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSVC
+	VALUES ("0db72dfc-7cb1-49da-8d03-c907c851a5ab",
+	"b904faad-822d-44c6-b22c-bf831f34972d",
+	'Delete_Report_Data',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSVC
+	VALUES ("4b69c7c9-955a-4d19-ae61-a455e5a30d1e",
+	"b904faad-822d-44c6-b22c-bf831f34972d",
+	'Receive_Structure_IH',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("e5f43afe-fbe3-4c8f-a0ae-5a15de39b56d",
+	"4b69c7c9-955a-4d19-ae61-a455e5a30d1e",
+	'This_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("ee7a5383-17b4-468e-a8ec-abd8f7a627f3",
+	"4b69c7c9-955a-4d19-ae61-a455e5a30d1e",
+	'Input_Structure',
+	"22158979-3081-4e0c-8be2-d87f601fc3ea",
+	0,
+	'',
+	"e5f43afe-fbe3-4c8f-a0ae-5a15de39b56d",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("22158979-3081-4e0c-8be2-d87f601fc3ea",
+	"00000000-0000-0000-0000-000000000000",
+	'Struct::Structure_and_IH_Type',
+	'',
+	'',
+	'./Shared/Shared.xtuml');
+INSERT INTO D_TSPARM
+	VALUES ("62adc6a6-2626-4a7f-992a-193899f50c7a",
+	"4b69c7c9-955a-4d19-ae61-a455e5a30d1e",
+	'Number_Of_Elements',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"ee7a5383-17b4-468e-a8ec-abd8f7a627f3",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("231edef3-15f6-4e0e-bd84-f504fa3b6881",
+	"4b69c7c9-955a-4d19-ae61-a455e5a30d1e",
+	'Unique_Identifier_Of_IH',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"62adc6a6-2626-4a7f-992a-193899f50c7a",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("2360be2e-c2b9-4bc3-af4b-8e6f24253409",
+	"4b69c7c9-955a-4d19-ae61-a455e5a30d1e",
+	'Testing_For',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"231edef3-15f6-4e0e-bd84-f504fa3b6881",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("2315b66c-6660-4938-a56b-f2843a0f1311",
+	"b904faad-822d-44c6-b22c-bf831f34972d",
+	'Receive_Empty_Structure_IH',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("b9d46cc3-1634-4b23-a004-20a56c626598",
+	"2315b66c-6660-4938-a56b-f2843a0f1311",
+	'Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("31235d5b-a3c7-443d-b884-9a0ff44e098a",
+	"2315b66c-6660-4938-a56b-f2843a0f1311",
+	'Empty_Structure',
+	"22158979-3081-4e0c-8be2-d87f601fc3ea",
+	0,
+	'',
+	"b9d46cc3-1634-4b23-a004-20a56c626598",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("12eefae4-a2f2-40e1-ac37-cd8cd57a3f71",
+	"2315b66c-6660-4938-a56b-f2843a0f1311",
+	'Inserted_IH',
+	"6c240ae5-d212-4acc-aa94-3d7a14d26d05",
+	0,
+	'',
+	"31235d5b-a3c7-443d-b884-9a0ff44e098a",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("a1a97d8b-71ef-4ef8-9e26-c600ba90505f",
+	"2315b66c-6660-4938-a56b-f2843a0f1311",
+	'Testing_For',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"12eefae4-a2f2-40e1-ac37-cd8cd57a3f71",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("bf627c7c-a945-4a9a-867f-a1bbdc81552c",
+	"2315b66c-6660-4938-a56b-f2843a0f1311",
+	'Filled_Structure',
+	"22158979-3081-4e0c-8be2-d87f601fc3ea",
+	1,
+	'',
+	"a1a97d8b-71ef-4ef8-9e26-c600ba90505f",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("ff79cddb-55fa-43bc-9063-9eabf19ff042",
+	"b904faad-822d-44c6-b22c-bf831f34972d",
+	'Test_The_Structure',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("fd6d3a29-49c0-4148-8f3e-f7f534f24b2d",
+	"ff79cddb-55fa-43bc-9063-9eabf19ff042",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("b7357383-d3b0-458b-80fd-469bbfd27801",
+	"ff79cddb-55fa-43bc-9063-9eabf19ff042",
+	'Structure_Input',
+	"e6a8e140-533e-4e45-a4a7-5c57cb8f9790",
+	0,
+	'',
+	"fd6d3a29-49c0-4148-8f3e-f7f534f24b2d",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("e6a8e140-533e-4e45-a4a7-5c57cb8f9790",
+	"00000000-0000-0000-0000-000000000000",
+	'Struct::My_Simple_Structure',
+	'',
+	'',
+	'./Shared/Shared.xtuml');
+INSERT INTO D_TSPARM
+	VALUES ("a5d48d8b-53b6-41c8-89f6-1af606f8ff5b",
+	"ff79cddb-55fa-43bc-9063-9eabf19ff042",
+	'The_Return_Structure',
+	"e6a8e140-533e-4e45-a4a7-5c57cb8f9790",
+	1,
+	'',
+	"b7357383-d3b0-458b-80fd-469bbfd27801",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("77f36537-0e20-4ffb-bc39-5b01f4b966ad",
+	"b904faad-822d-44c6-b22c-bf831f34972d",
+	'Check_Returning_Structure',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("2573b73c-5bc7-4544-a303-ab44596971f0",
+	"77f36537-0e20-4ffb-bc39-5b01f4b966ad",
+	'Integer_Input',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("766b0b67-24f3-412b-8e2b-af277fb246e1",
+	"77f36537-0e20-4ffb-bc39-5b01f4b966ad",
+	'Real_Input',
+	"ba5eda7a-def5-0000-0000-000000000003",
+	0,
+	'',
+	"2573b73c-5bc7-4544-a303-ab44596971f0",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("5bdae2ba-9b99-47b9-b0ef-db239a97c5e3",
+	"77f36537-0e20-4ffb-bc39-5b01f4b966ad",
+	'String_Input',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"766b0b67-24f3-412b-8e2b-af277fb246e1",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("bf6567c5-da11-4dd1-b8fe-91a6500c1a44",
+	"77f36537-0e20-4ffb-bc39-5b01f4b966ad",
+	'UDT_Input',
+	"364dab24-ebe3-4a95-a3ac-ef2f3963d21f",
+	0,
+	'',
+	"5bdae2ba-9b99-47b9-b0ef-db239a97c5e3",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("957f453d-2f72-4b37-becf-242f335d4393",
+	"77f36537-0e20-4ffb-bc39-5b01f4b966ad",
+	'Returning_Structure',
+	"3d4e5b0e-d785-483a-bb64-a85a0bad5cf3",
+	1,
+	'',
+	"bf6567c5-da11-4dd1-b8fe-91a6500c1a44",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("3d4e5b0e-d785-483a-bb64-a85a0bad5cf3",
+	"00000000-0000-0000-0000-000000000000",
+	'Struct::My_Second_Structure',
+	'',
+	'',
+	'./Shared/Shared.xtuml');
+INSERT INTO D_TERM
+	VALUES ("94f9b561-2aa0-497d-b702-030b79fe76be",
+	"9def5655-8169-48e6-947a-0cf9dd1631df",
+	'Structures_Build_Set::Sequence',
+	'',
+	'Structures_Build_Set',
+	'Sequence',
+	0,
+	'',
+	'');
+INSERT INTO D_TSVC
+	VALUES ("6e6eb821-8ed9-4643-b391-0e6ba77bc080",
+	"94f9b561-2aa0-497d-b702-030b79fe76be",
+	'RP::Enable_Screen_Display',
+	'',
+	'
+$INLINE
+   fprintf(stderr,"Turn screen display ON in ADA mode");
+$ENDINLINE
+
+# Turn on screen reporting in an ada run.
+
+#$ADA_INLINE
+#
+#   with Test_Suite_Text_IO;
+#
+#   Test_Suite_Text_IO.Set_Output(Output_Is_On => TRUE);
+#   Test_Suite_Text_IO.Dump_String(Value => "Writing to screen enabled.");
+#
+#$END_ADAINLINE
+
+
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	0,
+	2);
+INSERT INTO D_TSVC
+	VALUES ("760e5d70-c2ed-4f1c-b8b5-12611735ecdf",
+	"94f9b561-2aa0-497d-b702-030b79fe76be",
+	'FTE::Establish_The_Environment',
+	'',
+	'This_Environment = create unique The_Environment with Where_Are_We = "WACA"
+
+Test_Data = 0
+
+$INLINE
+
+   Test_Data = 1;
+
+   fprintf(stderr,"***** Setting I-SIM environment *****\n");
+
+$ENDINLINE
+
+if Test_Data = 1 then
+   This_Environment.Where_Are_We = "ISIM"
+endif
+
+
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	0,
+	1);
+INSERT INTO D_TSVC
+	VALUES ("11cd73a9-cd1b-4210-87b9-809fceeddaf6",
+	"94f9b561-2aa0-497d-b702-030b79fe76be",
+	'Struct::Start_Structures_Tests',
+	'',
+	'My_Test_Data = create Test_Data with The_Test_Number = 1
+[] = Struct8::Create_Report_Data[]',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	0,
+	6);
+INSERT INTO D_TSVC
+	VALUES ("46385e87-9b80-4d3f-9038-7844a1cf305b",
+	"94f9b561-2aa0-497d-b702-030b79fe76be",
+	'Struct::Simple_Structure_Scenario',
+	'',
+	'# Set up scenario test data.
+Test_Has_Passed = FALSE
+
+My_Test_Data = find-one Test_Data
+Test = My_Test_Data.The_Test_Number
+
+#--------------------------------------------------------------------------
+# Test 1 - Report the number of User Defined Types used
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Reported No UDTs", "Obtain No of UDTs Used"]
+
+   Reported_No_UDT = 0
+   Expected_No_UDT = 0
+
+   $INLINE
+      Reported_No_UDT = 20;
+      fprintf(stderr,"Checking number of UDTs. Hardcoded to %d\n", Reported_No_UDT);
+   $ENDINLINE
+
+   #$ADA_INLINE
+      #with Ada.Text_IO;
+      #
+      #with Struct_Domain_Types;
+      #Reported_No_UDT := Struct_Domain_Types.Types_And_Subtypes_Count;
+   #$END_ADAINLINE
+
+   # This is the hardcoded expected number of user defined types constant.
+   # If any more UDT''s are defined for this domain, this counter MUST be set accordingly.
+   # Failure to do this will cause this test to fail in an ADA run.
+
+   Expected_No_UDT = 20
+
+   if Reported_No_UDT = Expected_No_UDT then
+      [] = RPT2:Test_Passed["Report No UDTs", Test, Reported_No_UDT]
+   else 
+      [] = RPT3:Test_Failed["Report No UDTs", Test, Expected_No_UDT]
+   endif
+
+# End Test 1
+
+#--------------------------------------------------------------------------
+# Test 2 -  Setup Test Data
+#           Basic ''APPEND'' operation tests 
+#           This test shall prove that a set is created empty.
+#--------------------------------------------------------------------------
+
+   Test = Test + 1
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Simple Scenario", "Create empty structure"]
+   [] = RPT8:Specify_Requid[Test, "1101-0000-01-0117"]
+
+   {Empty_Set} is Simple_Structure_Type
+
+   Naught = countof {Empty_Set}
+
+   if Naught = 0 then 
+      [] = RPT2:Test_Passed["Scenario", Test, 0]
+   else
+      [] = RPT3:Test_Failed["Scenario", Test, Naught]
+   endif
+
+# End Test 2
+
+#--------------------------------------------------------------------------
+# Test 3 - Add some data into the set.
+#--------------------------------------------------------------------------
+
+   Test = Test + 1
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Simple Scenario", "Add first structure to set"]
+   [] = RPT8:Specify_Requid[Test, "1101-0000-01-0117"]
+
+   A_First_Local_Colour  of Colour_Type = ''Red''
+   A_Second_Local_Colour of Colour_Type = ''Blue''
+
+   A_First_Local_Number  = 100
+   A_First_Local_Real    = 100.0
+   A_First_Local_String  = "Hello Good Evening and Welcome"
+   A_First_Local_Boolean = TRUE
+
+   append [A_First_Local_Number, A_First_Local_Real, A_First_Local_String, A_First_Local_Boolean, A_First_Local_Colour] to {Empty_Set}
+
+   One = countof {Empty_Set}
+
+   if One = 1 then
+      [] = RPT2:Test_Passed["Scenario", Test, One]
+   else
+      [] = RPT3:Test_Failed["Scenario", Test, One]
+   endif
+
+# End Test 3
+
+#--------------------------------------------------------------------------
+# Test 4 - Add some more data into the set.
+#--------------------------------------------------------------------------
+
+   Test = Test + 1
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Simple Scenario", "Add second structure to set"]
+   [] = RPT8:Specify_Requid[Test, "1101-0000-01-0117"]
+
+   A_Second_Local_Number  = 200
+   A_Second_Local_Real    = 200.0
+   A_Second_Local_String  = "Thankyou and Goodnight"
+   A_Second_Local_Boolean = FALSE
+
+   append [A_Second_Local_Number, A_Second_Local_Real, A_Second_Local_String, A_Second_Local_Boolean, A_Second_Local_Colour] to {Empty_Set}
+
+   Two = countof {Empty_Set}
+
+   if Two = 2 then
+      [] = RPT2:Test_Passed["Scenario", Test, Two]
+   else
+      [] = RPT3:Test_Failed["Scenario", Test, Two]
+   endif
+
+# End Test 4
+
+#--------------------------------------------------------------------------
+# Test 5 -  Read the data back
+#           The Queue is implemented as a FIFO, so read it back as such.
+#           This test will need to change should this implementation ever
+#           change. This test will fail if this happens.
+#--------------------------------------------------------------------------
+
+   Test = Test + 1
+   
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Simple Scenario", "Read back structure from set"]
+   Local_Test_Passed = FALSE
+
+   How_Many = countof {Empty_Set}
+   if How_Many = 2 then
+      Counter = 1
+
+      for [A_Read_Number, A_Read_Real, A_Read_String, A_Read_Boolean, A_Read_Colour] in {Empty_Set} do
+
+         if Counter = 1 and A_Read_Number  = A_First_Local_Number  and \
+                            A_Read_Real    = A_First_Local_Real    and \
+                            A_Read_String  = A_First_Local_String  and \
+                            A_Read_Boolean = A_First_Local_Boolean and \
+                            A_Read_Colour  = A_First_Local_Colour  then
+
+            Local_Test_Passed = TRUE
+         else 
+
+            if Counter = 2 and A_Read_Number     = A_Second_Local_Number  and \
+                               A_Read_Real       = A_Second_Local_Real    and \
+                               A_Read_String     = A_Second_Local_String  and \
+                               A_Read_Boolean    = A_Second_Local_Boolean and \
+                               A_Read_Colour     = A_Second_Local_Colour  and \
+                               Local_Test_Passed = TRUE  then
+
+               [] = RPT2:Test_Passed["Simple Scenario", Test, A_Read_Number]
+            else
+               [] = RPT3:Test_Failed["Simple Scenario", Test, A_Read_Number]
+            endif
+
+         endif
+
+         Counter = Counter + 1
+
+      endfor
+
+   else
+      [] = RPT3:Test_Failed["Scenario", Test, How_Many]
+   endif
+
+# End Test 5
+
+#--------------------------------------------------------------------------
+# Test 6 - Read the data back again
+#          Prove that reading a set of structures does not change it
+#--------------------------------------------------------------------------
+
+   Test = Test + 1
+      
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Simple Scenario", "Prove non-destructive read"]
+
+   Local_Test_Passed = FALSE
+
+   How_Many = countof {Empty_Set}
+
+   if How_Many = 2 then
+      Counter = 1
+
+      for [A_Read_Number, A_Read_Real, A_Read_String, A_Read_Boolean, A_Read_Colour] in {Empty_Set} do
+
+         if Counter = 1 and A_Read_Number  = A_First_Local_Number  and \
+                            A_Read_Real    = A_First_Local_Real    and \
+                            A_Read_String  = A_First_Local_String  and \
+                            A_Read_Boolean = A_First_Local_Boolean and \
+                            A_Read_Colour  = A_First_Local_Colour  then
+ 
+            Local_Test_Passed = TRUE
+
+         else 
+
+            if Counter = 2 and A_Read_Number     = A_Second_Local_Number  and \
+                               A_Read_Real       = A_Second_Local_Real    and \
+                               A_Read_String     = A_Second_Local_String  and \
+                               A_Read_Boolean    = A_Second_Local_Boolean and \
+                               A_Read_Colour     = A_Second_Local_Colour  and \
+                               Local_Test_Passed = TRUE  then
+
+               [] = RPT2:Test_Passed["Scenario", Test, A_Read_Number]
+            else
+               [] = RPT3:Test_Failed["Scenario", Test, A_Read_Number]
+            endif
+
+         endif
+
+         Counter = Counter + 1
+
+      endfor
+
+   else
+      [] = RPT3:Test_Failed["Scenario", Test, How_Many]
+   endif
+
+# End Test 6
+
+#--------------------------------------------------------------------------
+# Test 7 - Call object based synch service to create a data structure, 
+#          return it and then confirm that it was created correctly.
+#          This test creates a new return list for each test, so the 
+#          structure is always empty when we start.
+#--------------------------------------------------------------------------
+
+   Test = Test + 1
+   Termination_Condition = Test + 5
+
+   A_Real_Number = 1.0
+   
+   # Create a new structure object.
+   {Returned_Simple_Structure_1} is Simple_Structure_Type
+
+   struct_1 = create Structured_Object with Reference_SO  = Test                    & \
+                                            Some_Text     = "Construct a structure" & \
+                                            An_Integer    = Test                    & \
+                                            A_Real        = A_Real_Number           &\
+                                            A_Boolean     = TRUE                    &\
+                                            A_Colour      = ''Green''                 &\
+                                            Current_State = ''Idle''
+
+
+
+   [{Returned_Simple_Structure_1}] = SO1:Create_Simple_Structure[Test, struct_1]
+
+# End Test 7
+
+#--------------------------------------------------------------------------
+# Test 8
+#--------------------------------------------------------------------------
+
+   Test = Test + 1
+
+   [] = SO2:Decode_Simple_Structure[Test, {Returned_Simple_Structure_1}, struct_1, FALSE]
+
+   delete struct_1
+
+# End Test 8
+
+#--------------------------------------------------------------------------
+# Test 9 - Call object based synch service to create a data structure, 
+#          return it and then confirm that it was created correctly.
+#          This test uses the same return parameter for all tests, so the 
+#          results are appended on to the old return structure.
+#
+#          This test will examine what happens when an emptied set is 
+#          reused.
+#          The set will be emptied by the Decode_Simple_Structure service, 
+#          and then written to again by the next iteration of the 
+#          Create_Simple_Structure.
+#
+#          It is understood that for WACA 3.0.0 reading the final entry 
+#          from a set will cause that set to be deleted. Subsequent appends
+#          to that set will cause a fatal crash.
+#
+#          This is no longer the case for subsequent issues. However,  the
+#          test still has some relevance, as it proves that structures can 
+#          be partially read from, and then appended to again.
+#--------------------------------------------------------------------------
+
+   Test = Test + 1
+
+   Termination_Condition = Test + 10
+
+   A_Real_Number = 1.0
+
+   {Returned_Simple_Structure_2} is Simple_Structure_Type
+
+   loop
+      # Create a couple of structured objects
+      struct_2 = create Structured_Object with Reference_SO  = Test                    &\
+                                               Some_Text     = "Construct a structure" &\
+                                               An_Integer    = Test                    &\
+                                               A_Real        = A_Real_Number           &\
+                                               A_Boolean     = FALSE                   &\
+                                               A_Colour      = ''Green''                 &\
+                                               Current_State = ''Idle''
+
+      a_structured_instance_2 = find-one Structured_Object where Reference_SO = Test
+
+      # Create a new structure object each time, otherwise the same
+      # structure will be appended to each iteration.
+      [{Returned_Simple_Structure_2}] = SO1:Create_Simple_Structure[Test, a_structured_instance_2]
+
+      Test = Test + 1
+
+      [] = SO2:Decode_Simple_Structure[Test, {Returned_Simple_Structure_2}, a_structured_instance_2, TRUE]
+
+      # Delete the object now we''ve done with it.
+      delete a_structured_instance_2
+
+      Test = Test + 1
+
+      breakif Test = Termination_Condition
+
+   endloop
+
+# End Test 9
+
+#--------------------------------------------------------------------------
+# Test 10 - Define a test which passes a single structure to an instance 
+#           through a generated event.
+#--------------------------------------------------------------------------
+
+   A_Real_Number = 1.0
+
+   struct_3 = create Structured_Object with Reference_SO  = Test                        &\
+                                            Some_Text     = "generate simple structure" &\
+                                            An_Integer    = Test                        &\
+                                            A_Real        = A_Real_Number               &\
+                                            A_Boolean     = FALSE                       &\ 
+                                            A_Colour      = ''Green''                     &\
+                                            Current_State = ''Idle''
+
+   # Create a simple structure and pass it in to the instance Simple_F1
+   {Simple_Object_Structure_3} is Simple_Structure_Type
+
+   append [struct_3.Reference_SO, \
+          struct_3.A_Real,        \
+          struct_3.Some_Text,     \
+          struct_3.A_Boolean,     \
+          struct_3.A_Colour ] to {Simple_Object_Structure_3}
+
+   generate SO1:Start_Simple(Test, {Simple_Object_Structure_3} ) to struct_3
+
+# End Test 10
+
+#--------------------------------------------------------------------------
+# Test 11 - Perform the same test again, except this time use a set of 
+#           structures with more than one set in it.
+#--------------------------------------------------------------------------
+
+   Test = Test + 1
+
+   A_Real_Number = 1.0
+
+   struct_4 = create Structured_Object with Reference_SO  = Test                        &\
+                                            Some_Text     = "generate simple structure" &\
+                                            An_Integer    = Test                        &\
+                                            A_Real        = A_Real_Number               &\
+                                            A_Boolean     = FALSE                       &\
+                                            A_Colour      = ''Green''                     &\
+                                            Current_State = ''Idle''
+
+   {Simple_Object_Structure_4} is Simple_Structure_Type
+
+   Termination_Condition = 10
+   Counter = 0
+
+   loop
+      append [struct_4.An_Integer, \
+              struct_4.A_Real,     \
+              struct_4.Some_Text,  \
+              struct_4.A_Boolean,  \
+              struct_4.A_Colour] to {Simple_Object_Structure_4}
+
+      Counter = Counter + 1
+
+      breakif Counter = Termination_Condition
+
+   endloop
+
+   generate SO1:Start_Simple(Test, {Simple_Object_Structure_4} ) to struct_4
+
+# End Test 11
+
+#--------------------------------------------------------------------------
+# Test 12 - Pass in the simple structure into a domain based synchronous 
+#           service.
+#--------------------------------------------------------------------------
+
+   Test = Test + 1
+
+   struct_5 = create Structured_Object with Reference_SO  = Test                         &\
+                                            Some_Text     = "Domain based synch service" &\
+                                            An_Integer    = Test                         &\
+                                            A_Real        = 2.0                          &\
+                                            A_Boolean     = TRUE                         &\
+                                            A_Colour      = ''Green''                      &\
+                                            Current_State = ''Idle''
+
+   {Simple_Object_Structure_5} is Simple_Structure_Type
+
+   Termination_Condition = 10
+   Counter = 1
+
+   loop
+      append [struct_5.An_Integer, \
+              struct_5.A_Real,     \
+              struct_5.Some_Text,  \
+              struct_5.A_Boolean,  \
+              struct_5.A_Colour] to {Simple_Object_Structure_5}
+
+      Counter = Counter + 1
+
+      breakif Termination_Condition = Counter
+
+   endloop
+
+   # Invoke domain based synch. service
+   [] = Struct2::Decode_Simple_Structure[Test, {Simple_Object_Structure_5}, struct_5]
+
+   delete struct_5
+
+# End Test 12
+
+#--------------------------------------------------------------------------
+
+Test = Test + 1
+
+My_Test_Data.The_Test_Number = Test
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	0,
+	1);
+INSERT INTO D_TSVC
+	VALUES ("2e1264f2-7451-4f62-9c77-d48692d1c18a",
+	"94f9b561-2aa0-497d-b702-030b79fe76be",
+	'Struct::Complex_Structure_Scenario',
+	'',
+	'My_Test_Data = find-one Test_Data
+
+Test = My_Test_Data.The_Test_Number
+
+Zero = 0
+
+#--------------------------------------------------------------------------
+# Test 1
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Complex Scenario", "Create empty structure"]
+
+   {Outer_Set} is Complex_UDT_Structure_Type
+
+   Nought = countof {Outer_Set}
+
+   if Nought = Zero then
+      [] = RPT2:Test_Passed["Create empty structure", Test, 0]
+   else
+      [] = RPT3:Test_Failed["Create empty structure", Test, Nought]
+   endif
+
+   Test = Test + 1
+
+# End Test 1
+
+#--------------------------------------------------------------------------
+# Test 2 - Add some data into the set.
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Complex Scenario", "Add data into structure"]
+
+   local_integer       = 10
+   local_real          = 10.0
+   local_basic_integer = 101
+
+   local_colour of Colour_Type = ''Red''
+
+   {Inner_Set} is UDT_Structure_Type
+
+   append [local_integer, local_real] to {Inner_Set}
+
+   append [local_integer, local_real, {Inner_Set}, local_basic_integer, local_colour] to {Outer_Set}
+
+   number_in_inner_set = countof {Inner_Set}
+   number_in_outer_set = countof {Outer_Set}
+
+   if number_in_inner_set = 1 then
+
+      if number_in_outer_set = 1 then 
+         [] = RPT2:Test_Passed["Add data into structure", Test, 0]
+      else
+         [] = RPT3:Test_Failed["Add data into structure", Test, number_in_outer_set]
+      endif
+
+   else
+      [] = RPT3:Test_Failed["Add data into structure", Test, number_in_inner_set]
+   endif
+
+   Test = Test + 1
+
+# End Test 2
+
+#--------------------------------------------------------------------------
+# Test 3 - Add a second entry into both sets
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Complex Scenario", "Add more data into inner and outer structures"]
+
+   local_integer       = 20
+   local_real          = 20.0
+   local_basic_integer = 201
+
+   local_colour of Colour_Type = ''Blue''
+
+   append [local_integer, local_real] to {Inner_Set}
+   append [local_integer, local_real, {Inner_Set}, local_basic_integer, local_colour] to {Outer_Set}
+
+   number_in_inner_set = countof {Inner_Set}
+   number_in_outer_set = countof {Outer_Set}
+
+   if number_in_inner_set = 2 then
+  
+      if number_in_outer_set = 2 then 
+         [] = RPT2:Test_Passed["Add more data into structure", Test, 0]
+      else
+         [] = RPT3:Test_Failed["Add more data into structure", Test, number_in_outer_set]
+      endif
+
+   else
+      [] = RPT3:Test_Failed["Add more data into structure", Test, number_in_inner_set]
+   endif
+
+   Test = Test + 1
+
+# End Test 3
+
+#--------------------------------------------------------------------------
+#  Test 4 - Add a new inner set into position 3 of the outer set.
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Complex Scenario", "Add new inner structure into outer structure"]
+
+   local_integer       = 30
+   local_real          = 30.0
+   local_basic_integer = 301
+   local_colour of Colour_Type = ''Green''
+
+   {New_Inner_Set} is UDT_Structure_Type
+
+   append [local_integer, local_real] to {New_Inner_Set}
+   append [local_integer, local_real, {New_Inner_Set}, local_basic_integer, local_colour] to {Outer_Set}
+
+   number_in_inner_set = countof {New_Inner_Set}
+   number_in_outer_set = countof {Outer_Set}
+
+   if number_in_inner_set = 1 then
+
+      if number_in_outer_set = 3 then 
+         [] = RPT2:Test_Passed["Add more data into structure", Test, 0]
+      else
+         [] = RPT3:Test_Failed["Add more data into structure", Test, number_in_outer_set]
+      endif
+
+   else
+      [] = RPT3:Test_Failed["Add more data into structure", Test, number_in_inner_set]
+   endif
+
+   Test = Test + 1
+
+# End Test 4
+
+#--------------------------------------------------------------------------
+# Test 5 - Decode all sets of structures
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Complex Scenario", "Decode structures"]
+
+   {decoded_inner_structure} is UDT_Structure_Type
+
+   number_in_both_structures = 0
+   total_value = 0
+
+   number_in_outer_set = countof {Outer_Set}
+
+   number_in_both_structures = number_in_outer_set
+
+   for [this_integer, this_real, {decoded_inner_structure}, this_basic_integer, this_colour] in {Outer_Set} do
+      total_value               = total_value + this_integer
+      number_in_inner_set       = countof {decoded_inner_structure}
+      number_in_both_structures = number_in_inner_set + number_in_both_structures
+
+      for [this_inner_integer, this_inner_real] in {decoded_inner_structure} do
+         total_value = total_value + this_inner_integer
+      endfor
+
+   endfor
+
+   if total_value = 130 then
+      [] = RPT2:Test_Passed["Decode structures", Test, number_in_both_structures]
+   else
+      [] = RPT3:Test_Failed["Decode structures", Test, number_in_both_structures]
+   endif
+
+   Test = Test + 1
+
+# End Test 5
+
+#--------------------------------------------------------------------------
+# Test 6 - Since we are no longer labouring under the destructive read 
+#          restrictions, it would be prudent to check that all structures 
+#          are still current in all sets.
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Complex Scenario", "And again"]
+
+   {empty_decoded_inner_structure} is UDT_Structure_Type
+
+   number_in_both_structures = 0
+   total_value               = 0
+   number_in_outer_set       = countof {Outer_Set}
+   number_in_both_structures = number_in_outer_set
+
+   for [this_integer, this_real, {empty_decoded_inner_structure}, this_basic_integer, this_colour] in {Outer_Set} do
+      total_value               = total_value + this_integer
+      number_in_inner_set       = countof {empty_decoded_inner_structure}
+      number_in_both_structures = number_in_inner_set + number_in_both_structures
+
+      for [this_inner_integer, this_inner_real] in {empty_decoded_inner_structure} do
+         total_value = total_value + this_inner_integer
+      endfor
+
+   endfor
+
+   if total_value = 130 then
+      [] = RPT2:Test_Passed["And again", Test, number_in_both_structures]
+   else
+      [] = RPT3:Test_Failed["And again", Test, number_in_both_structures]
+   endif
+
+   Test = Test + 1
+
+# End Test 6
+
+#--------------------------------------------------------------------------
+# Test 7 - Having established how sets of structures are contained in a set 
+#          of structures, examine how the data is held, deep or shallow 
+#          copy. To achieve this, the test shall add on entry the the inner 
+#          & outer sets to check how that addition has affected the other 
+#          sets in the outer set that point to it.
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Complex Scenario", "Deep or shallow copy"]
+
+   local_integer       = 40
+   local_real          = 40.0
+   local_basic_integer = 401
+
+   local_colour of Colour_Type = ''Red''
+
+   append [local_integer, local_real] to {Inner_Set}
+
+   append [local_integer, local_real, {Inner_Set}, local_basic_integer, local_colour] to {Outer_Set}
+
+   # Having added a third entry onto the inner and and a fourth to the outer set, 
+   # have a look to see if the earlier entries in the outer set point to the latest version 
+   # of the inner set, ie. outer_set(1).{inner_set} = inner_set(4). If this is the case then 
+   # we have a shallow copy, otherwise if outer_set(1).{inner_set] = inner_set(1) then we have a deep copy.
+
+   # A deep copy is what is required here.
+   {fresh_decoded_inner_structure} is UDT_Structure_Type
+
+   A_Counter    = 0
+   Passed_Count = 0
+ 
+   {fresh_decoded_inner_structure} is UDT_Structure_Type
+
+   for [this_integer, this_real, {fresh_decoded_inner_structure}, this_basic_integer, this_colour] in {Outer_Set} do
+      A_Counter          = A_Counter + 1
+      Number_In_This_Set = countof{fresh_decoded_inner_structure}
+
+      if A_Counter = 1 and Number_In_This_Set = 1 then
+         Passed_Count = Passed_Count + 1        
+      else
+
+         if A_Counter = 2 and Number_In_This_Set = 2 then
+            Passed_Count = Passed_Count + 1        
+         else
+
+            if A_Counter = 3 and Number_In_This_Set = 1 then
+               Passed_Count = Passed_Count + 1        
+            else
+
+               if A_Counter = 4 and Number_In_This_Set = 3 then
+                  Passed_Count = Passed_Count + 1        
+               endif
+
+            endif
+
+         endif
+
+      endif
+
+   endfor
+
+   number_in_outer_set = countof {Outer_Set}
+
+   # This test has proved that first structure of the outer set of structures contains the inner set(a)  
+   # with 1 structure and that the second structure of the outer set contains the inner set(a) with two 
+   # structures, the third structure of the outer set contains a new inner set(b) with one structure and 
+   # finally, the fourth structure of the outer set contains the inner set (a) now with three structures.
+   # Exactly as it was set up.
+
+   # A shallow copy would have shown that the first structure in the outer set had an 
+   # inner structure with three structures.
+
+   if Passed_Count = number_in_outer_set then
+      [] = RPT2:Test_Passed["DEEP copy", Test, 0]
+   else
+      [] = RPT3:Test_Failed["SHALLOW copy", Test, Passed_Count]
+   endif
+
+   Test = Test + 1
+
+# End Test 7
+
+#--------------------------------------------------------------------------
+# Test 8 - Having proved that each outer set contains the requisite number 
+#          of inner sets, now show that the inner set is actually the inner
+#          set we expected to see.
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Complex Scenario", "Compare contents of inner and outer structures"]
+
+   {another_fresh_decoded_inner_structure} is UDT_Structure_Type
+
+   A_Counter = 0
+   Total_Number_Of_Inner_Structures = 0
+
+   Inner_Count  = 0
+   Passed_Count = 0
+
+   for [this_integer, this_real, {another_fresh_decoded_inner_structure}, this_basic_integer, this_colour] in {Outer_Set} do
+      Inner_Count = 0
+      A_Counter   = A_Counter + 1
+
+      Number_In_This_Set = countof {another_fresh_decoded_inner_structure}
+
+      Total_Number_Of_Inner_Structures =Total_Number_Of_Inner_Structures + Number_In_This_Set
+
+      for [inner_integer, inner_real] in {another_fresh_decoded_inner_structure} do
+         Inner_Count = Inner_Count + 1
+
+         if A_Counter = 1 and Number_In_This_Set = 1 then
+
+            if Inner_Count = 1 and (inner_integer = 10 and inner_real = 10.0) then
+               Passed_Count = Passed_Count + 1        
+            endif
+
+         else
+
+            if A_Counter = 2 and Number_In_This_Set = 2 then
+
+               if (Inner_Count = 1 and (inner_integer = 10 and inner_real = 10.0)) or \ 
+                  (Inner_Count = 2 and (inner_integer = 20 and inner_real = 20.0)) then
+
+                  Passed_Count = Passed_Count + 1        
+ 
+               endif
+   
+            else
+
+               if A_Counter = 3 and Number_In_This_Set = 1 then
+
+                  if Inner_Count = 1 and (inner_integer = 30 and inner_real = 30.0) then 
+                     Passed_Count = Passed_Count + 1        
+                  endif
+
+               else
+
+                  if A_Counter = 4 and Number_In_This_Set = 3 then
+
+                     if (Inner_Count = 1 and (inner_integer = 10 and inner_real = 10.0)) or \ 
+                        (Inner_Count = 2 and (inner_integer = 20 and inner_real = 20.0)) or \
+                        (Inner_Count = 3 and (inner_integer = 40 and inner_real = 40.0)) then
+
+                        Passed_Count = Passed_Count + 1        
+                     endif
+
+                  endif
+
+               endif
+
+            endif
+
+         endif
+
+      endfor
+
+   endfor
+
+   if Passed_Count = Total_Number_Of_Inner_Structures then
+      [] = RPT2:Test_Passed["DEEP copy", Test, Total_Number_Of_Inner_Structures]
+   else
+      [] = RPT3:Test_Failed["SHALLOW copy", Test, Passed_Count]
+   endif
+
+   Test = Test + 1
+
+# End Test 8
+
+#--------------------------------------------------------------------------
+# Test 9 - Show what happens when two outer structures point to the same 
+#          inner stucture.
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Complex Scenario", "Compare contents of outer structures"]
+
+   {First_Outer_Set}  is Complex_UDT_Structure_Type
+   {Second_Outer_Set} is Complex_UDT_Structure_Type
+   {Common_Inner_Set} is UDT_Structure_Type
+
+   local_integer       = 10
+   local_real          = 10.0
+   local_basic_integer = 101
+   local_colour of Colour_Type = ''Red''
+
+   append [local_integer,local_real] to {Common_Inner_Set}
+
+   append [local_integer, local_real, {Common_Inner_Set}, local_basic_integer, local_colour] to {First_Outer_Set}
+   append [local_integer, local_real, {Common_Inner_Set}, local_basic_integer, local_colour] to {Second_Outer_Set}
+
+   # Now add a new structure to the common inner set
+   local_integer       = 20
+   local_real          = 20.0
+   local_basic_integer = 201
+
+   local_colour of Colour_Type = ''Blue''
+
+   append [local_integer,local_real] to {Common_Inner_Set}
+
+   # Add this new set of structures to the second outer set, but not the first.
+   append [local_integer, local_real, {Common_Inner_Set}, local_basic_integer, local_colour] to {Second_Outer_Set}
+
+   # Now add a new structure to the inner set
+   local_integer       = 30
+   local_real          = 30.0
+   local_basic_integer = 301
+
+   local_colour of Colour_Type = ''Green''
+
+   append [local_integer,local_real] to {Common_Inner_Set}
+
+   # Add this new set of structures to the first outer set, but not the second
+   append [local_integer, local_real, {Common_Inner_Set}, local_basic_integer, local_colour] to {First_Outer_Set}
+
+   # So, what we have is two outer sets of structures, both with a common first inner set, but different second inner
+   # structures.
+
+   {First_Inner_Set}  is UDT_Structure_Type
+
+   First_Total_Count = 0
+
+   for [this_integer, this_real, {First_Inner_Set}, this_basic_integer, this_colour] in {First_Outer_Set} do
+      First_Total_Count = First_Total_Count + this_integer
+
+      for [inner_integer, inner_real] in {First_Inner_Set} do
+         First_Total_Count = First_Total_Count + inner_integer
+      endfor
+
+   endfor
+
+   {Second_Inner_Set} is UDT_Structure_Type
+
+   Second_Total_Count = 0
+  
+   for [this_integer, this_real, {Second_Inner_Set}, this_basic_integer, this_colour] in {Second_Outer_Set} do
+      Second_Total_Count = Second_Total_Count + this_integer
+
+      for [inner_integer, inner_real] in {Second_Inner_Set} do
+         Second_Total_Count = Second_Total_Count + inner_integer
+      endfor
+
+   endfor
+
+   if First_Total_Count = 110 and Second_Total_Count = 70 then
+      [] = RPT2:Test_Passed["DEEP copy", Test, Total_Number_Of_Inner_Structures]
+   else
+      [] = RPT3:Test_Failed["SHALLOW copy", Test, First_Total_Count]
+   endif
+
+   Test = Test + 1
+
+# End Test 9
+
+#--------------------------------------------------------------------------
+# Test 10
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Complex Scenario", "Append an empty structure"]
+
+   # Append an empty simple structures to a outer structure.
+   {Empty_Structure} is UDT_Structure_Type
+   {Outer_Structure} is Complex_UDT_Structure_Type
+
+   append [local_integer, local_real, {Empty_Structure}, local_basic_integer, local_colour] to {Outer_Structure}
+
+   Number_In_Outer_Structures   = countof {Outer_Structure}
+   Number_In_Empty_Structure    = countof {Empty_Structure}
+
+   if Number_In_Outer_Structures   =1 & Number_In_Empty_Structure    = 0 then
+      [] = RPT2:Test_Passed["Append empty structure to complex structure", Test, Number_In_Empty_Structure]
+   else
+      [] = RPT3:Test_Failed["Append empty structure to complex structure", Test, Number_In_Empty_Structure]
+   endif
+
+#--------------------------------------------------------------------------
+
+Test = Test + 1
+
+My_Test_Data.The_Test_Number = Test
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	0,
+	2);
+INSERT INTO D_TSVC
+	VALUES ("4261465b-7f7a-4c83-b85e-739b7c4d8970",
+	"94f9b561-2aa0-497d-b702-030b79fe76be",
+	'Struct::Simple_Type_Linked_Structure_Scenario',
+	'',
+	'#--------------------------------------------------------------------------
+# Setup Test Data
+#
+# TYPE LINKED Simple Structures
+#--------------------------------------------------------------------------
+
+My_Test_Data = find-one Test_Data
+Test = My_Test_Data.The_Test_Number
+
+#--------------------------------------------------------------------------
+# Test 1 - Basic ''APPEND'' operation tests
+#          This test shall prove that a set is created empty.
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Scenario", "Create empty TL structure"]
+
+   {TL_Empty_Set} is Type_Linked_Simple_Structure_Type
+
+   Naught = countof {TL_Empty_Set}
+
+   if Naught = 0 then 
+      [] = RPT2:Test_Passed["Scenario", Test, 0]
+   else
+      [] = RPT3:Test_Failed["Scenario", Test, Naught]
+   endif
+
+   Test = Test + 1
+
+# End Test 1
+
+#--------------------------------------------------------------------------
+# Test 2 - Add some data into the set
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Scenario", "Add first TL structure to set"]
+
+   A_First_Local_Number  = 100
+   A_First_Local_Real    = 100.0
+   A_First_Local_String  = "Hello Good Evening and Welcome"
+   A_First_Local_Boolean = TRUE
+
+   append [A_First_Local_Number, A_First_Local_Real, A_First_Local_String, A_First_Local_Boolean] to {TL_Empty_Set}
+
+   One = countof {TL_Empty_Set}
+
+   if One = 1 then
+      [] = RPT2:Test_Passed["Scenario", Test, One]
+   else
+      [] = RPT3:Test_Failed["Scenario", Test, One]
+   endif
+
+   Test = Test + 1
+
+# End  Test 2
+
+#--------------------------------------------------------------------------
+# Test 3 - Add some more data into the set.
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Scenario", "Add second TL structure to set"]
+
+   A_Second_Local_Number  = 200
+   A_Second_Local_Real    = 200.0
+   A_Second_Local_String  = "Thankyou and Goodnight"
+   A_Second_Local_Boolean = FALSE
+
+   append [A_Second_Local_Number, A_Second_Local_Real, A_Second_Local_String, A_Second_Local_Boolean] to {TL_Empty_Set}
+
+   Two = countof {TL_Empty_Set}
+
+   if Two = 2 then
+      [] = RPT2:Test_Passed["Scenario", Test, Two]
+   else
+      [] = RPT3:Test_Failed["Scenario", Test, Two]
+   endif
+
+   Test = Test + 1
+
+# End Test 3
+
+#--------------------------------------------------------------------------
+# Test 4 - Read the data back
+#          The Queue is implemented as a FIFO, so read it back as such.
+#          This test will need to change should this implementation ever
+#          change. This test will fail if this happens.
+#--------------------------------------------------------------------------
+   
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Scenario", "Read back TL structure from set"]
+
+   Counter = 1
+
+   Local_Test_Passed = FALSE
+
+   for [A_Read_Number, A_Read_Real, A_Read_String, A_Read_Boolean] in {TL_Empty_Set} do
+
+      if Counter = 1 and A_Read_Number  = A_First_Local_Number  and \
+                         A_Read_Real    = A_First_Local_Real    and \
+                         A_Read_String  = A_First_Local_String  and \
+                         A_Read_Boolean = A_First_Local_Boolean then
+
+        Local_Test_Passed = TRUE
+
+      else
+
+         if Counter = 2 and A_Read_Number  = A_Second_Local_Number  and \
+                            A_Read_Real    = A_Second_Local_Real    and \
+                            A_Read_String  = A_Second_Local_String  and \
+                            A_Read_Boolean = A_Second_Local_Boolean and \
+                            Local_Test_Passed = TRUE then
+
+            [] = RPT2:Test_Passed["Scenario", Test, A_Read_Number]
+         else
+            [] = RPT3:Test_Failed["Scenario", Test, A_Read_Number]
+         endif
+
+      endif
+
+      Counter = Counter + 1
+
+   endfor
+
+   Test = Test + 1
+
+# End Test 4
+
+#--------------------------------------------------------------------------
+# Test 5 - Read the data back again
+#          Prove that reading a set of structures does not change it
+#--------------------------------------------------------------------------
+      
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Scenario", "Prove non-destructive read"]
+
+   Local_Test_Passed = FALSE
+
+   How_Many = countof {TL_Empty_Set}
+
+   if How_Many = 2 then
+      Counter = 1
+
+      for [A_Read_Number, A_Read_Real, A_Read_String, A_Read_Boolean] in {TL_Empty_Set} do
+
+         if Counter = 1 and A_Read_Number  = A_First_Local_Number and \
+                            A_Read_Real    = A_First_Local_Real   and \
+                            A_Read_String  = A_First_Local_String and \
+                            A_Read_Boolean = A_First_Local_Boolean then
+
+            Local_Test_Passed = TRUE
+
+         else 
+
+            if Counter = 2 and A_Read_Number  = A_Second_Local_Number  and \
+                               A_Read_Real    = A_Second_Local_Real    and \
+                               A_Read_String  = A_Second_Local_String  and \
+                               A_Read_Boolean = A_Second_Local_Boolean and \
+                               Local_Test_Passed = TRUE then
+
+               [] = RPT2:Test_Passed["Scenario", Test, A_Read_Number]
+            else
+               [] = RPT3:Test_Failed["Scenario", Test, A_Read_Number]
+            endif
+
+         endif
+
+         Counter = Counter + 1
+
+      endfor
+
+   else
+      [] = RPT3:Test_Failed["Scenario", Test, How_Many]
+   endif
+
+   Test = Test + 1
+
+# End Test 5
+
+#--------------------------------------------------------------------------
+# Test 6 - Call object based synch service to create a data structure, 
+#          return it and then confirm that it was created correctly.
+#          This test creates a new return list for each test, so the 
+#          structure is always empty when we start.
+#--------------------------------------------------------------------------
+
+   A_Real_Number = 1.0
+   
+   # Create a new structure object.
+   {TL_Returned_Simple_Structure_1} is Type_Linked_Simple_Structure_Type
+
+   struct_1 = create Structured_Object with Reference_SO  = Test                    &\
+                                            Some_Text     = "Construct a structure" &\
+                                            An_Integer    = Test                    &\
+                                            A_Real        = A_Real_Number           &\
+                                            A_Boolean     = TRUE                    &\
+                                            A_Colour      = ''Red''                   &\
+                                            Current_State = ''Idle''
+
+   [{TL_Returned_Simple_Structure_1}] = SO5:Create_Simple_TL_Structure[Test, struct_1]
+
+   Test = Test + 1
+
+   [] = SO6:Decode_Simple_TL_Structure[Test, {TL_Returned_Simple_Structure_1}, struct_1, FALSE]
+
+   delete struct_1
+
+   Test = Test + 1
+
+# End Test 6
+
+#--------------------------------------------------------------------------
+# Test 7 - Call object based synch service to create a data structure, 
+#          return it and then confirm that it was created correctly.
+#          This test uses the same return parameter for all tests, so the 
+#          results are appended on to the old return structure.
+#
+#          This test will examine what happens when an emptied set is 
+#          reused.
+#          The set will be emptied by the Decode_Simple_Structure service, 
+#          and then written to again by the next iteration of the 
+#          Create_Simple_Structure.
+#
+#          It is understood that reading the final entry from a set will 
+#          cause that set to be deleted. Subsequent appends to that set will
+#          cause a fatal crash.
+#
+#          To avoid this, ensure that the final entry of a set is never read 
+#          from.
+#          This will prove that a set may be written to again after it has 
+#          been partially read from.
+#--------------------------------------------------------------------------
+
+   Termination_Condition = Test + 10
+
+   A_Real_Number = 1.0
+
+   {TL_Returned_Simple_Structure_2} is Type_Linked_Simple_Structure_Type
+
+   loop
+      # Create a couple of structured objects
+      struct_2 = create Structured_Object with Reference_SO  = Test                    &\
+                                               Some_Text     = "Construct a structure" &\
+                                               An_Integer    = Test                    &\
+                                               A_Real        = A_Real_Number           &\
+                                               A_Boolean     = FALSE                   &\
+                                               A_Colour      = ''Red''                   &\
+                                               Current_State = ''Idle''
+
+      a_structured_instance_2 = find-one Structured_Object where Reference_SO = Test
+
+      # Create a new structure object each time, otherwise the same
+      # structure will be appended to each iteration.
+      [{TL_Returned_Simple_Structure_2}] = SO5:Create_Simple_TL_Structure[Test, a_structured_instance_2]
+
+      Test = Test + 1
+
+      [] = SO6:Decode_Simple_TL_Structure[Test,\
+                                          {TL_Returned_Simple_Structure_2},\
+                                          a_structured_instance_2, \
+                                          TRUE]
+
+      # Delete the object now we''ve done with it.
+      delete a_structured_instance_2
+
+      Test = Test + 1
+
+      breakif Test = Termination_Condition
+
+   endloop
+
+# End Test 7
+
+#--------------------------------------------------------------------------
+# Test 8 - Define a test which passes a single structure to an instance 
+#          through a generated event.
+#--------------------------------------------------------------------------
+
+   A_Real_Number = 1.0
+
+   struct_3 = create Structured_Object with Reference_SO  = Test                        &\
+                                            Some_Text     = "generate simple structure" &\
+                                            An_Integer    = Test                        &\
+                                            A_Real        = A_Real_Number               &\
+                                            A_Boolean     = FALSE                       &\
+                                            A_Colour      = ''Red''                       &\
+                                            Current_State = ''Idle''
+
+   # Create a simple structure and pass it in to the instance Simple_F1
+   {TL_Simple_Object_Structure_3} is Type_Linked_Simple_Structure_Type
+
+   append [struct_3.Reference_SO, \
+           struct_3.A_Real,       \
+           struct_3.Some_Text,    \
+           struct_3.A_Boolean] to {TL_Simple_Object_Structure_3}
+
+   generate SO5:Start_TL_Simple(Test, {TL_Simple_Object_Structure_3} ) to struct_3
+
+   Test = Test + 1
+
+# End Test 8
+
+#--------------------------------------------------------------------------
+# Test 9 - Perform the same test again, except this time use a set of 
+#          structures with more than one set in it.
+#--------------------------------------------------------------------------
+
+   A_Real_Number = 1.0
+
+   struct_4 = create Structured_Object with Reference_SO  = Test                        &\
+                                            Some_Text     = "generate simple structure" &\
+                                            An_Integer    = Test                        &\
+                                            A_Real        = A_Real_Number               &\
+                                            A_Boolean     = FALSE                       &\
+                                            A_Colour      = ''Red''                       &\
+                                            Current_State = ''Idle''
+
+   {TL_Simple_Object_Structure_4} is Type_Linked_Simple_Structure_Type
+
+   Termination_Condition = 10
+   Counter = 0
+
+   loop
+      append [struct_4.An_Integer, \
+              struct_4.A_Real,     \
+              struct_4.Some_Text,  \
+              struct_4.A_Boolean] to {TL_Simple_Object_Structure_4}
+
+      Counter = Counter + 1
+
+      breakif Counter = Termination_Condition
+
+   endloop
+
+   generate SO5:Start_TL_Simple(Test, {TL_Simple_Object_Structure_4} ) to struct_4
+
+   Test = Test + 1
+
+# End Test 9
+
+#--------------------------------------------------------------------------#
+# Test 10 - Pass in the simple structure into a domain based synchronous service.
+#--------------------------------------------------------------------------
+
+   struct_5 = create Structured_Object with Reference_SO  = Test                         &\
+                                            Some_Text     = "Domain based synch service" &\
+                                            An_Integer    = Test                         &\
+                                            A_Real        = 2.0                          &\
+                                            A_Boolean     = TRUE                         &\
+                                            A_Colour      = ''Red''                        &\
+                                            Current_State = ''Idle''
+
+   {TL_Simple_Object_Structure_5} is Type_Linked_Simple_Structure_Type
+
+   Termination_Condition = 10
+   Counter = 1
+
+   loop
+      append [struct_5.An_Integer, \
+              struct_5.A_Real,     \
+              struct_5.Some_Text,  \
+              struct_5.A_Boolean] to {TL_Simple_Object_Structure_5}
+
+      Counter = Counter + 1
+
+      breakif Termination_Condition = Counter
+
+   endloop
+
+   # Invoke domain based synch. service
+   [] = Struct4::Decode_Simple_TL_Structure[Test, {TL_Simple_Object_Structure_5}, struct_5]
+
+   delete struct_5
+
+# End Test 10
+
+#--------------------------------------------------------------------------
+
+Test = Test + 1
+
+My_Test_Data.The_Test_Number = Test',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	0,
+	3);
+INSERT INTO D_TSVC
+	VALUES ("0c932b4a-2ea2-43f2-bc88-268477215e77",
+	"94f9b561-2aa0-497d-b702-030b79fe76be",
+	'Struct::Simple_Name_and_Type_Linked_Scenario',
+	'',
+	'#--------------------------------------------------------------------------
+# Setup Test Data
+#
+# TYPE LINKED Simple Structures
+#--------------------------------------------------------------------------
+
+My_Test_Data = find-one Test_Data
+
+Test = My_Test_Data.The_Test_Number
+
+#-------------------------------------------------------------------------- 
+# Test 1 - Basic ''APPEND'' operation tests
+#          This test shall prove that a set is created empty.
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Scenario", "Create empty NTL structure"]
+
+   {NTL_Empty_Set} is Name_and_Type_Linked_Simple_Structure_Type
+
+   Naught = countof {NTL_Empty_Set}
+
+   if Naught = 0 then 
+      [] = RPT2:Test_Passed["Scenario", Test, 0]
+   else
+      [] = RPT3:Test_Failed["Scenario", Test, Naught]
+   endif
+
+   Test = Test + 1
+
+# End Test 1
+
+#--------------------------------------------------------------------------
+# Test 2 - Add some data into the set.
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Scenario", "Add first NTL structure to set"]
+
+   A_First_Local_Number  = 100
+   A_First_Local_Real    = 100.0
+   A_First_Local_String  = "Hello Good Evening and Welcome"
+   A_First_Local_Boolean = TRUE
+
+   append [A_First_Local_Number, A_First_Local_Real, A_First_Local_String, A_First_Local_Boolean] to {NTL_Empty_Set}
+
+   One = countof {NTL_Empty_Set}
+
+   if One = 1 then
+      [] = RPT2:Test_Passed["Scenario", Test, One]
+   else
+      [] = RPT3:Test_Failed["Scenario", Test, One]
+   endif
+
+   Test = Test + 1
+
+# End Test 2
+
+#--------------------------------------------------------------------------
+# Test 3 - Add some more data into the set.
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Scenario", "Add second NTL structure to set"]
+
+   A_Second_Local_Number  = 200
+   A_Second_Local_Real    = 200.0
+   A_Second_Local_String  = "Thankyou and Goodnight"
+   A_Second_Local_Boolean = FALSE
+
+   append [A_Second_Local_Number, A_Second_Local_Real, A_Second_Local_String, A_Second_Local_Boolean] to {NTL_Empty_Set}
+
+   Two = countof {NTL_Empty_Set}
+
+   if Two = 2 then
+      [] = RPT2:Test_Passed["Scenario", Test, Two]
+   else
+      [] = RPT3:Test_Failed["Scenario", Test, Two]
+   endif
+
+   Test = Test + 1
+
+# End Test 3
+
+#--------------------------------------------------------------------------
+# Test 4 - Read the data back
+#          The Queue is implemented as a FIFO, so read it back as such.
+#          This test will need to change should this implementation ever
+#          change. This test will fail if this happens.
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Scenario", "Read back TL structure from set"]
+
+   Counter = 1
+   Local_Test_Passed = FALSE
+
+   for [A_Read_Number, A_Read_Real, A_Read_String, A_Read_Boolean] in {NTL_Empty_Set} do
+
+      if Counter = 1 and A_Read_Number  = A_First_Local_Number  and \
+                         A_Read_Real    = A_First_Local_Real    and \
+                         A_Read_String  = A_First_Local_String  and \
+                         A_Read_Boolean = A_First_Local_Boolean then
+
+         Local_Test_Passed = TRUE
+      else
+
+         if Counter = 2 and A_Read_Number  = A_Second_Local_Number  and \
+                            A_Read_Real    = A_Second_Local_Real    and \
+                            A_Read_String  = A_Second_Local_String  and \
+                            A_Read_Boolean = A_Second_Local_Boolean and \
+                            Local_Test_Passed = TRUE then
+
+            [] = RPT2:Test_Passed["Scenario", Test, A_Read_Number]
+         else
+            [] = RPT3:Test_Failed["Scenario", Test, A_Read_Number]
+         endif
+
+      endif
+
+      Counter = Counter + 1
+
+   endfor
+
+   Test = Test + 1
+
+# End Test 4
+
+#--------------------------------------------------------------------------
+# Test 5 - Read the data back again
+#          Prove that reading a set of structures does not change it
+#--------------------------------------------------------------------------
+      
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Scenario", "Prove non-destructive read"]
+
+   Local_Test_Passed = FALSE
+
+   How_Many = countof {NTL_Empty_Set}
+
+   if How_Many = 2 then
+      Counter = 1
+
+      for [A_Read_Number, A_Read_Real, A_Read_String, A_Read_Boolean] in {NTL_Empty_Set} do
+
+         if Counter = 1 and A_Read_Number  = A_First_Local_Number and \
+                            A_Read_Real    = A_First_Local_Real   and \
+                            A_Read_String  = A_First_Local_String and \
+                            A_Read_Boolean = A_First_Local_Boolean then
+
+            Local_Test_Passed = TRUE
+         else 
+
+            if Counter = 2 and A_Read_Number  = A_Second_Local_Number  and \
+                               A_Read_Real    = A_Second_Local_Real    and \
+                               A_Read_String  = A_Second_Local_String  and \
+                               A_Read_Boolean = A_Second_Local_Boolean and \
+                               Local_Test_Passed = TRUE then
+
+               [] = RPT2:Test_Passed["Scenario", Test, A_Read_Number]
+            else
+               [] = RPT3:Test_Failed["Scenario", Test, A_Read_Number]
+            endif
+
+         endif
+
+         Counter = Counter + 1
+
+      endfor
+
+   else
+      [] = RPT3:Test_Failed["Scenario", Test, How_Many]
+   endif
+
+   Test = Test + 1
+
+# End Test 5
+
+#--------------------------------------------------------------------------
+# Test 6 - Call object based synch service to create a data structure, 
+#          return it and then confirm that it was created correctly.
+#          This test creates a new return list for each test, so the 
+#          structure is always empty when we start.
+#--------------------------------------------------------------------------
+
+   A_Real_Number = 1.0
+   
+   # Create a new structure object.
+   {NTL_Returned_Simple_Structure_1} is Name_and_Type_Linked_Simple_Structure_Type
+
+   struct_1 = create Structured_Object with Reference_SO  = Test                    &\
+                                            Some_Text     = "Construct a structure" &\
+                                            An_Integer    = Test                    &\
+                                            A_Real        = A_Real_Number           &\
+                                            A_Boolean     = TRUE                    &\
+                                            A_Colour      = ''Blue''                  &\
+                                            Current_State = ''Idle''
+
+   [{NTL_Returned_Simple_Structure_1}] = SO7:Create_Simple_NTL_Structure[Test, struct_1]
+
+   Test = Test + 1
+
+   [] = SO8:Decode_Simple_NTL_Structure[Test, {NTL_Returned_Simple_Structure_1}, struct_1, FALSE]
+
+   delete struct_1
+
+   Test = Test + 1
+
+# End Test 6
+
+#--------------------------------------------------------------------------
+# Test 7 - Call object based synch service to create a data structure, 
+#          return it and then confirm that it was created correctly.
+#          This test uses the same return parameter for all tests, so the 
+#          results are appended on to the old return structure.
+#
+#          This test will examine what happens when an emptied set is 
+#          reused.
+#          The set will be emptied by the Decode_Simple_Structure service, 
+#          and then written to again by the next iteration of the 
+#          Create_Simple_Structure.
+#
+#          It is understood that reading the final entry from a set will 
+#          cause that set to be deleted. Subsequent appends to that set will 
+#          cause a fatal crash.
+#
+#          To avoid this, ensure that the final entry of a set is never read
+#          from.
+#          This will prove that a set may be written to again after it has 
+#          been partially read from.
+#--------------------------------------------------------------------------
+
+   Termination_Condition = Test + 10
+
+   A_Real_Number = 1.0
+
+   {NTL_Returned_Simple_Structure_2} is Name_and_Type_Linked_Simple_Structure_Type
+
+   loop
+
+      # Create a couple of structured objects
+      struct_2 = create Structured_Object with Reference_SO  = Test                    &\
+                                               Some_Text     = "Construct a structure" &\
+                                               An_Integer    = Test                    &\
+                                               A_Real        = A_Real_Number           &\
+                                               A_Boolean     = FALSE                   &\
+                                               A_Colour      = ''Blue''                  &\
+                                               Current_State = ''Idle''
+
+      a_structured_instance_2 = find-one Structured_Object where Reference_SO = Test
+
+      # Create a new structure object each time, otherwise the same
+      # structure will be appended to each iteration.
+
+      [{NTL_Returned_Simple_Structure_2}] = SO7:Create_Simple_NTL_Structure[Test, a_structured_instance_2]
+
+      Test = Test + 1
+  
+      [] = SO8:Decode_Simple_NTL_Structure[Test, \
+                                           {NTL_Returned_Simple_Structure_2},\
+                                           a_structured_instance_2, \
+                                           TRUE]
+
+      # Delete the object now we''ve done with it.
+      delete a_structured_instance_2
+
+      Test = Test + 1
+
+      breakif Test = Termination_Condition
+
+   endloop
+
+# End Test 7
+
+#--------------------------------------------------------------------------
+# Test 8 - Define a test which passes a single structure to an instance 
+#          through a generated event.
+#--------------------------------------------------------------------------
+
+   A_Real_Number = 1.0
+
+   struct_3 = create Structured_Object with Reference_SO  = Test                        &\
+                                            Some_Text     = "generate simple structure" &\
+                                            An_Integer    = Test                        &\
+                                            A_Real        = A_Real_Number               &\
+                                            A_Boolean     = FALSE                       &\
+                                            A_Colour      = ''Blue''                      &\
+                                            Current_State = ''Idle''
+
+   # Create a simple structure and pass it in to the instance Simple_F1
+   {NTL_Simple_Object_Structure_3} is Name_and_Type_Linked_Simple_Structure_Type
+
+   append [struct_3.Reference_SO, \
+           struct_3.A_Real,       \
+           struct_3.Some_Text,    \ 
+           struct_3.A_Boolean] to {NTL_Simple_Object_Structure_3}
+
+   generate SO6:Start_NTL_Simple(Test, {NTL_Simple_Object_Structure_3} ) to struct_3
+
+   Test = Test + 1
+
+# End Test 8
+
+#--------------------------------------------------------------------------
+# Test 9 - Perform the same test again, except this time use a set of 
+#          structures with more than one set in it.
+#--------------------------------------------------------------------------
+
+   A_Real_Number = 1.0
+
+   struct_4 = create Structured_Object with Reference_SO  = Test                        &\
+                                            Some_Text     = "generate simple structure" &\
+                                            An_Integer    = Test                        &\
+                                            A_Real        = A_Real_Number               &\
+                                            A_Boolean     = FALSE                       &\
+                                            A_Colour      = ''Blue''                      &\ 
+                                            Current_State = ''Idle''
+
+   {NTL_Simple_Object_Structure_4} is Name_and_Type_Linked_Simple_Structure_Type
+
+   Termination_Condition = 10
+   Counter = 0
+
+   loop
+      append [struct_4.An_Integer, \
+              struct_4.A_Real,     \
+              struct_4.Some_Text,   \
+              struct_4.A_Boolean] to {NTL_Simple_Object_Structure_4}
+
+      Counter = Counter + 1
+
+      breakif Counter = Termination_Condition
+
+   endloop
+
+   generate SO6:Start_NTL_Simple(Test, {NTL_Simple_Object_Structure_4} ) to struct_4
+
+   Test = Test + 1
+
+# End Test 9
+
+#--------------------------------------------------------------------------
+# Test 10 - Pass in the simple structure into a domain based synchronous 
+#           service.
+#--------------------------------------------------------------------------
+
+   struct_5 = create Structured_Object with Reference_SO  = Test                         &\
+                                            Some_Text     = "Domain based synch service" &\
+                                            An_Integer    = Test                         &\
+                                            A_Real        = 2.0                          &\
+                                            A_Boolean     = TRUE                         &\
+                                            A_Colour      = ''Blue''                       &\
+                                            Current_State = ''Idle''
+
+   {NTL_Simple_Object_Structure_5} is Name_and_Type_Linked_Simple_Structure_Type
+
+   Termination_Condition = 10
+   Counter = 1
+
+   loop
+      append [struct_5.An_Integer, \
+              struct_5.A_Real,     \
+              struct_5.Some_Text,  \
+              struct_5.A_Boolean] to {NTL_Simple_Object_Structure_5}
+
+      Counter = Counter + 1
+
+      breakif Termination_Condition = Counter
+
+   endloop
+
+   # Invoke domain based synch. service
+   [] = Struct6::Decode_Simple_NTL_Structure[Test,\
+                                            {NTL_Simple_Object_Structure_5},           \
+                                            struct_5] 
+
+   delete struct_5
+
+# End Test 10
+
+#--------------------------------------------------------------------------
+
+Test = Test + 1
+
+My_Test_Data.The_Test_Number = Test',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	0,
+	4);
+INSERT INTO D_TSVC
+	VALUES ("1ed94c0b-7ed6-4e81-883d-3a4903051e03",
+	"94f9b561-2aa0-497d-b702-030b79fe76be",
+	'Struct::Nested_Structure_Scenario',
+	'',
+	'My_Test_Data = find-one Test_Data
+
+local_test_number = My_Test_Data.The_Test_Number
+
+
+#--------------------------------------------------------------------------
+# Test 1 - Create a nested stucture containing another structure which in 
+#          turn contains another structure. Pass it into a domain based 
+#          synchronous service for decoding.
+#--------------------------------------------------------------------------
+
+   Zero  = 0
+   One   = 1
+   Two   = 2
+   Three = 3
+
+   The_Colour of Colour_Type = ''Blue''
+
+   {The_Third_Structure}  is Third_Nested_Structure_Type
+   {The_Second_Structure} is Second_Nested_Structure_Type
+   {The_First_Structure}  is First_Nested_Structure_Type
+
+   append [Three, The_Colour]           to {The_Third_Structure}
+   append [{The_Third_Structure}, Two]  to {The_Second_Structure}
+   append [{The_Second_Structure}, One] to {The_First_Structure}
+
+   [] = Struct7::Decode_Three_Level_Nested_Structure [local_test_number,     \
+                                                      {The_First_Structure}, \
+                                                      {The_Second_Structure},\
+                                                      {The_Third_Structure}, \
+                                                      One, One,              \
+                                                      Two, One,              \
+                                                      Three, One, The_Colour]
+
+   local_test_number = local_test_number + 1
+
+# End Test 1
+
+#--------------------------------------------------------------------------
+# Test 2 
+#--------------------------------------------------------------------------
+
+   {The_Next_First_Structure}  is First_Nested_Structure_Type
+   {The_Next_Second_Structure} is Second_Nested_Structure_Type
+   {The_Next_Third_Structure}  is Third_Nested_Structure_Type
+
+   termination_condition = Three
+
+   loop
+      append [Three, The_Colour] to {The_Next_Third_Structure}
+      termination_condition = termination_condition - 1
+      breakif termination_condition = Zero
+   endloop
+
+   termination_condition = Three
+
+   loop
+      append [{The_Next_Third_Structure}, Two] to {The_Next_Second_Structure}
+      termination_condition = termination_condition - 1
+      breakif termination_condition = Zero
+   endloop
+
+   termination_condition = Three
+
+   loop
+      append [ {The_Next_Second_Structure}, One] to {The_Next_First_Structure}
+      termination_condition = termination_condition - 1
+      breakif termination_condition = Zero
+   endloop
+
+   [] = Struct7::Decode_Three_Level_Nested_Structure [local_test_number,          \
+                                                      {The_Next_First_Structure}, \
+                                                      {The_Next_Second_Structure},\
+                                                      {The_Next_Third_Structure}, \
+                                                      One, Three,                 \
+                                                      Two, Three,                 \
+                                                      Three, Three, The_Colour]
+
+   local_test_number = local_test_number + 1
+
+# End Test 2
+
+#--------------------------------------------------------------------------
+# Test 3 - create a Beasty test. This is where a primitve component of the
+#          structure is defined, and the sub (nested) structure component 
+#          is null.
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[local_test_number,"1241-0000-01-1212", "Structures", "Complex nested structures", "contains a null structure"]
+
+   {This_First_Structure} is First_Nested_Structure_Type
+   {This_Second_Structure} is Second_Nested_Structure_Type
+
+   append [ {This_Second_Structure} , One] to {This_First_Structure}
+
+   how_many = countof {This_First_Structure} 
+
+   if how_many = 1 then
+      [] = RPT2:Test_Passed["null structure", local_test_number, 0]
+   else
+      [] = RPT3:Test_Failed["null_structure", local_test_number, how_many]
+   endif
+
+   local_test_number = local_test_number + 1
+
+# End Test 3
+
+#--------------------------------------------------------------------------
+
+My_Test_Data.The_Test_Number = local_test_number
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	0,
+	5);
+INSERT INTO D_TSVC
+	VALUES ("bc23488c-197e-4921-83a7-d3279273e3ba",
+	"94f9b561-2aa0-497d-b702-030b79fe76be",
+	'Struct::Test_IH_In_Structures',
+	'',
+	'my_test = find-one Test_Data
+
+[Environment] = ET1:Env_String[]
+
+Test_Number = my_test.The_Test_Number
+
+#--------------------------------------------------------------------------
+# Test 1 - First test in the sequence.
+#          Create a Structured Object and append it to a structure.
+#--------------------------------------------------------------------------
+
+   Primary_SO = create unique Structured_Object with An_Integer    = Test_Number &\
+                                                     A_Real        = 1.0         &\
+                                                     Some_Text     = "No text"   &\
+                                                     A_Boolean     = TRUE        &\
+                                                     A_Colour      = ''Red''       &\
+                                                     Current_State = ''Idle''
+
+   # Take a copy of the preferred attribute for later use.
+   Local_Copy_Of_IH_Identifer = Primary_SO.Reference_SO
+
+   {The_First_Structure} is Structure_and_IH_Type
+
+   append [Primary_SO] to {The_First_Structure}
+
+   [] = Struct1::Receive_Structure_IH [Test_Number, {The_First_Structure}, 1, \
+                                       Primary_SO.Reference_SO, "Single instance in structure"]
+
+   Test_Number = Test_Number + 1
+
+# End Test 1
+
+#--------------------------------------------------------------------------
+# Test 2 - Do the same test again, on the same data to prove that it has 
+#          not been corrupted and/or modified. Use the previously stored 
+#          value to compare against.
+#--------------------------------------------------------------------------
+
+   [] = Struct1::Receive_Structure_IH [Test_Number, {The_First_Structure}, 1, \
+                                       Local_Copy_Of_IH_Identifer, "Second bite at Single instance in structure"]
+
+   Test_Number = Test_Number + 1
+
+# End Test 2
+
+#--------------------------------------------------------------------------
+# Test 3 - Create a second Structured Object and append it to a structure.
+#--------------------------------------------------------------------------
+
+   Secondary_SO = create unique Structured_Object with An_Integer    = Test_Number &\
+                                                       A_Real        = 2.0         &\
+                                                       Some_Text     = "No text"   &\
+                                                       A_Boolean     = TRUE        &\
+                                                       A_Colour      = ''Red''       &\
+                                                       Current_State = ''Idle''
+
+   # Take a copy of the preferred attribute for later use.
+   Local_Copy_Of_IH_Identifer = Secondary_SO.Reference_SO
+
+   append [Secondary_SO] to {The_First_Structure}
+
+   [] = Struct1::Receive_Structure_IH [Test_Number, {The_First_Structure}, 2, \
+                                       Secondary_SO.Reference_SO, "Second instance in structure"]
+
+   Test_Number = Test_Number + 1
+
+# End Test 3
+
+#--------------------------------------------------------------------------
+# Test 4 - Do the same test again, on the same data to prove that it has 
+#          not been corrupted and/or modified. Use the previously stored 
+#          value to compare against.
+#--------------------------------------------------------------------------
+
+   [] = Struct1::Receive_Structure_IH [Test_Number, {The_First_Structure}, 2, \
+                                       Local_Copy_Of_IH_Identifer, "Second bite at Second instance in structure"]
+
+# End Test 4
+
+#--------------------------------------------------------------------------
+# Test 5 - Send an empty structure to the target function. This may be 
+#          required as a target function could return a non-empty structure
+#--------------------------------------------------------------------------
+
+#Test_Number = Test_Number + 1
+
+# UNSUPPORTED 
+
+
+# Clear up, but delete {The_First_Structure} operation is not implemented in ASL.
+# So, create a new structure over the old one.
+
+# This test ensures that redeclaring the structure clears it out completely.
+
+# {The_First_Structure} is Structure_and_IH_Type
+
+# {Returned_Structure}  is Structure_and_IH_Type
+
+# [{Returned_Structure}] = Struct3::Receive_Empty_Structure_IH [Test_Number, {The_First_Structure}, \
+#    Primary_SO, "Pass in empty structure, return full"]
+
+#--------------------------------------------------------------------------
+
+# Using the return from the previous test, check to see that the return parameter has been
+# created and silled out as expected.
+
+# UNSUPPORTED due to previous test
+
+#Test_Number = Test_Number + 1
+
+#[] = Struct1::Receive_Structure_IH [Test_Number, {Returned_Structure}, 1, \
+#   Primary_SO.Reference_SO, "Previously returned structure is ok"]
+
+
+
+#--------------------------------------------------------------------------
+# Series of tests
+#--------------------------------------------------------------------------
+
+   bean_counter = 1
+
+   {Next_Structure} is Structure_and_IH_Type
+
+   loop
+      Test_Number = Test_Number + 1
+
+      Next_SO = create unique Structured_Object with An_Integer    = Test_Number &\
+                                                     A_Real        = 1.0         &\
+                                                     Some_Text     = "No text"   &\
+                                                     A_Boolean     = TRUE        &\
+                                                     A_Colour      = ''Red''       &\
+                                                     Current_State = ''Idle''
+
+      append [Next_SO] to {Next_Structure}
+
+      [] = Struct1::Receive_Structure_IH [Test_Number, {Next_Structure}, bean_counter, Next_SO.Reference_SO, "Many instances in structure"]
+ 
+      bean_counter = bean_counter + 1
+
+      breakif bean_counter > 5
+
+   endloop
+
+#--------------------------------------------------------------------------
+# Next series of tests. Let''s see what happens when the structure is deleted after it is appended.
+# This test will make sure that the data is copied into the target structure, and not just passed
+# by reference.
+#--------------------------------------------------------------------------
+
+   bean_counter = 1
+
+   {Delete_Structure} is Structure_and_IH_Type
+
+   loop
+      Test_Number = Test_Number + 1
+
+      # Resuse the Next_SO data name.
+      Next_SO = create unique Structured_Object with An_Integer    = Test_Number &\
+                                                     A_Real        = 1.0         &\
+                                                     Some_Text     = "No text"   &\
+                                                     A_Boolean     = TRUE        &\
+                                                     A_Colour      = ''Red''       &\
+                                                     Current_State = ''Idle''
+
+      SO_ID = Next_SO.Reference_SO
+
+      append [Next_SO] to {Delete_Structure}
+
+      [] = Struct1::Receive_Structure_IH [Test_Number, {Delete_Structure}, bean_counter, SO_ID, "Structure fully copied"]
+
+      # Deleting the instance object before it is passed into the function call as a component of the structure
+      # causes I-Sim grief. It appears that a shallow copy is taken, ie. it is passed by reference. To prove this
+      # delete the instance object and then do the same test again.
+      if Environment = "WACA" then
+         delete Next_SO
+      endif
+
+      Test_Number = Test_Number + 1
+
+      [] = Struct1::Receive_Structure_IH [Test_Number, {Delete_Structure}, bean_counter, SO_ID, "Structure fully copied"]
+ 
+      bean_counter = bean_counter + 1
+
+      breakif bean_counter > 5
+
+   endloop
+
+   # Delete structure is not supported by ASL or WACA, although it will compile.
+   # Run_Time crash in I-SIM awaits the unwary.
+   # delete {Next_Structure}
+
+
+#--------------------------------------------------------------------------
+# Tidy up and finish this sequence of tests.
+#--------------------------------------------------------------------------
+
+Test_Number = Test_Number + 1
+
+my_test.The_Test_Number = Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	0,
+	10);
+INSERT INTO D_TSVC
+	VALUES ("808db7b4-ca2d-43e6-9181-ccd7e43ee1cd",
+	"94f9b561-2aa0-497d-b702-030b79fe76be",
+	'Struct::Structures_are_Cleared',
+	'',
+	'#--------------------------------------------------------------------------
+# These series of tests ensure that although there is no way of deleting a 
+# structure once it is in existance, we can at least reduce the structure 
+# back to being empty when necessary.
+#--------------------------------------------------------------------------
+
+my_test = find-one Test_Data
+
+Test_Number = my_test.The_Test_Number
+
+#--------------------------------------------------------------------------
+# Test 1 - Create a Structure and append to it.
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test_Number, "1241-0000-01-1212", "Structures", "Structures cleared", "Structures memory usage test"]
+
+   {Simple_Destructive_Structure} is Simple_Structure_Type
+
+   # Blunder round a loop ten thousand times, adding fifty structures into 
+   # the set of structure. This should give an indication of whether WACA 
+   # returns the freed space back to the heap after the structure is 
+   # redeclared.
+
+   # NB. Use the Performance Meter in the Windows NT task manager
+   #     to monitor memory usage.
+
+   Number_Of_Iterations = 10000
+   Number_Of_Appends = 50
+
+   # Test data section
+   The_Integer = Test_Number
+   The_Real    = 0.99
+   The_Text    = "How big?"
+   The_Boolean = FALSE
+
+   The_Colour of Colour_Type = ''Blue''
+
+   Little_Bean_Counter = 0
+   Big_Bean_Counter    = 0
+
+   Test_Has_Failed = FALSE
+
+   loop
+      Little_Bean_Counter = 0
+
+      loop
+         append [The_Integer, The_Real, The_Text, The_Boolean, The_Colour] to {Simple_Destructive_Structure}
+
+         breakif Little_Bean_Counter = Number_Of_Appends
+  
+         Little_Bean_Counter = Little_Bean_Counter + 1
+      endloop
+
+      # Redeclare the structure, effectively removing the fully defined
+      # structure and resetting it to zero size.
+      {Simple_Destructive_Structure} is Simple_Structure_Type
+
+      # If the structure has not been cleaned up, bail out. There is
+      # no point continuing.
+
+      How_Many_Now = countof {Simple_Destructive_Structure}
+      if How_Many_Now != 0 then
+         Test_Has_Failed = TRUE
+         break
+      endif
+
+      breakif Big_Bean_Counter = Number_Of_Iterations
+
+      Big_Bean_Counter = Big_Bean_Counter + 1
+
+   endloop
+
+   if Test_Has_Failed then
+      [] = RPT3:Test_Failed["Structures not cleared up", Test_Number, Big_Bean_Counter]
+   else
+      Result_Value = Little_Bean_Counter * Big_Bean_Counter
+      [] = RPT2:Test_Passed["Structures cleared", Test_Number, Result_Value]
+   endif
+
+   Test_Number = Test_Number + 1
+
+# End Test 1
+
+#--------------------------------------------------------------------------
+# Test 2
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test_Number, "1241-0000-01-1212", "Structures", "Structures cleared", "Reuse Structure name with different type"]
+
+   Little_Bean_Counter = 0
+   Big_Bean_Counter    = 1
+
+   {Simple_Destructive_Structure} is Simple_Structure_Type
+
+   # Blunder round a loop two times, adding two hundred and fifty thousand
+   # structures into the set of structure. This should give an indication of 
+   # whether WACA returns the freed space back to the heap after the structure 
+   # is redeclared.
+
+   # NB. Use the Performance Meter in the Windows NT task manager
+   #     to monitor memory usage.
+
+   Number_Of_Iterations = 2
+   Number_Of_Appends = 250000
+
+   # Test data section
+   The_Integer = Test_Number
+   The_Real    = 0.99
+   The_Text    = "Different structure type"
+   The_Boolean = FALSE
+
+   The_Colour of Colour_Type = ''Blue''
+
+   Test_Has_Failed = FALSE
+
+   loop
+      Little_Bean_Counter = 0
+
+      loop
+         append [The_Integer, The_Real, The_Text, The_Boolean, The_Colour] to {Simple_Destructive_Structure}
+    
+         breakif Little_Bean_Counter = Number_Of_Appends
+
+         Little_Bean_Counter = Little_Bean_Counter + 1
+      endloop
+
+      # Redeclare the structure, effectively removing the fully defined
+      # structure and resetting it to zero size. This test differs from 
+      # the previous in that the type of the structure has changed, and 
+      # the number of appends and iterations have swapped values!
+      # Due to a WACA limitation (and ADA95 if we are honest) the reuse
+      # of a named definition for a different type is precluded.
+
+      {Simple_Destructive_Structure} is Simple_Structure_Type
+
+      # If the structure has not been cleaned up, bail out. There is
+      # no point continuing.
+
+      How_Many_Now = countof {Simple_Destructive_Structure}
+      if How_Many_Now != 0 then
+         Test_Has_Failed = TRUE
+         break
+      endif
+
+      breakif Big_Bean_Counter = Number_Of_Iterations
+
+      Big_Bean_Counter = Big_Bean_Counter + 1
+
+   endloop
+
+   if Test_Has_Failed then
+      [] = RPT3:Test_Failed["Structures not cleared up", Test_Number, Big_Bean_Counter]
+   else
+      Result_Value = Little_Bean_Counter * Big_Bean_Counter
+      [] = RPT2:Test_Passed["Structures cleared", Test_Number, Result_Value]
+   endif
+
+   Test_Number = Test_Number + 1
+
+# End Test 2
+
+#--------------------------------------------------------------------------
+# Test 3 - Now try a similar test on a structure containing an instance 
+#          handle.
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test_Number, "1241-0000-01-1216", "Structures", "Structures cleared", "Structures with IH memory usage test"]
+
+   {Structure_And_IH_Destructive_Structure} is Structure_and_IH_Type
+
+   # Blunder round a loop ten thousand times, adding fifty
+   # structures into the set of structure. This should give an 
+   # indication of whether WACA returns the freed space back
+   # to the heap after the structure is redeclared.
+
+   # NB. Use the Performance Meter in the Windows NT task manager
+   #     to monitor memory usage.
+
+   Number_Of_Iterations = 10000
+   Number_Of_Appends = 50
+
+   A_Structured_Object_IH = create unique Structured_Object with An_Integer    = Test_Number &\
+                                                                 A_Real        = 99.99       &\
+                                                                 Some_Text     = "Some Text" &\
+                                                                 A_Boolean     = FALSE       &\
+                                                                 A_Colour      = ''Green''     &\
+                                                                 Current_State =''Idle''
+
+   # Test data section
+
+   Little_Bean_Counter = 0
+   Big_Bean_Counter    = 0
+
+   Test_Has_Failed = FALSE
+
+   loop
+      Little_Bean_Counter = 0
+
+      loop
+         append [A_Structured_Object_IH] to {Structure_And_IH_Destructive_Structure}
+
+         breakif Little_Bean_Counter = Number_Of_Appends
+
+         Little_Bean_Counter = Little_Bean_Counter + 1
+      endloop
+
+      # Redeclare the structure, effectively removing the fully defined
+      # structure and resetting it to zero size.
+
+      {Structure_And_IH_Destructive_Structure} is Structure_and_IH_Type
+
+      # If the structure has not been cleaned up, bail out. There is
+      # no point continuing.
+      How_Many_Now = countof {Structure_And_IH_Destructive_Structure}
+
+      if How_Many_Now != 0 then
+         Test_Has_Failed = TRUE
+         break
+      endif
+
+      breakif Big_Bean_Counter = Number_Of_Iterations
+
+      Big_Bean_Counter = Big_Bean_Counter + 1
+
+   endloop
+
+   if Test_Has_Failed then
+      [] = RPT3:Test_Failed["Structures not cleared up", Test_Number, Big_Bean_Counter]
+   else
+      Result_Value = Little_Bean_Counter * Big_Bean_Counter
+      [] = RPT2:Test_Passed["Structures cleared", Test_Number, Result_Value]
+   endif
+
+   Test_Number = Test_Number + 1
+
+# End Test 3
+
+#--------------------------------------------------------------------------
+
+my_test.The_Test_Number = Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	0,
+	11);
+INSERT INTO D_TSVC
+	VALUES ("53f05339-c763-4e6b-a3cc-7c8777e5f791",
+	"94f9b561-2aa0-497d-b702-030b79fe76be",
+	'Struct::Test_the_Structure',
+	'',
+	'# Set up scenario test data.
+Test_Has_Passed = FALSE
+
+My_Test_Data = find-one Test_Data
+Test = My_Test_Data.The_Test_Number
+
+#--------------------------------------------------------------------------
+# Test 1
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Returning Structure", "Test returning structure"]
+
+   The_New_Int = 100
+   The_New_Col of Colour_Type = ''Red''
+
+   {The_New_Struct} is My_Simple_Structure
+
+   append[The_New_Int,The_New_Col] to {The_New_Struct}
+
+   [{Returning_Structure}] = Struct5::Test_The_Structure[Test, {The_New_Struct}]
+
+   for [the_integer, the_colour] in {Returning_Structure} do
+
+      if the_integer = 200 then
+
+         if the_colour = ''Blue'' then
+            [] = RPT2:Test_Passed["Structures", Test, 0]
+         else
+            [] = RPT3:Test_Failed["Structures", Test, -1]
+         endif
+
+      else
+         [] = RPT3:Test_Failed["Structures", Test, -2]
+      endif
+
+   endfor
+
+   Test = Test + 1
+
+# End Test 1
+
+#--------------------------------------------------------------------------
+# Test 2
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Returning Structure", "Test returning structure"]
+
+   The_New_Int = 100
+   The_New_Real = 1.0
+   The_New_String = "Structures Test"
+   The_New_Colour of Colour_Type = ''Blue''
+
+   [{The_Returning_Structure}] = Struct10::Check_Returning_Structure[The_New_Int, The_New_Real, The_New_String, The_New_Colour]
+
+   for [The_Returned_Int, The_Returned_Real, The_Returned_String, The_Returned_UDT] in {The_Returning_Structure} do
+
+      if The_Returned_Int = 200 then
+
+         if The_Returned_Real = 2.0 then
+
+            if The_Returned_String = "Test Complete" then
+
+               if The_Returned_UDT = ''Green'' then   
+                  [] = RPT2:Test_Passed["Structures", Test, 0]
+               else   
+                  [] = RPT3:Test_Failed["Structures", Test, -1]
+               endif
+
+            else
+              [] = RPT3:Test_Failed["Structures", Test, -2]
+            endif
+
+         else
+            [] = RPT3:Test_Failed["Structures", Test, -3]
+         endif
+
+      else
+         [] = RPT3:Test_Failed["Structures", Test, -4]
+      endif
+
+   endfor
+
+   Test = Test + 1
+
+# End Test 2
+
+#--------------------------------------------------------------------------
+# Test 3
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-1212", "Structures", "Returning Structure", "Test returning structure"]
+
+   The_New_Int = 100
+   The_New_Col of Colour_Type = ''Red''
+
+   {New_Structure} is My_Simple_Structure
+
+   append[The_New_Int, The_New_Col] to {New_Structure}
+
+   
+   [{New_Structure}] = Struct5::Test_The_Structure[Test, {New_Structure}]
+
+   How_Many = countof{New_Structure}
+
+   if How_Many = 2 then
+
+      Count = 1
+
+      for [the_integer, the_colour] in {New_Structure} do
+
+         if the_integer = 200 then
+
+            if the_colour = ''Blue'' then
+               [] = RPT2:Test_Passed["Structures", Test, 0]
+            else
+               [] = RPT3:Test_Failed["Structures", Test, -1]
+           endif
+
+         else
+            Count = Count + 1
+
+            if Count = 3 then
+               [] = RPT3:Test_Failed["Structures", Test, -2]
+            endif
+
+         endif
+
+      endfor
+ 
+   else
+      [] = RPT3:Test_Failed["Structures", Test, -3]
+   endif
+  
+   Test = Test + 1
+
+# End Test 3
+
+#--------------------------------------------------------------------------
+
+My_Test_Data.The_Test_Number = Test',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	0,
+	12);
+INSERT INTO D_TSVC
+	VALUES ("d5a792da-c28a-45ac-8546-b1a44887a7dd",
+	"94f9b561-2aa0-497d-b702-030b79fe76be",
+	'Struct::Finish_Structures_Tests',
+	'',
+	'[] = Struct9::Delete_Report_Data[]
+
+my_test_data = find-one Test_Data
+
+if my_test_data != UNDEFINED then
+
+   delete my_test_data
+
+endif
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	0,
+	7);
+INSERT INTO D_TSS
+	VALUES ("f6f265fd-aae5-4ae0-97ab-cfe7b5529d86",
+	"94f9b561-2aa0-497d-b702-030b79fe76be");
+INSERT INTO D_SIS
+	VALUES ("6e6eb821-8ed9-4643-b391-0e6ba77bc080",
+	"f6f265fd-aae5-4ae0-97ab-cfe7b5529d86",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO D_SIS
+	VALUES ("760e5d70-c2ed-4f1c-b8b5-12611735ecdf",
+	"f6f265fd-aae5-4ae0-97ab-cfe7b5529d86",
+	"6e6eb821-8ed9-4643-b391-0e6ba77bc080");
+INSERT INTO D_SIS
+	VALUES ("11cd73a9-cd1b-4210-87b9-809fceeddaf6",
+	"f6f265fd-aae5-4ae0-97ab-cfe7b5529d86",
+	"760e5d70-c2ed-4f1c-b8b5-12611735ecdf");
+INSERT INTO D_SIS
+	VALUES ("46385e87-9b80-4d3f-9038-7844a1cf305b",
+	"f6f265fd-aae5-4ae0-97ab-cfe7b5529d86",
+	"11cd73a9-cd1b-4210-87b9-809fceeddaf6");
+INSERT INTO D_SIS
+	VALUES ("2e1264f2-7451-4f62-9c77-d48692d1c18a",
+	"f6f265fd-aae5-4ae0-97ab-cfe7b5529d86",
+	"46385e87-9b80-4d3f-9038-7844a1cf305b");
+INSERT INTO D_SIS
+	VALUES ("4261465b-7f7a-4c83-b85e-739b7c4d8970",
+	"f6f265fd-aae5-4ae0-97ab-cfe7b5529d86",
+	"2e1264f2-7451-4f62-9c77-d48692d1c18a");
+INSERT INTO D_SIS
+	VALUES ("0c932b4a-2ea2-43f2-bc88-268477215e77",
+	"f6f265fd-aae5-4ae0-97ab-cfe7b5529d86",
+	"4261465b-7f7a-4c83-b85e-739b7c4d8970");
+INSERT INTO D_SIS
+	VALUES ("1ed94c0b-7ed6-4e81-883d-3a4903051e03",
+	"f6f265fd-aae5-4ae0-97ab-cfe7b5529d86",
+	"0c932b4a-2ea2-43f2-bc88-268477215e77");
+INSERT INTO D_SIS
+	VALUES ("bc23488c-197e-4921-83a7-d3279273e3ba",
+	"f6f265fd-aae5-4ae0-97ab-cfe7b5529d86",
+	"1ed94c0b-7ed6-4e81-883d-3a4903051e03");
+INSERT INTO D_SIS
+	VALUES ("808db7b4-ca2d-43e6-9181-ccd7e43ee1cd",
+	"f6f265fd-aae5-4ae0-97ab-cfe7b5529d86",
+	"bc23488c-197e-4921-83a7-d3279273e3ba");
+INSERT INTO D_SIS
+	VALUES ("53f05339-c763-4e6b-a3cc-7c8777e5f791",
+	"f6f265fd-aae5-4ae0-97ab-cfe7b5529d86",
+	"808db7b4-ca2d-43e6-9181-ccd7e43ee1cd");
+INSERT INTO D_SIS
+	VALUES ("d5a792da-c28a-45ac-8546-b1a44887a7dd",
+	"f6f265fd-aae5-4ae0-97ab-cfe7b5529d86",
+	"53f05339-c763-4e6b-a3cc-7c8777e5f791");
+INSERT INTO PE_PE
+	VALUES ("9def5655-8169-48e6-947a-0cf9dd1631df",
+	1,
+	"ae937f63-82a4-4545-86c7-d5a5326d368f",
+	"00000000-0000-0000-0000-000000000000",
+	25);
+INSERT INTO PE_PE
+	VALUES ("ae937f63-82a4-4545-86c7-d5a5326d368f",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	7);
+INSERT INTO S_SYS_PROXY
+	VALUES ("c6ac2e0b-70e6-4024-9a94-5e4dd1c4e7df",
+	'TSV2_10_10',
+	1,
+	'../TSV2_10_10.xtuml');

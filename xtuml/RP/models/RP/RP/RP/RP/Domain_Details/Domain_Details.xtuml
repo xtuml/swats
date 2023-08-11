@@ -1,0 +1,1274 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("92b447a4-d982-4422-8d7c-91ed8870fa10",
+	'Domain_Details',
+	4,
+	'DD',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("ad283924-f7a5-4159-9c2f-26694f2cb42c",
+	"92b447a4-d982-4422-8d7c-91ed8870fa10",
+	'A_Test_Has_Passed',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'
+local_result_found  = FALSE
+local_test_purpose  = " "
+local_tested_object = " "
+local_invoking_domain = Invoking_Domain
+local_domain_test_details = Details_Of_Test
+local_test_number = New_Test_Number
+
+# For requirement identifier tracking, update the requirement status
+[] = RP13::Requirement_Tracker[local_invoking_domain, local_test_number, ''Passed'']
+
+The_Domain_IH = find-one Domain_Details where Domain_Number = local_invoking_domain
+
+if The_Domain_IH != UNDEFINED then
+      
+   {Set_Of_Test_Details} = The_Domain_IH -> R8.Test_Details
+
+   for a_test in {Set_Of_Test_Details} do
+      if a_test.The_Test_No  = New_Test_Number then
+         a_test.Result_Found = TRUE
+         local_result_found  = TRUE
+         local_test_purpose  = a_test.Test_Purpose
+         local_tested_object = a_test.Tested_Object
+      endif
+       
+   endfor      
+
+   if New_Test_Number != The_Domain_IH.Last_Reported_Test_Number then      
+
+      # New stuff 24/04/01
+      # Find the matching instance from the objects in the set returned from a navigation.
+      # A simple find operation could return instances created for other domains!
+
+      {set_of_duplicated_results} = The_Domain_IH -> R4.Duplicated_Result
+      for a_duplicated_result in {set_of_duplicated_results} do
+
+         if a_duplicated_result.Duplicated_Test_Number = The_Domain_IH.Last_Reported_Test_Number then
+
+            the_d_r_ih = a_duplicated_result
+
+         endif
+
+      endfor
+
+
+      # New stuff 24/04/01
+      # Use the navigation rather than find to make sure we get the instance
+      # that we are expecting to see.
+      {Local_Set_Of_Test_Details} = The_Domain_IH -> R8.Test_Details
+      for a_test_detail in {Local_Set_Of_Test_Details} do
+
+         if  a_test_detail.The_Test_No = The_Domain_IH.Last_Reported_Test_Number then
+
+            the_old_results_ih = a_test_detail -> R6.Results_Of_Tests
+
+         endif
+      endfor
+
+      if the_d_r_ih != UNDEFINED and the_old_results_ih != UNDEFINED then         
+         the_old_results_ih.The_No_Of_Duplicated_Results = the_d_r_ih.Duplicated_Test_Count
+      endif
+
+      [] = PASS1:Got_One[The_Domain_IH]
+
+      The_Domain_IH.Last_Reported_Test_Number = New_Test_Number
+
+      new_results_of_test_instance = create Results_Of_Tests with \
+         The_Number_Of_Test           = New_Test_Number &\
+         The_Name_Of_The_Domain       = The_Domain_IH.Domain_Name &\
+         The_Result_Of_Test           = ''Passed'' &\ 
+         The_Value_Of_The_Result      = New_Test_Result_Value &\        
+         The_Purpose_Of_Test          = local_test_purpose &\
+         The_No_Of_Duplicated_Results = 0 &\
+         The_Result_Of_Object         = local_tested_object &\
+         Domain_Test_Details          = local_domain_test_details
+
+      
+      #find the test data that matches the test result
+# Can''t use referential attribute to find the Test_Details.
+#      Matching_Test_Details = find-one Test_Details where The_Test_No = New_Test_Number and \
+#                                 Domain_Number = local_invoking_domain
+
+      {Matching_Test_Details_Set} = The_Domain_IH -> R8.Test_Details
+
+      for Matching_Test_Details in {Matching_Test_Details_Set} do
+
+         breakif Matching_Test_Details.The_Test_No = New_Test_Number
+
+      endfor
+
+      # Link this report to the matching test details if it exists
+
+      if Matching_Test_Details != UNDEFINED then 
+
+         link new_results_of_test_instance R6 Matching_Test_Details
+      
+      else
+
+         [] = RP9::Test_Anomalous_Behaviour[New_Test_Number,"Passed. No Test Details Found"]
+
+      endif
+
+   else
+
+      # Find the duplicated result IH that was linked in when duplication 
+      # was first seen.
+ 
+      # Duplicate report found.
+
+#      the_d_r_ih = find-one Duplicated_Result where \
+#         Duplicated_Test_Number = New_Test_Number and \
+#         Domain_Number = local_invoking_domain
+
+      {Duplicated_Reports} = The_Domain_IH -> R4.Duplicated_Result
+
+      for the_d_r_ih in {Duplicated_Reports} do
+          breakif the_d_r_ih.Duplicated_Test_Number = New_Test_Number
+      endfor
+
+
+      if the_d_r_ih = UNDEFINED then
+         new_duplicated_instance               = create Duplicated_Result with \
+            Duplicated_Test_Number             = New_Test_Number &\
+            Who_Reported_The_Duplicated_Result = ''Passed''        &\
+            Duplicated_Test_Count              = 0
+
+         link new_duplicated_instance R4 The_Domain_IH
+  
+         the_d_r_ih = new_duplicated_instance
+
+      else
+
+         # Check to see if the reported result is the same! Passed then failed? We need to know.
+
+#         Previous_Reported_Result = find-one Results_Of_Tests where Domain_Number = local_invoking_domain &\
+#                                       The_Number_Of_Test = New_Test_Number
+
+         {Matching_Test_Details_Set} = The_Domain_IH -> R8.Test_Details
+
+         for Matching_Test_Details in {Matching_Test_Details_Set} do
+
+            breakif Matching_Test_Details.The_Test_No = New_Test_Number
+
+         endfor
+
+         if Matching_Test_Details != UNDEFINED then
+            Previous_Reported_Result = Matching_Test_Details -> R6.Results_Of_Tests       
+         else
+            [] = RP9::Test_Anomalous_Behaviour[New_Test_Number,"Duplicated Pass. No Test Details Found"]
+         endif
+
+
+         if Previous_Reported_Result != UNDEFINED then
+
+            if Previous_Reported_Result.The_Result_Of_Test != ''Passed'' then
+
+               [] = RP9::Test_Anomalous_Behaviour[New_Test_Number, "Inconsistent duplicated pass result"]
+
+            endif
+
+         else
+
+            # Big problems, we thought this was duplicated, but it would appear not!
+
+            [] = RP9::Test_Anomalous_Behaviour[New_Test_Number, "Error in duplication of test passed result"]
+
+         endif
+
+      endif      
+
+
+
+      [] = DUPLICATED1:Duplicated_Result_Found[the_d_r_ih]       
+      
+      The_Domain_IH.Last_Reported_Test_Number = New_Test_Number
+      
+   endif
+
+else
+
+   [] = RP7::Report_Run_Time_Error["Test Passed undefined domain details IH"]
+   
+endif',
+	3,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	2,
+	1);
+INSERT INTO O_TPARM
+	VALUES ("81ca3fea-7ed1-4f1f-afa8-8b4041a189d1",
+	"ad283924-f7a5-4159-9c2f-26694f2cb42c",
+	'New_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("24ccf802-98d2-4271-8a1b-1bbd8169ffc4",
+	"ad283924-f7a5-4159-9c2f-26694f2cb42c",
+	'Invoking_Domain',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"81ca3fea-7ed1-4f1f-afa8-8b4041a189d1",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("ed2dddc7-52c5-427b-9a48-4c5a942eca0e",
+	"ad283924-f7a5-4159-9c2f-26694f2cb42c",
+	'New_Test_Result_Value',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"24ccf802-98d2-4271-8a1b-1bbd8169ffc4",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("a6c58a5e-9aef-46be-a022-42a708ab25bf",
+	"ad283924-f7a5-4159-9c2f-26694f2cb42c",
+	'Details_Of_Test',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"ed2dddc7-52c5-427b-9a48-4c5a942eca0e",
+	'');
+INSERT INTO O_TFR
+	VALUES ("ba1542ad-a198-4c47-887f-316d83aad678",
+	"92b447a4-d982-4422-8d7c-91ed8870fa10",
+	'A_Test_Has_Failed',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'
+local_result_found  = FALSE
+local_test_purpose  = " "
+local_tested_object = " "
+local_invoking_domain = Invoking_Domain
+local_domain_test_details = Details_Of_Test
+local_new_test_number = New_Test_Number
+
+# For requirement identifier tracking, update the requirement status
+[] = RP13::Requirement_Tracker[local_invoking_domain, local_new_test_number, ''Failed'']
+
+The_Domain_IH = find-one Domain_Details where Domain_Number = local_invoking_domain
+
+if The_Domain_IH != UNDEFINED then
+   
+   {Matching_Test_Details_Set} = The_Domain_IH -> R8.Test_Details
+   {Duplicated_Reports}        = The_Domain_IH -> R4.Duplicated_Result
+
+   for Matching_Test_Details in {Matching_Test_Details_Set} do
+      breakif Matching_Test_Details.The_Test_No = local_new_test_number
+   endfor
+   
+   if Matching_Test_Details != UNDEFINED then
+      Matching_Test_Details.Result_Found = TRUE
+      local_result_found  = TRUE
+      local_test_purpose  = Matching_Test_Details.Test_Purpose
+      local_tested_object = Matching_Test_Details.Tested_Object
+   endif 
+
+   # Not duplicated, so 
+   if New_Test_Number != The_Domain_IH.Last_Reported_Test_Number then      
+
+#      the_d_r_ih = find-one Duplicated_Result where Duplicated_Test_Number = The_Domain_IH.Last_Reported_Test_Number \
+#                   and Domain_Number = local_invoking_domain
+
+      for the_d_r_ih in {Duplicated_Reports} do
+          breakif the_d_r_ih.Duplicated_Test_Number = The_Domain_IH.Last_Reported_Test_Number
+      endfor
+
+
+#      the_results_ih = find-one Results_Of_Tests where The_Number_Of_Test = The_Domain_IH.Last_Reported_Test_Number \
+#                   and Domain_Number = local_invoking_domain
+
+
+      the_results_ih = Matching_Test_Details -> R6.Results_Of_Tests
+
+      for the_d_r_ih in {Duplicated_Reports} do
+          breakif the_d_r_ih.Duplicated_Test_Number = New_Test_Number
+      endfor
+
+
+      if the_d_r_ih != UNDEFINED and the_results_ih != UNDEFINED then         
+         the_results_ih.The_No_Of_Duplicated_Results = the_d_r_ih.Duplicated_Test_Count
+      endif
+
+      [] = FAIL1:You_Goofed_Boy[The_Domain_IH]
+
+      The_Domain_IH.Last_Reported_Test_Number = New_Test_Number
+
+      new_results_of_test_instance = create Results_Of_Tests with \
+         The_Number_Of_Test           = New_Test_Number &\
+         The_Name_Of_The_Domain       = The_Domain_IH.Domain_Name &\
+         The_Result_Of_Test           = ''Failed'' &\ 
+         The_Value_Of_The_Result      = New_Test_Result_Value &\        
+         The_Purpose_Of_Test          = local_test_purpose &\
+         The_No_Of_Duplicated_Results = 0 &\
+         The_Result_Of_Object         = local_tested_object &\
+         Domain_Test_Details          = local_domain_test_details
+     
+
+      #find the test data that matches the test result
+#      Matching_Test_Details = find-one Test_Details where The_Test_No = New_Test_Number and \
+#                                 Domain_Number = local_invoking_domain
+
+
+      # Link this report to the matching test details if it exists
+
+      if Matching_Test_Details != UNDEFINED then 
+
+         link new_results_of_test_instance R6 Matching_Test_Details
+      
+      else
+
+         [] = RP9::Test_Anomalous_Behaviour[New_Test_Number,"Failed. No Test Details Found"]
+
+      endif
+
+ 
+   else
+
+      # Find the duplicated result IH that was linked in when duplication 
+      # was first seen.
+ 
+      # Duplicate report found.
+
+#      the_d_r_ih = find-one Duplicated_Result where \
+#         Duplicated_Test_Number = New_Test_Number \
+#         and Domain_Number = local_invoking_domain
+
+      for the_d_r_ih in {Duplicated_Reports} do
+          breakif the_d_r_ih.Duplicated_Test_Number = New_Test_Number
+      endfor
+
+      if the_d_r_ih = UNDEFINED then
+
+         # First time this duplication has been seen
+
+         new_duplicated_instance               = create Duplicated_Result with \
+            Duplicated_Test_Number             = New_Test_Number &\
+            Who_Reported_The_Duplicated_Result = ''Passed''        &\
+            Duplicated_Test_Count              = 0
+
+         link new_duplicated_instance R4 The_Domain_IH
+  
+         the_d_r_ih = new_duplicated_instance
+
+     else
+
+         # Check to see if the reported result is the same! Passed then failed? We need to know.
+
+#         Previous_Reported_Result = find-one Results_Of_Tests where Domain_Number = local_invoking_domain &\
+#                                       The_Number_Of_Test = New_Test_Number
+
+         Previous_Reported_Result = Matching_Test_Details -> R6.Results_Of_Tests
+
+         if Previous_Reported_Result != UNDEFINED then
+
+            if Previous_Reported_Result.The_Result_Of_Test != ''Failed'' then
+
+               [] = RP9::Test_Anomalous_Behaviour[New_Test_Number, "Inconsistent duplicated fail result"]
+
+            endif
+
+         else
+
+            # Big problems, we thought this was duplicated, but it would appear not!
+
+            [] = RP9::Test_Anomalous_Behaviour[New_Test_Number, "Error in duplication of test failed result"]
+
+         endif
+
+
+      endif      
+
+
+
+      [] = DUPLICATED1:Duplicated_Result_Found[the_d_r_ih]       
+      
+      The_Domain_IH.Last_Reported_Test_Number = New_Test_Number
+      
+   endif
+
+else
+
+   [] = RP7::Report_Run_Time_Error["Test Passed undefined domain details IH"]
+   
+endif
+
+
+',
+	3,
+	'',
+	"ad283924-f7a5-4159-9c2f-26694f2cb42c",
+	2,
+	2);
+INSERT INTO O_TPARM
+	VALUES ("22b8a683-25fa-443b-92dc-eafc9061b065",
+	"ba1542ad-a198-4c47-887f-316d83aad678",
+	'New_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("108e17ab-bbed-4f8e-bc08-847df4857585",
+	"ba1542ad-a198-4c47-887f-316d83aad678",
+	'Invoking_Domain',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"22b8a683-25fa-443b-92dc-eafc9061b065",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("9c47c3cf-2ef1-40a3-b9d9-5041cb7fc59c",
+	"ba1542ad-a198-4c47-887f-316d83aad678",
+	'New_Test_Result_Value',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"108e17ab-bbed-4f8e-bc08-847df4857585",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("dcb22d85-5a01-4960-88fe-8daf9287b384",
+	"ba1542ad-a198-4c47-887f-316d83aad678",
+	'Details_Of_Test',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"9c47c3cf-2ef1-40a3-b9d9-5041cb7fc59c",
+	'');
+INSERT INTO O_TFR
+	VALUES ("6b904b79-6332-4391-a7b4-1df550eada85",
+	"92b447a4-d982-4422-8d7c-91ed8870fa10",
+	'A_Test_Is_Unsupported',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'local_result_found  = FALSE
+local_test_purpose  = " "
+local_tested_object = " "
+
+local_invoking_domain = Invoking_Domain
+local_test_number     = New_Test_Number
+
+# For requirement identifier tracking, update the requirement status
+[] = RP13::Requirement_Tracker[local_invoking_domain, local_test_number, ''Unsupported'']
+
+The_Domain_IH = find-one Domain_Details where Domain_Number = local_invoking_domain
+
+if The_Domain_IH != UNDEFINED then
+      
+   {Set_Of_Test_Details} = The_Domain_IH -> R8.Test_Details
+   {Duplicated_Reports}  = The_Domain_IH -> R4.Duplicated_Result
+
+   for Matching_Test_Details in {Set_Of_Test_Details} do
+       breakif Matching_Test_Details.The_Test_No = New_Test_Number
+   endfor
+
+   if Matching_Test_Details != UNDEFINED then
+      Matching_Test_Details.Result_Found = TRUE
+      local_result_found  = TRUE
+      local_test_purpose  = Matching_Test_Details.Test_Purpose
+      local_tested_object = Matching_Test_Details.Tested_Object
+   endif 
+
+ 
+   if New_Test_Number != The_Domain_IH.Last_Reported_Test_Number then      
+
+#      the_d_r_ih = find-one Duplicated_Result where Duplicated_Test_Number = The_Domain_IH.Last_Reported_Test_Number
+
+      for the_d_r_ih in {Duplicated_Reports} do
+          breakif the_d_r_ih.Duplicated_Test_Number = The_Domain_IH.Last_Reported_Test_Number
+      endfor
+
+#      the_results_ih = find-one Results_Of_Tests where The_Number_Of_Test = The_Domain_IH.Last_Reported_Test_Number
+      the_results_ih = Matching_Test_Details -> R6.Results_Of_Tests
+
+      if the_d_r_ih != UNDEFINED and the_results_ih != UNDEFINED then         
+         the_results_ih.The_No_Of_Duplicated_Results = the_d_r_ih.Duplicated_Test_Count
+      endif
+
+      [] = UNSUPPORTED1:Not_Done_It_Yet[The_Domain_IH]
+
+      The_Domain_IH.Last_Reported_Test_Number = New_Test_Number
+
+      new_results_of_test_instance = create Results_Of_Tests with \
+         The_Number_Of_Test           = New_Test_Number &\
+         The_Name_Of_The_Domain       = The_Domain_IH.Domain_Name &\
+         The_Result_Of_Test           = ''Unsupported'' &\ 
+         The_Value_Of_The_Result      = 0 &\        
+         The_Purpose_Of_Test          = local_test_purpose &\
+         The_No_Of_Duplicated_Results = 0 &\
+         The_Result_Of_Object         = local_tested_object &\
+         Domain_Test_Details          = " "
+
+      # Link this report to the matching test details if it exists
+
+      if Matching_Test_Details != UNDEFINED then 
+
+         link new_results_of_test_instance R6 Matching_Test_Details
+      
+      else
+
+         [] = RP9::Test_Anomalous_Behaviour[New_Test_Number,"Unsupported. No Test Details Found"]
+
+      endif
+
+   else
+
+      # Find the duplicated result IH that was linked in when duplication 
+      # was first seen.
+ 
+      # Duplicate report found.
+
+#      the_d_r_ih = find-one Duplicated_Result where \
+#         Duplicated_Test_Number = New_Test_Number
+
+      {Duplicated_Reports} = The_Domain_IH -> R4.Duplicated_Result
+      for the_d_r_ih in {Duplicated_Reports} do
+          breakif the_d_r_ih.Duplicated_Test_Number = New_Test_Number
+      endfor
+
+
+      if the_d_r_ih = UNDEFINED then
+         new_duplicated_instance               = create Duplicated_Result with \
+            Duplicated_Test_Number             = New_Test_Number &\
+            Who_Reported_The_Duplicated_Result = ''Passed''        &\
+            Duplicated_Test_Count              = 0
+
+         link new_duplicated_instance R4 The_Domain_IH
+  
+         the_d_r_ih = new_duplicated_instance
+
+     else
+
+         # Check to see if the reported result is the same! Passed then failed? We need to know.
+
+
+         Previous_Reported_Result = Matching_Test_Details -> R6.Results_Of_Tests
+
+         if Previous_Reported_Result != UNDEFINED then
+
+            if Previous_Reported_Result.The_Result_Of_Test != ''Unsupported'' then
+
+               [] = RP9::Test_Anomalous_Behaviour[New_Test_Number, "Inconsistent duplicated unsupported result"]
+
+            endif
+
+         else
+
+            # Big problems, we thought this was duplicated, but it would appear not!
+
+            [] = RP9::Test_Anomalous_Behaviour[New_Test_Number, "Error in duplication of test unsupported result"]
+
+         endif
+
+
+
+      endif      
+
+
+
+      [] = DUPLICATED1:Duplicated_Result_Found[the_d_r_ih]       
+      
+      The_Domain_IH.Last_Reported_Test_Number = New_Test_Number
+      
+   endif
+
+else
+
+   [] = RP7::Report_Run_Time_Error["Test Passed undefined domain details IH"]
+   
+endif
+
+',
+	3,
+	'',
+	"ba1542ad-a198-4c47-887f-316d83aad678",
+	2,
+	3);
+INSERT INTO O_TPARM
+	VALUES ("f2d2af4d-e05c-4128-8b51-33694ac5c86f",
+	"6b904b79-6332-4391-a7b4-1df550eada85",
+	'New_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("8497be19-4128-40b3-a417-bb29d4b6b001",
+	"6b904b79-6332-4391-a7b4-1df550eada85",
+	'Invoking_Domain',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"f2d2af4d-e05c-4128-8b51-33694ac5c86f",
+	'');
+INSERT INTO O_TFR
+	VALUES ("90061d8a-066f-4e35-a33e-fc8afcbc3607",
+	"92b447a4-d982-4422-8d7c-91ed8870fa10",
+	'End_Of_Test',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'
+
+if The_Domain != UNDEFINED then
+
+   {Failed_Data} is Failed_Tests_Record_Type
+
+   {Unsupported_Data} is Unsupported_Tests_Record_Type
+
+   {Duplicated_Data} is Duplicated_Tests_Record_Type
+
+   # find the objects detailing the pass/fail & unsupported data
+   Tell_Me_About_The_Passes        = The_Domain -> R1.A_Test_That_Passed
+   Tell_Me_About_The_Failures      = The_Domain -> R2.A_Test_That_Failed
+   Tell_Me_About_The_Unsupported   = The_Domain -> R3.A_Test_That_Is_Unsupported
+   {Tell_Me_About_The_Duplicated}  = The_Domain -> R4.Duplicated_Result
+   {Tell_Me_About_The_Tests}       = The_Domain -> R8.Test_Details
+   {Tell_Me_About_The_Comments}    = The_Domain -> R9.Supporting_Comments
+
+   Local_Total_Duplicated_Count = 0
+
+   # Dump out the details
+   Local_Passed          = Tell_Me_About_The_Passes.Passed_Counter
+   Local_Failed          = Tell_Me_About_The_Failures.Failed_Counter
+   Local_Unsupported     = Tell_Me_About_The_Unsupported.Unsupported_Counter
+   Local_The_Domain_Name = The_Domain.Domain_Name
+
+   local_next_test_number = 0
+   local_all_test_results_dumped = FALSE
+   local_match_found = FALSE
+
+   domain_name_for_file_handling = The_Domain.Domain_Name
+   domain_number_for_file_handling = The_Domain.Domain_Number
+
+
+   # Open a new output file for writing the results to. This will only be done for ADA runs.
+   #
+
+
+#$ADA_INLINE
+#with Test_Suite_Text_IO;
+#Test_Suite_Text_IO.Open_File_For_Writing(
+   #    Name_Of_File             => domain_name_for_file_handling,
+   #    Unique_Domain_Identifier => domain_number_for_file_handling);
+#$END_ADAINLINE
+
+
+   # Loop through all of the tests until all of the tests results have been dumped
+   loop
+
+      # Get the next test number 
+      local_next_test_number = local_next_test_number + 1
+      local_match_found = FALSE
+
+      # Obtain a single instance of the test details and obtain the results for that instance
+      for Each_Test_Result in {Tell_Me_About_The_Tests} do     
+
+         Tell_Me_About_The_Results = Each_Test_Result -> R6.Results_Of_Tests
+
+         # Sitting in this loop is a good place to now retrieve the
+         # requirement identifiers that may be associated with this test.
+
+         {All_The_Requirements} = Each_Test_Result -> R7.Requirement_Identifier_For_Test
+
+         How_Many_Requirements = countof {All_The_Requirements}
+
+
+         # If results have been found for the current instance 
+         if Tell_Me_About_The_Results != UNDEFINED then
+
+            # If the reult of the current instance = the current test to be dumped obtain the reults data
+            if Tell_Me_About_The_Results.The_Number_Of_Test = local_next_test_number then
+               local_match_found             = TRUE
+               Local_Test_Number             = Tell_Me_About_The_Results.The_Number_Of_Test
+               Local_Test_Domain_Name        = Tell_Me_About_The_Results.The_Name_Of_The_Domain 
+               Local_Duplicated_Result_Count = Tell_Me_About_The_Results.The_No_Of_Duplicated_Results
+               Local_The_Object              = Tell_Me_About_The_Results.The_Result_Of_Object
+               Local_Result_Value            = Tell_Me_About_The_Results.The_Value_Of_The_Result
+               Local_Test_Details            = Tell_Me_About_The_Results.Domain_Test_Details
+
+               Local_Test_Purpose     = Tell_Me_About_The_Results.The_Purpose_Of_Test
+
+               {Local_Comments}    = find Supporting_Comments where The_Test_No = local_next_test_number & Comment_ID = The_Domain.Domain_Number
+
+
+               # If the test passed set the test result to passed
+               if Tell_Me_About_The_Results.The_Result_Of_Test = ''Passed'' then  
+
+                  Local_Test_Result      = "PASSED"
+
+               else
+   
+                  # If the test failed set the test result to failed
+                  if Tell_Me_About_The_Results.The_Result_Of_Test = ''Failed'' then  
+
+                     Local_Test_Result      = "** ** FAILED ** **"
+                     # Stash the failed test number to dump out later.
+                     append [Local_Test_Number] to {Failed_Data}
+
+                  else
+                    
+                     # If the test failed set the test result to unsupported
+                     if Tell_Me_About_The_Results.The_Result_Of_Test = ''Unsupported'' then
+
+                        Local_Test_Result = "UNSUPPORTED"
+                        #stash the unsupported test number to dump out later
+                        append [Local_Test_Number, Local_Test_Purpose] to {Unsupported_Data}
+
+                     else
+
+                        # Neither fish nor fowl, should NEVER happen.
+                        Local_Test_Result = "UNKNOWN"
+                        [] = RP9::Test_Anomalous_Behaviour[Local_Test_Number, "UNKNOWN result"]
+ 
+                     endif
+
+                  endif
+
+               endif
+ 
+
+               Local_Total_Duplicated_Count = Local_Total_Duplicated_Count + Local_Duplicated_Result_Count
+ 
+               #stash the duplicated count for this test
+               if Local_Duplicated_Result_Count > 0 then
+                  append [Local_Test_Number, Local_Duplicated_Result_Count ] to {Duplicated_Data}
+               endif
+
+               $INLINE
+
+                  fprintf(stderr, " \n");
+                  fprintf(stderr, "---------------------------------------------------------------------------\n");
+                  fprintf(stderr, "Domain                      %s\n", Local_Test_Domain_Name);
+                  fprintf(stderr, "Test Number                 %d\n", Local_Test_Number);
+                  fprintf(stderr, "Object                      %s\n", Local_The_Object);
+                  fprintf(stderr, "Duplicated Results          %d\n", Local_Duplicated_Result_Count);
+                  fprintf(stderr, "Test Purpose                %s\n", Local_Test_Purpose);
+                  
+               $ENDINLINE
+
+               for Next_Comment in {Local_Comments} do
+                  A_Comment = Next_Comment.The_Comment
+                  $INLINE
+                     fprintf(stderr, "Comments -                  %s\n", A_Comment);
+                  $ENDINLINE
+               endfor
+
+               #$ADA_INLINE
+
+                  # Test_Suite_Text_IO.Dump_String("");
+                  # Test_Suite_Text_IO.Dump_String("---------------------------------------------------------------------------");
+                  # Test_Suite_Text_IO.Dump_String("Domain                       " & Local_Test_Domain_Name);
+                  # Test_Suite_Text_IO.Dump_String("Object                       " & Local_The_Object);
+                  # Test_Suite_Text_IO.Dump_String("Test Number                  " & integer''image(integer(Local_Test_Number )) );
+                  # Test_Suite_Text_IO.Dump_String("Duplicated Tests For Domain  " & integer''image(integer(Local_Duplicated_Result_Count )) );
+                  # Test_Suite_Text_IO.Dump_String("Test Purpose                 " & Local_Test_Purpose);
+
+
+               #$END_ADAINLINE
+
+               for each_comment in {Local_Comments} do
+                  A_Comment = each_comment.The_Comment
+                  #$ADA_INLINE
+                     # Test_Suite_Text_IO.Dump_String("Comments -                   " & A_Comment);
+                  #$END_ADAINLINE
+               endfor
+
+               # Dump out any other specified requirement identifiers.
+               if How_Many_Requirements > 0 then
+
+                  First_Time_Through = TRUE
+
+                  for Individual_Requid in {All_The_Requirements} do
+                      Local_Test_Req_ID = Individual_Requid.requid
+
+                      if First_Time_Through = TRUE then
+
+                         $INLINE
+                           fprintf(stderr, "Requirement Identifier(s)   %s\n", Local_Test_Req_ID );
+                         $ENDINLINE
+
+                         
+                         #$ADA_INLINE
+                            #Test_Suite_Text_IO.Display_Requid ("Requirement Identifier(s)    " , 
+                            #    Local_Test_Req_ID);
+                         #$END_ADAINLINE
+
+                      else
+                         $INLINE
+                           fprintf(stderr, "                            %s\n", Local_Test_Req_ID );
+                         $ENDINLINE
+
+                         
+                         #$ADA_INLINE
+                            #Test_Suite_Text_IO.Display_Requid ("                              " , 
+                            #    Specific_Requid => Local_Test_Req_ID);
+                         #$END_ADAINLINE
+
+                      endif
+
+
+                     First_Time_Through = FALSE
+
+                  endfor
+               endif
+
+               $INLINE
+                  fprintf(stderr, "\n");
+                  fprintf(stderr, "Result data                 %s\n", Local_Test_Details );
+                  fprintf(stderr, "Test Result                 %s with %d\n", Local_Test_Result, Local_Result_Value);
+               $ENDINLINE
+ 
+               #$ADA_INLINE
+                  #Test_Suite_Text_IO.Dump_String("");
+                  #Test_Suite_Text_IO.Dump_String("Result data                  " & Local_Test_Details);
+                  #Test_Suite_Text_IO.Dump_String("Test Result                  " & Local_Test_Result & "with " &  
+                  #    integer''image(integer(Local_Result_Value ))  );
+               #$END_ADAINLINE
+
+
+            endif
+         
+            # If all of the tests have been dumped then set the all results dumped flag to TRUE
+            if local_next_test_number >= countof {Tell_Me_About_The_Tests} then
+               local_all_test_results_dumped = TRUE
+            endif
+      
+
+         else
+            # Not found a result for this test
+            [] = RP9::Test_Anomalous_Behaviour[Each_Test_Result.The_Test_No, "One or More Results Were Not Found"]
+
+         endif
+
+         # If a match between the result test number and required test number has been found then break out of the for loop
+         breakif local_match_found = TRUE
+
+      endfor
+
+      # If all of the reults have been dumped then break out of the loop
+      breakif local_all_test_results_dumped = TRUE 
+
+   endloop
+
+   # If there was some failures found during the run
+
+   Total_Number_Of_Tests_Attempted = Local_Passed + Local_Failed + Local_Unsupported
+
+   $INLINE
+      fprintf(stderr, " \n");
+      fprintf(stderr,"***************************************************************************\n");
+      fprintf(stderr,"***************************************************************************\n");
+      fprintf(stderr, " \n");
+      fprintf(stderr, "Overall Results for domain      %s\n", Local_The_Domain_Name);
+      fprintf(stderr, "Total  Tests      %d\n", Total_Number_Of_Tests_Attempted);
+      fprintf(stderr, "Passed Tests      %d\n", Local_Passed);
+      fprintf(stderr, "Failed Tests      %d\n", Local_Failed);
+   $ENDINLINE
+
+   #$ADA_INLINE
+      #Test_Suite_Text_IO.Dump_String("");
+      #Test_Suite_Text_IO.Dump_String("***************************************************************************");
+      #Test_Suite_Text_IO.Dump_String("***************************************************************************");
+      #Test_Suite_Text_IO.Dump_String("");
+      #Test_Suite_Text_IO.Dump_String("Overall Results for domain " & Local_The_Domain_Name);
+      #Test_Suite_Text_IO.Dump_String("Total Tests       " & integer''image(integer(Total_Number_Of_Tests_Attempted )) );
+      #Test_Suite_Text_IO.Dump_String("Passed Tests      " & integer''image(integer(Local_Passed )) );
+      #Test_Suite_Text_IO.Dump_String("Failed Tests      " & integer''image(integer(Local_Failed )) );
+   #$END_ADAINLINE
+
+   if Local_Failed != 0 then
+      for [Local_Failed_Test_Number] in {Failed_Data} do
+
+         $INLINE
+            fprintf(stderr, " failure found in test %d\n", Local_Failed_Test_Number);
+         $ENDINLINE
+
+         #$ADA_INLINE
+            #Test_Suite_Text_IO.Dump_String(" failure found in test " & 
+            #    integer''image(integer( Local_Failed_Test_Number )) );
+         #$END_ADAINLINE
+
+      endfor
+   endif
+
+   $INLINE
+   fprintf(stderr, "Unsupported Tests %d\n", Local_Unsupported);
+   $ENDINLINE
+
+   #$ADA_INLINE
+   #Test_Suite_Text_IO.Dump_String("Unsupported Tests " & 
+   #    integer''image(integer( Local_Unsupported )) );
+   #$END_ADAINLINE
+
+   if countof {Unsupported_Data} != 0 then
+
+      for [This_Unsupported_Test_Number, This_Test_Details_Text] in {Unsupported_Data} do
+
+         $INLINE
+            fprintf(stderr, " test %d was testing for %s\n", This_Unsupported_Test_Number, This_Test_Details_Text  );
+         $ENDINLINE
+
+         #$ADA_INLINE
+            #Test_Suite_Text_IO.Dump_String(" test " & integer''image(integer( This_Unsupported_Test_Number )) & 
+            # " was testing for " & This_Test_Details_Text );
+         #$END_ADAINLINE
+
+      endfor
+
+   endif
+
+
+   $INLINE
+      fprintf(stderr, "Total Duplicated Tests  %d\n", Local_Total_Duplicated_Count);
+   $ENDINLINE
+
+   #$ADA_INLINE
+   #Test_Suite_Text_IO.Dump_String("Total Duplicated Tests  " & 
+   #    integer''image(integer( Local_Total_Duplicated_Count )) );
+   #$END_ADAINLINE
+
+
+   if countof {Duplicated_Data} != 0 then
+
+      for [This_Duplicated_Test_Number, Number_Of_Duplicated_Results] in {Duplicated_Data} do
+
+         if Number_Of_Duplicated_Results > 1 then
+            $INLINE
+               fprintf(stderr, " test %d had %d duplicated results\n", This_Duplicated_Test_Number, Number_Of_Duplicated_Results );
+            $ENDINLINE
+
+            #$ADA_INLINE
+               #Test_Suite_Text_IO.Dump_String(" test " & integer''image(integer( This_Duplicated_Test_Number )) & " had " & 
+               #    integer''image(integer(Number_Of_Duplicated_Results)) & " duplicated results" );
+            #$END_ADAINLINE
+
+         else
+            $INLINE
+               fprintf(stderr, " test %d had %d duplicated result\n", This_Duplicated_Test_Number, Number_Of_Duplicated_Results );
+            $ENDINLINE
+
+            #$ADA_INLINE
+               #Test_Suite_Text_IO.Dump_String(" test " & integer''image(integer( This_Duplicated_Test_Number )) & " had " & 
+               #    integer''image(integer(Number_Of_Duplicated_Results)) & " duplicated result" );
+            #$END_ADAINLINE
+
+         endif
+
+      endfor
+
+   endif
+
+
+   $INLINE
+      fprintf(stderr, " \n");
+      fprintf(stderr,"***************************************************************************\n");
+      fprintf(stderr,"***************************************************************************\n");
+      fprintf(stderr, " \n");
+   $ENDINLINE
+
+
+   #$ADA_INLINE
+      #Test_Suite_Text_IO.Dump_String("");
+      #Test_Suite_Text_IO.Dump_String("***************************************************************************");
+      #Test_Suite_Text_IO.Dump_String("***************************************************************************");
+      #Test_Suite_Text_IO.Dump_String("");
+   #$END_ADAINLINE
+
+
+ 
+
+   # Unlink R1, R2 & R3
+   unlink The_Domain R1 Tell_Me_About_The_Passes
+   delete Tell_Me_About_The_Passes
+
+   unlink The_Domain R2 Tell_Me_About_The_Failures
+   delete Tell_Me_About_The_Failures
+
+   unlink The_Domain R3 Tell_Me_About_The_Unsupported
+   delete Tell_Me_About_The_Unsupported
+   
+   # Unlink and delete each instance of the duplicated results
+   for each_duplicated_set in {Tell_Me_About_The_Duplicated} do
+      unlink The_Domain R4 each_duplicated_set
+      delete each_duplicated_set
+   endfor
+   
+   for inst_of_comment in {Tell_Me_About_The_Comments} do
+      unlink The_Domain R9 inst_of_comment
+      delete inst_of_comment
+   endfor
+
+
+   # Obtain each instance of the test details unlink and delete the results of the 
+   # instance then unlink and delete the test details instance
+
+   no_more_results = FALSE
+
+
+   {All_Of_The_Tests} = The_Domain -> R8.Test_Details   
+
+   for Each_Test in {All_Of_The_Tests} do
+      
+      if Each_Test != UNDEFINED then
+         
+         res = Each_Test -> R6.Results_Of_Tests
+
+        if res != UNDEFINED then
+           unlink Each_Test R6 res
+           delete res
+
+        else
+
+           # Couldn''t find the results for this test
+           [] = RP9::Test_Anomalous_Behaviour[Each_Test.The_Test_No, "One or More Results Were Not Found"]
+
+        endif  
+
+        unlink Each_Test R8 The_Domain
+
+        # any left
+        still_res = Each_Test -> R6.Results_Of_Tests
+        if still_res != UNDEFINED then
+           # This is technically an error condition
+           # all outstanding relationships should already have been unlinked
+           # but they haven''t
+           unlink Each_Test R6 still_res
+           delete still_res
+        endif
+
+        # Now sort out the linked in requirement identifier object.
+
+        {set_of_requids} = Each_Test -> R7.Requirement_Identifier_For_Test
+        for each_requid in {set_of_requids} do
+           unlink Each_Test R7 each_requid
+           delete each_requid
+        endfor
+
+        delete Each_Test
+
+      else
+
+         # Couldn''t find the Test_Details for this test
+           [] = RP7::Report_Run_Time_Error["One Or More Test Details Were Not Found"]
+
+      endif
+
+   endfor
+
+
+   # closes the open ada file
+
+   #$ADA_INLINE
+   #Test_Suite_Text_IO.Close_File_For_Writing(
+      #    Name_Of_File             => domain_name_for_file_handling,
+      #    Unique_Domain_Identifier => domain_number_for_file_handling);
+   #$END_ADAINLINE
+
+
+   #If the Test Suite object exists, initiate requirements analysis.
+   # .... and if the current state is ''Waiting'', ie. it has been triggered from the
+   # idle state into Waiting by the Scenario 4 being called at the end of a test run.
+
+   The_Requirements_Object = find-one Test_Suite
+
+   if The_Requirements_Object != UNDEFINED then 
+
+      if The_Requirements_Object.Current_State = ''Waiting'' then
+         generate TS1:Perform_Analysis() to The_Requirements_Object
+      endif
+
+   endif
+
+else
+
+   [] = RP7::Report_Run_Time_Error["Undefined Domain"]
+
+endif
+',
+	3,
+	'',
+	"6b904b79-6332-4391-a7b4-1df550eada85",
+	2,
+	4);
+INSERT INTO O_TPARM
+	VALUES ("e9268b34-7776-4220-ab77-b7676830ec56",
+	"90061d8a-066f-4e35-a33e-fc8afcbc3607",
+	'The_Domain',
+	"b6be81cd-5988-46ae-b74f-1cae173376de",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("b6be81cd-5988-46ae-b74f-1cae173376de",
+	"00000000-0000-0000-0000-000000000000",
+	'inst_ref<Domain_Details>',
+	'',
+	'',
+	'../RP.xtuml');
+INSERT INTO O_NBATTR
+	VALUES ("7365d7fc-e669-4183-8685-d988a031a327",
+	"92b447a4-d982-4422-8d7c-91ed8870fa10");
+INSERT INTO O_BATTR
+	VALUES ("7365d7fc-e669-4183-8685-d988a031a327",
+	"92b447a4-d982-4422-8d7c-91ed8870fa10");
+INSERT INTO O_ATTR
+	VALUES ("7365d7fc-e669-4183-8685-d988a031a327",
+	"92b447a4-d982-4422-8d7c-91ed8870fa10",
+	"00000000-0000-0000-0000-000000000000",
+	'Domain_Number',
+	'',
+	'',
+	'Domain_Number',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("c532630e-5829-4795-9e04-836a658168c6",
+	"92b447a4-d982-4422-8d7c-91ed8870fa10");
+INSERT INTO O_BATTR
+	VALUES ("c532630e-5829-4795-9e04-836a658168c6",
+	"92b447a4-d982-4422-8d7c-91ed8870fa10");
+INSERT INTO O_ATTR
+	VALUES ("c532630e-5829-4795-9e04-836a658168c6",
+	"92b447a4-d982-4422-8d7c-91ed8870fa10",
+	"7365d7fc-e669-4183-8685-d988a031a327",
+	'Domain_Name',
+	'',
+	'',
+	'Domain_Name',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("9211522c-4e42-4bf5-b715-df84f31d2eb0",
+	"92b447a4-d982-4422-8d7c-91ed8870fa10");
+INSERT INTO O_BATTR
+	VALUES ("9211522c-4e42-4bf5-b715-df84f31d2eb0",
+	"92b447a4-d982-4422-8d7c-91ed8870fa10");
+INSERT INTO O_ATTR
+	VALUES ("9211522c-4e42-4bf5-b715-df84f31d2eb0",
+	"92b447a4-d982-4422-8d7c-91ed8870fa10",
+	"c532630e-5829-4795-9e04-836a658168c6",
+	'Last_Reported_Test_Number',
+	' Use this for the last test that was reported.
+',
+	'',
+	'Last_Reported_Test_Number',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("d5772d16-5488-4fd1-926f-3bb3175b63b3",
+	"92b447a4-d982-4422-8d7c-91ed8870fa10");
+INSERT INTO O_BATTR
+	VALUES ("d5772d16-5488-4fd1-926f-3bb3175b63b3",
+	"92b447a4-d982-4422-8d7c-91ed8870fa10");
+INSERT INTO O_ATTR
+	VALUES ("d5772d16-5488-4fd1-926f-3bb3175b63b3",
+	"92b447a4-d982-4422-8d7c-91ed8870fa10",
+	"aef314de-bee3-489d-8d4f-0b00f407a3b4",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_REF
+	VALUES ("92b447a4-d982-4422-8d7c-91ed8870fa10",
+	"72542dbc-f93a-49ac-b237-b11b9ab6212d",
+	0,
+	"d4e17b04-d874-47e2-83a3-4af8824e2f73",
+	"a36ac9fd-baa6-438c-9ccb-75a6ff92dbf1",
+	"3e7d243c-48ff-4568-92df-f552122a4e2c",
+	"bf779e86-8dd1-4338-aa3e-b87fc0c1f57d",
+	"aef314de-bee3-489d-8d4f-0b00f407a3b4",
+	"9740c8c9-9dc2-405f-9d8e-d3a8ee8439a8",
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Test_Suite',
+	'Unique_TS_Identifier',
+	'R10.''Is_Contained_By''');
+INSERT INTO R_RGO_PROXY
+	VALUES ("92b447a4-d982-4422-8d7c-91ed8870fa10",
+	"a36ac9fd-baa6-438c-9ccb-75a6ff92dbf1",
+	"3e7d243c-48ff-4568-92df-f552122a4e2c",
+	'../RP.xtuml');
+INSERT INTO O_RTIDA_PROXY
+	VALUES ("d4e17b04-d874-47e2-83a3-4af8824e2f73",
+	"72542dbc-f93a-49ac-b237-b11b9ab6212d",
+	0,
+	"a36ac9fd-baa6-438c-9ccb-75a6ff92dbf1",
+	"bf779e86-8dd1-4338-aa3e-b87fc0c1f57d",
+	'../RP.xtuml');
+INSERT INTO O_RATTR
+	VALUES ("aef314de-bee3-489d-8d4f-0b00f407a3b4",
+	"92b447a4-d982-4422-8d7c-91ed8870fa10",
+	"d4e17b04-d874-47e2-83a3-4af8824e2f73",
+	"72542dbc-f93a-49ac-b237-b11b9ab6212d",
+	0,
+	'Unique_TS_Identifier');
+INSERT INTO O_BATTR_PROXY
+	VALUES ("d4e17b04-d874-47e2-83a3-4af8824e2f73",
+	"72542dbc-f93a-49ac-b237-b11b9ab6212d",
+	'../Test_Suite/Test_Suite.xtuml');
+INSERT INTO O_ATTR
+	VALUES ("aef314de-bee3-489d-8d4f-0b00f407a3b4",
+	"92b447a4-d982-4422-8d7c-91ed8870fa10",
+	"9211522c-4e42-4bf5-b715-df84f31d2eb0",
+	'Unique_TS_Identifier',
+	'',
+	'',
+	'Unique_TS_Identifier',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000007",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"92b447a4-d982-4422-8d7c-91ed8870fa10");
+INSERT INTO O_OIDA
+	VALUES ("7365d7fc-e669-4183-8685-d988a031a327",
+	"92b447a4-d982-4422-8d7c-91ed8870fa10",
+	0,
+	'Domain_Number');
+INSERT INTO O_ID
+	VALUES (1,
+	"92b447a4-d982-4422-8d7c-91ed8870fa10");
+INSERT INTO O_ID
+	VALUES (2,
+	"92b447a4-d982-4422-8d7c-91ed8870fa10");
+INSERT INTO PE_PE
+	VALUES ("92b447a4-d982-4422-8d7c-91ed8870fa10",
+	1,
+	"f6571647-b875-45a6-b11d-1f1c2da4d391",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("f6571647-b875-45a6-b11d-1f1c2da4d391",
+	"00000000-0000-0000-0000-000000000000",
+	"9d158e79-1971-4f46-9816-625db585c03b",
+	'RP',
+	'',
+	0,
+	'../RP.xtuml');

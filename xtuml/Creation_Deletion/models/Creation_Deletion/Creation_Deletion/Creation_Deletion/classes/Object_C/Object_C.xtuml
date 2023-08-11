@@ -1,0 +1,125 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("9a916011-f535-4b4c-8204-26e46ebcb1eb",
+	'Object_C',
+	4,
+	'objC',
+	' Object_C is manipulated by object ''Instance_Creation''.
+',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("b031a894-1ccd-4c66-b211-952de2221ef8",
+	"9a916011-f535-4b4c-8204-26e46ebcb1eb",
+	'do_create_unique_mult',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'#------------------------------------------------------------------------#
+# Create unique state where the object has multiple preferred identifiers
+#------------------------------------------------------------------------#
+
+   Test = Test_Number
+
+   [] = RPT1:Start_Test[Test, "Null Requid", "Creation Deletion", "objC", "Create unique using multiple ids"]
+
+   [] = RPT4:Test_Unsupported[Test]
+
+   Returned_Test_Number = Test
+
+#------------------------------------------------------------------------#
+',
+	3,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	2,
+	1);
+INSERT INTO O_TPARM
+	VALUES ("24d10122-63af-42fa-9b6c-af1baf95eedc",
+	"b031a894-1ccd-4c66-b211-952de2221ef8",
+	'Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("0cc6354b-0903-40a8-a33d-3f3f9d8b557c",
+	"b031a894-1ccd-4c66-b211-952de2221ef8",
+	'Returned_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"24d10122-63af-42fa-9b6c-af1baf95eedc",
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("35f7fceb-3043-4db1-8a01-f5cf8eccc971",
+	"9a916011-f535-4b4c-8204-26e46ebcb1eb");
+INSERT INTO O_BATTR
+	VALUES ("35f7fceb-3043-4db1-8a01-f5cf8eccc971",
+	"9a916011-f535-4b4c-8204-26e46ebcb1eb");
+INSERT INTO O_ATTR
+	VALUES ("35f7fceb-3043-4db1-8a01-f5cf8eccc971",
+	"9a916011-f535-4b4c-8204-26e46ebcb1eb",
+	"00000000-0000-0000-0000-000000000000",
+	'Reference1C',
+	' Preferred identifier.
+',
+	'',
+	'Reference1C',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("ed9460ea-7e12-4d00-970a-2b0aa4d88e6a",
+	"9a916011-f535-4b4c-8204-26e46ebcb1eb");
+INSERT INTO O_BATTR
+	VALUES ("ed9460ea-7e12-4d00-970a-2b0aa4d88e6a",
+	"9a916011-f535-4b4c-8204-26e46ebcb1eb");
+INSERT INTO O_ATTR
+	VALUES ("ed9460ea-7e12-4d00-970a-2b0aa4d88e6a",
+	"9a916011-f535-4b4c-8204-26e46ebcb1eb",
+	"35f7fceb-3043-4db1-8a01-f5cf8eccc971",
+	'Reference2C',
+	' Referential attribute.
+',
+	'',
+	'Reference2C',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"9a916011-f535-4b4c-8204-26e46ebcb1eb");
+INSERT INTO O_OIDA
+	VALUES ("35f7fceb-3043-4db1-8a01-f5cf8eccc971",
+	"9a916011-f535-4b4c-8204-26e46ebcb1eb",
+	0,
+	'Reference1C');
+INSERT INTO O_OIDA
+	VALUES ("ed9460ea-7e12-4d00-970a-2b0aa4d88e6a",
+	"9a916011-f535-4b4c-8204-26e46ebcb1eb",
+	0,
+	'Reference2C');
+INSERT INTO O_ID
+	VALUES (1,
+	"9a916011-f535-4b4c-8204-26e46ebcb1eb");
+INSERT INTO O_ID
+	VALUES (2,
+	"9a916011-f535-4b4c-8204-26e46ebcb1eb");
+INSERT INTO PE_PE
+	VALUES ("9a916011-f535-4b4c-8204-26e46ebcb1eb",
+	1,
+	"c852afc7-98ac-4492-988b-0303d2b80eff",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("c852afc7-98ac-4492-988b-0303d2b80eff",
+	"00000000-0000-0000-0000-000000000000",
+	"10f28eec-2c10-4bed-b362-3203399c1025",
+	'classes',
+	'',
+	0,
+	'../classes.xtuml');

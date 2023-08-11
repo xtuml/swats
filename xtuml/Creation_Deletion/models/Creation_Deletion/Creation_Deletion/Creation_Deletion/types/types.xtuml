@@ -1,0 +1,364 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("eb5dedd3-d12f-46b8-97fd-029c1e07c706",
+	"00000000-0000-0000-0000-000000000000",
+	"10f28eec-2c10-4bed-b362-3203399c1025",
+	'types',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("39f57d8b-ace0-4dfd-8493-1dcb6a1eabb4",
+	112,
+	"eb5dedd3-d12f-46b8-97fd-029c1e07c706",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	200,
+	150,
+	0,
+	'',
+	'Creation_Deletion::Creation_Deletion::Creation_Deletion::types');
+INSERT INTO GD_GE
+	VALUES ("09d59d79-3b79-4a65-a8df-22038f0ba800",
+	"39f57d8b-ace0-4dfd-8493-1dcb6a1eabb4",
+	"b0c0cc4b-dbbe-4479-bf3f-33887658784f",
+	52,
+	0,
+	'Creation_Deletion::Creation_Deletion::Creation_Deletion::types::Base_Colour');
+INSERT INTO GD_SHP
+	VALUES ("09d59d79-3b79-4a65-a8df-22038f0ba800");
+INSERT INTO GD_NCS
+	VALUES ("09d59d79-3b79-4a65-a8df-22038f0ba800");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"09d59d79-3b79-4a65-a8df-22038f0ba800");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"09d59d79-3b79-4a65-a8df-22038f0ba800",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("09d59d79-3b79-4a65-a8df-22038f0ba800",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_GE
+	VALUES ("07f7fdd1-82bb-4ddd-8a25-a73a2964c2fc",
+	"39f57d8b-ace0-4dfd-8493-1dcb6a1eabb4",
+	"f9cf3923-b82a-4b56-9e0d-c983cbed823f",
+	52,
+	0,
+	'Creation_Deletion::Creation_Deletion::Creation_Deletion::types::Coloured_Type');
+INSERT INTO GD_SHP
+	VALUES ("07f7fdd1-82bb-4ddd-8a25-a73a2964c2fc");
+INSERT INTO GD_NCS
+	VALUES ("07f7fdd1-82bb-4ddd-8a25-a73a2964c2fc");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"07f7fdd1-82bb-4ddd-8a25-a73a2964c2fc");
+INSERT INTO DIM_GE
+	VALUES (220.000000,
+	0.000000,
+	"07f7fdd1-82bb-4ddd-8a25-a73a2964c2fc",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("07f7fdd1-82bb-4ddd-8a25-a73a2964c2fc",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_GE
+	VALUES ("bdd640dc-1cd6-4e32-a11c-c33e6d4b3ace",
+	"39f57d8b-ace0-4dfd-8493-1dcb6a1eabb4",
+	"f487df9f-b2b2-4cef-b6db-fc614d9af582",
+	52,
+	0,
+	'Creation_Deletion::Creation_Deletion::Creation_Deletion::types::Flavoured_Type');
+INSERT INTO GD_SHP
+	VALUES ("bdd640dc-1cd6-4e32-a11c-c33e6d4b3ace");
+INSERT INTO GD_NCS
+	VALUES ("bdd640dc-1cd6-4e32-a11c-c33e6d4b3ace");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"bdd640dc-1cd6-4e32-a11c-c33e6d4b3ace");
+INSERT INTO DIM_GE
+	VALUES (440.000000,
+	0.000000,
+	"bdd640dc-1cd6-4e32-a11c-c33e6d4b3ace",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("bdd640dc-1cd6-4e32-a11c-c33e6d4b3ace",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_GE
+	VALUES ("d43b8f8f-3d96-4e5f-b29c-ff993332a7b1",
+	"39f57d8b-ace0-4dfd-8493-1dcb6a1eabb4",
+	"946bd470-c1e4-4251-927e-9075fbc3b56e",
+	52,
+	0,
+	'Creation_Deletion::Creation_Deletion::Creation_Deletion::types::actors_who_have_played_the_doctor');
+INSERT INTO GD_SHP
+	VALUES ("d43b8f8f-3d96-4e5f-b29c-ff993332a7b1");
+INSERT INTO GD_NCS
+	VALUES ("d43b8f8f-3d96-4e5f-b29c-ff993332a7b1");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"d43b8f8f-3d96-4e5f-b29c-ff993332a7b1");
+INSERT INTO DIM_GE
+	VALUES (660.000000,
+	0.000000,
+	"d43b8f8f-3d96-4e5f-b29c-ff993332a7b1",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("d43b8f8f-3d96-4e5f-b29c-ff993332a7b1",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_GE
+	VALUES ("b073efd9-cb3e-448a-ad17-c5248ec5672e",
+	"39f57d8b-ace0-4dfd-8493-1dcb6a1eabb4",
+	"99fff263-54ed-4f5c-9986-7a51354c487d",
+	52,
+	0,
+	'Creation_Deletion::Creation_Deletion::Creation_Deletion::types::battlefield_arena_type');
+INSERT INTO GD_SHP
+	VALUES ("b073efd9-cb3e-448a-ad17-c5248ec5672e");
+INSERT INTO GD_NCS
+	VALUES ("b073efd9-cb3e-448a-ad17-c5248ec5672e");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"b073efd9-cb3e-448a-ad17-c5248ec5672e");
+INSERT INTO DIM_GE
+	VALUES (880.000000,
+	0.000000,
+	"b073efd9-cb3e-448a-ad17-c5248ec5672e",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("b073efd9-cb3e-448a-ad17-c5248ec5672e",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_DIA
+	VALUES ("39f57d8b-ace0-4dfd-8493-1dcb6a1eabb4",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_DT
+	VALUES ("b0c0cc4b-dbbe-4479-bf3f-33887658784f",
+	"00000000-0000-0000-0000-000000000000",
+	'Base_Colour',
+	' This attribute is used to verify that an object instance can be created, when the data type uses enumeration.
+',
+	'');
+INSERT INTO S_EDT
+	VALUES ("b0c0cc4b-dbbe-4479-bf3f-33887658784f");
+INSERT INTO S_ENUM
+	VALUES ("8c69ba4c-7561-4ce5-869c-306cfd441d3c",
+	'Red',
+	'',
+	"b0c0cc4b-dbbe-4479-bf3f-33887658784f",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_ENUM
+	VALUES ("e16365a8-2c8d-45de-a1ae-e181d6b4c3ec",
+	'Green',
+	'',
+	"b0c0cc4b-dbbe-4479-bf3f-33887658784f",
+	"8c69ba4c-7561-4ce5-869c-306cfd441d3c");
+INSERT INTO S_ENUM
+	VALUES ("8e3ca95b-3e4e-4446-aa2a-06082405fe2c",
+	'Blue',
+	'',
+	"b0c0cc4b-dbbe-4479-bf3f-33887658784f",
+	"e16365a8-2c8d-45de-a1ae-e181d6b4c3ec");
+INSERT INTO S_ENUM
+	VALUES ("d34a5078-0995-47a8-9827-bc9eb77e682d",
+	'Black',
+	'',
+	"b0c0cc4b-dbbe-4479-bf3f-33887658784f",
+	"8e3ca95b-3e4e-4446-aa2a-06082405fe2c");
+INSERT INTO PE_PE
+	VALUES ("b0c0cc4b-dbbe-4479-bf3f-33887658784f",
+	1,
+	"eb5dedd3-d12f-46b8-97fd-029c1e07c706",
+	"00000000-0000-0000-0000-000000000000",
+	3);
+INSERT INTO S_DT
+	VALUES ("f9cf3923-b82a-4b56-9e0d-c983cbed823f",
+	"00000000-0000-0000-0000-000000000000",
+	'Coloured_Type',
+	'',
+	'');
+INSERT INTO S_EDT
+	VALUES ("f9cf3923-b82a-4b56-9e0d-c983cbed823f");
+INSERT INTO S_ENUM
+	VALUES ("d508c1bb-4ade-45c7-8f99-7911f2274878",
+	'red',
+	'',
+	"f9cf3923-b82a-4b56-9e0d-c983cbed823f",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_ENUM
+	VALUES ("b4be537f-c22e-4208-ab59-65897ab5d1a5",
+	'blue',
+	'',
+	"f9cf3923-b82a-4b56-9e0d-c983cbed823f",
+	"d508c1bb-4ade-45c7-8f99-7911f2274878");
+INSERT INTO S_ENUM
+	VALUES ("9d068909-7835-4bb1-97ef-3e4198b56a01",
+	'green',
+	'',
+	"f9cf3923-b82a-4b56-9e0d-c983cbed823f",
+	"b4be537f-c22e-4208-ab59-65897ab5d1a5");
+INSERT INTO PE_PE
+	VALUES ("f9cf3923-b82a-4b56-9e0d-c983cbed823f",
+	1,
+	"eb5dedd3-d12f-46b8-97fd-029c1e07c706",
+	"00000000-0000-0000-0000-000000000000",
+	3);
+INSERT INTO S_DT
+	VALUES ("f487df9f-b2b2-4cef-b6db-fc614d9af582",
+	"00000000-0000-0000-0000-000000000000",
+	'Flavoured_Type',
+	'',
+	'');
+INSERT INTO S_EDT
+	VALUES ("f487df9f-b2b2-4cef-b6db-fc614d9af582");
+INSERT INTO S_ENUM
+	VALUES ("35582056-bc88-4103-9485-6bdc62358df5",
+	'chicken',
+	'',
+	"f487df9f-b2b2-4cef-b6db-fc614d9af582",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_ENUM
+	VALUES ("25b6080f-7018-4b47-92c9-13fcf9b164c4",
+	'fish',
+	'',
+	"f487df9f-b2b2-4cef-b6db-fc614d9af582",
+	"35582056-bc88-4103-9485-6bdc62358df5");
+INSERT INTO S_ENUM
+	VALUES ("6aebce60-dd51-4546-bd9e-6bbcfd20fdb7",
+	'coffee',
+	'',
+	"f487df9f-b2b2-4cef-b6db-fc614d9af582",
+	"25b6080f-7018-4b47-92c9-13fcf9b164c4");
+INSERT INTO PE_PE
+	VALUES ("f487df9f-b2b2-4cef-b6db-fc614d9af582",
+	1,
+	"eb5dedd3-d12f-46b8-97fd-029c1e07c706",
+	"00000000-0000-0000-0000-000000000000",
+	3);
+INSERT INTO S_DT
+	VALUES ("946bd470-c1e4-4251-927e-9075fbc3b56e",
+	"00000000-0000-0000-0000-000000000000",
+	'actors_who_have_played_the_doctor',
+	'',
+	'');
+INSERT INTO S_EDT
+	VALUES ("946bd470-c1e4-4251-927e-9075fbc3b56e");
+INSERT INTO S_ENUM
+	VALUES ("468e47da-840b-4b66-bcad-e929a7e69c54",
+	'Tom_Baker',
+	'',
+	"946bd470-c1e4-4251-927e-9075fbc3b56e",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_ENUM
+	VALUES ("8aa37815-a558-4397-b258-8332b79b051c",
+	'Jon_Pertwee',
+	'',
+	"946bd470-c1e4-4251-927e-9075fbc3b56e",
+	"468e47da-840b-4b66-bcad-e929a7e69c54");
+INSERT INTO S_ENUM
+	VALUES ("314d9d78-a470-4928-9be7-dda2c2f45a57",
+	'Patrick_Troughton',
+	'',
+	"946bd470-c1e4-4251-927e-9075fbc3b56e",
+	"8aa37815-a558-4397-b258-8332b79b051c");
+INSERT INTO PE_PE
+	VALUES ("946bd470-c1e4-4251-927e-9075fbc3b56e",
+	1,
+	"eb5dedd3-d12f-46b8-97fd-029c1e07c706",
+	"00000000-0000-0000-0000-000000000000",
+	3);
+INSERT INTO S_DT
+	VALUES ("99fff263-54ed-4f5c-9986-7a51354c487d",
+	"00000000-0000-0000-0000-000000000000",
+	'battlefield_arena_type',
+	'',
+	'');
+INSERT INTO S_EDT
+	VALUES ("99fff263-54ed-4f5c-9986-7a51354c487d");
+INSERT INTO S_ENUM
+	VALUES ("2d44ea5e-58ea-4d50-a39a-0ba62d081ffe",
+	'Earth',
+	'',
+	"99fff263-54ed-4f5c-9986-7a51354c487d",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_ENUM
+	VALUES ("5f247494-9241-4e8c-a50e-cbbbdf631770",
+	'Gallifrey',
+	'',
+	"99fff263-54ed-4f5c-9986-7a51354c487d",
+	"2d44ea5e-58ea-4d50-a39a-0ba62d081ffe");
+INSERT INTO S_ENUM
+	VALUES ("2e2e5c99-aa7f-430f-b920-482eb6f9a973",
+	'Skarros',
+	'',
+	"99fff263-54ed-4f5c-9986-7a51354c487d",
+	"5f247494-9241-4e8c-a50e-cbbbdf631770");
+INSERT INTO S_ENUM
+	VALUES ("d6cf2865-9480-4269-a248-4f341d0e6d6a",
+	'Wheelchair',
+	'',
+	"99fff263-54ed-4f5c-9986-7a51354c487d",
+	"2e2e5c99-aa7f-430f-b920-482eb6f9a973");
+INSERT INTO S_ENUM
+	VALUES ("307fd07f-4377-481f-8eea-fac6193bb050",
+	'Underwater',
+	'',
+	"99fff263-54ed-4f5c-9986-7a51354c487d",
+	"d6cf2865-9480-4269-a248-4f341d0e6d6a");
+INSERT INTO S_ENUM
+	VALUES ("041b04c9-dfb7-429a-8cd7-88aafde01eb6",
+	'Venus',
+	'',
+	"99fff263-54ed-4f5c-9986-7a51354c487d",
+	"307fd07f-4377-481f-8eea-fac6193bb050");
+INSERT INTO PE_PE
+	VALUES ("99fff263-54ed-4f5c-9986-7a51354c487d",
+	1,
+	"eb5dedd3-d12f-46b8-97fd-029c1e07c706",
+	"00000000-0000-0000-0000-000000000000",
+	3);
+INSERT INTO PE_PE
+	VALUES ("eb5dedd3-d12f-46b8-97fd-029c1e07c706",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"5775ced8-db3d-49eb-872c-bb1406ce7f70",
+	7);
+INSERT INTO C_C_PROXY
+	VALUES ("5775ced8-db3d-49eb-872c-bb1406ce7f70",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'Creation_Deletion',
+	' This domain deals with instance creation and deletion. It check both synchronous and asynchronous creation and deletion.
+',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Creation_Deletion',
+	'../Creation_Deletion.xtuml');
+INSERT INTO S_SYS_PROXY
+	VALUES ("10f28eec-2c10-4bed-b362-3203399c1025",
+	'Creation_Deletion',
+	1,
+	'../../../Creation_Deletion.xtuml');

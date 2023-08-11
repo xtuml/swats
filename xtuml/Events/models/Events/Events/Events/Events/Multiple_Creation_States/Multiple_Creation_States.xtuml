@@ -1,0 +1,94 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("90f8acb4-0c84-4e85-abfc-f59ffebe8d7f",
+	'Multiple_Creation_States',
+	36,
+	'objMCS',
+	' This object verifies that an object may have more than one creation state.
+',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("fe948884-d073-4362-b78c-0361ec2c5a73",
+	"90f8acb4-0c84-4e85-abfc-f59ffebe8d7f");
+INSERT INTO O_BATTR
+	VALUES ("fe948884-d073-4362-b78c-0361ec2c5a73",
+	"90f8acb4-0c84-4e85-abfc-f59ffebe8d7f");
+INSERT INTO O_ATTR
+	VALUES ("fe948884-d073-4362-b78c-0361ec2c5a73",
+	"90f8acb4-0c84-4e85-abfc-f59ffebe8d7f",
+	"00000000-0000-0000-0000-000000000000",
+	'idMCS',
+	' Preferred identifier.
+',
+	'',
+	'idMCS',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("c2e5d4cb-009b-4d80-9ba2-ec5fca5ae871",
+	"90f8acb4-0c84-4e85-abfc-f59ffebe8d7f");
+INSERT INTO O_BATTR
+	VALUES ("c2e5d4cb-009b-4d80-9ba2-ec5fca5ae871",
+	"90f8acb4-0c84-4e85-abfc-f59ffebe8d7f");
+INSERT INTO O_ATTR
+	VALUES ("c2e5d4cb-009b-4d80-9ba2-ec5fca5ae871",
+	"90f8acb4-0c84-4e85-abfc-f59ffebe8d7f",
+	"fe948884-d073-4362-b78c-0361ec2c5a73",
+	'ResultA',
+	' This attribute is manipulated to indicate that the required operation was successful.
+',
+	'',
+	'ResultA',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("29a605e7-858a-465f-ab87-6a89bf44dbf5",
+	"90f8acb4-0c84-4e85-abfc-f59ffebe8d7f");
+INSERT INTO O_BATTR
+	VALUES ("29a605e7-858a-465f-ab87-6a89bf44dbf5",
+	"90f8acb4-0c84-4e85-abfc-f59ffebe8d7f");
+INSERT INTO O_ATTR
+	VALUES ("29a605e7-858a-465f-ab87-6a89bf44dbf5",
+	"90f8acb4-0c84-4e85-abfc-f59ffebe8d7f",
+	"c2e5d4cb-009b-4d80-9ba2-ec5fca5ae871",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"90f8acb4-0c84-4e85-abfc-f59ffebe8d7f");
+INSERT INTO O_OIDA
+	VALUES ("fe948884-d073-4362-b78c-0361ec2c5a73",
+	"90f8acb4-0c84-4e85-abfc-f59ffebe8d7f",
+	0,
+	'idMCS');
+INSERT INTO O_ID
+	VALUES (1,
+	"90f8acb4-0c84-4e85-abfc-f59ffebe8d7f");
+INSERT INTO O_ID
+	VALUES (2,
+	"90f8acb4-0c84-4e85-abfc-f59ffebe8d7f");
+INSERT INTO PE_PE
+	VALUES ("90f8acb4-0c84-4e85-abfc-f59ffebe8d7f",
+	1,
+	"a9a21ab3-b305-417c-89c1-c9f52915c70b",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("a9a21ab3-b305-417c-89c1-c9f52915c70b",
+	"00000000-0000-0000-0000-000000000000",
+	"9b3c9b37-3527-4c3a-8648-5c925cc26549",
+	'Events',
+	'',
+	0,
+	'../Events.xtuml');

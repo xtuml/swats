@@ -1,0 +1,176 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("20814ceb-1ad2-46a2-98cf-fa868be20a61",
+	'Unsupported',
+	5,
+	'U',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("1f661488-2322-4f0f-8a4e-fc17a28a8663",
+	"20814ceb-1ad2-46a2-98cf-fa868be20a61",
+	'log_unsupported_tests',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'the_test_scheduler = find-one Test_Scheduler
+
+test_number = the_test_scheduler.current_test_number + 1
+[] = RPT1:Start_Test[test_number, "1241-0000-01-0901", "Test Timers", "Unsupported Tests", "Support for Timers"]
+[] = RPT4:Test_Unsupported[test_number]
+
+test_number = test_number + 1
+[] = RPT1:Start_Test[test_number, "1241-0000-01-0902", "Test Timers", "Unsupported Tests", "Timers are serviced"]
+[] = RPT4:Test_Unsupported[test_number]
+
+test_number = test_number + 1
+[] = RPT1:Start_Test[test_number, "1241-0000-01-0907", "Test Timers", "Unsupported Tests", "Determine time remaining before expiry"]
+[] = RPT4:Test_Unsupported[test_number]
+
+test_number = test_number + 1
+[] = RPT1:Start_Test[test_number, "1241-0000-01-0917", "Test Timers", "Unsupported Tests", "No limit on number of Timers"]
+[] = RPT3:Test_Failed["No limit on number of Timers", test_number, 0]
+
+test_number = test_number + 1
+[] = RPT1:Start_Test[test_number, "1241-0000-01-0918", "Test Timers", "Unsupported Tests", "Timers shall not waste memory"]
+[] = RPT4:Test_Unsupported[test_number]
+
+test_number = test_number + 1
+[] = RPT1:Start_Test[test_number, "1241-0000-01-0919", "Test Timers", "Unsupported Tests", "Get current time"]
+[] = RPT4:Test_Unsupported[test_number]
+
+test_number = test_number + 1
+[] = RPT1:Start_Test[test_number, "1241-0000-01-0920", "Test Timers", "Unsupported Tests", "Int & Float values for 1241-0000-01-0919"]
+[] = RPT4:Test_Unsupported[test_number]
+
+test_number = test_number + 1
+[] = RPT1:Start_Test[test_number, "1241-0000-01-0921", "Test Timers", "Unsupported Tests", "Access 1241-0000-01-0920 from ASL"]
+[] = RPT4:Test_Unsupported[test_number]
+
+the_test_scheduler.current_test_number = test_number',
+	3,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	2,
+	1);
+INSERT INTO O_NBATTR
+	VALUES ("ad59184f-161c-4c0d-80c5-bd8f85171a51",
+	"20814ceb-1ad2-46a2-98cf-fa868be20a61");
+INSERT INTO O_BATTR
+	VALUES ("ad59184f-161c-4c0d-80c5-bd8f85171a51",
+	"20814ceb-1ad2-46a2-98cf-fa868be20a61");
+INSERT INTO O_ATTR
+	VALUES ("ad59184f-161c-4c0d-80c5-bd8f85171a51",
+	"20814ceb-1ad2-46a2-98cf-fa868be20a61",
+	"00000000-0000-0000-0000-000000000000",
+	'id',
+	'',
+	'',
+	'id',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("4cc56fc2-a631-4eec-acb7-ba84f1a6ccea",
+	"20814ceb-1ad2-46a2-98cf-fa868be20a61");
+INSERT INTO O_BATTR
+	VALUES ("4cc56fc2-a631-4eec-acb7-ba84f1a6ccea",
+	"20814ceb-1ad2-46a2-98cf-fa868be20a61");
+INSERT INTO O_ATTR
+	VALUES ("4cc56fc2-a631-4eec-acb7-ba84f1a6ccea",
+	"20814ceb-1ad2-46a2-98cf-fa868be20a61",
+	"ebac6058-e46d-453f-85c6-25fe8bdea302",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_REF
+	VALUES ("20814ceb-1ad2-46a2-98cf-fa868be20a61",
+	"b486dc09-bd3d-490d-8c42-6cfaa714c1a5",
+	0,
+	"55e05508-1e7c-473d-8dcc-c5a80f6ca6fa",
+	"36cf8c3d-38cc-485f-9c05-3d51dc543cb7",
+	"47f6300e-37cb-4aae-aaf6-b67301841f54",
+	"d56c1a1c-4f02-4820-8fba-1f53e3307a31",
+	"ebac6058-e46d-453f-85c6-25fe8bdea302",
+	"cd4b4552-2cde-45ec-939c-d992a151638d",
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Test',
+	'id',
+	'R2');
+INSERT INTO R_RGO_PROXY
+	VALUES ("20814ceb-1ad2-46a2-98cf-fa868be20a61",
+	"36cf8c3d-38cc-485f-9c05-3d51dc543cb7",
+	"47f6300e-37cb-4aae-aaf6-b67301841f54",
+	'../TT.xtuml');
+INSERT INTO O_RTIDA_PROXY
+	VALUES ("55e05508-1e7c-473d-8dcc-c5a80f6ca6fa",
+	"b486dc09-bd3d-490d-8c42-6cfaa714c1a5",
+	0,
+	"36cf8c3d-38cc-485f-9c05-3d51dc543cb7",
+	"d56c1a1c-4f02-4820-8fba-1f53e3307a31",
+	'../TT.xtuml');
+INSERT INTO O_RATTR
+	VALUES ("ebac6058-e46d-453f-85c6-25fe8bdea302",
+	"20814ceb-1ad2-46a2-98cf-fa868be20a61",
+	"55e05508-1e7c-473d-8dcc-c5a80f6ca6fa",
+	"b486dc09-bd3d-490d-8c42-6cfaa714c1a5",
+	0,
+	'id');
+INSERT INTO O_BATTR_PROXY
+	VALUES ("55e05508-1e7c-473d-8dcc-c5a80f6ca6fa",
+	"b486dc09-bd3d-490d-8c42-6cfaa714c1a5",
+	'../Test/Test.xtuml');
+INSERT INTO O_ATTR
+	VALUES ("ebac6058-e46d-453f-85c6-25fe8bdea302",
+	"20814ceb-1ad2-46a2-98cf-fa868be20a61",
+	"ad59184f-161c-4c0d-80c5-bd8f85171a51",
+	'test_id',
+	'',
+	'',
+	'test_id',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000007",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"20814ceb-1ad2-46a2-98cf-fa868be20a61");
+INSERT INTO O_OIDA
+	VALUES ("ad59184f-161c-4c0d-80c5-bd8f85171a51",
+	"20814ceb-1ad2-46a2-98cf-fa868be20a61",
+	0,
+	'id');
+INSERT INTO O_ID
+	VALUES (1,
+	"20814ceb-1ad2-46a2-98cf-fa868be20a61");
+INSERT INTO O_OIDA
+	VALUES ("ebac6058-e46d-453f-85c6-25fe8bdea302",
+	"20814ceb-1ad2-46a2-98cf-fa868be20a61",
+	1,
+	'test_id');
+INSERT INTO O_ID
+	VALUES (2,
+	"20814ceb-1ad2-46a2-98cf-fa868be20a61");
+INSERT INTO PE_PE
+	VALUES ("20814ceb-1ad2-46a2-98cf-fa868be20a61",
+	1,
+	"31a740f3-c95a-48da-8693-2397cfb3c607",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("31a740f3-c95a-48da-8693-2397cfb3c607",
+	"00000000-0000-0000-0000-000000000000",
+	"7d1bef29-9e30-4977-be43-53e35fcca33f",
+	'TT',
+	'',
+	0,
+	'../TT.xtuml');

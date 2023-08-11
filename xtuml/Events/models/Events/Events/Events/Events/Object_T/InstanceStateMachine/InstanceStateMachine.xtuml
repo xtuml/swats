@@ -1,0 +1,93 @@
+-- BP 7.1.6 content: InstanceStateMachine syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO SM_ISM
+	VALUES ("cad62808-123d-4873-b0aa-a70f8be3e104",
+	"ff8c950b-c67f-4e16-8bd1-5f3a8275963e");
+INSERT INTO SM_SM
+	VALUES ("cad62808-123d-4873-b0aa-a70f8be3e104",
+	'',
+	0);
+INSERT INTO SM_MOORE
+	VALUES ("cad62808-123d-4873-b0aa-a70f8be3e104");
+INSERT INTO SM_EVTDI
+	VALUES ("615c4669-b31d-47b7-82dc-677238935cbf",
+	"cad62808-123d-4873-b0aa-a70f8be3e104",
+	'Test_Number',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	"36cc0e95-d36d-4138-8523-f56b7b5d57ad",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_NLEVT
+	VALUES ("592ef3ae-30f4-4dd8-994c-ff5b33941549",
+	"cad62808-123d-4873-b0aa-a70f8be3e104",
+	"00000000-0000-0000-0000-000000000000",
+	"36cc0e95-d36d-4138-8523-f56b7b5d57ad",
+	"cad62808-123d-4873-b0aa-a70f8be3e104",
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO SM_SEVT
+	VALUES ("592ef3ae-30f4-4dd8-994c-ff5b33941549",
+	"cad62808-123d-4873-b0aa-a70f8be3e104",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_EVT
+	VALUES ("592ef3ae-30f4-4dd8-994c-ff5b33941549",
+	"cad62808-123d-4873-b0aa-a70f8be3e104",
+	"00000000-0000-0000-0000-000000000000",
+	1,
+	'StartT',
+	0,
+	'',
+	'objT1',
+	'');
+INSERT INTO SM_PEVT
+	VALUES ("36cc0e95-d36d-4138-8523-f56b7b5d57ad",
+	"cad62808-123d-4873-b0aa-a70f8be3e104",
+	"00000000-0000-0000-0000-000000000000",
+	'Object_T',
+	'objT',
+	'StartT');
+INSERT INTO SM_EVT
+	VALUES ("36cc0e95-d36d-4138-8523-f56b7b5d57ad",
+	"cad62808-123d-4873-b0aa-a70f8be3e104",
+	"00000000-0000-0000-0000-000000000000",
+	1,
+	'StartT',
+	0,
+	'',
+	'objT1',
+	'');
+INSERT INTO GD_MD
+	VALUES ("18f9514b-e08b-41bf-a1c4-578efacdb0bc",
+	8,
+	"cad62808-123d-4873-b0aa-a70f8be3e104",
+	40,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'Events::Events::Events::Events::Object_T::Instance State Machine');
+INSERT INTO DIM_DIA
+	VALUES ("18f9514b-e08b-41bf-a1c4-578efacdb0bc",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_OBJ_PROXY
+	VALUES ("ff8c950b-c67f-4e16-8bd1-5f3a8275963e",
+	'Object_T',
+	23,
+	'objT',
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'../Object_T.xtuml');

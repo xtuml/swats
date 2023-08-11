@@ -1,0 +1,93 @@
+-- BP 7.1.6 content: InstanceStateMachine syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO SM_ISM
+	VALUES ("3c3bca13-07c7-412f-8e5a-9c56c220c129",
+	"c6639ac2-fcab-46f4-b5dc-b039d447b5a5");
+INSERT INTO SM_SM
+	VALUES ("3c3bca13-07c7-412f-8e5a-9c56c220c129",
+	'',
+	0);
+INSERT INTO SM_MOORE
+	VALUES ("3c3bca13-07c7-412f-8e5a-9c56c220c129");
+INSERT INTO SM_NLEVT
+	VALUES ("18be6c0f-821d-4c5a-9703-fe6fa7aacf16",
+	"3c3bca13-07c7-412f-8e5a-9c56c220c129",
+	"00000000-0000-0000-0000-000000000000",
+	"8ac2ef66-a7fe-456b-ab27-63d0bb4163f8",
+	"9bd69a10-63c1-4704-8e52-528e2efd5125",
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO SM_PEVT_PROXY
+	VALUES ("8ac2ef66-a7fe-456b-ab27-63d0bb4163f8",
+	"9bd69a10-63c1-4704-8e52-528e2efd5125",
+	"00000000-0000-0000-0000-000000000000",
+	'Sub_Level_3_A',
+	'SL_THREE_A',
+	'Go_Three',
+	'../../Sub_Level_3_A/InstanceStateMachine/InstanceStateMachine.xtuml');
+INSERT INTO SM_SEVT
+	VALUES ("18be6c0f-821d-4c5a-9703-fe6fa7aacf16",
+	"3c3bca13-07c7-412f-8e5a-9c56c220c129",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_EVT
+	VALUES ("18be6c0f-821d-4c5a-9703-fe6fa7aacf16",
+	"3c3bca13-07c7-412f-8e5a-9c56c220c129",
+	"00000000-0000-0000-0000-000000000000",
+	1,
+	'Go_Three',
+	0,
+	'',
+	'BLD1',
+	'');
+INSERT INTO SM_LEVT
+	VALUES ("83e2d58a-7bf7-4ac2-8c8d-192f1667dd29",
+	"3c3bca13-07c7-412f-8e5a-9c56c220c129",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_SEVT
+	VALUES ("83e2d58a-7bf7-4ac2-8c8d-192f1667dd29",
+	"3c3bca13-07c7-412f-8e5a-9c56c220c129",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO SM_EVT
+	VALUES ("83e2d58a-7bf7-4ac2-8c8d-192f1667dd29",
+	"3c3bca13-07c7-412f-8e5a-9c56c220c129",
+	"00000000-0000-0000-0000-000000000000",
+	1,
+	'Go_Bottom',
+	0,
+	'',
+	'BLD1',
+	'');
+INSERT INTO GD_MD
+	VALUES ("47117c49-e78a-44dd-b5dc-49efc9586713",
+	8,
+	"3c3bca13-07c7-412f-8e5a-9c56c220c129",
+	40,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'Events::Events::Events::Events::Bottom_Level_D::Instance State Machine');
+INSERT INTO DIM_DIA
+	VALUES ("47117c49-e78a-44dd-b5dc-49efc9586713",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_OBJ_PROXY
+	VALUES ("c6639ac2-fcab-46f4-b5dc-b039d447b5a5",
+	'Bottom_Level_D',
+	57,
+	'BLD',
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'../Bottom_Level_D.xtuml');

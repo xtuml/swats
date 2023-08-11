@@ -1,0 +1,107 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("3c2af01f-a426-4fc3-a665-aa9829bc8c3c",
+	"00000000-0000-0000-0000-000000000000",
+	"b0ecd0cc-290d-4c8d-b44d-a65fc69bd1af",
+	'types',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("a855420b-f2a2-4480-afba-bd54fc54ff7b",
+	112,
+	"3c2af01f-a426-4fc3-a665-aa9829bc8c3c",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	200,
+	150,
+	0,
+	'',
+	'Function_Calls::Function_Calls::Function_Calls::types');
+INSERT INTO GD_GE
+	VALUES ("5204d86a-3070-4950-a27e-f63fa265363f",
+	"a855420b-f2a2-4480-afba-bd54fc54ff7b",
+	"5c8ee7db-dbbf-4a1f-8126-0962abd97fe5",
+	51,
+	0,
+	'Function_Calls::Function_Calls::Function_Calls::types::ross_type');
+INSERT INTO GD_SHP
+	VALUES ("5204d86a-3070-4950-a27e-f63fa265363f");
+INSERT INTO GD_NCS
+	VALUES ("5204d86a-3070-4950-a27e-f63fa265363f");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"5204d86a-3070-4950-a27e-f63fa265363f");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"5204d86a-3070-4950-a27e-f63fa265363f",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("5204d86a-3070-4950-a27e-f63fa265363f",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_DIA
+	VALUES ("a855420b-f2a2-4480-afba-bd54fc54ff7b",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_DT
+	VALUES ("5c8ee7db-dbbf-4a1f-8126-0962abd97fe5",
+	"00000000-0000-0000-0000-000000000000",
+	'ross_type',
+	'',
+	'');
+INSERT INTO S_UDT
+	VALUES ("5c8ee7db-dbbf-4a1f-8126-0962abd97fe5",
+	"9b041eb7-b020-47c1-8835-0e7b88128962",
+	0,
+	'integer');
+INSERT INTO S_DT_PROXY
+	VALUES ("9b041eb7-b020-47c1-8835-0e7b88128962",
+	"00000000-0000-0000-0000-000000000000",
+	'MASLtype',
+	'',
+	'',
+	'../../../types/types.xtuml');
+INSERT INTO PE_PE
+	VALUES ("5c8ee7db-dbbf-4a1f-8126-0962abd97fe5",
+	1,
+	"3c2af01f-a426-4fc3-a665-aa9829bc8c3c",
+	"00000000-0000-0000-0000-000000000000",
+	3);
+INSERT INTO PE_PE
+	VALUES ("3c2af01f-a426-4fc3-a665-aa9829bc8c3c",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"b5fa0f2e-3598-474f-ad52-21711b6ca41a",
+	7);
+INSERT INTO C_C_PROXY
+	VALUES ("b5fa0f2e-3598-474f-ad52-21711b6ca41a",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'Function_Calls',
+	' Tests Domain, object and instance based functions.
+',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Function_Calls',
+	'../Function_Calls.xtuml');
+INSERT INTO S_SYS_PROXY
+	VALUES ("b0ecd0cc-290d-4c8d-b44d-a65fc69bd1af",
+	'Function_Calls',
+	1,
+	'../../../Function_Calls.xtuml');

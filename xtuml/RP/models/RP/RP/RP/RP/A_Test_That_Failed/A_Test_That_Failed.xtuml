@@ -1,0 +1,145 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("5457cf4c-74a5-47e1-82ce-30fa337736bf",
+	'A_Test_That_Failed',
+	3,
+	'FAIL',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("e77f8a7c-30d8-4d16-86fa-3a8aac69b32f",
+	"5457cf4c-74a5-47e1-82ce-30fa337736bf",
+	'You_Goofed_Boy',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'The_Failed_Instance = Invoker_Domain_IH -> R2.A_Test_That_Failed
+
+if The_Failed_Instance != UNDEFINED then
+
+   local_increment = The_Failed_Instance.Failed_Counter
+
+   local_increment = local_increment + 1
+
+   The_Failed_Instance.Failed_Counter = local_increment
+
+else
+
+   [] = RP7::Report_Run_Time_Error["Can not find a failed instance associated with this domain"]
+ 
+endif
+',
+	3,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	2,
+	1);
+INSERT INTO O_TPARM
+	VALUES ("55cd79ab-9ac6-4453-859f-fb6f3d4ded6d",
+	"e77f8a7c-30d8-4d16-86fa-3a8aac69b32f",
+	'Invoker_Domain_IH',
+	"b6be81cd-5988-46ae-b74f-1cae173376de",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("b6be81cd-5988-46ae-b74f-1cae173376de",
+	"00000000-0000-0000-0000-000000000000",
+	'inst_ref<Domain_Details>',
+	'',
+	'',
+	'../RP.xtuml');
+INSERT INTO O_NBATTR
+	VALUES ("b6bec6ed-12b4-4089-8153-1efddf711c1f",
+	"5457cf4c-74a5-47e1-82ce-30fa337736bf");
+INSERT INTO O_BATTR
+	VALUES ("b6bec6ed-12b4-4089-8153-1efddf711c1f",
+	"5457cf4c-74a5-47e1-82ce-30fa337736bf");
+INSERT INTO O_ATTR
+	VALUES ("b6bec6ed-12b4-4089-8153-1efddf711c1f",
+	"5457cf4c-74a5-47e1-82ce-30fa337736bf",
+	"5b707824-f3a0-44fb-b8e2-681e51c694b2",
+	'Failed_Counter',
+	'',
+	'',
+	'Failed_Counter',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_REF
+	VALUES ("5457cf4c-74a5-47e1-82ce-30fa337736bf",
+	"92b447a4-d982-4422-8d7c-91ed8870fa10",
+	0,
+	"7365d7fc-e669-4183-8685-d988a031a327",
+	"bd22a312-76db-4b1b-ab73-4767521013ea",
+	"a370b11e-154f-4a9a-a1e1-d94f0d1eaaea",
+	"fb807fd5-fe01-491f-ab02-d8b62497d3e7",
+	"5b707824-f3a0-44fb-b8e2-681e51c694b2",
+	"3e8fbed9-544b-4b1a-abf7-26f3e2953157",
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Domain_Details',
+	'Domain_Number',
+	'R2.''has''');
+INSERT INTO R_RGO_PROXY
+	VALUES ("5457cf4c-74a5-47e1-82ce-30fa337736bf",
+	"bd22a312-76db-4b1b-ab73-4767521013ea",
+	"a370b11e-154f-4a9a-a1e1-d94f0d1eaaea",
+	'../RP.xtuml');
+INSERT INTO O_RTIDA_PROXY
+	VALUES ("7365d7fc-e669-4183-8685-d988a031a327",
+	"92b447a4-d982-4422-8d7c-91ed8870fa10",
+	0,
+	"bd22a312-76db-4b1b-ab73-4767521013ea",
+	"fb807fd5-fe01-491f-ab02-d8b62497d3e7",
+	'../RP.xtuml');
+INSERT INTO O_RATTR
+	VALUES ("5b707824-f3a0-44fb-b8e2-681e51c694b2",
+	"5457cf4c-74a5-47e1-82ce-30fa337736bf",
+	"7365d7fc-e669-4183-8685-d988a031a327",
+	"92b447a4-d982-4422-8d7c-91ed8870fa10",
+	0,
+	'Domain_Number');
+INSERT INTO O_BATTR_PROXY
+	VALUES ("7365d7fc-e669-4183-8685-d988a031a327",
+	"92b447a4-d982-4422-8d7c-91ed8870fa10",
+	'../Domain_Details/Domain_Details.xtuml');
+INSERT INTO O_ATTR
+	VALUES ("5b707824-f3a0-44fb-b8e2-681e51c694b2",
+	"5457cf4c-74a5-47e1-82ce-30fa337736bf",
+	"00000000-0000-0000-0000-000000000000",
+	'Domain_Number',
+	'',
+	'',
+	'Domain_Number',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000007",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"5457cf4c-74a5-47e1-82ce-30fa337736bf");
+INSERT INTO O_ID
+	VALUES (1,
+	"5457cf4c-74a5-47e1-82ce-30fa337736bf");
+INSERT INTO O_ID
+	VALUES (2,
+	"5457cf4c-74a5-47e1-82ce-30fa337736bf");
+INSERT INTO PE_PE
+	VALUES ("5457cf4c-74a5-47e1-82ce-30fa337736bf",
+	1,
+	"f6571647-b875-45a6-b11d-1f1c2da4d391",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("f6571647-b875-45a6-b11d-1f1c2da4d391",
+	"00000000-0000-0000-0000-000000000000",
+	"9d158e79-1971-4f46-9816-625db585c03b",
+	'RP',
+	'',
+	0,
+	'../RP.xtuml');

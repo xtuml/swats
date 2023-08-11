@@ -1,0 +1,4 @@
+SBTWO::SBTWO,version,Component,5
+SBTWO::SBTWO::scenarios::void Finish_SBTWO_Tests,scenario,Function,4
+SBTWO::SBTWO::scenarios::void Start_SBTWO_Tests,scenario,Function,3
+SBTWO::SBTWO::scenarios::void Local_scenario_for_SBTWO_standalone_test,scenario,Function,1

@@ -1,0 +1,3458 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("04128a43-0efb-4c47-afea-852f79ca6212",
+	'Object_G',
+	18,
+	'objG',
+	' This object forms part of the following types of reflexive relationships:
+ 
+ 	1c:1c
+ 	1c:Mc
+ 	Mc:Mc
+ 
+ All tests for the above relationships are handled by this object.
+',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("893c400c-17ba-4d53-959e-1de2e0273f4b",
+	"04128a43-0efb-4c47-afea-852f79ca6212",
+	'Is_It_Defined',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'It_Is_Defined = FALSE
+
+if The_IH != UNDEFINED then
+ 
+   It_Is_Defined = TRUE
+
+# else
+
+#   [] = RPT5:Test_Text[0, "Undefined"]
+
+endif
+',
+	3,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	2,
+	1);
+INSERT INTO O_TPARM
+	VALUES ("e918be18-7953-4bd8-9d2d-91b11d8d3354",
+	"893c400c-17ba-4d53-959e-1de2e0273f4b",
+	'The_IH',
+	"e4654f9b-ed06-4c8c-bb76-4c8ca0634930",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("e4654f9b-ed06-4c8c-bb76-4c8ca0634930",
+	"00000000-0000-0000-0000-000000000000",
+	'inst_ref<Object_G>',
+	'',
+	'',
+	'../Relationships.xtuml');
+INSERT INTO O_TPARM
+	VALUES ("9fb9880e-01e7-4ac4-8d47-fb1fc0192e92",
+	"893c400c-17ba-4d53-959e-1de2e0273f4b",
+	'It_Is_Defined',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	1,
+	'',
+	"e918be18-7953-4bd8-9d2d-91b11d8d3354",
+	'');
+INSERT INTO O_TFR
+	VALUES ("9636dd18-4889-4fdb-90bc-8b18c349d9ae",
+	"04128a43-0efb-4c47-afea-852f79ca6212",
+	'One_To_One_Reflexive',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'#-------------------------------------------------------------------#
+#
+# Reflexive navigations 1c:1c
+#
+#-------------------------------------------------------------------#
+
+#Initialise the fault flag
+Has_Failed   = FALSE
+Unsupported  = FALSE
+Failure_Code = -1
+
+#-------------------------------------------------------------------#
+
+#Find the desired instances of Object_G
+
+firstG  = find-one Object_G where idG = 1
+secondG = find-one Object_G where idG = 2
+thirdG  = find-one Object_G where idG = 3
+fourthG = find-one Object_G where idG = 4
+fifthG  = find-one Object_G where idG = 5
+sixthG  = find-one Object_G where idG = 6
+
+#-------------------------------------------------------------------#
+# Formalise some relationships 
+# This section initialise relationships depending upon which test
+# is being performed.
+#-------------------------------------------------------------------#
+
+   if Iteration >= 2 & Iteration <= 6 then
+
+      # Formalise some relationships
+      link firstG  R11."Has_a"    fifthG
+      link secondG R11."May_have" thirdG
+
+   endif
+
+#-------------------------------------------------------------------#
+# Test 1 - Navigate an undefined relationship
+#-------------------------------------------------------------------#
+
+   if Iteration = 1 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "1 to 1 reflexive", "Qualifed single instance source"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1202"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1204"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0632"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+
+      # Perform the navigation
+      InstG = sixthG -> R11."Has_a".Object_G
+
+      #Check the result of the navigation
+      if InstG != UNDEFINED then
+         Has_Failed = TRUE
+      endif
+
+   endif
+
+# End Test 1
+
+#-------------------------------------------------------------------#
+# Test 2 - Relationship role, single instance handle as the source
+#-------------------------------------------------------------------#
+
+   if Iteration = 2 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "1 to 1 reflexive", "Qualifed single instance source"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0632"]
+
+      # Perform the navigation
+      InstG = firstG -> R11."Has_a".Object_G
+
+      # Check the result of the navigation
+      if InstG != UNDEFINED then
+
+         if InstG.idG != 5 then
+            Has_Failed   = TRUE
+            Failure_Code = -10
+         endif
+
+      else
+         Has_Failed   = TRUE
+         Failure_Code = -20
+      endif
+      
+   endif
+
+# End Test 2
+
+#-------------------------------------------------------------------#
+# Test 3 - Qualified role, single instance handle as the source
+#-------------------------------------------------------------------#
+
+   if Iteration = 3 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "1 to 1 reflexive", "Qualifed single instance source"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0605"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0632"]
+
+      # Perform the navigation
+      InstG = secondG -> R11."May_have".Object_G
+
+      # Check the result of the navigation
+      if InstG != UNDEFINED then
+
+         if InstG.idG != 3 then
+            Has_Failed   = TRUE
+            Failure_Code = -10
+         endif
+
+      else
+         Has_Failed   = TRUE
+         Failure_Code = -20
+      endif
+
+   endif
+
+# End Test 3
+
+#-------------------------------------------------------------------#
+# Test 4 - Relationship role, set of instance handles as the source
+#-------------------------------------------------------------------#
+
+   if Iteration = 4 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0703", "Relationships", "1 to 1 reflexive", "Qualifed single instance source"]
+      [] = RPT5:Test_Text [Test, "Navigate from set unsupported"]
+
+      Unsupported = TRUE
+
+   endif
+
+# End Test 4
+
+#-------------------------------------------------------------------#
+# Test 5 - Qualified role, set of instance handles as the source
+#-------------------------------------------------------------------#
+
+   if Iteration = 5 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0703", "Relationships", "1 to 1 reflexive", "Qualifed single instance source"]
+      [] = RPT5:Test_Text [Test, "Navigate from set unsupported"]
+
+      Unsupported = TRUE
+
+   endif
+
+# End Test 5
+
+#-------------------------------------------------------------------#
+# Test 6 - Navigate the relationship in reverse 
+#          Relationship role, single instance handle as the source
+#-------------------------------------------------------------------#
+
+   if Iteration = 6 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "1 to 1 reflexive", "Qualifed single instance source"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0605"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+
+      # Perform the navigation
+      InstG = fifthG -> R11."May_have".Object_G
+
+      # Check the result of the navigation
+      if InstG != UNDEFINED then
+      
+         if InstG.idG != 1 then
+            Has_Failed   = TRUE
+            Failure_Code = -10
+         endif
+
+      else
+         Has_Failed   = TRUE
+         Failure_Code = -20
+      endif
+
+   endif 
+
+# End Test 6
+
+#-------------------------------------------------------------------#
+# Test 7 - Attempt to navigate a deleted relationship
+#-------------------------------------------------------------------#
+
+   if Iteration = 7 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "1 to 1 reflexive", "Qualifed single instance source"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1202"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1204"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0611"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0621"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0632"]
+
+      # Define a relationship
+      link firstG R11."Has_a" thirdG
+
+      # Perform the navigation
+      InstG = firstG -> R11."Has_a".Object_G
+
+      # Check the result of the navigation
+      if InstG != UNDEFINED then
+     
+         if InstG.idG != 3 then
+            Has_Failed = TRUE
+            Failure_Code = -10
+         endif
+
+      else
+         Has_Failed   = TRUE
+         Failure_Code = -20
+      endif
+   
+      # Delete relationship
+      unlink firstG R11."Has_a" thirdG
+
+      # Perform the navigation, again
+      InstG = firstG -> R11."Has_a".Object_G
+
+      # Check the result of the navigation
+      if InstG != UNDEFINED then
+         Has_Failed   = TRUE
+         Failure_Code = -2
+      endif
+
+   endif
+
+# End Test 7
+
+# ---------------------------------------------------------------------------
+# Test 8 - Link a series of instances together and prove that navigation is 
+#          possible from the first through to the last
+# ---------------------------------------------------------------------------
+
+   if Iteration = 8 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "1 to 1 reflexive", "Qualifed single instance source"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0605"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0607"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0608"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1202"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1204"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0611"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0621"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0632"]
+
+      Defined = FALSE
+ 
+      link firstG  R11."Has_a" secondG
+      link secondG R11."Has_a" thirdG
+      link thirdG  R11."Has_a" fourthG
+      link fourthG R11."Has_a" fifthG
+
+      second_instanceG  = firstG -> R11."Has_a".Object_G
+
+      [Defined] = objG1:Is_It_Defined[second_instanceG]
+
+      if Defined then
+ 
+         third_instanceG  = second_instanceG -> R11."Has_a".Object_G
+
+         [Defined] = objG1:Is_It_Defined[third_instanceG]
+
+         if Defined then
+
+            fourth_instanceG = third_instanceG  -> R11."Has_a".Object_G
+
+            [Defined] = objG1:Is_It_Defined[fourth_instanceG]
+
+            if Defined then
+
+               fifth_instanceG  = fourth_instanceG -> R11."Has_a".Object_G
+   
+               [Defined] = objG1:Is_It_Defined[fifth_instanceG]
+
+               if Defined then
+
+                  # Everything has linked through to the final instance.
+                  # It would have been easier to traverse the link to the end
+                  # in one go, but that would not have shown up any failure at a
+                  # particular node.
+
+                  Has_Failed = FALSE
+
+                  # Now unlink the formalised relationships to clean up tidily.
+                  unlink fourthG R11."Has_a" fifthG
+                  unlink thirdG  R11."Has_a" fourthG
+                  unlink secondG R11."Has_a" thirdG
+                  unlink firstG  R11."Has_a" secondG
+
+               else
+
+                  Has_Failed   = TRUE
+                  Failure_Code = -5
+               endif
+
+            else
+               Has_Failed   = TRUE
+               Failure_Code = -4
+            endif
+
+         else
+            Has_Failed   = TRUE
+            Failure_Code = -3
+         endif
+
+      else
+         Has_Failed   = TRUE
+         Failure_Code = -2
+      endif
+
+   endif
+
+# End Test 8
+
+# ------------------------------------------------------------------------#
+# Test 9 - Link a series of instances together and prove that navigation 
+#          is possible from the first through to the last using the other 
+#          role parameter.
+# ------------------------------------------------------------------------#
+
+   if Iteration = 9 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "1 to 1 reflexive", "Qualifed single instance source"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0605"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0607"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0608"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1202"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1204"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0611"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0621"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0632"]
+
+      Defined = FALSE
+
+      link firstG  R11."May_have" secondG
+      link secondG R11."May_have" thirdG
+      link thirdG  R11."May_have" fourthG
+      link fourthG R11."May_have" fifthG
+
+      second_instanceG  = firstG -> R11."May_have".Object_G
+
+      [Defined] = objG1:Is_It_Defined[second_instanceG]
+
+      if Defined then
+ 
+         third_instanceG  = second_instanceG -> R11."May_have".Object_G
+
+         [Defined] = objG1:Is_It_Defined[third_instanceG]
+
+         if Defined then
+
+            fourth_instanceG = third_instanceG  -> R11."May_have".Object_G
+
+            [Defined] = objG1:Is_It_Defined[fourth_instanceG]
+
+            if Defined then
+
+               fifth_instanceG  = fourth_instanceG -> R11."May_have".Object_G
+   
+               [Defined] = objG1:Is_It_Defined[fifth_instanceG]
+
+               if Defined then
+
+                  # Everything has linked through to the final instance.
+                  # It would have been easier to traverse the link to the end
+                  # in one go, but that would not have shown up any failure at a
+                  # particular node.
+
+                  Has_Failed = FALSE
+
+                  # Now unlink the formalised relationships to clean up tidily.
+                  unlink fourthG R11."May_have" fifthG
+                  unlink thirdG  R11."May_have" fourthG
+                  unlink secondG R11."May_have" thirdG
+                  unlink firstG  R11."May_have" secondG
+
+               else
+
+                  Has_Failed   = TRUE
+                  Failure_Code = -5
+               endif
+
+            else
+               Has_Failed   = TRUE
+               Failure_Code = -4
+            endif
+
+         else
+            Has_Failed   = TRUE
+            Failure_Code = -3
+         endif
+
+      else
+         Has_Failed   = TRUE
+         Failure_Code = -2
+      endif
+
+   endif      
+
+# End Test 9
+    
+# ------------------------------------------------------------------------#
+# Test 10 - Link a series of instances together and prove that navigation 
+#           is possible from the first through to the last
+# ------------------------------------------------------------------------#
+
+   if Iteration = 10 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "1 to 1 reflexive", "Qualifed single instance source"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0605"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0607"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0608"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1202"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1204"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0611"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0621"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0632"]
+
+      Defined = FALSE
+
+      link firstG  R11."Has_a" secondG
+      link secondG R11."Has_a" thirdG
+      link thirdG  R11."Has_a" fourthG
+      link fourthG R11."Has_a" fifthG
+
+      second_instanceG  = firstG -> R11."Has_a".Object_G
+
+      [Defined] = objG1:Is_It_Defined[second_instanceG]
+
+      if Defined then
+ 
+         third_instanceG  = second_instanceG -> R11."Has_a".Object_G
+   
+         [Defined] = objG1:Is_It_Defined[third_instanceG]
+
+         if Defined then
+
+            fourth_instanceG = third_instanceG  -> R11."Has_a".Object_G
+
+            [Defined] = objG1:Is_It_Defined[fourth_instanceG]
+
+            if Defined then
+
+               fifth_instanceG  = fourth_instanceG -> R11."Has_a".Object_G
+   
+               [Defined] = objG1:Is_It_Defined[fifth_instanceG]
+
+               if Defined then
+
+                  # Everything has linked through to the final instance.
+                  # It would have been easier to traverse the link to the end
+                  # in one go, but that would not have shown up any failure at a
+                  # particular node.
+
+                  Has_Failed = FALSE
+
+                  # Now unlink the formalised relationships to clean up tidily.
+                  unlink fifthG  R11."May_have" fourthG
+                  unlink fourthG R11."May_have" thirdG
+                  unlink thirdG  R11."May_have" secondG
+                  unlink secondG R11."May_have" firstG
+
+               else
+
+                  Has_Failed   = TRUE
+                  Failure_Code = -5
+               endif
+
+            else
+               Has_Failed   = TRUE
+               Failure_Code = -4
+            endif
+
+         else
+            Has_Failed   = TRUE
+            Failure_Code = -3
+         endif
+
+      else
+         Has_Failed   = TRUE
+         Failure_Code = -2
+      endif
+ 
+   endif      
+      
+# End Test 10
+
+# ------------------------------------------------------------------------#
+# Test 11 - Link a series of instances together and prove that navigation 
+#           is possible from the first through to the last
+# ------------------------------------------------------------------------#
+
+   if Iteration = 11 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "1 to 1 reflexive", "Qualifed single instance source"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0605"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0607"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0608"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1202"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1204"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0611"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0621"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0632"]
+
+      Defined = FALSE
+
+      link firstG  R11."May_have" secondG
+      link secondG R11."May_have" thirdG
+      link thirdG  R11."May_have" fourthG
+      link fourthG R11."May_have" fifthG
+
+      second_instanceG  = firstG -> R11."May_have".Object_G
+
+      [Defined] = objG1:Is_It_Defined[second_instanceG]
+
+      if Defined then
+ 
+         third_instanceG  = second_instanceG -> R11."May_have".Object_G
+
+         [Defined] = objG1:Is_It_Defined[third_instanceG]
+
+         if Defined then
+
+            fourth_instanceG = third_instanceG  -> R11."May_have".Object_G
+
+            [Defined] = objG1:Is_It_Defined[fourth_instanceG]
+
+            if Defined then
+
+               fifth_instanceG  = fourth_instanceG -> R11."May_have".Object_G
+   
+               [Defined] = objG1:Is_It_Defined[fifth_instanceG]
+
+               if Defined then
+
+                  # Everything has linked through to the final instance.
+                  # It would have been easier to traverse the link to the end
+                  # in one go, but that would not have shown up any failure at a
+                  # particular node.
+
+                  Has_Failed = FALSE
+
+                  # Now unlink the formalised relationships to clean up tidily.
+                  unlink fifthG  R11."Has_a" fourthG
+                  unlink fourthG R11."Has_a" thirdG
+                  unlink thirdG  R11."Has_a" secondG
+                  unlink secondG R11."Has_a" firstG
+
+               else
+
+                  Has_Failed   = TRUE
+                  Failure_Code = -5
+               endif
+
+            else
+               Has_Failed   = TRUE
+               Failure_Code = -4
+            endif
+
+         else
+            Has_Failed   = TRUE
+            Failure_Code = -3
+         endif
+
+      else
+         Has_Failed   = TRUE
+         Failure_Code = -2
+      endif
+
+   endif      
+      
+# End Test 11
+
+#-------------------------------------------------------------------#
+# Test 12 - 
+#-------------------------------------------------------------------# 
+
+   if Iteration = 12 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "1 to 1 reflexive", "Qualifed single instance source"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0605"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0607"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0608"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1202"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1204"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0611"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0621"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0632"]
+
+      link firstG R2."A_Large_relationship_role" secondG
+
+      InstG = firstG -> R2."A_Large_relationship_role".Object_G
+
+      if InstG = UNDEFINED then
+         Has_Failed   = TRUE
+         Failure_Code = -1
+      else
+         Has_Failed = FALSE
+      endif
+
+      unlink firstG R2."A_Large_relationship_role" secondG
+
+   endif
+
+# End Test 12
+
+#-------------------------------------------------------------------#
+# Test 13 -
+#-------------------------------------------------------------------# 
+
+   if Iteration = 13 then
+
+      [] = RPT1:Start_Test[Test,"1241-0000-01-0705" , "Relationships", "1 to 1 reflexive", "Qualifed single instance source"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0605"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0607"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0608"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1202"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1204"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0611"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0621"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0632"]
+
+      link firstG R2."qwertyuiopasdfghjklzxcvbnmqwerty" secondG
+
+      InstG = firstG -> R2."qwertyuiopasdfghjklzxcvbnmqwerty".Object_G
+
+      if InstG = UNDEFINED then
+         Has_Failed   = TRUE
+         Failure_Code = -1
+      else
+         Has_Failed = FALSE
+      endif
+
+      unlink firstG R2."qwertyuiopasdfghjklzxcvbnmqwerty" secondG
+
+   endif
+
+# End Test 13
+
+#-------------------------------------------------------------------#
+# Test 14 -
+#-------------------------------------------------------------------#
+
+   if Iteration = 14 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "1 to 1 reflexive", "Qualifed single instance source"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0605"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0607"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0608"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1202"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1204"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0611"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0621"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0632"]
+
+      link firstG R2."A_Large_relationship_role" secondG
+
+      InstG = secondG -> R2."qwertyuiopasdfghjklzxcvbnmqwerty".Object_G
+
+      if InstG = UNDEFINED then
+         Has_Failed   = TRUE
+         Failure_Code = -1
+      else
+         Has_Failed = FALSE
+      endif
+
+      unlink firstG R2."A_Large_relationship_role" secondG
+
+   endif
+
+# End Test 14
+
+#-------------------------------------------------------------------#
+# Test 15
+#-------------------------------------------------------------------# 
+
+   if Iteration = 15 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "1 to 1 reflexive", "Qualifed single instance source"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0605"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0607"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0608"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1202"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1204"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0611"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0621"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0632"]
+
+      link firstG R2."qwertyuiopasdfghjklzxcvbnmqwerty" secondG
+
+      InstG = secondG -> R2."A_Large_relationship_role".Object_G
+
+      if InstG = UNDEFINED then
+         Has_Failed   = TRUE
+         Failure_Code = -1
+      else
+         Has_Failed = FALSE
+      endif
+
+      unlink firstG R2."qwertyuiopasdfghjklzxcvbnmqwerty" secondG
+
+   endif
+
+# End Test 15
+
+#-------------------------------------------------------------------#
+# Test 16 - 
+#-------------------------------------------------------------------# 
+
+   if Iteration = 16 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "1 to 1 reflexive", "Qualifed single instance source"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0605"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0607"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0608"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1202"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1204"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0611"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0621"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0632"]
+
+      Defined = FALSE
+
+      link firstG  R11."Has_a" secondG
+      link secondG R11."Has_a" thirdG
+      link thirdG  R11."Has_a" fourthG
+      link fourthG R11."Has_a" fifthG
+
+      # We know this works, see test 8
+
+      second_instanceG  = firstG           -> R11."Has_a".Object_G
+      third_instanceG   = second_instanceG -> R11."Has_a".Object_G
+      fourth_instanceG  = third_instanceG  -> R11."Has_a".Object_G
+      fifth_instanceG   = fourth_instanceG -> R11."Has_a".Object_G
+ 
+      # Belt and braces, prove it
+      final_instance = firstG -> R11."Has_a".Object_G  -> R11."Has_a".Object_G -> R11."Has_a".Object_G -> R11."Has_a".Object_G
+
+      [Defined] = objG1:Is_It_Defined[final_instance]
+      if Defined then
+         # Now unlink the formalised relationship thirdG to fourthG, using same order and role
+         # to unlink that they were linked in
+         unlink thirdG R11."Has_a" fourthG
+
+         # Check that navigation from first to second, second to third and fourth to fifth
+         # is still possible,
+         # First to third
+         final_instance = firstG -> R11."Has_a".Object_G -> R11."Has_a".Object_G
+         [Defined] = objG1:Is_It_Defined[final_instance]
+   
+         if final_instance.idG = thirdG.idG then
+            # Third to first
+            first_instance = thirdG -> R11."May_have".Object_G -> R11."May_have".Object_G
+
+            if first_instance.idG = firstG.idG then
+               # Fourth to fifth
+               final_instance = fourthG -> R11."Has_a".Object_G
+
+               if final_instance.idG = fifthG.idG then
+                  # Fifth to fourth
+                  first_instance = fifthG -> R11."May_have".Object_G
+
+                  if first_instance.idG = fourthG.idG then
+                     # and navigation from third to fourth, or fourth to third is not possible.
+
+                     fourth_instance = thirdG -> R11."Has_a".Object_G
+                     [Defined] = objG1:Is_It_Defined[fourth_instance]
+
+                     if Defined = FALSE then
+                        third_instance = fourthG -> R11."May_have".Object_G
+                        [Defined] = objG1:Is_It_Defined[third_instance]
+
+                        if Defined = FALSE then
+                           # Navigating from third to fourth, and fourth to third returns an
+                           # undefined instance
+
+                           # And for a finale, relink third to fourth and try the full traverse, first to fifth.
+                           link thirdG  R11."Has_a" fourthG 
+
+                           final_instance = firstG -> R11."Has_a".Object_G  -> R11."Has_a".Object_G -> R11."Has_a".Object_G -> R11."Has_a".Object_G
+
+                           [Defined] = objG1:Is_It_Defined[final_instance]
+
+                           if Defined then
+                              Has_Failed   = FALSE
+                              Failure_Code = 0
+
+                              unlink firstG  R11."Has_a" secondG
+                              unlink secondG R11."Has_a" thirdG
+                              unlink thirdG  R11."Has_a" fourthG
+                              unlink fourthG R11."Has_a" fifthG
+
+                           else
+                              Has_Failed   = TRUE
+                              Failure_Code = -12
+                           endif
+ 
+                        else
+                           Has_Failed   = TRUE
+                           Failure_Code = -11
+                        endif
+
+                     else
+                        Has_Failed   = TRUE
+                        Failure_Code = -10
+                     endif
+
+                  else
+                     Has_Failed   = TRUE
+                     Failure_Code = -9
+                  endif
+
+               else
+                  Has_Failed   = TRUE
+                  Failure_Code = -8
+               endif
+
+            else
+               Has_Failed   = TRUE
+               Failure_Code = -7
+            endif
+
+         else
+            Has_Failed   = TRUE
+            Failure_Code = -6
+         endif
+ 
+      else
+         # Link didn''t work, 
+         Failure_Code = -1
+         Has_Failed   = TRUE
+      endif
+               
+   endif
+
+# End Test 16
+
+#-------------------------------------------------------------------#
+# Test 17
+#-------------------------------------------------------------------#
+
+   if Iteration = 17 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "1 to 1 reflexive", "Qualifed single instance source"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0605"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0607"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0608"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1202"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1204"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0611"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0621"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0632"]
+
+      Defined = FALSE
+   
+      link firstG  R11."Has_a" secondG
+      link secondG R11."Has_a" thirdG
+      link thirdG  R11."Has_a" fourthG
+      link fourthG R11."Has_a" fifthG
+
+      # We know this works, see test 8
+
+      second_instanceG  = firstG           -> R11."Has_a".Object_G
+      third_instanceG   = second_instanceG -> R11."Has_a".Object_G
+      fourth_instanceG  = third_instanceG  -> R11."Has_a".Object_G
+      fifth_instanceG   = fourth_instanceG -> R11."Has_a".Object_G
+ 
+      # Belt and braces, prove it
+      final_instance = firstG -> R11."Has_a".Object_G  -> R11."Has_a".Object_G -> R11."Has_a".Object_G -> R11."Has_a".Object_G
+
+      [Defined] = objG1:Is_It_Defined[final_instance]
+      if Defined then
+ 
+         # Now unlink the formalised relationship thirdG to fourthG, using opposite order and role
+         # to unlink that they were linked in
+         unlink fourthG R11."May_have" thirdG
+
+         # Check that navigation from first to second, second to third and fourth to fifth
+         # is still possible,
+         # First to third
+         final_instance = firstG -> R11."Has_a".Object_G -> R11."Has_a".Object_G
+         [Defined] = objG1:Is_It_Defined[final_instance]
+
+         if final_instance.idG = thirdG.idG then
+            # Third to first
+            first_instance = thirdG -> R11."May_have".Object_G -> R11."May_have".Object_G
+
+            if first_instance.idG = firstG.idG then
+               # Fourth to fifth
+               final_instance = fourthG -> R11."Has_a".Object_G
+
+               if final_instance.idG = fifthG.idG then
+                  # Fifth to fourth
+                  first_instance = fifthG -> R11."May_have".Object_G
+
+                  if first_instance.idG = fourthG.idG then
+                     # and navigation from third to fourth, or fourth to third is not possible.
+
+                     fourth_instance = thirdG -> R11."Has_a".Object_G
+                     [Defined] = objG1:Is_It_Defined[fourth_instance]
+
+                     if Defined = FALSE then
+                        third_instance = fourthG -> R11."May_have".Object_G
+                        [Defined] = objG1:Is_It_Defined[third_instance]
+     
+                        if Defined = FALSE then
+                           # Navigating from third to fourth, and fourth to third returns an
+                           # undefined instance
+ 
+                           # And for a finale, relink third to fourth and try the full traverse, first to fifth.
+                           link thirdG  R11."Has_a" fourthG 
+
+                           final_instance = firstG -> R11."Has_a".Object_G  -> R11."Has_a".Object_G -> R11."Has_a".Object_G -> R11."Has_a".Object_G
+ 
+                           [Defined] = objG1:Is_It_Defined[final_instance]
+
+                           if Defined then
+                              Has_Failed   = FALSE
+                              Failure_Code = 0
+
+                              unlink firstG  R11."Has_a" secondG
+                              unlink secondG R11."Has_a" thirdG
+                              unlink thirdG  R11."Has_a" fourthG
+                              unlink fourthG R11."Has_a" fifthG
+ 
+                           else
+                              Has_Failed   = TRUE
+                              Failure_Code = -12
+                           endif
+ 
+                        else
+                           Has_Failed   = TRUE
+                           Failure_Code = -11
+                        endif
+
+                     else
+                        Has_Failed   = TRUE
+                        Failure_Code = -10
+                     endif
+
+                  else
+                     Has_Failed = TRUE
+                     Failure_Code = -9
+                  endif
+
+               else
+                  Has_Failed   = TRUE
+                  Failure_Code = -8
+               endif
+
+            else
+               Has_Failed   = TRUE
+               Failure_Code = -7
+            endif
+
+         else
+            Has_Failed   = TRUE
+            Failure_Code = -6
+         endif
+ 
+      else
+         # Link didn''t work, 
+         Failure_Code = -1
+         Has_Failed   = TRUE
+      endif
+
+   endif
+
+# End Test 17
+
+#-------------------------------------------------------------------#
+# Test 18
+#-------------------------------------------------------------------# 
+
+   if Iteration = 18 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "1 to 1 reflexive", "Qualifed single instance source"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0605"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0607"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0608"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1202"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1204"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0611"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0621"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0632"]
+
+      Defined = FALSE
+
+      link firstG  R11."Has_a" secondG
+      link secondG R11."Has_a" thirdG
+      link thirdG  R11."Has_a" fourthG
+      link fourthG R11."Has_a" fifthG
+
+      # We know this works, see test 8
+
+      second_instanceG  = firstG           -> R11."Has_a".Object_G
+      third_instanceG   = second_instanceG -> R11."Has_a".Object_G
+      fourth_instanceG  = third_instanceG  -> R11."Has_a".Object_G
+      fifth_instanceG   = fourth_instanceG -> R11."Has_a".Object_G
+ 
+      # Belt and braces, prove it
+
+      final_instance = firstG -> R11."Has_a".Object_G  -> R11."Has_a".Object_G -> R11."Has_a".Object_G -> R11."Has_a".Object_G
+
+      [Defined] = objG1:Is_It_Defined[final_instance]
+
+      if Defined then
+ 
+         # Now unlink the formalised relationship thirdG to fourthG, using same order and role
+         # to unlink that they were linked in
+         unlink thirdG R11."Has_a" fourthG
+
+         # Check that navigation from first to second, second to third and fourth to fifth
+         # is still possible,
+         # First to third
+         final_instance = firstG -> R11."Has_a".Object_G -> R11."Has_a".Object_G
+         [Defined] = objG1:Is_It_Defined[final_instance]
+
+         if final_instance.idG = thirdG.idG then
+            # Third to first
+            first_instance = thirdG -> R11."May_have".Object_G -> R11."May_have".Object_G
+
+            if first_instance.idG = firstG.idG then
+               # Fourth to fifth
+               final_instance = fourthG -> R11."Has_a".Object_G
+
+               if final_instance.idG = fifthG.idG then
+                  # Fifth to fourth
+                  first_instance = fifthG -> R11."May_have".Object_G
+
+                  if first_instance.idG = fourthG.idG then
+                     # and navigation from third to fourth, or fourth to third is not possible.
+                     fourth_instance = thirdG -> R11."Has_a".Object_G
+                     [Defined] = objG1:Is_It_Defined[fourth_instance]
+      
+                     if Defined = FALSE then
+                        third_instance = fourthG -> R11."May_have".Object_G
+                        [Defined] = objG1:Is_It_Defined[third_instance]
+         
+                        if Defined = FALSE then
+                           # Navigating from third to fourth and fourth to third returns an
+                           # undefined instance
+
+                           # And for a finale, relink fourth to third and try the full traverse, first to fifth.
+                           link fourthG  R11."May_have" thirdG 
+
+                           final_instance = firstG -> R11."Has_a".Object_G  -> R11."Has_a".Object_G -> R11."Has_a".Object_G -> R11."Has_a".Object_G
+
+                           [Defined] = objG1:Is_It_Defined[final_instance]
+
+                           if Defined then
+                              Has_Failed = FALSE
+                              Failure_Code = 0
+
+                              unlink firstG  R11."Has_a" secondG
+                              unlink secondG R11."Has_a" thirdG
+                              unlink thirdG  R11."Has_a" fourthG
+                              unlink fourthG R11."Has_a" fifthG
+
+                           else
+                              Has_Failed = TRUE
+                              Failure_Code = -12
+                           endif
+ 
+                        else
+                           Has_Failed   = TRUE
+                           Failure_Code = -11
+                        endif
+
+                     else
+                        Has_Failed   = TRUE
+                        Failure_Code = -10
+                     endif
+
+                  else
+                     Has_Failed   = TRUE
+                     Failure_Code = -9
+                  endif
+
+               else
+                  Has_Failed   = TRUE
+                  Failure_Code = -8
+               endif
+
+            else
+               Has_Failed   = TRUE
+               Failure_Code = -7
+            endif
+
+         else
+            Has_Failed   = TRUE
+            Failure_Code = -6
+         endif
+ 
+      else
+         # Link didn''t work, 
+         Failure_Code = -1
+         Has_Failed   = TRUE
+      endif
+ 
+   endif
+
+# End Test 18
+
+#-------------------------------------------------------------------#
+# Test 19
+#-------------------------------------------------------------------#
+
+   if Iteration = 19 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "1 to 1 reflexive", "Qualifed single instance source"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0605"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0607"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0608"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1202"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1204"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0611"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0621"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0632"]
+
+      Defined = FALSE
+   
+      link firstG  R11."Has_a" secondG
+      link secondG R11."Has_a" thirdG
+      link thirdG  R11."Has_a" fourthG
+      link fourthG R11."Has_a" fifthG
+
+      # We know this works, see test 8
+
+      second_instanceG  = firstG           -> R11."Has_a".Object_G
+      third_instanceG   = second_instanceG -> R11."Has_a".Object_G
+      fourth_instanceG  = third_instanceG  -> R11."Has_a".Object_G
+      fifth_instanceG   = fourth_instanceG -> R11."Has_a".Object_G
+ 
+      # Belt and braces, prove it
+
+      final_instance = firstG -> R11."Has_a".Object_G  -> R11."Has_a".Object_G -> R11."Has_a".Object_G -> R11."Has_a".Object_G
+
+      [Defined] = objG1:Is_It_Defined[final_instance]
+      if Defined then
+ 
+         # Now unlink the formalised relationship thirdG to fourthG, using same order and role
+         # to unlink that they were linked in
+         unlink fourthG R11."May_have" thirdG
+
+         # Check that navigation from first to second, second to third and fourth to fifth
+         # is still possible,
+         # First to third
+         final_instance = firstG -> R11."Has_a".Object_G -> R11."Has_a".Object_G
+         [Defined] = objG1:Is_It_Defined[final_instance]
+         if final_instance.idG = thirdG.idG then
+            # Third to first
+            first_instance = thirdG -> R11."May_have".Object_G -> R11."May_have".Object_G
+
+            if first_instance.idG = firstG.idG then
+               # Fourth to fifth
+               final_instance = fourthG -> R11."Has_a".Object_G
+
+               if final_instance.idG = fifthG.idG then
+                  # Fifth to fourth
+                  first_instance = fifthG -> R11."May_have".Object_G
+
+                  if first_instance.idG = fourthG.idG then
+                     # and navigation from third to fourth, or fourth to third is not possible.
+                     fourth_instance = thirdG -> R11."Has_a".Object_G
+                     [Defined] = objG1:Is_It_Defined[fourth_instance]
+       
+                     if Defined = FALSE then
+                        third_instance = fourthG -> R11."May_have".Object_G
+                        [Defined] = objG1:Is_It_Defined[third_instance]
+      
+                        if Defined = FALSE then
+                           # Navigating from third to fourth, and fourth to third returns an
+                           # undefined instance
+
+                           # And for a finale, relink third to fourth and try the full traverse, first to fifth.
+                           link fourthG  R11."May_have" thirdG 
+
+                           final_instance = firstG -> R11."Has_a".Object_G  -> R11."Has_a".Object_G -> R11."Has_a".Object_G -> R11."Has_a".Object_G
+
+                           [Defined] = objG1:Is_It_Defined[final_instance]
+
+                           if Defined then
+                              Has_Failed = FALSE
+
+                              unlink firstG  R11."Has_a" secondG
+                              unlink secondG R11."Has_a" thirdG
+                              unlink thirdG  R11."Has_a" fourthG
+                              unlink fourthG R11."Has_a" fifthG
+
+                              Failure_Code = 0
+
+                           else
+                              Has_Failed   = TRUE
+                              Failure_Code = -12
+                           endif
+ 
+                        else
+                           Has_Failed   = TRUE
+                           Failure_Code = -11
+                        endif
+
+                     else
+                        Has_Failed   = TRUE
+                        Failure_Code = -10
+                     endif
+
+                  else
+                     Has_Failed = TRUE
+                     Failure_Code = -9
+                  endif
+
+               else
+                  Has_Failed   = TRUE
+                  Failure_Code = -8
+               endif
+            
+            else
+               Has_Failed   = TRUE
+               Failure_Code = -7
+            endif
+
+         else
+            Has_Failed   = TRUE
+            Failure_Code = -6
+         endif
+ 
+      else
+         # Link didn''t work, 
+         Failure_Code = -1
+         Has_Failed   = TRUE
+      endif
+ 
+   endif
+
+# End Test 19
+
+#-------------------------------------------------------------------#
+# Test 20
+#-------------------------------------------------------------------#
+
+   if Iteration = 20 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "1 to 1 reflexive", "Qualifed single instance source"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0605"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0607"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0608"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1202"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1204"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0611"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0621"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0632"]
+
+      Defined = FALSE
+
+      link firstG  R11."Has_a" secondG
+      link secondG R11."Has_a" thirdG
+      link thirdG  R11."Has_a" fourthG
+      link fourthG R11."Has_a" fifthG
+
+      # We know this works, see test 8
+
+      second_instanceG  = firstG           -> R11."Has_a".Object_G
+      third_instanceG   = second_instanceG -> R11."Has_a".Object_G
+      fourth_instanceG  = third_instanceG  -> R11."Has_a".Object_G
+      fifth_instanceG   = fourth_instanceG -> R11."Has_a".Object_G
+ 
+      # Belt and braces, prove it
+
+      final_instance = firstG -> R11."Has_a".Object_G  -> R11."Has_a".Object_G -> R11."Has_a".Object_G -> R11."Has_a".Object_G
+
+      [Defined] = objG1:Is_It_Defined[final_instance]
+      if Defined then
+ 
+         #  Break a link, add a new entry and remake the chain.
+         unlink third_instanceG R11."Has_a" fourth_instanceG
+
+         local_objectG = create Object_G with idG = Iteration & ResultA = 0
+
+         link third_instanceG R11."Has_a" local_objectG
+
+         link local_objectG R11."Has_a" fourth_instanceG
+
+         # See if it worked
+         final_instance = firstG -> R11."Has_a".Object_G  -> R11."Has_a".Object_G  -> R11."Has_a".Object_G -> R11."Has_a".Object_G -> R11."Has_a".Object_G
+
+         [Defined] = objG1:Is_It_Defined[final_instance]
+         if Defined then
+
+            unlink firstG         R11."Has_a" secondG
+            unlink secondG        R11."Has_a" thirdG
+            unlink thirdG         R11."Has_a" local_objectG
+            unlink local_objectG  R11."Has_a" fourthG
+            unlink fourthG        R11."Has_a" fifthG
+
+
+            Failure_Code = 0
+            Has_Failed   = FALSE
+
+         else
+            # New link didn''t work, 
+            Failure_Code = -2
+            Has_Failed = TRUE
+
+         endif
+      else
+         # Link didn''t work, 
+         Failure_Code = -1
+         Has_Failed   = TRUE
+      endif
+
+   endif
+
+# End Test 20
+
+#-------------------------------------------------------------------#
+# Test 21
+#-------------------------------------------------------------------#
+
+   if Iteration = 21 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "1 to 1 reflexive", "Qualifed single instance source"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0605"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0607"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0608"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1202"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1204"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0611"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0621"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0632"]
+
+      Defined = FALSE
+
+      link firstG  R11."Has_a" secondG
+      link secondG R11."Has_a" thirdG
+      link thirdG  R11."Has_a" fourthG
+      link fourthG R11."Has_a" fifthG
+
+      # We know this works, see test 8
+
+      second_instanceG  = firstG           -> R11."Has_a".Object_G
+      third_instanceG   = second_instanceG -> R11."Has_a".Object_G
+      fourth_instanceG  = third_instanceG  -> R11."Has_a".Object_G
+      fifth_instanceG   = fourth_instanceG -> R11."Has_a".Object_G
+ 
+      # Belt and braces, prove it
+
+      final_instance = firstG -> R11."Has_a".Object_G  -> R11."Has_a".Object_G -> R11."Has_a".Object_G -> R11."Has_a".Object_G
+
+      [Defined] = objG1:Is_It_Defined[final_instance]
+      
+      if Defined then
+ 
+         #  Break a link, add a new entry and remake the chain.
+         unlink second_instanceG R11."Has_a" third_instanceG
+
+         link second_instanceG R11."Has_a" sixthG
+
+         link sixthG R11."Has_a" third_instanceG
+
+         # See if it worked
+         final_instance = firstG -> R11."Has_a".Object_G  -> R11."Has_a".Object_G  -> R11."Has_a".Object_G -> R11."Has_a".Object_G -> R11."Has_a".Object_G
+
+         [Defined] = objG1:Is_It_Defined[final_instance]
+         if Defined then
+
+            unlink firstG   R11."Has_a" secondG
+            unlink secondG  R11."Has_a" sixthG
+            unlink sixthG   R11."Has_a" thirdG
+            unlink thirdG   R11."Has_a" fourthG
+            unlink fourthG  R11."Has_a" fifthG
+
+            Failure_Code = 0
+            Has_Failed   = FALSE
+
+         else
+            # New link didn''t work, 
+            Failure_Code = -2
+            Has_Failed   = TRUE
+
+         endif
+  
+      else
+         # Link didn''t work, 
+         Failure_Code = -1
+         Has_Failed   = TRUE
+      endif
+
+   endif
+
+# End Test 21
+
+#-------------------------------------------------------------------#
+# Test 22
+#-------------------------------------------------------------------# 
+
+   if Iteration = 22 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "1 to 1 reflexive", "Qualifed single instance source"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0605"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0607"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1202"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1204"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0611"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0621"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0632"]
+
+      link firstG  R11."Has_a" secondG
+
+      # Attempt navigation from first instance to the unlinked side 
+      first_undefined_instance = firstG -> R11."May_have".Object_G
+
+      # Attempt navigation from last instance to unlinked side
+      last_undefined_instance = secondG -> R11."Has_a".Object_G
+
+      if first_undefined_instance != UNDEFINED then
+
+        Failure_Code = -1
+        Has_Failed   = TRUE
+
+      else
+
+         if last_undefined_instance != UNDEFINED then
+
+            Failure_Code = -2
+            Has_Failed   = TRUE
+
+         else
+
+            Failure_Code = 0
+            Has_Failed   = FALSE
+
+            unlink firstG  R11."Has_a" secondG
+
+        endif
+
+      endif
+
+   endif
+
+# End Test 22
+
+#-------------------------------------------------------------------#
+# Delete some relationships This section deletes relationships 
+# depending upon which test has been performed.
+#-------------------------------------------------------------------#
+
+   if Iteration >= 2 & Iteration <= 6 then
+
+      # Delete the formalised relationships
+      unlink firstG  R11."Has_a"    fifthG
+      unlink secondG R11."May_have" thirdG
+
+   endif
+
+#-------------------------------------------------------------------#
+# Tests complete
+#-------------------------------------------------------------------#
+
+   if Unsupported = FALSE then
+
+      if Has_Failed = FALSE then
+         [] = RPT2:Test_Passed["1 to 1 reflexive", Test, 0]
+      else
+         [] = RPT3:Test_Failed["1 to 1 reflexive", Test, Failure_Code]
+      endif
+
+   else
+      [] = RPT4:Test_Unsupported[Test]
+   endif
+
+#-------------------------------------------------------------------#
+',
+	3,
+	'',
+	"893c400c-17ba-4d53-959e-1de2e0273f4b",
+	2,
+	2);
+INSERT INTO O_TPARM
+	VALUES ("0b77afe5-2261-46ad-b097-ef8fe6e91b7e",
+	"9636dd18-4889-4fdb-90bc-8b18c349d9ae",
+	'Iteration',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("d510c64e-80a0-40f3-9271-b62dda46d0ad",
+	"9636dd18-4889-4fdb-90bc-8b18c349d9ae",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"0b77afe5-2261-46ad-b097-ef8fe6e91b7e",
+	'');
+INSERT INTO O_TFR
+	VALUES ("3bd49aa3-40e9-41a5-9a72-26b16f7449b9",
+	"04128a43-0efb-4c47-afea-852f79ca6212",
+	'One_To_Many_Reflexive',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'#-------------------------------------------------------------------#
+#Reflexive navigations 1c:Mc
+#-------------------------------------------------------------------#
+
+# Initialise the fault flag
+Has_Failed   = FALSE
+Inst_Failed  = FALSE
+Unsupported  = FALSE
+
+# Tests 11 to 15 are copies of tests 6 to 10, using a reflexive navigation with the A and B
+# conditional roles reversed.
+
+#-------------------------------------------------------------------#
+
+# Find the desired instances for Object_G
+firstG   = find-one Object_G where idG = 1
+secondG  = find-one Object_G where idG = 2
+thirdG   = find-one Object_G where idG = 3
+fourthG  = find-one Object_G where idG = 4
+fifthG   = find-one Object_G where idG = 5
+sixthG   = find-one Object_G where idG = 6
+seventhG = find-one Object_G where idG = 7
+eigthG   = find-one Object_G where idG = 8
+ninthG   = find-one Object_G where idG = 9
+
+#-------------------------------------------------------------------#
+
+# Formalise some relationships
+# This section initialise relationships depending upon which test
+# is being performed.
+
+if Iteration >= 2 & Iteration <= 5 then
+
+   # Formalise some relationships
+   link firstG R13."Has_many" thirdG
+   link firstG R13."Has_many" fourthG
+   link fifthG R13."Has_a"    secondG
+
+endif
+
+#-------------------------------------------------------------------#
+# Test 1 - Navigate an undefined relationship
+#-------------------------------------------------------------------#
+
+   if Iteration = 1 then
+
+      [] = RPT1:Start_Test[Test, "Null Requid", "Relationships", "objG", "1c to Mc reflexive navigations"]
+
+      # Perform the navigation
+      InstG = sixthG -> R13."Has_a".Object_G
+
+      # Check the result of the navigation
+      if InstG != UNDEFINED then
+         Has_Failed = TRUE
+      endif
+  
+   endif
+
+# End Test 1
+
+#-------------------------------------------------------------------#
+# Test 2 - Navigate to the MANY side of the relationship
+#          Relationship role, single instance handle as the source
+#-------------------------------------------------------------------#
+
+   if Iteration = 2 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "objG", "1c to Mc reflexive navigations"]
+      [] = RPT8:Specify_Requid[Test, "1241-0000-01-0606"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0631"]
+
+      # Perform the navigation
+      {SetG} = firstG -> R13."Has_many".Object_G
+
+      # Check the result of the navigation
+      if countof {SetG} != 2 then
+         Has_Failed   = TRUE
+         Failure_Code = -30
+      else
+         # Check the contents of the set
+         Val1 = -10
+         Val2 = -20
+
+         for InstG in {SetG} do
+
+            if InstG.idG = 3 then
+               Val1 = InstG.idG
+            endif
+
+            if InstG.idG = 4 then
+               Val2 = InstG.idG
+            endif
+
+         endfor
+
+         # Check counter values
+         if Val1 = 3 then
+
+            if Val2 != 4 then
+               Has_Failed   = TRUE
+               Failure_Code = Val2
+            endif
+
+         else
+            Has_Failed   = TRUE
+            Failure_Code = Val1
+         endif
+
+      endif
+
+   endif
+
+#End Test 2
+
+#-------------------------------------------------------------------#
+# Test 3 - Navigate to the MANY side of the relationship
+#          Qualified role, set of instance handles as the source
+#-------------------------------------------------------------------#
+
+   if Iteration = 3 then
+
+      [] = RPT1:Start_Test[Test, "Null Requid", "Relationships", "objG", "1c to Mc reflexive navigations"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0703"]
+      [] = RPT5:Test_Text [Test, "Navigation from sets unsupported"]
+
+      Unsupported = TRUE
+
+   endif
+
+# End Test 3
+
+#-------------------------------------------------------------------#
+# Test 4 -Navigate to the SINGLE side of the relationship
+#         Relationship role, single instance handle as the source
+#-------------------------------------------------------------------#
+
+   if Iteration = 4 then
+ 
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "objG", "1c to Mc reflexive navigations"]
+      [] = RPT8:Specify_Requid[Test, "1241-0000-01-0606"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0632"]
+
+      # Perform the navigation
+      InstG = fifthG -> R13."Has_a".Object_G
+
+      # Check the result of the navigation
+      if InstG != UNDEFINED then
+
+         if InstG.idG != 2 then
+            Has_Failed   = TRUE
+            Failure_Code = -10
+         endif
+   
+      else
+         Has_Failed   = TRUE
+         Failure_Code = -20
+      endif
+
+   endif
+
+# End Test 4
+
+#-------------------------------------------------------------------#
+# Test 5 - Navigate to the SINGLE side of the relationship
+#          Qualified role, set of instance handles as the source
+#-------------------------------------------------------------------#
+
+   if Iteration = 5 then
+
+      [] = RPT1:Start_Test[Test,  "Null Requid", "Relationships", "objG", "1c to Mc reflexive navigations"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0703"]
+
+      [] = RPT5:Test_Text [Test, "Navigation from set unsupported"]
+
+      Unsupported = TRUE
+ 
+   endif
+
+#End Test 5
+
+#-------------------------------------------------------------------#
+# Test 6 - Attempt to navigate a deleted relationship
+#-------------------------------------------------------------------#
+
+   if Iteration = 6 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "objG", "1c to Mc reflexive navigations"]
+      [] = RPT8:Specify_Requid[Test, "1241-0000-01-0606"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0607"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0608"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1202"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1204"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0611"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0621"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0631"]
+
+      # Formalise some relationships
+      link firstG R13."Has_many" thirdG
+      link firstG R13."Has_many" fourthG
+      link fifthG R13."Has_a"    secondG
+
+      # Delete the formalised relationships
+      unlink firstG R13."Has_many" thirdG
+      unlink firstG R13."Has_many" fourthG
+      unlink fifthG R13."Has_a"    secondG
+
+      # Navigate to the MANY side
+      {SetG} = firstG -> R13."Has_many".Object_G
+
+      # Check the result of the navigation
+      if countof {SetG} != 0 then
+         Has_Failed   = TRUE
+         Failure_Code = -10
+      else
+         # Navigate to the SINGLE side
+         InstG = fifthG -> R13."Has_a".Object_G
+
+         # Check the result of the navigation
+         if InstG != UNDEFINED then
+            Has_Failed   = TRUE
+            Failure_Code = -2
+         endif
+
+      endif
+
+   endif
+
+# End Test 6
+
+#-------------------------------------------------------------------#
+# Test 7 - Attempt to link one to many and navigate to the end of 
+#          each link
+#-------------------------------------------------------------------#
+
+   if Iteration = 7 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "objG", "Navigate to the end of each link"]
+      [] = RPT8:Specify_Requid[Test, "1241-0000-01-0606"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0607"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0608"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1202"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1204"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0611"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0621"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0631"]
+
+      # Formalise some relationships
+      link firstG R13."Has_many" secondG
+      link firstG R13."Has_many" thirdG
+      link firstG R13."Has_many" fourthG
+
+      link secondG R13."Has_many" fifthG
+      link secondG R13."Has_many" sixthG
+
+      link thirdG R13."Has_many" seventhG
+ 
+      link fourthG R13."Has_many" eigthG
+      link fourthG R13."Has_many" ninthG
+
+      # Prove that we can navigate from first to fifth and sixth
+      {SetG} = firstG -> R13."Has_many".Object_G
+
+      # Count of number of instances in this little empire.
+      # Include the instance that we are navigating from.
+
+      Local_Counter = 1
+
+      if countof {SetG} = 3 then
+
+         for InstG in {SetG} do
+
+            if InstG = UNDEFINED then
+               Inst_Failed  = TRUE
+               Failure_Code = -10
+            else
+               Local_Counter = Local_Counter + 1
+               {Next_SetG} = InstG -> R13."Has_many".Object_G
+
+               for Sub_InstG in {Next_SetG} do
+
+                  if Sub_InstG = UNDEFINED then
+                     Inst_Failed  = TRUE
+                     Failure_Code = -20
+                  else
+                     Local_Counter = Local_Counter + 1
+                  endif
+
+               endfor         
+
+            endif
+
+         endfor
+
+      else
+         Inst_Failed = TRUE
+         Failure_Code = countof {SetG}
+      endif
+
+      if Inst_Failed = FALSE then
+
+         if Local_Counter = 9 then
+            Has_Failed = FALSE
+         else
+            Has_Failed   = TRUE
+            Failure_Code = Local_Counter
+         endif
+ 
+      else
+         Has_Failed   = TRUE
+         Failure_Code = Local_Counter
+      endif
+
+      unlink firstG R13."Has_many" secondG
+      unlink firstG R13."Has_many" thirdG
+      unlink firstG R13."Has_many" fourthG
+
+      unlink secondG R13."Has_many" fifthG
+      unlink secondG R13."Has_many" sixthG
+ 
+      unlink thirdG R13."Has_many" seventhG
+ 
+      unlink fourthG R13."Has_many" eigthG
+      unlink fourthG R13."Has_many" ninthG
+
+   endif
+
+# End Test 7
+
+
+#-------------------------------------------------------------------#
+# Test 8 - Attempt to link one to many and navigate to the end of 
+#          each link
+#          Add in a new instance as a last instance in a chain.
+#-------------------------------------------------------------------#
+
+   if Iteration = 8 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "objG", "1c to Mc reflexive navigations"]
+      [] = RPT8:Specify_Requid[Test, "1241-0000-01-0606"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0607"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0608"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1202"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1204"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0611"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0621"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0631"]
+
+      Local_Counter = 0
+
+      # Formalise some relationships
+      link firstG R13."Has_many" secondG
+      link firstG R13."Has_many" thirdG
+      link firstG R13."Has_many" fourthG
+
+      link secondG R13."Has_many" fifthG
+      link secondG R13."Has_many" sixthG
+
+      link thirdG R13."Has_many" seventhG
+ 
+      link fourthG R13."Has_many" eigthG
+      link fourthG R13."Has_many" ninthG
+
+      tenthG = find-one Object_G where idG = 10
+
+      {SetG} = firstG -> R13."Has_many".Object_G
+
+      # Count of number of instances in this little empire.
+      # Include the instance that we are navigating from.
+      Local_Counter = 1
+
+      if countof {SetG} = 3 then
+
+         for InstG in {SetG} do
+
+            if InstG = UNDEFINED then
+               Inst_Failed  = TRUE
+               Failure_Code = -10
+            else
+               Local_Counter = Local_Counter + 1
+               {Next_SetG} = InstG -> R13."Has_many".Object_G
+
+               for Sub_InstG in {Next_SetG} do
+ 
+                  if Sub_InstG = UNDEFINED then
+                     Inst_Failed  = TRUE
+                     Failure_Code = -20
+                  else
+                     Local_Counter = Local_Counter + 1
+                     Inst_Failed   = FALSE
+                  endif
+
+               endfor         
+
+            endif
+
+         endfor
+
+      else
+         Inst_Failed  = TRUE
+         Failure_Code = countof {SetG} 
+      endif
+
+      if Inst_Failed = FALSE then
+
+         if Local_Counter = 9 then
+            # Link in new element
+            link thirdG R13."Has_many" tenthG
+                  
+            #Can we navigate back from tenthG to thirdG
+            newThird = tenthG -> R13."Has_a".Object_G
+
+            if newThird = UNDEFINED then
+               Inst_Failed  = TRUE
+               Failure_Code = -30
+            else
+
+               # New instance is not undefined
+               Inst_Failed = FALSE
+               Local_Counter = 1
+               {SetG} = firstG -> R13."Has_many".Object_G
+
+               for InstG in {SetG} do
+
+                  if InstG = UNDEFINED then
+                     Inst_Failed  = TRUE
+                     Failure_Code = -40
+                  else
+                     Local_Counter = Local_Counter + 1
+                     {Next_SetG} = InstG -> R13."Has_many".Object_G
+  
+                     for Sub_InstG in {Next_SetG} do
+
+                        if Sub_InstG = UNDEFINED then
+                           Inst_Failed  = TRUE
+                           Failure_Code = -50
+                        else
+                           Local_Counter = Local_Counter + 1
+                        endif
+  
+                     endfor         
+
+                  endif
+
+               endfor
+ 
+            endif
+
+            if Inst_Failed = FALSE then
+
+               if Local_Counter = 10 then
+                  Failure_Code = 0
+                  Has_Failed   = FALSE
+               else
+                  Failure_Code = -100 - Local_Counter
+                  Has_Failed   = TRUE
+               endif
+
+            else
+               Has_Failed   = TRUE
+               Failure_Code = -60
+            endif
+
+         else
+            Failure_Code = -200 - Local_Counter
+            Has_Failed   = TRUE
+         endif
+
+      else
+         Has_Failed   = TRUE
+         Failure_Code = -70
+      endif
+
+      unlink firstG R13."Has_many" secondG
+      unlink firstG R13."Has_many" thirdG
+      unlink firstG R13."Has_many" fourthG
+
+      unlink secondG R13."Has_many" fifthG
+      unlink secondG R13."Has_many" sixthG
+
+      unlink thirdG R13."Has_many" seventhG
+      unlink thirdG R13."Has_many" tenthG
+   
+      unlink fourthG R13."Has_many" eigthG
+      unlink fourthG R13."Has_many" ninthG
+
+   endif
+
+# End Test 8
+
+#-------------------------------------------------------------------#
+# Test 9 - Attempt to link one to many and navigate to the end of
+#          each link
+#          Add in a new instance in the middle of a chain with one 
+#          end object.
+#-------------------------------------------------------------------#
+
+   if Iteration = 9 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "objG", "1c to Mc reflexive navigations"]
+      [] = RPT8:Specify_Requid[Test, "1241-0000-01-0606"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0607"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0608"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1202"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1204"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0611"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0621"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0631"]
+
+      Local_Counter = 0
+      No_Instances  = 0
+
+      # Formalise some relationships
+      link firstG R13."Has_many" secondG
+      link firstG R13."Has_many" thirdG
+      link firstG R13."Has_many" fourthG
+
+      link secondG R13."Has_many" fifthG
+      link secondG R13."Has_many" sixthG
+
+      link thirdG R13."Has_many" seventhG
+ 
+      link fourthG R13."Has_many" eigthG
+      link fourthG R13."Has_many" ninthG
+
+      tenthG = find-one Object_G where idG = 10
+
+      {SetG} = firstG -> R13."Has_many".Object_G
+
+      # Count of number of instances in this little empire.
+      # Include the instance that we are navigating from.
+      Local_Counter = 1
+
+      if countof {SetG} = 3 then
+
+         for InstG in {SetG} do
+
+            if InstG = UNDEFINED then
+               Inst_Failed  = TRUE
+               Failure_Code = -10
+            else
+               Local_Counter = Local_Counter + 1
+               {Next_SetG} = InstG -> R13."Has_many".Object_G
+
+               for Sub_InstG in {Next_SetG} do
+
+                  if Sub_InstG = UNDEFINED then
+                     Inst_Failed  = TRUE
+                     Failure_Code = -20
+                  else
+                     Local_Counter = Local_Counter + 1
+                  endif
+
+               endfor         
+
+            endif
+  
+         endfor
+
+      else
+         Inst_Failed  = TRUE
+         Failure_Code = countof {SetG} 
+      endif
+
+      if Inst_Failed = FALSE then
+
+         if Local_Counter = 9 then
+            # Unlink old element and splice in a new element, making sure that the links are
+            # still correct.
+            unlink firstG R13."Has_many" thirdG
+
+            # Link in new element
+            link firstG R13."Has_many" tenthG
+
+            # Relink new element to old element
+            link tenthG R13."Has_many" thirdG 
+                  
+            # Can we navigate back from thirdG to tenthG
+            new_tenth = thirdG -> R13."Has_a".Object_G
+
+            # And while we''re at it, can we navigate from last back to first,
+            # taking into account the newly added link
+            new_first = seventhG -> R13."Has_a".Object_G -> R13."Has_a".Object_G -> R13."Has_a".Object_G
+
+            if new_tenth = UNDEFINED then
+               Inst_Failed  = TRUE
+               Failure_Code = -30
+            else
+
+               if new_first = UNDEFINED then
+                  Inst_Failed  = TRUE
+                  Failure_Code = -40
+               else
+                  # New instance is not undefined
+                  Inst_Failed = FALSE
+                  Failure_Code = 0
+
+                  Local_Counter = 1
+
+                  {SetG} = firstG -> R13."Has_many".Object_G
+
+                  for InstG in {SetG} do
+
+                     if InstG = UNDEFINED then
+                        Inst_Failed  = TRUE
+                        Failure_Code = -50
+                     else
+                        Local_Counter = Local_Counter + 1
+                        {Next_SetG} = InstG -> R13."Has_many".Object_G
+                        for Sub_InstG in {Next_SetG} do
+
+                           if Sub_InstG = UNDEFINED then
+                              Inst_Failed  = TRUE
+                              Failure_Code = -60
+                           else
+                              Local_Counter = Local_Counter + 1
+                              {Next_Next_SetG} = Sub_InstG -> R13."Has_many".Object_G
+
+                              for Sub_Sub_InstG in {Next_Next_SetG} do
+ 
+                                 if Sub_Sub_InstG = UNDEFINED then
+                                    Inst_Failed  = TRUE
+                                    Failure_Code = -70
+                                 else 
+                                    Local_Counter = Local_Counter + 1
+                                 endif
+
+                              endfor
+
+                           endif
+
+                        endfor         
+
+                     endif
+
+                  endfor
+
+               endif
+
+            endif
+
+            if Inst_Failed = FALSE then
+
+               if Local_Counter = 10 then
+                  Failure_Code = 0
+                  Has_Failed   = FALSE
+               else
+                  Has_Failed   = TRUE
+                  Failure_Code = -100 - Local_Counter
+               endif
+
+            else
+               Has_Failed   = TRUE
+               Failure_Code = -80
+            endif
+
+         else
+            Has_Failed   = TRUE
+            Failure_Code = -200 - Local_Counter
+         endif
+
+      else
+         Has_Failed   = TRUE
+         Failure_Code = -90
+      endif
+
+      unlink firstG R13."Has_many" secondG
+      unlink firstG R13."Has_many" tenthG
+      unlink firstG R13."Has_many" fourthG
+
+      unlink tenthG R13."Has_many" thirdG
+
+      unlink secondG R13."Has_many" fifthG
+      unlink secondG R13."Has_many" sixthG
+
+      unlink thirdG R13."Has_many" seventhG
+   
+      unlink fourthG R13."Has_many" eigthG
+      unlink fourthG R13."Has_many" ninthG
+
+   endif
+
+# End Test 9
+
+#-------------------------------------------------------------------#
+# Test 10 - Attempt to link one to many and navigate to the end of 
+#           each link
+#           Add in a new instance in the middle of a chain with two 
+#           end objects.
+#-------------------------------------------------------------------#
+
+   if Iteration = 10 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "objG", "1c to Mc reflexive navigations"]
+      [] = RPT8:Specify_Requid[Test, "1241-0000-01-0606"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0607"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0608"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1202"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1204"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0611"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0621"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0631"]
+
+      Local_Counter = 0
+      Has_Failed    = TRUE
+      Inst_Failed   = FALSE
+ 
+      # Formalise some relationships
+      link firstG R13."Has_many" secondG
+      link firstG R13."Has_many" thirdG
+      link firstG R13."Has_many" fourthG
+
+      link secondG R13."Has_many" fifthG
+      link secondG R13."Has_many" sixthG
+
+      link thirdG R13."Has_many" seventhG
+ 
+      link fourthG R13."Has_many" eigthG
+      link fourthG R13."Has_many" ninthG
+
+      tenthG = find-one Object_G where idG = 10
+
+      {SetG} = firstG -> R13."Has_many".Object_G
+
+      # Count of number of instances in this little empire.
+      # Include the instance that we are navigating from.
+      Local_Counter = 1
+
+      No_Instances = countof {SetG}
+      if No_Instances = 3 then
+
+         for InstG in {SetG} do
+
+            if InstG = UNDEFINED then
+               Inst_Failed  = TRUE
+               Failure_Code = -10
+            else
+               Local_Counter = Local_Counter + 1
+               {Next_SetG} = InstG -> R13."Has_many".Object_G
+
+               for Sub_InstG in {Next_SetG} do
+
+                  if Sub_InstG = UNDEFINED then
+                     Inst_Failed  = TRUE
+                     Failure_Code = -3
+                  else
+                     Local_Counter = Local_Counter + 1
+                  endif
+
+               endfor         
+
+            endif
+
+         endfor
+
+      else
+         Inst_Failed  = TRUE
+         Failure_Code = No_Instances 
+      endif
+
+      if Inst_Failed = FALSE & Local_Counter = 9 then
+         # Unlink old element and splice in a new element, making sure that the links are
+         # still correct.
+         unlink firstG R13."Has_many" fourthG
+
+         # Link in new element
+         link firstG R13."Has_many" tenthG
+
+         # Relink new element to old element
+         link tenthG R13."Has_many" fourthG 
+                  
+         # Can we navigate back from thirdG to tenthG
+         new_tenth = fourthG -> R13."Has_a".Object_G
+
+         # And while we''re at it, can we navigate from last back to first,
+         # taking into account the newly added link
+         new_first = eigthG -> R13."Has_a".Object_G -> R13."Has_a".Object_G -> R13."Has_a".Object_G
+
+         if new_tenth = UNDEFINED then
+            Inst_Failed  = TRUE
+            Failure_Code = -30
+         else
+
+            if new_first = UNDEFINED then
+               Inst_Failed  = TRUE
+               Failure_Code = -40
+            else
+               # New instance is not undefined
+               Inst_Failed   = FALSE
+               Failure_Code  = 0
+               Local_Counter = 1
+               {SetG} = firstG -> R13."Has_many".Object_G
+
+               for InstG in {SetG} do
+
+                  if InstG = UNDEFINED then
+                     Inst_Failed  = TRUE
+                     Failure_Code = -50
+                  else
+                     Local_Counter = Local_Counter + 1
+                     {Next_SetG} = InstG -> R13."Has_many".Object_G
+
+                     for Sub_InstG in {Next_SetG} do
+
+                        if Sub_InstG = UNDEFINED then
+                           Inst_Failed  = TRUE
+                           Failure_Code = -60
+                        else
+                           Local_Counter = Local_Counter + 1
+                           {Next_Next_SetG} = Sub_InstG -> R13."Has_many".Object_G
+
+                           for Sub_Sub_InstG in {Next_Next_SetG} do
+
+                              if Sub_Sub_InstG = UNDEFINED then
+                                 Inst_Failed  = TRUE
+                                 Failure_Code = -8
+                               else
+                                 Local_Counter = Local_Counter + 1
+                               endif
+
+                            endfor         
+  
+                         endif
+   
+                      endfor         
+
+                   endif
+
+                endfor
+
+             endif
+
+          endif
+
+          if Inst_Failed = FALSE & Local_Counter = 10 then
+             Failure_Code = 0
+             Has_Failed   = FALSE
+
+             unlink firstG R13."Has_many" secondG
+             unlink firstG R13."Has_many" thirdG
+             unlink firstG R13."Has_many" tenthG
+
+             unlink tenthG R13."Has_many" fourthG
+ 
+             unlink secondG R13."Has_many" fifthG
+             unlink secondG R13."Has_many" sixthG
+
+             unlink thirdG R13."Has_many" seventhG
+
+             unlink fourthG R13."Has_many" eigthG
+             unlink fourthG R13."Has_many" ninthG
+
+          else
+             Has_Failed   = TRUE
+             Failure_Code = Local_Counter
+          endif
+
+       else
+          Has_Failed = TRUE
+          Failure_Code = Local_Counter
+       endif
+
+   endif
+
+# End Test 10
+
+#-------------------------------------------------------------------#
+# Test 11 - Attempt to navigate a deleted relationship
+#-------------------------------------------------------------------#
+
+   if Iteration = 11 then
+
+      [] = RPT1:Start_Test[Test, "Null Requid", "Relationships", "objG", "Attempt to navigate a deleted relationship"]
+
+      # Formalise some relationships
+      link firstG R4."Has_many" thirdG
+      link firstG R4."Has_many" fourthG
+      link fifthG R4."Has_a"    secondG
+
+      # Delete the formalised relationships
+      unlink firstG R4."Has_many" thirdG
+      unlink firstG R4."Has_many" fourthG
+      unlink fifthG R4."Has_a"    secondG
+
+      # Navigate to the MANY side
+      {SetG} = firstG -> R4."Has_many".Object_G
+
+      # Check the result of the navigation
+      if countof {SetG} != 0 then
+         Has_Failed   = TRUE
+         Failure_Code = -10
+      else
+         # Navigate to the SINGLE side
+         InstG = fifthG -> R4."Has_a".Object_G
+
+         # Check the result of the navigation
+         if InstG != UNDEFINED then
+            Has_Failed   = TRUE
+            Failure_Code = -20
+         endif
+
+      endif
+
+   endif
+
+# End Test 11
+
+#-------------------------------------------------------------------#
+# Test 12 - Attempt to link one to many and navigate to the end of 
+#           each link
+#-------------------------------------------------------------------#
+
+   if Iteration = 12 then
+ 
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "objG", "1c to Mc reflexive navigations"]
+      [] = RPT8:Specify_Requid[Test, "1241-0000-01-0606"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0607"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0608"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1202"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1204"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0611"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0621"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0631"]
+
+      #Navigate to the MANY side
+      {SetG} = firstG -> R4."Has_many".Object_G
+
+      # Check the result of the navigation
+      what = countof {SetG} 
+
+      #Formalise some relationships
+      link firstG R4."Has_many" secondG
+      link firstG R4."Has_many" thirdG
+      link firstG R4."Has_many" fourthG
+
+      link secondG R4."Has_many" fifthG
+      link secondG R4."Has_many" sixthG
+
+      link thirdG R4."Has_many" seventhG
+ 
+      link fourthG R4."Has_many" eigthG
+      link fourthG R4."Has_many" ninthG
+
+      # Prove that we can navigate from first to fifth and sixth
+
+      {SetG} = firstG -> R4."Has_many".Object_G
+
+      # Count of number of instances in this little empire.
+      # Include the instance that we are navigating from.
+      Local_Counter = 1
+
+      if countof {SetG} = 3 then
+
+         for InstG in {SetG} do
+
+            if InstG = UNDEFINED then
+               Inst_Failed  = TRUE
+               Failure_Code = -10
+            else
+               Local_Counter = Local_Counter + 1
+               {Next_SetG} = InstG -> R4."Has_many".Object_G
+
+               for Sub_InstG in {Next_SetG} do
+
+                  if Sub_InstG = UNDEFINED then
+                     Inst_Failed  = TRUE
+                     Failure_Code = -3
+                  else
+                     Local_Counter = Local_Counter + 1
+                  endif
+
+               endfor         
+
+            endif
+
+         endfor
+
+      else
+         Inst_Failed  = TRUE
+         Failure_Code = countof {SetG} 
+      endif
+
+      if Inst_Failed = FALSE & Local_Counter = 9 then
+         Has_Failed   = FALSE
+         Failure_Code = 0
+      else
+         Has_Failed   = TRUE
+         Failure_Code = Local_Counter
+      endif
+
+      unlink firstG R4."Has_many" secondG
+      unlink firstG R4."Has_many" thirdG
+      unlink firstG R4."Has_many" fourthG
+
+      unlink secondG R4."Has_many" fifthG
+      unlink secondG R4."Has_many" sixthG
+
+      unlink thirdG R4."Has_many" seventhG
+ 
+      unlink fourthG R4."Has_many" eigthG
+      unlink fourthG R4."Has_many" ninthG
+
+   endif
+
+# End Test 12
+
+#-------------------------------------------------------------------#
+# Test 13 - Attempt to link one to many and navigate to the end of 
+#           each link
+#           Add in a new instance as a last instance in a chain.
+#-------------------------------------------------------------------#
+
+   if Iteration = 13 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "objG", "1c to Mc reflexive navigations"]
+      [] = RPT8:Specify_Requid[Test, "1241-0000-01-0606"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0607"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0608"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1202"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1204"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0611"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0621"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0631"]
+
+      Local_Counter = 0
+      Has_Failed    = TRUE
+      Inst_Failed   = TRUE
+
+      # Formalise some relationships
+      link firstG R4."Has_many" secondG
+      link firstG R4."Has_many" thirdG
+      link firstG R4."Has_many" fourthG
+
+      link secondG R4."Has_many" fifthG
+      link secondG R4."Has_many" sixthG
+
+      link thirdG R4."Has_many" seventhG
+ 
+      link fourthG R4."Has_many" eigthG
+      link fourthG R4."Has_many" ninthG
+
+      tenthG = find-one Object_G where idG = 10
+
+      {SetG} = firstG -> R4."Has_many".Object_G
+
+      # Count of number of instances in this little empire.
+      # Include the instance that we are navigating from.
+      Local_Counter = 1
+
+      No_Instances = countof {SetG}
+      if No_Instances = 3 then
+
+         for InstG in {SetG} do
+
+            if InstG = UNDEFINED then
+               Inst_Failed  = TRUE
+               Failure_Code = -10
+            else
+               Local_Counter = Local_Counter + 1
+               {Next_SetG} = InstG -> R4."Has_many".Object_G
+
+               for Sub_InstG in {Next_SetG} do
+
+                  if Sub_InstG = UNDEFINED then
+                     Inst_Failed = TRUE
+                     Failure_Code = -20
+                  else
+                     Local_Counter = Local_Counter + 1
+                     Inst_Failed = FALSE
+                  endif
+
+               endfor         
+
+            endif
+
+         endfor
+
+      else
+         Inst_Failed = TRUE
+         Failure_Code = No_Instances 
+      endif
+
+      if Inst_Failed = FALSE & Local_Counter = 9 then
+         # Link in new element
+         link thirdG R4."Has_many" tenthG
+                  
+         # Can we navigate back from tenthG to thirdG
+         new_third = tenthG -> R4."Has_a".Object_G
+
+         if new_third = UNDEFINED then
+            Inst_Failed  = TRUE
+            Failure_Code = -30
+         else
+            # New instance is not undefined
+            Inst_Failed  = FALSE
+            Failure_Code = 0
+
+            Local_Counter = 1
+
+            {SetG} = firstG -> R4."Has_many".Object_G
+
+            for InstG in {SetG} do
+
+               if InstG = UNDEFINED then
+                  Inst_Failed  = TRUE
+                  Failure_Code = -40
+               else
+                  Local_Counter = Local_Counter + 1
+                  {Next_SetG} = InstG -> R4."Has_many".Object_G
+
+                  for Sub_InstG in {Next_SetG} do
+
+                     if Sub_InstG = UNDEFINED then
+                        Inst_Failed  = TRUE
+                        Failure_Code = -50
+                     else
+                        Local_Counter = Local_Counter + 1
+                     endif
+
+                  endfor         
+
+               endif
+
+            endfor
+
+         endif
+
+         if Inst_Failed = FALSE & Local_Counter = 10 then
+            Failure_Code = 0
+            Has_Failed   = FALSE
+
+            unlink firstG R4."Has_many" secondG
+            unlink firstG R4."Has_many" thirdG
+            unlink firstG R4."Has_many" fourthG
+
+            unlink secondG R4."Has_many" fifthG
+            unlink secondG R4."Has_many" sixthG
+
+            unlink thirdG R4."Has_many" seventhG
+            unlink thirdG R4."Has_many" tenthG
+   
+            unlink fourthG R4."Has_many" eigthG
+            unlink fourthG R4."Has_many" ninthG
+         else
+            Has_Failed   = TRUE
+            Failure_Code = Local_Counter
+         endif
+
+      else
+         Has_Failed   = TRUE
+         Failure_Code = Local_Counter
+      endif
+
+   endif
+
+# End Test 13
+
+#-------------------------------------------------------------------#
+# Test 14 - Attempt to link one to many and navigate to the end of 
+#           each link
+#           Add in a new instance in the missle of a chain with one 
+#           end object.
+#-------------------------------------------------------------------#
+
+   if Iteration = 14 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "objG", "1c to Mc reflexive navigations"]
+      [] = RPT8:Specify_Requid[Test,"1241-0000-01-0606"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0607"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0608"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1202"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1204"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0611"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0621"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0631"]
+
+      Local_Counter = 0
+      Inst_Failed = FALSE
+      Unsupported = FALSE
+      No_Instances = 0
+
+      {SetG} = firstG -> R4."Has_many".Object_G
+
+      No_Instances = countof {SetG}
+
+      # Formalise some relationships
+      link firstG R4."Has_many" secondG
+      link firstG R4."Has_many" thirdG
+      link firstG R4."Has_many" fourthG
+
+      link secondG R4."Has_many" fifthG
+      link secondG R4."Has_many" sixthG
+
+      link thirdG R4."Has_many" seventhG
+ 
+      link fourthG R4."Has_many" eigthG
+      link fourthG R4."Has_many" ninthG
+
+      tenthG = find-one Object_G where idG = 10
+
+      {SetG} = firstG -> R4."Has_many".Object_G
+
+      # Count of number of instances in this little empire.
+      # Include the instance that we are navigating from.
+      Local_Counter = 1
+
+      if countof {SetG} = 3 then
+
+         for InstG in {SetG} do
+
+            if InstG = UNDEFINED then
+               Inst_Failed  = TRUE
+               Failure_Code = -10
+            else
+               Local_Counter = Local_Counter + 1
+               {Next_SetG} = InstG -> R4."Has_many".Object_G
+
+               for Sub_InstG in {Next_SetG} do
+
+                  if Sub_InstG = UNDEFINED then
+                     Inst_Failed  = TRUE
+                     Failure_Code = -20
+                  else
+                     Local_Counter = Local_Counter + 1
+                  endif
+
+               endfor         
+
+            endif
+
+         endfor
+
+      else
+         Inst_Failed  = TRUE
+         Failure_Code = countof {SetG}
+      endif
+
+      if Inst_Failed = FALSE then
+
+         if Local_Counter = 9 then
+            # Unlink old element and splice in a new element, making sure that the links are
+            # still correct.
+            unlink firstG R4."Has_many" thirdG
+
+            # Link in new element
+            link firstG R4."Has_many" tenthG
+
+            # Relink new element to old element
+            link tenthG R4."Has_many" thirdG 
+                  
+            # Can we navigate back from thirdG to tenthG
+            new_tenth = thirdG -> R4."Has_a".Object_G
+
+            # And while we''re at it, can we navigate from last back to first,
+            # taking into account the newly added link
+            new_first = seventhG -> R4."Has_a".Object_G -> R4."Has_a".Object_G -> R4."Has_a".Object_G
+  
+            if new_tenth = UNDEFINED then
+               Inst_Failed  = TRUE
+               Failure_Code = -30
+            else
+
+               if new_first = UNDEFINED then
+                  Inst_Failed  = TRUE
+                  Failure_Code = -40
+               else
+                  # New instance is not undefined
+                  Inst_Failed  = FALSE
+                  Failure_Code = 0
+                  Local_Counter = 1
+
+                  {SetG} = firstG -> R4."Has_many".Object_G
+                  No_Instances = countof {SetG}
+
+                  for InstG in {SetG} do
+
+                     if InstG = UNDEFINED then
+                        Inst_Failed  = TRUE
+                        Failure_Code = -50
+                     else
+                        Local_Counter = Local_Counter + 1
+                        {Next_SetG} = InstG -> R4."Has_many".Object_G
+
+                        for Sub_InstG in {Next_SetG} do
+
+                           if Sub_InstG = UNDEFINED then
+                              Inst_Failed  = TRUE
+                              Failure_Code = -60
+                           else
+                              Local_Counter = Local_Counter + 1
+                              {Next_Next_SetG} = Sub_InstG -> R4."Has_many".Object_G
+                              No_Next_Next_Set = countof {Next_Next_SetG}
+
+                              for Sub_Sub_InstG in {Next_Next_SetG} do
+
+                                 if Sub_Sub_InstG = UNDEFINED then
+                                    Inst_Failed  = TRUE
+                                    Failure_Code = -70
+                                 else 
+                                    Local_Counter = Local_Counter + 1
+                                 endif
+
+                              endfor
+
+                           endif
+
+                        endfor         
+
+                     endif
+
+                  endfor
+
+               endif
+
+            endif
+
+            if Inst_Failed = FALSE then
+
+               if Local_Counter = 10 then
+                  Failure_Code = 0
+                  Has_Failed   = FALSE
+               else
+                  Has_Failed   = TRUE
+                  Failure_Code = -100 - Local_Counter
+               endif
+
+            else
+               Failure_Code = -80
+               Has_Failed   = TRUE
+            endif
+
+         else
+            Has_Failed   = TRUE
+            Failure_Code = -200 - Local_Counter      
+         endif
+
+      else
+         Has_Failed = TRUE
+         Failure_Code = Local_Counter
+      endif
+
+      unlink firstG R4."Has_many" secondG
+      unlink firstG R4."Has_many" tenthG
+      unlink firstG R4."Has_many" fourthG
+
+      unlink tenthG R4."Has_many" thirdG
+
+      unlink secondG R4."Has_many" fifthG
+      unlink secondG R4."Has_many" sixthG
+
+      unlink thirdG R4."Has_many" seventhG
+   
+      unlink fourthG R4."Has_many" eigthG
+      unlink fourthG R4."Has_many" ninthG
+
+   endif
+
+# End Test 14
+
+#-------------------------------------------------------------------#
+# Test 15 - Attempt to link one to many and navigate to the end of 
+#           each link
+#           Add in a new instance in the middle of a chain with two 
+#           end objects.
+#-------------------------------------------------------------------#
+
+   if Iteration = 15 then
+
+      [] = RPT1:Start_Test[Test, "1241-0000-01-0705", "Relationships", "objG", "1c to Mc reflexive navigations"]
+      [] = RPT8:Specify_Requid[Test,"1241-0000-01-0606"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0607"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-0608"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1202"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1204"]
+      [] = RPT8:Specify_Requid [Test, "1241-0000-01-1205"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0611"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0621"]
+      [] = RPT8:Specify_Requid [Test, "1103-0000-01-0631"]
+
+      Local_Counter = 0
+      Inst_Failed   = FALSE
+      Unsupported   = FALSE
+
+      # Formalise some relationships
+      link firstG R4."Has_many" secondG
+      link firstG R4."Has_many" thirdG
+      link firstG R4."Has_many" fourthG
+
+      link secondG R4."Has_many" fifthG
+      link secondG R4."Has_many" sixthG
+
+      link thirdG R4."Has_many" seventhG
+ 
+      link fourthG R4."Has_many" eigthG
+      link fourthG R4."Has_many" ninthG
+
+      tenthG = find-one Object_G where idG = 10
+
+      {SetG} = firstG -> R4."Has_many".Object_G
+
+      Local_Counter = 1
+
+      if countof {SetG} = 3 then
+
+         for InstG in {SetG} do
+
+            if InstG = UNDEFINED then
+               Inst_Failed  = TRUE
+               Failure_Code = -10
+            else
+               Local_Counter = Local_Counter + 1
+
+               {Next_SetG} = InstG -> R4."Has_many".Object_G
+
+               for Sub_InstG in {Next_SetG} do
+ 
+                  if Sub_InstG = UNDEFINED then
+                     Inst_Failed  = TRUE
+                     Failure_Code = -20
+                  else
+                     Local_Counter = Local_Counter + 1
+                  endif
+
+               endfor         
+
+            endif
+
+         endfor
+
+      else
+         Inst_Failed  = TRUE
+         Failure_Code = countof {SetG}
+      endif
+
+      if Inst_Failed = FALSE then 
+
+         if Local_Counter = 9 then
+            # Unlink old element and splice in a new element, making sure that the links are
+            # still correct.
+            unlink firstG R4."Has_many" fourthG
+
+            # Link in new element
+            link firstG R4."Has_many" tenthG
+
+            # Relink new element to old element
+            link tenthG R4."Has_many" fourthG 
+                    
+            # Can we navigate back from thirdG to tenthG
+            new_tenth = fourthG -> R4."Has_a".Object_G
+
+            # And while we''re at it, can we navigate from last back to first,
+            # taking into account the newly added link
+            new_first = eigthG -> R4."Has_a".Object_G -> R4."Has_a".Object_G -> R4."Has_a".Object_G
+
+            if new_tenth = UNDEFINED then
+               Inst_Failed  = TRUE
+               Failure_Code = -30
+            else
+
+               if new_first = UNDEFINED then
+                  Inst_Failed  = TRUE
+                  Failure_Code = -40
+               else
+                  # New instance is not undefined
+                  Inst_Failed  = FALSE
+                  Failure_Code = 0
+
+                  Local_Counter = 1
+
+                  {SetG} = firstG -> R4."Has_many".Object_G
+
+                  for InstG in {SetG} do
+
+                     if InstG = UNDEFINED then
+                        Inst_Failed  = TRUE
+                        Failure_Code = -50
+                     else
+                        Local_Counter = Local_Counter + 1
+                        {Next_SetG} = InstG -> R4."Has_many".Object_G
+
+                        for Sub_InstG in {Next_SetG} do
+     
+                           if Sub_InstG = UNDEFINED then
+                              Inst_Failed  = TRUE
+                              Failure_Code = -60
+                           else
+                              Local_Counter = Local_Counter + 1
+                              {Next_Next_SetG} = Sub_InstG -> R4."Has_many".Object_G
+     
+                              for Sub_Sub_InstG in {Next_Next_SetG} do
+      
+                                 if Sub_Sub_InstG = UNDEFINED then
+                                    Inst_Failed  = TRUE
+                                    Failure_Code = -70
+                                 else
+                                    Local_Counter = Local_Counter + 1
+                                 endif
+
+                              endfor         
+
+                           endif
+
+                        endfor         
+
+                     endif
+
+                  endfor
+
+               endif
+
+            endif
+
+            if Inst_Failed = FALSE then
+
+               if Local_Counter = 10 then
+                  Failure_Code = 0
+                  Has_Failed = FALSE
+               else
+                  Has_Failed   =TRUE
+                  Failure_Code = -100 - Local_Counter
+               endif
+
+            else
+               Has_Failed   = TRUE
+               Failure_Code = -80
+            endif
+
+         else
+            Has_Failed = TRUE
+            Failure_Code = -200 - Local_Counter
+         endif
+
+      else
+         Has_Failed = TRUE
+         Failure_Code = -90
+      endif
+
+      unlink firstG R4."Has_many" secondG
+      unlink firstG R4."Has_many" thirdG
+      unlink firstG R4."Has_many" tenthG
+
+      unlink tenthG R4."Has_many" fourthG
+ 
+      unlink secondG R4."Has_many" fifthG
+      unlink secondG R4."Has_many" sixthG
+
+      unlink thirdG R4."Has_many" seventhG
+
+      unlink fourthG R4."Has_many" eigthG
+      unlink fourthG R4."Has_many" ninthG
+
+   endif
+
+# End Test 15
+
+#-------------------------------------------------------------------#
+# Delete some relationships
+# This section deletes relationships depending upon which test
+# has been performed.
+#-------------------------------------------------------------------#
+
+   if Iteration >= 2 & Iteration <= 5 then
+
+      # Delete the formalised relationships
+      unlink firstG R13."Has_many" thirdG
+      unlink firstG R13."Has_many" fourthG
+      unlink fifthG R13."Has_a"    secondG
+
+   endif
+
+#-------------------------------------------------------------------#
+# Tests complete
+#-------------------------------------------------------------------#
+
+   if Unsupported = FALSE then
+
+      if Has_Failed = FALSE then
+         [] = RPT2:Test_Passed["objG", Test, 0]
+      else
+         [] = RPT3:Test_Failed["objG", Test, Failure_Code]
+      endif
+
+   else
+      [] = RPT4:Test_Unsupported[Test]
+   endif
+
+#-------------------------------------------------------------------#
+',
+	3,
+	'',
+	"9636dd18-4889-4fdb-90bc-8b18c349d9ae",
+	2,
+	3);
+INSERT INTO O_TPARM
+	VALUES ("7cae9b4f-023a-4509-b8bf-eb0cce1b77ce",
+	"3bd49aa3-40e9-41a5-9a72-26b16f7449b9",
+	'Iteration',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("f3c34ddd-4f79-4d9f-b06d-daffdc7f1798",
+	"3bd49aa3-40e9-41a5-9a72-26b16f7449b9",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"7cae9b4f-023a-4509-b8bf-eb0cce1b77ce",
+	'');
+INSERT INTO O_TFR
+	VALUES ("fb36b51c-e933-4cb1-8b24-f048f5191f85",
+	"04128a43-0efb-4c47-afea-852f79ca6212",
+	'Many_To_Many_Reflexive',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'#-------------------------------------------------------------------#
+# Reflexive navigations Mc:Mc
+#-------------------------------------------------------------------#
+ 
+[] = RPT1:Start_Test[Test, "Null Requid", "Relationships", "objG", "Mc to Mc reflexive navigations"]
+
+[] = RPT4:Test_Unsupported[Test]
+
+#-------------------------------------------------------------------#
+',
+	3,
+	'',
+	"3bd49aa3-40e9-41a5-9a72-26b16f7449b9",
+	2,
+	4);
+INSERT INTO O_TPARM
+	VALUES ("87911acd-fbbc-444a-9118-6b67a91fddee",
+	"fb36b51c-e933-4cb1-8b24-f048f5191f85",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("89f9b5f8-4c11-4fcf-833a-276ed9c5f632",
+	"04128a43-0efb-4c47-afea-852f79ca6212");
+INSERT INTO O_BATTR
+	VALUES ("89f9b5f8-4c11-4fcf-833a-276ed9c5f632",
+	"04128a43-0efb-4c47-afea-852f79ca6212");
+INSERT INTO O_ATTR
+	VALUES ("89f9b5f8-4c11-4fcf-833a-276ed9c5f632",
+	"04128a43-0efb-4c47-afea-852f79ca6212",
+	"00000000-0000-0000-0000-000000000000",
+	'ResultA',
+	' This attribute is manipulated to indicate that the required operation was successful.
+',
+	'',
+	'ResultA',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("89e55d3f-9f35-4034-a5a2-7b60a396b869",
+	"04128a43-0efb-4c47-afea-852f79ca6212");
+INSERT INTO O_BATTR
+	VALUES ("89e55d3f-9f35-4034-a5a2-7b60a396b869",
+	"04128a43-0efb-4c47-afea-852f79ca6212");
+INSERT INTO O_ATTR
+	VALUES ("89e55d3f-9f35-4034-a5a2-7b60a396b869",
+	"04128a43-0efb-4c47-afea-852f79ca6212",
+	"89f9b5f8-4c11-4fcf-833a-276ed9c5f632",
+	'idG',
+	'',
+	'',
+	'idG',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("83728225-6085-494e-8aa3-b3792ae544b2",
+	"04128a43-0efb-4c47-afea-852f79ca6212");
+INSERT INTO O_BATTR
+	VALUES ("83728225-6085-494e-8aa3-b3792ae544b2",
+	"04128a43-0efb-4c47-afea-852f79ca6212");
+INSERT INTO O_ATTR
+	VALUES ("83728225-6085-494e-8aa3-b3792ae544b2",
+	"04128a43-0efb-4c47-afea-852f79ca6212",
+	"99d29ed7-57ca-4b73-8cc8-0ada7bd1d170",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_REF
+	VALUES ("04128a43-0efb-4c47-afea-852f79ca6212",
+	"04128a43-0efb-4c47-afea-852f79ca6212",
+	0,
+	"89e55d3f-9f35-4034-a5a2-7b60a396b869",
+	"2ef97118-dc37-4032-9169-a6dee147f203",
+	"ab36de7d-671f-4878-a870-1930d4ad26eb",
+	"7e7adef4-774c-41db-87c1-e524ad46de2e",
+	"99d29ed7-57ca-4b73-8cc8-0ada7bd1d170",
+	"6d5cb8d5-eb36-445d-95e8-a8e638804883",
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Object_G',
+	'idG',
+	'R11.''Has_a''');
+INSERT INTO R_RGO_PROXY
+	VALUES ("04128a43-0efb-4c47-afea-852f79ca6212",
+	"2ef97118-dc37-4032-9169-a6dee147f203",
+	"ab36de7d-671f-4878-a870-1930d4ad26eb",
+	'../Relationships.xtuml');
+INSERT INTO O_RTIDA_PROXY
+	VALUES ("89e55d3f-9f35-4034-a5a2-7b60a396b869",
+	"04128a43-0efb-4c47-afea-852f79ca6212",
+	0,
+	"2ef97118-dc37-4032-9169-a6dee147f203",
+	"7e7adef4-774c-41db-87c1-e524ad46de2e",
+	'../Relationships.xtuml');
+INSERT INTO O_REF
+	VALUES ("04128a43-0efb-4c47-afea-852f79ca6212",
+	"04128a43-0efb-4c47-afea-852f79ca6212",
+	0,
+	"89e55d3f-9f35-4034-a5a2-7b60a396b869",
+	"c7263d60-dfbc-4b0a-ae66-eb4c31292554",
+	"29ca4a8c-0f83-4f63-9ec7-4fbad27ec60a",
+	"0f571faf-4855-4b48-83a6-4f8495ee5b7b",
+	"99d29ed7-57ca-4b73-8cc8-0ada7bd1d170",
+	"1c2429bd-9182-46a3-b4ba-3f7c3508a2ba",
+	"6d5cb8d5-eb36-445d-95e8-a8e638804883",
+	0,
+	'',
+	'Object_G',
+	'idG',
+	'R13.''Has_a''');
+INSERT INTO R_RGO_PROXY
+	VALUES ("04128a43-0efb-4c47-afea-852f79ca6212",
+	"c7263d60-dfbc-4b0a-ae66-eb4c31292554",
+	"29ca4a8c-0f83-4f63-9ec7-4fbad27ec60a",
+	'../Relationships.xtuml');
+INSERT INTO O_RTIDA_PROXY
+	VALUES ("89e55d3f-9f35-4034-a5a2-7b60a396b869",
+	"04128a43-0efb-4c47-afea-852f79ca6212",
+	0,
+	"c7263d60-dfbc-4b0a-ae66-eb4c31292554",
+	"0f571faf-4855-4b48-83a6-4f8495ee5b7b",
+	'../Relationships.xtuml');
+INSERT INTO O_REF
+	VALUES ("04128a43-0efb-4c47-afea-852f79ca6212",
+	"04128a43-0efb-4c47-afea-852f79ca6212",
+	0,
+	"89e55d3f-9f35-4034-a5a2-7b60a396b869",
+	"10bb0fee-8df5-485c-9cd3-d1adb5f29951",
+	"97141bd8-e2f0-4939-b655-356c1e245f53",
+	"fe938945-997a-48de-840e-2fa8468757b8",
+	"99d29ed7-57ca-4b73-8cc8-0ada7bd1d170",
+	"5ca350ca-a02b-488e-abb9-e5c38bda0523",
+	"1c2429bd-9182-46a3-b4ba-3f7c3508a2ba",
+	0,
+	'',
+	'Object_G',
+	'idG',
+	'R2.''A_Large_relationship_role''');
+INSERT INTO R_RGO_PROXY
+	VALUES ("04128a43-0efb-4c47-afea-852f79ca6212",
+	"10bb0fee-8df5-485c-9cd3-d1adb5f29951",
+	"97141bd8-e2f0-4939-b655-356c1e245f53",
+	'../Relationships.xtuml');
+INSERT INTO O_RTIDA_PROXY
+	VALUES ("89e55d3f-9f35-4034-a5a2-7b60a396b869",
+	"04128a43-0efb-4c47-afea-852f79ca6212",
+	0,
+	"10bb0fee-8df5-485c-9cd3-d1adb5f29951",
+	"fe938945-997a-48de-840e-2fa8468757b8",
+	'../Relationships.xtuml');
+INSERT INTO O_REF
+	VALUES ("04128a43-0efb-4c47-afea-852f79ca6212",
+	"04128a43-0efb-4c47-afea-852f79ca6212",
+	0,
+	"89e55d3f-9f35-4034-a5a2-7b60a396b869",
+	"43640891-9523-451e-b84f-5e5a960ffe01",
+	"146dda1b-e859-496a-8a63-cd0116e0cde0",
+	"3802e959-1d8f-4dea-8614-9329d7845ed9",
+	"99d29ed7-57ca-4b73-8cc8-0ada7bd1d170",
+	"7140cf13-d99e-4b28-b0bb-8c98e036ba3a",
+	"5ca350ca-a02b-488e-abb9-e5c38bda0523",
+	0,
+	'',
+	'Object_G',
+	'idG',
+	'R4.''Has_a''');
+INSERT INTO R_RGO_PROXY
+	VALUES ("04128a43-0efb-4c47-afea-852f79ca6212",
+	"43640891-9523-451e-b84f-5e5a960ffe01",
+	"146dda1b-e859-496a-8a63-cd0116e0cde0",
+	'../Relationships.xtuml');
+INSERT INTO O_RTIDA_PROXY
+	VALUES ("89e55d3f-9f35-4034-a5a2-7b60a396b869",
+	"04128a43-0efb-4c47-afea-852f79ca6212",
+	0,
+	"43640891-9523-451e-b84f-5e5a960ffe01",
+	"3802e959-1d8f-4dea-8614-9329d7845ed9",
+	'../Relationships.xtuml');
+INSERT INTO O_RATTR
+	VALUES ("99d29ed7-57ca-4b73-8cc8-0ada7bd1d170",
+	"04128a43-0efb-4c47-afea-852f79ca6212",
+	"89e55d3f-9f35-4034-a5a2-7b60a396b869",
+	"04128a43-0efb-4c47-afea-852f79ca6212",
+	0,
+	'idG');
+INSERT INTO O_ATTR
+	VALUES ("99d29ed7-57ca-4b73-8cc8-0ada7bd1d170",
+	"04128a43-0efb-4c47-afea-852f79ca6212",
+	"89e55d3f-9f35-4034-a5a2-7b60a396b869",
+	'idG_Reflexive_ID',
+	'',
+	'',
+	'idG_Reflexive_ID',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000007",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"04128a43-0efb-4c47-afea-852f79ca6212");
+INSERT INTO O_OIDA
+	VALUES ("89e55d3f-9f35-4034-a5a2-7b60a396b869",
+	"04128a43-0efb-4c47-afea-852f79ca6212",
+	0,
+	'idG');
+INSERT INTO O_ID
+	VALUES (1,
+	"04128a43-0efb-4c47-afea-852f79ca6212");
+INSERT INTO O_ID
+	VALUES (2,
+	"04128a43-0efb-4c47-afea-852f79ca6212");
+INSERT INTO PE_PE
+	VALUES ("04128a43-0efb-4c47-afea-852f79ca6212",
+	1,
+	"1a16545d-ab33-4153-84c6-9d8e9f7ca024",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("1a16545d-ab33-4153-84c6-9d8e9f7ca024",
+	"00000000-0000-0000-0000-000000000000",
+	"6d141527-9fd5-4054-8692-9fc325055afc",
+	'Relationships',
+	'',
+	0,
+	'../Relationships.xtuml');

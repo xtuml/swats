@@ -1,0 +1,79 @@
+--*************************************************************************************
+--*                            UNCLASSIFIED                                           *
+--*************************************************************************************
+--*                            BAE SYSTEMS PROPRIETARY                                *
+--*************************************************************************************
+--*          Export Control Restrictions: NONE                                        *
+--*************************************************************************************
+--*                                                                                   *
+--*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*                                                                                   *
+--*************************************************************************************
+--*                                                                                   *
+--* No contract-specific restrictions are in place for this code-generated file.      *
+--*                                                                                   *
+--*************************************************************************************
+--*                                                                                   *
+--* File Name:               clock.ads
+--* Drawing Number:          Refer to release documentation                           *
+--* Version:                 As detailed by Configuration Management System           *
+--* Version Date:            As detailed by Configuration Management System           *
+--* Creation Date:           As detailed by Configuration Management System           *
+--* Section/Unit:            Refer to release documentation                           *
+--* Description:             
+--*                          Specification of the OOA timer support facilities
+--* Comments:                Header written by header.macro                           *
+--*                           
+--*                                                                                   *
+--*************************************************************************************
+--*                            SUPPLEMENTAL INFORMATION                               *
+--*                            ------------------------                               *
+--*  OVERVIEW                                                                         *
+--*  --------                                                                         *
+--*
+--*  ERROR HANDLING                                                                   *
+--*  --------------                                                                   *
+--*  None                                                                             *
+--*                                                                                   *
+--*  SAFETY         : None                                                            *
+--*  ------                                                                           *
+--*                                                                                   *
+--*  BUILD INFORMATION                                                                *
+--* -----------------                                                                 *
+--*                                                                                   *
+--*  Build Target       : Dos
+--*  Clock Type         : INTERNAL
+--*  Debugging is       : Off
+--*  Trace is           : Off
+--*                                                                                   *
+--*  
+--*  
+--*  
+--*  
+--*  
+--*************************************************************************************
+--*  COMPONENTS CONTAINED WITHIN THIS FILE                                            *
+--*  package specification Clock 
+--*     Get_Time_Microseconds, 
+--*     Get_Time_Milliseconds
+--*     Set_Offset
+--*     Get_Offset
+--*
+--*************************************************************************************
+--  MODIFICATION RECORD
+--  --------------------
+--    NAME     DATE             ECR No            MODIFICATION
+--
+--    ANF      23/03/2005     001798 9SR056    Software Architecture Changes for Open Architecture:
+--                                             Created clock to support re-ordereding of timer
+--                                             packages providing consitency with Middleware.
+--
+--    DNS     15/06/15          CR 10267       Add SBC312 and PPCM2 Targets rather than generic VxWorks
+--    DNS     01/12/16          CR 10383       SBC312 target now SBC314
+-- **************************************************************************************
+
+with Clock_Types;
+
+package Clock is
+   RealTimeClock: Clock_Types.Protected_Clock;
+end Clock;

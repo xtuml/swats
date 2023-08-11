@@ -1,0 +1,10 @@
+<INTERFACE Fullname="Clock" Shortname="CLO" Version="2" Guid="14BBD6EE-363C-4180-A90D-254276AE09EC">
+
+   <OPERATION Identifier="1" Name="Update" Contract_Type="ASYNCHRONOUS">
+      <HEADER_PARAMETER Name="Header" Type="Bit_Pattern" Derived="Y"/>
+      <INPUT_PARAMETER Identifier="1" Name="Param_1" Type="Bit_Pattern" Derived="N" />
+      <INPUT_PARAMETER Identifier="2" Name="Param_2" Type="Bit_Pattern" Derived="N" />
+      <FOOTER_PARAMETER Name="Terminator" Type="Bit_Pattern" Value="123" Derived="Y"/>
+   </OPERATION>
+
+</INTERFACE>

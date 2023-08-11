@@ -1,0 +1,91 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("95b8d59f-1e6c-4d15-97fd-9254ecb1c5e6",
+	"00000000-0000-0000-0000-000000000000",
+	'Creation_Deletion',
+	'');
+INSERT INTO C_EP
+	VALUES ("45888378-5c4b-4661-b9c9-68e9431e8863",
+	"95b8d59f-1e6c-4d15-97fd-9254ecb1c5e6",
+	0,
+	'Create_Report_Object',
+	'',
+	1);
+INSERT INTO C_IO
+	VALUES ("45888378-5c4b-4661-b9c9-68e9431e8863",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'Create_Report_Object',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("32032e3c-da52-4318-a35d-406c5012b1f5",
+	"95b8d59f-1e6c-4d15-97fd-9254ecb1c5e6",
+	0,
+	'Delete_Report_Object',
+	'',
+	2);
+INSERT INTO C_IO
+	VALUES ("32032e3c-da52-4318-a35d-406c5012b1f5",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'Delete_Report_Object',
+	'',
+	0,
+	'',
+	"45888378-5c4b-4661-b9c9-68e9431e8863");
+INSERT INTO C_EP
+	VALUES ("25dc778b-2beb-4265-927b-25d4023dac20",
+	"95b8d59f-1e6c-4d15-97fd-9254ecb1c5e6",
+	0,
+	'Check_Enum',
+	'',
+	3);
+INSERT INTO C_IO
+	VALUES ("25dc778b-2beb-4265-927b-25d4023dac20",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'Check_Enum',
+	'',
+	0,
+	'',
+	"32032e3c-da52-4318-a35d-406c5012b1f5");
+INSERT INTO C_PP
+	VALUES ("884ec02e-937c-4ff0-99a0-1774ccf596aa",
+	"25dc778b-2beb-4265-927b-25d4023dac20",
+	"bc6d7691-2a0d-49fc-b9c8-d0e03db6166e",
+	'The_Input_Value',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_DT_PROXY
+	VALUES ("bc6d7691-2a0d-49fc-b9c8-d0e03db6166e",
+	"00000000-0000-0000-0000-000000000000",
+	'Test_Enum_Type',
+	'',
+	'',
+	'../Shared.xtuml');
+INSERT INTO C_PP
+	VALUES ("dd0f4ec2-537a-47ad-9ab4-e98808e68caf",
+	"25dc778b-2beb-4265-927b-25d4023dac20",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'The_Return_Value',
+	'',
+	1,
+	'',
+	"884ec02e-937c-4ff0-99a0-1774ccf596aa");
+INSERT INTO PE_PE
+	VALUES ("95b8d59f-1e6c-4d15-97fd-9254ecb1c5e6",
+	1,
+	"c77222b7-178d-48e5-b37d-c0ded5b2493b",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("c77222b7-178d-48e5-b37d-c0ded5b2493b",
+	"00000000-0000-0000-0000-000000000000",
+	"10f28eec-2c10-4bed-b362-3203399c1025",
+	'Shared',
+	'',
+	0,
+	'../Shared.xtuml');

@@ -1,0 +1,57 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("6cac7dd9-95a3-4393-97e7-3e2df562de11",
+	'Object_R',
+	32,
+	'objR',
+	' This object forms part of a composed relationship.
+',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("f7ed4409-4928-4f31-9126-c83676038f7d",
+	"6cac7dd9-95a3-4393-97e7-3e2df562de11");
+INSERT INTO O_BATTR
+	VALUES ("f7ed4409-4928-4f31-9126-c83676038f7d",
+	"6cac7dd9-95a3-4393-97e7-3e2df562de11");
+INSERT INTO O_ATTR
+	VALUES ("f7ed4409-4928-4f31-9126-c83676038f7d",
+	"6cac7dd9-95a3-4393-97e7-3e2df562de11",
+	"00000000-0000-0000-0000-000000000000",
+	'idR',
+	' Preferred identifier.
+',
+	'',
+	'idR',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"6cac7dd9-95a3-4393-97e7-3e2df562de11");
+INSERT INTO O_OIDA
+	VALUES ("f7ed4409-4928-4f31-9126-c83676038f7d",
+	"6cac7dd9-95a3-4393-97e7-3e2df562de11",
+	0,
+	'idR');
+INSERT INTO O_ID
+	VALUES (1,
+	"6cac7dd9-95a3-4393-97e7-3e2df562de11");
+INSERT INTO O_ID
+	VALUES (2,
+	"6cac7dd9-95a3-4393-97e7-3e2df562de11");
+INSERT INTO PE_PE
+	VALUES ("6cac7dd9-95a3-4393-97e7-3e2df562de11",
+	1,
+	"1a16545d-ab33-4153-84c6-9d8e9f7ca024",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("1a16545d-ab33-4153-84c6-9d8e9f7ca024",
+	"00000000-0000-0000-0000-000000000000",
+	"6d141527-9fd5-4054-8692-9fc325055afc",
+	'Relationships',
+	'',
+	0,
+	'../Relationships.xtuml');

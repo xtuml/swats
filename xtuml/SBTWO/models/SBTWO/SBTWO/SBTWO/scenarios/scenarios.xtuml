@@ -1,0 +1,141 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("f3276b98-8062-4670-9959-1ce3076c1b9b",
+	"00000000-0000-0000-0000-000000000000",
+	"5f8eec72-0c4f-48d5-9750-6316c31aa8a0",
+	'scenarios',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("a9520309-a640-43f5-a0e6-039f683b4547",
+	112,
+	"f3276b98-8062-4670-9959-1ce3076c1b9b",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'SBTWO::SBTWO::SBTWO::scenarios');
+INSERT INTO DIM_DIA
+	VALUES ("a9520309-a640-43f5-a0e6-039f683b4547",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_SYNC
+	VALUES ("5b8da7f0-890a-4f44-a9c8-8e1a8f00334a",
+	"00000000-0000-0000-0000-000000000000",
+	'Local_scenario_for_SBTWO_standalone_test',
+	' Local scenario for SBTWO standalone test
+',
+	'#--------------------------------------------------------------------------
+# In the abscence of the calling SBONE domain in a multi domain build,
+# this scenario mat be run in stand-alone mode.
+#--------------------------------------------------------------------------
+
+   Result = FALSE
+
+   {Received_Structure} is Source_Structure_Type
+
+   Test       = 1
+   An_Integer = 0
+   A_Real     = 0.0
+   Some_Text  = "Fred"
+   A_Boolean  = FALSE
+
+   A_Colour of Colour_Type = ''Red''
+
+   append [An_Integer, A_Real, Some_Text, A_Boolean, A_Colour] to {Received_Structure}
+
+   [Result] = SBTWO1::Receive_The_Structure[Test, {Received_Structure}, An_Integer, A_Real, Some_Text, A_Colour, A_Boolean, 1]
+
+   if Result = TRUE then
+      [] = RPT2:Test_Passed["local call", Test, 0]
+   else
+      [] = RPT3:Test_Failed ["Local call", Test, -1]
+   endif
+
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	1);
+INSERT INTO PE_PE
+	VALUES ("5b8da7f0-890a-4f44-a9c8-8e1a8f00334a",
+	1,
+	"f3276b98-8062-4670-9959-1ce3076c1b9b",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("ef8d3f11-aa46-418a-ae80-7e84a7bf6fdd",
+	"00000000-0000-0000-0000-000000000000",
+	'Start_SBTWO_Tests',
+	' Start_SBTWO_Tests
+',
+	'[] = SBTWO4::Create_Report_Data[]
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	3);
+INSERT INTO PE_PE
+	VALUES ("ef8d3f11-aa46-418a-ae80-7e84a7bf6fdd",
+	1,
+	"f3276b98-8062-4670-9959-1ce3076c1b9b",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("7e00f541-56ba-4698-bed9-1d13746e5d44",
+	"00000000-0000-0000-0000-000000000000",
+	'Finish_SBTWO_Tests',
+	' Finish_SBTWO_Tests
+',
+	'[] = SBTWO5::Delete_Report_Data[]
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	4);
+INSERT INTO PE_PE
+	VALUES ("7e00f541-56ba-4698-bed9-1d13746e5d44",
+	1,
+	"f3276b98-8062-4670-9959-1ce3076c1b9b",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO PE_PE
+	VALUES ("f3276b98-8062-4670-9959-1ce3076c1b9b",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"2841d193-e8c1-4dfa-9491-9bdf076365c9",
+	7);
+INSERT INTO C_C_PROXY
+	VALUES ("2841d193-e8c1-4dfa-9491-9bdf076365c9",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'SBTWO',
+	'',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Structure_Bridge_Two',
+	'../SBTWO.xtuml');
+INSERT INTO S_SYS_PROXY
+	VALUES ("5f8eec72-0c4f-48d5-9750-6316c31aa8a0",
+	'SBTWO',
+	1,
+	'../../../SBTWO.xtuml');

@@ -1,0 +1,57 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("166b12d5-37ed-436e-a34f-c03d3d8bf061",
+	'Object_B',
+	16,
+	'objB',
+	' Object_B contains no instances and hence any operations performed upon it will return an empty set are an undefined instance handle.
+',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("a87cf4a5-5d98-43f7-aa32-0ab9671efe18",
+	"166b12d5-37ed-436e-a34f-c03d3d8bf061");
+INSERT INTO O_BATTR
+	VALUES ("a87cf4a5-5d98-43f7-aa32-0ab9671efe18",
+	"166b12d5-37ed-436e-a34f-c03d3d8bf061");
+INSERT INTO O_ATTR
+	VALUES ("a87cf4a5-5d98-43f7-aa32-0ab9671efe18",
+	"166b12d5-37ed-436e-a34f-c03d3d8bf061",
+	"00000000-0000-0000-0000-000000000000",
+	'idB',
+	' Preferred identifier.
+',
+	'',
+	'idB',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"166b12d5-37ed-436e-a34f-c03d3d8bf061");
+INSERT INTO O_OIDA
+	VALUES ("a87cf4a5-5d98-43f7-aa32-0ab9671efe18",
+	"166b12d5-37ed-436e-a34f-c03d3d8bf061",
+	0,
+	'idB');
+INSERT INTO O_ID
+	VALUES (1,
+	"166b12d5-37ed-436e-a34f-c03d3d8bf061");
+INSERT INTO O_ID
+	VALUES (2,
+	"166b12d5-37ed-436e-a34f-c03d3d8bf061");
+INSERT INTO PE_PE
+	VALUES ("166b12d5-37ed-436e-a34f-c03d3d8bf061",
+	1,
+	"df782c0d-01d7-4cdb-867d-1f1ce5d60cb4",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("df782c0d-01d7-4cdb-867d-1f1ce5d60cb4",
+	"00000000-0000-0000-0000-000000000000",
+	"02965de1-ecbb-4bde-9a3e-3ac7d424e4a6",
+	'Find_and_Sets',
+	'',
+	0,
+	'../Find_and_Sets.xtuml');

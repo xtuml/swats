@@ -1,0 +1,586 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("5496358c-42d2-4739-b6d0-0d236bd600a2",
+	"00000000-0000-0000-0000-000000000000",
+	"27630566-912f-47fa-ad2e-ff0c7c689222",
+	'functions',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("19d4bdbc-e689-4fb1-9610-cef150c833e4",
+	112,
+	"5496358c-42d2-4739-b6d0-0d236bd600a2",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'DomainB::DomainB::DomainB::functions');
+INSERT INTO DIM_DIA
+	VALUES ("19d4bdbc-e689-4fb1-9610-cef150c833e4",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_SYNC
+	VALUES ("6c4c0ef9-1b5b-48e9-acbe-5dcbd278eaff",
+	"00000000-0000-0000-0000-000000000000",
+	'Sync1B',
+	' This synchronous service is invoked by a synchronous service in DomainA.
+',
+	'my_test = find-one Test_Data
+
+local_test = my_test.This_Test_Number
+
+[] = RPT1:Start_Test[local_test, "1241-0000-01-1110", "DomainB", "DSS 1", "sync service 1B called"]
+
+#Check that input parameters
+if (inputA != 1)|(inputB != 2) then
+
+   #Return incorrect values, because the input values where incorrect
+   outputA = 1
+   outputB = 2
+
+   [] = RPT3:Test_Failed["DSS 1B", local_test, -1]
+
+else
+
+   #Return correct values, because the input values where correct
+   outputA = 3
+   outputB = 4
+   #In DomainB indicate that a Sync service call was made
+   an_instanceB = find-one Object_B where idB = 1
+   an_instanceB.ResultB = 10
+
+   [] = RPT2:Test_Passed["DSS 1B", local_test, an_instanceB.ResultB]
+
+endif
+
+local_test = local_test + 1
+
+my_test.This_Test_Number = local_test
+
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	1);
+INSERT INTO S_SPARM
+	VALUES ("35ab28bb-4399-4f98-9d51-6981b0eaea96",
+	"6c4c0ef9-1b5b-48e9-acbe-5dcbd278eaff",
+	'inputA',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("8a962445-87bc-4140-a2d9-ed3251a9742e",
+	"6c4c0ef9-1b5b-48e9-acbe-5dcbd278eaff",
+	'inputB',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"35ab28bb-4399-4f98-9d51-6981b0eaea96",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("fcd5785c-3744-4008-b21f-c45adecb9d20",
+	"6c4c0ef9-1b5b-48e9-acbe-5dcbd278eaff",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"8a962445-87bc-4140-a2d9-ed3251a9742e",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("ab41a239-4639-469b-8f8b-1c6695302be3",
+	"6c4c0ef9-1b5b-48e9-acbe-5dcbd278eaff",
+	'outputA',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"fcd5785c-3744-4008-b21f-c45adecb9d20",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("8c1ae8c7-8cd4-40f3-9f2d-78b5276f9cfb",
+	"6c4c0ef9-1b5b-48e9-acbe-5dcbd278eaff",
+	'outputB',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"ab41a239-4639-469b-8f8b-1c6695302be3",
+	'');
+INSERT INTO PE_PE
+	VALUES ("6c4c0ef9-1b5b-48e9-acbe-5dcbd278eaff",
+	1,
+	"5496358c-42d2-4739-b6d0-0d236bd600a2",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("ac6cbbeb-08d5-46b1-9dc1-ac42607cbbae",
+	"00000000-0000-0000-0000-000000000000",
+	'Sync2B',
+	' This synchronous service is invoked by an event being sent to a terminator in DomainA, thus an ''Event invokes a Sync service in another domain''.
+',
+	'
+my_test = find-one Test_Data
+
+local_test = my_test.This_Test_Number
+
+[] = RPT1:Start_Test[local_test, "1241-0000-01-1110", "DomainB", "DSS 2", "sync service sync2B called "]
+
+#Check the input parameters
+if (inputA != 3)|(inputB != 4) then
+
+   #Return incorrect parameters and don''t affect the attribute ''ResultB''
+   outputA = 1
+   outputB = 2
+
+   [] = RPT3:Test_Failed["DSS 2", local_test, -1]
+
+else
+
+   #Return correct parameters and affect the attribute ''ResultB''
+   an_instanceB = find-one Object_B where idB = 4
+   temp = an_instanceB.ResultB + 20
+   an_instanceB.ResultB = temp
+   outputA = 5
+   outputB = 6
+
+   [] = RPT2:Test_Passed["DSS 2", local_test, an_instanceB.ResultB]
+
+endif
+
+local_test = local_test + 1
+
+my_test.This_Test_Number = local_test
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	2);
+INSERT INTO S_SPARM
+	VALUES ("1c14448e-2014-4054-b7b2-2393b7819486",
+	"ac6cbbeb-08d5-46b1-9dc1-ac42607cbbae",
+	'inputA',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("6e6d8115-33be-41f8-8c8f-b928ff2523d9",
+	"ac6cbbeb-08d5-46b1-9dc1-ac42607cbbae",
+	'inputB',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"1c14448e-2014-4054-b7b2-2393b7819486",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("da0c1231-1485-46fb-a110-7b8615deccc1",
+	"ac6cbbeb-08d5-46b1-9dc1-ac42607cbbae",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"6e6d8115-33be-41f8-8c8f-b928ff2523d9",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("8532d9c2-1484-4ba4-8d2c-3ca18a9b8ab3",
+	"ac6cbbeb-08d5-46b1-9dc1-ac42607cbbae",
+	'outputA',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"da0c1231-1485-46fb-a110-7b8615deccc1",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("9c56e37c-2d2f-4ed1-8aa3-fff3af583d86",
+	"ac6cbbeb-08d5-46b1-9dc1-ac42607cbbae",
+	'outputB',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"8532d9c2-1484-4ba4-8d2c-3ca18a9b8ab3",
+	'');
+INSERT INTO PE_PE
+	VALUES ("ac6cbbeb-08d5-46b1-9dc1-ac42607cbbae",
+	1,
+	"5496358c-42d2-4739-b6d0-0d236bd600a2",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("ba2ef7fe-30a6-4288-bde6-c2619fd73cf0",
+	"00000000-0000-0000-0000-000000000000",
+	'Sync3B',
+	' This synchronous service is invoked by an event from DomainA
+',
+	'my_test = find-one Test_Data
+
+local_test = my_test.This_Test_Number
+
+[] = RPT1:Start_Test[local_test, "1241-0000-01-1110", "DomainB", "DSS 3", "sync service sync3B called "]
+
+if inputA = 3 & inputB = 4 then
+
+   #Return correct values and indicates that correct values where received
+   #by affecting the attribute ''ResultB''
+   an_instanceB = find-one Object_B where idB = 5
+   an_instanceB.ResultB = 50
+   outputA = 5
+   outputB = 6
+
+   [] = RPT2:Test_Passed["DSS 3", local_test, an_instanceB.ResultB]
+
+else
+
+   #Return incorrect values, becaus ethe input values where incorrect
+   outputA = 1
+   outputB = 2
+
+   [] = RPT3:Test_Failed["DSS 3", local_test, -1]
+
+endif
+
+local_test = local_test + 1
+
+my_test.This_Test_Number = local_test
+
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	3);
+INSERT INTO S_SPARM
+	VALUES ("14384483-551c-4c39-80c3-32f9e602c61a",
+	"ba2ef7fe-30a6-4288-bde6-c2619fd73cf0",
+	'inputA',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("154acf8d-b6ef-47c0-b03d-6dbc5711f8ac",
+	"ba2ef7fe-30a6-4288-bde6-c2619fd73cf0",
+	'inputB',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"14384483-551c-4c39-80c3-32f9e602c61a",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("002fe479-b24b-4e3c-a189-be7da7f31b13",
+	"ba2ef7fe-30a6-4288-bde6-c2619fd73cf0",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"154acf8d-b6ef-47c0-b03d-6dbc5711f8ac",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("f86c506f-217c-49e0-a00b-bff753341e3e",
+	"ba2ef7fe-30a6-4288-bde6-c2619fd73cf0",
+	'outputA',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"002fe479-b24b-4e3c-a189-be7da7f31b13",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("2d53b7af-009e-43d5-ac03-5ee8e058685f",
+	"ba2ef7fe-30a6-4288-bde6-c2619fd73cf0",
+	'outputB',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"f86c506f-217c-49e0-a00b-bff753341e3e",
+	'');
+INSERT INTO PE_PE
+	VALUES ("ba2ef7fe-30a6-4288-bde6-c2619fd73cf0",
+	1,
+	"5496358c-42d2-4739-b6d0-0d236bd600a2",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("4cbcc952-29ca-4f1b-a9c1-c0166b97c5fa",
+	"00000000-0000-0000-0000-000000000000",
+	'Perform_DomainA_Navigations',
+	'',
+	'#------------------------------------------------------------------------#
+# Call the bridge directly for navigation of relationships in
+# DomainA.
+#------------------------------------------------------------------------#
+
+my_test = find-one Test_Data
+
+#------------------------------------------------------------------------#
+
+Local_Test = my_test.This_Test_Number
+
+[] = NAV1:Navigate_One_to_One[Local_Test]
+
+#------------------------------------------------------------------------#
+
+Local_Test = Local_Test + 1
+
+[] = NAV2:Navigate_One_to_Many[Local_Test]
+
+#------------------------------------------------------------------------#
+
+Local_Test = Local_Test + 1
+
+[] = NAV3:Navigate_Many_to_Many[Local_Test]
+
+#------------------------------------------------------------------------#
+
+Local_Test = Local_Test + 1
+
+[] = NAV4:Misc_Calls[Local_Test]
+
+#------------------------------------------------------------------------#
+
+Local_Test = Local_Test + 1
+
+my_test.This_Test_Number = Local_Test
+
+
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	4);
+INSERT INTO PE_PE
+	VALUES ("4cbcc952-29ca-4f1b-a9c1-c0166b97c5fa",
+	1,
+	"5496358c-42d2-4739-b6d0-0d236bd600a2",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("0a09de6a-0a55-4d1e-90de-6044b95c0a18",
+	"00000000-0000-0000-0000-000000000000",
+	'Create_Report_Data',
+	'',
+	'# Find out of there already is one of these.
+# It is not inconceivable that a report object still exists from a previous run.
+# Report objects are not deleted at the end of a run, as certain events may
+# still be en-queued.
+
+old_report = find-one Report_Data
+
+if old_report != UNDEFINED then
+   delete old_report
+endif
+
+My_Report = create unique Report_Data with Reported_Domain_Number = 0
+
+[] = RPT6:Domain_Test_Start["Domain B"]
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	5);
+INSERT INTO PE_PE
+	VALUES ("0a09de6a-0a55-4d1e-90de-6044b95c0a18",
+	1,
+	"5496358c-42d2-4739-b6d0-0d236bd600a2",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("75cdee68-9970-45bc-a8a1-449ae07b8c5a",
+	"00000000-0000-0000-0000-000000000000",
+	'Delete_Report_Data',
+	'',
+	'[] = RPT7:Domain_Test_Finished["Domain B"]
+
+# Do not delete the Report_Data object, as there may be still events in
+# the queue.',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	6);
+INSERT INTO PE_PE
+	VALUES ("75cdee68-9970-45bc-a8a1-449ae07b8c5a",
+	1,
+	"5496358c-42d2-4739-b6d0-0d236bd600a2",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("869e0811-08ec-4066-9be6-736c42577538",
+	"00000000-0000-0000-0000-000000000000",
+	'Check_Enum',
+	'',
+	'switch The_Input_Value
+
+   case ''Sly''
+      The_Return_Value = 21
+   case ''Sandy''
+      The_Return_Value = 22
+   case ''Wes''
+      The_Return_Value = 23
+   default
+      The_Return_Value = -21
+endswitch
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	7);
+INSERT INTO S_SPARM
+	VALUES ("29f72aee-7118-4b1e-85c1-915d52779cee",
+	"869e0811-08ec-4066-9be6-736c42577538",
+	'The_Input_Value',
+	"78de1618-1cc5-4263-a86e-26bbf9554717",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("78de1618-1cc5-4263-a86e-26bbf9554717",
+	"00000000-0000-0000-0000-000000000000",
+	'Test_Enum_Type',
+	'',
+	'',
+	'../../Shared/Shared.xtuml');
+INSERT INTO S_SPARM
+	VALUES ("2def8627-0a71-4a44-a9e8-fa9b3fd0e935",
+	"869e0811-08ec-4066-9be6-736c42577538",
+	'The_Return_Value',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"29f72aee-7118-4b1e-85c1-915d52779cee",
+	'');
+INSERT INTO PE_PE
+	VALUES ("869e0811-08ec-4066-9be6-736c42577538",
+	1,
+	"5496358c-42d2-4739-b6d0-0d236bd600a2",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("cfb41031-75d1-4f4c-96aa-f89c8e87f3d8",
+	"00000000-0000-0000-0000-000000000000",
+	'Service_Params',
+	'',
+	'if Input_Int = 999 then
+
+   if Input_Real = 99.9 then
+
+      if Input_Text = "Passed From Domain A" then
+
+         if Input_Bool = TRUE then
+            The_Return_Val = 10
+         else
+           The_Return_Val = -10
+         endif
+
+      else
+         The_Return_Val = -20
+      endif
+
+   else
+      The_Return_Val = -30
+   endif
+
+else
+   The_Return_Val = -40
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	8);
+INSERT INTO S_SPARM
+	VALUES ("c44ab6ac-a075-4570-81be-1189f2bac306",
+	"cfb41031-75d1-4f4c-96aa-f89c8e87f3d8",
+	'Input_Int',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("e13044d1-9a40-412a-b10b-76eb6e87b421",
+	"cfb41031-75d1-4f4c-96aa-f89c8e87f3d8",
+	'Input_Real',
+	"ba5eda7a-def5-0000-0000-000000000003",
+	0,
+	'',
+	"c44ab6ac-a075-4570-81be-1189f2bac306",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("096c7969-45cd-4b7d-8cfc-16f3dcbf3c77",
+	"cfb41031-75d1-4f4c-96aa-f89c8e87f3d8",
+	'Input_Text',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"e13044d1-9a40-412a-b10b-76eb6e87b421",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("0b7c3fb4-7c6e-4e8f-877f-75e2336129fd",
+	"cfb41031-75d1-4f4c-96aa-f89c8e87f3d8",
+	'Input_Bool',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	0,
+	'',
+	"096c7969-45cd-4b7d-8cfc-16f3dcbf3c77",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("dfc6a6bd-1810-417e-9fc4-7bb95fb8700b",
+	"cfb41031-75d1-4f4c-96aa-f89c8e87f3d8",
+	'The_Return_Val',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"0b7c3fb4-7c6e-4e8f-877f-75e2336129fd",
+	'');
+INSERT INTO PE_PE
+	VALUES ("cfb41031-75d1-4f4c-96aa-f89c8e87f3d8",
+	1,
+	"5496358c-42d2-4739-b6d0-0d236bd600a2",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO PE_PE
+	VALUES ("5496358c-42d2-4739-b6d0-0d236bd600a2",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"a83b8c6b-5032-4543-8d17-d78a353ec9a4",
+	7);
+INSERT INTO C_C_PROXY
+	VALUES ("a83b8c6b-5032-4543-8d17-d78a353ec9a4",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'DomainB',
+	' For use in multiple domain builds.
+',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'DomainB',
+	'../DomainB.xtuml');
+INSERT INTO S_SYS_PROXY
+	VALUES ("27630566-912f-47fa-ad2e-ff0c7c689222",
+	'DomainB',
+	1,
+	'../../../DomainB.xtuml');

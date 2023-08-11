@@ -1,0 +1,13 @@
+Struct::Struct,version,Component,6
+Struct::Struct::scenarios::void Test_the_Structure,scenario,Function,12
+Struct::Struct::scenarios::void Structures_are_Cleared,scenario,Function,11
+Struct::Struct::scenarios::void Test_IH_In_Structures,scenario,Function,10
+Struct::Struct::scenarios::void Empty_Structures_Test,scenario,Function,9
+Struct::Struct::scenarios::void Multiple_Structures_In_A_Structure_Scenario,scenario,Function,8
+Struct::Struct::scenarios::void Finish_Structures_Tests,scenario,Function,7
+Struct::Struct::scenarios::void Start_Structures_Tests,scenario,Function,6
+Struct::Struct::scenarios::void Nested_Structure_Scenario,scenario,Function,5
+Struct::Struct::scenarios::void Simple_Name_and_Type_Linked_Scenario,scenario,Function,4
+Struct::Struct::scenarios::void Simple_Type_Linked_Structure_Scenario,scenario,Function,3
+Struct::Struct::scenarios::void Complex_Structure_Scenario,scenario,Function,2
+Struct::Struct::scenarios::void Simple_Structure_Scenario,scenario,Function,1

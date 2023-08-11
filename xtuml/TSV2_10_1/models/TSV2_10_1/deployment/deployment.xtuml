@@ -1,0 +1,1476 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("f5360e11-0468-4fa0-8096-13b7b9872d9e",
+	"2a97f501-1ae7-48f5-b297-b76c7c73eb95",
+	"2a97f501-1ae7-48f5-b297-b76c7c73eb95",
+	'deployment',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("511f9e67-1002-4f03-a51e-913ed16ac8d7",
+	112,
+	"f5360e11-0468-4fa0-8096-13b7b9872d9e",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	200,
+	150,
+	0,
+	'',
+	'TSV2_10_1::deployment');
+INSERT INTO GD_GE
+	VALUES ("7bd432b1-1b20-4106-ac27-ccf77cc02cc3",
+	"511f9e67-1002-4f03-a51e-913ed16ac8d7",
+	"4763dcfa-2672-4f83-917a-ca8d07f8f968",
+	209,
+	0,
+	'TSV2_10_1::deployment::Creation_Deletion_Build_Set');
+INSERT INTO GD_SHP
+	VALUES ("7bd432b1-1b20-4106-ac27-ccf77cc02cc3");
+INSERT INTO GD_NCS
+	VALUES ("7bd432b1-1b20-4106-ac27-ccf77cc02cc3");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"7bd432b1-1b20-4106-ac27-ccf77cc02cc3");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"7bd432b1-1b20-4106-ac27-ccf77cc02cc3",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("7bd432b1-1b20-4106-ac27-ccf77cc02cc3",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_GE
+	VALUES ("c506b83a-c4b1-4ce8-a237-eb3df32e78a1",
+	"511f9e67-1002-4f03-a51e-913ed16ac8d7",
+	"9188b81e-206b-478d-9e6d-1f41030cdae1",
+	108,
+	0,
+	'TSV2_10_1::deployment::Shared');
+INSERT INTO GD_SHP
+	VALUES ("c506b83a-c4b1-4ce8-a237-eb3df32e78a1");
+INSERT INTO GD_NCS
+	VALUES ("c506b83a-c4b1-4ce8-a237-eb3df32e78a1");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"c506b83a-c4b1-4ce8-a237-eb3df32e78a1");
+INSERT INTO DIM_GE
+	VALUES (220.000000,
+	0.000000,
+	"c506b83a-c4b1-4ce8-a237-eb3df32e78a1",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("c506b83a-c4b1-4ce8-a237-eb3df32e78a1",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_DIA
+	VALUES ("511f9e67-1002-4f03-a51e-913ed16ac8d7",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO D_DEPL
+	VALUES ("4763dcfa-2672-4f83-917a-ca8d07f8f968",
+	'Creation_Deletion_Build_Set',
+	'',
+	'Creation_Deletion_Build_Set');
+INSERT INTO D_TERM
+	VALUES ("44a628b2-df54-4c5f-a0b5-7a2e3519b4ad",
+	"4763dcfa-2672-4f83-917a-ca8d07f8f968",
+	'RP',
+	'',
+	'RP',
+	'',
+	1,
+	'RP',
+	'Report');
+INSERT INTO D_TSVC
+	VALUES ("fe970a98-3f18-4493-8a41-06a5a59574c2",
+	"44a628b2-df54-4c5f-a0b5-7a2e3519b4ad",
+	'Test_Passed',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("07778382-10b6-4396-8a20-aa80dcd50d5d",
+	"fe970a98-3f18-4493-8a41-06a5a59574c2",
+	'Passed_Domain',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("b6569acd-1f7b-43ba-abaa-fb379804a24f",
+	"fe970a98-3f18-4493-8a41-06a5a59574c2",
+	'Passed_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"07778382-10b6-4396-8a20-aa80dcd50d5d",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("0abf68c3-e8e1-4d6a-b0a1-ccf52de5cf22",
+	"fe970a98-3f18-4493-8a41-06a5a59574c2",
+	'Passed_Test_Result_Value',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"b6569acd-1f7b-43ba-abaa-fb379804a24f",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("28f1a55f-6351-4550-833a-2b08ac7ae59d",
+	"fe970a98-3f18-4493-8a41-06a5a59574c2",
+	'Passed_Domain_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"0abf68c3-e8e1-4d6a-b0a1-ccf52de5cf22",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("54bea41a-3921-43b1-aa5a-4d2cd0e0a4d5",
+	"44a628b2-df54-4c5f-a0b5-7a2e3519b4ad",
+	'Test_Failed',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("cb00867e-565d-49b3-8c01-3f12766b4a84",
+	"54bea41a-3921-43b1-aa5a-4d2cd0e0a4d5",
+	'Failed_Domain',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("6c79d9fe-f44e-40d4-88e5-ce8821844170",
+	"54bea41a-3921-43b1-aa5a-4d2cd0e0a4d5",
+	'the_test_no',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"cb00867e-565d-49b3-8c01-3f12766b4a84",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("7e6fac46-3d3a-4296-9687-f47b4374dc47",
+	"54bea41a-3921-43b1-aa5a-4d2cd0e0a4d5",
+	'the_test_value',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"6c79d9fe-f44e-40d4-88e5-ce8821844170",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("968f1ee1-9d91-4580-8c7d-e2eebbc6cb75",
+	"54bea41a-3921-43b1-aa5a-4d2cd0e0a4d5",
+	'Failed_Domain_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"7e6fac46-3d3a-4296-9687-f47b4374dc47",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("0395f5d2-6e48-4ccc-b193-4b179d378db0",
+	"44a628b2-df54-4c5f-a0b5-7a2e3519b4ad",
+	'Test_Unsupported',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("71758b49-ba82-4d0f-8217-24ecf9b78d24",
+	"0395f5d2-6e48-4ccc-b193-4b179d378db0",
+	'Unsupported_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("f4e40cea-de26-42cd-b5af-1750b167fb3a",
+	"0395f5d2-6e48-4ccc-b193-4b179d378db0",
+	'Unsupported_Domain_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"71758b49-ba82-4d0f-8217-24ecf9b78d24",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("e531daf9-1196-4e1f-8e1f-0b9111de292b",
+	"44a628b2-df54-4c5f-a0b5-7a2e3519b4ad",
+	'Test_Description',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("5b932603-1d3f-4844-85b2-0a6aede9c003",
+	"e531daf9-1196-4e1f-8e1f-0b9111de292b",
+	'Write_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("0b4e745d-2719-4476-9cdb-f49eab99618f",
+	"e531daf9-1196-4e1f-8e1f-0b9111de292b",
+	'Write_Requid',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"5b932603-1d3f-4844-85b2-0a6aede9c003",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("087942e9-9b70-4588-8594-5ea135cac128",
+	"e531daf9-1196-4e1f-8e1f-0b9111de292b",
+	'Write_Invoker_Domain_Name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"0b4e745d-2719-4476-9cdb-f49eab99618f",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("3cbf3fa5-0e37-4e9b-934c-287f80b11b55",
+	"e531daf9-1196-4e1f-8e1f-0b9111de292b",
+	'Write_Object',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"087942e9-9b70-4588-8594-5ea135cac128",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("a10d8ac6-df21-4dde-828e-25c061a71154",
+	"e531daf9-1196-4e1f-8e1f-0b9111de292b",
+	'Write_Test_Purpose',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"3cbf3fa5-0e37-4e9b-934c-287f80b11b55",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("ae2023c1-52d4-4ac2-a37f-b091b971de11",
+	"e531daf9-1196-4e1f-8e1f-0b9111de292b",
+	'Write_Invoker_Domain_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"a10d8ac6-df21-4dde-828e-25c061a71154",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("a657c2fa-8a5b-44c7-822e-489dd2bbe959",
+	"44a628b2-df54-4c5f-a0b5-7a2e3519b4ad",
+	'Test_Text',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("0a8ce40f-858a-4ed3-835a-ca1a45d758b3",
+	"a657c2fa-8a5b-44c7-822e-489dd2bbe959",
+	'Domain_No',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("33d7558c-55d0-431e-af34-84519fbda16d",
+	"a657c2fa-8a5b-44c7-822e-489dd2bbe959",
+	'Text_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"0a8ce40f-858a-4ed3-835a-ca1a45d758b3",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("f2cbc826-1b96-4427-b199-e6b609b0cf07",
+	"a657c2fa-8a5b-44c7-822e-489dd2bbe959",
+	'Free_Text',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"33d7558c-55d0-431e-af34-84519fbda16d",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("e7922fcb-72aa-4db2-9de2-882631e7b2bc",
+	"44a628b2-df54-4c5f-a0b5-7a2e3519b4ad",
+	'Create_New_Domain_Test',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("d755ed6c-b9e2-4b20-9385-4748d2fda28a",
+	"e7922fcb-72aa-4db2-9de2-882631e7b2bc",
+	'Invoker_Domain_Name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("50b4e9de-3e29-49ce-96d2-ec9336dad2e0",
+	"e7922fcb-72aa-4db2-9de2-882631e7b2bc",
+	'Domain_Unique_Identifier',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"d755ed6c-b9e2-4b20-9385-4748d2fda28a",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("50fa170d-d60c-453c-a235-88662eda0269",
+	"44a628b2-df54-4c5f-a0b5-7a2e3519b4ad",
+	'Report_Run_Time_Error',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("98404fc2-533a-4da8-99e7-8b6df749beb1",
+	"50fa170d-d60c-453c-a235-88662eda0269",
+	'Detail',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("c5929c03-4eff-4249-9de5-b73095c2452b",
+	"44a628b2-df54-4c5f-a0b5-7a2e3519b4ad",
+	'Domain_Tests_Have_Finished',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("9d57db8d-5c02-4ee4-9032-2f144daf2c46",
+	"c5929c03-4eff-4249-9de5-b73095c2452b",
+	'Completed_Domain_Name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("838d7ff6-1e8e-43f9-9474-0fb27f160bc2",
+	"c5929c03-4eff-4249-9de5-b73095c2452b",
+	'Domain_Identifer',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"9d57db8d-5c02-4ee4-9032-2f144daf2c46",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("1230ab47-8fd4-46b0-be16-82f0232f9a4d",
+	"44a628b2-df54-4c5f-a0b5-7a2e3519b4ad",
+	'Test_Anomalous_Behaviour',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("fdf17414-9fad-44e9-9eaf-dee16facd43a",
+	"1230ab47-8fd4-46b0-be16-82f0232f9a4d",
+	'Anomalous_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("3caa13f2-8a38-45b6-b514-b16c24a42223",
+	"1230ab47-8fd4-46b0-be16-82f0232f9a4d",
+	'Anomalous_Detail',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"fdf17414-9fad-44e9-9eaf-dee16facd43a",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("690bdf73-290c-4b1e-8b2d-7889c8afdd0e",
+	"44a628b2-df54-4c5f-a0b5-7a2e3519b4ad",
+	'Specify_Requid',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("0ed2f440-876d-4f4d-aa6e-6d1635e8593c",
+	"690bdf73-290c-4b1e-8b2d-7889c8afdd0e",
+	'Requid_Domain_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("08edfe2d-d2c6-4ca8-8423-fb5e18da89b6",
+	"690bdf73-290c-4b1e-8b2d-7889c8afdd0e",
+	'Requid_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"0ed2f440-876d-4f4d-aa6e-6d1635e8593c",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("dac43167-920a-4e93-a24a-bc5c90fd1f39",
+	"690bdf73-290c-4b1e-8b2d-7889c8afdd0e",
+	'Requid_Identifier',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"08edfe2d-d2c6-4ca8-8423-fb5e18da89b6",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("594dfc21-3aeb-4077-83c4-84e5f51695eb",
+	"44a628b2-df54-4c5f-a0b5-7a2e3519b4ad",
+	'Add_All_Requids',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("100d1023-ca5a-4cc0-a853-81464317110e",
+	"594dfc21-3aeb-4077-83c4-84e5f51695eb",
+	'New_Requid',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("33389163-6d67-494a-920a-64d6a0e1e711",
+	"44a628b2-df54-4c5f-a0b5-7a2e3519b4ad",
+	'Requirement_Tracker',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("0017e89d-007c-4cc0-a3d6-9cdd3938256b",
+	"33389163-6d67-494a-920a-64d6a0e1e711",
+	'Updated_Domain_ID',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("5ac3ac2f-5679-45ea-a20c-e18199c77143",
+	"33389163-6d67-494a-920a-64d6a0e1e711",
+	'Updated_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"0017e89d-007c-4cc0-a3d6-9cdd3938256b",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("4a29b031-5e57-410c-b33e-6cf5c0213971",
+	"33389163-6d67-494a-920a-64d6a0e1e711",
+	'Updated_Result',
+	"18f32b5b-b37f-4e77-93db-1a2d773799ea",
+	0,
+	'',
+	"5ac3ac2f-5679-45ea-a20c-e18199c77143",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("18f32b5b-b37f-4e77-93db-1a2d773799ea",
+	"00000000-0000-0000-0000-000000000000",
+	'RP::Result_Type',
+	'',
+	'',
+	'./Shared/Shared.xtuml');
+INSERT INTO D_TSVC
+	VALUES ("765f407a-0691-4980-8ed5-56ef3ebbb838",
+	"44a628b2-df54-4c5f-a0b5-7a2e3519b4ad",
+	'Perform_Req_Analysis',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TERM
+	VALUES ("80055e92-aeb9-4c76-8376-03a51dd79c4e",
+	"4763dcfa-2672-4f83-917a-ca8d07f8f968",
+	'Creation_Deletion::Report_Terminator',
+	'',
+	'Creation_Deletion',
+	'Report_Terminator',
+	0,
+	'Creation_Deletion',
+	'RPT');
+INSERT INTO D_TSVC
+	VALUES ("94fdd8e8-459d-4988-b2b9-a567b9a33a16",
+	"80055e92-aeb9-4c76-8376-03a51dd79c4e",
+	'Start_Test',
+	'',
+	'local_test_number = Test_Number
+local_requid = Requid
+local_invoking_domain = Invoking_Domain
+local_invoking_object = Invoking_Object
+local_purpose = Purpose
+
+# Find the reporter object for this domain, there will be only one.
+
+The_Reporter_Object = find-one Report_Data
+
+
+if The_Reporter_Object = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["ST Calling domain has not created Report_Data"]
+
+   $ENDUSE
+
+else
+
+   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
+
+   $USE RP
+  
+      [] = RP4::Test_Description[local_test_number, local_requid, local_invoking_domain, local_invoking_object, local_purpose, Unique_Domain_ID]
+
+   $ENDUSE
+
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	1);
+INSERT INTO D_TSPARM
+	VALUES ("cafa5b5c-7a6e-4cb4-ad21-c7ded709075e",
+	"94fdd8e8-459d-4988-b2b9-a567b9a33a16",
+	'Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("caf407e4-b0d1-4af8-a9ac-d14ab5926ae5",
+	"94fdd8e8-459d-4988-b2b9-a567b9a33a16",
+	'Requid',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"cafa5b5c-7a6e-4cb4-ad21-c7ded709075e",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("b1cafa9e-c022-4014-b793-5755fd2c32f1",
+	"94fdd8e8-459d-4988-b2b9-a567b9a33a16",
+	'Invoking_Domain',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"caf407e4-b0d1-4af8-a9ac-d14ab5926ae5",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("718340f8-7e84-444f-8723-b33d1eeac08f",
+	"94fdd8e8-459d-4988-b2b9-a567b9a33a16",
+	'Invoking_Object',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"b1cafa9e-c022-4014-b793-5755fd2c32f1",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("71b4fa44-3593-4374-9803-dcff7c5cf9c2",
+	"94fdd8e8-459d-4988-b2b9-a567b9a33a16",
+	'Purpose',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"718340f8-7e84-444f-8723-b33d1eeac08f",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("2432a778-49ed-410e-ae56-1d81788a213d",
+	"80055e92-aeb9-4c76-8376-03a51dd79c4e",
+	'Test_Passed',
+	'',
+	'local_test_number = Test_Number
+local_test_value = Test_Value
+local_object_domain = Test_Object_Domain
+
+# Find the reporter object for this domain, there will be only one.
+
+The_Reporter_Object = find-one Report_Data
+
+
+if The_Reporter_Object = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["TP Calling domain has not created Report_Data"]
+
+   $ENDUSE
+
+else
+
+   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
+ 
+   $USE RP
+
+   [] = RP1::Test_Passed[local_object_domain, local_test_number, local_test_value, Unique_Domain_ID]
+
+   $ENDUSE
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	2);
+INSERT INTO D_TSPARM
+	VALUES ("c4d38fdf-2554-4234-b472-b7d32dccee80",
+	"2432a778-49ed-410e-ae56-1d81788a213d",
+	'Test_Object_Domain',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("f6aa70f1-75a4-4f3b-b2d7-19770d69473d",
+	"2432a778-49ed-410e-ae56-1d81788a213d",
+	'Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"c4d38fdf-2554-4234-b472-b7d32dccee80",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("4f694f8c-3874-4d20-b811-59be07847af2",
+	"2432a778-49ed-410e-ae56-1d81788a213d",
+	'Test_Value',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"f6aa70f1-75a4-4f3b-b2d7-19770d69473d",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("c5084145-292a-4996-bdb9-f9674d3236a1",
+	"80055e92-aeb9-4c76-8376-03a51dd79c4e",
+	'Test_Failed',
+	'',
+	'local_test_number = Failed_Test_Number
+local_test_value = Failed_Test_Value
+local_object_domain = Failed_Domain_Object
+
+# Find the reporter object for this domain, there will be only one.
+
+The_Reporter_Object = find-one Report_Data
+
+if The_Reporter_Object = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["TF Calling domain has not created Report_Data"]
+
+   $ENDUSE
+
+else
+
+   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
+
+
+   $USE RP
+
+   [] = RP2::Test_Failed[local_object_domain, local_test_number, local_test_value, Unique_Domain_ID]
+
+   $ENDUSE
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	3);
+INSERT INTO D_TSPARM
+	VALUES ("3aa519a1-f8ca-4f2b-80d9-5c53b3c6cd67",
+	"c5084145-292a-4996-bdb9-f9674d3236a1",
+	'Failed_Domain_Object',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("461755aa-1fba-4503-88cb-6472b9010d89",
+	"c5084145-292a-4996-bdb9-f9674d3236a1",
+	'Failed_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"3aa519a1-f8ca-4f2b-80d9-5c53b3c6cd67",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("a8f41671-135a-4ff0-9d68-466f570d7df7",
+	"c5084145-292a-4996-bdb9-f9674d3236a1",
+	'Failed_Test_Value',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"461755aa-1fba-4503-88cb-6472b9010d89",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("2131a5b4-c67d-4699-a7b1-427575d8f8d3",
+	"80055e92-aeb9-4c76-8376-03a51dd79c4e",
+	'Test_Unsupported',
+	'',
+	'local_test_number = Unsupported_Test_Number
+
+
+# Find the reporter object for this domain, there will be only one.
+
+The_Reporter_Object = find-one Report_Data
+
+
+if The_Reporter_Object = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["TU Calling domain has not created Report_Data"]
+
+   $ENDUSE
+else
+
+   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
+
+   $USE RP
+
+   [] = RP3::Test_Unsupported[local_test_number, Unique_Domain_ID]
+
+   $ENDUSE
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	4);
+INSERT INTO D_TSPARM
+	VALUES ("a3eb8f03-73a2-42c8-9636-0e50ac086854",
+	"2131a5b4-c67d-4699-a7b1-427575d8f8d3",
+	'Unsupported_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("ef5b77f6-578c-4bec-bd1d-dcf43dfa0707",
+	"80055e92-aeb9-4c76-8376-03a51dd79c4e",
+	'Test_Text',
+	'',
+	'local_test_number = Test_Number
+local_text = Free_Text
+
+#$USE RP
+
+#   [] = RP5::Test_Text[local_test_number, local_text]
+
+#$ENDUSE
+
+#-----------------------------------------------
+# New stuff
+#-----------------------------------------------
+
+# Find the reporter object for this domain, there will be only one.
+The_Reporter_Object = find-one Report_Data
+
+if The_Reporter_Object = UNDEFINED then
+
+   $USE RP
+      [] = RP7::Report_Run_Time_Error["TP Calling domain has not created Report_Data"]
+   $ENDUSE
+
+else
+
+   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
+ 
+   $USE RP
+      [] = RP5::Test_Text[Unique_Domain_ID, local_test_number, local_text]
+   $ENDUSE
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	5);
+INSERT INTO D_TSPARM
+	VALUES ("d4ee39c6-295c-421c-884d-1dd8141b4ecb",
+	"ef5b77f6-578c-4bec-bd1d-dcf43dfa0707",
+	'Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("a45f161e-4b81-41c5-be92-d81cb48dc831",
+	"ef5b77f6-578c-4bec-bd1d-dcf43dfa0707",
+	'Free_Text',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"d4ee39c6-295c-421c-884d-1dd8141b4ecb",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("2b6441e3-76c9-4e35-9990-17e3dfbf2395",
+	"80055e92-aeb9-4c76-8376-03a51dd79c4e",
+	'Domain_Test_Start',
+	'',
+	'local_text = This_Domain_Name
+
+
+$USE RP
+
+   [New_Domain_Number] = RP6::Create_New_Domain_Test[local_text]
+
+$ENDUSE
+
+
+# Can''t create in a bridge, so find this object and update it. Rely on the invoker
+# domain to have created this object prior to this call.
+
+My_Report = find-one Report_Data
+
+if My_Report = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["DTS Calling domain has not created Report_Data"]
+
+   $ENDUSE
+
+else
+
+   My_Report.Reported_Domain_Number = New_Domain_Number
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	6);
+INSERT INTO D_TSPARM
+	VALUES ("44745a3f-0dc6-452d-9fd6-fcf078a1a24a",
+	"2b6441e3-76c9-4e35-9990-17e3dfbf2395",
+	'This_Domain_Name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("ec0602ee-9e1f-4f36-8822-7632da42aa34",
+	"80055e92-aeb9-4c76-8376-03a51dd79c4e",
+	'Domain_Test_Finished',
+	'',
+	'local_text = This_Domain_Name
+
+My_Report = find-one Report_Data
+
+if My_Report = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["DTF Calling domain has not created Report_Data"]
+
+   $ENDUSE
+
+else
+
+   local_domain_number = My_Report.Reported_Domain_Number
+
+endif
+
+
+$USE RP
+
+   [] = RP8::Domain_Tests_Have_Finished[local_text, local_domain_number]
+
+
+$ENDUSE',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	7);
+INSERT INTO D_TSPARM
+	VALUES ("bea17685-257d-4bf0-b7cf-677313748a6a",
+	"ec0602ee-9e1f-4f36-8822-7632da42aa34",
+	'This_Domain_Name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("030bd9e6-5a84-4dc0-bc74-1b9c3d2307c2",
+	"ec0602ee-9e1f-4f36-8822-7632da42aa34",
+	'This_Domain_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"bea17685-257d-4bf0-b7cf-677313748a6a",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("9f4ed176-9d0e-4149-932a-6afe3c69e9db",
+	"80055e92-aeb9-4c76-8376-03a51dd79c4e",
+	'Specify_Requid',
+	'',
+	'local_test_number = Requid_Test_Number
+local_requid_value = The_Requid_Itself
+
+# Find the reporter object for this domain, there will be only one.
+
+The_Reporter_Object = find-one Report_Data
+
+
+if The_Reporter_Object = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["TP Calling domain has not created Report_Data"]
+
+   $ENDUSE
+
+else
+
+   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
+ 
+   $USE RP
+
+   [] = RP10::Specify_Requid [Unique_Domain_ID, local_test_number, local_requid_value]
+
+   $ENDUSE
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	8);
+INSERT INTO D_TSPARM
+	VALUES ("3e05386c-eaef-4ce0-bf77-32c0a784ffdf",
+	"9f4ed176-9d0e-4149-932a-6afe3c69e9db",
+	'Requid_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("218b103b-d6fd-4c6a-ae94-fb96cc80a500",
+	"9f4ed176-9d0e-4149-932a-6afe3c69e9db",
+	'The_Requid_Itself',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"3e05386c-eaef-4ce0-bf77-32c0a784ffdf",
+	'');
+INSERT INTO D_TERM
+	VALUES ("6e5db35b-d77c-4d33-9fa1-9f4ca4c51797",
+	"4763dcfa-2672-4f83-917a-ca8d07f8f968",
+	'Creation_Deletion::Enumeration_Terminator',
+	'',
+	'Creation_Deletion',
+	'Enumeration_Terminator',
+	0,
+	'Creation_Deletion',
+	'ENUM');
+INSERT INTO D_TSVC
+	VALUES ("a7752448-6460-48c1-9a7e-7391afc8953c",
+	"6e5db35b-d77c-4d33-9fa1-9f4ca4c51797",
+	'Big_Bridge_Test',
+	'',
+	'# Hello',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	1);
+INSERT INTO D_TSPARM
+	VALUES ("980322f6-1645-4784-a4ca-d4f67e436547",
+	"a7752448-6460-48c1-9a7e-7391afc8953c",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TERM
+	VALUES ("7682fc02-d18e-41e6-a230-b0bed73a3081",
+	"4763dcfa-2672-4f83-917a-ca8d07f8f968",
+	'Creation_Deletion',
+	'',
+	'Creation_Deletion',
+	'',
+	1,
+	'Creation_Deletion',
+	'Creation_Deletion');
+INSERT INTO D_TSVC
+	VALUES ("a4cf4de0-f6d4-411d-a88d-057b521e6712",
+	"7682fc02-d18e-41e6-a230-b0bed73a3081",
+	'Create_Report_Object',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSVC
+	VALUES ("e23fbdfd-c8b3-48e2-a9f3-bca3bcd469df",
+	"7682fc02-d18e-41e6-a230-b0bed73a3081",
+	'Delete_Report_Object',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSVC
+	VALUES ("0482654d-a810-4049-bc5e-95dd72a52282",
+	"7682fc02-d18e-41e6-a230-b0bed73a3081",
+	'Check_Enum',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("558b9c78-2046-40c0-8ff3-8d1f0aa9a36c",
+	"0482654d-a810-4049-bc5e-95dd72a52282",
+	'The_Input_Value',
+	"ae853101-3ad6-4cc9-8464-86dc1913fc86",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("ae853101-3ad6-4cc9-8464-86dc1913fc86",
+	"00000000-0000-0000-0000-000000000000",
+	'Creation_Deletion::Test_Enum_Type',
+	'',
+	'',
+	'./Shared/Shared.xtuml');
+INSERT INTO D_TSPARM
+	VALUES ("72e97446-22aa-4408-80bb-4c1e325104a5",
+	"0482654d-a810-4049-bc5e-95dd72a52282",
+	'The_Return_Value',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"558b9c78-2046-40c0-8ff3-8d1f0aa9a36c",
+	'');
+INSERT INTO D_TERM
+	VALUES ("af528e24-37d1-4b5a-81b3-eccf944acdda",
+	"4763dcfa-2672-4f83-917a-ca8d07f8f968",
+	'Creation_Deletion_Build_Set::Sequence',
+	'',
+	'Creation_Deletion_Build_Set',
+	'Sequence',
+	0,
+	'',
+	'');
+INSERT INTO D_TSVC
+	VALUES ("abba20aa-8b2d-4639-a7bf-6a40f8508a94",
+	"af528e24-37d1-4b5a-81b3-eccf944acdda",
+	'RP::Disable_Screen_Display',
+	'',
+	'$INLINE
+   fprintf(stderr,"Turn screen display OFF in ADA mode");
+$ENDINLINE
+
+# Turn off screen reporting in an ada run.
+
+#$ADA_INLINE
+#
+#   with Test_Suite_Text_IO;
+#
+#   Test_Suite_Text_IO.Dump_String(Value => "Writing to screen disabled.");
+#   Test_Suite_Text_IO.Set_Output(Output_Is_On => FALSE);
+#
+#$END_ADAINLINE
+
+
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	0,
+	3);
+INSERT INTO D_TSVC
+	VALUES ("3af88252-7ce4-4276-9bea-feba19cf548e",
+	"af528e24-37d1-4b5a-81b3-eccf944acdda",
+	'Creation_Deletion::Start_Creation_Deletion_Tests',
+	'',
+	'[] = Creation_Deletion1::Create_Report_Object[]
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	0,
+	2);
+INSERT INTO D_TSVC
+	VALUES ("9c289942-e8fe-44d1-b962-dd122052b9a7",
+	"af528e24-37d1-4b5a-81b3-eccf944acdda",
+	'Creation_Deletion::Perform_Creation_Deletion_Tests',
+	'',
+	'#-------------------------------------------------------------------------------------------#
+# This scenario is basically the externals 1..8 incorporated in one scenario. This is done 
+# as externals are not supported by the current SWA.
+#-------------------------------------------------------------------------------------------#
+
+   # Create all objects to be used in these tests.
+ 
+   Test = 1
+
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0123", "Creation Deletion", "Scenario", "Create instances in scenario"]
+  
+   testObjA = create Object_A with ReferenceA = 0      &\ 
+                                   IntegerA   = 1      &\
+                                   TextA      = "Test" &\
+                                   BooleanA   = TRUE   &\
+                                   ColourA    = ''Red''
+
+   testObjB = create Object_B with ReferenceB = 0   &\
+                                   IntegerA   = 100
+
+   if testObjA.ReferenceA = 0 then
+
+      if testObjA.IntegerA = 1 then
+
+         if testObjB.IntegerA = 100 then
+ 
+            if testObjA.TextA = "Test" then
+
+               if testObjA.BooleanA = TRUE then
+
+                  if testObjA.ColourA = ''Red'' then
+                     [] = RPT2:Test_Passed["Instance in scenario", Test, 0]
+                  else
+                     [] = RPT3:Test_Failed["Instance in scenario", Test, -10]
+                  endif
+
+               else
+                  [] = RPT3:Test_Failed["Instance in scenario", Test, -20]
+               endif
+
+            else
+               [] = RPT3:Test_Failed["Instance in scenario", Test, -30]
+            endif
+
+         else
+            [] = RPT3:Test_Failed["Instance in scenario", Test, -40]
+         endif
+
+      else
+         [] = RPT3:Test_Failed["Instance in scenario", Test, -50]
+      endif
+
+   else
+      [] = RPT3:Test_Failed["Instance in scenario", Test, -60]
+   endif
+
+   # delete the two newly created instances
+   delete testObjA
+   delete testObjB
+
+#-------------------------------------------------------------------------------------------#
+
+   # Create all objects to be used in these tests.
+
+   Test = 2
+   Returned_Test_Number = 2
+
+   [Returned_Test_Number] = objA1:do_sync_create[Test]
+
+   Test = Returned_Test_Number + 1
+
+   [Returned_Test_Number] = objB1:do_sync_create_unique[Test]
+
+   Test = Returned_Test_Number + 1
+
+   [Returned_Test_Number] = objC1:do_create_unique_mult[Test]
+  
+#-------------------------------------------------------------------------------------------#
+# Creation State tests.
+# These shall prove that a queue is handled in a correct manner.
+# This event should be placed on the queue, and the subsequent generation from within 
+# this object placed directly afterwards.
+# The second test in the sequence should prove that this has happened as it should start 
+# after the first has reported pass/fail.
+#-------------------------------------------------------------------------------------------#
+
+   Test = Returned_Test_Number + 1
+
+   # Creation Events are unsupported in WACA.
+   [] = RPT1:Start_Test[Test, "1241-0000-01-0203", "Creation Deletion", "objCS", "Generate Creation events"]
+   [] = RPT5:Test_Text [Test, "Creation States are unsopported"]
+
+   # Start the test
+   # generate objCS1:StartA(Test)
+
+   # Find out how many tests are performed in objCS1:StartA
+   [] = RPT4:Test_Unsupported[Test]
+
+   # Test = Test + 1
+
+   # Start the test
+   # generate objCS1:StartA(Test)
+
+#-------------------------------------------------------------------------------------------#
+
+   Test = Test + 1
+   Returned_Test_Number = 0
+
+   # Perform deletion tests
+ 
+   [Returned_Test_Number] = objD1:do_deletion_tests[Test]
+
+#-------------------------------------------------------------------------------------------#
+
+   Test = Returned_Test_Number + 1
+
+   Returned_Test_Number = 0
+
+   # Perform multiple deletion tests, ie. delete more than one instance at a time
+   [Returned_Test_Number] = objD2:do_multiple_deletion_tests[Test]
+
+#-------------------------------------------------------------------------------------------#
+# Start termination state tests
+#-------------------------------------------------------------------------------------------#
+
+   Test = Returned_Test_Number + 1
+
+   Returned_Test_Number = 0
+
+   has_failed = FALSE
+
+   # Create an instance to delete
+   newTS = create Termination_State with ReferenceTS   = Test     &\
+                                         Current_State = ''Idle''
+
+   # Start test
+   generate objTS3:StartA() to newTS
+
+   Test = Test + 1
+
+#-------------------------------------------------------------------------------------------#
+
+   # Create an instance to delete
+   newTS = create Termination_State with ReferenceTS   = Test     &\
+                                         Current_State = ''Idle''
+ 
+   generate objTS3:StartA() to newTS
+
+   Test = Test + 1 
+
+#-------------------------------------------------------------------------------------------#
+# Perform further creation tests, specifying attributes then attempt to delete the many to 
+# many relationship with associated object 
+#-------------------------------------------------------------------------------------------#
+
+   Returned_Test_Number = 0
+
+   [Returned_Test_Number] = coloured1:Colourize_It[Test]
+
+#-------------------------------------------------------------------------------------------#
+# Perform regression tests to clarify a discrepancy between find-all returning instance 
+# handle set and a navigate to a set of instance handles.
+#-------------------------------------------------------------------------------------------#
+
+   Test = Returned_Test_Number
+   Returned_Test_Number = 0
+
+   [Returned_Test_Number] = coloured2:Regression_Tests[Test]
+
+#-------------------------------------------------------------------------------------------#
+# Perform further creation tests, using Dr.Who, several enemies and the odd battle or two
+# as meaningful objects.
+#-------------------------------------------------------------------------------------------#
+
+Test = Returned_Test_Number
+Returned_Test_Number = 0
+
+[Returned_Test_Number] = dr1:Test_the_Doctors_Mettle[Test]
+
+#-------------------------------------------------------------------------------------------#
+
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	0,
+	1);
+INSERT INTO D_TSVC
+	VALUES ("177fe636-02fc-4e4a-82ca-a9b4fcdc257b",
+	"af528e24-37d1-4b5a-81b3-eccf944acdda",
+	'Creation_Deletion::Finish_Creation_Deletion_Tests',
+	'',
+	'
+[] = Creation_Deletion2::Delete_Report_Object[]
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	0,
+	3);
+INSERT INTO D_TSS
+	VALUES ("6f4243ab-8d1e-4f15-8b0c-314010e839db",
+	"af528e24-37d1-4b5a-81b3-eccf944acdda");
+INSERT INTO D_SIS
+	VALUES ("abba20aa-8b2d-4639-a7bf-6a40f8508a94",
+	"6f4243ab-8d1e-4f15-8b0c-314010e839db",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO D_SIS
+	VALUES ("3af88252-7ce4-4276-9bea-feba19cf548e",
+	"6f4243ab-8d1e-4f15-8b0c-314010e839db",
+	"abba20aa-8b2d-4639-a7bf-6a40f8508a94");
+INSERT INTO D_SIS
+	VALUES ("9c289942-e8fe-44d1-b962-dd122052b9a7",
+	"6f4243ab-8d1e-4f15-8b0c-314010e839db",
+	"3af88252-7ce4-4276-9bea-feba19cf548e");
+INSERT INTO D_SIS
+	VALUES ("177fe636-02fc-4e4a-82ca-a9b4fcdc257b",
+	"6f4243ab-8d1e-4f15-8b0c-314010e839db",
+	"9c289942-e8fe-44d1-b962-dd122052b9a7");
+INSERT INTO PE_PE
+	VALUES ("4763dcfa-2672-4f83-917a-ca8d07f8f968",
+	1,
+	"f5360e11-0468-4fa0-8096-13b7b9872d9e",
+	"00000000-0000-0000-0000-000000000000",
+	25);
+INSERT INTO PE_PE
+	VALUES ("f5360e11-0468-4fa0-8096-13b7b9872d9e",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	7);
+INSERT INTO S_SYS_PROXY
+	VALUES ("2a97f501-1ae7-48f5-b297-b76c7c73eb95",
+	'TSV2_10_1',
+	1,
+	'../TSV2_10_1.xtuml');

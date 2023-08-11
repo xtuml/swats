@@ -1,0 +1,250 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("ae89e87c-00b7-493f-a0b2-08c026b02051",
+	"00000000-0000-0000-0000-000000000000",
+	"02965de1-ecbb-4bde-9a3e-3ac7d424e4a6",
+	'functions',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("c0914237-7758-48ff-98dd-4c3194309dc4",
+	112,
+	"ae89e87c-00b7-493f-a0b2-08c026b02051",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'Find_and_Sets::Find_and_Sets::Find_and_Sets::functions');
+INSERT INTO DIM_DIA
+	VALUES ("c0914237-7758-48ff-98dd-4c3194309dc4",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_SYNC
+	VALUES ("b333c1ca-7c19-4155-a8ab-fdfe4143f6eb",
+	"00000000-0000-0000-0000-000000000000",
+	'Increment',
+	' Increment a value by 1
+',
+	'
+# Increment value by and return
+Incremented = Incremental + 1
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	1);
+INSERT INTO S_SPARM
+	VALUES ("0a1549e5-03e8-412b-b940-75f8052338d2",
+	"b333c1ca-7c19-4155-a8ab-fdfe4143f6eb",
+	'Incremental',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("6c704fec-05ec-41f6-afdd-95f373fe0dac",
+	"b333c1ca-7c19-4155-a8ab-fdfe4143f6eb",
+	'Incremented',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"0a1549e5-03e8-412b-b940-75f8052338d2",
+	'');
+INSERT INTO PE_PE
+	VALUES ("b333c1ca-7c19-4155-a8ab-fdfe4143f6eb",
+	1,
+	"ae89e87c-00b7-493f-a0b2-08c026b02051",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("16c943aa-7c60-4c22-9eed-86bdaf36e16f",
+	"00000000-0000-0000-0000-000000000000",
+	'Create_Report_Object',
+	'',
+	'# Find out of there already is one of these.
+# It is not inconceivable that a report object still exists from a previous run.
+# Report objects are not deleted at the end of a run, as certain events may
+# still be en-queued.
+
+old_report = find-one Report_Data
+
+if old_report != UNDEFINED then
+   delete old_report
+endif
+
+My_Report = create unique Report_Data with Reported_Domain_Number = 0
+
+[] = RPT6:Domain_Test_Start["Find and Sets"]
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	2);
+INSERT INTO PE_PE
+	VALUES ("16c943aa-7c60-4c22-9eed-86bdaf36e16f",
+	1,
+	"ae89e87c-00b7-493f-a0b2-08c026b02051",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("f27cfd70-b789-4bf6-8675-f5e978fde800",
+	"00000000-0000-0000-0000-000000000000",
+	'Delete_Report_Object',
+	'',
+	'[] = RPT7:Domain_Test_Finished["Find and Sets"]
+
+# Do not delete the Report_Data object, as there may be still events in
+# the queue.',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	3);
+INSERT INTO PE_PE
+	VALUES ("f27cfd70-b789-4bf6-8675-f5e978fde800",
+	1,
+	"ae89e87c-00b7-493f-a0b2-08c026b02051",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("3a4af119-0b04-450f-8c1d-9159ca81fcbf",
+	"00000000-0000-0000-0000-000000000000",
+	'Check_Enum',
+	'',
+	'switch The_Input_Value
+
+   case ''Sly''
+      The_Return_Value = 41
+   case ''Sandy''
+      The_Return_Value = 42
+   case ''Wes''
+      The_Return_Value = 43
+   default
+      The_Return_Value = -41
+endswitch',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	4);
+INSERT INTO S_SPARM
+	VALUES ("cd0a17cf-0554-4d77-ac9c-72ddefdc7b6b",
+	"3a4af119-0b04-450f-8c1d-9159ca81fcbf",
+	'The_Input_Value',
+	"c5b8e651-dd7d-4ba6-8e65-7dce10c5e06b",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("c5b8e651-dd7d-4ba6-8e65-7dce10c5e06b",
+	"00000000-0000-0000-0000-000000000000",
+	'New_Enum_Type',
+	'',
+	'',
+	'../../Shared/Shared.xtuml');
+INSERT INTO S_SPARM
+	VALUES ("d841c82e-7c0a-4ae6-9573-e6cb1c1d0f17",
+	"3a4af119-0b04-450f-8c1d-9159ca81fcbf",
+	'The_Return_Value',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"cd0a17cf-0554-4d77-ac9c-72ddefdc7b6b",
+	'');
+INSERT INTO PE_PE
+	VALUES ("3a4af119-0b04-450f-8c1d-9159ca81fcbf",
+	1,
+	"ae89e87c-00b7-493f-a0b2-08c026b02051",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("f4f067cf-b661-47d5-8038-8fb164dacfd2",
+	"00000000-0000-0000-0000-000000000000",
+	'Insert_Mem_Leak_Test',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	5,
+	5);
+INSERT INTO PE_PE
+	VALUES ("f4f067cf-b661-47d5-8038-8fb164dacfd2",
+	1,
+	"ae89e87c-00b7-493f-a0b2-08c026b02051",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("0bd04e5e-7907-417d-bd84-fdae7678c614",
+	"00000000-0000-0000-0000-000000000000",
+	'FindAllTest',
+	'',
+	'{setAO} = find-all Assoc_Obj
+
+InstCount = 0 
+
+InstCount = countof {setAO}
+
+noInst = InstCount',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	6);
+INSERT INTO S_SPARM
+	VALUES ("30032771-f561-4fec-bff0-ac9353d7ccff",
+	"0bd04e5e-7907-417d-bd84-fdae7678c614",
+	'noInst',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO PE_PE
+	VALUES ("0bd04e5e-7907-417d-bd84-fdae7678c614",
+	1,
+	"ae89e87c-00b7-493f-a0b2-08c026b02051",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO PE_PE
+	VALUES ("ae89e87c-00b7-493f-a0b2-08c026b02051",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"92631859-5fea-42d1-9b79-5f4049127189",
+	7);
+INSERT INTO C_C_PROXY
+	VALUES ("92631859-5fea-42d1-9b79-5f4049127189",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'Find_and_Sets',
+	' Tests finds and set manipulations.
+',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Find_and_Sets',
+	'../Find_and_Sets.xtuml');
+INSERT INTO S_SYS_PROXY
+	VALUES ("02965de1-ecbb-4bde-9a3e-3ac7d424e4a6",
+	'Find_and_Sets',
+	1,
+	'../../../Find_and_Sets.xtuml');

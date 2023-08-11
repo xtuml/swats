@@ -1,0 +1,101 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("6c2f8295-5cf3-46a0-b5b8-cdf269de02bb",
+	"00000000-0000-0000-0000-000000000000",
+	"7d1bef29-9e30-4977-be43-53e35fcca33f",
+	'functions',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("eb446525-0c5c-4151-a17c-0af1477f7e4a",
+	112,
+	"6c2f8295-5cf3-46a0-b5b8-cdf269de02bb",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'TT::TT::TT::functions');
+INSERT INTO DIM_DIA
+	VALUES ("eb446525-0c5c-4151-a17c-0af1477f7e4a",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_SYNC
+	VALUES ("d5d31723-438e-4cfd-b0c8-3727b74e0e36",
+	"00000000-0000-0000-0000-000000000000",
+	'create_report_data',
+	'',
+	'the_old_report_data = find-one Report_Data
+
+if (the_old_report_data != UNDEFINED) then
+   delete the_old_report_data
+endif
+
+the_new_report_data = create unique Report_Data with Reported_Domain_Number = 0
+
+[] = RPT6:Domain_Test_Start["Test Timers"]',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	1);
+INSERT INTO PE_PE
+	VALUES ("d5d31723-438e-4cfd-b0c8-3727b74e0e36",
+	1,
+	"6c2f8295-5cf3-46a0-b5b8-cdf269de02bb",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("e5bbfd85-8a99-47f4-8945-ab4aaf67cc74",
+	"00000000-0000-0000-0000-000000000000",
+	'delete_report_data',
+	'',
+	'[] = RPT7:Domain_Test_Finished["Test Timers"]',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	2);
+INSERT INTO PE_PE
+	VALUES ("e5bbfd85-8a99-47f4-8945-ab4aaf67cc74",
+	1,
+	"6c2f8295-5cf3-46a0-b5b8-cdf269de02bb",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO PE_PE
+	VALUES ("6c2f8295-5cf3-46a0-b5b8-cdf269de02bb",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"39d6a799-5e52-493a-b09a-f0887ce7fbf9",
+	7);
+INSERT INTO C_C_PROXY
+	VALUES ("39d6a799-5e52-493a-b09a-f0887ce7fbf9",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'TT',
+	' This Domain is for testing the timer features of the software architecture.
+',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Test_Timers',
+	'../TT.xtuml');
+INSERT INTO S_SYS_PROXY
+	VALUES ("7d1bef29-9e30-4977-be43-53e35fcca33f",
+	'TT',
+	1,
+	'../../../TT.xtuml');

@@ -1,0 +1,145 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("8af6515d-124f-457c-b986-8a03b3b0a7d7",
+	'A_Test_That_Is_Unsupported',
+	5,
+	'UNSUPPORTED',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("c8fccb25-32f1-4b61-9b7b-9b81defa58a5",
+	"8af6515d-124f-457c-b986-8a03b3b0a7d7",
+	'Not_Done_It_Yet',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'The_Unsupported_Instance = Invoker_Domain_IH -> R3.A_Test_That_Is_Unsupported
+
+if The_Unsupported_Instance != UNDEFINED then
+
+   local_increment = The_Unsupported_Instance.Unsupported_Counter
+
+   local_increment = local_increment + 1
+
+   The_Unsupported_Instance.Unsupported_Counter = local_increment
+
+else
+
+   [] = RP7::Report_Run_Time_Error["Can not find an unsupported instance associated with this domain"]
+ 
+endif
+',
+	3,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	2,
+	1);
+INSERT INTO O_TPARM
+	VALUES ("6a0c38d0-089e-4efe-ad06-787454a771a7",
+	"c8fccb25-32f1-4b61-9b7b-9b81defa58a5",
+	'Invoker_Domain_IH',
+	"b6be81cd-5988-46ae-b74f-1cae173376de",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("b6be81cd-5988-46ae-b74f-1cae173376de",
+	"00000000-0000-0000-0000-000000000000",
+	'inst_ref<Domain_Details>',
+	'',
+	'',
+	'../RP.xtuml');
+INSERT INTO O_NBATTR
+	VALUES ("94ae4e5f-da5c-414b-b5af-532e52d0f0b7",
+	"8af6515d-124f-457c-b986-8a03b3b0a7d7");
+INSERT INTO O_BATTR
+	VALUES ("94ae4e5f-da5c-414b-b5af-532e52d0f0b7",
+	"8af6515d-124f-457c-b986-8a03b3b0a7d7");
+INSERT INTO O_ATTR
+	VALUES ("94ae4e5f-da5c-414b-b5af-532e52d0f0b7",
+	"8af6515d-124f-457c-b986-8a03b3b0a7d7",
+	"223d6cea-993f-417f-b0c4-3168f9902eba",
+	'Unsupported_Counter',
+	'',
+	'',
+	'Unsupported_Counter',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_REF
+	VALUES ("8af6515d-124f-457c-b986-8a03b3b0a7d7",
+	"92b447a4-d982-4422-8d7c-91ed8870fa10",
+	0,
+	"7365d7fc-e669-4183-8685-d988a031a327",
+	"feb6a1e9-c15a-48f4-83cd-f00bf53dce34",
+	"bd1876d7-bb0c-42c7-97e9-ef097a0cd72c",
+	"a4a7f961-6cec-48f8-a496-31065d9f1c98",
+	"223d6cea-993f-417f-b0c4-3168f9902eba",
+	"a30a5917-5b37-49d5-9369-a315f47f93c5",
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Domain_Details',
+	'Domain_Number',
+	'R3.''has''');
+INSERT INTO R_RGO_PROXY
+	VALUES ("8af6515d-124f-457c-b986-8a03b3b0a7d7",
+	"feb6a1e9-c15a-48f4-83cd-f00bf53dce34",
+	"bd1876d7-bb0c-42c7-97e9-ef097a0cd72c",
+	'../RP.xtuml');
+INSERT INTO O_RTIDA_PROXY
+	VALUES ("7365d7fc-e669-4183-8685-d988a031a327",
+	"92b447a4-d982-4422-8d7c-91ed8870fa10",
+	0,
+	"feb6a1e9-c15a-48f4-83cd-f00bf53dce34",
+	"a4a7f961-6cec-48f8-a496-31065d9f1c98",
+	'../RP.xtuml');
+INSERT INTO O_RATTR
+	VALUES ("223d6cea-993f-417f-b0c4-3168f9902eba",
+	"8af6515d-124f-457c-b986-8a03b3b0a7d7",
+	"7365d7fc-e669-4183-8685-d988a031a327",
+	"92b447a4-d982-4422-8d7c-91ed8870fa10",
+	0,
+	'Domain_Number');
+INSERT INTO O_BATTR_PROXY
+	VALUES ("7365d7fc-e669-4183-8685-d988a031a327",
+	"92b447a4-d982-4422-8d7c-91ed8870fa10",
+	'../Domain_Details/Domain_Details.xtuml');
+INSERT INTO O_ATTR
+	VALUES ("223d6cea-993f-417f-b0c4-3168f9902eba",
+	"8af6515d-124f-457c-b986-8a03b3b0a7d7",
+	"00000000-0000-0000-0000-000000000000",
+	'Domain_Number',
+	'',
+	'',
+	'Domain_Number',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000007",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"8af6515d-124f-457c-b986-8a03b3b0a7d7");
+INSERT INTO O_ID
+	VALUES (1,
+	"8af6515d-124f-457c-b986-8a03b3b0a7d7");
+INSERT INTO O_ID
+	VALUES (2,
+	"8af6515d-124f-457c-b986-8a03b3b0a7d7");
+INSERT INTO PE_PE
+	VALUES ("8af6515d-124f-457c-b986-8a03b3b0a7d7",
+	1,
+	"f6571647-b875-45a6-b11d-1f1c2da4d391",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("f6571647-b875-45a6-b11d-1f1c2da4d391",
+	"00000000-0000-0000-0000-000000000000",
+	"9d158e79-1971-4f46-9816-625db585c03b",
+	'RP',
+	'',
+	0,
+	'../RP.xtuml');
