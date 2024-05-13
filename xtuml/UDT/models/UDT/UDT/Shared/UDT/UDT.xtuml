@@ -116,7 +116,7 @@ INSERT INTO S_DT_PROXY
 	'inst_ref<Test_Data>',
 	'',
 	'',
-	'../../UDT/UDT/UDT.xtuml');
+	'../../UDT/classes/classes.xtuml');
 INSERT INTO C_PP
 	VALUES ("4d9f4cf6-2db6-40d3-8548-74912ccbcca6",
 	"d9a3d423-a8f7-4300-ac24-0cae089dcbc4",
@@ -282,7 +282,7 @@ INSERT INTO S_DT_PROXY
 	'inst_ref<An_Active_Object>',
 	'',
 	'',
-	'../../UDT/UDT/UDT.xtuml');
+	'../../UDT/classes/classes.xtuml');
 INSERT INTO C_EP
 	VALUES ("14a5c6d4-0eed-4f84-bfed-43dab949322c",
 	"b0227a25-e02c-4429-ae59-c94c46274460",
@@ -301,20 +301,12 @@ INSERT INTO C_IO
 INSERT INTO C_PP
 	VALUES ("180f6560-d0e3-439d-835d-3c58430a62de",
 	"14a5c6d4-0eed-4f84-bfed-43dab949322c",
-	"677163b0-67f4-4dbd-8301-2287869ac48c",
+	"ba5eda7a-def5-0000-0000-000000000002",
 	'The_Timer_Enum',
 	'',
 	0,
 	'',
 	"00000000-0000-0000-0000-000000000000");
-INSERT INTO S_DT_PROXY
-	VALUES ("677163b0-67f4-4dbd-8301-2287869ac48c",
-	"00000000-0000-0000-0000-000000000000",
-	'Time_Unit',
-	' Used to define the granularity of Time
-',
-	'',
-	'../Shared.xtuml');
 INSERT INTO C_PP
 	VALUES ("2c0d4240-70d5-4094-a50c-7c24b9e55bc0",
 	"14a5c6d4-0eed-4f84-bfed-43dab949322c",
