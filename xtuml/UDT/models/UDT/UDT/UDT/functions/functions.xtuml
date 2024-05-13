@@ -1420,17 +1420,16 @@ INSERT INTO S_SPARM
 	VALUES ("a7c42b9c-c2d9-47b5-8626-e75ee3fd09cb",
 	"958db269-f727-40da-a817-90839d4427a8",
 	'The_Timer_Enum',
-	"677163b0-67f4-4dbd-8301-2287869ac48c",
+	"db376625-bc78-4565-a3a5-238e4159376f",
 	0,
 	'',
 	"00000000-0000-0000-0000-000000000000",
 	'');
 INSERT INTO S_DT_PROXY
-	VALUES ("677163b0-67f4-4dbd-8301-2287869ac48c",
+	VALUES ("db376625-bc78-4565-a3a5-238e4159376f",
 	"00000000-0000-0000-0000-000000000000",
 	'Time_Unit',
-	' Used to define the granularity of Time
-',
+	'',
 	'',
 	'../../Shared/Shared.xtuml');
 INSERT INTO S_SPARM

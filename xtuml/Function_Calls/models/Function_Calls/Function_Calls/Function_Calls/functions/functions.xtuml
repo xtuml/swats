@@ -261,20 +261,18 @@ INSERT INTO S_SPARM
 	VALUES ("978d57f5-84d4-4f12-8a15-43382dabbd4f",
 	"227b2cc6-6c17-474f-8de9-f86f105f2ff9",
 	'Set_Of_IH',
-	"31edf53f-947f-4d2f-bb74-61ad45eb7a67",
+	"e0d42a54-47b5-4251-bed3-4ca6223d12e1",
 	0,
 	'',
 	"00000000-0000-0000-0000-000000000000",
 	'');
 INSERT INTO S_DT_PROXY
-	VALUES ("31edf53f-947f-4d2f-bb74-61ad45eb7a67",
+	VALUES ("e0d42a54-47b5-4251-bed3-4ca6223d12e1",
 	"00000000-0000-0000-0000-000000000000",
-	'Structure_For_IH',
-	' This is unsupported at version 4.0.0.
- The type should be typed IH for Object_A
-',
+	'sequence of Structure_For_IH',
 	'',
-	'../../Shared/Shared.xtuml');
+	'',
+	'../types/types.xtuml');
 INSERT INTO S_SPARM
 	VALUES ("78e7147c-9edc-4d5c-b314-608e6da881ff",
 	"227b2cc6-6c17-474f-8de9-f86f105f2ff9",
