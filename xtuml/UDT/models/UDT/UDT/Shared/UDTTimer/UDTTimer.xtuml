@@ -48,18 +48,17 @@ INSERT INTO C_PP
 INSERT INTO C_PP
 	VALUES ("a6663f9c-f771-4396-a3bc-3f59261536f5",
 	"771f5600-4e07-4553-ae3e-660012643bdd",
-	"677163b0-67f4-4dbd-8301-2287869ac48c",
+	"db376625-bc78-4565-a3a5-238e4159376f",
 	'Granularity',
 	'',
 	0,
 	'',
 	"b44a6f32-d893-47dc-9998-00f03355004a");
 INSERT INTO S_DT_PROXY
-	VALUES ("677163b0-67f4-4dbd-8301-2287869ac48c",
+	VALUES ("db376625-bc78-4565-a3a5-238e4159376f",
 	"00000000-0000-0000-0000-000000000000",
 	'Time_Unit',
-	' Used to define the granularity of Time
-',
+	'',
 	'',
 	'../Shared.xtuml');
 INSERT INTO C_PP
