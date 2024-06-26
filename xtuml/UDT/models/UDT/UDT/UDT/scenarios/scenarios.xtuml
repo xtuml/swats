@@ -49,25 +49,25 @@ Test = 1
 New_Object = TRUE
 Final_Object = FALSE
 
-Dummy_TD = create Test_Data with The_Test_Number = 99 & Testing_For_What = "Nothing"
+Dummy_TD = create unique Test_Data with The_Test_Number = 99 & Testing_For_What = "Nothing"
 
 A_Test_Data_IH = Dummy_TD
 
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, Dummy_TD,     Test, "Object data assignment", Final_Object]
+[A_Test_Data_IH, Test] = TD1:Create_New_Test_Data_Object_And_Link_It[New_Object, Dummy_TD,     Test, "Object data assignment", Final_Object]
 
 # Don''t need this beasty any more, it was only ever a dummy.
 delete Dummy_TD
 
 New_Object = FALSE
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Max value assignment", Final_Object]
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Min value assignment", Final_Object]
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Common local assignment", Final_Object]
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Unique local assignment", Final_Object]
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Unique local assignment", Final_Object]
+[A_Test_Data_IH, Test] = TD1:Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Max value assignment", Final_Object]
+[A_Test_Data_IH, Test] = TD1:Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Min value assignment", Final_Object]
+[A_Test_Data_IH, Test] = TD1:Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Common local assignment", Final_Object]
+[A_Test_Data_IH, Test] = TD1:Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Unique local assignment", Final_Object]
+[A_Test_Data_IH, Test] = TD1:Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Unique local assignment", Final_Object]
 
 Final_Object = TRUE
 
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Min plus max", Final_Object]
+[A_Test_Data_IH, Test] = TD1:Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Min plus max", Final_Object]
 
 local_counter = 1
 
@@ -107,7 +107,7 @@ endif
 
 ',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	2,
 	1);
@@ -182,26 +182,26 @@ Test = my_final_test.Final_Test_Number
 New_Object   = TRUE
 Final_Object = FALSE
 
-Dummy_TD = create Test_Data with The_Test_Number = 99 & Testing_For_What = "Nothing"
+Dummy_TD = create unique Test_Data with The_Test_Number = 99 & Testing_For_What = "Nothing"
 
 A_Test_Data_IH = Dummy_TD
 
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, Dummy_TD,     Test, "Object data assignment", Final_Object]
+[A_Test_Data_IH, Test] = TD1:Create_New_Test_Data_Object_And_Link_It[New_Object, Dummy_TD,     Test, "Object data assignment", Final_Object]
 
 # Don''t need this beasty any more, it was only ever a dummy.
 delete Dummy_TD
 
 New_Object = FALSE
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Max value assignment", Final_Object]
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Min value assignment", Final_Object]
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Common local assignment", Final_Object]
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Unique local assignment", Final_Object]
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Unique local assignment", Final_Object]
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Min plus max", Final_Object]
+[A_Test_Data_IH, Test] = TD1:Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Max value assignment", Final_Object]
+[A_Test_Data_IH, Test] = TD1:Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Min value assignment", Final_Object]
+[A_Test_Data_IH, Test] = TD1:Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Common local assignment", Final_Object]
+[A_Test_Data_IH, Test] = TD1:Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Unique local assignment", Final_Object]
+[A_Test_Data_IH, Test] = TD1:Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Unique local assignment", Final_Object]
+[A_Test_Data_IH, Test] = TD1:Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Min plus max", Final_Object]
 
 Final_Object = TRUE
 
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Report Number Of UDTs", Final_Object]
+[A_Test_Data_IH, Test] = TD1:Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Report Number Of UDTs", Final_Object]
 
 local_counter = 8
 
@@ -248,7 +248,7 @@ endif
 
 ',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	2,
 	4);
@@ -275,21 +275,21 @@ Test = my_final_test.Final_Test_Number
 New_Object   = TRUE
 Final_Object = FALSE
 
-Dummy_TD = create Test_Data with The_Test_Number = 99 & Testing_For_What = "Nothing"
+Dummy_TD = create unique Test_Data with The_Test_Number = 99 & Testing_For_What = "Nothing"
 
 A_Test_Data_IH = Dummy_TD
 
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, Dummy_TD,     Test, "Object data assignment", Final_Object]
+[A_Test_Data_IH, Test] = TD1:Create_New_Test_Data_Object_And_Link_It[New_Object, Dummy_TD,     Test, "Object data assignment", Final_Object]
 
 # Don''t need this beasty any more, it was only ever a dummy.
 delete Dummy_TD
 
 New_Object = FALSE
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Unique local assignment", Final_Object]
+[A_Test_Data_IH, Test] = TD1:Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Unique local assignment", Final_Object]
 
 Final_Object = TRUE
 
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Reuse predeclared local data", Final_Object]
+[A_Test_Data_IH, Test] = TD1:Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Reuse predeclared local data", Final_Object]
 
 local_counter = 15
 
@@ -323,7 +323,7 @@ endif
 
 ',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	2,
 	5);

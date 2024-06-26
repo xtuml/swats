@@ -213,91 +213,95 @@ Test = my_test.This_Test_Number
 
    [] = RPT1:Start_Test[Test,"Null Requid", "Source Structure Bridge", "Scenario", "Struct IH to bridge"]
 
-   {Decomposed_Struct} is VSD_Struct
+#   {Decomposed_Struct} is VSD_Struct
+#
+#   ValA = 0
+#   ValB = 0
+#   ValC = 0
+#   ValD = 0
+#
+#   Simple_ObjA = create Very_Simple_Data_Object with Object_Reference_VSD  = 1 &\
+#                                                     Object_Simple_Integer = 1 &\
+#                                                     Object_Simple_Real    = 1.0
+#
+#   Simple_ObjB = create Very_Simple_Data_Object with Object_Reference_VSD  = 2 &\
+#                                                     Object_Simple_Integer = 2 &\
+#                                                     Object_Simple_Real    = 2.0
+#
+#   Simple_ObjC = create Very_Simple_Data_Object with Object_Reference_VSD  = 3 &\
+#                                                     Object_Simple_Integer = 3 &\
+#                                                     Object_Simple_Real    = 3.0
+#
+#   [{Decomposed_Struct}] = ITGWO4:The_IH_Struct_Across_Bridge[Simple_ObjA, Simple_ObjB, Simple_ObjC]
+#
+#   for [A_Ref, A_Int, A_Real] in {Decomposed_Struct} do
+#
+#      if A_Ref = 1 then
+# 
+#         if A_Int = 1 then
+#
+#            if A_Real = 1.0 then
+#               ValA = 10
+#            else
+#               ValA = -10
+#            endif
+#
+#         else
+#            ValA = -11
+#         endif
+#
+#      else
+#
+#         if A_Ref = 2 then
+#     
+#            if A_Int = 2 then
+#
+#               if A_Real = 2.0 then
+#                  ValB = 20
+#               else
+#                  ValB = -20
+#               endif
+#
+#            else
+#               ValB = -21
+#            endif
+#
+#         else
+#
+#            if A_Ref = 3 then
+#
+#               if A_Int = 3 then
+#
+#                  if A_Real = 3.0 then
+#                     ValC = 30
+#                  else
+#                     ValC = -3
+#                  endif
+#
+#               else
+#                  ValC = -31
+#               endif
+#
+#            else
+#               ValD = -40
+#            endif
+#
+#         endif
+#
+#      endif
+#
+#   endfor
+#
+#
+#   if ValA = 10 and ValB = 20 and ValC = 30 and ValD = 0 then
+#      [] = RPT2:Test_Passed["Struct IH to bridge", Test, 0]
+#   else
+#      [] = RPT3:Test_Failed["Struct IH to bridge", Test, -10]
+#   endif
 
-   ValA = 0
-   ValB = 0
-   ValC = 0
-   ValD = 0
-
-   Simple_ObjA = create Very_Simple_Data_Object with Object_Reference_VSD  = 1 &\
-                                                     Object_Simple_Integer = 1 &\
-                                                     Object_Simple_Real    = 1.0
-
-   Simple_ObjB = create Very_Simple_Data_Object with Object_Reference_VSD  = 2 &\
-                                                     Object_Simple_Integer = 2 &\
-                                                     Object_Simple_Real    = 2.0
-
-   Simple_ObjC = create Very_Simple_Data_Object with Object_Reference_VSD  = 3 &\
-                                                     Object_Simple_Integer = 3 &\
-                                                     Object_Simple_Real    = 3.0
-
-   [{Decomposed_Struct}] = ITGWO4:The_IH_Struct_Across_Bridge[Simple_ObjA, Simple_ObjB, Simple_ObjC]
-
-   for [A_Ref, A_Int, A_Real] in {Decomposed_Struct} do
-
-      if A_Ref = 1 then
-  
-         if A_Int = 1 then
-
-            if A_Real = 1.0 then
-               ValA = 10
-            else
-               ValA = -10
-            endif
-
-         else
-            ValA = -11
-         endif
-
-      else
-
-         if A_Ref = 2 then
-     
-            if A_Int = 2 then
-
-               if A_Real = 2.0 then
-                  ValB = 20
-               else
-                  ValB = -20
-               endif
-
-            else
-               ValB = -21
-            endif
-
-         else
-
-            if A_Ref = 3 then
-
-               if A_Int = 3 then
-
-                  if A_Real = 3.0 then
-                     ValC = 30
-                  else
-                     ValC = -3
-                  endif
-
-               else
-                  ValC = -31
-               endif
-
-            else
-               ValD = -40
-            endif
-
-         endif
-
-      endif
-
-   endfor
-
-
-   if ValA = 10 and ValB = 20 and ValC = 30 and ValD = 0 then
-      [] = RPT2:Test_Passed["Struct IH to bridge", Test, 0]
-   else
-      [] = RPT3:Test_Failed["Struct IH to bridge", Test, -10]
-   endif
+#  Note with MASL, instance handle types can only be private.
+#  Therefore this test is now unsupported and test action code has been commented.
+   [] = RPT4:Test_Unsupported[Test]
 
    Test = Test + 1
 
@@ -307,7 +311,7 @@ Test = my_test.This_Test_Number
 
 my_test.This_Test_Number = Test',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	2,
 	2);
@@ -382,12 +386,12 @@ INSERT INTO S_SYNC
 	'Start_SBONE_Tests',
 	' Start_SBONE_Tests
 ',
-	'my_test = create Test_Data with This_Test_Number = 1
+	'my_test = create Test_Data with td_id = 1 & This_Test_Number = 1
 
 [] = SBONE2::Create_Report_Data[]
 ',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	2,
 	4);

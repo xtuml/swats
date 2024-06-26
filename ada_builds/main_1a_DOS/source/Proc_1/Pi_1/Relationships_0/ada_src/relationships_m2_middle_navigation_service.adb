@@ -1466,8 +1466,7 @@ package body Relationships_M2_Middle_Navigation_Service is
          Relationships_RPT4_Test_Unsupported_Bridge.Relationships_RPT4_Test_Unsupported (
             Unsupported_Test_Number => Test);
          
-         
-         One_Above := Root_Object.Relationships.MA.Create;
+         One_Above := Root_Object.Relationships.MA.Create_Unique;
          Root_Object.Relationships.MA.Relationships_MA_Type(One_Above.all).Above_Data := 1;
          
          Relationships_Rel_R10.Link (
@@ -1596,8 +1595,7 @@ package body Relationships_M2_Middle_Navigation_Service is
             Requid_Test_Number => Test,
             The_Requid_Itself  => "1103-0000-01-0631               ");
          
-         
-         Three_Above := Root_Object.Relationships.MA.Create;
+         Three_Above := Root_Object.Relationships.MA.Create_Unique;
          Root_Object.Relationships.MA.Relationships_MA_Type(Three_Above.all).Above_Data := 3;
          
          Relationships_Rel_R10.Link (
@@ -1694,8 +1692,7 @@ package body Relationships_M2_Middle_Navigation_Service is
             Requid_Test_Number => Test,
             The_Requid_Itself  => "1103-0000-01-0631               ");
          
-         
-         Two_Above := Root_Object.Relationships.MA.Create;
+         Two_Above := Root_Object.Relationships.MA.Create_Unique;
          Root_Object.Relationships.MA.Relationships_MA_Type(Two_Above.all).Above_Data := 2;
          
          Relationships_Rel_R10.Link (
@@ -2066,8 +2063,7 @@ package body Relationships_M2_Middle_Navigation_Service is
          Root_Object.Relationships.MR.Relationships_MR_Type(Fourth_Right.all).Right_Identifier        := 4;
          Root_Object.Relationships.MR.Relationships_MR_Type(Fourth_Right.all).Right_Data  := 0;
          
-         
-         Fourth_Above := Root_Object.Relationships.MA.Create;
+         Fourth_Above := Root_Object.Relationships.MA.Create_Unique;
          Root_Object.Relationships.MA.Relationships_MA_Type(Fourth_Above.all).Above_Data := 4;
          
          Relationships_Rel_R10.Link (
@@ -2622,8 +2618,7 @@ package body Relationships_M2_Middle_Navigation_Service is
             newMR := Root_Object.Relationships.MR.Create;
             Root_Object.Relationships.MR.Relationships_MR_Type(newMR.all).Right_Identifier := The_ID;
             
-            
-            newMA := Root_Object.Relationships.MA.Create;
+            newMA := Root_Object.Relationships.MA.Create_Unique;
             Root_Object.Relationships.MA.Relationships_MA_Type(newMA.all).Above_Data := The_ID;
             
             

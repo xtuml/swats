@@ -237,6 +237,15 @@ package body Root_Object.Relationships.objR is
 --ADATEST IGNORE_OFF
 
 ------------------------------------------------------------------------
+   --
+   -- procedure Put_idP and 
+   --
+   -- function Get_idP
+   --
+   -- have not been generated for idP
+   -- as this attribute is non-identifying referential.
+   --
+------------------------------------------------------------------------
 
 
 --ADATEST IGNORE_ON

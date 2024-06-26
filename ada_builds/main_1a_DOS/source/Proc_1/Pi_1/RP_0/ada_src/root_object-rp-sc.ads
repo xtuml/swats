@@ -75,6 +75,7 @@
 --    procedure Put_State
 --    procedure Description
 --    function Create
+--    function Create_Unique 
 --    procedure Delete
 --    function Count_Of
 --    procedure Find
@@ -145,8 +146,8 @@ package Root_Object.RP.SC is
    --
    --
    --
-   -- Object SC does not have an identifying non-referential attribute and 
-   -- therefore may not be uniquely created.
+   -- Object SC has an identifying non-referential attribute sc_id 
+   -- and therefore may be uniquely created.
    -- 
    -- Object SC has no TAGS.
    --
@@ -171,6 +172,10 @@ package Root_Object.RP.SC is
    type RP_SC_Type is new RP_Type with record
 
       --
+      -- Non initialised identifying non referential
+      sc_id : Application_Types.Base_Integer_Type;
+
+      --
       -- Non Identifying referential. Thou Shalt Not Use. 
       -- Domain_Number : Application_Types.Base_Integer_Type;
    
@@ -191,7 +196,7 @@ package Root_Object.RP.SC is
 
    end record;
 
-   Attribute_Count : constant Application_Types.Base_Integer_Type := 3;
+   Attribute_Count : constant Application_Types.Base_Integer_Type := 4;
 
    -------------------------------------------------------------------------------------------------
 
@@ -203,6 +208,18 @@ package Root_Object.RP.SC is
    --*********************  Object Attribute Access ***********************
    ------------------------------------------------------------------------
    --
+
+
+   function Get_sc_id (
+      This_Object : Root_Object.Object_Access) 
+   return Application_Types.Base_Integer_Type;
+
+   procedure Put_sc_id (
+      This_Object : in Root_Object.Object_Access;
+      sc_id_Value : in Application_Types.Base_Integer_Type);
+
+   pragma inline (Get_sc_id);
+   pragma inline (Put_sc_id);
 
 
    function Get_The_Comment (
@@ -268,9 +285,7 @@ package Root_Object.RP.SC is
    function  Create 
       return Root_Object.Object_Access;
 
-   -- function Create_Unique 
-   -- is not available for this object as it does not have a non-referential 
-   -- identifying attribute.
+   function Create_Unique return Root_Object.Object_Access;
 
 
    procedure Delete (

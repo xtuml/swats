@@ -80,7 +80,7 @@ INSERT INTO GD_GE
 	"8cff59dd-44fc-48ce-8aff-7ae0bf398c4c",
 	108,
 	0,
-	'UDT::UDT::UDT::UDT');
+	'UDT::UDT::UDT::classes');
 INSERT INTO GD_SHP
 	VALUES ("40d518cd-60a7-43b4-9b5f-7da3ac03922e");
 INSERT INTO GD_NCS
@@ -656,26 +656,6 @@ INSERT INTO C_EP_PROXY
 	4,
 	'../Shared/UDT/UDT.xtuml');
 INSERT INTO SPR_PEP
-	VALUES ("a08805b5-aa49-4624-a5a1-600507fd79c7",
-	"d9a3d423-a8f7-4300-ac24-0cae089dcbc4",
-	"2d4a7012-6336-4c46-a76a-fabc43c7858a");
-INSERT INTO SPR_PO
-	VALUES ("a08805b5-aa49-4624-a5a1-600507fd79c7",
-	'Create_New_Test_Data_Object_And_Link_It',
-	'',
-	'',
-	3,
-	6,
-	0);
-INSERT INTO C_EP_PROXY
-	VALUES ("d9a3d423-a8f7-4300-ac24-0cae089dcbc4",
-	"b0227a25-e02c-4429-ae59-c94c46274460",
-	0,
-	'Create_New_Test_Data_Object_And_Link_It',
-	'',
-	6,
-	'../Shared/UDT/UDT.xtuml');
-INSERT INTO SPR_PEP
 	VALUES ("0a3e7211-42fb-48ae-a13f-85097199622a",
 	"ab6c6649-b546-47f3-8663-7f03bc1ea363",
 	"2d4a7012-6336-4c46-a76a-fabc43c7858a");
@@ -734,26 +714,6 @@ INSERT INTO C_EP_PROXY
 	'Report_No_UDT_Used',
 	'',
 	5,
-	'../Shared/UDT/UDT.xtuml');
-INSERT INTO SPR_PEP
-	VALUES ("a298acd8-827c-4860-a4c8-0c1ad8c94ee0",
-	"8835f8dd-dbaf-459c-99a7-acef11923062",
-	"2d4a7012-6336-4c46-a76a-fabc43c7858a");
-INSERT INTO SPR_PO
-	VALUES ("a298acd8-827c-4860-a4c8-0c1ad8c94ee0",
-	'Create_An_Active_Object',
-	'',
-	'',
-	3,
-	6,
-	0);
-INSERT INTO C_EP_PROXY
-	VALUES ("8835f8dd-dbaf-459c-99a7-acef11923062",
-	"b0227a25-e02c-4429-ae59-c94c46274460",
-	0,
-	'Create_An_Active_Object',
-	'',
-	8,
 	'../Shared/UDT/UDT.xtuml');
 INSERT INTO SPR_PEP
 	VALUES ("33650701-e03b-41d4-bcc9-a6e95940060b",
@@ -1133,12 +1093,12 @@ INSERT INTO SPR_RO
 	'
 
 
-[Second_Active_Object] = UDT8::Create_An_Active_Object[This_Test]
+[Second_Active_Object] = AAO1:Create_An_Active_Object[This_Test]
 
 generate AAO1:Go(''One'') to Second_Active_Object
 
 ',
-	3,
+	1,
 	2,
 	4);
 INSERT INTO C_EP_PROXY

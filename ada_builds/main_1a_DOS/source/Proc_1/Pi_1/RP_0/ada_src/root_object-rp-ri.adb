@@ -200,6 +200,44 @@ package body Root_Object.RP.RI is
 --*********************  Object Definition *****************************
 ------------------------------------------------------------------------
 
+   ri_id_Value : Application_Types.Base_Integer_Type := Application_Types.Base_Integer_Type_first;
+--
+--ADATEST IGNORE_ON
+   function Obtain_Subsequent_ri_id return Application_Types.Base_Integer_Type is
+   begin
+      ri_id_Value :=
+         Application_Types.Base_Integer_Type'succ (ri_id_Value);
+      return ri_id_Value;
+   end Obtain_Subsequent_ri_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
+   function Get_ri_id (
+      This_Object : Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
+   begin
+       return RP_RI_Type (This_Object.all).ri_id;
+   end Get_ri_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
+   procedure Put_ri_id (
+      This_Object : in Root_Object.Object_Access;
+      ri_id_Value : in Application_Types.Base_Integer_Type) is
+   begin
+      RP_RI_Type (This_Object.all).ri_id :=
+         ri_id_Value;
+   end Put_ri_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
 --ADATEST IGNORE_ON
    function Get_requid (
       This_Object: Root_Object.Object_Access) return Application_Types.Base_Text_Type is
@@ -272,6 +310,7 @@ package body Root_Object.RP.RI is
    
       else
          This_Object := Free_List.First_Entry;
+         RP_RI_Type(This_Object.all).ri_id := Application_Types.Base_Integer_Type_First;
          RP_RI_Type(This_Object.all).requid := Application_Types.Base_Text_Type_First;
          Free_List.First_Entry := Free_List.First_Entry.Next_Object;
       end if;
@@ -311,9 +350,25 @@ package body Root_Object.RP.RI is
 --------------------------------------------------------------------------
 --
 
---------------------------------------------------------------------------
-   -- function Create_Unique is not available for this object as it does
-   -- not have a non referential identifying attribute.
+--ADATEST IGNORE_ON
+   function Create_Unique return Root_Object.Object_Access is
+
+   This_Object: Root_Object.Object_Access;
+
+   begin
+      --
+      -- get hold of a new instance
+      --
+      This_Object := Create;
+
+
+      RP_RI_Type(This_Object.all).ri_id :=
+         Obtain_Subsequent_ri_id;
+
+      return This_Object;
+
+   end Create_Unique;
+--ADATEST IGNORE_OFF
 --------------------------------------------------------------------------
 
 --ADATEST IGNORE_ON

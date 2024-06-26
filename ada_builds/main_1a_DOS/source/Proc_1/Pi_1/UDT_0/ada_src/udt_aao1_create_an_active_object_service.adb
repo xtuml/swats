@@ -14,7 +14,7 @@
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
---* File Name:               Function_Calls4_Perform_Service_In_Tight_Loop_Service.adb
+--* File Name:               UDT_AAO1_Create_An_Active_Object_Service.adb
 --* Drawing Number:          Refer to release documentation                           *
 --* Version:                 As detailed by Configuration Management System           *
 --* Version Date:            As detailed by Configuration Management System           *
@@ -40,8 +40,8 @@
 --*  BUILD INFORMATION                                                                *
 --*  -----------------                                                                *
 --*                                                                                   *
---* Domain Name              : Function_Calls
---* Domain Key Letter        : Function_Calls
+--* Domain Name              : User_Defined_Types
+--* Domain Key Letter        : UDT
 --* Domain Version           : 0
 --*                                                                                   *
 --*  Build Target       : Dos
@@ -52,64 +52,39 @@
 -- with list for all objects, relationships, services and types used within this code fragment
 
 -- List of objects used
-with Root_Object.Function_Calls.ATO;
+with Root_Object.UDT.AAO;
 
--- List of bridges used
-with Function_Calls_RPT8_Specify_Requid_Bridge;
-with Function_Calls_RPT1_Start_Test_Bridge;
+-- List of domain types used
+with UDT_Domain_Types;
+use type UDT_Domain_Types.Active_Object_Status_Type;
 
 with Application_Types;
 use type Application_Types.Base_Integer_Type;
-use type Application_Types.Base_Text_Type;
 
 with Root_Object;
 use type Root_Object.Object_Access;
 
 
-package body Function_Calls_Function_Calls4_Perform_Service_In_Tight_Loop_Service is
+package body UDT_AAO1_Create_An_Active_Object_Service is
    
-   procedure Function_Calls_Function_Calls4_Perform_Service_In_Tight_Loop (
-      A_Tight_Input_Parameter  : in     Root_Object.Object_Access;
-      This_Test_Number         : in     Application_Types.Base_Integer_Type;
-      Testing_For_What         : in     Application_Types.Base_Text_Type;
-      A_Tight_Return_Parameter :    out Application_Types.Base_Integer_Type) is
+   procedure UDT_AAO1_Create_An_Active_Object (
+      This_Test   : in     Application_Types.Base_Integer_Type;
+      Returned_IH :    out Root_Object.Object_Access) is
+      
       
    begin
-   -- start of Function_Calls4_Perform_Service_In_Tight_Loop
+   -- start of AAO1_Create_An_Active_Object
       
-      --  ---------------------------------------------------------------------------
-      --  Start the test here, produce the pass/fail back in the scenario.
-      --  ---------------------------------------------------------------------------
-      
-      Function_Calls_RPT1_Start_Test_Bridge.Function_Calls_RPT1_Start_Test (
-         Test_Number     => This_Test_Number,
-         Requid          => "1241-0000-01-0805               ",
-         Invoking_Domain => "Function_Calls                  ",
-         Invoking_Object => "Perform Services in tight loop  ",
-         Purpose         => Testing_For_What);
-      
-      Function_Calls_RPT8_Specify_Requid_Bridge.Function_Calls_RPT8_Specify_Requid (
-         Requid_Test_Number => This_Test_Number,
-         The_Requid_Itself  => "1241-0000-01-1215               ");
-      
-      Function_Calls_RPT8_Specify_Requid_Bridge.Function_Calls_RPT8_Specify_Requid (
-         Requid_Test_Number => This_Test_Number,
-         The_Requid_Itself  => "1103-0000-01-1011               ");
+      Returned_IH := Root_Object.UDT.AAO.Create;
+      Root_Object.UDT.AAO.UDT_AAO_Type(Returned_IH.all).The_Test_Number     := This_Test;
+      Root_Object.UDT.AAO.UDT_AAO_Type(Returned_IH.all).Why         := UDT_Domain_Types.Not_Tested;
+      Root_Object.UDT.AAO.UDT_AAO_Type(Returned_IH.all).Current_State   := Root_Object.UDT.AAO.Idle;
       
       
-      if A_Tight_Input_Parameter =  Null then
-         A_Tight_Return_Parameter := -1;
-      else
-         A_Tight_Return_Parameter := Root_Object.Function_Calls.ATO.Function_Calls_ATO_type(A_Tight_Input_Parameter.all).Start_Value + 
-         Root_Object.Function_Calls.ATO.Function_Calls_ATO_type(A_Tight_Input_Parameter.all).Increment_Value;
-         
-      end if;
-      
-      
-   end Function_Calls_Function_Calls4_Perform_Service_In_Tight_Loop;
+   end UDT_AAO1_Create_An_Active_Object;
    
-end Function_Calls_Function_Calls4_Perform_Service_In_Tight_Loop_Service;
+end UDT_AAO1_Create_An_Active_Object_Service;
 
 --
--- End of file Function_Calls_Function_Calls4_Perform_Service_In_Tight_Loop_Service.adb
+-- End of file UDT_AAO1_Create_An_Active_Object_Service.adb
 --

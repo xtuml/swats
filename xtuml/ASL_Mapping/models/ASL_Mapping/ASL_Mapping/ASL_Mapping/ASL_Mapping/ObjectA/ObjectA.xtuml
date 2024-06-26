@@ -16,7 +16,7 @@ INSERT INTO O_BATTR
 INSERT INTO O_ATTR
 	VALUES ("a19b8f8c-c178-4a66-8b15-9dd1c2028518",
 	"8255976e-f83c-4a3b-b77a-3b64fe2e6ab6",
-	"00000000-0000-0000-0000-000000000000",
+	"89bdc7d3-b18f-41ba-b410-bd62ae50d477",
 	'The_Int1',
 	'',
 	'',
@@ -43,9 +43,32 @@ INSERT INTO O_ATTR
 	"ba5eda7a-def5-0000-0000-000000000002",
 	'',
 	'');
+INSERT INTO O_NBATTR
+	VALUES ("89bdc7d3-b18f-41ba-b410-bd62ae50d477",
+	"8255976e-f83c-4a3b-b77a-3b64fe2e6ab6");
+INSERT INTO O_BATTR
+	VALUES ("89bdc7d3-b18f-41ba-b410-bd62ae50d477",
+	"8255976e-f83c-4a3b-b77a-3b64fe2e6ab6");
+INSERT INTO O_ATTR
+	VALUES ("89bdc7d3-b18f-41ba-b410-bd62ae50d477",
+	"8255976e-f83c-4a3b-b77a-3b64fe2e6ab6",
+	"00000000-0000-0000-0000-000000000000",
+	'objA_id',
+	'',
+	'',
+	'objA_id',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
 INSERT INTO O_ID
 	VALUES (0,
 	"8255976e-f83c-4a3b-b77a-3b64fe2e6ab6");
+INSERT INTO O_OIDA
+	VALUES ("89bdc7d3-b18f-41ba-b410-bd62ae50d477",
+	"8255976e-f83c-4a3b-b77a-3b64fe2e6ab6",
+	0,
+	'objA_id');
 INSERT INTO O_ID
 	VALUES (1,
 	"8255976e-f83c-4a3b-b77a-3b64fe2e6ab6");

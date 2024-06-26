@@ -239,6 +239,28 @@ package body Root_Object.RP.TS is
 ------------------------------------------------------------------------
 
 --ADATEST IGNORE_ON
+   function Get_waiting_state (
+      This_Object: Root_Object.Object_Access) return  Boolean is
+   begin
+      return RP_TS_Type (This_Object.all).waiting_state;
+   end Get_waiting_state;
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
+   procedure Put_waiting_state (
+      This_Object : in Root_Object.Object_Access;
+      waiting_state_Value : in  Boolean) is
+   begin
+      RP_TS_Type (This_Object.all).waiting_state :=
+         waiting_state_Value;
+   end Put_waiting_state;
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
    function Get_Current_State (
       This_Object: Root_Object.Object_Access) return  Object_State_Type is
    begin
@@ -326,6 +348,7 @@ package body Root_Object.RP.TS is
       else
          This_Object := Free_List.First_Entry;
          RP_TS_Type(This_Object.all).Unique_TS_Identifier := Application_Types.Base_Integer_Type_First;
+         RP_TS_Type(This_Object.all).waiting_state := Application_Types.Boolean_First;
          RP_TS_Type(This_Object.all).Current_State :=  Object_State_Type_First;
          Free_List.First_Entry := Free_List.First_Entry.Next_Object;
       end if;

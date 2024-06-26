@@ -69,115 +69,6 @@ INSERT INTO C_IO
 	'',
 	"6c2a80fe-218d-42df-896f-1f7f5ac3d72a");
 INSERT INTO C_EP
-	VALUES ("c555e3c2-f3ea-40c1-93e8-202f7cf374d5",
-	"468ef668-c021-4a7e-acca-a8bae429b627",
-	0,
-	'Perform_Service_In_Tight_Loop',
-	'',
-	4);
-INSERT INTO C_IO
-	VALUES ("c555e3c2-f3ea-40c1-93e8-202f7cf374d5",
-	"ba5eda7a-def5-0000-0000-000000000000",
-	'Perform_Service_In_Tight_Loop',
-	'',
-	0,
-	'',
-	"8946bd1b-5727-4972-a5b1-f138d4746968");
-INSERT INTO C_PP
-	VALUES ("ded99290-70c7-4134-a2da-fcd9705d66ff",
-	"c555e3c2-f3ea-40c1-93e8-202f7cf374d5",
-	"a62a1023-f60a-4cf0-aaac-adc14ea68c2a",
-	'A_Tight_Input_Parameter',
-	'',
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO S_DT_PROXY
-	VALUES ("a62a1023-f60a-4cf0-aaac-adc14ea68c2a",
-	"00000000-0000-0000-0000-000000000000",
-	'inst_ref<A_Tight_Object>',
-	'',
-	'',
-	'../../Function_Calls/Function_Calls/Function_Calls.xtuml');
-INSERT INTO C_PP
-	VALUES ("7569f471-f258-455f-860e-6a90ba2d7015",
-	"c555e3c2-f3ea-40c1-93e8-202f7cf374d5",
-	"ba5eda7a-def5-0000-0000-000000000002",
-	'This_Test_Number',
-	'',
-	0,
-	'',
-	"ded99290-70c7-4134-a2da-fcd9705d66ff");
-INSERT INTO C_PP
-	VALUES ("5d270081-b1c8-4bcb-a5ec-8c659b907e7d",
-	"c555e3c2-f3ea-40c1-93e8-202f7cf374d5",
-	"ba5eda7a-def5-0000-0000-000000000004",
-	'Testing_For_What',
-	'',
-	0,
-	'',
-	"7569f471-f258-455f-860e-6a90ba2d7015");
-INSERT INTO C_PP
-	VALUES ("732b3a71-1cc0-4baf-90fc-412bddd04a14",
-	"c555e3c2-f3ea-40c1-93e8-202f7cf374d5",
-	"ba5eda7a-def5-0000-0000-000000000002",
-	'A_Tight_Return_Parameter',
-	'',
-	1,
-	'',
-	"5d270081-b1c8-4bcb-a5ec-8c659b907e7d");
-INSERT INTO C_EP
-	VALUES ("999ed317-c1de-4853-80e6-ed634840e06d",
-	"468ef668-c021-4a7e-acca-a8bae429b627",
-	0,
-	'Test_Set_Of_IH',
-	'',
-	5);
-INSERT INTO C_IO
-	VALUES ("999ed317-c1de-4853-80e6-ed634840e06d",
-	"ba5eda7a-def5-0000-0000-000000000000",
-	'Test_Set_Of_IH',
-	'',
-	0,
-	'',
-	"c555e3c2-f3ea-40c1-93e8-202f7cf374d5");
-INSERT INTO C_PP
-	VALUES ("55908574-245d-4a90-a2d3-d79f7c89c7e3",
-	"999ed317-c1de-4853-80e6-ed634840e06d",
-	"31edf53f-947f-4d2f-bb74-61ad45eb7a67",
-	'Set_Of_IH',
-	'',
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO S_DT_PROXY
-	VALUES ("31edf53f-947f-4d2f-bb74-61ad45eb7a67",
-	"00000000-0000-0000-0000-000000000000",
-	'Structure_For_IH',
-	' This is unsupported at version 4.0.0.
- The type should be typed IH for Object_A
-',
-	'',
-	'../Shared.xtuml');
-INSERT INTO C_PP
-	VALUES ("2850fa8a-18ea-470d-a982-387d557eeb62",
-	"999ed317-c1de-4853-80e6-ed634840e06d",
-	"ba5eda7a-def5-0000-0000-000000000001",
-	'Single',
-	'',
-	0,
-	'',
-	"55908574-245d-4a90-a2d3-d79f7c89c7e3");
-INSERT INTO C_PP
-	VALUES ("49bdd60f-3342-4569-8a4e-f7f1647b0011",
-	"999ed317-c1de-4853-80e6-ed634840e06d",
-	"ba5eda7a-def5-0000-0000-000000000004",
-	'Testing_For_What',
-	'',
-	0,
-	'',
-	"2850fa8a-18ea-470d-a982-387d557eeb62");
-INSERT INTO C_EP
 	VALUES ("aa74a41c-6f32-44bc-86bf-c2971a657298",
 	"468ef668-c021-4a7e-acca-a8bae429b627",
 	0,
@@ -191,7 +82,7 @@ INSERT INTO C_IO
 	'',
 	0,
 	'',
-	"999ed317-c1de-4853-80e6-ed634840e06d");
+	"8946bd1b-5727-4972-a5b1-f138d4746968");
 INSERT INTO C_PP
 	VALUES ("94c208cb-e602-4ab5-beb2-c9a4f674e93a",
 	"aa74a41c-6f32-44bc-86bf-c2971a657298",
@@ -423,46 +314,6 @@ INSERT INTO C_PP
 	1,
 	'',
 	"58046a56-aca9-4fb4-9c58-5960039df644");
-INSERT INTO C_EP
-	VALUES ("9c8e48e5-0a26-42fa-a3f5-83ab28d0b3fa",
-	"468ef668-c021-4a7e-acca-a8bae429b627",
-	0,
-	'Test_IH_Params',
-	'',
-	12);
-INSERT INTO C_IO
-	VALUES ("9c8e48e5-0a26-42fa-a3f5-83ab28d0b3fa",
-	"ba5eda7a-def5-0000-0000-000000000000",
-	'Test_IH_Params',
-	'',
-	0,
-	'',
-	"bae07e3e-60c4-40e0-aafe-541f7f09e635");
-INSERT INTO C_PP
-	VALUES ("510ac17c-cb27-4ef1-9943-46faadca6650",
-	"9c8e48e5-0a26-42fa-a3f5-83ab28d0b3fa",
-	"df098ea0-7a84-4b91-85fb-310bd4b5560c",
-	'Input_IH',
-	'',
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO S_DT_PROXY
-	VALUES ("df098ea0-7a84-4b91-85fb-310bd4b5560c",
-	"00000000-0000-0000-0000-000000000000",
-	'inst_ref<Object_C>',
-	'',
-	'',
-	'../../Function_Calls/Function_Calls/Function_Calls.xtuml');
-INSERT INTO C_PP
-	VALUES ("e21ababe-026b-4a9c-8e34-91011c5b59f5",
-	"9c8e48e5-0a26-42fa-a3f5-83ab28d0b3fa",
-	"df098ea0-7a84-4b91-85fb-310bd4b5560c",
-	'Return_IH',
-	'',
-	1,
-	'',
-	"510ac17c-cb27-4ef1-9943-46faadca6650");
 INSERT INTO PE_PE
 	VALUES ("468ef668-c021-4a7e-acca-a8bae429b627",
 	1,

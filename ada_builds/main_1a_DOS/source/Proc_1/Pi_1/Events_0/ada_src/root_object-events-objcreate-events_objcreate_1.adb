@@ -96,7 +96,8 @@ separate(Root_Object.Events.objCREATE)
          
          
          newCREATE := Root_Object.Events.objCREATE.Create;
-         Root_Object.Events.objCREATE.Events_objCREATE_Type(newCREATE.all).ReferenceCREATE := 1;
+         Root_Object.Events.objCREATE.Events_objCREATE_Type(newCREATE.all).ReferenceCREATE   := 1;
+         Root_Object.Events.objCREATE.Events_objCREATE_Type(newCREATE.all).Current_State := Root_Object.Events.objCREATE.Creation_State;
          
          
          if newCREATE /= Null then

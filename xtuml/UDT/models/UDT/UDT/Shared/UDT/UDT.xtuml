@@ -78,91 +78,6 @@ INSERT INTO C_IO
 	'',
 	"01144b0d-06bc-4bb0-a0b0-6767dc57a202");
 INSERT INTO C_EP
-	VALUES ("d9a3d423-a8f7-4300-ac24-0cae089dcbc4",
-	"b0227a25-e02c-4429-ae59-c94c46274460",
-	0,
-	'Create_New_Test_Data_Object_And_Link_It',
-	'',
-	6);
-INSERT INTO C_IO
-	VALUES ("d9a3d423-a8f7-4300-ac24-0cae089dcbc4",
-	"ba5eda7a-def5-0000-0000-000000000000",
-	'Create_New_Test_Data_Object_And_Link_It',
-	'',
-	0,
-	'',
-	"876c5310-9fc5-487c-b23c-5a324b2fc9ea");
-INSERT INTO C_PP
-	VALUES ("c9e241b4-54c3-481a-9ba5-136a0bef1332",
-	"d9a3d423-a8f7-4300-ac24-0cae089dcbc4",
-	"ba5eda7a-def5-0000-0000-000000000001",
-	'New_Set',
-	'',
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO C_PP
-	VALUES ("c1c64d33-6f5d-4ccb-b002-19c64b7b11e2",
-	"d9a3d423-a8f7-4300-ac24-0cae089dcbc4",
-	"773d7fcd-9b04-4bbb-b3a0-24795c43e749",
-	'Previous_IH',
-	'',
-	0,
-	'',
-	"c9e241b4-54c3-481a-9ba5-136a0bef1332");
-INSERT INTO S_DT_PROXY
-	VALUES ("773d7fcd-9b04-4bbb-b3a0-24795c43e749",
-	"00000000-0000-0000-0000-000000000000",
-	'inst_ref<Test_Data>',
-	'',
-	'',
-	'../../UDT/UDT/UDT.xtuml');
-INSERT INTO C_PP
-	VALUES ("4d9f4cf6-2db6-40d3-8548-74912ccbcca6",
-	"d9a3d423-a8f7-4300-ac24-0cae089dcbc4",
-	"ba5eda7a-def5-0000-0000-000000000002",
-	'This_Test_Number',
-	'',
-	0,
-	'',
-	"c1c64d33-6f5d-4ccb-b002-19c64b7b11e2");
-INSERT INTO C_PP
-	VALUES ("dec94982-e99e-4df2-9521-b533d1e980d0",
-	"d9a3d423-a8f7-4300-ac24-0cae089dcbc4",
-	"ba5eda7a-def5-0000-0000-000000000004",
-	'Testing_For',
-	'',
-	0,
-	'',
-	"4d9f4cf6-2db6-40d3-8548-74912ccbcca6");
-INSERT INTO C_PP
-	VALUES ("e7a07a94-3d2e-43dc-87c4-26dce33b34be",
-	"d9a3d423-a8f7-4300-ac24-0cae089dcbc4",
-	"ba5eda7a-def5-0000-0000-000000000001",
-	'Final_Entry',
-	'',
-	0,
-	'',
-	"dec94982-e99e-4df2-9521-b533d1e980d0");
-INSERT INTO C_PP
-	VALUES ("7398bcca-67e4-4c9a-9244-573d61cd7048",
-	"d9a3d423-a8f7-4300-ac24-0cae089dcbc4",
-	"773d7fcd-9b04-4bbb-b3a0-24795c43e749",
-	'Returned_IH',
-	'',
-	1,
-	'',
-	"e7a07a94-3d2e-43dc-87c4-26dce33b34be");
-INSERT INTO C_PP
-	VALUES ("c59f097c-ffde-49d4-9a10-b71e5ccc2552",
-	"d9a3d423-a8f7-4300-ac24-0cae089dcbc4",
-	"ba5eda7a-def5-0000-0000-000000000002",
-	'Returned_Test_Number',
-	'',
-	1,
-	'',
-	"7398bcca-67e4-4c9a-9244-573d61cd7048");
-INSERT INTO C_EP
 	VALUES ("ab6c6649-b546-47f3-8663-7f03bc1ea363",
 	"b0227a25-e02c-4429-ae59-c94c46274460",
 	0,
@@ -176,7 +91,7 @@ INSERT INTO C_IO
 	'',
 	0,
 	'',
-	"d9a3d423-a8f7-4300-ac24-0cae089dcbc4");
+	"876c5310-9fc5-487c-b23c-5a324b2fc9ea");
 INSERT INTO C_EP
 	VALUES ("a2fdb0a5-ba37-48e2-b764-122488bb2691",
 	"b0227a25-e02c-4429-ae59-c94c46274460",
@@ -244,46 +159,6 @@ INSERT INTO C_PP
 	'',
 	"d0741026-3740-4178-a333-60140020a28e");
 INSERT INTO C_EP
-	VALUES ("8835f8dd-dbaf-459c-99a7-acef11923062",
-	"b0227a25-e02c-4429-ae59-c94c46274460",
-	0,
-	'Create_An_Active_Object',
-	'',
-	8);
-INSERT INTO C_IO
-	VALUES ("8835f8dd-dbaf-459c-99a7-acef11923062",
-	"ba5eda7a-def5-0000-0000-000000000000",
-	'Create_An_Active_Object',
-	'',
-	0,
-	'',
-	"7ce520bb-f183-4fc5-9b92-68c60ef8a7ab");
-INSERT INTO C_PP
-	VALUES ("5a7fc8ec-15ea-4c10-b422-01530b7d07dc",
-	"8835f8dd-dbaf-459c-99a7-acef11923062",
-	"ba5eda7a-def5-0000-0000-000000000002",
-	'This_Test',
-	'',
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO C_PP
-	VALUES ("eaf2985b-a3c9-493e-94fb-c7dbad90d4b1",
-	"8835f8dd-dbaf-459c-99a7-acef11923062",
-	"7202776a-fd32-4c9a-b58d-a2c4738c84b4",
-	'Returned_IH',
-	'',
-	1,
-	'',
-	"5a7fc8ec-15ea-4c10-b422-01530b7d07dc");
-INSERT INTO S_DT_PROXY
-	VALUES ("7202776a-fd32-4c9a-b58d-a2c4738c84b4",
-	"00000000-0000-0000-0000-000000000000",
-	'inst_ref<An_Active_Object>',
-	'',
-	'',
-	'../../UDT/UDT/UDT.xtuml');
-INSERT INTO C_EP
 	VALUES ("14a5c6d4-0eed-4f84-bfed-43dab949322c",
 	"b0227a25-e02c-4429-ae59-c94c46274460",
 	0,
@@ -297,7 +172,7 @@ INSERT INTO C_IO
 	'',
 	0,
 	'',
-	"8835f8dd-dbaf-459c-99a7-acef11923062");
+	"7ce520bb-f183-4fc5-9b92-68c60ef8a7ab");
 INSERT INTO C_PP
 	VALUES ("180f6560-d0e3-439d-835d-3c58430a62de",
 	"14a5c6d4-0eed-4f84-bfed-43dab949322c",

@@ -200,6 +200,44 @@ package body Root_Object.RP.RESULTS is
 --*********************  Object Definition *****************************
 ------------------------------------------------------------------------
 
+   results_id_Value : Application_Types.Base_Integer_Type := Application_Types.Base_Integer_Type_first;
+--
+--ADATEST IGNORE_ON
+   function Obtain_Subsequent_results_id return Application_Types.Base_Integer_Type is
+   begin
+      results_id_Value :=
+         Application_Types.Base_Integer_Type'succ (results_id_Value);
+      return results_id_Value;
+   end Obtain_Subsequent_results_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
+   function Get_results_id (
+      This_Object : Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
+   begin
+       return RP_RESULTS_Type (This_Object.all).results_id;
+   end Get_results_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
+   procedure Put_results_id (
+      This_Object : in Root_Object.Object_Access;
+      results_id_Value : in Application_Types.Base_Integer_Type) is
+   begin
+      RP_RESULTS_Type (This_Object.all).results_id :=
+         results_id_Value;
+   end Put_results_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
 --ADATEST IGNORE_ON
    function Get_The_Number_Of_Test (
       This_Object: Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
@@ -426,6 +464,7 @@ package body Root_Object.RP.RESULTS is
    
       else
          This_Object := Free_List.First_Entry;
+         RP_RESULTS_Type(This_Object.all).results_id := Application_Types.Base_Integer_Type_First;
          RP_RESULTS_Type(This_Object.all).The_Number_Of_Test := Application_Types.Base_Integer_Type_First;
          RP_RESULTS_Type(This_Object.all).The_Name_Of_The_Domain := Application_Types.Base_Text_Type_First;
          RP_RESULTS_Type(This_Object.all).The_Result_Of_Test := RP_Domain_Types.Result_Type_First;
@@ -472,9 +511,25 @@ package body Root_Object.RP.RESULTS is
 --------------------------------------------------------------------------
 --
 
---------------------------------------------------------------------------
-   -- function Create_Unique is not available for this object as it does
-   -- not have a non referential identifying attribute.
+--ADATEST IGNORE_ON
+   function Create_Unique return Root_Object.Object_Access is
+
+   This_Object: Root_Object.Object_Access;
+
+   begin
+      --
+      -- get hold of a new instance
+      --
+      This_Object := Create;
+
+
+      RP_RESULTS_Type(This_Object.all).results_id :=
+         Obtain_Subsequent_results_id;
+
+      return This_Object;
+
+   end Create_Unique;
+--ADATEST IGNORE_OFF
 --------------------------------------------------------------------------
 
 --ADATEST IGNORE_ON

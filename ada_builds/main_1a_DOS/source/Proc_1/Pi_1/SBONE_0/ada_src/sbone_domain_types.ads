@@ -227,33 +227,6 @@ package SBONE_Domain_Types is
 ----------------------------------------------------------------------------------------------
 --
 
-   type IH_Struct_Node;
-   type IH_Struct_Node_Access is access all IH_Struct_Node;
-   type IH_Struct_Node_Access_Pointer is access IH_Struct_Node_Access;
-     
-   type IH_Struct is new Domain_Structure with record
-      Iterator          : IH_Struct_Node_Access_Pointer := null;
-      First_Entry       : IH_Struct_Node_Access := null;
-      Last_Entry        : IH_Struct_Node_Access := null;
-      Number_Of_Entries : Application_Types.Base_Integer_Type := 0;
-   end record;
-       
-   type IH_Struct_Node is record
-      The_VSD_IH : Root_Object.Object_Access := null;
-      Next_Structure     : IH_Struct_Node_Access := null;
-      Previous_Structure : IH_Struct_Node_Access := null;
-   end record;
-    
-   procedure Initialize (Object : in out IH_Struct);
-
-   procedure Adjust     (Object : in out IH_Struct);
-
-   procedure Finalize   (Object : in out IH_Struct);
-
-
-----------------------------------------------------------------------------------------------
---
-
    type Very_Simple_Structure_Type_Node;
    type Very_Simple_Structure_Type_Node_Access is access all Very_Simple_Structure_Type_Node;
    type Very_Simple_Structure_Type_Node_Access_Pointer is access Very_Simple_Structure_Type_Node_Access;
@@ -282,7 +255,7 @@ package SBONE_Domain_Types is
 ----------------------------------------------------------------------------------------------
 
    -- SRLE1000002929
-   Types_And_Subtypes_Count : constant Application_Types.Base_Integer_Type := 7;
+   Types_And_Subtypes_Count : constant Application_Types.Base_Integer_Type := 6;
 
 ----------------------------------------------------------------------------------------------
 --

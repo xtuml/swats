@@ -200,12 +200,27 @@ package body Root_Object.Relationships.objK is
 --*********************  Object Definition *****************************
 ------------------------------------------------------------------------
 
+   idK_Value : Application_Types.Base_Integer_Type := Application_Types.Base_Integer_Type_first;
+--
+--ADATEST IGNORE_ON
+   function Obtain_Subsequent_idK return Application_Types.Base_Integer_Type is
+   begin
+      idK_Value :=
+         Application_Types.Base_Integer_Type'succ (idK_Value);
+      return idK_Value;
+   end Obtain_Subsequent_idK;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
 --ADATEST IGNORE_ON
    function Get_idK (
-      This_Object: Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
+      This_Object : Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
    begin
-      return Relationships_objK_Type (This_Object.all).idK;
+       return Relationships_objK_Type (This_Object.all).idK;
    end Get_idK;
+
 --ADATEST IGNORE_OFF
 
 ------------------------------------------------------------------------
@@ -218,6 +233,7 @@ package body Root_Object.Relationships.objK is
       Relationships_objK_Type (This_Object.all).idK :=
          idK_Value;
    end Put_idK;
+
 --ADATEST IGNORE_OFF
 
 ------------------------------------------------------------------------
@@ -311,9 +327,25 @@ package body Root_Object.Relationships.objK is
 --------------------------------------------------------------------------
 --
 
---------------------------------------------------------------------------
-   -- function Create_Unique is not available for this object as it does
-   -- not have a non referential identifying attribute.
+--ADATEST IGNORE_ON
+   function Create_Unique return Root_Object.Object_Access is
+
+   This_Object: Root_Object.Object_Access;
+
+   begin
+      --
+      -- get hold of a new instance
+      --
+      This_Object := Create;
+
+
+      Relationships_objK_Type(This_Object.all).idK :=
+         Obtain_Subsequent_idK;
+
+      return This_Object;
+
+   end Create_Unique;
+--ADATEST IGNORE_OFF
 --------------------------------------------------------------------------
 
 --ADATEST IGNORE_ON

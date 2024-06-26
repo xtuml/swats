@@ -151,23 +151,6 @@ package SBONE_Domain_Types.Ops is
 
 ----------------------------------------------------------------------------------------------
    procedure Append (
-      A_The_VSD_IH: in  Root_Object.Object_Access;
-      To_Structure: in out IH_Struct);
-    
-   procedure Extract (
-      A_The_VSD_IH: out  Root_Object.Object_Access;
-      From_Structure: in     IH_Struct);
-                     
-   procedure Go_To_Start (Of_Structure: in IH_Struct);
-
-   function  Not_Empty   (In_Structure: IH_Struct) return boolean;
-
-   procedure Initialise  (Object:       in out IH_Struct);
-
-   function  Count_Of    (In_Structure: IH_Struct) return Application_Types.Base_Integer_Type;
-
-----------------------------------------------------------------------------------------------
-   procedure Append (
       A_Simple_Integer: in Application_Types.Base_Integer_Type;
       A_Simple_Real: in Application_Types.Base_Float_Type;
       To_Structure: in out Very_Simple_Structure_Type);

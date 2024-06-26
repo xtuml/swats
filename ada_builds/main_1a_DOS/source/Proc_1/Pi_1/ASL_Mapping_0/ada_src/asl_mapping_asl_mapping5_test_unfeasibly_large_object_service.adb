@@ -119,6 +119,7 @@ package body ASL_Mapping_ASL_Mapping5_Test_Unfeasibly_Large_Object_Service is
       
       
       Unfeasibly_Large_Object := Root_Object.ASL_Mapping.objBIG.Create;
+      Root_Object.ASL_Mapping.objBIG.ASL_Mapping_objBIG_Type(Unfeasibly_Large_Object.all).objBIG_id          := 1;
       Root_Object.ASL_Mapping.objBIG.ASL_Mapping_objBIG_Type(Unfeasibly_Large_Object.all).One                := Start_Test_Number;
       Root_Object.ASL_Mapping.objBIG.ASL_Mapping_objBIG_Type(Unfeasibly_Large_Object.all).Two                := Start_Test_Number;
       Root_Object.ASL_Mapping.objBIG.ASL_Mapping_objBIG_Type(Unfeasibly_Large_Object.all).Three              := Start_Test_Number;
@@ -1160,6 +1161,7 @@ package body ASL_Mapping_ASL_Mapping5_Test_Unfeasibly_Large_Object_Service is
       
       
       Active_Unfeasibly_Large_Object := Root_Object.ASL_Mapping.objBIG.Create;
+      Root_Object.ASL_Mapping.objBIG.ASL_Mapping_objBIG_Type(Active_Unfeasibly_Large_Object.all).objBIG_id          := 2;
       Root_Object.ASL_Mapping.objBIG.ASL_Mapping_objBIG_Type(Active_Unfeasibly_Large_Object.all).One                := This_Test_Number;
       Root_Object.ASL_Mapping.objBIG.ASL_Mapping_objBIG_Type(Active_Unfeasibly_Large_Object.all).Two                := This_Test_Number;
       Root_Object.ASL_Mapping.objBIG.ASL_Mapping_objBIG_Type(Active_Unfeasibly_Large_Object.all).Three              := This_Test_Number;
@@ -1284,6 +1286,7 @@ package body ASL_Mapping_ASL_Mapping5_Test_Unfeasibly_Large_Object_Service is
       
       
       Doomed_Unfeasibly_Large_Object := Root_Object.ASL_Mapping.objBIG.Create;
+      Root_Object.ASL_Mapping.objBIG.ASL_Mapping_objBIG_Type(Doomed_Unfeasibly_Large_Object.all).objBIG_id          := 3;
       Root_Object.ASL_Mapping.objBIG.ASL_Mapping_objBIG_Type(Doomed_Unfeasibly_Large_Object.all).One                := This_Test_Number;
       Root_Object.ASL_Mapping.objBIG.ASL_Mapping_objBIG_Type(Doomed_Unfeasibly_Large_Object.all).Two                := This_Test_Number;
       Root_Object.ASL_Mapping.objBIG.ASL_Mapping_objBIG_Type(Doomed_Unfeasibly_Large_Object.all).Three              := This_Test_Number;

@@ -14,7 +14,7 @@
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
---* File Name:               Struct3_Receive_Empty_Structure_IH_Service.adb
+--* File Name:               Struct_SO9_Receive_Empty_Structure_IH_Service.adb
 --* Drawing Number:          Refer to release documentation                           *
 --* Version:                 As detailed by Configuration Management System           *
 --* Version Date:            As detailed by Configuration Management System           *
@@ -73,9 +73,9 @@ with Root_Object;
 use type Root_Object.Object_Access;
 
 
-package body Struct_Struct3_Receive_Empty_Structure_IH_Service is
+package body Struct_SO9_Receive_Empty_Structure_IH_Service is
    
-   procedure Struct_Struct3_Receive_Empty_Structure_IH (
+   procedure Struct_SO9_Receive_Empty_Structure_IH (
       Test_Number      : in     Application_Types.Base_Integer_Type;
       Empty_Structure  : in out Struct_Domain_Types.Structure_and_IH_Type;
       Inserted_IH      : in     Root_Object.Object_Access;
@@ -90,7 +90,7 @@ package body Struct_Struct3_Receive_Empty_Structure_IH_Service is
       Structure_Is_Empty : Boolean := Application_Types.Boolean_first;
       
    begin
-   -- start of Struct3_Receive_Empty_Structure_IH
+   -- start of SO9_Receive_Empty_Structure_IH
       
       Struct_RPT1_Start_Test_Bridge.Struct_RPT1_Start_Test (
          Test_Number     => Test_Number,
@@ -168,10 +168,10 @@ package body Struct_Struct3_Receive_Empty_Structure_IH_Service is
       end if;
       
       
-   end Struct_Struct3_Receive_Empty_Structure_IH;
+   end Struct_SO9_Receive_Empty_Structure_IH;
    
-end Struct_Struct3_Receive_Empty_Structure_IH_Service;
+end Struct_SO9_Receive_Empty_Structure_IH_Service;
 
 --
--- End of file Struct_Struct3_Receive_Empty_Structure_IH_Service.adb
+-- End of file Struct_SO9_Receive_Empty_Structure_IH_Service.adb
 --

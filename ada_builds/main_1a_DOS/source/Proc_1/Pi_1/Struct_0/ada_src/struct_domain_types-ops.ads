@@ -88,6 +88,23 @@ package Struct_Domain_Types.Ops is
   ----------------------------------------------------------------------------------------------
   -- 
    procedure Append (
+      A_A_Defined_IH: in  Root_Object.Object_Access;
+      To_Structure: in out Structure_and_IH_Type);
+    
+   procedure Extract (
+      A_A_Defined_IH: out  Root_Object.Object_Access;
+      From_Structure: in     Structure_and_IH_Type);
+                     
+   procedure Go_To_Start (Of_Structure: in Structure_and_IH_Type);
+
+   function  Not_Empty   (In_Structure: Structure_and_IH_Type) return boolean;
+
+   procedure Initialise  (Object:       in out Structure_and_IH_Type);
+
+   function  Count_Of    (In_Structure: Structure_and_IH_Type) return Application_Types.Base_Integer_Type;
+
+----------------------------------------------------------------------------------------------
+   procedure Append (
       A_Basic_Integer: in Application_Types.Base_Integer_Type;
       To_Structure: in out Very_Simple_Structure_Type);
     
@@ -140,23 +157,6 @@ package Struct_Domain_Types.Ops is
    procedure Initialise  (Object:       in out UDT_Structure_Type);
 
    function  Count_Of    (In_Structure: UDT_Structure_Type) return Application_Types.Base_Integer_Type;
-
-----------------------------------------------------------------------------------------------
-   procedure Append (
-      A_A_Defined_IH: in  Root_Object.Object_Access;
-      To_Structure: in out Structure_and_IH_Type);
-    
-   procedure Extract (
-      A_A_Defined_IH: out  Root_Object.Object_Access;
-      From_Structure: in     Structure_and_IH_Type);
-                     
-   procedure Go_To_Start (Of_Structure: in Structure_and_IH_Type);
-
-   function  Not_Empty   (In_Structure: Structure_and_IH_Type) return boolean;
-
-   procedure Initialise  (Object:       in out Structure_and_IH_Type);
-
-   function  Count_Of    (In_Structure: Structure_and_IH_Type) return Application_Types.Base_Integer_Type;
 
 ----------------------------------------------------------------------------------------------
    procedure Append (

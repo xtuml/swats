@@ -60,7 +60,7 @@ INSERT INTO S_DT_PROXY
 	'inst_ref<Structured_Object>',
 	'',
 	'',
-	'../../Struct/Struct/Struct.xtuml');
+	'../../Struct/classes/classes.xtuml');
 INSERT INTO C_EP
 	VALUES ("312e78e1-b2ad-4cdb-b83a-02a8b137776f",
 	"d897237b-eaaf-460c-9ad3-60c20124e05b",
@@ -150,15 +150,6 @@ INSERT INTO S_DT_PROXY
 	'',
 	'',
 	'../Shared.xtuml');
-INSERT INTO C_PP
-	VALUES ("363e4eb5-e130-46e4-902b-de527f343345",
-	"131560ec-cdcb-442a-b1e2-845e28a59496",
-	"774352f7-34c6-463f-9fa6-d2275c32c9b0",
-	'Object_Instance_Handle',
-	'',
-	0,
-	'',
-	"0061f9f6-8215-4d0c-ae06-03941d9aac8b");
 INSERT INTO C_EP
 	VALUES ("02329b69-251c-4e30-ac09-fe7ae6813052",
 	"d897237b-eaaf-460c-9ad3-60c20124e05b",
@@ -332,133 +323,6 @@ INSERT INTO C_IO
 	'',
 	"4ccbdb3b-2da8-4376-a420-68eb0bcd98be");
 INSERT INTO C_EP
-	VALUES ("f2ac9f01-6276-4458-ab86-f1af6e982a4d",
-	"d897237b-eaaf-460c-9ad3-60c20124e05b",
-	0,
-	'Receive_Structure_IH',
-	'',
-	1);
-INSERT INTO C_IO
-	VALUES ("f2ac9f01-6276-4458-ab86-f1af6e982a4d",
-	"ba5eda7a-def5-0000-0000-000000000000",
-	'Receive_Structure_IH',
-	'',
-	0,
-	'',
-	"9d62adc6-656e-4da7-9860-a9afad1dc331");
-INSERT INTO C_PP
-	VALUES ("c9d3d8d5-194e-4cba-81b8-d8bc644c5d80",
-	"f2ac9f01-6276-4458-ab86-f1af6e982a4d",
-	"ba5eda7a-def5-0000-0000-000000000002",
-	'This_Test_Number',
-	'',
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO C_PP
-	VALUES ("bc2f91e1-d782-43f5-9f9a-bd60b7f3ef28",
-	"f2ac9f01-6276-4458-ab86-f1af6e982a4d",
-	"2d4ed825-62dd-4b9f-b807-22763bf645bd",
-	'Input_Structure',
-	'',
-	0,
-	'',
-	"c9d3d8d5-194e-4cba-81b8-d8bc644c5d80");
-INSERT INTO S_DT_PROXY
-	VALUES ("2d4ed825-62dd-4b9f-b807-22763bf645bd",
-	"00000000-0000-0000-0000-000000000000",
-	'Structure_and_IH_Type',
-	'',
-	'',
-	'../Shared.xtuml');
-INSERT INTO C_PP
-	VALUES ("fe82c9f8-79ab-48e3-968e-f29f64721706",
-	"f2ac9f01-6276-4458-ab86-f1af6e982a4d",
-	"ba5eda7a-def5-0000-0000-000000000002",
-	'Number_Of_Elements',
-	'',
-	0,
-	'',
-	"bc2f91e1-d782-43f5-9f9a-bd60b7f3ef28");
-INSERT INTO C_PP
-	VALUES ("d9aabd43-adb4-4149-be0a-fd240e66a985",
-	"f2ac9f01-6276-4458-ab86-f1af6e982a4d",
-	"ba5eda7a-def5-0000-0000-000000000002",
-	'Unique_Identifier_Of_IH',
-	'',
-	0,
-	'',
-	"fe82c9f8-79ab-48e3-968e-f29f64721706");
-INSERT INTO C_PP
-	VALUES ("c57f485a-3d0a-4dbc-9d16-5dd133aafa7d",
-	"f2ac9f01-6276-4458-ab86-f1af6e982a4d",
-	"ba5eda7a-def5-0000-0000-000000000004",
-	'Testing_For',
-	'',
-	0,
-	'',
-	"d9aabd43-adb4-4149-be0a-fd240e66a985");
-INSERT INTO C_EP
-	VALUES ("2ee31e42-dde5-4e28-b7db-44bebb215b93",
-	"d897237b-eaaf-460c-9ad3-60c20124e05b",
-	0,
-	'Receive_Empty_Structure_IH',
-	'',
-	3);
-INSERT INTO C_IO
-	VALUES ("2ee31e42-dde5-4e28-b7db-44bebb215b93",
-	"ba5eda7a-def5-0000-0000-000000000000",
-	'Receive_Empty_Structure_IH',
-	'',
-	0,
-	'',
-	"f2ac9f01-6276-4458-ab86-f1af6e982a4d");
-INSERT INTO C_PP
-	VALUES ("77a7cfb2-17a3-4d21-9235-3a52666e4226",
-	"2ee31e42-dde5-4e28-b7db-44bebb215b93",
-	"ba5eda7a-def5-0000-0000-000000000002",
-	'Test_Number',
-	'',
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO C_PP
-	VALUES ("3801fec8-5a44-4ade-885e-021cd77f7589",
-	"2ee31e42-dde5-4e28-b7db-44bebb215b93",
-	"2d4ed825-62dd-4b9f-b807-22763bf645bd",
-	'Empty_Structure',
-	'',
-	0,
-	'',
-	"77a7cfb2-17a3-4d21-9235-3a52666e4226");
-INSERT INTO C_PP
-	VALUES ("bd8371d6-b9ab-455b-b4f0-973f6e06003e",
-	"2ee31e42-dde5-4e28-b7db-44bebb215b93",
-	"774352f7-34c6-463f-9fa6-d2275c32c9b0",
-	'Inserted_IH',
-	'',
-	0,
-	'',
-	"3801fec8-5a44-4ade-885e-021cd77f7589");
-INSERT INTO C_PP
-	VALUES ("20381a9c-ee0d-4803-8471-797bdfd2ee4c",
-	"2ee31e42-dde5-4e28-b7db-44bebb215b93",
-	"ba5eda7a-def5-0000-0000-000000000004",
-	'Testing_For',
-	'',
-	0,
-	'',
-	"bd8371d6-b9ab-455b-b4f0-973f6e06003e");
-INSERT INTO C_PP
-	VALUES ("b38981f5-92c3-416a-a8fe-7b0dd2ffd5d6",
-	"2ee31e42-dde5-4e28-b7db-44bebb215b93",
-	"2d4ed825-62dd-4b9f-b807-22763bf645bd",
-	'Filled_Structure',
-	'',
-	1,
-	'',
-	"20381a9c-ee0d-4803-8471-797bdfd2ee4c");
-INSERT INTO C_EP
 	VALUES ("059e2c61-d1d9-4455-a45b-80f63399ed5a",
 	"d897237b-eaaf-460c-9ad3-60c20124e05b",
 	0,
@@ -472,7 +336,7 @@ INSERT INTO C_IO
 	'',
 	0,
 	'',
-	"2ee31e42-dde5-4e28-b7db-44bebb215b93");
+	"9d62adc6-656e-4da7-9860-a9afad1dc331");
 INSERT INTO C_PP
 	VALUES ("f65eee53-f0b5-42a1-b4c1-5da039b61909",
 	"059e2c61-d1d9-4455-a45b-80f63399ed5a",

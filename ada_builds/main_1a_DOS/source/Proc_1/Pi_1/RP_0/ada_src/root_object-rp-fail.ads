@@ -75,6 +75,7 @@
 --    procedure Put_State
 --    procedure Description
 --    function Create
+--    function Create_Unique 
 --    procedure Delete
 --    function Count_Of
 --    procedure Find
@@ -145,8 +146,8 @@ package Root_Object.RP.FAIL is
    --
    --
    --
-   -- Object FAIL does not have an identifying non-referential attribute and 
-   -- therefore may not be uniquely created.
+   -- Object FAIL has an identifying non-referential attribute fail_id 
+   -- and therefore may be uniquely created.
    -- 
    -- Object FAIL has no TAGS.
    --
@@ -171,6 +172,10 @@ package Root_Object.RP.FAIL is
    type RP_FAIL_Type is new RP_Type with record
 
       --
+      -- Non initialised identifying non referential
+      fail_id : Application_Types.Base_Integer_Type;
+
+      --
       -- Non Identifying referential. Thou Shalt Not Use. 
       -- Domain_Number : Application_Types.Base_Integer_Type;
    
@@ -183,7 +188,7 @@ package Root_Object.RP.FAIL is
 
    end record;
 
-   Attribute_Count : constant Application_Types.Base_Integer_Type := 1;
+   Attribute_Count : constant Application_Types.Base_Integer_Type := 2;
 
    -------------------------------------------------------------------------------------------------
 
@@ -195,6 +200,18 @@ package Root_Object.RP.FAIL is
    --*********************  Object Attribute Access ***********************
    ------------------------------------------------------------------------
    --
+
+
+   function Get_fail_id (
+      This_Object : Root_Object.Object_Access) 
+   return Application_Types.Base_Integer_Type;
+
+   procedure Put_fail_id (
+      This_Object : in Root_Object.Object_Access;
+      fail_id_Value : in Application_Types.Base_Integer_Type);
+
+   pragma inline (Get_fail_id);
+   pragma inline (Put_fail_id);
 
 
    function Get_Failed_Counter (
@@ -236,9 +253,7 @@ package Root_Object.RP.FAIL is
    function  Create 
       return Root_Object.Object_Access;
 
-   -- function Create_Unique 
-   -- is not available for this object as it does not have a non-referential 
-   -- identifying attribute.
+   function Create_Unique return Root_Object.Object_Access;
 
 
    procedure Delete (

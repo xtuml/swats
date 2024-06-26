@@ -176,6 +176,10 @@ package Root_Object.Relationships.objR is
       idR : Application_Types.Base_Integer_Type;
 
       --
+      -- Non Identifying referential. Thou Shalt Not Use. 
+      -- idP : Application_Types.Base_Integer_Type;
+   
+      --
       R21_A : Root_Object.Object_List.List_Header_Access_Type;
       R22_A : Root_Object.Object_Access := null;
 

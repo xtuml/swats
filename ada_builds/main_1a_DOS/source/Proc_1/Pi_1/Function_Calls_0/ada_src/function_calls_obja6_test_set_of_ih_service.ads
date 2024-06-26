@@ -14,15 +14,14 @@
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
---* File Name:               Struct1_Receive_Structure_IH_Service.ads
+--* File Name:               Function_Calls_objA6_Test_Set_Of_IH_Service.ads
 --* Drawing Number:          Refer to release documentation                           *
 --* Version:                 As detailed by Configuration Management System           *
 --* Version Date:            As detailed by Configuration Management System           *
 --* Creation Date:           As detailed by Configuration Management System           *
 --* Section/Unit:            Refer to release documentation                           *
 --* Description              
---*                          Receive a structure containing and IH as a component of that structure.
---*                          
+--*                          Not Defined
 --* Comments:                Header written by ASL Translator
 --*                                                                                   *
 --*************************************************************************************
@@ -41,8 +40,8 @@
 --*  BUILD INFORMATION                                                                *
 --*  -----------------                                                                *
 --*                                                                                   *
---* Domain Name              : Structures
---* Domain Key Letter        : Struct
+--* Domain Name              : Function_Calls
+--* Domain Key Letter        : Function_Calls
 --* Domain Version           : 0
 --*                                                                                   *
 --*  Build Target       : Dos
@@ -53,24 +52,22 @@
 -- with list for all objects, relationships, services and types used within this code fragment
 
 -- List of domain types used
-with Struct_Domain_Types;
-with Struct_Domain_Types.Ops;
+with Function_Calls_Domain_Types;
+with Function_Calls_Domain_Types.Ops;
 
 with Application_Types;
 
 
-package Struct_Struct1_Receive_Structure_IH_Service is
+package Function_Calls_objA6_Test_Set_Of_IH_Service is
    
    
-   procedure Struct_Struct1_Receive_Structure_IH (
-      This_Test_Number        : in     Application_Types.Base_Integer_Type;
-      Input_Structure         : in out Struct_Domain_Types.Structure_and_IH_Type;
-      Number_Of_Elements      : in     Application_Types.Base_Integer_Type;
-      Unique_Identifier_Of_IH : in     Application_Types.Base_Integer_Type;
-      Testing_For             : in     Application_Types.Base_Text_Type);
+   procedure Function_Calls_objA6_Test_Set_Of_IH (
+      Set_Of_IH        : in out Function_Calls_Domain_Types.Structure_For_IH;
+      Single           : in     Boolean;
+      Testing_For_What : in     Application_Types.Base_Text_Type);
    
-end Struct_Struct1_Receive_Structure_IH_Service;
+end Function_Calls_objA6_Test_Set_Of_IH_Service;
 
 --
--- End of file Struct_Struct1_Receive_Structure_IH_Service.ads
+-- End of file Function_Calls_objA6_Test_Set_Of_IH_Service.ads
 --

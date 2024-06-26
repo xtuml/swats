@@ -159,6 +159,33 @@ package Struct_Domain_Types is
 ----------------------------------------------------------------------------------------------
 --
 
+   type Structure_and_IH_Type_Node;
+   type Structure_and_IH_Type_Node_Access is access all Structure_and_IH_Type_Node;
+   type Structure_and_IH_Type_Node_Access_Pointer is access Structure_and_IH_Type_Node_Access;
+     
+   type Structure_and_IH_Type is new Domain_Structure with record
+      Iterator          : Structure_and_IH_Type_Node_Access_Pointer := null;
+      First_Entry       : Structure_and_IH_Type_Node_Access := null;
+      Last_Entry        : Structure_and_IH_Type_Node_Access := null;
+      Number_Of_Entries : Application_Types.Base_Integer_Type := 0;
+   end record;
+       
+   type Structure_and_IH_Type_Node is record
+      A_Defined_IH : Root_Object.Object_Access := null;
+      Next_Structure     : Structure_and_IH_Type_Node_Access := null;
+      Previous_Structure : Structure_and_IH_Type_Node_Access := null;
+   end record;
+    
+   procedure Initialize (Object : in out Structure_and_IH_Type);
+
+   procedure Adjust     (Object : in out Structure_and_IH_Type);
+
+   procedure Finalize   (Object : in out Structure_and_IH_Type);
+
+
+----------------------------------------------------------------------------------------------
+--
+
    type Very_Simple_Structure_Type_Node;
    type Very_Simple_Structure_Type_Node_Access is access all Very_Simple_Structure_Type_Node;
    type Very_Simple_Structure_Type_Node_Access_Pointer is access Very_Simple_Structure_Type_Node_Access;
@@ -237,33 +264,6 @@ package Struct_Domain_Types is
    procedure Adjust     (Object : in out UDT_Structure_Type);
 
    procedure Finalize   (Object : in out UDT_Structure_Type);
-
-
-----------------------------------------------------------------------------------------------
---
-
-   type Structure_and_IH_Type_Node;
-   type Structure_and_IH_Type_Node_Access is access all Structure_and_IH_Type_Node;
-   type Structure_and_IH_Type_Node_Access_Pointer is access Structure_and_IH_Type_Node_Access;
-     
-   type Structure_and_IH_Type is new Domain_Structure with record
-      Iterator          : Structure_and_IH_Type_Node_Access_Pointer := null;
-      First_Entry       : Structure_and_IH_Type_Node_Access := null;
-      Last_Entry        : Structure_and_IH_Type_Node_Access := null;
-      Number_Of_Entries : Application_Types.Base_Integer_Type := 0;
-   end record;
-       
-   type Structure_and_IH_Type_Node is record
-      A_Defined_IH : Root_Object.Object_Access := null;
-      Next_Structure     : Structure_and_IH_Type_Node_Access := null;
-      Previous_Structure : Structure_and_IH_Type_Node_Access := null;
-   end record;
-    
-   procedure Initialize (Object : in out Structure_and_IH_Type);
-
-   procedure Adjust     (Object : in out Structure_and_IH_Type);
-
-   procedure Finalize   (Object : in out Structure_and_IH_Type);
 
 
 ----------------------------------------------------------------------------------------------

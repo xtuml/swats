@@ -78,6 +78,7 @@ separate(Root_Object.Function_Calls.objB)
       new_object_B := Root_Object.Function_Calls.objB.Create;
       Root_Object.Function_Calls.objB.Function_Calls_objB_Type(new_object_B.all).ReferenceB    := Test_Case_ID;
       Root_Object.Function_Calls.objB.Function_Calls_objB_Type(new_object_B.all).ResultA       := 0;
+      Root_Object.Function_Calls.objB.Function_Calls_objB_Type(new_object_B.all).Current_State := Root_Object.Function_Calls.objB.Initial;
       
       
       declare

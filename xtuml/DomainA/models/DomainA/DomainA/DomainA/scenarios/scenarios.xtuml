@@ -41,7 +41,8 @@ INSERT INTO S_SYNC
 ',
 	'
 
-my_test = create Test_Data with This_Test_Number = 1
+my_test = create Test_Data with td_id = 1 & \
+                                This_Test_Number = 1
 
 #Create several instances of Object_A
 count = 5
@@ -66,7 +67,7 @@ Sub_B2 = create Domain_A_Object_SubB with SubB_Attribute = 2 & B_Text = "Sub B2"
 
 link Super2 R4 Sub_B2',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	2,
 	1);
@@ -94,7 +95,7 @@ INSERT INTO S_SYNC
    # Initiate the test
    an_instanceA = find-one Object_A where idA = 2
 
-   if an_instanceA != NULL then
+   if an_instanceA != UNDEFINED then
       generate objA6:StartB(Test) to an_instanceA
    else
       # Null instance detected.
@@ -239,7 +240,7 @@ INSERT INTO S_SYNC
 
    an_instanceA = find-one Object_A where idA = 1
  
-   if an_instanceA != NULL then
+   if an_instanceA != UNDEFINED then
       generate objA3:StartA(Test) to an_instanceA
    else
       # Null instance detected.

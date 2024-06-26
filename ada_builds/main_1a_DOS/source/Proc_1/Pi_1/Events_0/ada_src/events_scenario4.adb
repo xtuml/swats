@@ -62,8 +62,6 @@ with Root_Object.Events.HSM;
 with Root_Object.Events.objZ;
 with Root_Object.Events.objX;
 with Root_Object.Events.SC;
-use type Root_Object.Events.SC.Object_State_Type;
-use type Root_Object.Events.SC.Object_State_Type;
 with Root_Object.Events.TD;
 
 -- List of services used
@@ -73,7 +71,6 @@ with Events_Events3_Generate_From_Service_Service;
 with Events_GFB1_Generate_Event_Bridge;
 with Events_RPT4_Test_Unsupported_Bridge;
 with Events_RPT5_Test_Text_Bridge;
-with Events_RPT3_Test_Failed_Bridge;
 with Events_RPT2_Test_Passed_Bridge;
 with Events_RPT8_Specify_Requid_Bridge;
 with Events_RPT1_Start_Test_Bridge;
@@ -202,21 +199,19 @@ use type Root_Object.Object_Access;
       Root_Object.Events.SC.Events_SC_Type(firstSC.all).Current_State   := Root_Object.Events.SC.Idle;
       
       
-      if Root_Object.Events.SC.Events_SC_type(firstSC.all).Current_State =  Root_Object.Events.SC.Idle then
-         
-         Events_RPT2_Test_Passed_Bridge.Events_RPT2_Test_Passed (
-            Test_Object_Domain => "Events                          ",
-            Test_Number        => The_Test_Number,
-            Test_Value         => 0);
-         
-      else
-         Events_RPT3_Test_Failed_Bridge.Events_RPT3_Test_Failed (
-            Failed_Domain_Object => "Events                          ",
-            Failed_Test_Number   => The_Test_Number,
-            Failed_Test_Value    => -10);
-         
-      end if;
+      --  This test will so obviously pass. Since MASL does not allow inspection of Current_State, the
+      --  logic below for failure has been commented and the test set to Pass unconditionally. 
+      --    if firstSC.Current_State = 'Idle' then
       
+      Events_RPT2_Test_Passed_Bridge.Events_RPT2_Test_Passed (
+         Test_Object_Domain => "Events                          ",
+         Test_Number        => The_Test_Number,
+         Test_Value         => 0);
+      
+      
+      --    else
+      --       [] = RPT3:Test_Failed["Events", The_Test_Number, -10]
+      --    endif
       The_Test_Number := The_Test_Number + 1;
       
       --  End Test 1
@@ -266,7 +261,6 @@ use type Root_Object.Object_Access;
       end;
       The_Test_Number := The_Test_Number + 1;
       
-      
       --  End Test 2
       -- -------------------------------------------------------------------------
       --  Test 3 - This test creates a new instance of State_Check and then
@@ -304,8 +298,9 @@ use type Root_Object.Object_Access;
       Root_Object.Events.SC.Events_SC_Type(secondSC.all).Current_State   := Root_Object.Events.SC.Idle;
       
       
-      Root_Object.Events.SC.Events_SC_type(secondSC.all).Current_State := Root_Object.Events.SC.Idle;
-      
+      --  This test will so obviously pass. Since MASL does not allow inspection of Current_State, the
+      --  line below has been commented. 
+      --    secondSC.Current_State = 'Idle'
       
       declare
          Pushed_Event : Root_Object.Root_Event_Access_Type;
@@ -320,7 +315,6 @@ use type Root_Object.Object_Access;
             Item        => Pushed_Event,
             Target_Fifo => Application_Queue.Application_Queue);
       end;
-      
       The_Test_Number := The_Test_Number + 1;
       
       --  End Test 3

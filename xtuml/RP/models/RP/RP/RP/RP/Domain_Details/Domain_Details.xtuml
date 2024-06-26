@@ -80,7 +80,7 @@ if The_Domain_IH != UNDEFINED then
 
       The_Domain_IH.Last_Reported_Test_Number = New_Test_Number
 
-      new_results_of_test_instance = create Results_Of_Tests with \
+      new_results_of_test_instance = create unique Results_Of_Tests with \
          The_Number_Of_Test           = New_Test_Number &\
          The_Name_Of_The_Domain       = The_Domain_IH.Domain_Name &\
          The_Result_Of_Test           = ''Passed'' &\ 
@@ -135,7 +135,7 @@ if The_Domain_IH != UNDEFINED then
 
 
       if the_d_r_ih = UNDEFINED then
-         new_duplicated_instance               = create Duplicated_Result with \
+         new_duplicated_instance               = create unique Duplicated_Result with \
             Duplicated_Test_Number             = New_Test_Number &\
             Who_Reported_The_Duplicated_Result = ''Passed''        &\
             Duplicated_Test_Count              = 0
@@ -197,7 +197,7 @@ else
    [] = RP7::Report_Run_Time_Error["Test Passed undefined domain details IH"]
    
 endif',
-	3,
+	1,
 	'',
 	"00000000-0000-0000-0000-000000000000",
 	2,
@@ -304,7 +304,7 @@ if The_Domain_IH != UNDEFINED then
 
       The_Domain_IH.Last_Reported_Test_Number = New_Test_Number
 
-      new_results_of_test_instance = create Results_Of_Tests with \
+      new_results_of_test_instance = create unique Results_Of_Tests with \
          The_Number_Of_Test           = New_Test_Number &\
          The_Name_Of_The_Domain       = The_Domain_IH.Domain_Name &\
          The_Result_Of_Test           = ''Failed'' &\ 
@@ -352,7 +352,7 @@ if The_Domain_IH != UNDEFINED then
 
          # First time this duplication has been seen
 
-         new_duplicated_instance               = create Duplicated_Result with \
+         new_duplicated_instance               = create unique Duplicated_Result with \
             Duplicated_Test_Number             = New_Test_Number &\
             Who_Reported_The_Duplicated_Result = ''Passed''        &\
             Duplicated_Test_Count              = 0
@@ -405,7 +405,7 @@ endif
 
 
 ',
-	3,
+	1,
 	'',
 	"ad283924-f7a5-4159-9c2f-26694f2cb42c",
 	2,
@@ -501,7 +501,7 @@ if The_Domain_IH != UNDEFINED then
 
       The_Domain_IH.Last_Reported_Test_Number = New_Test_Number
 
-      new_results_of_test_instance = create Results_Of_Tests with \
+      new_results_of_test_instance = create unique Results_Of_Tests with \
          The_Number_Of_Test           = New_Test_Number &\
          The_Name_Of_The_Domain       = The_Domain_IH.Domain_Name &\
          The_Result_Of_Test           = ''Unsupported'' &\ 
@@ -540,7 +540,7 @@ if The_Domain_IH != UNDEFINED then
 
 
       if the_d_r_ih = UNDEFINED then
-         new_duplicated_instance               = create Duplicated_Result with \
+         new_duplicated_instance               = create unique Duplicated_Result with \
             Duplicated_Test_Number             = New_Test_Number &\
             Who_Reported_The_Duplicated_Result = ''Passed''        &\
             Duplicated_Test_Count              = 0
@@ -591,7 +591,7 @@ else
 endif
 
 ',
-	3,
+	1,
 	'',
 	"ba1542ad-a198-4c47-887f-316d83aad678",
 	2,
@@ -1087,7 +1087,7 @@ if The_Domain != UNDEFINED then
 
    if The_Requirements_Object != UNDEFINED then 
 
-      if The_Requirements_Object.Current_State = ''Waiting'' then
+      if The_Requirements_Object.waiting_state = TRUE then
          generate TS1:Perform_Analysis() to The_Requirements_Object
       endif
 

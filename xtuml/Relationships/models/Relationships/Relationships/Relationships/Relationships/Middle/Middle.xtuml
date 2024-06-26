@@ -565,7 +565,7 @@ Has_Failed = FALSE
 
       [] = RPT4:Test_Unsupported [Test]
 
-      One_Above      =   create Many_Above with Above_Data = 1
+      One_Above      =   create unique Many_Above with Above_Data = 1
       link One_Above R10 One_Right
 
      {SetMA} = One_Middle -> R7.Many_Right -> R10.Many_Above
@@ -606,7 +606,7 @@ Has_Failed = FALSE
       [] = RPT8:Specify_Requid[Test, "1241-0000-01-1205"]
       [] = RPT8:Specify_Requid [Test, "1103-0000-01-0631"]
 
-      Three_Above   = create Many_Above with Above_Data        = 3   
+      Three_Above   = create unique Many_Above with Above_Data        = 3   
 
       link Three_Above  R10 Three_Right
 
@@ -640,7 +640,7 @@ Has_Failed = FALSE
       [] = RPT8:Specify_Requid[Test, "1241-0000-01-1205"]
       [] = RPT8:Specify_Requid [Test, "1103-0000-01-0631"]
 
-      Two_Above       =   create Many_Above with Above_Data = 2  
+      Two_Above       =   create unique Many_Above with Above_Data = 2  
       link Two_Above  R10 One_Right
 
       {SetMA} = One_Middle -> R7.Many_Right ->R10.Many_Above
@@ -787,7 +787,7 @@ Has_Failed = FALSE
       [] = RPT8:Specify_Requid [Test, "1103-0000-01-0631"]
 
       Fourth_Right = create Many_Right with Right_Identifier  = 4 & Right_Data = 0
-      Fourth_Above = create Many_Above with Above_Data = 4
+      Fourth_Above = create unique Many_Above with Above_Data = 4
 
       link Fourth_Above  R10 Fourth_Right
 
@@ -988,7 +988,8 @@ Has_Failed = FALSE
          newFL         = create Far_Left         with Left_Identifier   = The_ID
          newMiddleInst = create Middle           with Middle_Identifier = The_ID
          newMR         = create Many_Right       with Right_Identifier  = The_ID
-         newMA         = create Many_Above       with Above_Data        = The_ID
+         newMA         = create unique Many_Above \
+                                                 with Above_Data        = The_ID
          newMRA        = create Many_Right_Assoc with MRA_Identifier    = The_ID
          newMFR        = create Many_Far_Right   with MFR_Identifier    = The_ID
 
@@ -1293,7 +1294,7 @@ Has_Failed = FALSE
       [] = RPT5:Test_Text[Test, "Instances Deleted"] 
 
    endif',
-	3,
+	1,
 	'',
 	"2411a985-f210-4814-b3bc-9b42b0a16b98",
 	2,

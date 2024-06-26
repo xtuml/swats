@@ -550,58 +550,6 @@ INSERT INTO PE_PE
 	"00000000-0000-0000-0000-000000000000",
 	1);
 INSERT INTO S_SYNC
-	VALUES ("44ac98c2-efa3-48cd-93ee-e48aefb9860e",
-	"00000000-0000-0000-0000-000000000000",
-	'Set_Environment',
-	' C insert to set attribute for I-SIM
- operation
-',
-	'Local_Input = Input_Test_Data
-
-# Call terminator bridge
-[Environment_Variable] = ET2:Env_Number[]
-
-Local_Input.Number = Environment_Variable
-
-Output_Test_Data = Local_Input
-',
-	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
-	'',
-	2,
-	6);
-INSERT INTO S_SPARM
-	VALUES ("1909c5a8-f751-4947-a4ac-4335f4731489",
-	"44ac98c2-efa3-48cd-93ee-e48aefb9860e",
-	'Input_Test_Data',
-	"4a0d0af1-389e-4a59-ab75-1a58a41887c4",
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000",
-	'');
-INSERT INTO S_DT_PROXY
-	VALUES ("4a0d0af1-389e-4a59-ab75-1a58a41887c4",
-	"00000000-0000-0000-0000-000000000000",
-	'inst_ref<Test_Data>',
-	'',
-	'',
-	'../TAGS/TAGS.xtuml');
-INSERT INTO S_SPARM
-	VALUES ("c95c88bb-2345-4d66-b6b8-51f93b909f8a",
-	"44ac98c2-efa3-48cd-93ee-e48aefb9860e",
-	'Output_Test_Data',
-	"4a0d0af1-389e-4a59-ab75-1a58a41887c4",
-	1,
-	'',
-	"1909c5a8-f751-4947-a4ac-4335f4731489",
-	'');
-INSERT INTO PE_PE
-	VALUES ("44ac98c2-efa3-48cd-93ee-e48aefb9860e",
-	1,
-	"5ef6725d-bcd7-4754-ae00-eb6fb13de358",
-	"00000000-0000-0000-0000-000000000000",
-	1);
-INSERT INTO S_SYNC
 	VALUES ("35ee78c0-c93b-4622-a5f9-a95f80c5800f",
 	"00000000-0000-0000-0000-000000000000",
 	'Perform_Passive_Array_of_3_Objects_Tests',
@@ -2455,7 +2403,8 @@ supported = TRUE
    [] = RPT1:Start_Test[this_test, "1241-0000-01-0128", "Tagged", "Active Super Sub types", "Active One Super Sub relationship"]
 
    # Create one of one super type objects
-   Super1 = create unique Active_Tagged_Supertype with Supertype_Data = this_test
+   Super1 = create unique Active_Tagged_Supertype with Supertype_Data = this_test & \
+                                                       Current_State = ''Idle''
 
    # create one of two sub type 1 objects
    Index_For_Subtype = this_test + 1

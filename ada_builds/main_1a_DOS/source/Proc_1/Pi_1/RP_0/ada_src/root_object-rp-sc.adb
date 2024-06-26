@@ -199,6 +199,44 @@ package body Root_Object.RP.SC is
 ------------------------------------------------------------------------
 --*********************  Object Definition *****************************
 ------------------------------------------------------------------------
+
+   sc_id_Value : Application_Types.Base_Integer_Type := Application_Types.Base_Integer_Type_first;
+--
+--ADATEST IGNORE_ON
+   function Obtain_Subsequent_sc_id return Application_Types.Base_Integer_Type is
+   begin
+      sc_id_Value :=
+         Application_Types.Base_Integer_Type'succ (sc_id_Value);
+      return sc_id_Value;
+   end Obtain_Subsequent_sc_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
+   function Get_sc_id (
+      This_Object : Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
+   begin
+       return RP_SC_Type (This_Object.all).sc_id;
+   end Get_sc_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
+   procedure Put_sc_id (
+      This_Object : in Root_Object.Object_Access;
+      sc_id_Value : in Application_Types.Base_Integer_Type) is
+   begin
+      RP_SC_Type (This_Object.all).sc_id :=
+         sc_id_Value;
+   end Put_sc_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
    --
    -- procedure Put_Domain_Number and 
    --
@@ -316,6 +354,7 @@ package body Root_Object.RP.SC is
    
       else
          This_Object := Free_List.First_Entry;
+         RP_SC_Type(This_Object.all).sc_id := Application_Types.Base_Integer_Type_First;
          RP_SC_Type(This_Object.all).The_Comment := Application_Types.Base_Text_Type_First;
          RP_SC_Type(This_Object.all).The_Test_No := Application_Types.Base_Integer_Type_First;
          RP_SC_Type(This_Object.all).Comment_ID := Application_Types.Base_Integer_Type_First;
@@ -357,9 +396,25 @@ package body Root_Object.RP.SC is
 --------------------------------------------------------------------------
 --
 
---------------------------------------------------------------------------
-   -- function Create_Unique is not available for this object as it does
-   -- not have a non referential identifying attribute.
+--ADATEST IGNORE_ON
+   function Create_Unique return Root_Object.Object_Access is
+
+   This_Object: Root_Object.Object_Access;
+
+   begin
+      --
+      -- get hold of a new instance
+      --
+      This_Object := Create;
+
+
+      RP_SC_Type(This_Object.all).sc_id :=
+         Obtain_Subsequent_sc_id;
+
+      return This_Object;
+
+   end Create_Unique;
+--ADATEST IGNORE_OFF
 --------------------------------------------------------------------------
 
 --ADATEST IGNORE_ON

@@ -19,7 +19,8 @@ INSERT INTO O_TFR
 	"ba5eda7a-def5-0000-0000-000000000000",
 	0,
 	'# create an instance to use for the test
-newA = create unique Object_A with ResultA = 0
+newA = create unique Object_A with ResultA = 0 & \
+                                   Current_State = ''Idle''
 
 an_int = 1
 a_real = 2.0
@@ -39,7 +40,8 @@ INSERT INTO O_TFR
 	"ba5eda7a-def5-0000-0000-000000000000",
 	0,
 	'# create an instance to use for the test
-newA = create unique Object_A with ResultA = 0
+newA = create unique Object_A with ResultA = 0 & \
+                                   Current_State = ''Idle''
 
 an_int = 1
 a_real = 2.0

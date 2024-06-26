@@ -14,7 +14,7 @@
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
---* File Name:               Struct3_Receive_Empty_Structure_IH_Service.ads
+--* File Name:               UDT_TD1_Create_New_Test_Data_Object_And_Link_It_Service.ads
 --* Drawing Number:          Refer to release documentation                           *
 --* Version:                 As detailed by Configuration Management System           *
 --* Version Date:            As detailed by Configuration Management System           *
@@ -40,8 +40,8 @@
 --*  BUILD INFORMATION                                                                *
 --*  -----------------                                                                *
 --*                                                                                   *
---* Domain Name              : Structures
---* Domain Key Letter        : Struct
+--* Domain Name              : User_Defined_Types
+--* Domain Key Letter        : UDT
 --* Domain Version           : 0
 --*                                                                                   *
 --*  Build Target       : Dos
@@ -51,26 +51,24 @@
 --
 -- with list for all objects, relationships, services and types used within this code fragment
 
--- List of domain types used
-with Struct_Domain_Types;
-with Struct_Domain_Types.Ops;
-
 with Application_Types;
 with Root_Object;
 
 
-package Struct_Struct3_Receive_Empty_Structure_IH_Service is
+package UDT_TD1_Create_New_Test_Data_Object_And_Link_It_Service is
    
    
-   procedure Struct_Struct3_Receive_Empty_Structure_IH (
-      Test_Number      : in     Application_Types.Base_Integer_Type;
-      Empty_Structure  : in out Struct_Domain_Types.Structure_and_IH_Type;
-      Inserted_IH      : in     Root_Object.Object_Access;
-      Testing_For      : in     Application_Types.Base_Text_Type;
-      Filled_Structure :    out Struct_Domain_Types.Structure_and_IH_Type);
+   procedure UDT_TD1_Create_New_Test_Data_Object_And_Link_It (
+      New_Set              : in     Boolean;
+      Previous_IH          : in     Root_Object.Object_Access;
+      This_Test_Number     : in     Application_Types.Base_Integer_Type;
+      Testing_For          : in     Application_Types.Base_Text_Type;
+      Final_Entry          : in     Boolean;
+      Returned_IH          :    out Root_Object.Object_Access;
+      Returned_Test_Number :    out Application_Types.Base_Integer_Type);
    
-end Struct_Struct3_Receive_Empty_Structure_IH_Service;
+end UDT_TD1_Create_New_Test_Data_Object_And_Link_It_Service;
 
 --
--- End of file Struct_Struct3_Receive_Empty_Structure_IH_Service.ads
+-- End of file UDT_TD1_Create_New_Test_Data_Object_And_Link_It_Service.ads
 --

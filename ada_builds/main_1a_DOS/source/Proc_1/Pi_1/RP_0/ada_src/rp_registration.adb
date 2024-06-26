@@ -184,11 +184,10 @@ package body RP_Registration is
       RP_Rel_R5.Register_B_End_Class (Root_Object.RP.DUPLICATED.RP_DUPLICATED_Type'tag);
       RP_Rel_R5.Register_B_End_Role ("Has_one");
 
-      RP_Rel_R5.Register_A_End_Relationship_Write (Root_Object.RP.DUPLICATED.Put_R5_B'access);
-      RP_Rel_R5.Register_A_End_Relationship_Read  (Root_Object.RP.DUPLICATED.Get_R5_B'access);
-      RP_Rel_R5.Register_B_End_Relationship_Write (Root_Object.RP.DUPLICATED.Put_R5_A'access);
-      RP_Rel_R5.Register_B_End_Relationship_Read  (Root_Object.RP.DUPLICATED.Get_R5_A'access);
-
+      RP_Rel_R5.Register_A_End_Relationship_Write (Root_Object.RP.DUPLICATED.Put_R5_A'access);
+      RP_Rel_R5.Register_A_End_Relationship_Read  (Root_Object.RP.DUPLICATED.Get_R5_A'access);
+      RP_Rel_R5.Register_B_End_Relationship_Write (Root_Object.RP.DUPLICATED.Put_R5_B'access);
+      RP_Rel_R5.Register_B_End_Relationship_Read  (Root_Object.RP.DUPLICATED.Get_R5_B'access);
 --==================================================================================
       -- Relationships for RP domain to register:
       -- Relationship R8 is Simple 

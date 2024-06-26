@@ -87,6 +87,7 @@ use type Root_Object.Object_Access;
    begin
       
       my_test := Root_Object.DomainA.TD.Create;
+      Root_Object.DomainA.TD.DomainA_TD_Type(my_test.all).td_id            := 1;
       Root_Object.DomainA.TD.DomainA_TD_Type(my_test.all).This_Test_Number := 1;
       
       

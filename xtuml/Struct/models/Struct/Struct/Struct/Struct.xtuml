@@ -77,7 +77,7 @@ INSERT INTO GD_GE
 	"c7edd3de-a622-41ab-b4c9-f5f3ba528ef4",
 	108,
 	0,
-	'Struct::Struct::Struct::Struct');
+	'Struct::Struct::Struct::classes');
 INSERT INTO GD_SHP
 	VALUES ("003caefe-06b3-4aed-a27d-01f65a1d3475");
 INSERT INTO GD_NCS
@@ -611,46 +611,6 @@ INSERT INTO C_EP_PROXY
 	'Delete_Report_Data',
 	'',
 	9,
-	'../Shared/Struct/Struct.xtuml');
-INSERT INTO SPR_PEP
-	VALUES ("c5010b96-75e1-4db0-afa7-7e7df209de78",
-	"f2ac9f01-6276-4458-ab86-f1af6e982a4d",
-	"d9466fc6-7452-41cc-a016-f0bdb7348634");
-INSERT INTO SPR_PO
-	VALUES ("c5010b96-75e1-4db0-afa7-7e7df209de78",
-	'Receive_Structure_IH',
-	'',
-	'',
-	3,
-	6,
-	0);
-INSERT INTO C_EP_PROXY
-	VALUES ("f2ac9f01-6276-4458-ab86-f1af6e982a4d",
-	"d897237b-eaaf-460c-9ad3-60c20124e05b",
-	0,
-	'Receive_Structure_IH',
-	'',
-	1,
-	'../Shared/Struct/Struct.xtuml');
-INSERT INTO SPR_PEP
-	VALUES ("a5f503ed-40ae-49a0-9b2a-3e6b32b62384",
-	"2ee31e42-dde5-4e28-b7db-44bebb215b93",
-	"d9466fc6-7452-41cc-a016-f0bdb7348634");
-INSERT INTO SPR_PO
-	VALUES ("a5f503ed-40ae-49a0-9b2a-3e6b32b62384",
-	'Receive_Empty_Structure_IH',
-	'',
-	'',
-	3,
-	6,
-	0);
-INSERT INTO C_EP_PROXY
-	VALUES ("2ee31e42-dde5-4e28-b7db-44bebb215b93",
-	"d897237b-eaaf-460c-9ad3-60c20124e05b",
-	0,
-	'Receive_Empty_Structure_IH',
-	'',
-	3,
 	'../Shared/Struct/Struct.xtuml');
 INSERT INTO SPR_PEP
 	VALUES ("b61ad27c-7f37-49ca-8f60-b8caae31b785",
