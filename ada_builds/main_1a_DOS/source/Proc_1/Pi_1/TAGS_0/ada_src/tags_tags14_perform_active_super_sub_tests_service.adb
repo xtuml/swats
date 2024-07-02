@@ -118,6 +118,7 @@ package body TAGS_TAGS14_Perform_Active_Super_Sub_Tests_Service is
       --  Create one of one super type objects
       Super1 := Root_Object.TAGS.ATSUPER.Create_Unique;
       Root_Object.TAGS.ATSUPER.TAGS_ATSUPER_Type(Super1.all).Supertype_Data := this_test;
+      Root_Object.TAGS.ATSUPER.TAGS_ATSUPER_Type(Super1.all).Current_State  := Root_Object.TAGS.ATSUPER.Idle;
       
       
       --  create one of two sub type 1 objects

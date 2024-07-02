@@ -82,9 +82,9 @@ separate(Root_Object.RP.TS)
       Tests        : Root_Object.Object_List.List_Header_Access_Type := Root_Object.Object_List.Initialise;
       Domains      : Root_Object.Object_List.List_Header_Access_Type := Root_Object.Object_List.Initialise;
       
-      requirement : Root_Object.Object_Access;
-      test        : Root_Object.Object_Access;
-      domain      : Root_Object.Object_Access;
+      requirement  : Root_Object.Object_Access;
+      test         : Root_Object.Object_Access;
+      domain_local : Root_Object.Object_Access;
       
       How_Many_Left : Application_Types.Base_Integer_Type := 1;
       
@@ -202,10 +202,10 @@ separate(Root_Object.RP.TS)
                Target_List => Domains);
             
             while (Temp_Entry /= null) loop
-               domain := Temp_Entry.Item;
+               domain_local := Temp_Entry.Item;
                
                RP_Rel_R10.Unlink (
-                  A_Instance => domain,
+                  A_Instance => domain_local,
                   B_Instance => This_Instance);
                
                

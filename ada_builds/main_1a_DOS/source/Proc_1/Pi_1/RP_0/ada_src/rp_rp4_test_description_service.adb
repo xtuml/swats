@@ -181,8 +181,7 @@ package body RP_RP4_Test_Description_Service is
             
             
             --  Create new requirement identifier for test object and link it.
-            
-            New_Requid_For_Test := Root_Object.RP.RI.Create;
+            New_Requid_For_Test := Root_Object.RP.RI.Create_Unique;
             Root_Object.RP.RI.RP_RI_Type(New_Requid_For_Test.all).requid := the_requid;
             
             RP_Rel_R8.Link (

@@ -199,6 +199,44 @@ package body Root_Object.RP.DUPLICATED is
 ------------------------------------------------------------------------
 --*********************  Object Definition *****************************
 ------------------------------------------------------------------------
+
+   duplicated_id_Value : Application_Types.Base_Integer_Type := Application_Types.Base_Integer_Type_first;
+--
+--ADATEST IGNORE_ON
+   function Obtain_Subsequent_duplicated_id return Application_Types.Base_Integer_Type is
+   begin
+      duplicated_id_Value :=
+         Application_Types.Base_Integer_Type'succ (duplicated_id_Value);
+      return duplicated_id_Value;
+   end Obtain_Subsequent_duplicated_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
+   function Get_duplicated_id (
+      This_Object : Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
+   begin
+       return RP_DUPLICATED_Type (This_Object.all).duplicated_id;
+   end Get_duplicated_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
+   procedure Put_duplicated_id (
+      This_Object : in Root_Object.Object_Access;
+      duplicated_id_Value : in Application_Types.Base_Integer_Type) is
+   begin
+      RP_DUPLICATED_Type (This_Object.all).duplicated_id :=
+         duplicated_id_Value;
+   end Put_duplicated_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
    --
    -- procedure Put_Domain_Number and 
    --
@@ -297,6 +335,53 @@ package body Root_Object.RP.DUPLICATED is
 
 ------------------------------------------------------------------------
 
+   R5_formalising_attribute_Value : Application_Types.Base_Integer_Type := Application_Types.Base_Integer_Type_first;
+--
+--ADATEST IGNORE_ON
+   function Obtain_Subsequent_R5_formalising_attribute return Application_Types.Base_Integer_Type is
+   begin
+      R5_formalising_attribute_Value :=
+         Application_Types.Base_Integer_Type'succ (R5_formalising_attribute_Value);
+      return R5_formalising_attribute_Value;
+   end Obtain_Subsequent_R5_formalising_attribute;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
+   function Get_R5_formalising_attribute (
+      This_Object : Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
+   begin
+       return RP_DUPLICATED_Type (This_Object.all).R5_formalising_attribute;
+   end Get_R5_formalising_attribute;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
+   procedure Put_R5_formalising_attribute (
+      This_Object : in Root_Object.Object_Access;
+      R5_formalising_attribute_Value : in Application_Types.Base_Integer_Type) is
+   begin
+      RP_DUPLICATED_Type (This_Object.all).R5_formalising_attribute :=
+         R5_formalising_attribute_Value;
+   end Put_R5_formalising_attribute;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+   --
+   -- procedure Put_PrefixR5_formalising_attribute and 
+   --
+   -- function Get_PrefixR5_formalising_attribute
+   --
+   -- have not been generated for PrefixR5_formalising_attribute
+   -- as this attribute is non-identifying referential.
+   --
+------------------------------------------------------------------------
+
 
 --ADATEST IGNORE_ON
    function  Get_R4_A (
@@ -321,19 +406,19 @@ package body Root_Object.RP.DUPLICATED is
 ------------------------------------------------------------------------
 
 --ADATEST IGNORE_ON
-   function  Get_R5_A (
-      This_Object : Root_Object.Object_Access) return Root_Object.Object_Access is
+   function  Get_R5_A  (
+      This_Object : Root_Object.Object_Access) return Root_Object.Object_List.List_Header_Access_Type is
    begin
       return RP_DUPLICATED_Type (This_Object.all).R5_A;
    end Get_R5_A;
 --ADATEST IGNORE_OFF
-
+--
 ------------------------------------------------------------------------
 
 --ADATEST IGNORE_ON
-   procedure Put_R5_A (
+   procedure Put_R5_A  (
       This_Object : in Root_Object.Object_Access;
-      R5_A_Value : in Root_Object.Object_Access) is
+      R5_A_Value : in Root_Object.Object_List.List_Header_Access_Type) is
    begin
       RP_DUPLICATED_Type (This_Object.all).R5_A :=
          R5_A_Value;
@@ -343,8 +428,9 @@ package body Root_Object.RP.DUPLICATED is
 ------------------------------------------------------------------------
 
 --ADATEST IGNORE_ON
-   function  Get_R5_B  (
-      This_Object : Root_Object.Object_Access) return Root_Object.Object_List.List_Header_Access_Type is
+   function  Get_R5_B (
+      This_Object : Root_Object.Object_Access) return Root_Object.Object_Access is
+
    begin
       return RP_DUPLICATED_Type (This_Object.all).R5_B;
    end Get_R5_B;
@@ -353,9 +439,10 @@ package body Root_Object.RP.DUPLICATED is
 ------------------------------------------------------------------------
 
 --ADATEST IGNORE_ON
-   procedure Put_R5_B  (
-      This_Object : in  Root_Object.Object_Access;
-      R5_B_Value : in Root_Object.Object_List.List_Header_Access_Type) is
+   procedure Put_R5_B (
+      This_Object : in Root_Object.Object_Access;
+      R5_B_Value : in Root_Object.Object_Access) is
+
    begin
       RP_DUPLICATED_Type (This_Object.all).R5_B :=
          R5_B_Value;
@@ -382,10 +469,12 @@ package body Root_Object.RP.DUPLICATED is
    
       else
          This_Object := Free_List.First_Entry;
+         RP_DUPLICATED_Type(This_Object.all).duplicated_id := Application_Types.Base_Integer_Type_First;
          RP_DUPLICATED_Type(This_Object.all).Who_Reported_The_Duplicated_Result := RP_Domain_Types.Result_Type_First;
          RP_DUPLICATED_Type(This_Object.all).Duplicated_Test_Count := Application_Types.Base_Integer_Type_First;
          RP_DUPLICATED_Type(This_Object.all).Duplicated_Test_Number := Application_Types.Base_Integer_Type_First;
          RP_DUPLICATED_Type(This_Object.all).Which_Test_Number := Application_Types.Base_Integer_Type_First;
+         RP_DUPLICATED_Type(This_Object.all).R5_formalising_attribute := Application_Types.Base_Integer_Type_First;
          Free_List.First_Entry := Free_List.First_Entry.Next_Object;
       end if;
 
@@ -415,7 +504,7 @@ package body Root_Object.RP.DUPLICATED is
       This_Object.Root_Object_Attribute := Root_Object.Get_Next_Root_Object_Attribute;
       --
 
-      RP_DUPLICATED_Type(This_Object.all).R5_B := Root_Object.Object_List.Initialise;
+      RP_DUPLICATED_Type(This_Object.all).R5_A := Root_Object.Object_List.Initialise;
 
       return This_Object;
 
@@ -425,9 +514,27 @@ package body Root_Object.RP.DUPLICATED is
 --------------------------------------------------------------------------
 --
 
---------------------------------------------------------------------------
-   -- function Create_Unique is not available for this object as it does
-   -- not have a non referential identifying attribute.
+--ADATEST IGNORE_ON
+   function Create_Unique return Root_Object.Object_Access is
+
+   This_Object: Root_Object.Object_Access;
+
+   begin
+      --
+      -- get hold of a new instance
+      --
+      This_Object := Create;
+
+
+      RP_DUPLICATED_Type(This_Object.all).duplicated_id :=
+         Obtain_Subsequent_duplicated_id;
+      RP_DUPLICATED_Type(This_Object.all).R5_formalising_attribute :=
+         Obtain_Subsequent_R5_formalising_attribute;
+
+      return This_Object;
+
+   end Create_Unique;
+--ADATEST IGNORE_OFF
 --------------------------------------------------------------------------
 
 --ADATEST IGNORE_ON

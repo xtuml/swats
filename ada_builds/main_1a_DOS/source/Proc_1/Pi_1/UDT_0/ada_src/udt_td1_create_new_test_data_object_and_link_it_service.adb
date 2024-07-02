@@ -14,7 +14,7 @@
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
---* File Name:               SBONE4_Append_IH_To_Struct_Service.adb
+--* File Name:               UDT_TD1_Create_New_Test_Data_Object_And_Link_It_Service.adb
 --* Drawing Number:          Refer to release documentation                           *
 --* Version:                 As detailed by Configuration Management System           *
 --* Version Date:            As detailed by Configuration Management System           *
@@ -40,8 +40,8 @@
 --*  BUILD INFORMATION                                                                *
 --*  -----------------                                                                *
 --*                                                                                   *
---* Domain Name              : Structure_Bridge_One
---* Domain Key Letter        : SBONE
+--* Domain Name              : User_Defined_Types
+--* Domain Key Letter        : UDT
 --* Domain Version           : 0
 --*                                                                                   *
 --*  Build Target       : Dos
@@ -52,39 +52,90 @@
 -- with list for all objects, relationships, services and types used within this code fragment
 
 -- List of objects used
-with Root_Object.SBONE.VSD;
+with Root_Object.UDT.TD;
 
--- List of domain types used
-with SBONE_Domain_Types;
-with SBONE_Domain_Types.Ops;
-use type SBONE_Domain_Types.IH_Struct;
+-- List of relationships used
+with UDT_rel_R1;
+with UDT_rel_R1;
 
+with Application_Types;
+use type Application_Types.Base_Integer_Type;
+use type Application_Types.Base_Text_Type;
 
 with Root_Object;
 use type Root_Object.Object_Access;
 
 
-package body SBONE_SBONE4_Append_IH_To_Struct_Service is
+package body UDT_TD1_Create_New_Test_Data_Object_And_Link_It_Service is
    
-   procedure SBONE_SBONE4_Append_IH_To_Struct (
-      The_IH           : in     Root_Object.Object_Access;
-      Returning_Struct :    out SBONE_Domain_Types.IH_Struct) is
+   procedure UDT_TD1_Create_New_Test_Data_Object_And_Link_It (
+      New_Set              : in     Boolean;
+      Previous_IH          : in     Root_Object.Object_Access;
+      This_Test_Number     : in     Application_Types.Base_Integer_Type;
+      Testing_For          : in     Application_Types.Base_Text_Type;
+      Final_Entry          : in     Boolean;
+      Returned_IH          :    out Root_Object.Object_Access;
+      Returned_Test_Number :    out Application_Types.Base_Integer_Type) is
+      
+      local_Test_Data_IH : Root_Object.Object_Access;
+      Local_Previous_IH  : Root_Object.Object_Access;
       
    begin
-   -- start of SBONE4_Append_IH_To_Struct
-      --
-      -- start of append members to structure
-      SBONE_Domain_Types.Ops.Append (
-         A_The_VSD_IH   => The_IH, 
-         To_Structure   => Returning_Struct);
-      -- end of append members to structure
-      --
+   -- start of TD1_Create_New_Test_Data_Object_And_Link_It
+      
+      if New_Set =  True then
+         Returned_IH := Root_Object.UDT.TD.Create_Unique;
+         Root_Object.UDT.TD.UDT_TD_Type(Returned_IH.all).The_Test_Number      := This_Test_Number;
+         Root_Object.UDT.TD.UDT_TD_Type(Returned_IH.all).Testing_For_What     := Testing_For;
+         
+         Returned_Test_Number := This_Test_Number + 1;
+      else
+         
+         --  Add new Test_Data object onto Previous_IH
+         local_Test_Data_IH := Root_Object.UDT.TD.Create_Unique;
+         Root_Object.UDT.TD.UDT_TD_Type(local_Test_Data_IH.all).The_Test_Number      := This_Test_Number;
+         Root_Object.UDT.TD.UDT_TD_Type(local_Test_Data_IH.all).Testing_For_What     := Testing_For;
+         
+         UDT_Rel_R1.Link (
+            A_Instance => Previous_IH,
+            B_Role     => "Has_a",
+            B_Instance => local_Test_Data_IH);
+         
+         
+         if Final_Entry =  True then
+            
+            --  Final entry shall cause the return of the first set in the sequence.
+            
+            loop
+               
+               --  Bail out of the operation will return an undefined IH
+               
+               UDT_Rel_R1.Navigate (
+                  From  => local_Test_Data_IH,
+                  Role  => "Has_one",
+                  To    => Local_Previous_IH);
+               
+               exit when Local_Previous_IH =  Null;
+               
+               UDT_Rel_R1.Navigate (
+                  From  => local_Test_Data_IH,
+                  Role  => "Has_one",
+                  To    => local_Test_Data_IH);
+               
+            end loop;
+            
+         end if;
+         
+         Returned_IH          := local_Test_Data_IH;
+         Returned_Test_Number := This_Test_Number + 1;
+         
+      end if;
       
       
-   end SBONE_SBONE4_Append_IH_To_Struct;
+   end UDT_TD1_Create_New_Test_Data_Object_And_Link_It;
    
-end SBONE_SBONE4_Append_IH_To_Struct_Service;
+end UDT_TD1_Create_New_Test_Data_Object_And_Link_It_Service;
 
 --
--- End of file SBONE_SBONE4_Append_IH_To_Struct_Service.adb
+-- End of file UDT_TD1_Create_New_Test_Data_Object_And_Link_It_Service.adb
 --

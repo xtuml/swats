@@ -236,8 +236,7 @@ package body RP_DD3_A_Test_Is_Unsupported_Service is
             
             Root_Object.RP.DD.RP_DD_type(The_Domain_IH.all).Last_Reported_Test_Number := New_Test_Number;
             
-            
-            new_results_of_test_instance := Root_Object.RP.RESULTS.Create;
+            new_results_of_test_instance := Root_Object.RP.RESULTS.Create_Unique;
             Root_Object.RP.RESULTS.RP_RESULTS_Type(new_results_of_test_instance.all).The_Number_Of_Test    := New_Test_Number;
             Root_Object.RP.RESULTS.RP_RESULTS_Type(new_results_of_test_instance.all).The_Name_Of_The_Domain        := 
                Root_Object.RP.DD.RP_DD_type(The_Domain_IH.all).Domain_Name;
@@ -305,8 +304,7 @@ package body RP_DD3_A_Test_Is_Unsupported_Service is
             
             
             if the_d_r_ih =  Null then
-               
-               new_duplicated_instance := Root_Object.RP.DUPLICATED.Create;
+               new_duplicated_instance := Root_Object.RP.DUPLICATED.Create_Unique;
                Root_Object.RP.DUPLICATED.RP_DUPLICATED_Type(new_duplicated_instance.all).Duplicated_Test_Number        := New_Test_Number;
                Root_Object.RP.DUPLICATED.RP_DUPLICATED_Type(new_duplicated_instance.all).Who_Reported_The_Duplicated_Result                    := 
                   RP_Domain_Types.Passed;

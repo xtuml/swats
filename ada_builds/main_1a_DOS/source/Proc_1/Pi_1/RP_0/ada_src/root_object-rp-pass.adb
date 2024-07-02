@@ -199,6 +199,44 @@ package body Root_Object.RP.PASS is
 ------------------------------------------------------------------------
 --*********************  Object Definition *****************************
 ------------------------------------------------------------------------
+
+   pass_id_Value : Application_Types.Base_Integer_Type := Application_Types.Base_Integer_Type_first;
+--
+--ADATEST IGNORE_ON
+   function Obtain_Subsequent_pass_id return Application_Types.Base_Integer_Type is
+   begin
+      pass_id_Value :=
+         Application_Types.Base_Integer_Type'succ (pass_id_Value);
+      return pass_id_Value;
+   end Obtain_Subsequent_pass_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
+   function Get_pass_id (
+      This_Object : Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
+   begin
+       return RP_PASS_Type (This_Object.all).pass_id;
+   end Get_pass_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
+   procedure Put_pass_id (
+      This_Object : in Root_Object.Object_Access;
+      pass_id_Value : in Application_Types.Base_Integer_Type) is
+   begin
+      RP_PASS_Type (This_Object.all).pass_id :=
+         pass_id_Value;
+   end Put_pass_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
    --
    -- procedure Put_Domain_Number and 
    --
@@ -272,6 +310,7 @@ package body Root_Object.RP.PASS is
    
       else
          This_Object := Free_List.First_Entry;
+         RP_PASS_Type(This_Object.all).pass_id := Application_Types.Base_Integer_Type_First;
          RP_PASS_Type(This_Object.all).Passed_Counter := Application_Types.Base_Integer_Type_First;
          Free_List.First_Entry := Free_List.First_Entry.Next_Object;
       end if;
@@ -311,9 +350,25 @@ package body Root_Object.RP.PASS is
 --------------------------------------------------------------------------
 --
 
---------------------------------------------------------------------------
-   -- function Create_Unique is not available for this object as it does
-   -- not have a non referential identifying attribute.
+--ADATEST IGNORE_ON
+   function Create_Unique return Root_Object.Object_Access is
+
+   This_Object: Root_Object.Object_Access;
+
+   begin
+      --
+      -- get hold of a new instance
+      --
+      This_Object := Create;
+
+
+      RP_PASS_Type(This_Object.all).pass_id :=
+         Obtain_Subsequent_pass_id;
+
+      return This_Object;
+
+   end Create_Unique;
+--ADATEST IGNORE_OFF
 --------------------------------------------------------------------------
 
 --ADATEST IGNORE_ON

@@ -200,12 +200,27 @@ package body Root_Object.Function_Calls.OBJTEN is
 --*********************  Object Definition *****************************
 ------------------------------------------------------------------------
 
+   Attribute_Ten_Value : Application_Types.Base_Integer_Type := Application_Types.Base_Integer_Type_first;
+--
+--ADATEST IGNORE_ON
+   function Obtain_Subsequent_Attribute_Ten return Application_Types.Base_Integer_Type is
+   begin
+      Attribute_Ten_Value :=
+         Application_Types.Base_Integer_Type'succ (Attribute_Ten_Value);
+      return Attribute_Ten_Value;
+   end Obtain_Subsequent_Attribute_Ten;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
 --ADATEST IGNORE_ON
    function Get_Attribute_Ten (
-      This_Object: Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
+      This_Object : Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
    begin
-      return Function_Calls_OBJTEN_Type (This_Object.all).Attribute_Ten;
+       return Function_Calls_OBJTEN_Type (This_Object.all).Attribute_Ten;
    end Get_Attribute_Ten;
+
 --ADATEST IGNORE_OFF
 
 ------------------------------------------------------------------------
@@ -218,6 +233,7 @@ package body Root_Object.Function_Calls.OBJTEN is
       Function_Calls_OBJTEN_Type (This_Object.all).Attribute_Ten :=
          Attribute_Ten_Value;
    end Put_Attribute_Ten;
+
 --ADATEST IGNORE_OFF
 
 ------------------------------------------------------------------------
@@ -280,9 +296,25 @@ package body Root_Object.Function_Calls.OBJTEN is
 --------------------------------------------------------------------------
 --
 
---------------------------------------------------------------------------
-   -- function Create_Unique is not available for this object as it does
-   -- not have a non referential identifying attribute.
+--ADATEST IGNORE_ON
+   function Create_Unique return Root_Object.Object_Access is
+
+   This_Object: Root_Object.Object_Access;
+
+   begin
+      --
+      -- get hold of a new instance
+      --
+      This_Object := Create;
+
+
+      Function_Calls_OBJTEN_Type(This_Object.all).Attribute_Ten :=
+         Obtain_Subsequent_Attribute_Ten;
+
+      return This_Object;
+
+   end Create_Unique;
+--ADATEST IGNORE_OFF
 --------------------------------------------------------------------------
 
 --ADATEST IGNORE_ON

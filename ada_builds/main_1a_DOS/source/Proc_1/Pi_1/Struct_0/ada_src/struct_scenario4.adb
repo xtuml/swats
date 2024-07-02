@@ -729,9 +729,8 @@ use type Root_Object.Object_Access;
       --  Invoke domain based synch. service
       
       Struct_Struct6_Decode_Simple_NTL_Structure_Service.Struct_Struct6_Decode_Simple_NTL_Structure (
-         Test                   => Test,
-         Simple_Structure       => NTL_Simple_Object_Structure_5,
-         Object_Instance_Handle => struct_5);
+         Test             => Test,
+         Simple_Structure => NTL_Simple_Object_Structure_5);
       
       
       Root_Object.Struct.SO.Delete (

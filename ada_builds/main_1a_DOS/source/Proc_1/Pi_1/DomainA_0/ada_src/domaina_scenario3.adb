@@ -107,7 +107,7 @@ use type Root_Object.Object_Access;
       end loop;
       
       
-      if an_instanceA /= NULL then
+      if an_instanceA /= Null then
          
          declare
             Pushed_Event : Root_Object.Root_Event_Access_Type;

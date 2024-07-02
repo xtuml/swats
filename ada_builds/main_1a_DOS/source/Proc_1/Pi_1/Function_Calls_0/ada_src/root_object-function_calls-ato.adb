@@ -200,6 +200,44 @@ package body Root_Object.Function_Calls.ATO is
 --*********************  Object Definition *****************************
 ------------------------------------------------------------------------
 
+   ato_id_Value : Application_Types.Base_Integer_Type := Application_Types.Base_Integer_Type_first;
+--
+--ADATEST IGNORE_ON
+   function Obtain_Subsequent_ato_id return Application_Types.Base_Integer_Type is
+   begin
+      ato_id_Value :=
+         Application_Types.Base_Integer_Type'succ (ato_id_Value);
+      return ato_id_Value;
+   end Obtain_Subsequent_ato_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
+   function Get_ato_id (
+      This_Object : Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
+   begin
+       return Function_Calls_ATO_Type (This_Object.all).ato_id;
+   end Get_ato_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
+   procedure Put_ato_id (
+      This_Object : in Root_Object.Object_Access;
+      ato_id_Value : in Application_Types.Base_Integer_Type) is
+   begin
+      Function_Calls_ATO_Type (This_Object.all).ato_id :=
+         ato_id_Value;
+   end Put_ato_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
 --ADATEST IGNORE_ON
    function Get_Start_Value (
       This_Object: Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
@@ -285,6 +323,7 @@ package body Root_Object.Function_Calls.ATO is
    
       else
          This_Object := Free_List.First_Entry;
+         Function_Calls_ATO_Type(This_Object.all).ato_id := Application_Types.Base_Integer_Type_First;
          Function_Calls_ATO_Type(This_Object.all).Start_Value := Application_Types.Base_Integer_Type_First;
          Function_Calls_ATO_Type(This_Object.all).Increment_Value := Application_Types.Base_Integer_Type_First;
          Function_Calls_ATO_Type(This_Object.all).Current_State :=  Object_State_Type_First;
@@ -326,9 +365,25 @@ package body Root_Object.Function_Calls.ATO is
 --------------------------------------------------------------------------
 --
 
---------------------------------------------------------------------------
-   -- function Create_Unique is not available for this object as it does
-   -- not have a non referential identifying attribute.
+--ADATEST IGNORE_ON
+   function Create_Unique return Root_Object.Object_Access is
+
+   This_Object: Root_Object.Object_Access;
+
+   begin
+      --
+      -- get hold of a new instance
+      --
+      This_Object := Create;
+
+
+      Function_Calls_ATO_Type(This_Object.all).ato_id :=
+         Obtain_Subsequent_ato_id;
+
+      return This_Object;
+
+   end Create_Unique;
+--ADATEST IGNORE_OFF
 --------------------------------------------------------------------------
 
 --ADATEST IGNORE_ON

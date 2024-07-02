@@ -200,6 +200,44 @@ package body Root_Object.ASL_Mapping.objBIG is
 --*********************  Object Definition *****************************
 ------------------------------------------------------------------------
 
+   objBIG_id_Value : Application_Types.Base_Integer_Type := Application_Types.Base_Integer_Type_first;
+--
+--ADATEST IGNORE_ON
+   function Obtain_Subsequent_objBIG_id return Application_Types.Base_Integer_Type is
+   begin
+      objBIG_id_Value :=
+         Application_Types.Base_Integer_Type'succ (objBIG_id_Value);
+      return objBIG_id_Value;
+   end Obtain_Subsequent_objBIG_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
+   function Get_objBIG_id (
+      This_Object : Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
+   begin
+       return ASL_Mapping_objBIG_Type (This_Object.all).objBIG_id;
+   end Get_objBIG_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
+   procedure Put_objBIG_id (
+      This_Object : in Root_Object.Object_Access;
+      objBIG_id_Value : in Application_Types.Base_Integer_Type) is
+   begin
+      ASL_Mapping_objBIG_Type (This_Object.all).objBIG_id :=
+         objBIG_id_Value;
+   end Put_objBIG_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
 --ADATEST IGNORE_ON
    function Get_One (
       This_Object: Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
@@ -619,28 +657,6 @@ package body Root_Object.ASL_Mapping.objBIG is
 ------------------------------------------------------------------------
 
 --ADATEST IGNORE_ON
-   function Get_Twentyone (
-      This_Object: Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
-   begin
-      return ASL_Mapping_objBIG_Type (This_Object.all).Twentyone;
-   end Get_Twentyone;
---ADATEST IGNORE_OFF
-
-------------------------------------------------------------------------
-
---ADATEST IGNORE_ON
-   procedure Put_Twentyone (
-      This_Object : in Root_Object.Object_Access;
-      Twentyone_Value : in Application_Types.Base_Integer_Type) is
-   begin
-      ASL_Mapping_objBIG_Type (This_Object.all).Twentyone :=
-         Twentyone_Value;
-   end Put_Twentyone;
---ADATEST IGNORE_OFF
-
-------------------------------------------------------------------------
-
---ADATEST IGNORE_ON
    function Get_Twentytwo (
       This_Object: Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
    begin
@@ -658,6 +674,28 @@ package body Root_Object.ASL_Mapping.objBIG is
       ASL_Mapping_objBIG_Type (This_Object.all).Twentytwo :=
          Twentytwo_Value;
    end Put_Twentytwo;
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
+   function Get_Twentyone (
+      This_Object: Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
+   begin
+      return ASL_Mapping_objBIG_Type (This_Object.all).Twentyone;
+   end Get_Twentyone;
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
+   procedure Put_Twentyone (
+      This_Object : in Root_Object.Object_Access;
+      Twentyone_Value : in Application_Types.Base_Integer_Type) is
+   begin
+      ASL_Mapping_objBIG_Type (This_Object.all).Twentyone :=
+         Twentyone_Value;
+   end Put_Twentyone;
 --ADATEST IGNORE_OFF
 
 ------------------------------------------------------------------------
@@ -2067,6 +2105,7 @@ package body Root_Object.ASL_Mapping.objBIG is
    
       else
          This_Object := Free_List.First_Entry;
+         ASL_Mapping_objBIG_Type(This_Object.all).objBIG_id := Application_Types.Base_Integer_Type_First;
          ASL_Mapping_objBIG_Type(This_Object.all).One := Application_Types.Base_Integer_Type_First;
          ASL_Mapping_objBIG_Type(This_Object.all).Two := Application_Types.Base_Integer_Type_First;
          ASL_Mapping_objBIG_Type(This_Object.all).Three := Application_Types.Base_Integer_Type_First;
@@ -2086,8 +2125,8 @@ package body Root_Object.ASL_Mapping.objBIG is
          ASL_Mapping_objBIG_Type(This_Object.all).Eighteen := Application_Types.Base_Integer_Type_First;
          ASL_Mapping_objBIG_Type(This_Object.all).Nineteen := Application_Types.Base_Integer_Type_First;
          ASL_Mapping_objBIG_Type(This_Object.all).Twenty := Application_Types.Base_Integer_Type_First;
-         ASL_Mapping_objBIG_Type(This_Object.all).Twentyone := Application_Types.Base_Integer_Type_First;
          ASL_Mapping_objBIG_Type(This_Object.all).Twentytwo := Application_Types.Base_Integer_Type_First;
+         ASL_Mapping_objBIG_Type(This_Object.all).Twentyone := Application_Types.Base_Integer_Type_First;
          ASL_Mapping_objBIG_Type(This_Object.all).Twentythree := Application_Types.Base_Integer_Type_First;
          ASL_Mapping_objBIG_Type(This_Object.all).Twentyfour := Application_Types.Base_Integer_Type_First;
          ASL_Mapping_objBIG_Type(This_Object.all).Twentyfive := Application_Types.Base_Integer_Type_First;
@@ -2189,9 +2228,25 @@ package body Root_Object.ASL_Mapping.objBIG is
 --------------------------------------------------------------------------
 --
 
---------------------------------------------------------------------------
-   -- function Create_Unique is not available for this object as it does
-   -- not have a non referential identifying attribute.
+--ADATEST IGNORE_ON
+   function Create_Unique return Root_Object.Object_Access is
+
+   This_Object: Root_Object.Object_Access;
+
+   begin
+      --
+      -- get hold of a new instance
+      --
+      This_Object := Create;
+
+
+      ASL_Mapping_objBIG_Type(This_Object.all).objBIG_id :=
+         Obtain_Subsequent_objBIG_id;
+
+      return This_Object;
+
+   end Create_Unique;
+--ADATEST IGNORE_OFF
 --------------------------------------------------------------------------
 
 --ADATEST IGNORE_ON

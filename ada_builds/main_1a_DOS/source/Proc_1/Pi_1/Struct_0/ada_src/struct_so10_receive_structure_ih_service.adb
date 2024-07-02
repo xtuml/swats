@@ -14,15 +14,14 @@
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
---* File Name:               Struct1_Receive_Structure_IH_Service.adb
+--* File Name:               Struct_SO10_Receive_Structure_IH_Service.adb
 --* Drawing Number:          Refer to release documentation                           *
 --* Version:                 As detailed by Configuration Management System           *
 --* Version Date:            As detailed by Configuration Management System           *
 --* Creation Date:           As detailed by Configuration Management System           *
 --* Section/Unit:            Refer to release documentation                           *
 --* Description              
---*                          Receive a structure containing and IH as a component of that structure.
---*                          
+--*                          Not Defined
 --* Comments:                Header written by ASL Translator
 --*                                                                                   *
 --*************************************************************************************
@@ -75,9 +74,9 @@ with Root_Object;
 use type Root_Object.Object_Access;
 
 
-package body Struct_Struct1_Receive_Structure_IH_Service is
+package body Struct_SO10_Receive_Structure_IH_Service is
    
-   procedure Struct_Struct1_Receive_Structure_IH (
+   procedure Struct_SO10_Receive_Structure_IH (
       This_Test_Number        : in     Application_Types.Base_Integer_Type;
       Input_Structure         : in out Struct_Domain_Types.Structure_and_IH_Type;
       Number_Of_Elements      : in     Application_Types.Base_Integer_Type;
@@ -92,7 +91,7 @@ package body Struct_Struct1_Receive_Structure_IH_Service is
       Result_Found : Boolean := Application_Types.Boolean_first;
       
    begin
-   -- start of Struct1_Receive_Structure_IH
+   -- start of SO10_Receive_Structure_IH
       
       Struct_RPT1_Start_Test_Bridge.Struct_RPT1_Start_Test (
          Test_Number     => This_Test_Number,
@@ -180,10 +179,10 @@ package body Struct_Struct1_Receive_Structure_IH_Service is
       end if;
       
       
-   end Struct_Struct1_Receive_Structure_IH;
+   end Struct_SO10_Receive_Structure_IH;
    
-end Struct_Struct1_Receive_Structure_IH_Service;
+end Struct_SO10_Receive_Structure_IH_Service;
 
 --
--- End of file Struct_Struct1_Receive_Structure_IH_Service.adb
+-- End of file Struct_SO10_Receive_Structure_IH_Service.adb
 --

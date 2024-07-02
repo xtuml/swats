@@ -54,7 +54,6 @@
 -- List of objects used
 with Root_Object.RP.DD;
 with Root_Object.RP.TS;
-use type Root_Object.RP.TS.Object_State_Type;
 with Root_Object.RP.RI;
 with Root_Object.RP.RESULTS;
 with Root_Object.RP.SC;
@@ -987,7 +986,7 @@ package body RP_DD4_End_Of_Test_Service is
          
          if The_Requirements_Object /= Null then
             
-            if Root_Object.RP.TS.RP_TS_type(The_Requirements_Object.all).Current_State =  Root_Object.RP.TS.Waiting then
+            if Root_Object.RP.TS.RP_TS_type(The_Requirements_Object.all).waiting_state =  True then
                
                declare
                   Pushed_Event : Root_Object.Root_Event_Access_Type;

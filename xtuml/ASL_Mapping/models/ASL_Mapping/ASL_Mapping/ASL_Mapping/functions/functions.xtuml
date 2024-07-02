@@ -682,7 +682,8 @@ INSERT INTO S_SYNC
 
    [] = RPT1:Start_Test[Start_Test_Number, "1103-0000-01-0511", "ASL Mapping", "BIG Object", "Create big object"]
 
-   Unfeasibly_Large_Object = create BIG_Object with One          = Start_Test_Number &\
+   Unfeasibly_Large_Object = create BIG_Object with objBIG_id    = 1                 &\
+                                                    One          = Start_Test_Number &\
                                                     Two          = Start_Test_Number &\
                                                     Three        = Start_Test_Number &\
                                                     Four         = Start_Test_Number &\
@@ -1338,7 +1339,8 @@ INSERT INTO S_SYNC
    # Stash this number for later use when this object is decoded.
    Expected_Number = This_Test_Number
 
-   Active_Unfeasibly_Large_Object = create BIG_Object with One          = This_Test_Number &\
+   Active_Unfeasibly_Large_Object = create BIG_Object with objBIG_id    = 2                &\
+                                                           One          = This_Test_Number &\
                                                            Two          = This_Test_Number &\
                                                            Three        = This_Test_Number &\
                                                            Four         = This_Test_Number &\
@@ -1441,7 +1443,8 @@ INSERT INTO S_SYNC
    [] = RPT1:Start_Test[This_Test_Number, "1103-0000-01-0511", "ASL Mapping", "BIG object", "Delete big active object"]
    [] = RPT8:Specify_Requid[This_Test_Number, "1103-0000-01-0531"]
 
-   Doomed_Unfeasibly_Large_Object = create BIG_Object with One          = This_Test_Number &\
+   Doomed_Unfeasibly_Large_Object = create BIG_Object with objBIG_id    = 3                &\
+                                                           One          = This_Test_Number &\
                                                            Two          = This_Test_Number &\
                                                            Three        = This_Test_Number &\
                                                            Four         = This_Test_Number &\
@@ -2145,8 +2148,8 @@ INSERT INTO S_SYNC
 
    [] = RPT1:Start_Test[Local_Test, "Null Requid", "ASL Mapping", "Check Base types", "Check Attribute comparison"]
 
-   instA = create ObjectA with The_Int1 = 1 & The_Int2 = 2
-   instB = create ObjectB with The_IntB1 = 1 & The_IntB2 = 2
+   instA = create ObjectA with objA_id = 1 & The_Int1  = 1 & The_Int2 = 2
+   instB = create ObjectB with objB_id = 1 & The_IntB1 = 1 & The_IntB2 = 2
 
    if instA.The_Int1 = instB.The_IntB1 then
       [] = RPT2:Test_Passed["Comp", Local_Test, 0]
@@ -2202,7 +2205,7 @@ INSERT INTO S_SYNC
 
 Returning_No = Local_Test',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	2,
 	10);

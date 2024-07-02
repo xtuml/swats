@@ -228,11 +228,13 @@ package body ASL_Mapping_ASL_Mapping10_Check_Base_Types_Service is
       
       
       instA := Root_Object.ASL_Mapping.objA.Create;
+      Root_Object.ASL_Mapping.objA.ASL_Mapping_objA_Type(instA.all).objA_id      := 1;
       Root_Object.ASL_Mapping.objA.ASL_Mapping_objA_Type(instA.all).The_Int1     := 1;
       Root_Object.ASL_Mapping.objA.ASL_Mapping_objA_Type(instA.all).The_Int2     := 2;
       
       
       instB := Root_Object.ASL_Mapping.objB.Create;
+      Root_Object.ASL_Mapping.objB.ASL_Mapping_objB_Type(instB.all).objB_id      := 1;
       Root_Object.ASL_Mapping.objB.ASL_Mapping_objB_Type(instB.all).The_IntB1    := 1;
       Root_Object.ASL_Mapping.objB.ASL_Mapping_objB_Type(instB.all).The_IntB2    := 2;
       

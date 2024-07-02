@@ -53,7 +53,7 @@ if my_test = UNDEFINED then
 
    # Use this function to set the test number to 1 using a ''C'' insert
    # if it returns set, then this must be I-SIM else WACA.
-   [Test_Details] = TAGS6::Set_Environment[Test_Details]
+   [Test_Details] = TD2:Set_Environment[Test_Details]
 
    if Test_Details.Number = 1 then
       Test_Details.Environment = ''ISIM''

@@ -200,6 +200,44 @@ package body Root_Object.SBONE.TD is
 --*********************  Object Definition *****************************
 ------------------------------------------------------------------------
 
+   td_id_Value : Application_Types.Base_Integer_Type := Application_Types.Base_Integer_Type_first;
+--
+--ADATEST IGNORE_ON
+   function Obtain_Subsequent_td_id return Application_Types.Base_Integer_Type is
+   begin
+      td_id_Value :=
+         Application_Types.Base_Integer_Type'succ (td_id_Value);
+      return td_id_Value;
+   end Obtain_Subsequent_td_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
+   function Get_td_id (
+      This_Object : Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
+   begin
+       return SBONE_TD_Type (This_Object.all).td_id;
+   end Get_td_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
+   procedure Put_td_id (
+      This_Object : in Root_Object.Object_Access;
+      td_id_Value : in Application_Types.Base_Integer_Type) is
+   begin
+      SBONE_TD_Type (This_Object.all).td_id :=
+         td_id_Value;
+   end Put_td_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
 --ADATEST IGNORE_ON
    function Get_This_Test_Number (
       This_Object: Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
@@ -241,6 +279,7 @@ package body Root_Object.SBONE.TD is
    
       else
          This_Object := Free_List.First_Entry;
+         SBONE_TD_Type(This_Object.all).td_id := Application_Types.Base_Integer_Type_First;
          SBONE_TD_Type(This_Object.all).This_Test_Number := Application_Types.Base_Integer_Type_First;
          Free_List.First_Entry := Free_List.First_Entry.Next_Object;
       end if;
@@ -280,9 +319,25 @@ package body Root_Object.SBONE.TD is
 --------------------------------------------------------------------------
 --
 
---------------------------------------------------------------------------
-   -- function Create_Unique is not available for this object as it does
-   -- not have a non referential identifying attribute.
+--ADATEST IGNORE_ON
+   function Create_Unique return Root_Object.Object_Access is
+
+   This_Object: Root_Object.Object_Access;
+
+   begin
+      --
+      -- get hold of a new instance
+      --
+      This_Object := Create;
+
+
+      SBONE_TD_Type(This_Object.all).td_id :=
+         Obtain_Subsequent_td_id;
+
+      return This_Object;
+
+   end Create_Unique;
+--ADATEST IGNORE_OFF
 --------------------------------------------------------------------------
 
 --ADATEST IGNORE_ON

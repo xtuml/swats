@@ -48,6 +48,52 @@ INSERT INTO O_TPARM
 	'',
 	"00000000-0000-0000-0000-000000000000",
 	'');
+INSERT INTO O_TFR
+	VALUES ("dc961c30-7d35-4d5b-9c7e-3da440590d9d",
+	"d8e126bf-a32c-447f-96fe-d4b796774322",
+	'Set_Environment',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'Local_Input = Input_Test_Data
+
+# Call terminator bridge
+[Environment_Variable] = ET2:Env_Number[]
+
+Local_Input.Number = Environment_Variable
+
+Output_Test_Data = Local_Input
+',
+	3,
+	'',
+	"d6e816d1-335e-4a72-a31a-c45e08b8d143",
+	2,
+	2);
+INSERT INTO O_TPARM
+	VALUES ("00e8e365-b65d-4759-ab8c-a0676a6a2105",
+	"dc961c30-7d35-4d5b-9c7e-3da440590d9d",
+	'Input_Test_Data',
+	"4a0d0af1-389e-4a59-ab75-1a58a41887c4",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("4a0d0af1-389e-4a59-ab75-1a58a41887c4",
+	"00000000-0000-0000-0000-000000000000",
+	'inst_ref<Test_Data>',
+	'',
+	'',
+	'../TAGS.xtuml');
+INSERT INTO O_TPARM
+	VALUES ("b900390c-2724-45f1-a541-7b03c055e389",
+	"dc961c30-7d35-4d5b-9c7e-3da440590d9d",
+	'Output_Test_Data',
+	"4a0d0af1-389e-4a59-ab75-1a58a41887c4",
+	1,
+	'',
+	"00e8e365-b65d-4759-ab8c-a0676a6a2105",
+	'');
 INSERT INTO O_NBATTR
 	VALUES ("7290a00b-8426-4a9f-8fc6-f9d9543874c1",
 	"d8e126bf-a32c-447f-96fe-d4b796774322");

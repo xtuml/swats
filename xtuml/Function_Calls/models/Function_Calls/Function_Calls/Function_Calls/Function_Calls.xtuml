@@ -657,46 +657,6 @@ INSERT INTO C_EP_PROXY
 	3,
 	'../Shared/Function_Calls/Function_Calls.xtuml');
 INSERT INTO SPR_PEP
-	VALUES ("ce289b80-d1e8-449c-87bd-30a78173d53d",
-	"c555e3c2-f3ea-40c1-93e8-202f7cf374d5",
-	"9b955d2f-e365-49f9-b2fe-658b794ae00f");
-INSERT INTO SPR_PO
-	VALUES ("ce289b80-d1e8-449c-87bd-30a78173d53d",
-	'Perform_Service_In_Tight_Loop',
-	'',
-	'',
-	3,
-	6,
-	0);
-INSERT INTO C_EP_PROXY
-	VALUES ("c555e3c2-f3ea-40c1-93e8-202f7cf374d5",
-	"468ef668-c021-4a7e-acca-a8bae429b627",
-	0,
-	'Perform_Service_In_Tight_Loop',
-	'',
-	4,
-	'../Shared/Function_Calls/Function_Calls.xtuml');
-INSERT INTO SPR_PEP
-	VALUES ("c0a15aad-be6f-484d-927c-95db1acea203",
-	"999ed317-c1de-4853-80e6-ed634840e06d",
-	"9b955d2f-e365-49f9-b2fe-658b794ae00f");
-INSERT INTO SPR_PO
-	VALUES ("c0a15aad-be6f-484d-927c-95db1acea203",
-	'Test_Set_Of_IH',
-	'',
-	'',
-	3,
-	6,
-	0);
-INSERT INTO C_EP_PROXY
-	VALUES ("999ed317-c1de-4853-80e6-ed634840e06d",
-	"468ef668-c021-4a7e-acca-a8bae429b627",
-	0,
-	'Test_Set_Of_IH',
-	'',
-	5,
-	'../Shared/Function_Calls/Function_Calls.xtuml');
-INSERT INTO SPR_PEP
 	VALUES ("9fc83344-99a5-413b-8174-3d79e3365bd4",
 	"aa74a41c-6f32-44bc-86bf-c2971a657298",
 	"9b955d2f-e365-49f9-b2fe-658b794ae00f");
@@ -815,26 +775,6 @@ INSERT INTO C_EP_PROXY
 	'Call_B',
 	'',
 	11,
-	'../Shared/Function_Calls/Function_Calls.xtuml');
-INSERT INTO SPR_PEP
-	VALUES ("f06b0438-5228-4334-bb5d-c57d7cea460f",
-	"9c8e48e5-0a26-42fa-a3f5-83ab28d0b3fa",
-	"9b955d2f-e365-49f9-b2fe-658b794ae00f");
-INSERT INTO SPR_PO
-	VALUES ("f06b0438-5228-4334-bb5d-c57d7cea460f",
-	'Test_IH_Params',
-	'',
-	'',
-	3,
-	6,
-	0);
-INSERT INTO C_EP_PROXY
-	VALUES ("9c8e48e5-0a26-42fa-a3f5-83ab28d0b3fa",
-	"468ef668-c021-4a7e-acca-a8bae429b627",
-	0,
-	'Test_IH_Params',
-	'',
-	12,
 	'../Shared/Function_Calls/Function_Calls.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("468ef668-c021-4a7e-acca-a8bae429b627",

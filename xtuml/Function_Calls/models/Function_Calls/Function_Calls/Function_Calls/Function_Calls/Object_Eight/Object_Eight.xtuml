@@ -28,6 +28,11 @@ INSERT INTO O_ATTR
 INSERT INTO O_ID
 	VALUES (0,
 	"a0edbed2-d2f5-4c3f-a44e-a51e49544dd0");
+INSERT INTO O_OIDA
+	VALUES ("62856647-9598-45a6-8e0f-96c26cd20189",
+	"a0edbed2-d2f5-4c3f-a44e-a51e49544dd0",
+	0,
+	'Attribute_Eight');
 INSERT INTO O_ID
 	VALUES (1,
 	"a0edbed2-d2f5-4c3f-a44e-a51e49544dd0");

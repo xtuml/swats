@@ -200,12 +200,27 @@ package body Root_Object.Function_Calls.OBJNINE is
 --*********************  Object Definition *****************************
 ------------------------------------------------------------------------
 
+   Attribute_Nine_Value : Application_Types.Base_Integer_Type := Application_Types.Base_Integer_Type_first;
+--
+--ADATEST IGNORE_ON
+   function Obtain_Subsequent_Attribute_Nine return Application_Types.Base_Integer_Type is
+   begin
+      Attribute_Nine_Value :=
+         Application_Types.Base_Integer_Type'succ (Attribute_Nine_Value);
+      return Attribute_Nine_Value;
+   end Obtain_Subsequent_Attribute_Nine;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
 --ADATEST IGNORE_ON
    function Get_Attribute_Nine (
-      This_Object: Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
+      This_Object : Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
    begin
-      return Function_Calls_OBJNINE_Type (This_Object.all).Attribute_Nine;
+       return Function_Calls_OBJNINE_Type (This_Object.all).Attribute_Nine;
    end Get_Attribute_Nine;
+
 --ADATEST IGNORE_OFF
 
 ------------------------------------------------------------------------
@@ -218,6 +233,7 @@ package body Root_Object.Function_Calls.OBJNINE is
       Function_Calls_OBJNINE_Type (This_Object.all).Attribute_Nine :=
          Attribute_Nine_Value;
    end Put_Attribute_Nine;
+
 --ADATEST IGNORE_OFF
 
 ------------------------------------------------------------------------
@@ -280,9 +296,25 @@ package body Root_Object.Function_Calls.OBJNINE is
 --------------------------------------------------------------------------
 --
 
---------------------------------------------------------------------------
-   -- function Create_Unique is not available for this object as it does
-   -- not have a non referential identifying attribute.
+--ADATEST IGNORE_ON
+   function Create_Unique return Root_Object.Object_Access is
+
+   This_Object: Root_Object.Object_Access;
+
+   begin
+      --
+      -- get hold of a new instance
+      --
+      This_Object := Create;
+
+
+      Function_Calls_OBJNINE_Type(This_Object.all).Attribute_Nine :=
+         Obtain_Subsequent_Attribute_Nine;
+
+      return This_Object;
+
+   end Create_Unique;
+--ADATEST IGNORE_OFF
 --------------------------------------------------------------------------
 
 --ADATEST IGNORE_ON

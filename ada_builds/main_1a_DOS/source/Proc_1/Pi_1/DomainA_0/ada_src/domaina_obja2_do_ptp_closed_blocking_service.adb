@@ -84,7 +84,8 @@ package body DomainA_objA2_do_ptp_closed_blocking_Service is
       
       --  create an instance to use for the test
       newA := Root_Object.DomainA.objA.Create_Unique;
-      Root_Object.DomainA.objA.DomainA_objA_Type(newA.all).ResultA := 0;
+      Root_Object.DomainA.objA.DomainA_objA_Type(newA.all).ResultA       := 0;
+      Root_Object.DomainA.objA.DomainA_objA_Type(newA.all).Current_State := Root_Object.DomainA.objA.Idle;
       
       an_int := 1;
       a_real := 2.0;

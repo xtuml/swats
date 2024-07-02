@@ -7,6 +7,60 @@ INSERT INTO O_OBJ
 	'objC',
 	'',
 	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("dd51871e-f1f4-4c3c-ae11-486a821a8b04",
+	"1c4835e5-f237-48c7-8da2-1936eae3e944",
+	'Test_IH_Params',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'Inst_Of_C = find-one Object_C where idC = 100
+
+if Input_IH.idC = 100 then
+
+   if Input_IH.IntC = 200 then
+
+      if Input_IH.RealC = 99.9 then
+         Inst_Of_C.idC   = 1000
+         Inst_Of_C.IntC  = 2000
+         Inst_Of_C.RealC = 999.9
+
+         Return_IH = Inst_Of_C
+      endif
+
+   endif
+
+endif',
+	3,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	2,
+	1);
+INSERT INTO O_TPARM
+	VALUES ("35e7b90d-4484-447d-92c1-fc8010d18062",
+	"dd51871e-f1f4-4c3c-ae11-486a821a8b04",
+	'Input_IH',
+	"df098ea0-7a84-4b91-85fb-310bd4b5560c",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("df098ea0-7a84-4b91-85fb-310bd4b5560c",
+	"00000000-0000-0000-0000-000000000000",
+	'inst_ref<Object_C>',
+	'',
+	'',
+	'../Function_Calls.xtuml');
+INSERT INTO O_TPARM
+	VALUES ("fda6663a-1f41-4459-b27b-68396f0a9536",
+	"dd51871e-f1f4-4c3c-ae11-486a821a8b04",
+	'Return_IH',
+	"df098ea0-7a84-4b91-85fb-310bd4b5560c",
+	1,
+	'',
+	"35e7b90d-4484-447d-92c1-fc8010d18062",
+	'');
 INSERT INTO O_NBATTR
 	VALUES ("38b3d95e-c927-4bfc-94c3-3c19106ab2d6",
 	"1c4835e5-f237-48c7-8da2-1936eae3e944");
@@ -64,6 +118,11 @@ INSERT INTO O_ATTR
 INSERT INTO O_ID
 	VALUES (0,
 	"1c4835e5-f237-48c7-8da2-1936eae3e944");
+INSERT INTO O_OIDA
+	VALUES ("38b3d95e-c927-4bfc-94c3-3c19106ab2d6",
+	"1c4835e5-f237-48c7-8da2-1936eae3e944",
+	0,
+	'idC');
 INSERT INTO O_ID
 	VALUES (1,
 	"1c4835e5-f237-48c7-8da2-1936eae3e944");

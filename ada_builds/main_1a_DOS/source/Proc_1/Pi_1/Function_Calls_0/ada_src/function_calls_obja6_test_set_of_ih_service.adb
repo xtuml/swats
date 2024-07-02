@@ -14,7 +14,7 @@
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
---* File Name:               Function_Calls5_Test_Set_Of_IH_Service.adb
+--* File Name:               Function_Calls_objA6_Test_Set_Of_IH_Service.adb
 --* Drawing Number:          Refer to release documentation                           *
 --* Version:                 As detailed by Configuration Management System           *
 --* Version Date:            As detailed by Configuration Management System           *
@@ -74,9 +74,9 @@ with Root_Object;
 use type Root_Object.Object_Access;
 
 
-package body Function_Calls_Function_Calls5_Test_Set_Of_IH_Service is
+package body Function_Calls_objA6_Test_Set_Of_IH_Service is
    
-   procedure Function_Calls_Function_Calls5_Test_Set_Of_IH (
+   procedure Function_Calls_objA6_Test_Set_Of_IH (
       Set_Of_IH        : in out Function_Calls_Domain_Types.Structure_For_IH;
       Single           : in     Boolean;
       Testing_For_What : in     Application_Types.Base_Text_Type) is
@@ -89,7 +89,7 @@ package body Function_Calls_Function_Calls5_Test_Set_Of_IH_Service is
       How_Many      : Application_Types.Base_Integer_Type := 1;
       
    begin
-   -- start of Function_Calls5_Test_Set_Of_IH
+   -- start of objA6_Test_Set_Of_IH
       my_test_data := Root_Object.Function_Calls.TD.Unconditional_Find_One;
       Test_Number := Root_Object.Function_Calls.TD.Function_Calls_TD_type(my_test_data.all).The_Test_Number;
       
@@ -186,10 +186,10 @@ package body Function_Calls_Function_Calls5_Test_Set_Of_IH_Service is
       Root_Object.Function_Calls.TD.Function_Calls_TD_type(my_test_data.all).The_Test_Number := Test_Number;
       
       
-   end Function_Calls_Function_Calls5_Test_Set_Of_IH;
+   end Function_Calls_objA6_Test_Set_Of_IH;
    
-end Function_Calls_Function_Calls5_Test_Set_Of_IH_Service;
+end Function_Calls_objA6_Test_Set_Of_IH_Service;
 
 --
--- End of file Function_Calls_Function_Calls5_Test_Set_Of_IH_Service.adb
+-- End of file Function_Calls_objA6_Test_Set_Of_IH_Service.adb
 --

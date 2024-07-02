@@ -200,12 +200,27 @@ package body Root_Object.Function_Calls.OBJFOUR is
 --*********************  Object Definition *****************************
 ------------------------------------------------------------------------
 
+   Attribute_Four_Value : Application_Types.Base_Integer_Type := Application_Types.Base_Integer_Type_first;
+--
+--ADATEST IGNORE_ON
+   function Obtain_Subsequent_Attribute_Four return Application_Types.Base_Integer_Type is
+   begin
+      Attribute_Four_Value :=
+         Application_Types.Base_Integer_Type'succ (Attribute_Four_Value);
+      return Attribute_Four_Value;
+   end Obtain_Subsequent_Attribute_Four;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
 --ADATEST IGNORE_ON
    function Get_Attribute_Four (
-      This_Object: Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
+      This_Object : Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
    begin
-      return Function_Calls_OBJFOUR_Type (This_Object.all).Attribute_Four;
+       return Function_Calls_OBJFOUR_Type (This_Object.all).Attribute_Four;
    end Get_Attribute_Four;
+
 --ADATEST IGNORE_OFF
 
 ------------------------------------------------------------------------
@@ -218,6 +233,7 @@ package body Root_Object.Function_Calls.OBJFOUR is
       Function_Calls_OBJFOUR_Type (This_Object.all).Attribute_Four :=
          Attribute_Four_Value;
    end Put_Attribute_Four;
+
 --ADATEST IGNORE_OFF
 
 ------------------------------------------------------------------------
@@ -280,9 +296,25 @@ package body Root_Object.Function_Calls.OBJFOUR is
 --------------------------------------------------------------------------
 --
 
---------------------------------------------------------------------------
-   -- function Create_Unique is not available for this object as it does
-   -- not have a non referential identifying attribute.
+--ADATEST IGNORE_ON
+   function Create_Unique return Root_Object.Object_Access is
+
+   This_Object: Root_Object.Object_Access;
+
+   begin
+      --
+      -- get hold of a new instance
+      --
+      This_Object := Create;
+
+
+      Function_Calls_OBJFOUR_Type(This_Object.all).Attribute_Four :=
+         Obtain_Subsequent_Attribute_Four;
+
+      return This_Object;
+
+   end Create_Unique;
+--ADATEST IGNORE_OFF
 --------------------------------------------------------------------------
 
 --ADATEST IGNORE_ON

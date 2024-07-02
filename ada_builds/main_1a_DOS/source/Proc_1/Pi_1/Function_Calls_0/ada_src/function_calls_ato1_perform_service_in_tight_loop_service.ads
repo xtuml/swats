@@ -14,7 +14,7 @@
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
---* File Name:               UDT8_Create_An_Active_Object_Service.adb
+--* File Name:               Function_Calls_ATO1_Perform_Service_In_Tight_Loop_Service.ads
 --* Drawing Number:          Refer to release documentation                           *
 --* Version:                 As detailed by Configuration Management System           *
 --* Version Date:            As detailed by Configuration Management System           *
@@ -40,8 +40,8 @@
 --*  BUILD INFORMATION                                                                *
 --*  -----------------                                                                *
 --*                                                                                   *
---* Domain Name              : User_Defined_Types
---* Domain Key Letter        : UDT
+--* Domain Name              : Function_Calls
+--* Domain Key Letter        : Function_Calls
 --* Domain Version           : 0
 --*                                                                                   *
 --*  Build Target       : Dos
@@ -51,40 +51,21 @@
 --
 -- with list for all objects, relationships, services and types used within this code fragment
 
--- List of objects used
-with Root_Object.UDT.AAO;
-
--- List of domain types used
-with UDT_Domain_Types;
-use type UDT_Domain_Types.Active_Object_Status_Type;
-
 with Application_Types;
-use type Application_Types.Base_Integer_Type;
-
 with Root_Object;
-use type Root_Object.Object_Access;
 
 
-package body UDT_UDT8_Create_An_Active_Object_Service is
+package Function_Calls_ATO1_Perform_Service_In_Tight_Loop_Service is
    
-   procedure UDT_UDT8_Create_An_Active_Object (
-      This_Test   : in     Application_Types.Base_Integer_Type;
-      Returned_IH :    out Root_Object.Object_Access) is
-      
-      
-   begin
-   -- start of UDT8_Create_An_Active_Object
-      
-      Returned_IH := Root_Object.UDT.AAO.Create;
-      Root_Object.UDT.AAO.UDT_AAO_Type(Returned_IH.all).The_Test_Number     := This_Test;
-      Root_Object.UDT.AAO.UDT_AAO_Type(Returned_IH.all).Why         := UDT_Domain_Types.Not_Tested;
-      Root_Object.UDT.AAO.UDT_AAO_Type(Returned_IH.all).Current_State   := Root_Object.UDT.AAO.Idle;
-      
-      
-   end UDT_UDT8_Create_An_Active_Object;
    
-end UDT_UDT8_Create_An_Active_Object_Service;
+   procedure Function_Calls_ATO1_Perform_Service_In_Tight_Loop (
+      A_Tight_Input_Parameter  : in     Root_Object.Object_Access;
+      This_Test_Number         : in     Application_Types.Base_Integer_Type;
+      Testing_For_What         : in     Application_Types.Base_Text_Type;
+      A_Tight_Return_Parameter :    out Application_Types.Base_Integer_Type);
+   
+end Function_Calls_ATO1_Perform_Service_In_Tight_Loop_Service;
 
 --
--- End of file UDT_UDT8_Create_An_Active_Object_Service.adb
+-- End of file Function_Calls_ATO1_Perform_Service_In_Tight_Loop_Service.ads
 --

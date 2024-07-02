@@ -75,6 +75,7 @@
 --    procedure Put_State
 --    procedure Description
 --    function Create
+--    function Create_Unique 
 --    procedure Delete
 --    function Count_Of
 --    procedure Find
@@ -145,8 +146,11 @@ package Root_Object.RP.DUPLICATED is
    --
    --
    --
-   -- Object DUPLICATED does not have an identifying non-referential attribute and 
-   -- therefore may not be uniquely created.
+   -- Object DUPLICATED has an identifying non-referential attribute duplicated_id 
+   -- and therefore may be uniquely created.
+   --
+   -- Object DUPLICATED has an identifying non-referential attribute R5_formalising_attribute 
+   -- and therefore may be uniquely created.
    -- 
    -- Object DUPLICATED has no TAGS.
    --
@@ -171,6 +175,10 @@ package Root_Object.RP.DUPLICATED is
    type RP_DUPLICATED_Type is new RP_Type with record
 
       --
+      -- Non initialised identifying non referential
+      duplicated_id : Application_Types.Base_Integer_Type;
+
+      --
       -- Non Identifying referential. Thou Shalt Not Use. 
       -- Domain_Number : Application_Types.Base_Integer_Type;
    
@@ -191,13 +199,21 @@ package Root_Object.RP.DUPLICATED is
       Which_Test_Number : Application_Types.Base_Integer_Type := Application_Types.Base_Integer_Type_First;
 
       --
+      -- Non initialised identifying non referential
+      R5_formalising_attribute : Application_Types.Base_Integer_Type;
+
+      --
+      -- Non Identifying referential. Thou Shalt Not Use. 
+      -- PrefixR5_formalising_attribute : Application_Types.Base_Integer_Type;
+   
+      --
       R4_A : Root_Object.Object_Access := null;
-      R5_A : Root_Object.Object_Access := null;
-      R5_B : Root_Object.Object_List.List_Header_Access_Type;
+      R5_A : Root_Object.Object_List.List_Header_Access_Type;
+      R5_B : Root_Object.Object_Access := null;
 
    end record;
 
-   Attribute_Count : constant Application_Types.Base_Integer_Type := 4;
+   Attribute_Count : constant Application_Types.Base_Integer_Type := 6;
 
    -------------------------------------------------------------------------------------------------
 
@@ -209,6 +225,18 @@ package Root_Object.RP.DUPLICATED is
    --*********************  Object Attribute Access ***********************
    ------------------------------------------------------------------------
    --
+
+
+   function Get_duplicated_id (
+      This_Object : Root_Object.Object_Access) 
+   return Application_Types.Base_Integer_Type;
+
+   procedure Put_duplicated_id (
+      This_Object : in Root_Object.Object_Access;
+      duplicated_id_Value : in Application_Types.Base_Integer_Type);
+
+   pragma inline (Get_duplicated_id);
+   pragma inline (Put_duplicated_id);
 
 
    function Get_Who_Reported_The_Duplicated_Result (
@@ -259,6 +287,18 @@ package Root_Object.RP.DUPLICATED is
    pragma inline (Put_Which_Test_Number);
 
 
+   function Get_R5_formalising_attribute (
+      This_Object : Root_Object.Object_Access) 
+   return Application_Types.Base_Integer_Type;
+
+   procedure Put_R5_formalising_attribute (
+      This_Object : in Root_Object.Object_Access;
+      R5_formalising_attribute_Value : in Application_Types.Base_Integer_Type);
+
+   pragma inline (Get_R5_formalising_attribute);
+   pragma inline (Put_R5_formalising_attribute);
+
+
 
 
    --
@@ -280,25 +320,25 @@ package Root_Object.RP.DUPLICATED is
    pragma inline (Put_R4_A);
 
 
-   function  Get_R5_A (
+   function  Get_R5_A  (
       This_Object : Root_Object.Object_Access) 
-   return Root_Object.Object_Access;
+   return Root_Object.Object_List.List_Header_Access_Type;
 
-   procedure Put_R5_A (
-      This_Object :   in  Root_Object.Object_Access;
-      R5_A_Value : in Root_Object.Object_Access);
+   procedure Put_R5_A  (
+      This_Object : in  Root_Object.Object_Access;
+      R5_A_Value : in Root_Object.Object_List.List_Header_Access_Type);
 
    pragma inline (Get_R5_A);
    pragma inline (Put_R5_A);
 
 
-   function  Get_R5_B  (
+   function  Get_R5_B (
       This_Object : Root_Object.Object_Access) 
-   return Root_Object.Object_List.List_Header_Access_Type;
+   return Root_Object.Object_Access;
 
-   procedure Put_R5_B  (
+   procedure Put_R5_B (
       This_Object : in Root_Object.Object_Access;
-      R5_B_Value : in Root_Object.Object_List.List_Header_Access_Type);
+      R5_B_Value : in Root_Object.Object_Access);
 
    pragma inline (Get_R5_B);
    pragma inline (Put_R5_B);
@@ -310,9 +350,7 @@ package Root_Object.RP.DUPLICATED is
    function  Create 
       return Root_Object.Object_Access;
 
-   -- function Create_Unique 
-   -- is not available for this object as it does not have a non-referential 
-   -- identifying attribute.
+   function Create_Unique return Root_Object.Object_Access;
 
 
    procedure Delete (

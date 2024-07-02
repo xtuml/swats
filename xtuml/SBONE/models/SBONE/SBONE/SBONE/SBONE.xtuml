@@ -550,26 +550,6 @@ INSERT INTO C_EP_PROXY
 	'',
 	3,
 	'../Shared/SBONE/SBONE.xtuml');
-INSERT INTO SPR_PEP
-	VALUES ("3f78baa7-7832-4607-aa8d-e9e23bb69b43",
-	"88d21b51-40c2-4974-b6ea-3f24663d3714",
-	"5d78594a-1962-4a22-ab7a-6a999dcb7956");
-INSERT INTO SPR_PO
-	VALUES ("3f78baa7-7832-4607-aa8d-e9e23bb69b43",
-	'Append_IH_To_Struct',
-	'',
-	'',
-	3,
-	6,
-	0);
-INSERT INTO C_EP_PROXY
-	VALUES ("88d21b51-40c2-4974-b6ea-3f24663d3714",
-	"baf40abd-9264-46c2-a451-cd6c81f6950d",
-	0,
-	'Append_IH_To_Struct',
-	'',
-	4,
-	'../Shared/SBONE/SBONE.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("baf40abd-9264-46c2-a451-cd6c81f6950d",
 	"00000000-0000-0000-0000-000000000000",
@@ -744,26 +724,6 @@ INSERT INTO C_EP_PROXY
 	'Test_Structure_In_Bridge',
 	'',
 	3,
-	'../Shared/SBONEInto_The_Great_Wide_Open/SBONEInto_The_Great_Wide_Open.xtuml');
-INSERT INTO SPR_REP
-	VALUES ("89709f47-79f7-4455-a69e-5be6f4242284",
-	"e2c2ea14-9f2e-42ba-a8bf-6fa1d5c12b82",
-	"bc7285a0-d462-4c85-a51a-a2089fdc6c00");
-INSERT INTO SPR_RO
-	VALUES ("89709f47-79f7-4455-a69e-5be6f4242284",
-	'The_IH_Struct_Across_Bridge',
-	'',
-	'',
-	3,
-	2,
-	4);
-INSERT INTO C_EP_PROXY
-	VALUES ("e2c2ea14-9f2e-42ba-a8bf-6fa1d5c12b82",
-	"5aa5a1a9-05d6-4726-bddb-24ab0cfdabba",
-	0,
-	'The_IH_Struct_Across_Bridge',
-	'',
-	4,
 	'../Shared/SBONEInto_The_Great_Wide_Open/SBONEInto_The_Great_Wide_Open.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("5aa5a1a9-05d6-4726-bddb-24ab0cfdabba",

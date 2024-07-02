@@ -1753,8 +1753,7 @@ Test = My_Test_Data.The_Test_Number
 
    # Invoke domain based synch. service
    [] = Struct6::Decode_Simple_NTL_Structure[Test,\
-                                            {NTL_Simple_Object_Structure_5},           \
-                                            struct_5] 
+                                            {NTL_Simple_Object_Structure_5}] 
 
    delete struct_5
 
@@ -1766,7 +1765,7 @@ Test = Test + 1
 
 My_Test_Data.The_Test_Number = Test',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	2,
 	4);
@@ -1910,10 +1909,10 @@ INSERT INTO S_SYNC
 	'Start_Structures_Tests',
 	' Start_Structures_Tests
 ',
-	'My_Test_Data = create Test_Data with The_Test_Number = 1
+	'My_Test_Data = create Test_Data with td_id = 1 & The_Test_Number = 1
 [] = Struct8::Create_Report_Data[]',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	2,
 	6);
@@ -2259,13 +2258,13 @@ Test = my_test.The_Test_Number
    {Parent_Structure} is Complex_UDT_Structure_Type
    {Child_Structure} is UDT_Structure_Type
 
-   one   = 1
-   two   = 2.0
-   three = 3
+   one_local   = 1
+   two_local   = 2.0
+   three_local = 3
 
    This_Blue of Colour_Type = ''Blue''
 
-   append [ one, two,  {Child_Structure}, three, This_Blue ] to {Parent_Structure}
+   append [ one_local, two_local,  {Child_Structure}, three_local, This_Blue ] to {Parent_Structure}
    
    Number_In_Child_Structure   = countof {Child_Structure}
    Number_In_Parent_Structure  = countof {Parent_Structure}
@@ -2381,7 +2380,7 @@ Test_Number = my_test.The_Test_Number
 
    append [Primary_SO] to {The_First_Structure}
 
-   [] = Struct1::Receive_Structure_IH [Test_Number, {The_First_Structure}, 1, \
+   [] = SO10:Receive_Structure_IH [Test_Number, {The_First_Structure}, 1, \
                                        Primary_SO.Reference_SO, "Single instance in structure"]
 
    Test_Number = Test_Number + 1
@@ -2394,7 +2393,7 @@ Test_Number = my_test.The_Test_Number
 #          value to compare against.
 #--------------------------------------------------------------------------
 
-   [] = Struct1::Receive_Structure_IH [Test_Number, {The_First_Structure}, 1, \
+   [] = SO10:Receive_Structure_IH [Test_Number, {The_First_Structure}, 1, \
                                        Local_Copy_Of_IH_Identifer, "Second bite at Single instance in structure"]
 
    Test_Number = Test_Number + 1
@@ -2417,7 +2416,7 @@ Test_Number = my_test.The_Test_Number
 
    append [Secondary_SO] to {The_First_Structure}
 
-   [] = Struct1::Receive_Structure_IH [Test_Number, {The_First_Structure}, 2, \
+   [] = SO10:Receive_Structure_IH [Test_Number, {The_First_Structure}, 2, \
                                        Secondary_SO.Reference_SO, "Second instance in structure"]
 
    Test_Number = Test_Number + 1
@@ -2430,7 +2429,7 @@ Test_Number = my_test.The_Test_Number
 #          value to compare against.
 #--------------------------------------------------------------------------
 
-   [] = Struct1::Receive_Structure_IH [Test_Number, {The_First_Structure}, 2, \
+   [] = SO10:Receive_Structure_IH [Test_Number, {The_First_Structure}, 2, \
                                        Local_Copy_Of_IH_Identifer, "Second bite at Second instance in structure"]
 
 # End Test 4
@@ -2454,7 +2453,7 @@ Test_Number = my_test.The_Test_Number
 
 # {Returned_Structure}  is Structure_and_IH_Type
 
-# [{Returned_Structure}] = Struct3::Receive_Empty_Structure_IH [Test_Number, {The_First_Structure}, \
+# [{Returned_Structure}] = SO9:Receive_Empty_Structure_IH [Test_Number, {The_First_Structure}, \
 #    Primary_SO, "Pass in empty structure, return full"]
 
 #--------------------------------------------------------------------------
@@ -2466,7 +2465,7 @@ Test_Number = my_test.The_Test_Number
 
 #Test_Number = Test_Number + 1
 
-#[] = Struct1::Receive_Structure_IH [Test_Number, {Returned_Structure}, 1, \
+#[] = SO10:Receive_Structure_IH [Test_Number, {Returned_Structure}, 1, \
 #   Primary_SO.Reference_SO, "Previously returned structure is ok"]
 
 
@@ -2491,7 +2490,7 @@ Test_Number = my_test.The_Test_Number
 
       append [Next_SO] to {Next_Structure}
 
-      [] = Struct1::Receive_Structure_IH [Test_Number, {Next_Structure}, bean_counter, Next_SO.Reference_SO, "Many instances in structure"]
+      [] = SO10:Receive_Structure_IH [Test_Number, {Next_Structure}, bean_counter, Next_SO.Reference_SO, "Many instances in structure"]
  
       bean_counter = bean_counter + 1
 
@@ -2524,7 +2523,7 @@ Test_Number = my_test.The_Test_Number
 
       append [Next_SO] to {Delete_Structure}
 
-      [] = Struct1::Receive_Structure_IH [Test_Number, {Delete_Structure}, bean_counter, SO_ID, "Structure fully copied"]
+      [] = SO10:Receive_Structure_IH [Test_Number, {Delete_Structure}, bean_counter, SO_ID, "Structure fully copied"]
 
       # Deleting the instance object before it is passed into the function call as a component of the structure
       # causes I-Sim grief. It appears that a shallow copy is taken, ie. it is passed by reference. To prove this
@@ -2535,7 +2534,7 @@ Test_Number = my_test.The_Test_Number
 
       Test_Number = Test_Number + 1
 
-      [] = Struct1::Receive_Structure_IH [Test_Number, {Delete_Structure}, bean_counter, SO_ID, "Structure fully copied"]
+      [] = SO10:Receive_Structure_IH [Test_Number, {Delete_Structure}, bean_counter, SO_ID, "Structure fully copied"]
  
       bean_counter = bean_counter + 1
 
@@ -2556,7 +2555,7 @@ Test_Number = Test_Number + 1
 
 my_test.The_Test_Number = Test_Number',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	2,
 	10);

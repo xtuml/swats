@@ -14,7 +14,7 @@
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
---* File Name:               Function_Calls4_Perform_Service_In_Tight_Loop_Service.ads
+--* File Name:               TAGS_TD2_Set_Environment_Service.ads
 --* Drawing Number:          Refer to release documentation                           *
 --* Version:                 As detailed by Configuration Management System           *
 --* Version Date:            As detailed by Configuration Management System           *
@@ -40,8 +40,8 @@
 --*  BUILD INFORMATION                                                                *
 --*  -----------------                                                                *
 --*                                                                                   *
---* Domain Name              : Function_Calls
---* Domain Key Letter        : Function_Calls
+--* Domain Name              : Tagging
+--* Domain Key Letter        : TAGS
 --* Domain Version           : 0
 --*                                                                                   *
 --*  Build Target       : Dos
@@ -51,21 +51,18 @@
 --
 -- with list for all objects, relationships, services and types used within this code fragment
 
-with Application_Types;
 with Root_Object;
 
 
-package Function_Calls_Function_Calls4_Perform_Service_In_Tight_Loop_Service is
+package TAGS_TD2_Set_Environment_Service is
    
    
-   procedure Function_Calls_Function_Calls4_Perform_Service_In_Tight_Loop (
-      A_Tight_Input_Parameter  : in     Root_Object.Object_Access;
-      This_Test_Number         : in     Application_Types.Base_Integer_Type;
-      Testing_For_What         : in     Application_Types.Base_Text_Type;
-      A_Tight_Return_Parameter :    out Application_Types.Base_Integer_Type);
+   procedure TAGS_TD2_Set_Environment (
+      Input_Test_Data  : in     Root_Object.Object_Access;
+      Output_Test_Data :    out Root_Object.Object_Access);
    
-end Function_Calls_Function_Calls4_Perform_Service_In_Tight_Loop_Service;
+end TAGS_TD2_Set_Environment_Service;
 
 --
--- End of file Function_Calls_Function_Calls4_Perform_Service_In_Tight_Loop_Service.ads
+-- End of file TAGS_TD2_Set_Environment_Service.ads
 --

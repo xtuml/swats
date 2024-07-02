@@ -57,7 +57,7 @@ with Root_Object.Struct.SO;
 with Root_Object.Struct.TD;
 
 -- List of services used
-with Struct_Struct1_Receive_Structure_IH_Service;
+with Struct_SO10_Receive_Structure_IH_Service;
 
 -- List of bridges used
 with Struct_ET1_Env_String_Bridge;
@@ -134,7 +134,7 @@ use type Root_Object.Object_Access;
       --
       
       
-      Struct_Struct1_Receive_Structure_IH_Service.Struct_Struct1_Receive_Structure_IH (
+      Struct_SO10_Receive_Structure_IH_Service.Struct_SO10_Receive_Structure_IH (
          This_Test_Number        => Test_Number,
          Input_Structure         => The_First_Structure,
          Number_Of_Elements      => 1,
@@ -151,7 +151,7 @@ use type Root_Object.Object_Access;
       --           value to compare against.
       -- --------------------------------------------------------------------------
       
-      Struct_Struct1_Receive_Structure_IH_Service.Struct_Struct1_Receive_Structure_IH (
+      Struct_SO10_Receive_Structure_IH_Service.Struct_SO10_Receive_Structure_IH (
          This_Test_Number        => Test_Number,
          Input_Structure         => The_First_Structure,
          Number_Of_Elements      => 1,
@@ -187,7 +187,7 @@ use type Root_Object.Object_Access;
       --
       
       
-      Struct_Struct1_Receive_Structure_IH_Service.Struct_Struct1_Receive_Structure_IH (
+      Struct_SO10_Receive_Structure_IH_Service.Struct_SO10_Receive_Structure_IH (
          This_Test_Number        => Test_Number,
          Input_Structure         => The_First_Structure,
          Number_Of_Elements      => 2,
@@ -205,7 +205,7 @@ use type Root_Object.Object_Access;
       --           value to compare against.
       -- --------------------------------------------------------------------------
       
-      Struct_Struct1_Receive_Structure_IH_Service.Struct_Struct1_Receive_Structure_IH (
+      Struct_SO10_Receive_Structure_IH_Service.Struct_SO10_Receive_Structure_IH (
          This_Test_Number        => Test_Number,
          Input_Structure         => The_First_Structure,
          Number_Of_Elements      => 2,
@@ -225,14 +225,14 @@ use type Root_Object.Object_Access;
       --  This test ensures that redeclaring the structure clears it out completely.
       --  {The_First_Structure} is Structure_and_IH_Type
       --  {Returned_Structure}  is Structure_and_IH_Type
-      --  [{Returned_Structure}] = Struct3::Receive_Empty_Structure_IH [Test_Number, {The_First_Structure}, \
+      --  [{Returned_Structure}] = SO9:Receive_Empty_Structure_IH [Test_Number, {The_First_Structure}, \
       --     Primary_SO, "Pass in empty structure, return full"]
       -- --------------------------------------------------------------------------
       --  Using the return from the previous test, check to see that the return parameter has been
       --  created and silled out as expected.
       --  UNSUPPORTED due to previous test
       -- Test_Number = Test_Number + 1
-      -- [] = Struct1::Receive_Structure_IH [Test_Number, {Returned_Structure}, 1, \
+      -- [] = SO10:Receive_Structure_IH [Test_Number, {Returned_Structure}, 1, \
       --    Primary_SO.Reference_SO, "Previously returned structure is ok"]
       -- --------------------------------------------------------------------------
       --  Series of tests
@@ -265,7 +265,7 @@ use type Root_Object.Object_Access;
          --
          
          
-         Struct_Struct1_Receive_Structure_IH_Service.Struct_Struct1_Receive_Structure_IH (
+         Struct_SO10_Receive_Structure_IH_Service.Struct_SO10_Receive_Structure_IH (
             This_Test_Number        => Test_Number,
             Input_Structure         => Next_Structure,
             Number_Of_Elements      => bean_counter,
@@ -315,7 +315,7 @@ use type Root_Object.Object_Access;
          --
          
          
-         Struct_Struct1_Receive_Structure_IH_Service.Struct_Struct1_Receive_Structure_IH (
+         Struct_SO10_Receive_Structure_IH_Service.Struct_SO10_Receive_Structure_IH (
             This_Test_Number        => Test_Number,
             Input_Structure         => Delete_Structure,
             Number_Of_Elements      => bean_counter,
@@ -337,7 +337,7 @@ use type Root_Object.Object_Access;
          Test_Number := Test_Number + 1;
          
          
-         Struct_Struct1_Receive_Structure_IH_Service.Struct_Struct1_Receive_Structure_IH (
+         Struct_SO10_Receive_Structure_IH_Service.Struct_SO10_Receive_Structure_IH (
             This_Test_Number        => Test_Number,
             Input_Structure         => Delete_Structure,
             Number_Of_Elements      => bean_counter,

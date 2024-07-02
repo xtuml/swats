@@ -76,6 +76,7 @@ use type Root_Object.Object_Access;
       
       
       new_test := Root_Object.Relationships.TN.Create;
+      Root_Object.Relationships.TN.Relationships_TN_Type(new_test.all).td_id           := 1;
       Root_Object.Relationships.TN.Relationships_TN_Type(new_test.all).The_Test_Number := 1;
       
    end Relationships_Scenario2;

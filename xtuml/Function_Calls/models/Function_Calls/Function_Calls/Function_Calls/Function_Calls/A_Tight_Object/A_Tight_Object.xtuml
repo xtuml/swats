@@ -8,6 +8,74 @@ INSERT INTO O_OBJ
 	' Object used for proving that passive objects created and passed into services in a tight loop are dealt with.
 ',
 	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("3d60704c-b245-48c4-a1a4-d145493b22ff",
+	"abc18256-606b-4338-ae1e-e1fe18fcb993",
+	'Perform_Service_In_Tight_Loop',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'# ---------------------------------------------------------------------------
+# Start the test here, produce the pass/fail back in the scenario.
+# ---------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[This_Test_Number, "1241-0000-01-0805", "Function_Calls", "Perform Services in tight loop", Testing_For_What]
+   [] = RPT8:Specify_Requid[This_Test_Number, "1241-0000-01-1215"]
+   [] = RPT8:Specify_Requid[This_Test_Number, "1103-0000-01-1011"]
+
+   if A_Tight_Input_Parameter = UNDEFINED then
+      A_Tight_Return_Parameter = -1
+   else
+      A_Tight_Return_Parameter = A_Tight_Input_Parameter.Start_Value + A_Tight_Input_Parameter.Increment_Value
+   endif',
+	3,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	2,
+	1);
+INSERT INTO O_TPARM
+	VALUES ("b6f2a9ce-63fb-49a1-b61f-3799f40d33e6",
+	"3d60704c-b245-48c4-a1a4-d145493b22ff",
+	'A_Tight_Input_Parameter',
+	"a62a1023-f60a-4cf0-aaac-adc14ea68c2a",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("a62a1023-f60a-4cf0-aaac-adc14ea68c2a",
+	"00000000-0000-0000-0000-000000000000",
+	'inst_ref<A_Tight_Object>',
+	'',
+	'',
+	'../Function_Calls.xtuml');
+INSERT INTO O_TPARM
+	VALUES ("e68e3e4f-69df-4459-9515-80a32586a66a",
+	"3d60704c-b245-48c4-a1a4-d145493b22ff",
+	'This_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"b6f2a9ce-63fb-49a1-b61f-3799f40d33e6",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("51ca8a1c-0181-4516-a3b8-4fe2c690c0b2",
+	"3d60704c-b245-48c4-a1a4-d145493b22ff",
+	'Testing_For_What',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"e68e3e4f-69df-4459-9515-80a32586a66a",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("d1f24531-4dc0-4792-a664-c8a6ccb4ab9e",
+	"3d60704c-b245-48c4-a1a4-d145493b22ff",
+	'A_Tight_Return_Parameter',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"51ca8a1c-0181-4516-a3b8-4fe2c690c0b2",
+	'');
 INSERT INTO O_NBATTR
 	VALUES ("f7551f70-7bea-4e37-9f23-93193265f18c",
 	"abc18256-606b-4338-ae1e-e1fe18fcb993");
@@ -17,7 +85,7 @@ INSERT INTO O_BATTR
 INSERT INTO O_ATTR
 	VALUES ("f7551f70-7bea-4e37-9f23-93193265f18c",
 	"abc18256-606b-4338-ae1e-e1fe18fcb993",
-	"00000000-0000-0000-0000-000000000000",
+	"69c9d32d-8978-4f32-9d1c-5280048ac264",
 	'Start_Value',
 	'',
 	'',
@@ -62,9 +130,32 @@ INSERT INTO O_ATTR
 	"ba5eda7a-def5-0000-0000-000000000006",
 	'',
 	'');
+INSERT INTO O_NBATTR
+	VALUES ("69c9d32d-8978-4f32-9d1c-5280048ac264",
+	"abc18256-606b-4338-ae1e-e1fe18fcb993");
+INSERT INTO O_BATTR
+	VALUES ("69c9d32d-8978-4f32-9d1c-5280048ac264",
+	"abc18256-606b-4338-ae1e-e1fe18fcb993");
+INSERT INTO O_ATTR
+	VALUES ("69c9d32d-8978-4f32-9d1c-5280048ac264",
+	"abc18256-606b-4338-ae1e-e1fe18fcb993",
+	"00000000-0000-0000-0000-000000000000",
+	'ato_id',
+	'',
+	'',
+	'ato_id',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
 INSERT INTO O_ID
 	VALUES (0,
 	"abc18256-606b-4338-ae1e-e1fe18fcb993");
+INSERT INTO O_OIDA
+	VALUES ("69c9d32d-8978-4f32-9d1c-5280048ac264",
+	"abc18256-606b-4338-ae1e-e1fe18fcb993",
+	0,
+	'ato_id');
 INSERT INTO O_ID
 	VALUES (1,
 	"abc18256-606b-4338-ae1e-e1fe18fcb993");

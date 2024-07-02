@@ -109,6 +109,7 @@ package body ASL_Mapping_DV1_Default_Vals_In_Object_Service is
       
       
       InstDV := Root_Object.ASL_Mapping.DV.Create;
+      Root_Object.ASL_Mapping.DV.ASL_Mapping_DV_Type(InstDV.all).dv_id := 1;
       
       
       if Set_Vals then

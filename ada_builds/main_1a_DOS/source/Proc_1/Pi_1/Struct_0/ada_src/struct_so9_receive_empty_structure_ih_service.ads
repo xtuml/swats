@@ -14,7 +14,7 @@
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
---* File Name:               Function_Calls12_Test_IH_Params_Service.ads
+--* File Name:               Struct_SO9_Receive_Empty_Structure_IH_Service.ads
 --* Drawing Number:          Refer to release documentation                           *
 --* Version:                 As detailed by Configuration Management System           *
 --* Version Date:            As detailed by Configuration Management System           *
@@ -40,8 +40,8 @@
 --*  BUILD INFORMATION                                                                *
 --*  -----------------                                                                *
 --*                                                                                   *
---* Domain Name              : Function_Calls
---* Domain Key Letter        : Function_Calls
+--* Domain Name              : Structures
+--* Domain Key Letter        : Struct
 --* Domain Version           : 0
 --*                                                                                   *
 --*  Build Target       : Dos
@@ -51,18 +51,26 @@
 --
 -- with list for all objects, relationships, services and types used within this code fragment
 
+-- List of domain types used
+with Struct_Domain_Types;
+with Struct_Domain_Types.Ops;
+
+with Application_Types;
 with Root_Object;
 
 
-package Function_Calls_Function_Calls12_Test_IH_Params_Service is
+package Struct_SO9_Receive_Empty_Structure_IH_Service is
    
    
-   procedure Function_Calls_Function_Calls12_Test_IH_Params (
-      Input_IH  : in     Root_Object.Object_Access;
-      Return_IH :    out Root_Object.Object_Access);
+   procedure Struct_SO9_Receive_Empty_Structure_IH (
+      Test_Number      : in     Application_Types.Base_Integer_Type;
+      Empty_Structure  : in out Struct_Domain_Types.Structure_and_IH_Type;
+      Inserted_IH      : in     Root_Object.Object_Access;
+      Testing_For      : in     Application_Types.Base_Text_Type;
+      Filled_Structure :    out Struct_Domain_Types.Structure_and_IH_Type);
    
-end Function_Calls_Function_Calls12_Test_IH_Params_Service;
+end Struct_SO9_Receive_Empty_Structure_IH_Service;
 
 --
--- End of file Function_Calls_Function_Calls12_Test_IH_Params_Service.ads
+-- End of file Struct_SO9_Receive_Empty_Structure_IH_Service.ads
 --

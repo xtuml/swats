@@ -75,6 +75,7 @@
 --    procedure Put_State
 --    procedure Description
 --    function Create
+--    function Create_Unique 
 --    procedure Delete
 --    function Count_Of
 --    procedure Find
@@ -152,8 +153,8 @@ package Root_Object.ASL_Mapping.objBIG is
    --   Complete,
    --   Next_Stage.
    --
-   -- Object objBIG does not have an identifying non-referential attribute and 
-   -- therefore may not be uniquely created.
+   -- Object objBIG has an identifying non-referential attribute objBIG_id 
+   -- and therefore may be uniquely created.
    -- 
    -- Object objBIG has no TAGS.
    --
@@ -185,6 +186,10 @@ package Root_Object.ASL_Mapping.objBIG is
    --
 
    type ASL_Mapping_objBIG_Type is new ASL_Mapping_Type with record
+
+      --
+      -- Non initialised identifying non referential
+      objBIG_id : Application_Types.Base_Integer_Type;
 
       --
       -- Initialised Non identifying non referential
@@ -264,11 +269,11 @@ package Root_Object.ASL_Mapping.objBIG is
 
       --
       -- Initialised Non identifying non referential
-      Twentyone : Application_Types.Base_Integer_Type := Application_Types.Base_Integer_Type_First;
+      Twentytwo : Application_Types.Base_Integer_Type := Application_Types.Base_Integer_Type_First;
 
       --
       -- Initialised Non identifying non referential
-      Twentytwo : Application_Types.Base_Integer_Type := Application_Types.Base_Integer_Type_First;
+      Twentyone : Application_Types.Base_Integer_Type := Application_Types.Base_Integer_Type_First;
 
       --
       -- Initialised Non identifying non referential
@@ -525,7 +530,7 @@ package Root_Object.ASL_Mapping.objBIG is
 
    end record;
 
-   Attribute_Count : constant Application_Types.Base_Integer_Type := -84;
+   Attribute_Count : constant Application_Types.Base_Integer_Type := -85;
 
    -------------------------------------------------------------------------------------------------
 
@@ -537,6 +542,18 @@ package Root_Object.ASL_Mapping.objBIG is
    --*********************  Object Attribute Access ***********************
    ------------------------------------------------------------------------
    --
+
+
+   function Get_objBIG_id (
+      This_Object : Root_Object.Object_Access) 
+   return Application_Types.Base_Integer_Type;
+
+   procedure Put_objBIG_id (
+      This_Object : in Root_Object.Object_Access;
+      objBIG_id_Value : in Application_Types.Base_Integer_Type);
+
+   pragma inline (Get_objBIG_id);
+   pragma inline (Put_objBIG_id);
 
 
    function Get_One (
@@ -767,18 +784,6 @@ package Root_Object.ASL_Mapping.objBIG is
    pragma inline (Put_Twenty);
 
 
-   function Get_Twentyone (
-      This_Object : Root_Object.Object_Access) 
-   return Application_Types.Base_Integer_Type;
-
-   procedure Put_Twentyone (
-      This_Object : in Root_Object.Object_Access;
-      Twentyone_Value : in Application_Types.Base_Integer_Type);
-
-   pragma inline (Get_Twentyone);
-   pragma inline (Put_Twentyone);
-
-
    function Get_Twentytwo (
       This_Object : Root_Object.Object_Access) 
    return Application_Types.Base_Integer_Type;
@@ -789,6 +794,18 @@ package Root_Object.ASL_Mapping.objBIG is
 
    pragma inline (Get_Twentytwo);
    pragma inline (Put_Twentytwo);
+
+
+   function Get_Twentyone (
+      This_Object : Root_Object.Object_Access) 
+   return Application_Types.Base_Integer_Type;
+
+   procedure Put_Twentyone (
+      This_Object : in Root_Object.Object_Access;
+      Twentyone_Value : in Application_Types.Base_Integer_Type);
+
+   pragma inline (Get_Twentyone);
+   pragma inline (Put_Twentyone);
 
 
    function Get_Twentythree (
@@ -1560,9 +1577,7 @@ package Root_Object.ASL_Mapping.objBIG is
    function  Create 
       return Root_Object.Object_Access;
 
-   -- function Create_Unique 
-   -- is not available for this object as it does not have a non-referential 
-   -- identifying attribute.
+   function Create_Unique return Root_Object.Object_Access;
 
 
    procedure Delete (
