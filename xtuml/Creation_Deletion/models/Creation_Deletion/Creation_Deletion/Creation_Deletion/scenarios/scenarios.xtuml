@@ -56,8 +56,7 @@ INSERT INTO S_SYNC
                                    BooleanA   = TRUE   &\
                                    ColourA    = ''Red''
 
-   testObjB = create Object_B with ReferenceB = 0   &\
-                                   IntegerA   = 100
+   testObjB = create Object_B with IntegerA   = 100
 
    if testObjA.ReferenceA = 0 then
 

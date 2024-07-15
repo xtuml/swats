@@ -138,7 +138,7 @@ INSERT INTO O_ATTR
 	'',
 	'Background_Processing_Timer_Id',
 	0,
-	"ba5eda7a-def5-0000-0000-000000000002",
+	"ba5eda7a-def5-0000-0000-00000000000f",
 	'',
 	'');
 INSERT INTO O_NBATTR
