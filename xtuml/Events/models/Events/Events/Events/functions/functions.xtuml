@@ -92,6 +92,7 @@ INSERT INTO S_SYNC
 	'[] = RPT1:Start_Test[Test_No, "1241-0000-01-0301", "Events", "Bridge", "Event from Bridge Function"]
 [] = RPT8:Specify_Requid[Test_No, "1103-0000-01-0711"]
 
+The_IH = find-one Object_X where objX_id = The_IH_ID
 generate objX1:Check_ASL(Test_No, "Sync Service") to The_IH',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	3,
@@ -110,19 +111,12 @@ INSERT INTO S_SPARM
 INSERT INTO S_SPARM
 	VALUES ("3dca0447-9065-408c-812f-331ef17e1ab6",
 	"43f1a73f-fe8a-4774-acad-9cac86cdbaec",
-	'The_IH',
-	"47f9112f-19f7-49a2-839c-0bfcbfe6fdb0",
+	'The_IH_ID',
+	"ba5eda7a-def5-0000-0000-000000000002",
 	0,
 	'',
 	"8643e17e-3730-4975-998c-4853dc654de6",
 	'');
-INSERT INTO S_DT_PROXY
-	VALUES ("47f9112f-19f7-49a2-839c-0bfcbfe6fdb0",
-	"00000000-0000-0000-0000-000000000000",
-	'inst_ref<Object_X>',
-	'',
-	'',
-	'../Events/Events.xtuml');
 INSERT INTO PE_PE
 	VALUES ("43f1a73f-fe8a-4774-acad-9cac86cdbaec",
 	1,

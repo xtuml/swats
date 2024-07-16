@@ -757,8 +757,8 @@ INSERT INTO S_SYNC
                                 Reference_ID  = 1               &\
                                 Current_State = ''Idle''
 
-   SubA1 = create SubA with Value_To_Add  = 10     &\
-                            Current_State = ''Idle''
+   #SubA1 = create SubA with Value_To_Add  = 10     &\
+   #                         Current_State = ''Idle''
 
    SubB1 = create SubB with Value_To_Add  = 5      &\
                             Current_State = ''Idle''
@@ -766,14 +766,14 @@ INSERT INTO S_SYNC
    SubC1 = create SubC with Value_To_Add  = 6      &\
                             Current_State = ''Idle''
 
-   subD1 = create SubD with Value_To_Add  = 20     &\
-                            Current_State = ''Idle''
+   #subD1 = create SubD with Value_To_Add  = 20     &\
+   #                         Current_State = ''Idle''
 
    subE1 = create SubE with Value_To_Add  = 30     &\
                             Current_State = ''Idle''
 
-   subF1 = create SubF with Value_To_Add  = 40     &\
-                            Current_State = ''Idle''
+   #subF1 = create SubF with Value_To_Add  = 40     &\
+   #                         Current_State = ''Idle''
 
 
    link SuperA1 R13 SubB1
@@ -806,8 +806,8 @@ INSERT INTO S_SYNC
                                  Reference_ID  = 2               &\
                                  Current_State = ''Idle''
 
-   SubA2 = create SubA with Value_To_Add = 5       &\
-                            Current_State = ''Idle''
+   #SubA2 = create SubA with Value_To_Add = 5       &\
+   #                         Current_State = ''Idle''
 
    SubB2 = create SubB with Value_To_Add  = 0      &\
                             Current_State = ''Idle''
@@ -815,11 +815,11 @@ INSERT INTO S_SYNC
    SubC2 = create SubC with Value_To_Add  = 6      &\
                             Current_State = ''Idle''
 
-   subD2 = create SubD with Value_To_Add  = 0      &\
-                            Current_State = ''Idle''
+   #subD2 = create SubD with Value_To_Add  = 0      &\
+   #                         Current_State = ''Idle''
 
-   subE2 = create SubE with Value_To_Add  = 0      &\
-                            Current_State = ''Idle''
+   #subE2 = create SubE with Value_To_Add  = 0      &\
+   #                         Current_State = ''Idle''
 
    subF2 = create SubF with Value_To_Add  = 0      &\
                             Current_State = ''Idle''
@@ -1335,7 +1335,7 @@ INSERT INTO S_SYNC
 #          an event to test that events may be generated from services
 #-------------------------------------------------------------------------
 
-   [] = Events3::Generate_From_Service[The_Test_Number, firstX]
+   [] = Events3::Generate_From_Service[The_Test_Number, firstX.objX_id]
 
    The_Test_Number = The_Test_Number + 1
 
@@ -1366,7 +1366,7 @@ INSERT INTO S_SYNC
    [] = RPT8:Specify_Requid[The_Test_Number, "1103-0000-01-0711"]
    [] = RPT8:Specify_Requid[The_Test_Number, "1241-0000-01-0402"]
 
-   [] = GFB1:Generate_Event[The_Test_Number, firstX]
+   [] = GFB1:Generate_Event[The_Test_Number, firstX.objX_id]
 
    The_Test_Number = The_Test_Number + 1
 
@@ -1469,7 +1469,8 @@ INSERT INTO S_SYNC
    firstZ = create Object_Z with The_Test_No = The_Test_Number &\
                                  Int_Att     = 1000            &\
                                  Real_Att    = 1000.0          &\
-                                 Text_Att    = "Test_Data"
+                                 Text_Att    = "Test_Data"     &\
+                                 Current_State = ''Idle''
 
    generate objX4:Check_Attributes (The_Test_Number, "Read_Other_Object") to fourthX
 
@@ -1487,7 +1488,8 @@ INSERT INTO S_SYNC
    secondZ = create Object_Z with The_Test_No = The_Test_Number &\
                                   Int_Att     = 0   &\
                                   Real_Att    = 0.0 &\
-                                  Text_Att    = " "
+                                  Text_Att    = " " &\
+                                  Current_State = ''Idle''
 
    generate objX4:Check_Attributes (The_Test_Number, "Write_Other_Object") to fourthX
 
@@ -1772,7 +1774,7 @@ INSERT INTO S_SYNC
       my_test.Current_Test_Number = The_Test_Number
    endif',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	2,
 	4);
