@@ -463,7 +463,7 @@ Test = My_Test_Data.The_Test_Number
    endloop
 
    # Invoke domain based synch. service
-   [] = Struct2::Decode_Simple_Structure[Test, {Simple_Object_Structure_5}, struct_5]
+   [] = Struct2::Decode_Simple_Structure[Test, {Simple_Object_Structure_5}, struct_5.Reference_SO]
 
    delete struct_5
 
@@ -1357,7 +1357,7 @@ Test = My_Test_Data.The_Test_Number
    endloop
 
    # Invoke domain based synch. service
-   [] = Struct4::Decode_Simple_TL_Structure[Test, {TL_Simple_Object_Structure_5}, struct_5]
+   [] = Struct4::Decode_Simple_TL_Structure[Test, {TL_Simple_Object_Structure_5}, struct_5.Reference_SO]
 
    delete struct_5
 

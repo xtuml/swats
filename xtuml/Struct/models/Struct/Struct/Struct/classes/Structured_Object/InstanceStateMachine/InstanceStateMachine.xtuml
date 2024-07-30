@@ -23,14 +23,14 @@ INSERT INTO SM_EVTDI
 	"3236e1b1-bf24-49d0-8165-ddfd9a3a864c",
 	'A_Simple_Structure',
 	'',
-	"679fc160-8aa2-47fb-8735-d6ce70c73c19",
+	"e7906ba4-9989-4c40-9a7a-d41d7bb2cc7c",
 	'',
 	"eea2c4cd-3757-485e-9840-0737e2b79b1f",
 	"93747a9c-1179-4cd4-a772-a5854e8a1287");
 INSERT INTO S_DT_PROXY
-	VALUES ("679fc160-8aa2-47fb-8735-d6ce70c73c19",
+	VALUES ("e7906ba4-9989-4c40-9a7a-d41d7bb2cc7c",
 	"00000000-0000-0000-0000-000000000000",
-	'Simple_Structure_Type',
+	'sequence of Simple_Structure_Type',
 	'',
 	'',
 	'../../../../Shared/Shared.xtuml');
@@ -48,14 +48,14 @@ INSERT INTO SM_EVTDI
 	"3236e1b1-bf24-49d0-8165-ddfd9a3a864c",
 	'A_TL_Structure',
 	'',
-	"0b7d8a4d-5c40-4bd8-a6c0-51275f578595",
+	"434416bd-5405-49eb-a4c6-741135075a48",
 	'',
 	"84427fbb-7af4-442a-a06f-428fbd0c92fa",
 	"59c7705e-5b9e-434a-8725-f1f8cd76dff0");
 INSERT INTO S_DT_PROXY
-	VALUES ("0b7d8a4d-5c40-4bd8-a6c0-51275f578595",
+	VALUES ("434416bd-5405-49eb-a4c6-741135075a48",
 	"00000000-0000-0000-0000-000000000000",
-	'Type_Linked_Simple_Structure_Type',
+	'sequence of Type_Linked_Simple_Structure_Type',
 	'',
 	'',
 	'../../../../Shared/Shared.xtuml');
@@ -73,14 +73,14 @@ INSERT INTO SM_EVTDI
 	"3236e1b1-bf24-49d0-8165-ddfd9a3a864c",
 	'A_NTL_Structure',
 	'',
-	"62921169-841d-4f12-8ec7-bbaab67a0732",
+	"6c7ff502-e04c-416e-8ea8-c6828a31307c",
 	'',
 	"3c0eef3e-ec33-48cb-8555-db6820242abd",
 	"38c3ff86-b57d-479d-acbf-0d62e808d91b");
 INSERT INTO S_DT_PROXY
-	VALUES ("62921169-841d-4f12-8ec7-bbaab67a0732",
+	VALUES ("6c7ff502-e04c-416e-8ea8-c6828a31307c",
 	"00000000-0000-0000-0000-000000000000",
-	'Name_and_Type_Linked_Simple_Structure_Type',
+	'sequence of Name_and_Type_Linked_Simple_Structure_Type',
 	'',
 	'',
 	'../../../../Shared/Shared.xtuml');
