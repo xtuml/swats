@@ -10720,7 +10720,7 @@ INSERT INTO R_PART
 	"c642458d-3924-4c98-ac14-8eabcfbc7b98",
 	0,
 	0,
-	'has');
+	'has_2');
 INSERT INTO O_RTIDA
 	VALUES ("75983551-426c-411f-bdd9-e7e0520e28d0",
 	"4be3b22a-50ed-4494-822b-463dc99cd989",
@@ -10753,7 +10753,7 @@ INSERT INTO R_FORM
 	"341f9098-e8a9-4645-9c88-1d255e38790d",
 	0,
 	0,
-	'has');
+	'has_1');
 INSERT INTO R_RGO
 	VALUES ("4be3b22a-50ed-4494-822b-463dc99cd989",
 	"400e4a77-6e4e-4696-87e7-529d3e08b6eb",
@@ -10782,7 +10782,7 @@ INSERT INTO R_PART
 	"fd0e8682-2b71-4cba-bc23-9818934fc5da",
 	0,
 	0,
-	'has');
+	'has_2');
 INSERT INTO O_RTIDA
 	VALUES ("75983551-426c-411f-bdd9-e7e0520e28d0",
 	"4be3b22a-50ed-4494-822b-463dc99cd989",
@@ -10805,7 +10805,7 @@ INSERT INTO R_FORM
 	"458b5974-8b9f-4943-a4db-5e16e2ab2d04",
 	0,
 	0,
-	'has');
+	'has_1');
 INSERT INTO R_RGO
 	VALUES ("4be3b22a-50ed-4494-822b-463dc99cd989",
 	"6be21a09-bea9-448f-8d5f-42fa59bca818",

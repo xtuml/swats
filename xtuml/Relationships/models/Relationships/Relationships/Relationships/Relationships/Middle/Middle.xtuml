@@ -342,11 +342,11 @@ Has_Failed = FALSE
    
       [] = RPT5:Test_Text[Test, "M  M Memory leak test complete"]
 
-      {Set_Right} = find-all Many_Far_Right 
+      {Set_Right2} = find-all Many_Far_Right 
 
       Final_Right_Value = 0
 
-      for This_Local_Right in {Set_Right} do
+      for This_Local_Right in {Set_Right2} do
          Final_Right_Value = Final_Right_Value + This_Local_Right.MFR_Data
       endfor
 

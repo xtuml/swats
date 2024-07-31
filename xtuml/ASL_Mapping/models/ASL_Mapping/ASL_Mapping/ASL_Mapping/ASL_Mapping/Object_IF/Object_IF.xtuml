@@ -26,7 +26,7 @@ INSERT INTO O_TFR
 #------------------------------------------------------------------------#
 
 # create an instance to remember to test results
-newIF = create unique Object_IF with ResultA = 0 
+newIF = create Object_IF with ReferenceIF = 1 & ResultA = 0 
 
 Test = Test_Start
 

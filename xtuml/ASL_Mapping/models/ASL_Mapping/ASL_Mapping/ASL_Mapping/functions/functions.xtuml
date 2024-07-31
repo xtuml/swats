@@ -2087,7 +2087,8 @@ INSERT INTO S_SYNC
    The_String_Type  = "The Cat Sat On The Mat"
    The_Boolean_Type = TRUE
 
-   objDV = create Default_Vals with The_Integer     = 0     &\
+   objDV = create Default_Vals with dv_id           = 1     &\
+                                    The_Integer     = 0     &\
                                     The_Real        = 0.0   &\
                                     The_Text        = " "    &\
                                     The_Boolean     = FALSE

@@ -72,15 +72,15 @@ INSERT INTO S_SPARM
 	VALUES ("e074ef72-b4d0-45d5-b993-8d9450c9bf5f",
 	"dfaccb76-d4ee-48a5-afc6-0f71481427ee",
 	'Received_Very_Simple_Structure',
-	"7cf3bfaf-1a11-42af-b4a4-5be1e01d6775",
+	"f416edfd-6617-4532-ac37-44ad72f8dcc2",
 	0,
 	'',
 	"00000000-0000-0000-0000-000000000000",
 	'');
 INSERT INTO S_DT_PROXY
-	VALUES ("7cf3bfaf-1a11-42af-b4a4-5be1e01d6775",
+	VALUES ("f416edfd-6617-4532-ac37-44ad72f8dcc2",
 	"00000000-0000-0000-0000-000000000000",
-	'Very_Simple_Structure_Type',
+	'sequence of Very_Simple_Structure_Type',
 	'',
 	'',
 	'../../Shared/Shared.xtuml');

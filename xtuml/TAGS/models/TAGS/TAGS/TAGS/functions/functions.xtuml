@@ -2413,7 +2413,7 @@ supported = TRUE
    # the polymorphically delivered event, will report a different test number. This is so that the report
    # will be distinguished by the reporter domain as a separate test.
 
-   Sub1_1 = create Active_Tagged_Subtype_One with Subtype_One_Data = this_test & Test_No = Index_For_Subtype 
+   Sub1_1 = create Active_Tagged_Subtype_One with Subtype_One_Data = this_test & Test_No = Index_For_Subtype & Current_State = ''Idle''
 
    link Super1 R6 Sub1_1
 

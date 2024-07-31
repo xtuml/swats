@@ -62,19 +62,12 @@ INSERT INTO C_PP
 INSERT INTO C_PP
 	VALUES ("216fbe15-3889-454e-81bf-dce7d18c8d53",
 	"e890808e-212a-41dd-83d6-5d2f35b044fa",
-	"47f9112f-19f7-49a2-839c-0bfcbfe6fdb0",
-	'The_IH',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'The_IH_ID',
 	'',
 	0,
 	'',
 	"aee2c59a-be17-41fb-acfc-dc73320d61cb");
-INSERT INTO S_DT_PROXY
-	VALUES ("47f9112f-19f7-49a2-839c-0bfcbfe6fdb0",
-	"00000000-0000-0000-0000-000000000000",
-	'inst_ref<Object_X>',
-	'',
-	'',
-	'../../Events/Events/Events.xtuml');
 INSERT INTO C_EP
 	VALUES ("afd453e0-e5a9-43ce-83f6-ddcbfba0bca7",
 	"aa3a9b61-d2f2-4f79-9c59-2528aed50927",

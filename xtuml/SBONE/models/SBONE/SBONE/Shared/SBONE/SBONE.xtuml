@@ -23,16 +23,16 @@ INSERT INTO C_IO
 INSERT INTO C_PP
 	VALUES ("29fa611b-da9a-40bb-bd1a-cac85c00fbaa",
 	"d53b6618-276f-491f-96fb-f55ab9458e14",
-	"7cf3bfaf-1a11-42af-b4a4-5be1e01d6775",
+	"f416edfd-6617-4532-ac37-44ad72f8dcc2",
 	'Received_Very_Simple_Structure',
 	'',
 	0,
 	'',
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO S_DT_PROXY
-	VALUES ("7cf3bfaf-1a11-42af-b4a4-5be1e01d6775",
+	VALUES ("f416edfd-6617-4532-ac37-44ad72f8dcc2",
 	"00000000-0000-0000-0000-000000000000",
-	'Very_Simple_Structure_Type',
+	'sequence of Very_Simple_Structure_Type',
 	'',
 	'',
 	'../Shared.xtuml');

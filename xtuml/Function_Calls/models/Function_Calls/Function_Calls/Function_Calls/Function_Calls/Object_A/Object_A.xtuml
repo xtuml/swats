@@ -350,15 +350,15 @@ INSERT INTO O_TPARM
 	VALUES ("b2430f33-a3ff-4da5-9ece-e764358b5b2c",
 	"69b3d0ce-92ef-4c13-adc8-b64c471970f8",
 	'Set_Of_IH',
-	"bec18417-ec3d-4b12-94dd-949d9101755e",
+	"53946255-cb93-44f1-a0ea-f2fb1e51fb79",
 	0,
 	'',
 	"00000000-0000-0000-0000-000000000000",
 	'');
 INSERT INTO S_DT_PROXY
-	VALUES ("bec18417-ec3d-4b12-94dd-949d9101755e",
+	VALUES ("53946255-cb93-44f1-a0ea-f2fb1e51fb79",
 	"00000000-0000-0000-0000-000000000000",
-	'Structure_For_IH',
+	'sequence of Structure_For_IH',
 	'',
 	'',
 	'../../types/types.xtuml');
