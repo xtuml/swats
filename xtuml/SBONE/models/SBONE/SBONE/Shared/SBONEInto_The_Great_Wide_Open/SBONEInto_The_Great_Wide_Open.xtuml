@@ -118,19 +118,12 @@ INSERT INTO C_PP
 INSERT INTO C_PP
 	VALUES ("f3cd97fb-0a29-4d4f-8232-682de9e4f92d",
 	"bbe926e8-4a68-47d2-b3b9-e2445fb9409c",
-	"fe71e110-b240-4941-a126-661bd52ae8c9",
+	"6d728950-a14d-4102-98cb-ae59a856ca2a",
 	'A_Structure_To_Return',
 	'',
 	1,
 	'',
 	"520df98f-9af3-4f5a-86e4-4cc638f745ff");
-INSERT INTO S_DT_PROXY
-	VALUES ("fe71e110-b240-4941-a126-661bd52ae8c9",
-	"00000000-0000-0000-0000-000000000000",
-	'Source_Structure_Type',
-	'',
-	'',
-	'../Shared.xtuml');
 INSERT INTO C_EP
 	VALUES ("473ea463-4285-4a64-8f8a-f24c8ffcc817",
 	"5aa5a1a9-05d6-4726-bddb-24ab0cfdabba",
