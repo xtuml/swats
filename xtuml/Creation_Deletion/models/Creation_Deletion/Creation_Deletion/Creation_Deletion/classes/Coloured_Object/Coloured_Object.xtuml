@@ -35,7 +35,9 @@ INSERT INTO O_TFR
 
    a_chicken_flavour = create Flavoured_Object   with Flavoured   = ''chicken''
    a_red_colour      = create Coloured_Object    with Coloured    = ''red''
-   a_red_chicken     = create Flavour_and_Colour with Dish_Number = 201
+   a_red_chicken     = create Flavour_and_Colour with Dish_Number = 201 & \
+                                                      Coloured    = ''red'' & \
+                                                      Flavoured   = ''chicken''
 
    # Set attribute using instance handle
    a_chicken_flavour.How_Spicy = 2
@@ -115,15 +117,33 @@ INSERT INTO O_TFR
 
 
    # Create associative objects to use when linking flavoured and coloured objects
-   blue_chicken   = create Flavour_and_Colour with Dish_Number = the_blue_chicken_dish
-   red_chicken    = create Flavour_and_Colour with Dish_Number = the_red_chicken_dish
-   green_chicken  = create Flavour_and_Colour with Dish_Number = the_green_chicken_dish
-   blue_coffee    = create Flavour_and_Colour with Dish_Number = the_blue_coffee_dish
-   red_coffee     = create Flavour_and_Colour with Dish_Number = the_red_coffee_dish
-   green_coffee   = create Flavour_and_Colour with Dish_Number = the_green_coffee_dish
-   blue_fish      = create Flavour_and_Colour with Dish_Number = the_blue_fish_dish
-   red_fish       = create Flavour_and_Colour with Dish_Number = the_red_fish_dish
-   green_fish     = create Flavour_and_Colour with Dish_Number = the_green_fish_dish
+   blue_chicken   = create Flavour_and_Colour with Dish_Number = the_blue_chicken_dish & \
+                                                      Coloured    = ''blue'' & \
+                                                      Flavoured   = ''chicken''
+   red_chicken    = create Flavour_and_Colour with Dish_Number = the_red_chicken_dish & \
+                                                      Coloured    = ''red'' & \
+                                                      Flavoured   = ''chicken''
+   green_chicken  = create Flavour_and_Colour with Dish_Number = the_green_chicken_dish & \
+                                                      Coloured    = ''green'' & \
+                                                      Flavoured   = ''chicken''
+   blue_coffee    = create Flavour_and_Colour with Dish_Number = the_blue_coffee_dish & \
+                                                      Coloured    = ''blue'' & \
+                                                      Flavoured   = ''coffee''
+   red_coffee     = create Flavour_and_Colour with Dish_Number = the_red_coffee_dish & \
+                                                      Coloured    = ''red'' & \
+                                                      Flavoured   = ''coffee''
+   green_coffee   = create Flavour_and_Colour with Dish_Number = the_green_coffee_dish & \
+                                                      Coloured    = ''green'' & \
+                                                      Flavoured   = ''coffee''
+   blue_fish      = create Flavour_and_Colour with Dish_Number = the_blue_fish_dish & \
+                                                      Coloured    = ''blue'' & \
+                                                      Flavoured   = ''fish''
+   red_fish       = create Flavour_and_Colour with Dish_Number = the_red_fish_dish & \
+                                                      Coloured    = ''red'' & \
+                                                      Flavoured   = ''fish''
+   green_fish     = create Flavour_and_Colour with Dish_Number = the_green_fish_dish & \
+                                                      Coloured    = ''green'' & \
+                                                      Flavoured   = ''fish''
 
    # many to many
    link chicken_flavour R1 blue_colour  using blue_chicken
@@ -779,7 +799,7 @@ INSERT INTO O_TFR
 #------------------------------------------------------------------------#
 
 Returned_Number = Test + 1',
-	3,
+	1,
 	'',
 	"00000000-0000-0000-0000-000000000000",
 	2,
@@ -823,7 +843,9 @@ INSERT INTO O_TFR
 
    a_chicken_flavour = create Flavoured_Object   with Flavoured   = ''chicken''
    a_red_colour      = create Coloured_Object    with Coloured    = ''red''
-   a_red_chicken     = create Flavour_and_Colour with Dish_Number = 201
+   a_red_chicken     = create Flavour_and_Colour with Dish_Number = 201 & \
+                                                      Coloured    = ''red'' & \
+                                                      Flavoured   = ''chicken''
 
    # Set attribute using instance handle
    a_chicken_flavour.How_Spicy = 2
@@ -920,7 +942,9 @@ INSERT INTO O_TFR
 
    a_new_blue_colour  = create Coloured_Object    with Coloured    = ''blue'' & Intensity = 1
    a_new_fish_flavour = create Flavoured_Object   with Flavoured   = ''fish'' & How_Spicy = 1
-   a_new_blue_fish    = create Flavour_and_Colour with Dish_Number = 202
+   a_new_blue_fish    = create Flavour_and_Colour with Dish_Number = 202 & \
+                                                      Coloured    = ''blue'' & \
+                                                      Flavoured   = ''fish''
 
    # link the relationship
    link a_new_fish_flavour R1 a_new_blue_colour using a_new_blue_fish
@@ -993,17 +1017,35 @@ INSERT INTO O_TFR
 
    # Create associative objects to use when linking flavoured and coloured objects
 
-   blue_chicken  = create Flavour_and_Colour with Dish_Number = the_blue_chicken_dish
-   red_chicken   = create Flavour_and_Colour with Dish_Number = the_red_chicken_dish
-   green_chicken = create Flavour_and_Colour with Dish_Number = the_green_chicken_dish
+   blue_chicken  = create Flavour_and_Colour with Dish_Number = the_blue_chicken_dish & \
+                                                      Coloured    = ''blue'' & \
+                                                      Flavoured   = ''chicken''
+   red_chicken   = create Flavour_and_Colour with Dish_Number = the_red_chicken_dish & \
+                                                      Coloured    = ''red'' & \
+                                                      Flavoured   = ''chicken''
+   green_chicken = create Flavour_and_Colour with Dish_Number = the_green_chicken_dish & \
+                                                      Coloured    = ''green'' & \
+                                                      Flavoured   = ''chicken''
 
-   blue_coffee  = create Flavour_and_Colour with Dish_Number = the_blue_coffee_dish
-   red_coffee   = create Flavour_and_Colour with Dish_Number = the_red_coffee_dish
-   green_coffee = create Flavour_and_Colour with Dish_Number = the_green_coffee_dish
+   blue_coffee  = create Flavour_and_Colour with Dish_Number = the_blue_coffee_dish & \
+                                                      Coloured    = ''blue'' & \
+                                                      Flavoured   = ''coffee''
+   red_coffee   = create Flavour_and_Colour with Dish_Number = the_red_coffee_dish & \
+                                                      Coloured    = ''red'' & \
+                                                      Flavoured   = ''coffee''
+   green_coffee = create Flavour_and_Colour with Dish_Number = the_green_coffee_dish & \
+                                                      Coloured    = ''green'' & \
+                                                      Flavoured   = ''coffee''
 
-   blue_fish  = create Flavour_and_Colour with Dish_Number = the_blue_fish_dish
-   red_fish   = create Flavour_and_Colour with Dish_Number = the_red_fish_dish
-   green_fish = create Flavour_and_Colour with Dish_Number = the_green_fish_dish
+   blue_fish  = create Flavour_and_Colour with Dish_Number = the_blue_fish_dish & \
+                                                      Coloured    = ''blue'' & \
+                                                      Flavoured   = ''fish''
+   red_fish   = create Flavour_and_Colour with Dish_Number = the_red_fish_dish & \
+                                                      Coloured    = ''red'' & \
+                                                      Flavoured   = ''fish''
+   green_fish = create Flavour_and_Colour with Dish_Number = the_green_fish_dish & \
+                                                      Coloured    = ''green'' & \
+                                                      Flavoured   = ''fish''
 
    # many to many
    link chicken_flavour R1 blue_colour  using blue_chicken
@@ -1271,7 +1313,7 @@ INSERT INTO O_TFR
 #------------------------------------------------------------------------#
 
 Returned_Test_Number = Test + 1',
-	3,
+	1,
 	'',
 	"1cf97114-ce6b-4e45-bcba-583bab90170e",
 	2,

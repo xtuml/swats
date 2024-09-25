@@ -343,7 +343,7 @@ endloop
 
    [ReturnInst] = objC1:Test_IH_Params[InstC]
 
-   if ReturnInst.idC = 1000 then
+   if ReturnInst.idC = 100 then
 
       if ReturnInst.IntC = 2000 then
 

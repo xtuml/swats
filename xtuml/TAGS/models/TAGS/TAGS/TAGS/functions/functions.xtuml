@@ -65,7 +65,7 @@ endif
    # Further attempts to create an object of this sort should be met with
    # complete indifference by WACA.
 
-   # Another_Passive_Object = create A_Passive_Static_Object with Size = 2 & Unique_Identifier = 2
+   # Another_Passive_Object = create unique A_Passive_Static_Object with Size = 2
 
    if The_Passive_Object      = UNDEFINED then
       # Test Failed
@@ -87,7 +87,7 @@ endif
    # Creation of another singleton object will cause unpredictable actions by WACA, therefor this
    # test is unsupported for the moment.
 
-   # Another_Passive_Object = create A_Passive_Static_Object with Size = 2 & Unique_Identifier = 2
+   # Another_Passive_Object = create unique A_Passive_Static_Object with Size = 2
 
 
    [] = RPT4:Test_Unsupported[Local_Test]
@@ -203,7 +203,7 @@ Returned_Test_Number = Local_Test
 
 ',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	2,
 	1);
@@ -324,12 +324,12 @@ endif
 
    [] = RPT1:Start_Test[Local_Test, "1241-0000-01-0128", "TAGGING", "Singleton passive object", "Create one singleton instance"]
 
-   The_Passive_Object = create A_Passive_Static_Object with  Unique_Identifier = 5 & Size = 1
+   The_Passive_Object = create unique A_Passive_Static_Object with Size = 1
 
    # Further attempts to create an object of this sort should be met with
    # complete indifference by WACA.
 
-   # Another_Passive_Object = create A_Passive_Static_Object with Unique_Identifier = 6 & Size = 2
+   # Another_Passive_Object = create unique A_Passive_Static_Object with Size = 2
 
    if The_Passive_Object = UNDEFINED then
       Failure_Code = -5
@@ -347,7 +347,7 @@ endif
 
    [] = RPT1:Start_Test[Local_Test, "Null Requid", "TAGGING", "Singleton passive object", "Create another singleton instance"]
 
-   #Another_Passive_Object = create A_Passive_Static_Object with Unique_Identifier = 6 & Size = 2
+   #Another_Passive_Object = create unique A_Passive_Static_Object with Size = 2
 
    [] = RPT4:Test_Unsupported[Local_Test]
 
@@ -410,7 +410,7 @@ endif
 
    # Having sucessfully deleted the passive static object
    # let''s make the attempt to create a new one
-   A_New_Passive_Object = create A_Passive_Static_Object with Unique_Identifier = 8 & Size = 3
+   A_New_Passive_Object = create unique A_Passive_Static_Object with Size = 3
 
    if A_New_Passive_Object = UNDEFINED then
       Failure_Code = -8
@@ -455,7 +455,7 @@ endif
 
 Returned_Test_Number = Local_Test',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	2,
 	4);

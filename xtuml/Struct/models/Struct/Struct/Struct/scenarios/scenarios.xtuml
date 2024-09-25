@@ -2366,12 +2366,13 @@ Test_Number = my_test.The_Test_Number
 #          Create a Structured Object and append it to a structure.
 #--------------------------------------------------------------------------
 
-   Primary_SO = create unique Structured_Object with An_Integer    = Test_Number &\
-                                                     A_Real        = 1.0         &\
-                                                     Some_Text     = "No text"   &\
-                                                     A_Boolean     = TRUE        &\
-                                                     A_Colour      = ''Red''       &\
-                                                     Current_State = ''Idle''
+   Primary_SO = create Structured_Object with Reference_SO  = Test_Number &\
+                                              An_Integer    = Test_Number &\
+                                              A_Real        = 1.0         &\
+                                              Some_Text     = "No text"   &\
+                                              A_Boolean     = TRUE        &\
+                                              A_Colour      = ''Red''       &\
+                                              Current_State = ''Idle''
 
    # Take a copy of the preferred attribute for later use.
    Local_Copy_Of_IH_Identifer = Primary_SO.Reference_SO
@@ -2404,12 +2405,13 @@ Test_Number = my_test.The_Test_Number
 # Test 3 - Create a second Structured Object and append it to a structure.
 #--------------------------------------------------------------------------
 
-   Secondary_SO = create unique Structured_Object with An_Integer    = Test_Number &\
-                                                       A_Real        = 2.0         &\
-                                                       Some_Text     = "No text"   &\
-                                                       A_Boolean     = TRUE        &\
-                                                       A_Colour      = ''Red''       &\
-                                                       Current_State = ''Idle''
+   Secondary_SO = create Structured_Object with Reference_SO  = Test_Number &\
+                                                An_Integer    = Test_Number &\
+                                                A_Real        = 2.0         &\
+                                                Some_Text     = "No text"   &\
+                                                A_Boolean     = TRUE        &\
+                                                A_Colour      = ''Red''       &\
+                                                Current_State = ''Idle''
 
    # Take a copy of the preferred attribute for later use.
    Local_Copy_Of_IH_Identifer = Secondary_SO.Reference_SO
@@ -2481,12 +2483,13 @@ Test_Number = my_test.The_Test_Number
    loop
       Test_Number = Test_Number + 1
 
-      Next_SO = create unique Structured_Object with An_Integer    = Test_Number &\
-                                                     A_Real        = 1.0         &\
-                                                     Some_Text     = "No text"   &\
-                                                     A_Boolean     = TRUE        &\
-                                                     A_Colour      = ''Red''       &\
-                                                     Current_State = ''Idle''
+      Next_SO = create Structured_Object with Reference_SO  = Test_Number &\
+                                              An_Integer    = Test_Number &\
+                                              A_Real        = 1.0         &\
+                                              Some_Text     = "No text"   &\
+                                              A_Boolean     = TRUE        &\
+                                              A_Colour      = ''Red''       &\
+                                              Current_State = ''Idle''
 
       append [Next_SO] to {Next_Structure}
 
@@ -2512,12 +2515,13 @@ Test_Number = my_test.The_Test_Number
       Test_Number = Test_Number + 1
 
       # Resuse the Next_SO data name.
-      Next_SO = create unique Structured_Object with An_Integer    = Test_Number &\
-                                                     A_Real        = 1.0         &\
-                                                     Some_Text     = "No text"   &\
-                                                     A_Boolean     = TRUE        &\
-                                                     A_Colour      = ''Red''       &\
-                                                     Current_State = ''Idle''
+      Next_SO = create Structured_Object with Reference_SO  = Test_Number &\
+                                              An_Integer    = Test_Number &\
+                                              A_Real        = 1.0         &\
+                                              Some_Text     = "No text"   &\
+                                              A_Boolean     = TRUE        &\
+                                              A_Colour      = ''Red''       &\
+                                              Current_State = ''Idle''
 
       SO_ID = Next_SO.Reference_SO
 
@@ -2752,12 +2756,13 @@ Test_Number = my_test.The_Test_Number
    Number_Of_Iterations = 10000
    Number_Of_Appends = 50
 
-   A_Structured_Object_IH = create unique Structured_Object with An_Integer    = Test_Number &\
-                                                                 A_Real        = 99.99       &\
-                                                                 Some_Text     = "Some Text" &\
-                                                                 A_Boolean     = FALSE       &\
-                                                                 A_Colour      = ''Green''     &\
-                                                                 Current_State =''Idle''
+   A_Structured_Object_IH = create Structured_Object with Reference_SO  = Test_Number &\
+                                                          An_Integer    = Test_Number &\
+                                                          A_Real        = 99.99       &\
+                                                          Some_Text     = "Some Text" &\
+                                                          A_Boolean     = FALSE       &\
+                                                          A_Colour      = ''Green''     &\
+                                                          Current_State =''Idle''
 
    # Test data section
 
@@ -2812,7 +2817,7 @@ Test_Number = my_test.The_Test_Number
 
 my_test.The_Test_Number = Test_Number',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	2,
 	11);

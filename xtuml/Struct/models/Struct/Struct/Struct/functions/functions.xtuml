@@ -626,7 +626,8 @@ INSERT INTO S_SYNC
    local_integer = the_integer
    local_color  = the_color
 
-   if local_color = ''Red'' then
+   test_colour of Colour_Type = ''Red''
+   if local_color = test_colour then
       local_integer = 200
       local_color   of Colour_Type = ''Blue''
    endif   

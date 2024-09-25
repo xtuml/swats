@@ -24,7 +24,7 @@ INSERT INTO GD_MD
 	0,
 	0,
 	0,
-	'',
+	'4.1.17',
 	'Events::Events::Events::scenarios');
 INSERT INTO DIM_DIA
 	VALUES ("5c26c1f4-f5c2-4ece-9175-68daea07d247",
@@ -757,23 +757,29 @@ INSERT INTO S_SYNC
                                 Reference_ID  = 1               &\
                                 Current_State = ''Idle''
 
-   #SubA1 = create SubA with Value_To_Add  = 10     &\
-   #                         Current_State = ''Idle''
-
-   SubB1 = create SubB with Value_To_Add  = 5      &\
+   SubA1 = create SubA with idA           = The_Test_Number &\
+                            Value_To_Add  = 10     &\
                             Current_State = ''Idle''
 
-   SubC1 = create SubC with Value_To_Add  = 6      &\
+   SubB1 = create SubB with idA           = The_Test_Number &\
+                            Value_To_Add  = 5      &\
                             Current_State = ''Idle''
 
-   #subD1 = create SubD with Value_To_Add  = 20     &\
-   #                         Current_State = ''Idle''
-
-   subE1 = create SubE with Value_To_Add  = 30     &\
+   SubC1 = create SubC with idA           = The_Test_Number &\
+                            Value_To_Add  = 6      &\
                             Current_State = ''Idle''
 
-   #subF1 = create SubF with Value_To_Add  = 40     &\
-   #                         Current_State = ''Idle''
+   subD1 = create SubD with idA           = The_Test_Number &\
+                            Value_To_Add  = 20     &\
+                            Current_State = ''Idle''
+
+   subE1 = create SubE with idA           = The_Test_Number &\
+                            Value_To_Add  = 30     &\
+                            Current_State = ''Idle''
+
+   subF1 = create SubF with idA           = The_Test_Number &\
+                            Value_To_Add  = 40     &\
+                            Current_State = ''Idle''
 
 
    link SuperA1 R13 SubB1
@@ -806,22 +812,28 @@ INSERT INTO S_SYNC
                                  Reference_ID  = 2               &\
                                  Current_State = ''Idle''
 
-   #SubA2 = create SubA with Value_To_Add = 5       &\
-   #                         Current_State = ''Idle''
-
-   SubB2 = create SubB with Value_To_Add  = 0      &\
+   SubA2 = create SubA with idA           = The_Test_Number &\
+                            Value_To_Add = 5       &\
                             Current_State = ''Idle''
 
-   SubC2 = create SubC with Value_To_Add  = 6      &\
+   SubB2 = create SubB with idA           = The_Test_Number &\
+                            Value_To_Add  = 0      &\
                             Current_State = ''Idle''
 
-   #subD2 = create SubD with Value_To_Add  = 0      &\
-   #                         Current_State = ''Idle''
+   SubC2 = create SubC with idA           = The_Test_Number &\
+                            Value_To_Add  = 6      &\
+                            Current_State = ''Idle''
 
-   #subE2 = create SubE with Value_To_Add  = 0      &\
-   #                         Current_State = ''Idle''
+   subD2 = create SubD with idA           = The_Test_Number &\
+                            Value_To_Add  = 0      &\
+                            Current_State = ''Idle''
 
-   subF2 = create SubF with Value_To_Add  = 0      &\
+   subE2 = create SubE with idA           = The_Test_Number &\
+                            Value_To_Add  = 0      &\
+                            Current_State = ''Idle''
+
+   subF2 = create SubF with idA           = The_Test_Number &\
+                            Value_To_Add  = 0      &\
                             Current_State = ''Idle''
 
    # Link to one side of each subfamily. These will be unlinked and then

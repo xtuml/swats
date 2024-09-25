@@ -104,7 +104,7 @@ INSERT INTO GD_MD
 	0,
 	0,
 	0,
-	'',
+	'4.1.17',
 	'TT::TT::TT::TT::Test::Instance State Machine');
 INSERT INTO DIM_DIA
 	VALUES ("cd3d0ba7-5a7a-4dee-ae30-8139f1ef04bb",

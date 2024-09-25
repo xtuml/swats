@@ -511,7 +511,9 @@ Local_Test = Test_Number
 
    loop
 
-      instAO = create Assoc_Obj with idAO = count
+      instAO = create Assoc_Obj with idAO     = count & \
+                                     objLO_id = count & \
+                                     objRO_id = count
 
       count = count - 1
       breakif count = 0
@@ -527,7 +529,9 @@ Local_Test = Test_Number
       loop
 
          theInt = count + 5
-         instAO = create Assoc_Obj with idAO = theInt
+         instAO = create Assoc_Obj with idAO     = theInt & \
+                                        objLO_id = theInt & \
+                                        objRO_id = theInt
 
          count = count - 1
          breakif count = 0
@@ -543,7 +547,9 @@ Local_Test = Test_Number
          loop
 
             theInt = count + 5
-            instAO = create Assoc_Obj with idAO = theInt
+            instAO = create Assoc_Obj with idAO     = theInt & \
+                                           objLO_id = theInt & \
+                                           objRO_id = theInt
    
             count = count - 1
             breakif count = 0
@@ -589,7 +595,9 @@ Local_Test = Test_Number
       loop
 
          theInt = 100 + count
-         instAO = create Assoc_Obj with idAO = theInt
+         instAO = create Assoc_Obj with idAO     = theInt & \
+                                        objLO_id = theInt & \
+                                        objRO_id = theInt
  
          count = count + 1
          breakif count = 5
@@ -834,7 +842,7 @@ Local_Test = Test_Number
 Returned_Number = Local_Test
 #------------------------------------------------------------------------#
 ',
-	3,
+	1,
 	'',
 	"00000000-0000-0000-0000-000000000000",
 	2,

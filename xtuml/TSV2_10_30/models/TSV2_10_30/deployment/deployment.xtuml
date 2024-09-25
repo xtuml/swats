@@ -1738,11 +1738,18 @@ INSERT INTO D_TSPARM
 	VALUES ("88d2e540-54ec-44ca-a379-191ecaae86e4",
 	"bb541a04-10d8-4e5d-9141-8ae1a56af191",
 	'Received_Very_Simple_Structure',
-	"35647202-1d81-4b54-8a8f-87a4e7b5e7f9",
+	"05f95a4e-3792-44ae-b1e6-c0fb96136842",
 	0,
 	'',
 	"24bbb4c5-94ab-433b-8510-b12ceaac11c6",
 	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("05f95a4e-3792-44ae-b1e6-c0fb96136842",
+	"00000000-0000-0000-0000-000000000000",
+	'SBTWO::sequence of Very_Simple_Source_Structure_Type',
+	'',
+	'',
+	'./Shared/Shared.xtuml');
 INSERT INTO D_TSVC
 	VALUES ("e9fd6585-eb30-4a9c-89e2-5ec718d80380",
 	"d3704941-051a-488b-b691-6b3a23216432",
@@ -4285,7 +4292,7 @@ INSERT INTO D_TSPARM
 	VALUES ("b53302cd-cd77-4b23-a0e4-65638bd136ee",
 	"2832c963-56d5-4690-b431-10b84092d855",
 	'The_Timer_Enum',
-	"12fb7431-5c54-4f3e-ad01-7d935673082c",
+	"ba5eda7a-def5-0000-0000-000000000002",
 	0,
 	'',
 	"00000000-0000-0000-0000-000000000000",
@@ -9462,15 +9469,15 @@ INSERT INTO D_TSPARM
 	VALUES ("d329a975-d9ea-4fce-8011-830f890f1ff9",
 	"f964c05a-4b13-4159-b859-554fa126f3db",
 	'A_Structure_To_Send',
-	"8eb8c7c8-9312-49b0-b5d5-d318a3deba7f",
+	"130d56d5-0746-4093-88b7-769929c09621",
 	0,
 	'',
 	"29d29e85-f1cd-45cf-9c35-e33d5a78499d",
 	'');
 INSERT INTO S_DT_PROXY
-	VALUES ("8eb8c7c8-9312-49b0-b5d5-d318a3deba7f",
+	VALUES ("130d56d5-0746-4093-88b7-769929c09621",
 	"00000000-0000-0000-0000-000000000000",
-	'SBONE::Source_Structure_Type',
+	'SBONE::sequence of Source_Structure_Type',
 	'',
 	'',
 	'./Shared/Shared.xtuml');
@@ -9548,7 +9555,7 @@ INSERT INTO D_TSPARM
 	VALUES ("bc429241-c125-4602-8984-79969560067b",
 	"f964c05a-4b13-4159-b859-554fa126f3db",
 	'A_Structure_To_Return',
-	"8eb8c7c8-9312-49b0-b5d5-d318a3deba7f",
+	"130d56d5-0746-4093-88b7-769929c09621",
 	1,
 	'',
 	"6d96da25-b66d-4ad2-a150-412cfd3e729e",
@@ -9602,15 +9609,15 @@ INSERT INTO D_TSPARM
 	VALUES ("c9f91a91-da8d-42a7-98bd-3939305e0ac3",
 	"fc61abe0-8f81-4658-8a2f-99f0739853bd",
 	'Simple_Source_Structure',
-	"aa61f3fb-3f37-4c41-9a8d-ea15c962f5d8",
+	"e98ec2e0-0b4c-40d2-9bd8-e9905e44f743",
 	0,
 	'',
 	"bffae01c-c47a-47b9-a669-b2b52600466b",
 	'');
 INSERT INTO S_DT_PROXY
-	VALUES ("aa61f3fb-3f37-4c41-9a8d-ea15c962f5d8",
+	VALUES ("e98ec2e0-0b4c-40d2-9bd8-e9905e44f743",
 	"00000000-0000-0000-0000-000000000000",
-	'SBONE::Very_Simple_Structure_Type',
+	'SBONE::sequence of Very_Simple_Structure_Type',
 	'',
 	'',
 	'./Shared/Shared.xtuml');
@@ -9662,15 +9669,15 @@ INSERT INTO D_TSPARM
 	VALUES ("9e0715ce-5b39-4bda-b969-d00316a61dc4",
 	"f7380255-1027-4f55-996e-274ba7caaabc",
 	'Input_Structure',
-	"e1a01c06-79dc-4d9d-be3e-0bc389ba2afe",
+	"b0c8b052-a256-48fb-90ab-d57c9d5f0332",
 	0,
 	'',
 	"552bf629-e77d-4be0-9da5-d39b8ce478e2",
 	'');
 INSERT INTO S_DT_PROXY
-	VALUES ("e1a01c06-79dc-4d9d-be3e-0bc389ba2afe",
+	VALUES ("b0c8b052-a256-48fb-90ab-d57c9d5f0332",
 	"00000000-0000-0000-0000-000000000000",
-	'SBONE::Structure_Of_UDTs',
+	'SBONE::sequence of Structure_Of_UDTs',
 	'',
 	'',
 	'./Shared/Shared.xtuml');
@@ -10136,7 +10143,7 @@ INSERT INTO D_TSPARM
 	VALUES ("e05d2901-9394-44e6-9b89-b08646e9c63b",
 	"07dec671-a22a-43ab-90c5-281a644f8d40",
 	'Received_Very_Simple_Structure',
-	"aa61f3fb-3f37-4c41-9a8d-ea15c962f5d8",
+	"e98ec2e0-0b4c-40d2-9bd8-e9905e44f743",
 	0,
 	'',
 	"00000000-0000-0000-0000-000000000000",
@@ -11395,21 +11402,14 @@ INSERT INTO D_TSPARM
 	"00000000-0000-0000-0000-000000000000",
 	'');
 INSERT INTO D_TSPARM
-	VALUES ("74c8b720-cf26-4985-9d8b-ef0f3b02b4ad",
+	VALUES ("f62df8cf-ce04-4247-92c9-86eb93447df7",
 	"9c5e146d-c51c-4fe3-bc6f-d59edb0519a0",
-	'The_IH',
-	"9e968237-7c49-4849-aa02-63b692811082",
+	'The_IH_ID',
+	"ba5eda7a-def5-0000-0000-000000000002",
 	0,
 	'',
 	"2a0f2b4d-82f6-4e02-9bdc-7cd82b11f8d6",
 	'');
-INSERT INTO S_DT_PROXY
-	VALUES ("9e968237-7c49-4849-aa02-63b692811082",
-	"00000000-0000-0000-0000-000000000000",
-	'inst_ref<Object_X>',
-	'',
-	'',
-	'./Shared/Shared.xtuml');
 INSERT INTO D_TERM
 	VALUES ("e1c8dc20-7360-42ed-b3f0-647a2be6b0a9",
 	"28138fb1-78bd-42c1-9525-b9bc382a792a",
@@ -11509,10 +11509,10 @@ INSERT INTO D_TSPARM
 	"00000000-0000-0000-0000-000000000000",
 	'');
 INSERT INTO D_TSPARM
-	VALUES ("5a190a5f-a6fc-48c4-9c06-76c9a0badeeb",
+	VALUES ("ad58f867-cdee-4308-8ca7-203e9a0229a3",
 	"17cafdd1-db56-4b69-85e6-9e201da2523f",
-	'The_IH',
-	"9e968237-7c49-4849-aa02-63b692811082",
+	'The_IH_ID',
+	"ba5eda7a-def5-0000-0000-000000000002",
 	0,
 	'',
 	"b2d74fde-bb90-4b20-9b8f-2b5f9dc25537",
@@ -13326,34 +13326,27 @@ INSERT INTO D_TSPARM
 	VALUES ("e1b262b3-29f5-4039-ab32-223be93af2d4",
 	"1be717b2-9d2f-4633-857a-034c3b493359",
 	'Simple_Structure',
-	"a12e01f0-0a2c-4c9f-bd0c-c3fcf5b7a30e",
+	"84641b48-c650-4393-ba6a-45dc811f3eff",
 	0,
 	'',
 	"3f5362f5-c399-4b5a-9410-74aa22a0938d",
 	'');
 INSERT INTO S_DT_PROXY
-	VALUES ("a12e01f0-0a2c-4c9f-bd0c-c3fcf5b7a30e",
+	VALUES ("84641b48-c650-4393-ba6a-45dc811f3eff",
 	"00000000-0000-0000-0000-000000000000",
-	'Struct::Simple_Structure_Type',
+	'Struct::sequence of Simple_Structure_Type',
 	'',
 	'',
 	'./Shared/Shared.xtuml');
 INSERT INTO D_TSPARM
-	VALUES ("4195df75-c45e-48f7-b18f-3624e2dea047",
+	VALUES ("ee80595a-73d3-4a06-b291-6f2c310125ad",
 	"1be717b2-9d2f-4633-857a-034c3b493359",
-	'Object_Instance_Handle',
-	"a128fa74-281e-4fd9-988d-62fb71444402",
+	'Object_Instance_Handle_ID',
+	"ba5eda7a-def5-0000-0000-000000000002",
 	0,
 	'',
 	"e1b262b3-29f5-4039-ab32-223be93af2d4",
 	'');
-INSERT INTO S_DT_PROXY
-	VALUES ("a128fa74-281e-4fd9-988d-62fb71444402",
-	"00000000-0000-0000-0000-000000000000",
-	'inst_ref<Structured_Object>',
-	'',
-	'',
-	'./Shared/Shared.xtuml');
 INSERT INTO D_TSVC
 	VALUES ("680e0155-2184-4b6e-ab69-5599b2672e84",
 	"1c9e5424-ab05-4a40-a5de-2683833f2da2",
@@ -13380,23 +13373,23 @@ INSERT INTO D_TSPARM
 	VALUES ("b4d461a4-70f6-429b-9460-353e45ce2a8a",
 	"680e0155-2184-4b6e-ab69-5599b2672e84",
 	'Simple_Structure',
-	"75fb2799-a099-4676-9c5f-070162e58de1",
+	"4a08a665-ef1e-44d3-be80-2635d7b0a641",
 	0,
 	'',
 	"415f71b7-ba05-4b80-a706-c19e505ce9f4",
 	'');
 INSERT INTO S_DT_PROXY
-	VALUES ("75fb2799-a099-4676-9c5f-070162e58de1",
+	VALUES ("4a08a665-ef1e-44d3-be80-2635d7b0a641",
 	"00000000-0000-0000-0000-000000000000",
-	'Struct::Type_Linked_Simple_Structure_Type',
+	'Struct::sequence of Type_Linked_Simple_Structure_Type',
 	'',
 	'',
 	'./Shared/Shared.xtuml');
 INSERT INTO D_TSPARM
-	VALUES ("1f2d792c-cf5d-491e-9213-5ca854ac67cf",
+	VALUES ("3950c864-2bb6-47ac-8f79-22cb113debe1",
 	"680e0155-2184-4b6e-ab69-5599b2672e84",
-	'Object_Instance_Handle',
-	"a128fa74-281e-4fd9-988d-62fb71444402",
+	'Object_Instance_Handle_ID',
+	"ba5eda7a-def5-0000-0000-000000000002",
 	0,
 	'',
 	"b4d461a4-70f6-429b-9460-353e45ce2a8a",
@@ -13427,15 +13420,15 @@ INSERT INTO D_TSPARM
 	VALUES ("fa82e5d4-6c5e-4bb1-9ba2-5f58f1a1ad96",
 	"3514aac9-0bc1-4170-8bda-0127cc80c2ca",
 	'Simple_Structure',
-	"8ec7f3d2-8dc0-471b-a4c0-cccf667e1920",
+	"33af6fa1-bdeb-4410-b410-424d89a81cb0",
 	0,
 	'',
 	"89ce374b-66b7-4ac2-bf32-8ecd8f4eeb2c",
 	'');
 INSERT INTO S_DT_PROXY
-	VALUES ("8ec7f3d2-8dc0-471b-a4c0-cccf667e1920",
+	VALUES ("33af6fa1-bdeb-4410-b410-424d89a81cb0",
 	"00000000-0000-0000-0000-000000000000",
-	'Struct::Name_and_Type_Linked_Simple_Structure_Type',
+	'Struct::sequence of Name_and_Type_Linked_Simple_Structure_Type',
 	'',
 	'',
 	'./Shared/Shared.xtuml');
@@ -13465,15 +13458,15 @@ INSERT INTO D_TSPARM
 	VALUES ("fd0249f2-e62e-49c5-8056-15ac91c4b601",
 	"b7cf1df5-2460-4bc5-81f3-7d3a20d72fe6",
 	'Three_Level_Nest',
-	"542c3ee4-9a4a-474f-bb8d-d84417d500b0",
+	"370ccacc-d40d-41f1-be3a-f2aa1ad94bf2",
 	0,
 	'',
 	"c08dc489-931b-431c-8198-1b9f5f9ceb46",
 	'');
 INSERT INTO S_DT_PROXY
-	VALUES ("542c3ee4-9a4a-474f-bb8d-d84417d500b0",
+	VALUES ("370ccacc-d40d-41f1-be3a-f2aa1ad94bf2",
 	"00000000-0000-0000-0000-000000000000",
-	'Struct::First_Nested_Structure_Type',
+	'Struct::sequence of First_Nested_Structure_Type',
 	'',
 	'',
 	'./Shared/Shared.xtuml');
@@ -13481,15 +13474,15 @@ INSERT INTO D_TSPARM
 	VALUES ("cac6f9f0-f95e-4e2c-a272-71042f37a76d",
 	"b7cf1df5-2460-4bc5-81f3-7d3a20d72fe6",
 	'Two_Level_Nest',
-	"641b25b4-25f6-481d-904f-a99a0945b5db",
+	"c8af61e4-a3d7-45df-95dc-cae130094820",
 	0,
 	'',
 	"fd0249f2-e62e-49c5-8056-15ac91c4b601",
 	'');
 INSERT INTO S_DT_PROXY
-	VALUES ("641b25b4-25f6-481d-904f-a99a0945b5db",
+	VALUES ("c8af61e4-a3d7-45df-95dc-cae130094820",
 	"00000000-0000-0000-0000-000000000000",
-	'Struct::Second_Nested_Structure_Type',
+	'Struct::sequence of Second_Nested_Structure_Type',
 	'',
 	'',
 	'./Shared/Shared.xtuml');
@@ -13497,15 +13490,15 @@ INSERT INTO D_TSPARM
 	VALUES ("6d0cf1b5-8a3f-44d4-891f-ed03303211e9",
 	"b7cf1df5-2460-4bc5-81f3-7d3a20d72fe6",
 	'One_Level_Nest',
-	"cc656638-32fd-40ec-bf5b-8db394290e41",
+	"79d243fc-561c-4ece-b89b-ede40aa566ba",
 	0,
 	'',
 	"cac6f9f0-f95e-4e2c-a272-71042f37a76d",
 	'');
 INSERT INTO S_DT_PROXY
-	VALUES ("cc656638-32fd-40ec-bf5b-8db394290e41",
+	VALUES ("79d243fc-561c-4ece-b89b-ede40aa566ba",
 	"00000000-0000-0000-0000-000000000000",
-	'Struct::Third_Nested_Structure_Type',
+	'Struct::sequence of Third_Nested_Structure_Type',
 	'',
 	'',
 	'./Shared/Shared.xtuml');

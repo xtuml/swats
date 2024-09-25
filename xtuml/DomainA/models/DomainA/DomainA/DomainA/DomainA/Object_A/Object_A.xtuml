@@ -19,15 +19,16 @@ INSERT INTO O_TFR
 	"ba5eda7a-def5-0000-0000-000000000000",
 	0,
 	'# create an instance to use for the test
-newA = create unique Object_A with ResultA = 0 & \
-                                   Current_State = ''Idle''
+newA = create Object_A with idA = 20 & \
+                            ResultA = 0 & \
+                            Current_State = ''Idle''
 
 an_int = 1
 a_real = 2.0
 a_text = "three"
 
 #[] = APTP1:Aptp_open_service[an_int,a_real,a_text] on newA',
-	3,
+	1,
 	'',
 	"00000000-0000-0000-0000-000000000000",
 	2,
@@ -40,8 +41,9 @@ INSERT INTO O_TFR
 	"ba5eda7a-def5-0000-0000-000000000000",
 	0,
 	'# create an instance to use for the test
-newA = create unique Object_A with ResultA = 0 & \
-                                   Current_State = ''Idle''
+newA = create Object_A with idA = 21 & \
+                            ResultA = 0 & \
+                            Current_State = ''Idle''
 
 an_int = 1
 a_real = 2.0
@@ -64,7 +66,7 @@ Test = 8
 [] = RPT4:Test_Unsupported[Test]
 
 ',
-	3,
+	1,
 	'',
 	"a95fc297-b418-47f0-8404-3ad5488179b8",
 	2,

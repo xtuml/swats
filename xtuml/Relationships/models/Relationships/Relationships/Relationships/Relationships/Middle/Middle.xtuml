@@ -250,7 +250,9 @@ Has_Failed = FALSE
             The_ID = Counter + 10
             FarRight = create Many_Far_Right with MFR_Identifier = The_ID & MFR_Data = 0
 
-            The_Assoc = create Many_Right_Assoc with MRA_Data = The_ID
+            The_Assoc = create Many_Right_Assoc with MRA_Data = The_ID & \
+                                                     Right_Identifier = InstRight.Right_Identifier & \
+                                                     MFR_Identifier   = FarRight.MFR_Identifier
 
             link InstRight R8 FarRight using The_Assoc
 
@@ -948,15 +950,20 @@ Has_Failed = FALSE
          newB          = create Object_B         with idB               = The_ID
          newC          = create Object_C         with idC               = The_ID
          newD          = create Object_D         with idD               = The_ID
-         newDO         = create Object_DO        with idDO              = The_ID
+         newDO         = create Object_DO        with idDO              = The_ID & \
+                                                      idO               = The_ID
          newE          = create Object_E         with idE               = The_ID
          newF          = create Object_F         with idF               = The_ID
-         newEF         = create Object_EF        with idEF              = The_ID
+         newEF         = create Object_EF        with idEF              = The_ID & \
+                                                      idE               = The_ID & \
+                                                      idF               = The_ID
          newG          = create Object_G         with idG               = The_ID         
          newH          = create Object_H         with idH               = The_ID
-         newI          = create Object_I         with IDI               = The_ID
+         newI          = create Object_I         with IDI               = The_ID & \
+                                                      idH               = The_ID
          newK          = create Object_K         with idK               = The_ID
-         newL          = create Object_L         with idL               = The_ID
+         newL          = create Object_L         with idL               = The_ID & \
+                                                      idH               = The_ID
          newO          = create Object_O         with idO               = The_ID
          newP          = create Object_P         with idP               = The_ID 
          newQ          = create Object_Q         with idQ               = The_ID
@@ -964,33 +971,54 @@ Has_Failed = FALSE
          newLO         = create Left_Object      with idLO              = The_ID
          newMO         = create Middle_Object    with idMO              = The_ID
          newRO         = create Right_Object     with idRO              = The_ID
-         newMRAssoc    = create MR_Assoc         with idMR              = The_ID
+         newMRAssoc    = create MR_Assoc         with idMR              = The_ID & \
+                                                      idMO              = The_ID
          newLeftMany   = create Left_Many        with idLM              = The_ID
          newRightMany  = create Right_Many       with idRM              = The_ID
-         newLMRMAssoc  = create LMRM_Assoc       with idLMRM            = The_ID
+         newLMRMAssoc  = create LMRM_Assoc       with idLMRM            = The_ID & \
+                                                      idLM              = The_ID & \
+                                                      idRM              = The_ID
          newBottomMany = create Bottom_Many      with idBM              = The_ID
-         newSL1        = create Sub_L1           with idSL1             = The_ID
-         newSL2        = create Sub_L2           with idSL2             = The_ID
-         newSL3        = create Sub_L3           with idSL3             = The_ID
-         newSSL1       = create Sub_Sub_L1       with idSSL1            = The_ID 
-         newSSL2       = create Sub_Sub_L2       with idSSL2            = The_ID 
-         newSSL3       = create Sub_Sub_L3       with idSSL3            = The_ID 
-         newSSL4       = create Sub_Sub_L4       with idSSL4            = The_ID 
-         newSSL5       = create Sub_Sub_L5       with idSSL5            = The_ID 
-         newSSL6       = create Sub_Sub_L6       with idSSL6            = The_ID 
-         newSSL7       = create Sub_Sub_L7       with idSSL7            = The_ID 
-         newSSL8       = create Sub_Sub_L8       with idSSL8            = The_ID 
-         newSSL9       = create Sub_Sub_L9       with idSSL9            = The_ID 
-         newSSL10      = create Sub_Sub_L10      with idSSL10           = The_ID 
-         newSSL11      = create Sub_Sub_L11      with idSSL11           = The_ID 
-         newSSSL1      = create Sub_Sub_Sub_L1   with idSSSL1           = The_ID 
-         newSSSL2      = create Sub_Sub_Sub_L2   with idSSSL2           = The_ID 
+         newSL1        = create Sub_L1           with idSL1             = The_ID & \
+                                                      idH               = The_ID
+         newSL2        = create Sub_L2           with idSL2             = The_ID & \
+                                                      idH               = The_ID
+         newSL3        = create Sub_L3           with idSL3             = The_ID & \
+                                                      idH               = The_ID
+         newSSL1       = create Sub_Sub_L1       with idSSL1            = The_ID & \
+                                                      idH               = The_ID 
+         newSSL2       = create Sub_Sub_L2       with idSSL2            = The_ID & \
+                                                      idH               = The_ID 
+         newSSL3       = create Sub_Sub_L3       with idSSL3            = The_ID & \
+                                                      idH               = The_ID 
+         newSSL4       = create Sub_Sub_L4       with idSSL4            = The_ID & \
+                                                      idH               = The_ID 
+         newSSL5       = create Sub_Sub_L5       with idSSL5            = The_ID & \
+                                                      idH               = The_ID 
+         newSSL6       = create Sub_Sub_L6       with idSSL6            = The_ID & \
+                                                      idH               = The_ID 
+         newSSL7       = create Sub_Sub_L7       with idSSL7            = The_ID & \
+                                                      idH               = The_ID 
+         newSSL8       = create Sub_Sub_L8       with idSSL8            = The_ID & \
+                                                      idH               = The_ID 
+         newSSL9       = create Sub_Sub_L9       with idSSL9            = The_ID & \
+                                                      idH               = The_ID 
+         newSSL10      = create Sub_Sub_L10      with idSSL10           = The_ID & \
+                                                      idH               = The_ID 
+         newSSL11      = create Sub_Sub_L11      with idSSL11           = The_ID & \
+                                                      idH               = The_ID 
+         newSSSL1      = create Sub_Sub_Sub_L1   with idSSSL1           = The_ID & \
+                                                      idH               = The_ID 
+         newSSSL2      = create Sub_Sub_Sub_L2   with idSSSL2           = The_ID & \
+                                                      idH               = The_ID 
          newFL         = create Far_Left         with Left_Identifier   = The_ID
          newMiddleInst = create Middle           with Middle_Identifier = The_ID
          newMR         = create Many_Right       with Right_Identifier  = The_ID
          newMA         = create unique Many_Above \
                                                  with Above_Data        = The_ID
-         newMRA        = create Many_Right_Assoc with MRA_Identifier    = The_ID
+         newMRA        = create Many_Right_Assoc with MRA_Identifier    = The_ID & \
+                                                      Right_Identifier  = The_ID & \
+                                                      MFR_Identifier    = The_ID
          newMFR        = create Many_Far_Right   with MFR_Identifier    = The_ID
 
          Count = Count + 1
