@@ -32,16 +32,16 @@ INSERT INTO C_PP
 INSERT INTO C_PP
 	VALUES ("8ed031d5-e7ec-4a97-b3b3-7f65021eecdf",
 	"bbe926e8-4a68-47d2-b3b9-e2445fb9409c",
-	"fe71e110-b240-4941-a126-661bd52ae8c9",
+	"6d728950-a14d-4102-98cb-ae59a856ca2a",
 	'A_Structure_To_Send',
 	'',
 	0,
 	'',
 	"3c9d6ff2-c2fc-4603-ab94-0ce939a66871");
 INSERT INTO S_DT_PROXY
-	VALUES ("fe71e110-b240-4941-a126-661bd52ae8c9",
+	VALUES ("6d728950-a14d-4102-98cb-ae59a856ca2a",
 	"00000000-0000-0000-0000-000000000000",
-	'Source_Structure_Type',
+	'sequence of Source_Structure_Type',
 	'',
 	'',
 	'../Shared.xtuml');
@@ -118,7 +118,7 @@ INSERT INTO C_PP
 INSERT INTO C_PP
 	VALUES ("f3cd97fb-0a29-4d4f-8232-682de9e4f92d",
 	"bbe926e8-4a68-47d2-b3b9-e2445fb9409c",
-	"fe71e110-b240-4941-a126-661bd52ae8c9",
+	"6d728950-a14d-4102-98cb-ae59a856ca2a",
 	'A_Structure_To_Return',
 	'',
 	1,
@@ -151,16 +151,16 @@ INSERT INTO C_PP
 INSERT INTO C_PP
 	VALUES ("e51d1435-b35d-46bb-b42f-94f3d50e8b3b",
 	"473ea463-4285-4a64-8f8a-f24c8ffcc817",
-	"7cf3bfaf-1a11-42af-b4a4-5be1e01d6775",
+	"f416edfd-6617-4532-ac37-44ad72f8dcc2",
 	'Simple_Source_Structure',
 	'',
 	0,
 	'',
 	"254c2242-45b3-41d0-a8b2-614192463da2");
 INSERT INTO S_DT_PROXY
-	VALUES ("7cf3bfaf-1a11-42af-b4a4-5be1e01d6775",
+	VALUES ("f416edfd-6617-4532-ac37-44ad72f8dcc2",
 	"00000000-0000-0000-0000-000000000000",
-	'Very_Simple_Structure_Type',
+	'sequence of Very_Simple_Structure_Type',
 	'',
 	'',
 	'../Shared.xtuml');
@@ -191,16 +191,16 @@ INSERT INTO C_PP
 INSERT INTO C_PP
 	VALUES ("c1c77201-767f-47d1-b02b-b7613037a8d3",
 	"d94881e5-73d8-43ea-8420-8375d41ee6f6",
-	"1e28e312-a33e-45b4-8537-61075b0fcd75",
+	"54b8efe4-7859-4e24-85d9-3db9be101de7",
 	'Input_Structure',
 	'',
 	0,
 	'',
 	"8564a97c-938c-440f-8121-45d3a7425e23");
 INSERT INTO S_DT_PROXY
-	VALUES ("1e28e312-a33e-45b4-8537-61075b0fcd75",
+	VALUES ("54b8efe4-7859-4e24-85d9-3db9be101de7",
 	"00000000-0000-0000-0000-000000000000",
-	'Structure_Of_UDTs',
+	'sequence of Structure_Of_UDTs',
 	'',
 	'',
 	'../Shared.xtuml');

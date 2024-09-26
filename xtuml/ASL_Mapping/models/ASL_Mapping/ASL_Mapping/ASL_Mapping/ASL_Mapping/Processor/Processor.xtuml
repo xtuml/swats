@@ -16,11 +16,11 @@ INSERT INTO O_TFR
 	0,
 	'This_Test = Test_Start
 
-[my_timer_id_local] = Create_Timer[]
-
 my_processor = create Processor with Processor_Id = Processor_Id_Local &\
-   Background_Processing_Timer_Id = my_timer_id_local &\
    Communications_Enabled = FALSE 
+
+[my_processor.Background_Processing_Timer_Id] = Create_Timer[]
+
 
 [] = RPT1:Start_Test[This_Test, "Null Requid", "ASL_Mapping", "Active Object Service Perform Attribute assignment", "Assign all attributes"]
 
@@ -30,8 +30,9 @@ Failure_Code = 1
 
 if my_object != UNDEFINED then
 
-   if my_object.Background_Processing_Timer_Id = my_timer_id_local then
-
+# my_timer_id_local removed making next test redundant.
+#   if my_object.Background_Processing_Timer_Id = my_timer_id_local then
+#
       if my_object.Communications_Enabled = FALSE then
 
          Failure_Code = 0
@@ -42,11 +43,11 @@ if my_object != UNDEFINED then
 
       endif
 
-   else
+#   else
 
-      Failure_Code = -2
+#      Failure_Code = -2
 
-   endif
+#   endif
 
    delete my_object
 
@@ -138,7 +139,7 @@ INSERT INTO O_ATTR
 	'',
 	'Background_Processing_Timer_Id',
 	0,
-	"ba5eda7a-def5-0000-0000-000000000002",
+	"ba5eda7a-def5-0000-0000-00000000000f",
 	'',
 	'');
 INSERT INTO O_NBATTR

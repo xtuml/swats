@@ -56,8 +56,7 @@ INSERT INTO S_SYNC
                                    BooleanA   = TRUE   &\
                                    ColourA    = ''Red''
 
-   testObjB = create Object_B with ReferenceB = 0   &\
-                                   IntegerA   = 100
+   testObjB = create unique Object_B with IntegerA   = 100
 
    if testObjA.ReferenceA = 0 then
 
@@ -222,7 +221,7 @@ Returned_Test_Number = 0
 
 ',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	2,
 	1);

@@ -195,72 +195,7 @@ INSERT INTO O_ATTR
 	'',
 	'duplicated_id',
 	0,
-	"ba5eda7a-def5-0000-0000-000000000002",
-	'',
-	'');
-INSERT INTO O_NBATTR
-	VALUES ("4b50b2f2-2ede-495a-b00e-0b7fdfb8a706",
-	"b47e87d0-8b20-47aa-b2d2-6e87ee2e8436");
-INSERT INTO O_BATTR
-	VALUES ("4b50b2f2-2ede-495a-b00e-0b7fdfb8a706",
-	"b47e87d0-8b20-47aa-b2d2-6e87ee2e8436");
-INSERT INTO O_ATTR
-	VALUES ("4b50b2f2-2ede-495a-b00e-0b7fdfb8a706",
-	"b47e87d0-8b20-47aa-b2d2-6e87ee2e8436",
-	"83594b81-9968-48ed-a89e-9fccefaf7c27",
-	'R5_formalising_attribute',
-	'',
-	'',
-	'R5_formalising_attribute',
-	0,
-	"ba5eda7a-def5-0000-0000-000000000002",
-	'',
-	'');
-INSERT INTO O_REF
-	VALUES ("b47e87d0-8b20-47aa-b2d2-6e87ee2e8436",
-	"b47e87d0-8b20-47aa-b2d2-6e87ee2e8436",
-	1,
-	"4b50b2f2-2ede-495a-b00e-0b7fdfb8a706",
-	"54ad1a9a-008b-49e0-a50b-1f812fd5c200",
-	"49e7dcfb-d211-4715-afc7-6d3266fbde4d",
-	"1583ab13-7d0d-49bf-86eb-1980c7d37549",
-	"0143a4e7-8054-46ab-be9f-eb830d74ef2d",
-	"6265249e-9922-4a81-aaf4-fb5c47b9a972",
-	"00000000-0000-0000-0000-000000000000",
-	0,
-	'',
-	'Duplicated_Result',
-	'R5_formalising_attribute',
-	'R5.''Has_one''');
-INSERT INTO R_RGO_PROXY
-	VALUES ("b47e87d0-8b20-47aa-b2d2-6e87ee2e8436",
-	"54ad1a9a-008b-49e0-a50b-1f812fd5c200",
-	"49e7dcfb-d211-4715-afc7-6d3266fbde4d",
-	'../RP.xtuml');
-INSERT INTO O_RTIDA_PROXY
-	VALUES ("4b50b2f2-2ede-495a-b00e-0b7fdfb8a706",
-	"b47e87d0-8b20-47aa-b2d2-6e87ee2e8436",
-	1,
-	"54ad1a9a-008b-49e0-a50b-1f812fd5c200",
-	"1583ab13-7d0d-49bf-86eb-1980c7d37549",
-	'../RP.xtuml');
-INSERT INTO O_RATTR
-	VALUES ("0143a4e7-8054-46ab-be9f-eb830d74ef2d",
-	"b47e87d0-8b20-47aa-b2d2-6e87ee2e8436",
-	"4b50b2f2-2ede-495a-b00e-0b7fdfb8a706",
-	"b47e87d0-8b20-47aa-b2d2-6e87ee2e8436",
-	1,
-	'R5_formalising_attribute');
-INSERT INTO O_ATTR
-	VALUES ("0143a4e7-8054-46ab-be9f-eb830d74ef2d",
-	"b47e87d0-8b20-47aa-b2d2-6e87ee2e8436",
-	"4b50b2f2-2ede-495a-b00e-0b7fdfb8a706",
-	'PrefixR5_formalising_attribute',
-	'',
-	'Prefix',
-	'R5_formalising_attribute',
-	1,
-	"ba5eda7a-def5-0000-0000-000000000007",
+	"ba5eda7a-def5-0000-0000-000000000005",
 	'',
 	'');
 INSERT INTO O_ID
@@ -274,11 +209,6 @@ INSERT INTO O_OIDA
 INSERT INTO O_ID
 	VALUES (1,
 	"b47e87d0-8b20-47aa-b2d2-6e87ee2e8436");
-INSERT INTO O_OIDA
-	VALUES ("4b50b2f2-2ede-495a-b00e-0b7fdfb8a706",
-	"b47e87d0-8b20-47aa-b2d2-6e87ee2e8436",
-	1,
-	'R5_formalising_attribute');
 INSERT INTO O_ID
 	VALUES (2,
 	"b47e87d0-8b20-47aa-b2d2-6e87ee2e8436");

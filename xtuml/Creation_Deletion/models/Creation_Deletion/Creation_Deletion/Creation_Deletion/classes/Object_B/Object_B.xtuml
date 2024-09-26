@@ -123,8 +123,13 @@ INSERT INTO O_TFR
    Reference_B = Test * Test
 
    # Perform creation
-   new_instanceB = create unique Object_B with ReferenceB = Reference_B &\
-                                               IntegerA   = Test
+   # Note test modified pending translation to MASL. In MASL, it is not allowed
+   # to set the identifier for a class that has a unique identifier defined in the model
+   # So the test here is unneccessary. We must relt on the architecture to create a
+   # unique identifying attribute for these types of classes. 
+   #new_instanceB = create unique Object_B with ReferenceB = Reference_B &\
+   #                                            IntegerA   = Test
+   new_instanceB = create unique Object_B with IntegerA   = Test
 
    # Find the newly created instance
    an_instanceB = find-one Object_B where IntegerA = Test
@@ -276,7 +281,7 @@ INSERT INTO O_ATTR
 	'',
 	'ReferenceB',
 	0,
-	"ba5eda7a-def5-0000-0000-000000000002",
+	"ba5eda7a-def5-0000-0000-000000000005",
 	'',
 	'');
 INSERT INTO O_NBATTR

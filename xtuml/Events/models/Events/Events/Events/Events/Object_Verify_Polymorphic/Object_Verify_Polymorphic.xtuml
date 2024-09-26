@@ -32,7 +32,7 @@ INSERT INTO O_TFR
       super_instanceD = find-one Object_D where ReferenceD = Test_Reference
 
       if super_instanceD = UNDEFINED then
-         [] = RPT3:Test_Failed["Object D",  Test_Number, super_instanceD.ResultA]
+         [] = RPT3:Test_Failed["Object D",  Test_Number, 0]
       else
 
          if super_instanceD.ResultA != 9999 then
@@ -151,7 +151,7 @@ INSERT INTO O_TFR
       super_instanceD = find-one Object_D where ReferenceD = Test_Reference
 
       if super_instanceD = UNDEFINED then
-         [] = RPT3:Test_Failed["Object D",  Test_Number, super_instanceD.ResultA]
+         [] = RPT3:Test_Failed["Object D",  Test_Number, 0]
       else
          [] = RPT2:Test_Passed["Object D",  Test_Number, super_instanceD.ResultA]
       endif

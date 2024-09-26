@@ -21,7 +21,6 @@ if Input_IH.idC = 100 then
    if Input_IH.IntC = 200 then
 
       if Input_IH.RealC = 99.9 then
-         Inst_Of_C.idC   = 1000
          Inst_Of_C.IntC  = 2000
          Inst_Of_C.RealC = 999.9
 
