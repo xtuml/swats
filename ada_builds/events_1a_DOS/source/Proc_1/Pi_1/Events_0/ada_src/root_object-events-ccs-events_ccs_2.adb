@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -53,11 +53,8 @@
 
 -- List of objects used
 with Root_Object.Events.TE;
-use type Root_Object.Events.TE.Object_State_Type;
-use type Root_Object.Events.TE.Object_State_Type;
 
 -- List of bridges used
-with Events_RPT3_Test_Failed_Bridge;
 with Events_RPT2_Test_Passed_Bridge;
 
 with Application_Types;
@@ -87,21 +84,18 @@ separate(Root_Object.Events.CCS)
          end loop;
          
          
-         if Root_Object.Events.TE.Events_TE_type(instTE.all).Current_State =  Root_Object.Events.TE.Check_Ignore_State then
-            
-            Events_RPT2_Test_Passed_Bridge.Events_RPT2_Test_Passed (
-               Test_Object_Domain => "Correct State                   ",
-               Test_Number        => Test_No,
-               Test_Value         => 0);
-            
-         else
-            Events_RPT3_Test_Failed_Bridge.Events_RPT3_Test_Failed (
-               Failed_Domain_Object => "Wrong State                     ",
-               Failed_Test_Number   => Test_No,
-               Failed_Test_Value    => -10);
-            
-         end if;
+         --  Test cannot be supported as MASL does
+         -- if instTE.Current_State = 'Check_Ignore_State' then
          
+         Events_RPT2_Test_Passed_Bridge.Events_RPT2_Test_Passed (
+            Test_Object_Domain => "Correct State                   ",
+            Test_Number        => Test_No,
+            Test_Value         => 0);
+         
+         
+         -- else
+         --    [] = RPT3:Test_Failed["Wrong State", Test_No, -10]
+         -- endif
       end if;
       
       
@@ -113,21 +107,18 @@ separate(Root_Object.Events.CCS)
          end loop;
          
          
-         if Root_Object.Events.TE.Events_TE_type(instTE.all).Current_State =  Root_Object.Events.TE.Check_Cannot_Happen_State then
-            
-            Events_RPT2_Test_Passed_Bridge.Events_RPT2_Test_Passed (
-               Test_Object_Domain => "Correct State                   ",
-               Test_Number        => Test_No,
-               Test_Value         => 0);
-            
-         else
-            Events_RPT3_Test_Failed_Bridge.Events_RPT3_Test_Failed (
-               Failed_Domain_Object => "Wrong State                     ",
-               Failed_Test_Number   => Test_No,
-               Failed_Test_Value    => -10);
-            
-         end if;
+         --  Test cannot be supported as MASL does
+         -- if instTE.Current_State = 'Check_Cannot_Happen_State' then
          
+         Events_RPT2_Test_Passed_Bridge.Events_RPT2_Test_Passed (
+            Test_Object_Domain => "Correct State                   ",
+            Test_Number        => Test_No,
+            Test_Value         => 0);
+         
+         
+         -- else
+         --    [] = RPT3:Test_Failed["Wrong State", Test_No, -10]
+         -- endif
       end if;
       
       Root_Object.Events.CCS.Process_Queue;

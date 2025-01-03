@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -56,16 +56,15 @@ with Struct_Domain_Types;
 with Struct_Domain_Types.Ops;
 
 with Application_Types;
-with Root_Object;
 
 
 package Struct_Struct4_Decode_Simple_TL_Structure_Service is
    
    
    procedure Struct_Struct4_Decode_Simple_TL_Structure (
-      Test                   : in     Application_Types.Base_Integer_Type;
-      Simple_Structure       : in out Struct_Domain_Types.Type_Linked_Simple_Structure_Type;
-      Object_Instance_Handle : in     Root_Object.Object_Access);
+      Test                      : in     Application_Types.Base_Integer_Type;
+      Simple_Structure          : in out Struct_Domain_Types.Type_Linked_Simple_Structure_Type;
+      Object_Instance_Handle_ID : in     Application_Types.Base_Integer_Type);
    
 end Struct_Struct4_Decode_Simple_TL_Structure_Service;
 

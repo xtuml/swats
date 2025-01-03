@@ -806,7 +806,7 @@ INSERT INTO O_ATTR
 INSERT INTO S_DT_PROXY
 	VALUES ("1a599dc4-172a-46cb-a091-cd379c6ddab2",
 	"00000000-0000-0000-0000-000000000000",
-	'Mminimum_To_Maximum_Of_Real',
+	'Minimum_To_Maximum_Of_Real',
 	'',
 	'',
 	'../../types/types.xtuml');

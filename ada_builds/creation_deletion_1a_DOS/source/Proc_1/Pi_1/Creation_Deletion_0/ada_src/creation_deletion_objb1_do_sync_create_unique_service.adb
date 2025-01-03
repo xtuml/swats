@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -299,9 +299,14 @@ package body Creation_Deletion_objB1_do_sync_create_unique_Service is
       
       
       --  Perform creation
+      --  Note test modified pending translation to MASL. In MASL, it is not allowed
+      --  to set the identifier for a class that has a unique identifier defined in the model
+      --  So the test here is unneccessary. We must relt on the architecture to create a
+      --  unique identifying attribute for these types of classes. 
+      -- new_instanceB = create unique Object_B with ReferenceB = Reference_B &\
+      --                                             IntegerA   = Test
       new_instanceB := Root_Object.Creation_Deletion.objB.Create_Unique;
-      Root_Object.Creation_Deletion.objB.Creation_Deletion_objB_Type(new_instanceB.all).ReferenceB           := Reference_B;
-      Root_Object.Creation_Deletion.objB.Creation_Deletion_objB_Type(new_instanceB.all).IntegerA             := Test;
+      Root_Object.Creation_Deletion.objB.Creation_Deletion_objB_Type(new_instanceB.all).IntegerA := Test;
       
       
       --  Find the newly created instance

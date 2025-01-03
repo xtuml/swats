@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -197,7 +197,7 @@ package Root_Object.UDT.RL is
 
       --
       -- Initialised Non identifying non referential
-      Sixth_Real : UDT_Domain_Types.Mminimum_To_Maximum_Of_Real := UDT_Domain_Types.Mminimum_To_Maximum_Of_Real_First;
+      Sixth_Real : UDT_Domain_Types.Minimum_To_Maximum_Of_Real := UDT_Domain_Types.Minimum_To_Maximum_Of_Real_First;
 
       --
 
@@ -291,11 +291,11 @@ package Root_Object.UDT.RL is
 
    function Get_Sixth_Real (
       This_Object : Root_Object.Object_Access) 
-   return UDT_Domain_Types.Mminimum_To_Maximum_Of_Real;
+   return UDT_Domain_Types.Minimum_To_Maximum_Of_Real;
 
    procedure Put_Sixth_Real (
       This_Object : in Root_Object.Object_Access;
-      Sixth_Real_Value : in UDT_Domain_Types.Mminimum_To_Maximum_Of_Real);
+      Sixth_Real_Value : in UDT_Domain_Types.Minimum_To_Maximum_Of_Real);
 
    pragma inline (Get_Sixth_Real);
    pragma inline (Put_Sixth_Real);

@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -109,11 +109,11 @@ package SBONE_Domain_Types.Ops is
 
 ----------------------------------------------------------------------------------------------
    procedure Append (
-      A_The_Range: in SBONE_Domain_Types.Pos;
+      A_The_Range: in Application_Types.Base_Integer_Type;
       To_Structure: in out Structure_Of_UDTs);
     
    procedure Extract (
-      A_The_Range: out SBONE_Domain_Types.Pos;
+      A_The_Range: out Application_Types.Base_Integer_Type;
       From_Structure: in     Structure_Of_UDTs);
                      
    procedure Go_To_Start (Of_Structure: in Structure_Of_UDTs);

@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -77,9 +77,11 @@ use type Root_Object.Object_Access;
 package body Struct_Struct4_Decode_Simple_TL_Structure_Service is
    
    procedure Struct_Struct4_Decode_Simple_TL_Structure (
-      Test                   : in     Application_Types.Base_Integer_Type;
-      Simple_Structure       : in out Struct_Domain_Types.Type_Linked_Simple_Structure_Type;
-      Object_Instance_Handle : in     Root_Object.Object_Access) is
+      Test                      : in     Application_Types.Base_Integer_Type;
+      Simple_Structure          : in out Struct_Domain_Types.Type_Linked_Simple_Structure_Type;
+      Object_Instance_Handle_ID : in     Application_Types.Base_Integer_Type) is
+      
+      Object_Instance_Handle : Root_Object.Object_Access;
       
       the_real   : Application_Types.Base_Float_Type := 1.0;
       local_real : Application_Types.Base_Float_Type := 1.0;
@@ -141,6 +143,13 @@ package body Struct_Struct4_Decode_Simple_TL_Structure_Service is
             if Count =  How_Many then
                
                --  This is the position in the set that we are interested in
+               Object_Instance_Handle := Root_Object.Struct.SO.Conditional_Find_One;
+               while (Object_Instance_Handle /= null) and then (not (Root_Object.Struct.SO.Struct_SO_Type(Object_Instance_Handle.all).Reference_SO =  
+                  Object_Instance_Handle_ID) ) loop
+                  
+                  Object_Instance_Handle := Object_Instance_Handle.Next_Object;
+               end loop;
+               
                
                if local_integer =  Root_Object.Struct.SO.Struct_SO_type(Object_Instance_Handle.all).An_Integer and then
                   local_real    =  Root_Object.Struct.SO.Struct_SO_type(Object_Instance_Handle.all).A_Real and then

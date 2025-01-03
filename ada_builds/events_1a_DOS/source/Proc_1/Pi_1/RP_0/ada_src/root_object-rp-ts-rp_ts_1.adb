@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -51,6 +51,7 @@
 --
 -- with list for all objects, relationships, services and types used within this code fragment
 
+with Application_Types;
 
 with Root_Object;
 use type Root_Object.Object_Access;
@@ -62,6 +63,8 @@ separate(Root_Object.RP.TS)
    
       
    begin
+      Root_Object.RP.TS.RP_TS_type(This_Instance.all).waiting_state := True;
+      
       Root_Object.RP.TS.Process_Queue;
    end RP_TS_1;
    

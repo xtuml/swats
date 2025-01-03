@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -193,6 +193,10 @@ package Root_Object.RP.TS is
 
       --
       -- Initialised Non identifying non referential
+      waiting_state :  Boolean := Application_Types.Boolean_First;
+
+      --
+      -- Initialised Non identifying non referential
       Current_State :  Object_State_Type :=  Object_State_Type_First;
 
       R10_B : Root_Object.Object_List.List_Header_Access_Type;
@@ -200,7 +204,7 @@ package Root_Object.RP.TS is
 
    end record;
 
-   Attribute_Count : constant Application_Types.Base_Integer_Type := -2;
+   Attribute_Count : constant Application_Types.Base_Integer_Type := -3;
 
    -------------------------------------------------------------------------------------------------
 
@@ -224,6 +228,18 @@ package Root_Object.RP.TS is
 
    pragma inline (Get_Unique_TS_Identifier);
    pragma inline (Put_Unique_TS_Identifier);
+
+
+   function Get_waiting_state (
+      This_Object : Root_Object.Object_Access) 
+   return  Boolean;
+
+   procedure Put_waiting_state (
+      This_Object : in Root_Object.Object_Access;
+      waiting_state_Value : in  Boolean);
+
+   pragma inline (Get_waiting_state);
+   pragma inline (Put_waiting_state);
 
 
    function Get_Current_State (

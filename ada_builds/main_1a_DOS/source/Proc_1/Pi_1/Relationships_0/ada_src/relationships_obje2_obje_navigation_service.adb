@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -1957,11 +1957,15 @@ package body Relationships_objE2_ObjE_Navigation_Service is
          
          
          firstNewEF := Root_Object.Relationships.OBJEF.Create;
-         Root_Object.Relationships.OBJEF.Relationships_OBJEF_Type(firstNewEF.all).idE := 30;
+         Root_Object.Relationships.OBJEF.Relationships_OBJEF_Type(firstNewEF.all).idE       := 30;
+         Root_Object.Relationships.OBJEF.Relationships_OBJEF_Type(firstNewEF.all).idF       := 
+            Root_Object.Relationships.objF.Relationships_objF_type(firstNewF.all).idF;
          
          
          secondNewEF := Root_Object.Relationships.OBJEF.Create;
-         Root_Object.Relationships.OBJEF.Relationships_OBJEF_Type(secondNewEF.all).idE := 31;
+         Root_Object.Relationships.OBJEF.Relationships_OBJEF_Type(secondNewEF.all).idE       := 31;
+         Root_Object.Relationships.OBJEF.Relationships_OBJEF_Type(secondNewEF.all).idF       := 
+            Root_Object.Relationships.objF.Relationships_objF_type(secondNewF.all).idF;
          
          Relationships_Rel_R5.Link (
             A_Instance => firstNewE,

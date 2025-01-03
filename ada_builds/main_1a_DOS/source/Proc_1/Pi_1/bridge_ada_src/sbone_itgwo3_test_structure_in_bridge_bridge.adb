@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -40,7 +40,7 @@
 --*  BUILD INFORMATION                                                                *
 --*  -----------------                                                                *
 --*                                                                                   *
---*  Project Key Letter : Main_Build_Set
+--*  Project Key Letter : Main_BSet
 --*  Project Version    : 0
 --*  Build Set          : 0
 --*                                                                                   *
@@ -62,7 +62,6 @@ with RP_RP1_Test_Passed_Service;
 with SBONE_Domain_Types;
 with SBONE_Domain_Types.Ops;
 use type SBONE_Domain_Types.Structure_Of_UDTs;
-use type SBONE_Domain_Types.Pos;
 
 with Application_Types;
 use type Application_Types.Base_Integer_Type;
@@ -81,9 +80,8 @@ package body SBONE_ITGWO3_Test_Structure_In_Bridge_Bridge is
       Reporter : Root_Object.Object_Access;
       
       Reporter_Number : Application_Types.Base_Integer_Type := 1;
+      int_from_struct : Application_Types.Base_Integer_Type := 1;
       the_result      : Application_Types.Base_Integer_Type := 1;
-      
-      int_from_struct : SBONE_Domain_Types.Pos := SBONE_Domain_Types.Pos_first;
       
    begin
    -- start of ITGWO3_Test_Structure_In_Bridge

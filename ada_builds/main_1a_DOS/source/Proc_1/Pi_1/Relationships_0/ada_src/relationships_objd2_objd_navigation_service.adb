@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -1767,7 +1767,9 @@ package body Relationships_objD2_ObjD_Navigation_Service is
          
          
          NewInstDO := Root_Object.Relationships.objDO.Create;
-         Root_Object.Relationships.objDO.Relationships_objDO_Type(NewInstDO.all).idDO := 303;
+         Root_Object.Relationships.objDO.Relationships_objDO_Type(NewInstDO.all).idDO      := 303;
+         Root_Object.Relationships.objDO.Relationships_objDO_Type(NewInstDO.all).idO       := 
+            Root_Object.Relationships.objO.Relationships_objO_type(NewInstO.all).idO;
          
          Relationships_Rel_R19.Link (
             A_Instance => NewInstD,

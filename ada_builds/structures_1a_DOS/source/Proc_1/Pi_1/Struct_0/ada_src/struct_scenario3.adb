@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -728,9 +728,9 @@ use type Root_Object.Object_Access;
       --  Invoke domain based synch. service
       
       Struct_Struct4_Decode_Simple_TL_Structure_Service.Struct_Struct4_Decode_Simple_TL_Structure (
-         Test                   => Test,
-         Simple_Structure       => TL_Simple_Object_Structure_5,
-         Object_Instance_Handle => struct_5);
+         Test                      => Test,
+         Simple_Structure          => TL_Simple_Object_Structure_5,
+         Object_Instance_Handle_ID => Root_Object.Struct.SO.Struct_SO_type(struct_5.all).Reference_SO);
       
       
       Root_Object.Struct.SO.Delete (

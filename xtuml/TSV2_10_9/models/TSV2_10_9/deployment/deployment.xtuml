@@ -56,7 +56,7 @@ INSERT INTO GD_GE
 	"ee10e127-f80e-4bc5-ad58-78260b4884f5",
 	209,
 	0,
-	'TSV2_10_9::deployment::Events_Build_Set');
+	'TSV2_10_9::deployment::Events_BSet');
 INSERT INTO GD_SHP
 	VALUES ("c757ba80-9f8e-4be5-b35f-40f1203c378c");
 INSERT INTO GD_NCS
@@ -83,9 +83,9 @@ INSERT INTO DIM_DIA
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO D_DEPL
 	VALUES ("ee10e127-f80e-4bc5-ad58-78260b4884f5",
-	'Events_Build_Set',
+	'Events_BSet',
 	'',
-	'Events_Build_Set');
+	'Events_BSet');
 INSERT INTO D_TERM
 	VALUES ("48d3a82d-54ce-40f8-8844-e9897af78e8a",
 	"ee10e127-f80e-4bc5-ad58-78260b4884f5",
@@ -1375,9 +1375,9 @@ INSERT INTO D_TSVC
 INSERT INTO D_TERM
 	VALUES ("83a403f1-a5cd-4067-94dd-61bf8cc50248",
 	"ee10e127-f80e-4bc5-ad58-78260b4884f5",
-	'Events_Build_Set::Sequence',
+	'Events_BSet::Sequence',
 	'',
-	'Events_Build_Set',
+	'Events_BSet',
 	'Sequence',
 	0,
 	'',

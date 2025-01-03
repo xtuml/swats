@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -126,10 +126,8 @@ use type Root_Object.Object_Access;
       Root_Object.Creation_Deletion.objA.Creation_Deletion_objA_Type(testObjA.all).BooleanA   := True;
       Root_Object.Creation_Deletion.objA.Creation_Deletion_objA_Type(testObjA.all).ColourA    := Creation_Deletion_Domain_Types.Red;
       
-      
-      testObjB := Root_Object.Creation_Deletion.objB.Create;
-      Root_Object.Creation_Deletion.objB.Creation_Deletion_objB_Type(testObjB.all).ReferenceB := 0;
-      Root_Object.Creation_Deletion.objB.Creation_Deletion_objB_Type(testObjB.all).IntegerA   := 100;
+      testObjB := Root_Object.Creation_Deletion.objB.Create_Unique;
+      Root_Object.Creation_Deletion.objB.Creation_Deletion_objB_Type(testObjB.all).IntegerA := 100;
       
       
       if Root_Object.Creation_Deletion.objA.Creation_Deletion_objA_type(testObjA.all).ReferenceA =  0 then

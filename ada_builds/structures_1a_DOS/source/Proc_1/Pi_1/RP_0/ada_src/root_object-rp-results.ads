@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -75,6 +75,7 @@
 --    procedure Put_State
 --    procedure Description
 --    function Create
+--    function Create_Unique 
 --    procedure Delete
 --    function Count_Of
 --    procedure Find
@@ -145,8 +146,8 @@ package Root_Object.RP.RESULTS is
    --
    --
    --
-   -- Object RESULTS does not have an identifying non-referential attribute and 
-   -- therefore may not be uniquely created.
+   -- Object RESULTS has an identifying non-referential attribute results_id 
+   -- and therefore may be uniquely created.
    -- 
    -- Object RESULTS has no TAGS.
    --
@@ -169,6 +170,10 @@ package Root_Object.RP.RESULTS is
    --
 
    type RP_RESULTS_Type is new RP_Type with record
+
+      --
+      -- Non initialised identifying non referential
+      results_id : Application_Types.Base_Integer_Type;
 
       --
       -- Initialised Non identifying non referential
@@ -211,7 +216,7 @@ package Root_Object.RP.RESULTS is
 
    end record;
 
-   Attribute_Count : constant Application_Types.Base_Integer_Type := 8;
+   Attribute_Count : constant Application_Types.Base_Integer_Type := 9;
 
    -------------------------------------------------------------------------------------------------
 
@@ -223,6 +228,18 @@ package Root_Object.RP.RESULTS is
    --*********************  Object Attribute Access ***********************
    ------------------------------------------------------------------------
    --
+
+
+   function Get_results_id (
+      This_Object : Root_Object.Object_Access) 
+   return Application_Types.Base_Integer_Type;
+
+   procedure Put_results_id (
+      This_Object : in Root_Object.Object_Access;
+      results_id_Value : in Application_Types.Base_Integer_Type);
+
+   pragma inline (Get_results_id);
+   pragma inline (Put_results_id);
 
 
    function Get_The_Number_Of_Test (
@@ -348,9 +365,7 @@ package Root_Object.RP.RESULTS is
    function  Create 
       return Root_Object.Object_Access;
 
-   -- function Create_Unique 
-   -- is not available for this object as it does not have a non-referential 
-   -- identifying attribute.
+   function Create_Unique return Root_Object.Object_Access;
 
 
    procedure Delete (

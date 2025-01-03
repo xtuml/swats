@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -109,7 +109,9 @@ use type Root_Object.Object_Access;
       --  Test 1 - First test in the sequence.
       --           Create a Structured Object and append it to a structure.
       -- --------------------------------------------------------------------------
-      Primary_SO := Root_Object.Struct.SO.Create_Unique;
+      
+      Primary_SO := Root_Object.Struct.SO.Create;
+      Root_Object.Struct.SO.Struct_SO_Type(Primary_SO.all).Reference_SO  := Test_Number;
       Root_Object.Struct.SO.Struct_SO_Type(Primary_SO.all).An_Integer    := Test_Number;
       Root_Object.Struct.SO.Struct_SO_Type(Primary_SO.all).A_Real        := 1.0;
       Root_Object.Struct.SO.Struct_SO_Type(Primary_SO.all).Some_Text     := "No text                         ";
@@ -165,7 +167,9 @@ use type Root_Object.Object_Access;
       -- --------------------------------------------------------------------------
       --  Test 3 - Create a second Structured Object and append it to a structure.
       -- --------------------------------------------------------------------------
-      Secondary_SO := Root_Object.Struct.SO.Create_Unique;
+      
+      Secondary_SO := Root_Object.Struct.SO.Create;
+      Root_Object.Struct.SO.Struct_SO_Type(Secondary_SO.all).Reference_SO  := Test_Number;
       Root_Object.Struct.SO.Struct_SO_Type(Secondary_SO.all).An_Integer    := Test_Number;
       Root_Object.Struct.SO.Struct_SO_Type(Secondary_SO.all).A_Real        := 2.0;
       Root_Object.Struct.SO.Struct_SO_Type(Secondary_SO.all).Some_Text     := "No text                         ";
@@ -248,7 +252,9 @@ use type Root_Object.Object_Access;
          
          Test_Number := Test_Number + 1;
          
-         Next_SO := Root_Object.Struct.SO.Create_Unique;
+         
+         Next_SO := Root_Object.Struct.SO.Create;
+         Root_Object.Struct.SO.Struct_SO_Type(Next_SO.all).Reference_SO  := Test_Number;
          Root_Object.Struct.SO.Struct_SO_Type(Next_SO.all).An_Integer    := Test_Number;
          Root_Object.Struct.SO.Struct_SO_Type(Next_SO.all).A_Real        := 1.0;
          Root_Object.Struct.SO.Struct_SO_Type(Next_SO.all).Some_Text     := "No text                         ";
@@ -295,7 +301,9 @@ use type Root_Object.Object_Access;
          
          
          --  Resuse the Next_SO data name.
-         Next_SO := Root_Object.Struct.SO.Create_Unique;
+         
+         Next_SO := Root_Object.Struct.SO.Create;
+         Root_Object.Struct.SO.Struct_SO_Type(Next_SO.all).Reference_SO  := Test_Number;
          Root_Object.Struct.SO.Struct_SO_Type(Next_SO.all).An_Integer    := Test_Number;
          Root_Object.Struct.SO.Struct_SO_Type(Next_SO.all).A_Real        := 1.0;
          Root_Object.Struct.SO.Struct_SO_Type(Next_SO.all).Some_Text     := "No text                         ";

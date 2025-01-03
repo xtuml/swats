@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -1257,7 +1257,9 @@ package body Find_and_Sets_objFM1_do_find_many_Service is
       loop
          
          instAO := Root_Object.Find_and_Sets.objAO.Create;
-         Root_Object.Find_and_Sets.objAO.Find_and_Sets_objAO_Type(instAO.all).idAO := count;
+         Root_Object.Find_and_Sets.objAO.Find_and_Sets_objAO_Type(instAO.all).idAO            := count;
+         Root_Object.Find_and_Sets.objAO.Find_and_Sets_objAO_Type(instAO.all).objLO_id        := count;
+         Root_Object.Find_and_Sets.objAO.Find_and_Sets_objAO_Type(instAO.all).objRO_id        := count;
          
          count := count - 1;
          exit when count =  0;
@@ -1281,7 +1283,9 @@ package body Find_and_Sets_objFM1_do_find_many_Service is
             
             
             instAO := Root_Object.Find_and_Sets.objAO.Create;
-            Root_Object.Find_and_Sets.objAO.Find_and_Sets_objAO_Type(instAO.all).idAO := theInt;
+            Root_Object.Find_and_Sets.objAO.Find_and_Sets_objAO_Type(instAO.all).idAO            := theInt;
+            Root_Object.Find_and_Sets.objAO.Find_and_Sets_objAO_Type(instAO.all).objLO_id        := theInt;
+            Root_Object.Find_and_Sets.objAO.Find_and_Sets_objAO_Type(instAO.all).objRO_id        := theInt;
             
             
             count := count - 1;
@@ -1306,7 +1310,9 @@ package body Find_and_Sets_objFM1_do_find_many_Service is
                
                
                instAO := Root_Object.Find_and_Sets.objAO.Create;
-               Root_Object.Find_and_Sets.objAO.Find_and_Sets_objAO_Type(instAO.all).idAO := theInt;
+               Root_Object.Find_and_Sets.objAO.Find_and_Sets_objAO_Type(instAO.all).idAO            := theInt;
+               Root_Object.Find_and_Sets.objAO.Find_and_Sets_objAO_Type(instAO.all).objLO_id        := theInt;
+               Root_Object.Find_and_Sets.objAO.Find_and_Sets_objAO_Type(instAO.all).objRO_id        := theInt;
                
                
                count := count - 1;
@@ -1377,7 +1383,9 @@ package body Find_and_Sets_objFM1_do_find_many_Service is
          
          
          instAO := Root_Object.Find_and_Sets.objAO.Create;
-         Root_Object.Find_and_Sets.objAO.Find_and_Sets_objAO_Type(instAO.all).idAO := theInt;
+         Root_Object.Find_and_Sets.objAO.Find_and_Sets_objAO_Type(instAO.all).idAO            := theInt;
+         Root_Object.Find_and_Sets.objAO.Find_and_Sets_objAO_Type(instAO.all).objLO_id        := theInt;
+         Root_Object.Find_and_Sets.objAO.Find_and_Sets_objAO_Type(instAO.all).objRO_id        := theInt;
          
          
          count := count + 1;

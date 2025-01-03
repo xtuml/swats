@@ -1,0 +1,91 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("b357a2b6-e79a-4ca8-b150-dba896761539",
+	'Very_Simple_Data_Object',
+	3,
+	'VSD',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("309e932a-78b4-4124-a1b9-2f38de8785fe",
+	"b357a2b6-e79a-4ca8-b150-dba896761539");
+INSERT INTO O_BATTR
+	VALUES ("309e932a-78b4-4124-a1b9-2f38de8785fe",
+	"b357a2b6-e79a-4ca8-b150-dba896761539");
+INSERT INTO O_ATTR
+	VALUES ("309e932a-78b4-4124-a1b9-2f38de8785fe",
+	"b357a2b6-e79a-4ca8-b150-dba896761539",
+	"00000000-0000-0000-0000-000000000000",
+	'Object_Reference_VSD',
+	'',
+	'',
+	'Object_Reference_VSD',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("9c109ada-b0db-4875-b8f3-2e9eee5d68b4",
+	"b357a2b6-e79a-4ca8-b150-dba896761539");
+INSERT INTO O_BATTR
+	VALUES ("9c109ada-b0db-4875-b8f3-2e9eee5d68b4",
+	"b357a2b6-e79a-4ca8-b150-dba896761539");
+INSERT INTO O_ATTR
+	VALUES ("9c109ada-b0db-4875-b8f3-2e9eee5d68b4",
+	"b357a2b6-e79a-4ca8-b150-dba896761539",
+	"309e932a-78b4-4124-a1b9-2f38de8785fe",
+	'Object_Simple_Integer',
+	'',
+	'',
+	'Object_Simple_Integer',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("31927fa5-6220-47f6-8e4b-406e52ff8794",
+	"b357a2b6-e79a-4ca8-b150-dba896761539");
+INSERT INTO O_BATTR
+	VALUES ("31927fa5-6220-47f6-8e4b-406e52ff8794",
+	"b357a2b6-e79a-4ca8-b150-dba896761539");
+INSERT INTO O_ATTR
+	VALUES ("31927fa5-6220-47f6-8e4b-406e52ff8794",
+	"b357a2b6-e79a-4ca8-b150-dba896761539",
+	"9c109ada-b0db-4875-b8f3-2e9eee5d68b4",
+	'Object_Simple_Real',
+	'',
+	'',
+	'Object_Simple_Real',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000003",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"b357a2b6-e79a-4ca8-b150-dba896761539");
+INSERT INTO O_OIDA
+	VALUES ("309e932a-78b4-4124-a1b9-2f38de8785fe",
+	"b357a2b6-e79a-4ca8-b150-dba896761539",
+	0,
+	'Object_Reference_VSD');
+INSERT INTO O_ID
+	VALUES (1,
+	"b357a2b6-e79a-4ca8-b150-dba896761539");
+INSERT INTO O_ID
+	VALUES (2,
+	"b357a2b6-e79a-4ca8-b150-dba896761539");
+INSERT INTO PE_PE
+	VALUES ("b357a2b6-e79a-4ca8-b150-dba896761539",
+	1,
+	"39a02105-c5c1-4ad2-ade6-c1a2e16392a3",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("39a02105-c5c1-4ad2-ade6-c1a2e16392a3",
+	"00000000-0000-0000-0000-000000000000",
+	"5310fe55-f993-480a-bdcd-7c6a94a4f6ac",
+	'OAIBONE',
+	'',
+	0,
+	'../OAIBONE.xtuml');

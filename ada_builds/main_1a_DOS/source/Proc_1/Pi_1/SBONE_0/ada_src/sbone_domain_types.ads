@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -108,11 +108,6 @@ with Root_Object;
 package SBONE_Domain_Types is
    pragma Elaborate_Body (SBONE_Domain_Types);
 
-   subtype Pos is Application_Types.Base_Integer_Type 
-      range Application_Types.Base_Integer_Type(1) .. Application_Types.Base_Integer_Type(10);
-
-   Pos_First : constant Pos := Pos'first;
-
 
 
 
@@ -181,7 +176,7 @@ package SBONE_Domain_Types is
    end record;
        
    type Structure_Of_UDTs_Node is record
-      The_Range : SBONE_Domain_Types.Pos := SBONE_Domain_Types.Pos_First;
+      The_Range : Application_Types.Base_Integer_Type := Application_Types.Base_Integer_Type_First;
       Next_Structure     : Structure_Of_UDTs_Node_Access := null;
       Previous_Structure : Structure_Of_UDTs_Node_Access := null;
    end record;
@@ -255,7 +250,7 @@ package SBONE_Domain_Types is
 ----------------------------------------------------------------------------------------------
 
    -- SRLE1000002929
-   Types_And_Subtypes_Count : constant Application_Types.Base_Integer_Type := 6;
+   Types_And_Subtypes_Count : constant Application_Types.Base_Integer_Type := 5;
 
 ----------------------------------------------------------------------------------------------
 --

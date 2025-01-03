@@ -1,0 +1,193 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("cd873208-b3ed-4cc6-821b-390608ec2d3d",
+	"00000000-0000-0000-0000-000000000000",
+	"5310fe55-f993-480a-bdcd-7c6a94a4f6ac",
+	'functions',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("ebb3443f-b234-47f7-8aa4-e66686732d21",
+	112,
+	"cd873208-b3ed-4cc6-821b-390608ec2d3d",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'4.1.17',
+	'OAIBONE::OAIBONE::OAIBONE::functions');
+INSERT INTO DIM_DIA
+	VALUES ("ebb3443f-b234-47f7-8aa4-e66686732d21",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_SYNC
+	VALUES ("162f7ac4-99a6-49bb-b03f-dbdad93e8115",
+	"00000000-0000-0000-0000-000000000000",
+	'Receive_A_Very_Simple_Structure',
+	'',
+	'
+[] = RPT1:Start_Test[Received_Test, "Null Requid", "OAIBONE", "DBSS rx a structure", "rx structure and create simple object"]
+
+VSD_One = create Very_Simple_Data_Object with Object_Reference_VSD = Received_Test
+
+# For the purposes of this simple test, we are assuming that there is
+# only one structure in the set.
+
+for [Local_Integer, Local_Real] in {Received_Very_Simple_Structure} do
+
+   VSD_One.Object_Simple_Integer = Local_Integer
+   VSD_One.Object_Simple_Real    = Local_Real
+
+endfor
+
+if VSD_One.Object_Simple_Integer = Received_Control_Integer & \
+   VSD_One.Object_Simple_Real    = Received_Control_Real then
+
+   [] = RPT2:Test_Passed["OAIBONE rx structure", Received_Test, 0]
+else
+   [] = RPT3:Test_Failed["OAIBONE rx structure", Received_Test, -1]
+endif
+
+
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	1);
+INSERT INTO S_SPARM
+	VALUES ("e9b9b5a1-2b3c-45e8-a410-f241fd3faffd",
+	"162f7ac4-99a6-49bb-b03f-dbdad93e8115",
+	'Received_Very_Simple_Structure',
+	"43fede8b-9f44-4aaa-92bf-34d44446746c",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("43fede8b-9f44-4aaa-92bf-34d44446746c",
+	"00000000-0000-0000-0000-000000000000",
+	'sequence of Very_Simple_Structure_Type',
+	'',
+	'',
+	'../../Shared/Shared.xtuml');
+INSERT INTO S_SPARM
+	VALUES ("07880958-02d5-40de-9666-682acf20f929",
+	"162f7ac4-99a6-49bb-b03f-dbdad93e8115",
+	'Received_Control_Integer',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"e9b9b5a1-2b3c-45e8-a410-f241fd3faffd",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("0824e57e-47fd-49ee-b7a9-a1153059c44b",
+	"162f7ac4-99a6-49bb-b03f-dbdad93e8115",
+	'Received_Control_Real',
+	"ba5eda7a-def5-0000-0000-000000000003",
+	0,
+	'',
+	"07880958-02d5-40de-9666-682acf20f929",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("891c88f3-f4bf-4f7f-b5f2-5a0fc0bc410b",
+	"162f7ac4-99a6-49bb-b03f-dbdad93e8115",
+	'Received_Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"0824e57e-47fd-49ee-b7a9-a1153059c44b",
+	'');
+INSERT INTO PE_PE
+	VALUES ("162f7ac4-99a6-49bb-b03f-dbdad93e8115",
+	1,
+	"cd873208-b3ed-4cc6-821b-390608ec2d3d",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("5ef88722-48e9-4af8-a760-e7e9987d1a7f",
+	"00000000-0000-0000-0000-000000000000",
+	'Create_Report_Data',
+	'',
+	'# Find out of there already is one of these.
+# It is not inconceivable that a report object still exists from a previous run.
+# Report objects are not deleted at the end of a run, as certain events may
+# still be en-queued.
+
+old_report = find-one Report_Data
+
+if old_report != UNDEFINED then
+   delete old_report
+endif
+
+My_Report = create unique Report_Data with Reported_Domain_Number = 0
+
+[] = RPT6:Domain_Test_Start["OA Internal Bridge Domain One"]
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	2);
+INSERT INTO PE_PE
+	VALUES ("5ef88722-48e9-4af8-a760-e7e9987d1a7f",
+	1,
+	"cd873208-b3ed-4cc6-821b-390608ec2d3d",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("369b0a9a-4972-4f34-aec4-b773aa03cb66",
+	"00000000-0000-0000-0000-000000000000",
+	'Delete_Report_Data',
+	'',
+	'[] = RPT7:Domain_Test_Finished["OA Internal Bridge Domain One"]
+
+# Do not delete the Report_Data object, as there may be still events in
+# the queue.',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	3);
+INSERT INTO PE_PE
+	VALUES ("369b0a9a-4972-4f34-aec4-b773aa03cb66",
+	1,
+	"cd873208-b3ed-4cc6-821b-390608ec2d3d",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO PE_PE
+	VALUES ("cd873208-b3ed-4cc6-821b-390608ec2d3d",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"d35c0e50-4f6f-4307-bf25-7abd7e8d96ff",
+	7);
+INSERT INTO C_C_PROXY
+	VALUES ("d35c0e50-4f6f-4307-bf25-7abd7e8d96ff",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'OAIBONE',
+	'',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Open Architecture Internal Bridge Domain One',
+	'../OAIBONE.xtuml');
+INSERT INTO S_SYS_PROXY
+	VALUES ("5310fe55-f993-480a-bdcd-7c6a94a4f6ac",
+	'OAIBONE',
+	1,
+	'../../../OAIBONE.xtuml');

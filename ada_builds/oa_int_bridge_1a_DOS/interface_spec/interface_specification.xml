@@ -1,0 +1,15 @@
+<SYSTEM_CONSTRUCTION>
+  <PROCESSOR Processor_Id="1">
+    <PROCESS Process_Id="1" Implementation_Language="ada" Filename_Reference="connection_specification.xml" >
+      <DOMAIN Domain_Key_Letter="OAIBONE">
+        <INTERFACE Fullname="I_Into_The_Great_Wide_Open" Design_Tool="IUML" Direction="USES" Type="internal" Identifier="1" Filename_Reference="i_into_the_great_wide_open.xml" />
+      </DOMAIN>
+      <DOMAIN Domain_Key_Letter="OAIBTWO">
+        <INTERFACE Fullname="I_Into_The_Great_Wide_Open" Design_Tool="IUML" Direction="REALISES" Type="internal" Identifier="1" Filename_Reference="i_into_the_great_wide_open.xml" />
+      </DOMAIN>
+    </PROCESS>
+    
+    <PROCESS Process_Id="2" Implementation_Language="delphi">
+    </PROCESS>
+  </PROCESSOR>
+</SYSTEM_CONSTRUCTION>

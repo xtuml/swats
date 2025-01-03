@@ -1,11 +1,11 @@
 PB->  120 - Post Processing WACA application
-PB->  121 - Specification Filepath: ..\specifications\elaborated_build_specification_17.xml
-PB->  122 - Removing existing build and creating clean directory structure: D:\builds\swats\creation_deletion_1a_DOS
-PB->  123 - Copying Build Specification file from WACA build area to Compiler build area: D:\builds\swats\creation_deletion_1a_DOS\build_spec
-PB->  133 - Copying Interface Specifications from WACA build area to Compiler build area: D:\builds\swats\creation_deletion_1a_DOS\interface_spec
-PB->  134 - Copying Pass 1 log files from WACA build area to Compiler build area: D:\builds\swats\creation_deletion_1a_DOS\log
-PB->  135 - Copying System_Construction file from WACA build area to Compiler build area: D:\builds\swats\creation_deletion_1a_DOS\system_construction
-PB->  136 - Copying Code Generated files from WACA build area to Compiler build area: D:\builds\swats\creation_deletion_1a_DOS
-PB->  124 - Copying files from MGC area to Compiler build area: D:\builds\swats\creation_deletion_1a_DOS
-PB->  125 - Zipping files: D:\builds\swats\creation_deletion_1a_DOS
-PB->  137 - Elasped time is: 84 s
+PB->  121 - Specification Filepath: ..\specifications\elaborated_build_specification_4.xml
+PB->  122 - Removing existing build and creating clean directory structure: D:\WACA\DS\Builds\SWATS\creation_deletion_1a_DOS
+PB->  123 - Copying Build Specification file from WACA build area to Compiler build area: D:\WACA\DS\Builds\SWATS\creation_deletion_1a_DOS\build_spec
+PB->  133 - Copying Interface Specifications from WACA build area to Compiler build area: D:\WACA\DS\Builds\SWATS\creation_deletion_1a_DOS\interface_spec
+PB->  134 - Copying Pass 1 log files from WACA build area to Compiler build area: D:\WACA\DS\Builds\SWATS\creation_deletion_1a_DOS\log
+PB->  135 - Copying System_Construction file from WACA build area to Compiler build area: D:\WACA\DS\Builds\SWATS\creation_deletion_1a_DOS\system_construction
+PB->  136 - Copying Code Generated files from WACA build area to Compiler build area: D:\WACA\DS\Builds\SWATS\creation_deletion_1a_DOS
+PB->  124 - Copying files from MGC area to Compiler build area: D:\WACA\DS\Builds\SWATS\creation_deletion_1a_DOS
+PB->  125 - Zipping files: D:\WACA\DS\Builds\SWATS\creation_deletion_1a_DOS
+PB->  137 - Elasped time is: 13 s

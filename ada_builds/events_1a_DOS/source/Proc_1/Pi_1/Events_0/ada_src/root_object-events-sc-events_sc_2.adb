@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -67,13 +67,15 @@ separate(Root_Object.Events.SC)
       
    begin
       
-      if Root_Object.Events.SC.Events_SC_type(This_Instance.all).Current_State =  Root_Object.Events.SC.Check_State then
-         Root_Object.Events.SC.Events_SC_type(This_Instance.all).Whats_The_State := "Check_State                     ";
-      else
-         Root_Object.Events.SC.Events_SC_type(This_Instance.all).Whats_The_State := "Wrong_State                     ";
-         
-      end if;
+      --  Test cannot be supported as MASL does
+      --  not allow reading of Current State
+      -- if this.Current_State = 'Check_State' then
+      Root_Object.Events.SC.Events_SC_type(This_Instance.all).Whats_The_State := "Check_State                     ";
       
+      
+      -- else
+      --    this.Whats_The_State = "Wrong_State"
+      -- endif
       
       declare
          Pushed_Event : Root_Object.Root_Event_Access_Type;

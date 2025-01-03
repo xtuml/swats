@@ -32,7 +32,7 @@ INSERT INTO GD_GE
 	"700b716e-79ef-44e0-955e-a22d8be3d20d",
 	209,
 	0,
-	'TSV2_10_13::deployment::User_Defined_Types_Build_Set');
+	'TSV2_10_13::deployment::UDT_BSet');
 INSERT INTO GD_SHP
 	VALUES ("d3974b47-488c-4991-8872-31869672623b");
 INSERT INTO GD_NCS
@@ -83,9 +83,9 @@ INSERT INTO DIM_DIA
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO D_DEPL
 	VALUES ("700b716e-79ef-44e0-955e-a22d8be3d20d",
-	'User_Defined_Types_Build_Set',
+	'UDT_BSet',
 	'',
-	'User_Defined_Types_Build_Set');
+	'UDT_BSet');
 INSERT INTO D_TERM
 	VALUES ("6dcd40f6-4e13-4b39-8959-572230e54cb5",
 	"700b716e-79ef-44e0-955e-a22d8be3d20d",
@@ -1216,89 +1216,6 @@ INSERT INTO D_TSVC
 	0,
 	0);
 INSERT INTO D_TSVC
-	VALUES ("8ceb38d5-1651-4df5-80fc-962595fe4a9b",
-	"52a349b4-ca6a-4f95-8d8a-d1ca948087c4",
-	'Create_New_Test_Data_Object_And_Link_It',
-	'',
-	'',
-	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
-	'',
-	6,
-	1,
-	0,
-	0);
-INSERT INTO D_TSPARM
-	VALUES ("34a18bba-9c1a-460b-ab73-ad9213ac0243",
-	"8ceb38d5-1651-4df5-80fc-962595fe4a9b",
-	'New_Set',
-	"ba5eda7a-def5-0000-0000-000000000001",
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000",
-	'');
-INSERT INTO D_TSPARM
-	VALUES ("f7b7414a-f76a-4c26-9544-bcc416d3a0b6",
-	"8ceb38d5-1651-4df5-80fc-962595fe4a9b",
-	'Previous_IH',
-	"b1b1421b-75bf-410f-9592-7f1526e89de5",
-	0,
-	'',
-	"34a18bba-9c1a-460b-ab73-ad9213ac0243",
-	'');
-INSERT INTO S_DT_PROXY
-	VALUES ("b1b1421b-75bf-410f-9592-7f1526e89de5",
-	"00000000-0000-0000-0000-000000000000",
-	'inst_ref<Test_Data>',
-	'',
-	'',
-	'./Shared/Shared.xtuml');
-INSERT INTO D_TSPARM
-	VALUES ("0d9a8a91-d4b1-47d2-8e9b-c4c23845f4ec",
-	"8ceb38d5-1651-4df5-80fc-962595fe4a9b",
-	'This_Test_Number',
-	"ba5eda7a-def5-0000-0000-000000000002",
-	0,
-	'',
-	"f7b7414a-f76a-4c26-9544-bcc416d3a0b6",
-	'');
-INSERT INTO D_TSPARM
-	VALUES ("b1553915-d02b-4d89-8058-6e8fa6ddda04",
-	"8ceb38d5-1651-4df5-80fc-962595fe4a9b",
-	'Testing_For',
-	"ba5eda7a-def5-0000-0000-000000000004",
-	0,
-	'',
-	"0d9a8a91-d4b1-47d2-8e9b-c4c23845f4ec",
-	'');
-INSERT INTO D_TSPARM
-	VALUES ("e146cd72-0608-4e20-babb-e5e389a44506",
-	"8ceb38d5-1651-4df5-80fc-962595fe4a9b",
-	'Final_Entry',
-	"ba5eda7a-def5-0000-0000-000000000001",
-	0,
-	'',
-	"b1553915-d02b-4d89-8058-6e8fa6ddda04",
-	'');
-INSERT INTO D_TSPARM
-	VALUES ("c99f3e07-b6b5-4cd8-a8a9-66d48627344e",
-	"8ceb38d5-1651-4df5-80fc-962595fe4a9b",
-	'Returned_IH',
-	"b1b1421b-75bf-410f-9592-7f1526e89de5",
-	1,
-	'',
-	"e146cd72-0608-4e20-babb-e5e389a44506",
-	'');
-INSERT INTO D_TSPARM
-	VALUES ("e81b429e-4db1-4fc5-abd1-b21f317b183b",
-	"8ceb38d5-1651-4df5-80fc-962595fe4a9b",
-	'Returned_Test_Number',
-	"ba5eda7a-def5-0000-0000-000000000002",
-	1,
-	'',
-	"c99f3e07-b6b5-4cd8-a8a9-66d48627344e",
-	'');
-INSERT INTO D_TSVC
 	VALUES ("68c598a3-da03-4f5c-a16c-7cb79e517040",
 	"52a349b4-ca6a-4f95-8d8a-d1ca948087c4",
 	'Tidy_Up_Test_Data',
@@ -1373,44 +1290,6 @@ INSERT INTO D_TSPARM
 	'',
 	"b8f8e069-f43e-4c07-a390-00b961eda746",
 	'');
-INSERT INTO D_TSVC
-	VALUES ("2899aa90-bb77-4d1d-a477-a425ded2a38e",
-	"52a349b4-ca6a-4f95-8d8a-d1ca948087c4",
-	'Create_An_Active_Object',
-	'',
-	'',
-	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
-	'',
-	6,
-	1,
-	0,
-	0);
-INSERT INTO D_TSPARM
-	VALUES ("912804e7-cc99-4fc9-8097-b79021c3a3ec",
-	"2899aa90-bb77-4d1d-a477-a425ded2a38e",
-	'This_Test',
-	"ba5eda7a-def5-0000-0000-000000000002",
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000",
-	'');
-INSERT INTO D_TSPARM
-	VALUES ("d969409a-402b-4bc8-955a-3e1d27221e06",
-	"2899aa90-bb77-4d1d-a477-a425ded2a38e",
-	'Returned_IH',
-	"23b9214f-5fdc-4176-baf3-ff4995f2213b",
-	1,
-	'',
-	"912804e7-cc99-4fc9-8097-b79021c3a3ec",
-	'');
-INSERT INTO S_DT_PROXY
-	VALUES ("23b9214f-5fdc-4176-baf3-ff4995f2213b",
-	"00000000-0000-0000-0000-000000000000",
-	'inst_ref<An_Active_Object>',
-	'',
-	'',
-	'./Shared/Shared.xtuml');
 INSERT INTO D_TSVC
 	VALUES ("d257f6df-a7dd-426a-8d23-b1298ad5fe11",
 	"52a349b4-ca6a-4f95-8d8a-d1ca948087c4",
@@ -2067,9 +1946,9 @@ INSERT INTO D_TSVC
 INSERT INTO D_TERM
 	VALUES ("17c8198f-7537-4151-9c4c-3279a38d42c7",
 	"700b716e-79ef-44e0-955e-a22d8be3d20d",
-	'User_Defined_Types_Build_Set::Sequence',
+	'UDT_BSet::Sequence',
 	'',
-	'User_Defined_Types_Build_Set',
+	'UDT_BSet',
 	'Sequence',
 	0,
 	'',

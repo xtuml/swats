@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -84,7 +84,6 @@ package body Function_Calls_objC1_Test_IH_Params_Service is
          if Root_Object.Function_Calls.objC.Function_Calls_objC_type(Input_IH.all).IntC =  200 then
             
             if Root_Object.Function_Calls.objC.Function_Calls_objC_type(Input_IH.all).RealC =  99.9 then
-               Root_Object.Function_Calls.objC.Function_Calls_objC_type(Inst_Of_C.all).idC   := 1000;
                Root_Object.Function_Calls.objC.Function_Calls_objC_type(Inst_Of_C.all).IntC  := 2000;
                Root_Object.Function_Calls.objC.Function_Calls_objC_type(Inst_Of_C.all).RealC := 999.9;
                
