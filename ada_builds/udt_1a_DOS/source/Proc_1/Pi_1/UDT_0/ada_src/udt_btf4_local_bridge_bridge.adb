@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -55,7 +55,7 @@
 with Root_Object.UDT.AAO;
 
 -- List of services used
-with UDT_UDT8_Create_An_Active_Object_Service;
+with UDT_AAO1_Create_An_Active_Object_Service;
 
 -- List of domain types used
 with UDT_Domain_Types;
@@ -80,7 +80,7 @@ package body UDT_BTF4_Local_Bridge_Bridge is
    begin
    -- start of BTF4_Local_Bridge
       
-      UDT_UDT8_Create_An_Active_Object_Service.UDT_UDT8_Create_An_Active_Object (
+      UDT_AAO1_Create_An_Active_Object_Service.UDT_AAO1_Create_An_Active_Object (
          This_Test   => This_Test,
          Returned_IH => Second_Active_Object);
       

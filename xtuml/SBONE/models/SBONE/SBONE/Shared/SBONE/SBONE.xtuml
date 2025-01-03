@@ -23,16 +23,16 @@ INSERT INTO C_IO
 INSERT INTO C_PP
 	VALUES ("29fa611b-da9a-40bb-bd1a-cac85c00fbaa",
 	"d53b6618-276f-491f-96fb-f55ab9458e14",
-	"7cf3bfaf-1a11-42af-b4a4-5be1e01d6775",
+	"f416edfd-6617-4532-ac37-44ad72f8dcc2",
 	'Received_Very_Simple_Structure',
 	'',
 	0,
 	'',
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO S_DT_PROXY
-	VALUES ("7cf3bfaf-1a11-42af-b4a4-5be1e01d6775",
+	VALUES ("f416edfd-6617-4532-ac37-44ad72f8dcc2",
 	"00000000-0000-0000-0000-000000000000",
-	'Very_Simple_Structure_Type',
+	'sequence of Very_Simple_Structure_Type',
 	'',
 	'',
 	'../Shared.xtuml');
@@ -93,53 +93,6 @@ INSERT INTO C_IO
 	0,
 	'',
 	"a5395d65-96e6-4e35-bd20-b52522b6192b");
-INSERT INTO C_EP
-	VALUES ("88d21b51-40c2-4974-b6ea-3f24663d3714",
-	"baf40abd-9264-46c2-a451-cd6c81f6950d",
-	0,
-	'Append_IH_To_Struct',
-	'',
-	4);
-INSERT INTO C_IO
-	VALUES ("88d21b51-40c2-4974-b6ea-3f24663d3714",
-	"ba5eda7a-def5-0000-0000-000000000000",
-	'Append_IH_To_Struct',
-	'',
-	0,
-	'',
-	"e4f204f5-56ae-4a75-842d-2320d92e22c5");
-INSERT INTO C_PP
-	VALUES ("c330a47b-fe1b-4ae7-8205-754bcf6be8dd",
-	"88d21b51-40c2-4974-b6ea-3f24663d3714",
-	"9c385ae7-8d11-4b5d-918b-11eee4587ff3",
-	'The_IH',
-	'',
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO S_DT_PROXY
-	VALUES ("9c385ae7-8d11-4b5d-918b-11eee4587ff3",
-	"00000000-0000-0000-0000-000000000000",
-	'inst_ref<Very_Simple_Data_Object>',
-	'',
-	'',
-	'../../SBONE/SBONE/SBONE.xtuml');
-INSERT INTO C_PP
-	VALUES ("9eddb00f-eaa1-4d3e-940a-b79646cb47f0",
-	"88d21b51-40c2-4974-b6ea-3f24663d3714",
-	"6542ff41-e2e6-45c1-b796-c28430eb2ff8",
-	'Returning_Struct',
-	'',
-	1,
-	'',
-	"c330a47b-fe1b-4ae7-8205-754bcf6be8dd");
-INSERT INTO S_DT_PROXY
-	VALUES ("6542ff41-e2e6-45c1-b796-c28430eb2ff8",
-	"00000000-0000-0000-0000-000000000000",
-	'IH_Struct',
-	'',
-	'',
-	'../Shared.xtuml');
 INSERT INTO PE_PE
 	VALUES ("baf40abd-9264-46c2-a451-cd6c81f6950d",
 	1,

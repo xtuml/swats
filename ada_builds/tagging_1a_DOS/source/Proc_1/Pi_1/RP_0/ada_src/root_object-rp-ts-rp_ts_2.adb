@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -99,6 +99,8 @@ separate(Root_Object.RP.TS)
       Requid_Status : RP_Domain_Types.Requid_Status_Type   := RP_Domain_Types.Requid_Status_Type_first;
       
    begin
+      Root_Object.RP.TS.RP_TS_type(This_Instance.all).waiting_state := False;
+      
       
       --  Open up a file in the ADA run time system to stash results into.
       --
@@ -120,6 +122,7 @@ separate(Root_Object.RP.TS)
          From  => This_Instance,
          Class => Root_Object.RP.REQS.RP_REQS_type'tag,
          To    => All_Requirements);
+      
       How_Many_Requirements := Root_Object.Object_List.Count_Of(All_Requirements);
       Current_Reqid         := "                                ";
       The_Domain            := "                                ";

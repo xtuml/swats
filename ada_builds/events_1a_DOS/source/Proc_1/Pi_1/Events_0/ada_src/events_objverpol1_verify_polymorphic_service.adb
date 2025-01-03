@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -144,7 +144,7 @@ package body Events_objVERPOL1_verify_polymorphic_Service is
             Events_RPT3_Test_Failed_Bridge.Events_RPT3_Test_Failed (
                Failed_Domain_Object => "Object D                        ",
                Failed_Test_Number   => Test_Number,
-               Failed_Test_Value    => Root_Object.Events.objD.Events_objD_type(super_instanceD.all).ResultA);
+               Failed_Test_Value    => 0);
             
          else
             
@@ -371,7 +371,7 @@ package body Events_objVERPOL1_verify_polymorphic_Service is
             Events_RPT3_Test_Failed_Bridge.Events_RPT3_Test_Failed (
                Failed_Domain_Object => "Object D                        ",
                Failed_Test_Number   => Test_Number,
-               Failed_Test_Value    => Root_Object.Events.objD.Events_objD_type(super_instanceD.all).ResultA);
+               Failed_Test_Value    => 0);
             
          else
             Events_RPT2_Test_Passed_Bridge.Events_RPT2_Test_Passed (

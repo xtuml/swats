@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -92,6 +92,101 @@
 with Ada.Unchecked_Deallocation;
 
 package body Struct_Domain_Types is
+
+   procedure Initialize (Object: in out Structure_and_IH_Type) is
+
+   begin
+   
+      Object.Iterator    := new Structure_and_IH_Type_Node_Access;
+      Object.First_Entry := null;
+      Object.Last_Entry  := null;
+
+   end Initialize;
+
+   --------------------------------------------------------------------------------------------
+
+   procedure Adjust (Object: in out Structure_and_IH_Type) is
+    
+      Next:        Structure_and_IH_Type_Node_Access := null;
+      Header_Cell: Structure_and_IH_Type_Node_Access := null;
+      Last_Cell:   Structure_and_IH_Type_Node_Access := null;
+      New_Cell:    Structure_and_IH_Type_Node_Access := null;
+
+   begin
+
+      if Object.First_Entry /= null then
+      
+         Next        := Object.First_Entry;
+         Header_Cell := new Structure_and_IH_Type_Node;
+         Last_Cell   := Header_Cell;
+      
+         Header_Cell.A_Defined_IH := Next.A_Defined_IH;
+    
+         Next := Next.Next_Structure;
+
+         while Next /= null loop
+
+            New_Cell := new Structure_and_IH_Type_Node'(
+               A_Defined_IH => Next.A_Defined_IH,
+               Next_Structure     => null,
+               Previous_Structure => null);
+
+            Last_Cell.Next_Structure                    := New_Cell;
+            Last_Cell.Next_Structure.Previous_Structure := Last_Cell;
+            Last_Cell                                   := New_Cell;
+            Next                                        := Next.Next_Structure;
+
+         end loop;
+
+         Object.First_Entry := Header_Cell;
+         Object.Last_Entry  := Last_Cell;
+
+      end if;
+
+      Object.Iterator := new Structure_and_IH_Type_Node_Access;
+
+   end Adjust;
+
+   --------------------------------------------------------------------------------------------
+
+   procedure Finalize (Object: in out Structure_and_IH_Type) is
+
+      Next:     Structure_and_IH_Type_Node_Access := null;
+      Old_Cell: Structure_and_IH_Type_Node_Access := null;
+    
+      procedure Free is new Ada.Unchecked_Deallocation (
+         Object => Structure_and_IH_Type_Node, 
+         Name   => Structure_and_IH_Type_Node_Access);
+        
+      procedure Free is new Ada.Unchecked_Deallocation (
+         Object => Structure_and_IH_Type_Node_Access, 
+         Name   => Structure_and_IH_Type_Node_Access_Pointer);
+              
+   begin
+
+      if Object.First_Entry /= null then
+
+         Next := Object.First_Entry;
+
+         while Next /= null loop
+
+            Old_Cell := Next;
+            Next     := Next.Next_Structure;
+
+            Free (Old_Cell);
+
+         end loop;
+
+      end if;
+
+      Free (Object.Iterator);
+
+      Object.First_Entry := null;
+      Object.Last_Entry  := null;
+
+   end Finalize;
+
+   -------------------------------------------------------------------------------------------
 
    procedure Initialize (Object: in out Very_Simple_Structure_Type) is
 
@@ -355,101 +450,6 @@ package body Struct_Domain_Types is
       procedure Free is new Ada.Unchecked_Deallocation (
          Object => UDT_Structure_Type_Node_Access, 
          Name   => UDT_Structure_Type_Node_Access_Pointer);
-              
-   begin
-
-      if Object.First_Entry /= null then
-
-         Next := Object.First_Entry;
-
-         while Next /= null loop
-
-            Old_Cell := Next;
-            Next     := Next.Next_Structure;
-
-            Free (Old_Cell);
-
-         end loop;
-
-      end if;
-
-      Free (Object.Iterator);
-
-      Object.First_Entry := null;
-      Object.Last_Entry  := null;
-
-   end Finalize;
-
-   -------------------------------------------------------------------------------------------
-
-   procedure Initialize (Object: in out Structure_and_IH_Type) is
-
-   begin
-   
-      Object.Iterator    := new Structure_and_IH_Type_Node_Access;
-      Object.First_Entry := null;
-      Object.Last_Entry  := null;
-
-   end Initialize;
-
-   --------------------------------------------------------------------------------------------
-
-   procedure Adjust (Object: in out Structure_and_IH_Type) is
-    
-      Next:        Structure_and_IH_Type_Node_Access := null;
-      Header_Cell: Structure_and_IH_Type_Node_Access := null;
-      Last_Cell:   Structure_and_IH_Type_Node_Access := null;
-      New_Cell:    Structure_and_IH_Type_Node_Access := null;
-
-   begin
-
-      if Object.First_Entry /= null then
-      
-         Next        := Object.First_Entry;
-         Header_Cell := new Structure_and_IH_Type_Node;
-         Last_Cell   := Header_Cell;
-      
-         Header_Cell.A_Defined_IH := Next.A_Defined_IH;
-    
-         Next := Next.Next_Structure;
-
-         while Next /= null loop
-
-            New_Cell := new Structure_and_IH_Type_Node'(
-               A_Defined_IH => Next.A_Defined_IH,
-               Next_Structure     => null,
-               Previous_Structure => null);
-
-            Last_Cell.Next_Structure                    := New_Cell;
-            Last_Cell.Next_Structure.Previous_Structure := Last_Cell;
-            Last_Cell                                   := New_Cell;
-            Next                                        := Next.Next_Structure;
-
-         end loop;
-
-         Object.First_Entry := Header_Cell;
-         Object.Last_Entry  := Last_Cell;
-
-      end if;
-
-      Object.Iterator := new Structure_and_IH_Type_Node_Access;
-
-   end Adjust;
-
-   --------------------------------------------------------------------------------------------
-
-   procedure Finalize (Object: in out Structure_and_IH_Type) is
-
-      Next:     Structure_and_IH_Type_Node_Access := null;
-      Old_Cell: Structure_and_IH_Type_Node_Access := null;
-    
-      procedure Free is new Ada.Unchecked_Deallocation (
-         Object => Structure_and_IH_Type_Node, 
-         Name   => Structure_and_IH_Type_Node_Access);
-        
-      procedure Free is new Ada.Unchecked_Deallocation (
-         Object => Structure_and_IH_Type_Node_Access, 
-         Name   => Structure_and_IH_Type_Node_Access_Pointer);
               
    begin
 

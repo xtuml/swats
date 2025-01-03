@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -200,6 +200,44 @@ package body Root_Object.ASL_Mapping.objA is
 --*********************  Object Definition *****************************
 ------------------------------------------------------------------------
 
+   objA_id_Value : Application_Types.Base_Integer_Type := Application_Types.Base_Integer_Type_first;
+--
+--ADATEST IGNORE_ON
+   function Obtain_Subsequent_objA_id return Application_Types.Base_Integer_Type is
+   begin
+      objA_id_Value :=
+         Application_Types.Base_Integer_Type'succ (objA_id_Value);
+      return objA_id_Value;
+   end Obtain_Subsequent_objA_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
+   function Get_objA_id (
+      This_Object : Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
+   begin
+       return ASL_Mapping_objA_Type (This_Object.all).objA_id;
+   end Get_objA_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
+   procedure Put_objA_id (
+      This_Object : in Root_Object.Object_Access;
+      objA_id_Value : in Application_Types.Base_Integer_Type) is
+   begin
+      ASL_Mapping_objA_Type (This_Object.all).objA_id :=
+         objA_id_Value;
+   end Put_objA_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
 --ADATEST IGNORE_ON
    function Get_The_Int1 (
       This_Object: Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
@@ -263,6 +301,7 @@ package body Root_Object.ASL_Mapping.objA is
    
       else
          This_Object := Free_List.First_Entry;
+         ASL_Mapping_objA_Type(This_Object.all).objA_id := Application_Types.Base_Integer_Type_First;
          ASL_Mapping_objA_Type(This_Object.all).The_Int1 := Application_Types.Base_Integer_Type_First;
          ASL_Mapping_objA_Type(This_Object.all).The_Int2 := Application_Types.Base_Integer_Type_First;
          Free_List.First_Entry := Free_List.First_Entry.Next_Object;
@@ -303,9 +342,25 @@ package body Root_Object.ASL_Mapping.objA is
 --------------------------------------------------------------------------
 --
 
---------------------------------------------------------------------------
-   -- function Create_Unique is not available for this object as it does
-   -- not have a non referential identifying attribute.
+--ADATEST IGNORE_ON
+   function Create_Unique return Root_Object.Object_Access is
+
+   This_Object: Root_Object.Object_Access;
+
+   begin
+      --
+      -- get hold of a new instance
+      --
+      This_Object := Create;
+
+
+      ASL_Mapping_objA_Type(This_Object.all).objA_id :=
+         Obtain_Subsequent_objA_id;
+
+      return This_Object;
+
+   end Create_Unique;
+--ADATEST IGNORE_OFF
 --------------------------------------------------------------------------
 
 --ADATEST IGNORE_ON

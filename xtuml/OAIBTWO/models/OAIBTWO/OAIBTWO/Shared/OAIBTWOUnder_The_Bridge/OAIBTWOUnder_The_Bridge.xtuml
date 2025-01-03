@@ -1,0 +1,92 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("401f7755-cfc1-4f56-8fea-acfac6f15c80",
+	"00000000-0000-0000-0000-000000000000",
+	'OAIBTWOUnder_The_Bridge',
+	'');
+INSERT INTO C_EP
+	VALUES ("f130328f-dd65-4c28-9f98-e0473aeeee26",
+	"401f7755-cfc1-4f56-8fea-acfac6f15c80",
+	0,
+	'Create_A_Structure_In_Target_Domain',
+	' This bridge will pass a simple structure
+ into a target domain, and then check to see that an object in the target domain has had its attributes set accordingly.
+',
+	1);
+INSERT INTO C_IO
+	VALUES ("f130328f-dd65-4c28-9f98-e0473aeeee26",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'Create_A_Structure_In_Target_Domain',
+	' This bridge will pass a simple structure
+ into a target domain, and then check to see that an object in the target domain has had its attributes set accordingly.
+',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("1bacfb84-1122-4979-88c1-177c3ec630c8",
+	"f130328f-dd65-4c28-9f98-e0473aeeee26",
+	"05d2f164-a2d2-4ef6-b564-de44ba019300",
+	'Source_Very_Simple_Structure',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_DT_PROXY
+	VALUES ("05d2f164-a2d2-4ef6-b564-de44ba019300",
+	"00000000-0000-0000-0000-000000000000",
+	'sequence of Very_Simple_Source_Structure_Type',
+	'',
+	'',
+	'../Shared.xtuml');
+INSERT INTO C_PP
+	VALUES ("ac8ccd8d-a538-405f-97ff-301773312853",
+	"f130328f-dd65-4c28-9f98-e0473aeeee26",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'Source_Control_Integer',
+	'',
+	0,
+	'',
+	"1bacfb84-1122-4979-88c1-177c3ec630c8");
+INSERT INTO C_PP
+	VALUES ("90131b37-86d4-4ffc-917e-63d278fca4cc",
+	"f130328f-dd65-4c28-9f98-e0473aeeee26",
+	"ba5eda7a-def5-0000-0000-000000000003",
+	'Source_Control_Real',
+	'',
+	0,
+	'',
+	"ac8ccd8d-a538-405f-97ff-301773312853");
+INSERT INTO C_PP
+	VALUES ("5786e5f5-7ad1-43a6-b02b-c62a9e111162",
+	"f130328f-dd65-4c28-9f98-e0473aeeee26",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'Source_Test',
+	'',
+	0,
+	'',
+	"90131b37-86d4-4ffc-917e-63d278fca4cc");
+INSERT INTO C_PP
+	VALUES ("c2fe4964-77bb-48b6-8241-f7dc2f6688df",
+	"f130328f-dd65-4c28-9f98-e0473aeeee26",
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'Source_Result',
+	'',
+	1,
+	'',
+	"5786e5f5-7ad1-43a6-b02b-c62a9e111162");
+INSERT INTO PE_PE
+	VALUES ("401f7755-cfc1-4f56-8fea-acfac6f15c80",
+	1,
+	"ccaf222b-93ed-46e4-8ea9-c9dc7a13015a",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("ccaf222b-93ed-46e4-8ea9-c9dc7a13015a",
+	"00000000-0000-0000-0000-000000000000",
+	"615c0d8e-8b60-40c8-be40-cf93df1d0de2",
+	'Shared',
+	'',
+	0,
+	'../Shared.xtuml');

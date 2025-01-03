@@ -7,6 +7,46 @@ INSERT INTO O_OBJ
 	'AAO',
 	'',
 	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("152d8407-4263-41d2-a683-9a9f077be030",
+	"38e05cf7-36e3-49bd-bc4c-d994a9507691",
+	'Create_An_Active_Object',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'Returned_IH = create An_Active_Object with The_Test_Number = This_Test & Why = ''Not_Tested'' & Current_State = ''Idle''
+
+',
+	3,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	2,
+	1);
+INSERT INTO O_TPARM
+	VALUES ("1f263c71-6a0c-42a1-9eec-0ee732e2bbeb",
+	"152d8407-4263-41d2-a683-9a9f077be030",
+	'This_Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("562f8d41-9337-4a07-b3b9-47c3e1d14b37",
+	"152d8407-4263-41d2-a683-9a9f077be030",
+	'Returned_IH',
+	"7202776a-fd32-4c9a-b58d-a2c4738c84b4",
+	1,
+	'',
+	"1f263c71-6a0c-42a1-9eec-0ee732e2bbeb",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("7202776a-fd32-4c9a-b58d-a2c4738c84b4",
+	"00000000-0000-0000-0000-000000000000",
+	'inst_ref<An_Active_Object>',
+	'',
+	'',
+	'../classes.xtuml');
 INSERT INTO O_NBATTR
 	VALUES ("a0134d90-3b09-4502-a4f4-ed075b316dbc",
 	"38e05cf7-36e3-49bd-bc4c-d994a9507691");
@@ -71,6 +111,11 @@ INSERT INTO O_ATTR
 INSERT INTO O_ID
 	VALUES (0,
 	"38e05cf7-36e3-49bd-bc4c-d994a9507691");
+INSERT INTO O_OIDA
+	VALUES ("a0134d90-3b09-4502-a4f4-ed075b316dbc",
+	"38e05cf7-36e3-49bd-bc4c-d994a9507691",
+	0,
+	'The_Test_Number');
 INSERT INTO O_ID
 	VALUES (1,
 	"38e05cf7-36e3-49bd-bc4c-d994a9507691");

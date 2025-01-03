@@ -79,7 +79,7 @@ INSERT INTO O_ATTR
 	'',
 	'Unique_TS_Identifier',
 	0,
-	"ba5eda7a-def5-0000-0000-000000000002",
+	"ba5eda7a-def5-0000-0000-000000000005",
 	'',
 	'');
 INSERT INTO O_NBATTR
@@ -91,13 +91,31 @@ INSERT INTO O_BATTR
 INSERT INTO O_ATTR
 	VALUES ("e9b81eca-2818-4dfc-8828-736526ff7c23",
 	"72542dbc-f93a-49ac-b237-b11b9ab6212d",
-	"d4e17b04-d874-47e2-83a3-4af8824e2f73",
+	"b4298556-dfbb-43df-8424-d5513bf3faad",
 	'current_state',
 	'',
 	'',
 	'current_state',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("b4298556-dfbb-43df-8424-d5513bf3faad",
+	"72542dbc-f93a-49ac-b237-b11b9ab6212d");
+INSERT INTO O_BATTR
+	VALUES ("b4298556-dfbb-43df-8424-d5513bf3faad",
+	"72542dbc-f93a-49ac-b237-b11b9ab6212d");
+INSERT INTO O_ATTR
+	VALUES ("b4298556-dfbb-43df-8424-d5513bf3faad",
+	"72542dbc-f93a-49ac-b237-b11b9ab6212d",
+	"d4e17b04-d874-47e2-83a3-4af8824e2f73",
+	'waiting_state',
+	'',
+	'',
+	'waiting_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000001",
 	'',
 	'');
 INSERT INTO O_ID

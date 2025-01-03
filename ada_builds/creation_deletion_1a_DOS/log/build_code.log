@@ -3,7 +3,7 @@ CB->  31 - Project Intermediate Data Extraction successful
 
 
 CB->  51 - Installing User Specified Interface Specifications
-CB->  63 - Copying from Filepath .. To Filepath D:\BP_SWATS_UCM\SWATS\oaid .. D:\WACA\WACAq_SWATS\waca\SFU_WACA_BUILD\build\multidomain\TSV2_10_1\Creation_Deletion_Build_Set\meta_instances\interface_spec for the following interface files ...
+CB->  63 - Copying from Filepath .. To Filepath \\tsclient\U\DSkinner\SWATS_10742\SWATS_10742_D\SWATS\oaid .. D:\WACA\DS\WACA_Apps\WACA_c_RECURSE\waca\SFU_WACA_BUILD\build\multidomain\TSV2_10_1\CD_BSet\meta_instances\interface_spec for the following interface files ...
 CB->  65 - Filename: clock.xml
 CB->  65 - Filename: connection_specification.xml
 CB->  65 - Filename: interface_specification.xml
@@ -13,7 +13,7 @@ CB->  128 - First Case converted attribute Target, value Dos in ELEMENT PROJECT
 CB->  128 - First Case converted attribute Type, value Ip in ELEMENT INTERFACE
 CB->  129 - Adding Interface to Connection - Interface: Clock, Connection: Clock_Message
 CB->  49 - System Construction Elaboration complete
-WARNING, High, HT-> 52 - Intermediate Data file does not exist D:\WACA\WACAq_SWATS\waca\SFU_WACA_BUILD\build\multidomain\TSV2_10_1\Creation_Deletion_Build_Set\meta_instances\extracted_data\TSV2.scn at extract1.pm line 4684.
+WARNING, High, HT-> 52 - Intermediate Data file does not exist D:\WACA\DS\WACA_Apps\WACA_c_RECURSE\waca\SFU_WACA_BUILD\build\multidomain\TSV2_10_1\CD_BSet\meta_instances\extracted_data\TSV2.scn at extract1.pm line 4684.
 CB->  57 - System Construction merging successful
 CB->  33 - Domain Intermediate Data Extraction successful
 

@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -75,6 +75,7 @@
 --    procedure Put_State
 --    procedure Description
 --    function Create
+--    function Create_Unique 
 --    procedure Delete
 --    function Count_Of
 --    procedure Find
@@ -153,8 +154,8 @@ package Root_Object.UDT.AAO is
    --   It_Failed,
    --   It_Passed.
    --
-   -- Object AAO does not have an identifying non-referential attribute and 
-   -- therefore may not be uniquely created.
+   -- Object AAO has an identifying non-referential attribute The_Test_Number 
+   -- and therefore may be uniquely created.
    -- 
    -- Object AAO has no TAGS.
    --
@@ -189,8 +190,8 @@ package Root_Object.UDT.AAO is
    type UDT_AAO_Type is new UDT_Type with record
 
       --
-      -- Initialised Non identifying non referential
-      The_Test_Number : Application_Types.Base_Integer_Type := Application_Types.Base_Integer_Type_First;
+      -- Non initialised identifying non referential
+      The_Test_Number : Application_Types.Base_Integer_Type;
 
       --
       -- Initialised Non identifying non referential
@@ -266,9 +267,7 @@ package Root_Object.UDT.AAO is
    function  Create 
       return Root_Object.Object_Access;
 
-   -- function Create_Unique 
-   -- is not available for this object as it does not have a non-referential 
-   -- identifying attribute.
+   function Create_Unique return Root_Object.Object_Access;
 
 
    procedure Delete (

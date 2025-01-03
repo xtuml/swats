@@ -60,7 +60,8 @@ Exists = find-one Test_Suite
 
 if Exists = UNDEFINED then
 
-   This_Test_Suite = create unique Test_Suite with Current_State = ''Idle''
+   This_Test_Suite = create unique Test_Suite with waiting_state = FALSE & \
+                                                   Current_State = ''Idle''
 
 else
 
@@ -93,9 +94,9 @@ else
 
    {Domains} = Exists -> R10.Domain_Details
 
-   for domain in {Domains} do
+   for domain_local in {Domains} do
 
-      unlink domain R10 Exists
+      unlink domain_local R10 Exists
 
       # Don''t delete the domain, let the test run finish, 
       # but without traceability.
@@ -109,7 +110,7 @@ else
 endif
 ',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	2,
 	1);

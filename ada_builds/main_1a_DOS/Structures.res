@@ -829,7 +829,7 @@ Test Purpose                 Single instance in structure
 Requirement Identifier(s)    1241-0000-01-1216               
 
 Result data                  Single instance in structure    
-Test Result                  PASSED                          with  1
+Test Result                  PASSED                          with  75
 
 ---------------------------------------------------------------------------
 Domain                       Structures                      
@@ -840,7 +840,7 @@ Test Purpose                 Second bite at Single instance i
 Requirement Identifier(s)    1241-0000-01-1216               
 
 Result data                  Second bite at Single instance i
-Test Result                  PASSED                          with  1
+Test Result                  PASSED                          with  75
 
 ---------------------------------------------------------------------------
 Domain                       Structures                      
@@ -851,7 +851,7 @@ Test Purpose                 Second instance in structure
 Requirement Identifier(s)    1241-0000-01-1216               
 
 Result data                  Second instance in structure    
-Test Result                  PASSED                          with  2
+Test Result                  PASSED                          with  77
 
 ---------------------------------------------------------------------------
 Domain                       Structures                      
@@ -862,7 +862,7 @@ Test Purpose                 Second bite at Second instance i
 Requirement Identifier(s)    1241-0000-01-1216               
 
 Result data                  Second bite at Second instance i
-Test Result                  PASSED                          with  2
+Test Result                  PASSED                          with  77
 
 ---------------------------------------------------------------------------
 Domain                       Structures                      
@@ -873,7 +873,7 @@ Test Purpose                 Many instances in structure
 Requirement Identifier(s)    1241-0000-01-1216               
 
 Result data                  Many instances in structure     
-Test Result                  PASSED                          with  3
+Test Result                  PASSED                          with  79
 
 ---------------------------------------------------------------------------
 Domain                       Structures                      
@@ -884,7 +884,7 @@ Test Purpose                 Many instances in structure
 Requirement Identifier(s)    1241-0000-01-1216               
 
 Result data                  Many instances in structure     
-Test Result                  PASSED                          with  4
+Test Result                  PASSED                          with  80
 
 ---------------------------------------------------------------------------
 Domain                       Structures                      
@@ -895,7 +895,7 @@ Test Purpose                 Many instances in structure
 Requirement Identifier(s)    1241-0000-01-1216               
 
 Result data                  Many instances in structure     
-Test Result                  PASSED                          with  5
+Test Result                  PASSED                          with  81
 
 ---------------------------------------------------------------------------
 Domain                       Structures                      
@@ -906,7 +906,7 @@ Test Purpose                 Many instances in structure
 Requirement Identifier(s)    1241-0000-01-1216               
 
 Result data                  Many instances in structure     
-Test Result                  PASSED                          with  6
+Test Result                  PASSED                          with  82
 
 ---------------------------------------------------------------------------
 Domain                       Structures                      
@@ -917,7 +917,7 @@ Test Purpose                 Many instances in structure
 Requirement Identifier(s)    1241-0000-01-1216               
 
 Result data                  Many instances in structure     
-Test Result                  PASSED                          with  7
+Test Result                  PASSED                          with  83
 
 ---------------------------------------------------------------------------
 Domain                       Structures                      
@@ -928,7 +928,7 @@ Test Purpose                 Structure fully copied
 Requirement Identifier(s)    1241-0000-01-1216               
 
 Result data                  Structure fully copied          
-Test Result                  PASSED                          with  8
+Test Result                  PASSED                          with  84
 
 ---------------------------------------------------------------------------
 Domain                       Structures                      
@@ -939,7 +939,7 @@ Test Purpose                 Structure fully copied
 Requirement Identifier(s)    1241-0000-01-1216               
 
 Result data                  Structure fully copied          
-Test Result                  PASSED                          with  8
+Test Result                  PASSED                          with  84
 
 ---------------------------------------------------------------------------
 Domain                       Structures                      
@@ -950,7 +950,7 @@ Test Purpose                 Structure fully copied
 Requirement Identifier(s)    1241-0000-01-1216               
 
 Result data                  Structure fully copied          
-Test Result                  PASSED                          with  9
+Test Result                  PASSED                          with  86
 
 ---------------------------------------------------------------------------
 Domain                       Structures                      
@@ -961,7 +961,7 @@ Test Purpose                 Structure fully copied
 Requirement Identifier(s)    1241-0000-01-1216               
 
 Result data                  Structure fully copied          
-Test Result                  PASSED                          with  9
+Test Result                  PASSED                          with  86
 
 ---------------------------------------------------------------------------
 Domain                       Structures                      
@@ -972,7 +972,7 @@ Test Purpose                 Structure fully copied
 Requirement Identifier(s)    1241-0000-01-1216               
 
 Result data                  Structure fully copied          
-Test Result                  PASSED                          with  10
+Test Result                  PASSED                          with  88
 
 ---------------------------------------------------------------------------
 Domain                       Structures                      
@@ -983,7 +983,7 @@ Test Purpose                 Structure fully copied
 Requirement Identifier(s)    1241-0000-01-1216               
 
 Result data                  Structure fully copied          
-Test Result                  PASSED                          with  10
+Test Result                  PASSED                          with  88
 
 ---------------------------------------------------------------------------
 Domain                       Structures                      
@@ -994,7 +994,7 @@ Test Purpose                 Structure fully copied
 Requirement Identifier(s)    1241-0000-01-1216               
 
 Result data                  Structure fully copied          
-Test Result                  PASSED                          with  11
+Test Result                  PASSED                          with  90
 
 ---------------------------------------------------------------------------
 Domain                       Structures                      
@@ -1005,7 +1005,7 @@ Test Purpose                 Structure fully copied
 Requirement Identifier(s)    1241-0000-01-1216               
 
 Result data                  Structure fully copied          
-Test Result                  PASSED                          with  11
+Test Result                  PASSED                          with  90
 
 ---------------------------------------------------------------------------
 Domain                       Structures                      
@@ -1016,7 +1016,7 @@ Test Purpose                 Structure fully copied
 Requirement Identifier(s)    1241-0000-01-1216               
 
 Result data                  Structure fully copied          
-Test Result                  PASSED                          with  12
+Test Result                  PASSED                          with  92
 
 ---------------------------------------------------------------------------
 Domain                       Structures                      
@@ -1027,7 +1027,7 @@ Test Purpose                 Structure fully copied
 Requirement Identifier(s)    1241-0000-01-1216               
 
 Result data                  Structure fully copied          
-Test Result                  PASSED                          with  12
+Test Result                  PASSED                          with  92
 
 ---------------------------------------------------------------------------
 Domain                       Structures                      

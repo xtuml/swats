@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -80,7 +80,7 @@ with Function_Calls_BO1_Have_Two_IH_Parameters_Service;
 with Function_Calls_BO12_Have_EIGHT_Same_IH_Parameters_Service;
 with Function_Calls_BO11_Have_SEVEN_Same_IH_Parameters_Service;
 with Function_Calls_BO8_Have_SIX_Same_IH_Parameters_Service;
-with Function_Calls_Function_Calls5_Test_Set_Of_IH_Service;
+with Function_Calls_objA6_Test_Set_Of_IH_Service;
 
 -- List of bridges used
 with Function_Calls_RPT3_Test_Failed_Bridge;
@@ -184,7 +184,7 @@ use type Root_Object.Object_Access;
       --
       
       
-      Function_Calls_Function_Calls5_Test_Set_Of_IH_Service.Function_Calls_Function_Calls5_Test_Set_Of_IH (
+      Function_Calls_objA6_Test_Set_Of_IH_Service.Function_Calls_objA6_Test_Set_Of_IH (
          Set_Of_IH          => A_Structure,
          Single             => False,
          Testing_For_What   => "Testing multi IH in service para");
@@ -212,7 +212,7 @@ use type Root_Object.Object_Access;
       --
       
       
-      Function_Calls_Function_Calls5_Test_Set_Of_IH_Service.Function_Calls_Function_Calls5_Test_Set_Of_IH (
+      Function_Calls_objA6_Test_Set_Of_IH_Service.Function_Calls_objA6_Test_Set_Of_IH (
          Set_Of_IH          => Another_Structure,
          Single             => True,
          Testing_For_What   => "Testing single IH in service par");

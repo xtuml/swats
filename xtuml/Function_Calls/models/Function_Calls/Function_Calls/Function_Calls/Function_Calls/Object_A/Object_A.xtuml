@@ -291,6 +291,95 @@ INSERT INTO O_TPARM
 	'',
 	"fee1d056-248e-4c2a-bd7e-652c65c103bc",
 	'');
+INSERT INTO O_TFR
+	VALUES ("69b3d0ce-92ef-4c13-adc8-b64c471970f8",
+	"7e089157-5d15-485c-a533-19bc7456fb88",
+	'Test_Set_Of_IH',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'my_test_data = find-one Test_Data
+Test_Number  = my_test_data.The_Test_Number
+
+# ---------------------------------------------------------------------------
+# Param1 is set of structures contiaining an instance handle for Object_A.
+# ---------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test_Number, "1241-0000-01-0807", " Function Calls", "Test IH set", Testing_For_What]
+   [] = RPT8:Specify_Requid[Test_Number, "1103-0000-01-1011"]
+   [] = RPT8:Specify_Requid[Test_Number, "1101-0000-01-0138"]
+
+   The_Attribute = 1
+  
+   How_Many = countof {Set_Of_IH}
+
+   if How_Many = 1 then
+
+      # Single IH, not a set.
+      for [Object_IH] in {Set_Of_IH} do
+         The_Attribute = Object_IH.ReferenceA 
+      endfor
+
+      if Single = TRUE then
+         [] = RPT2:Test_Passed["Single of IH received", Test_Number, The_Attribute]
+      else
+         [] = RPT3:Test_Failed["Single IH expected", Test_Number, -1]
+      endif
+
+   else
+
+      # Set of IH
+      if Single = FALSE then
+         [] = RPT2:Test_Passed["Set of IH received", Test_Number, How_Many]
+      else
+         [] = RPT3:Test_Failed["Set IH expected", Test_Number, -1]
+      endif
+
+   endif
+
+# ---------------------------------------------------------------------------
+
+Test_Number = Test_Number + 1
+my_test_data.The_Test_Number = Test_Number',
+	3,
+	'',
+	"05704a69-b0ba-492c-aa78-a8b826632f5c",
+	2,
+	6);
+INSERT INTO O_TPARM
+	VALUES ("b2430f33-a3ff-4da5-9ece-e764358b5b2c",
+	"69b3d0ce-92ef-4c13-adc8-b64c471970f8",
+	'Set_Of_IH',
+	"53946255-cb93-44f1-a0ea-f2fb1e51fb79",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("53946255-cb93-44f1-a0ea-f2fb1e51fb79",
+	"00000000-0000-0000-0000-000000000000",
+	'sequence of Structure_For_IH',
+	'',
+	'',
+	'../../types/types.xtuml');
+INSERT INTO O_TPARM
+	VALUES ("5a286195-d075-4732-862f-a0a7b7c2ed5b",
+	"69b3d0ce-92ef-4c13-adc8-b64c471970f8",
+	'Single',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	0,
+	'',
+	"b2430f33-a3ff-4da5-9ece-e764358b5b2c",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("641d3aca-e01c-457e-9409-ed7ecbd15d59",
+	"69b3d0ce-92ef-4c13-adc8-b64c471970f8",
+	'Testing_For_What',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"5a286195-d075-4732-862f-a0a7b7c2ed5b",
+	'');
 INSERT INTO O_NBATTR
 	VALUES ("02601b3c-0812-4acb-a427-d4a37ed944ce",
 	"7e089157-5d15-485c-a533-19bc7456fb88");

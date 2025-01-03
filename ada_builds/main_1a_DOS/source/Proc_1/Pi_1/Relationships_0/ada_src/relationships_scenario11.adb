@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -170,13 +170,15 @@ use type Root_Object.Object_Access;
          --  Object_L
          
          newL := Root_Object.Relationships.objL.Create;
-         Root_Object.Relationships.objL.Relationships_objL_Type(newL.all).idL := Count;
+         Root_Object.Relationships.objL.Relationships_objL_Type(newL.all).idL     := Count;
+         Root_Object.Relationships.objL.Relationships_objL_Type(newL.all).idH     := Root_Object.Relationships.objH.Relationships_objH_type(newH.all).idH;
          
          
          --  Object_I
          
          newI := Root_Object.Relationships.objI.Create;
-         Root_Object.Relationships.objI.Relationships_objI_Type(newI.all).IDI := Count;
+         Root_Object.Relationships.objI.Relationships_objI_Type(newI.all).IDI     := Count;
+         Root_Object.Relationships.objI.Relationships_objI_Type(newI.all).idH     := Root_Object.Relationships.objH.Relationships_objH_type(newH.all).idH;
          
          
          --  Object_K
@@ -188,97 +190,126 @@ use type Root_Object.Object_Access;
          --  Sub_L1
          
          newSL1 := Root_Object.Relationships.objSL1.Create;
-         Root_Object.Relationships.objSL1.Relationships_objSL1_Type(newSL1.all).idSL1 := Count;
+         Root_Object.Relationships.objSL1.Relationships_objSL1_Type(newSL1.all).idSL1   := Count;
+         Root_Object.Relationships.objSL1.Relationships_objSL1_Type(newSL1.all).idH     := Root_Object.Relationships.objH.Relationships_objH_type(newH.all).idH;
          
          
          --  Sub_L2
          
          newSL2 := Root_Object.Relationships.objSL2.Create;
-         Root_Object.Relationships.objSL2.Relationships_objSL2_Type(newSL2.all).idSL2 := Count;
+         Root_Object.Relationships.objSL2.Relationships_objSL2_Type(newSL2.all).idSL2   := Count;
+         Root_Object.Relationships.objSL2.Relationships_objSL2_Type(newSL2.all).idH     := Root_Object.Relationships.objH.Relationships_objH_type(newH.all).idH;
          
          
          --  Sub_L3
          
          newSL4 := Root_Object.Relationships.objSL3.Create;
-         Root_Object.Relationships.objSL3.Relationships_objSL3_Type(newSL4.all).idSL3 := Count;
+         Root_Object.Relationships.objSL3.Relationships_objSL3_Type(newSL4.all).idSL3   := Count;
+         Root_Object.Relationships.objSL3.Relationships_objSL3_Type(newSL4.all).idH     := Root_Object.Relationships.objH.Relationships_objH_type(newH.all).idH;
          
          
          --  Sub_Sub_L1
          
          newSSL1 := Root_Object.Relationships.objSSL1.Create;
-         Root_Object.Relationships.objSSL1.Relationships_objSSL1_Type(newSSL1.all).idSSL1 := Count;
+         Root_Object.Relationships.objSSL1.Relationships_objSSL1_Type(newSSL1.all).idSSL1  := Count;
+         Root_Object.Relationships.objSSL1.Relationships_objSSL1_Type(newSSL1.all).idH     := 
+            Root_Object.Relationships.objH.Relationships_objH_type(newH.all).idH;
          
          
          --  Sub_Sub_L2
          
          newSSL2 := Root_Object.Relationships.objSSL2.Create;
-         Root_Object.Relationships.objSSL2.Relationships_objSSL2_Type(newSSL2.all).idSSL2 := Count;
+         Root_Object.Relationships.objSSL2.Relationships_objSSL2_Type(newSSL2.all).idSSL2  := Count;
+         Root_Object.Relationships.objSSL2.Relationships_objSSL2_Type(newSSL2.all).idH     := 
+            Root_Object.Relationships.objH.Relationships_objH_type(newH.all).idH;
          
          
          --  Sub_Sub_L3
          
          newSSL3 := Root_Object.Relationships.objSSL3.Create;
-         Root_Object.Relationships.objSSL3.Relationships_objSSL3_Type(newSSL3.all).idSSL3 := Count;
+         Root_Object.Relationships.objSSL3.Relationships_objSSL3_Type(newSSL3.all).idSSL3  := Count;
+         Root_Object.Relationships.objSSL3.Relationships_objSSL3_Type(newSSL3.all).idH     := 
+            Root_Object.Relationships.objH.Relationships_objH_type(newH.all).idH;
          
          
          --  Sub_Sub_L4
          
          newSSL4 := Root_Object.Relationships.objSSL4.Create;
-         Root_Object.Relationships.objSSL4.Relationships_objSSL4_Type(newSSL4.all).idSSL4 := Count;
+         Root_Object.Relationships.objSSL4.Relationships_objSSL4_Type(newSSL4.all).idSSL4  := Count;
+         Root_Object.Relationships.objSSL4.Relationships_objSSL4_Type(newSSL4.all).idH     := 
+            Root_Object.Relationships.objH.Relationships_objH_type(newH.all).idH;
          
          
          --  Sub_Sub_L5
          
          newSSL5 := Root_Object.Relationships.objSSL5.Create;
-         Root_Object.Relationships.objSSL5.Relationships_objSSL5_Type(newSSL5.all).idSSL5 := Count;
+         Root_Object.Relationships.objSSL5.Relationships_objSSL5_Type(newSSL5.all).idSSL5  := Count;
+         Root_Object.Relationships.objSSL5.Relationships_objSSL5_Type(newSSL5.all).idH     := 
+            Root_Object.Relationships.objH.Relationships_objH_type(newH.all).idH;
          
          
          --  Sub_Sub_L6
          
          newSSL6 := Root_Object.Relationships.objSSL6.Create;
-         Root_Object.Relationships.objSSL6.Relationships_objSSL6_Type(newSSL6.all).idSSL6 := Count;
+         Root_Object.Relationships.objSSL6.Relationships_objSSL6_Type(newSSL6.all).idSSL6  := Count;
+         Root_Object.Relationships.objSSL6.Relationships_objSSL6_Type(newSSL6.all).idH     := 
+            Root_Object.Relationships.objH.Relationships_objH_type(newH.all).idH;
          
          
          --  Sub_Sub_L7
          
          newSSL7 := Root_Object.Relationships.objSSL7.Create;
-         Root_Object.Relationships.objSSL7.Relationships_objSSL7_Type(newSSL7.all).idSSL7 := Count;
+         Root_Object.Relationships.objSSL7.Relationships_objSSL7_Type(newSSL7.all).idSSL7  := Count;
+         Root_Object.Relationships.objSSL7.Relationships_objSSL7_Type(newSSL7.all).idH     := 
+            Root_Object.Relationships.objH.Relationships_objH_type(newH.all).idH;
          
          
          --  Sub_Sub_L8
          
          newSSL8 := Root_Object.Relationships.objSSL8.Create;
-         Root_Object.Relationships.objSSL8.Relationships_objSSL8_Type(newSSL8.all).idSSL8 := Count;
+         Root_Object.Relationships.objSSL8.Relationships_objSSL8_Type(newSSL8.all).idSSL8  := Count;
+         Root_Object.Relationships.objSSL8.Relationships_objSSL8_Type(newSSL8.all).idH     := 
+            Root_Object.Relationships.objH.Relationships_objH_type(newH.all).idH;
          
          
          --  Sub_Sub_L9
          
          newSSL9 := Root_Object.Relationships.objSSL9.Create;
-         Root_Object.Relationships.objSSL9.Relationships_objSSL9_Type(newSSL9.all).idSSL9 := Count;
+         Root_Object.Relationships.objSSL9.Relationships_objSSL9_Type(newSSL9.all).idSSL9  := Count;
+         Root_Object.Relationships.objSSL9.Relationships_objSSL9_Type(newSSL9.all).idH     := 
+            Root_Object.Relationships.objH.Relationships_objH_type(newH.all).idH;
          
          
          --  Sub_Sub_L10
          
          newSSL10 := Root_Object.Relationships.objSSL10.Create;
          Root_Object.Relationships.objSSL10.Relationships_objSSL10_Type(newSSL10.all).idSSL10 := Count;
+         Root_Object.Relationships.objSSL10.Relationships_objSSL10_Type(newSSL10.all).idH     := 
+            Root_Object.Relationships.objH.Relationships_objH_type(newH.all).idH;
          
          
          --  Sub_Sub_L11
          
          newSSL11 := Root_Object.Relationships.objSSL11.Create;
          Root_Object.Relationships.objSSL11.Relationships_objSSL11_Type(newSSL11.all).idSSL11 := Count;
+         Root_Object.Relationships.objSSL11.Relationships_objSSL11_Type(newSSL11.all).idH     := 
+            Root_Object.Relationships.objH.Relationships_objH_type(newH.all).idH;
          
          
          --  Sub_Sub_Sub_L1
          
          newSSSL1 := Root_Object.Relationships.objSSSL1.Create;
          Root_Object.Relationships.objSSSL1.Relationships_objSSSL1_Type(newSSSL1.all).idSSSL1 := Count;
+         Root_Object.Relationships.objSSSL1.Relationships_objSSSL1_Type(newSSSL1.all).idH     := 
+            Root_Object.Relationships.objH.Relationships_objH_type(newH.all).idH;
          
          
          --  Sub_Sub_Sub_L2
          
          newSSSL2 := Root_Object.Relationships.objSSSL2.Create;
          Root_Object.Relationships.objSSSL2.Relationships_objSSSL2_Type(newSSSL2.all).idSSSL2 := Count;
+         Root_Object.Relationships.objSSSL2.Relationships_objSSSL2_Type(newSSSL2.all).idH     := 
+            Root_Object.Relationships.objH.Relationships_objH_type(newH.all).idH;
          
          Count := Count - 1;
          

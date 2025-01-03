@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -75,6 +75,7 @@
 --    procedure Put_State
 --    procedure Description
 --    function Create
+--    function Create_Unique 
 --    procedure Delete
 --    function Count_Of
 --    procedure Find
@@ -145,8 +146,8 @@ package Root_Object.ASL_Mapping.objA is
    --
    --
    --
-   -- Object objA does not have an identifying non-referential attribute and 
-   -- therefore may not be uniquely created.
+   -- Object objA has an identifying non-referential attribute objA_id 
+   -- and therefore may be uniquely created.
    -- 
    -- Object objA has no TAGS.
    --
@@ -171,6 +172,10 @@ package Root_Object.ASL_Mapping.objA is
    type ASL_Mapping_objA_Type is new ASL_Mapping_Type with record
 
       --
+      -- Non initialised identifying non referential
+      objA_id : Application_Types.Base_Integer_Type;
+
+      --
       -- Initialised Non identifying non referential
       The_Int1 : Application_Types.Base_Integer_Type := Application_Types.Base_Integer_Type_First;
 
@@ -182,7 +187,7 @@ package Root_Object.ASL_Mapping.objA is
 
    end record;
 
-   Attribute_Count : constant Application_Types.Base_Integer_Type := 2;
+   Attribute_Count : constant Application_Types.Base_Integer_Type := 3;
 
    -------------------------------------------------------------------------------------------------
 
@@ -194,6 +199,18 @@ package Root_Object.ASL_Mapping.objA is
    --*********************  Object Attribute Access ***********************
    ------------------------------------------------------------------------
    --
+
+
+   function Get_objA_id (
+      This_Object : Root_Object.Object_Access) 
+   return Application_Types.Base_Integer_Type;
+
+   procedure Put_objA_id (
+      This_Object : in Root_Object.Object_Access;
+      objA_id_Value : in Application_Types.Base_Integer_Type);
+
+   pragma inline (Get_objA_id);
+   pragma inline (Put_objA_id);
 
 
    function Get_The_Int1 (
@@ -235,9 +252,7 @@ package Root_Object.ASL_Mapping.objA is
    function  Create 
       return Root_Object.Object_Access;
 
-   -- function Create_Unique 
-   -- is not available for this object as it does not have a non-referential 
-   -- identifying attribute.
+   function Create_Unique return Root_Object.Object_Access;
 
 
    procedure Delete (

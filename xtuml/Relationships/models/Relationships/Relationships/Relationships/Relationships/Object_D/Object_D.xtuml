@@ -1004,7 +1004,8 @@ fifthDO = find-one Object_DO where idDO = 5
 
       NewInstD  = create Object_D  with idD  = 101
       NewInstO  = create Object_O  with idO  = 202
-      NewInstDO = create Object_DO with idDO = 303 
+      NewInstDO = create Object_DO with idDO = 303 & \
+                                        idO  = NewInstO.idO
 
       link NewInstD R19 NewInstO using NewInstDO
 
@@ -1368,7 +1369,7 @@ if Supported = TRUE then
 else
    [] = RPT4:Test_Unsupported[Test]
 endif',
-	3,
+	1,
 	'',
 	"40174362-38c3-4fd7-afc7-66f3a7584436",
 	2,

@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -75,6 +75,7 @@
 --    procedure Put_State
 --    procedure Description
 --    function Create
+--    function Create_Unique 
 --    procedure Delete
 --    function Count_Of
 --    procedure Find
@@ -145,8 +146,8 @@ package Root_Object.Relationships.TN is
    --
    --
    --
-   -- Object TN does not have an identifying non-referential attribute and 
-   -- therefore may not be uniquely created.
+   -- Object TN has an identifying non-referential attribute td_id 
+   -- and therefore may be uniquely created.
    -- 
    -- Object TN has no TAGS.
    --
@@ -171,6 +172,10 @@ package Root_Object.Relationships.TN is
    type Relationships_TN_Type is new Relationships_Type with record
 
       --
+      -- Non initialised identifying non referential
+      td_id : Application_Types.Base_Integer_Type;
+
+      --
       -- Initialised Non identifying non referential
       The_Test_Number : Application_Types.Base_Integer_Type := Application_Types.Base_Integer_Type_First;
 
@@ -178,7 +183,7 @@ package Root_Object.Relationships.TN is
 
    end record;
 
-   Attribute_Count : constant Application_Types.Base_Integer_Type := 1;
+   Attribute_Count : constant Application_Types.Base_Integer_Type := 2;
 
    -------------------------------------------------------------------------------------------------
 
@@ -190,6 +195,18 @@ package Root_Object.Relationships.TN is
    --*********************  Object Attribute Access ***********************
    ------------------------------------------------------------------------
    --
+
+
+   function Get_td_id (
+      This_Object : Root_Object.Object_Access) 
+   return Application_Types.Base_Integer_Type;
+
+   procedure Put_td_id (
+      This_Object : in Root_Object.Object_Access;
+      td_id_Value : in Application_Types.Base_Integer_Type);
+
+   pragma inline (Get_td_id);
+   pragma inline (Put_td_id);
 
 
    function Get_The_Test_Number (
@@ -219,9 +236,7 @@ package Root_Object.Relationships.TN is
    function  Create 
       return Root_Object.Object_Access;
 
-   -- function Create_Unique 
-   -- is not available for this object as it does not have a non-referential 
-   -- identifying attribute.
+   function Create_Unique return Root_Object.Object_Access;
 
 
    procedure Delete (

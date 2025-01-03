@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -39,7 +39,7 @@
 --*  BUILD INFORMATION                                                                *
 --*  -----------------                                                                *
 --*                                                                                   *
---*  Project Key Letter : Events_Build_Set
+--*  Project Key Letter : Events_BSet
 --*  Project Version    : 0
 --*  Build Set          : 0
 --*                                                                                   *
@@ -67,7 +67,6 @@ with Events_Scenario4;
 with Events_Scenario1;
 with Events_Scenario3;
 with Events_Scenario6;
-with RP_Scenario10;
 
 procedure Scenario_Scheduler is
 begin
@@ -85,7 +84,6 @@ begin
    Events_Scenario1;
    Events_Scenario3;
    Events_Scenario6;
-   RP_Scenario10;
 end Scenario_Scheduler;
 
 --

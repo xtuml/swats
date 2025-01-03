@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -73,6 +73,7 @@ use type Root_Object.Object_Access;
    begin
       
       my_test := Root_Object.Function_Calls.TD.Create;
+      Root_Object.Function_Calls.TD.Function_Calls_TD_Type(my_test.all).td_id           := 1;
       Root_Object.Function_Calls.TD.Function_Calls_TD_Type(my_test.all).The_Test_Number := 1;
       
       

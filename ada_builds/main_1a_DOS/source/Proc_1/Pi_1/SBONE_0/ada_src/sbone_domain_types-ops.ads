@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -109,11 +109,11 @@ package SBONE_Domain_Types.Ops is
 
 ----------------------------------------------------------------------------------------------
    procedure Append (
-      A_The_Range: in SBONE_Domain_Types.Pos;
+      A_The_Range: in Application_Types.Base_Integer_Type;
       To_Structure: in out Structure_Of_UDTs);
     
    procedure Extract (
-      A_The_Range: out SBONE_Domain_Types.Pos;
+      A_The_Range: out Application_Types.Base_Integer_Type;
       From_Structure: in     Structure_Of_UDTs);
                      
    procedure Go_To_Start (Of_Structure: in Structure_Of_UDTs);
@@ -148,23 +148,6 @@ package SBONE_Domain_Types.Ops is
    procedure Initialise  (Object:       in out Source_Structure_Type);
 
    function  Count_Of    (In_Structure: Source_Structure_Type) return Application_Types.Base_Integer_Type;
-
-----------------------------------------------------------------------------------------------
-   procedure Append (
-      A_The_VSD_IH: in  Root_Object.Object_Access;
-      To_Structure: in out IH_Struct);
-    
-   procedure Extract (
-      A_The_VSD_IH: out  Root_Object.Object_Access;
-      From_Structure: in     IH_Struct);
-                     
-   procedure Go_To_Start (Of_Structure: in IH_Struct);
-
-   function  Not_Empty   (In_Structure: IH_Struct) return boolean;
-
-   procedure Initialise  (Object:       in out IH_Struct);
-
-   function  Count_Of    (In_Structure: IH_Struct) return Application_Types.Base_Integer_Type;
 
 ----------------------------------------------------------------------------------------------
    procedure Append (

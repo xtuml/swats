@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -71,8 +71,10 @@ use type Root_Object.Object_Access;
 package body Events_Events3_Generate_From_Service_Service is
    
    procedure Events_Events3_Generate_From_Service (
-      Test_No : in     Application_Types.Base_Integer_Type;
-      The_IH  : in     Root_Object.Object_Access) is
+      Test_No   : in     Application_Types.Base_Integer_Type;
+      The_IH_ID : in     Application_Types.Base_Integer_Type) is
+      
+      The_IH : Root_Object.Object_Access;
       
    begin
    -- start of Events3_Generate_From_Service
@@ -87,6 +89,12 @@ package body Events_Events3_Generate_From_Service_Service is
       Events_RPT8_Specify_Requid_Bridge.Events_RPT8_Specify_Requid (
          Requid_Test_Number => Test_No,
          The_Requid_Itself  => "1103-0000-01-0711               ");
+      
+      The_IH := Root_Object.Events.objX.Conditional_Find_One;
+      while (The_IH /= null) and then (not (Root_Object.Events.objX.Events_objX_Type(The_IH.all).objX_id =  The_IH_ID) ) loop
+         
+         The_IH := The_IH.Next_Object;
+      end loop;
       
       
       declare

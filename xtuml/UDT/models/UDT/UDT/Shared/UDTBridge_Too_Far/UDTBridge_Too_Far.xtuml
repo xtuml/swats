@@ -35,7 +35,7 @@ INSERT INTO S_DT_PROXY
 	'inst_ref<Object_Into_Bridge>',
 	'',
 	'',
-	'../../UDT/UDT/UDT.xtuml');
+	'../../UDT/classes/classes.xtuml');
 INSERT INTO C_PP
 	VALUES ("d8331b6c-dcd2-4c9b-9033-ec8fdb47a0a9",
 	"424c88cf-5de8-40b6-8bb8-2a9d0574e004",

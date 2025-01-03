@@ -71,16 +71,21 @@ endloop
 #------------------------------------------------------------------------#
 
    loop_counter = 1
+   ato_counter = 1
 
    loop
 
-      a_tight_instance = create A_Tight_Object with Start_Value = Test and Increment_Value = 10 and Current_State = ''Idle''
+      a_tight_instance = create A_Tight_Object with ato_id = ato_counter & \
+                                               Start_Value = Test & \
+                                               Increment_Value = 10 & \
+                                               Current_State = ''Idle''
 
       generate ATO1:Get_Going(FALSE) to a_tight_instance
 
       Test = Test + 1
 
       loop_counter = loop_counter + 1
+      ato_counter = ato_counter + 1
 
       breakif loop_counter = 6
 
@@ -95,13 +100,17 @@ endloop
 
    loop
 
-      a_tight_instance = create A_Tight_Object with Start_Value = Test and Increment_Value = 10 and Current_State = ''Idle''
+      a_tight_instance = create A_Tight_Object with ato_id = ato_counter & \
+                                                    Start_Value = Test & \
+                                                    Increment_Value = 10 & \
+                                                    Current_State = ''Idle''
 
       generate ATO1:Get_Going(TRUE) to a_tight_instance
 
       Test = Test + 1
 
       loop_counter = loop_counter + 1
+      ato_counter = ato_counter + 1
 
       breakif loop_counter = 6
 
@@ -193,9 +202,12 @@ endloop
 
       Tight_Return_Value = 0
 
-      a_tight_instance = create A_Tight_Object with Start_Value = Test and Increment_Value = 10 and Current_State = ''Idle''
+      a_tight_instance = create A_Tight_Object with ato_id = ato_counter & \
+                                                    Start_Value = Test & \
+                                                    Increment_Value = 10 & \
+                                                    Current_State = ''Idle''
 
-      [Tight_Return_Value] = Function_Calls4::Perform_Service_In_Tight_Loop [a_tight_instance, Test, "Tightly controlled IH" ]
+      [Tight_Return_Value] = ATO1:Perform_Service_In_Tight_Loop [a_tight_instance, Test, "Tightly controlled IH" ]
 
       Expected_Result = Test + 10
 
@@ -207,6 +219,7 @@ endloop
 
       Test         = Test         + 1
       loop_counter = loop_counter + 1
+      ato_counter = ato_counter + 1
 
       breakif loop_counter = 6
 
@@ -328,9 +341,9 @@ endloop
                                 IntC  = 200  &\
                                 RealC = 99.9
 
-   [ReturnInst] = Function_Calls12::Test_IH_Params[InstC]
+   [ReturnInst] = objC1:Test_IH_Params[InstC]
 
-   if ReturnInst.idC = 1000 then
+   if ReturnInst.idC = 100 then
 
       if ReturnInst.IntC = 2000 then
 
@@ -374,7 +387,7 @@ Test = Test + 1
 my_test.The_Test_Number = Test
 ',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	2,
 	1);
@@ -390,12 +403,12 @@ INSERT INTO S_SYNC
 	'Start_Function_Calls_Tests',
 	' Start Function Calls Tests
 ',
-	'my_test = create Test_Data with The_Test_Number = 1
+	'my_test = create Test_Data with td_id = 1 & The_Test_Number = 1
 
 [] = Function_Calls2::Create_Report_Data[]
 ',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	2,
 	2);
@@ -450,7 +463,7 @@ INSERT INTO S_SYNC
       append [individual_IH] to {A_Structure}
    endfor
 
-   [] = Function_Calls5::Test_Set_Of_IH[{A_Structure}, FALSE, "Testing multi IH in service param"]
+   [] = objA6:Test_Set_Of_IH[{A_Structure}, FALSE, "Testing multi IH in service param"]
 
 # End Test 1
 
@@ -466,7 +479,7 @@ INSERT INTO S_SYNC
 
    append [newA] to {Another_Structure}
 
-   [] = Function_Calls5::Test_Set_Of_IH[{Another_Structure}, TRUE, "Testing single IH in service param"]
+   [] = objA6:Test_Set_Of_IH[{Another_Structure}, TRUE, "Testing single IH in service param"]
 
 # End Test 2
 
@@ -751,7 +764,7 @@ INSERT INTO S_SYNC
 
 ',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	2,
 	4);

@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -220,7 +220,7 @@ package body SBONE_Domain_Types.Ops is
 --  --
     
    procedure Append (
-      A_The_Range : in    SBONE_Domain_Types.Pos;
+      A_The_Range : in    Application_Types.Base_Integer_Type;
       To_Structure : in out Structure_Of_UDTs) is
                        
    Temp_Structure: Structure_Of_UDTs_Node_Access :=
@@ -245,7 +245,7 @@ package body SBONE_Domain_Types.Ops is
 --  -------------------------------------------------------------------------------------------
 --  --
    procedure Extract (
-      A_The_Range :    out SBONE_Domain_Types.Pos ;
+      A_The_Range :    out Application_Types.Base_Integer_Type ;
       From_Structure : in    Structure_Of_UDTs) is
                             
    begin
@@ -429,120 +429,6 @@ package body SBONE_Domain_Types.Ops is
       procedure Free is new Ada.Unchecked_Deallocation (
          Object => Source_Structure_Type_Node, 
          Name   => Source_Structure_Type_Node_Access);
-               
-   begin
-
-      if Not_Empty(Object) then
-
-         -- SRLE100003353
-         -- Belt and braces approach is no longer appropriate.
-         -- First_Entry will always contain data if the structure count is non-zero.
-         -- If it doesn't then the data structure has been corrupted somehow; there
-         -- is no way back from that.
-         -- if Object.First_Entry /= null then
-
-            Next := Object.First_Entry;
-
-            while Next /= null loop
-               Old_Cell := Next;
-               Next := Next.Next_Structure;
-               Free (Old_Cell);
-            end loop;
-
-         -- end if;
-
-         Object.Iterator.all := null;
-         Object.First_Entry  := null;
-         Object.Last_Entry   := null;
-         Object.Number_Of_Entries := 0;
-
-      end if;
-
-   end Initialise;
---  --
---  -------------------------------------------------------------------------------------------
---  --
-    
-   procedure Append (
-      A_The_VSD_IH : in     Root_Object.Object_Access;
-      To_Structure : in out IH_Struct) is
-                       
-   Temp_Structure: IH_Struct_Node_Access :=
-      new IH_Struct_Node'(
-         The_VSD_IH  => A_The_VSD_IH,
-         Next_Structure     => null,
-         Previous_Structure => null);
-   begin
-    
-      if To_Structure.First_Entry = null then
-         To_Structure.Last_Entry := Temp_Structure;
-      else
-         To_Structure.First_Entry.Previous_Structure := Temp_Structure;
-         Temp_Structure.Next_Structure := To_Structure.First_Entry;
-      end if;
-
-      To_Structure.First_Entry := Temp_Structure;
-      To_Structure.Number_Of_Entries := To_Structure.Number_Of_Entries + 1;
-
-   end Append;
---  --
---  -------------------------------------------------------------------------------------------
---  --
-   procedure Extract (
-      A_The_VSD_IH :    out  Root_Object.Object_Access ;
-      From_Structure : in    IH_Struct) is
-                            
-   begin
-      -- SRLE100001553
-      -- Remove check on null input parameter, thus if the From_Structure is
-      -- empty, an exception will be raised. We know that in order to get here, the structure
-      -- has at least one entry in it. Any attempt to extract from an empty structure will 
-      -- raise a constraint error exception. You have been warned.
-
-      --
-      -- set output parameter to be oldest entry (in time)
-      --
-      -- extract the parameters
-      A_The_VSD_IH := From_Structure.Iterator.all.The_VSD_IH;
-      From_Structure.Iterator.all := From_Structure.Iterator.all.Previous_Structure;
-
-   end Extract;
---  --
---  -------------------------------------------------------------------------------------------
---  --
-   procedure Go_To_Start (Of_Structure : in IH_Struct) is
-   begin
-      if Of_Structure.Last_Entry /= null then
-         Of_Structure.Iterator.all := Of_Structure.Last_Entry;
-      end if;
-   end Go_To_Start;
---  --
---  -------------------------------------------------------------------------------------------
---  --
-   function Not_Empty (In_Structure : IH_Struct) return boolean is
-   begin
-      return Count_Of (In_Structure) /= 0;
-   end Not_Empty;
---  --
---  -------------------------------------------------------------------------------------------
---  --
-   function  Count_Of    (In_Structure : IH_Struct) return Application_Types.Base_Integer_Type is
-      Temp_Count: Application_Types.Base_Integer_Type := 0;
-   begin
-      Temp_Count := In_Structure.Number_Of_Entries;
-      return Temp_Count;
-   end Count_Of;
---  --
---  -------------------------------------------------------------------------------------------
---  --
-   procedure Initialise (Object : in out IH_Struct) is
-
-      Next:     IH_Struct_Node_Access;
-      Old_Cell: IH_Struct_Node_Access;
-     
-      procedure Free is new Ada.Unchecked_Deallocation (
-         Object => IH_Struct_Node, 
-         Name   => IH_Struct_Node_Access);
                
    begin
 

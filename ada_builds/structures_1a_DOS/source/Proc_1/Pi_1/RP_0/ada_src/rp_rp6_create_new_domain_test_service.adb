@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -105,20 +105,16 @@ package body RP_RP6_Create_New_Domain_Test_Service is
       Root_Object.RP.DD.RP_DD_Type(new_domain_test.all).Last_Reported_Test_Number  := 0;
       Root_Object.RP.DD.RP_DD_Type(new_domain_test.all).Current_State            := Root_Object.RP.DD.Idle;
       
-      
-      new_pass := Root_Object.RP.PASS.Create;
+      new_pass := Root_Object.RP.PASS.Create_Unique;
       Root_Object.RP.PASS.RP_PASS_Type(new_pass.all).Passed_Counter := 0;
       
-      
-      new_fail := Root_Object.RP.FAIL.Create;
+      new_fail := Root_Object.RP.FAIL.Create_Unique;
       Root_Object.RP.FAIL.RP_FAIL_Type(new_fail.all).Failed_Counter := 0;
       
-      
-      new_unsupported := Root_Object.RP.UNSUPPORTED.Create;
+      new_unsupported := Root_Object.RP.UNSUPPORTED.Create_Unique;
       Root_Object.RP.UNSUPPORTED.RP_UNSUPPORTED_Type(new_unsupported.all).Unsupported_Counter := 0;
       
-      
-      new_duplicated := Root_Object.RP.DUPLICATED.Create;
+      new_duplicated := Root_Object.RP.DUPLICATED.Create_Unique;
       Root_Object.RP.DUPLICATED.RP_DUPLICATED_Type(new_duplicated.all).Duplicated_Test_Count := 0;
       
       

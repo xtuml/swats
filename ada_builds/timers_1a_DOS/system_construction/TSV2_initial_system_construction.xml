@@ -1,0 +1,39 @@
+<opt Architecture_Location="D:\WACA\DS\WACA_Apps\9SU050_WACA_991c_29_04_2024_SWATS\waca\SFU_WACA_BUILD\xumota" Build_Location="D:\WACA\DS\WACA_Apps\9SU050_WACA_991c_29_04_2024_SWATS\waca\SFU_WACA_BUILD\build" Database_Location="P:\SFU_iUML\" Documentation_Location="D:\WACA\DS\WACA_Apps\9SU050_WACA_991c_29_04_2024_SWATS\waca\SFU_WACA_BUILD\cgen\doc" Executables_Location="D:\WACA\DS\WACA_Apps\9SU050_WACA_991c_29_04_2024_SWATS\waca\SFU_WACA_BUILD\cgen\bin" Filename="build_specification_5.xml" Installation_Directory="D:\WACA\DS\WACA_Apps\9SU050_WACA_991c_29_04_2024_SWATS" Perl_Location="/cygdrive/c/Perl/bin/perl " Specification_Location="../specifications" Version="SFU_WACA_BUILD">
+Perl_Location=&quot;/cygdrive/c/Program Files/Perl/bin/perl&quot;
+  <PROJECT Archetypes_Location="D:\WACA\DS\WACA_Apps\9SU050_WACA_991c_29_04_2024_SWATS\waca\SFU_WACA_BUILD\xumota\templates" Build_Log_Path="D:\WACA\DS\WACA_Apps\9SU050_WACA_991c_29_04_2024_SWATS\waca\SFU_WACA_BUILD\build\multidomain\TSV2_10_22\Timers_Build_Set\meta_instances\log" Build_Set="0" Clock_Type="INTERNAL" Company_Marking_File="BAE_SYSTEMS_PROPRIETARY.txt" Compiler_Build_Name="timers_1a" Compiler_Build_Root_Directory="D:\WACA\DS\Builds\SWATS" Conditional_Tags="undefined" Contract_Header_File="contract_header_none.txt" Copyright_Header_File="copyright_header_2024.txt" Debug="" Debug_Log="" Deployment_Component_Name="Timers_Build_Set" Deployment_Project_Name="TSV2_10_22" Deployment_Project_Path="\\tsclient\U\DSkinner\SWATS_Deployment_Creation" Documentation_Location="D:\WACA\code_generator\ASP_WACA_CAT_DEV\bin" Domain_Key_Letter="" Domain_Path="D:\WACA\DS\WACA_Apps\9SU050_WACA_991c_29_04_2024_SWATS\waca\SFU_WACA_BUILD\build\multidomain\TSV2_10_22\Timers_Build_Set\_" Domain_Version="" Enable_Errors="1" Enable_Warnings="1" Error_Criteria="id" Error_Filter="Low" Error_Limit="1" Export_Control_File="Export_None.txt" Extraction_Source="BridgePoint" Extractor_Domain_Path="D:\WACA\DS\WACA_Apps\9SU050_WACA_991c_29_04_2024_SWATS\waca\SFU_WACA_BUILD\build\multidomain\TSV2_10_22\Timers_Build_Set\_\meta_instances\extracted_data" Extractor_Project_Path="D:\WACA\DS\WACA_Apps\9SU050_WACA_991c_29_04_2024_SWATS\waca\SFU_WACA_BUILD\build\multidomain\TSV2_10_22\Timers_Build_Set\meta_instances\extracted_data" Filename_Reference="pre_processed_interface_specification.xml" Header_Macro_Location="D:\WACA\DS\WACA_Apps\9SU050_WACA_991c_29_04_2024_SWATS\waca\SFU_WACA_BUILD\xumota\core_architecture\core_archetypes\ada_src" Initialisation_Mode="normal" Installed_Sample_Path="D:\WACA\DS\WACA_Apps\9SU050_WACA_991c_29_04_2024_SWATS\waca\SFU_WACA_BUILD\xumota\build_specification" Interface_Spec_Path="D:\WACA\DS\WACA_Apps\9SU050_WACA_991c_29_04_2024_SWATS\waca\SFU_WACA_BUILD\build\multidomain\TSV2_10_22\Timers_Build_Set\meta_instances\interface_spec" Interface_Support_Location="D:\WACA\DS\WACA_Apps\9SU050_WACA_991c_29_04_2024_SWATS\waca\SFU_WACA_BUILD\xumota\interface_support" Mechanisms_Location="D:\WACA\DS\WACA_Apps\9SU050_WACA_991c_29_04_2024_SWATS\waca\SFU_WACA_BUILD\xumota\mechanisms" Project_Database_Name="Enhanced_SATS.uml" Project_Key_Letter="TSV2" Project_Name="" Project_Path="D:\WACA\DS\WACA_Apps\9SU050_WACA_991c_29_04_2024_SWATS\waca\SFU_WACA_BUILD\build\multidomain\TSV2_10_22\Timers_Build_Set" Project_Version="0" Relationships_Location="D:\WACA\DS\WACA_Apps\9SU050_WACA_991c_29_04_2024_SWATS\waca\SFU_WACA_BUILD\xumota\relationships" Security_Classification="UNCLASSIFIED" Security_Marking_File="UNCLASSIFIED.txt" Src_Project_Path="D:\WACA\DS\WACA_Apps\9SU050_WACA_991c_29_04_2024_SWATS\waca\SFU_WACA_BUILD\build\multidomain\TSV2_10_22\Timers_Build_Set\src" Target="Dos" Test_Archetype_Path_Name="" Trace="0" Translation_Mode="project" Warning_Criteria="id" Warning_Filter="Low" Warning_Limit="1" Win32Ada_Gpr_Filepath="C:\GNATPRO\19.2\share\gpr\win32ada.gpr" XML_Domain_Path="D:\WACA\DS\WACA_Apps\9SU050_WACA_991c_29_04_2024_SWATS\waca\SFU_WACA_BUILD\build\multidomain\TSV2_10_22\Timers_Build_Set\_\meta_instances\xml" XML_Project_Path="D:\WACA\DS\WACA_Apps\9SU050_WACA_991c_29_04_2024_SWATS\waca\SFU_WACA_BUILD\build\multidomain\TSV2_10_22\Timers_Build_Set\meta_instances\xml" xtuml2masl_location="D:\xtUML\xtUML_7_7_0_20240924\BridgePoint\tools\mc\bin">
+    <MGC_MAPPING Label="NONE" Path="\\tsclient\U\DSkinner\SWATS_10742\SWATS_10742_C\SWATS\mgc" />
+    <OAID_MAPPING Label="NONE" Path="\\tsclient\U\DSkinner\SWATS_10742\SWATS_10742_C\SWATS\oaid" />
+    <PROCESSOR Processor_Id="1">
+      <PROCESS Filename_Reference="connection_specification.xml" Implementation_Language="ada" Process_Id="1">
+        <CONNECTION Connection_Identifier="1" Destination_Id="UNIT_NUMBER_1" Interface_Port_Number="16#FFF#" Ip_Address="ABC" Name="Clock_Message" Source_Id="UNIT_NUMBER_2" Type="Ip">
+          <INTERFACE Connection_Identifier="1" Design_Tool="UNDEFINED" Destination_Id="UNIT_NUMBER_1" Direction="REALISES" Filename_Reference="Clock.xml" Fullname="Clock" Guid="14BBD6EE-363C-4180-A90D-254276AE09EC" Identifier="1" Interface_Port_Number="16#FFF#" Ip_Address="ABC" Name="Clock_Message" Owning_Domain_Key_Letter="NXUML_TIM" Shortname="CLO" Source_Id="UNIT_NUMBER_2" Type="Ip" Version="2">
+            <OPERATION Contract_Type="ASYNCHRONOUS" Identifier="1" Name="Update">
+              <FOOTER_PARAMETER Derived="Y" Name="Terminator" Type="Bit_Pattern" Type_Id="Bit_Pattern" Value="123" />
+              <HEADER_PARAMETER Derived="Y" Name="Header" Type="Bit_Pattern" Type_Id="Bit_Pattern" />
+              <INPUT_PARAMETER Derived="N" Identifier="1" Name="Param_1" Type="Bit_Pattern" Type_Id="Bit_Pattern" />
+              <INPUT_PARAMETER Derived="N" Identifier="2" Name="Param_2" Type="Bit_Pattern" Type_Id="Bit_Pattern" />
+            </OPERATION>
+          </INTERFACE>
+        </CONNECTION>
+        <CONSTANT Name="UNIT_NUMBER_1" Value="1" />
+        <CONSTANT Name="UNIT_NUMBER_2" Value="2" />
+        <DOMAIN Domain_Key_Letter="NXUML_TIM">
+          <INTERFACE Connection_Identifier="1" Design_Tool="UNDEFINED" Destination_Id="UNIT_NUMBER_1" Direction="REALISES" Filename_Reference="Clock.xml" Fullname="Clock" Guid="14BBD6EE-363C-4180-A90D-254276AE09EC" Identifier="1" Interface_Port_Number="16#FFF#" Ip_Address="ABC" Name="Clock_Message" Shortname="CLO" Source_Id="UNIT_NUMBER_2" Type="Ip" Version="2">
+            <OPERATION Contract_Type="ASYNCHRONOUS" Identifier="1" Name="Update">
+              <FOOTER_PARAMETER Derived="Y" Name="Terminator" Type="Bit_Pattern" Type_Id="Bit_Pattern" Value="123" />
+              <HEADER_PARAMETER Derived="Y" Name="Header" Type="Bit_Pattern" Type_Id="Bit_Pattern" />
+              <INPUT_PARAMETER Derived="N" Identifier="1" Name="Param_1" Type="Bit_Pattern" Type_Id="Bit_Pattern" />
+              <INPUT_PARAMETER Derived="N" Identifier="2" Name="Param_2" Type="Bit_Pattern" Type_Id="Bit_Pattern" />
+            </OPERATION>
+          </INTERFACE>
+        </DOMAIN>
+        <DOMAIN Domain_Key_Letter="RP" />
+        <DOMAIN Domain_Key_Letter="TT" />
+        <DOMAIN Domain_Key_Letter="FTE" />
+      </PROCESS>
+      <PROCESS Implementation_Language="delphi" Process_Id="2">
+      </PROCESS>
+    </PROCESSOR>
+    <XTUML_MAPPING Label="NONE" Path="\\tsclient\U\DSkinner\SWATS_10742\SWATS_10742_C\SWATS\xtuml" />
+  </PROJECT>
+</opt>

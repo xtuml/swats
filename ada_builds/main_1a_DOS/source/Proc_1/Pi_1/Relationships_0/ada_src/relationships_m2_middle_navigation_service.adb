@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -137,6 +137,7 @@ package body Relationships_M2_Middle_Navigation_Service is
       SetAssoc      : Root_Object.Object_List.List_Header_Access_Type := Root_Object.Object_List.Initialise;
       SetMFR        : Root_Object.Object_List.List_Header_Access_Type := Root_Object.Object_List.Initialise;
       SetMRA        : Root_Object.Object_List.List_Header_Access_Type := Root_Object.Object_List.Initialise;
+      Set_Right2    : Root_Object.Object_List.List_Header_Access_Type := Root_Object.Object_List.Initialise;
       SetRight      : Root_Object.Object_List.List_Header_Access_Type := Root_Object.Object_List.Initialise;
       Set_Of_Left   : Root_Object.Object_List.List_Header_Access_Type := Root_Object.Object_List.Initialise;
       SetM          : Root_Object.Object_List.List_Header_Access_Type := Root_Object.Object_List.Initialise;
@@ -526,7 +527,11 @@ package body Relationships_M2_Middle_Navigation_Service is
                   
                   
                   The_Assoc := Root_Object.Relationships.MRA.Create;
-                  Root_Object.Relationships.MRA.Relationships_MRA_Type(The_Assoc.all).MRA_Data := The_ID;
+                  Root_Object.Relationships.MRA.Relationships_MRA_Type(The_Assoc.all).MRA_Data  := The_ID;
+                  Root_Object.Relationships.MRA.Relationships_MRA_Type(The_Assoc.all).Right_Identifier        := 
+                     Root_Object.Relationships.MR.Relationships_MR_type(InstRight.all).Right_Identifier;
+                  Root_Object.Relationships.MRA.Relationships_MRA_Type(The_Assoc.all).MFR_Identifier      := 
+                     Root_Object.Relationships.MFR.Relationships_MFR_type(FarRight.all).MFR_Identifier;
                   
                   Relationships_Rel_R8.Link (
                      A_Instance => InstRight,
@@ -819,10 +824,10 @@ package body Relationships_M2_Middle_Navigation_Service is
          
          
          Root_Object.Object_List.Clear (
-            From => Set_Right);
+            From => Set_Right2);
          
          Root_Object.Relationships.MFR.Find (
-            Add_To => Set_Right);
+            Add_To => Set_Right2);
          
          
          Final_Right_Value := 0;
@@ -834,7 +839,7 @@ package body Relationships_M2_Middle_Navigation_Service is
             Temp_Entry : Root_Object.Object_List.Node_Access_Type;
          begin
             Temp_Entry := Root_Object.Object_List.First_Entry_Of (
-               Target_List => Set_Right);
+               Target_List => Set_Right2);
             
             while (Temp_Entry /= null) loop
                This_Local_Right := Temp_Entry.Item;
@@ -842,7 +847,7 @@ package body Relationships_M2_Middle_Navigation_Service is
                
                
                Temp_Entry := Root_Object.Object_List.Next_Entry_Of (
-                  Target_List => Set_Right);
+                  Target_List => Set_Right2);
                
             end loop; -- end of (Temp_Entry /= null) loop
             
@@ -1466,8 +1471,7 @@ package body Relationships_M2_Middle_Navigation_Service is
          Relationships_RPT4_Test_Unsupported_Bridge.Relationships_RPT4_Test_Unsupported (
             Unsupported_Test_Number => Test);
          
-         
-         One_Above := Root_Object.Relationships.MA.Create;
+         One_Above := Root_Object.Relationships.MA.Create_Unique;
          Root_Object.Relationships.MA.Relationships_MA_Type(One_Above.all).Above_Data := 1;
          
          Relationships_Rel_R10.Link (
@@ -1596,8 +1600,7 @@ package body Relationships_M2_Middle_Navigation_Service is
             Requid_Test_Number => Test,
             The_Requid_Itself  => "1103-0000-01-0631               ");
          
-         
-         Three_Above := Root_Object.Relationships.MA.Create;
+         Three_Above := Root_Object.Relationships.MA.Create_Unique;
          Root_Object.Relationships.MA.Relationships_MA_Type(Three_Above.all).Above_Data := 3;
          
          Relationships_Rel_R10.Link (
@@ -1694,8 +1697,7 @@ package body Relationships_M2_Middle_Navigation_Service is
             Requid_Test_Number => Test,
             The_Requid_Itself  => "1103-0000-01-0631               ");
          
-         
-         Two_Above := Root_Object.Relationships.MA.Create;
+         Two_Above := Root_Object.Relationships.MA.Create_Unique;
          Root_Object.Relationships.MA.Relationships_MA_Type(Two_Above.all).Above_Data := 2;
          
          Relationships_Rel_R10.Link (
@@ -2066,8 +2068,7 @@ package body Relationships_M2_Middle_Navigation_Service is
          Root_Object.Relationships.MR.Relationships_MR_Type(Fourth_Right.all).Right_Identifier        := 4;
          Root_Object.Relationships.MR.Relationships_MR_Type(Fourth_Right.all).Right_Data  := 0;
          
-         
-         Fourth_Above := Root_Object.Relationships.MA.Create;
+         Fourth_Above := Root_Object.Relationships.MA.Create_Unique;
          Root_Object.Relationships.MA.Relationships_MA_Type(Fourth_Above.all).Above_Data := 4;
          
          Relationships_Rel_R10.Link (
@@ -2464,7 +2465,8 @@ package body Relationships_M2_Middle_Navigation_Service is
             
             
             newDO := Root_Object.Relationships.objDO.Create;
-            Root_Object.Relationships.objDO.Relationships_objDO_Type(newDO.all).idDO := The_ID;
+            Root_Object.Relationships.objDO.Relationships_objDO_Type(newDO.all).idDO      := The_ID;
+            Root_Object.Relationships.objDO.Relationships_objDO_Type(newDO.all).idO       := The_ID;
             
             
             newE := Root_Object.Relationships.objE.Create;
@@ -2476,7 +2478,9 @@ package body Relationships_M2_Middle_Navigation_Service is
             
             
             newEF := Root_Object.Relationships.OBJEF.Create;
-            Root_Object.Relationships.OBJEF.Relationships_OBJEF_Type(newEF.all).idEF := The_ID;
+            Root_Object.Relationships.OBJEF.Relationships_OBJEF_Type(newEF.all).idEF      := The_ID;
+            Root_Object.Relationships.OBJEF.Relationships_OBJEF_Type(newEF.all).idE       := The_ID;
+            Root_Object.Relationships.OBJEF.Relationships_OBJEF_Type(newEF.all).idF       := The_ID;
             
             
             newG := Root_Object.Relationships.objG.Create;
@@ -2488,7 +2492,8 @@ package body Relationships_M2_Middle_Navigation_Service is
             
             
             newI := Root_Object.Relationships.objI.Create;
-            Root_Object.Relationships.objI.Relationships_objI_Type(newI.all).IDI := The_ID;
+            Root_Object.Relationships.objI.Relationships_objI_Type(newI.all).IDI       := The_ID;
+            Root_Object.Relationships.objI.Relationships_objI_Type(newI.all).idH       := The_ID;
             
             
             newK := Root_Object.Relationships.objK.Create;
@@ -2496,7 +2501,8 @@ package body Relationships_M2_Middle_Navigation_Service is
             
             
             newL := Root_Object.Relationships.objL.Create;
-            Root_Object.Relationships.objL.Relationships_objL_Type(newL.all).idL := The_ID;
+            Root_Object.Relationships.objL.Relationships_objL_Type(newL.all).idL       := The_ID;
+            Root_Object.Relationships.objL.Relationships_objL_Type(newL.all).idH       := The_ID;
             
             
             newO := Root_Object.Relationships.objO.Create;
@@ -2528,7 +2534,8 @@ package body Relationships_M2_Middle_Navigation_Service is
             
             
             newMRAssoc := Root_Object.Relationships.assMR.Create;
-            Root_Object.Relationships.assMR.Relationships_assMR_Type(newMRAssoc.all).idMR := The_ID;
+            Root_Object.Relationships.assMR.Relationships_assMR_Type(newMRAssoc.all).idMR      := The_ID;
+            Root_Object.Relationships.assMR.Relationships_assMR_Type(newMRAssoc.all).idMO      := The_ID;
             
             
             newLeftMany := Root_Object.Relationships.objLM.Create;
@@ -2540,7 +2547,9 @@ package body Relationships_M2_Middle_Navigation_Service is
             
             
             newLMRMAssoc := Root_Object.Relationships.objLMRM.Create;
-            Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRMAssoc.all).idLMRM := The_ID;
+            Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRMAssoc.all).idLMRM    := The_ID;
+            Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRMAssoc.all).idLM      := The_ID;
+            Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRMAssoc.all).idRM      := The_ID;
             
             
             newBottomMany := Root_Object.Relationships.objBM.Create;
@@ -2548,67 +2557,83 @@ package body Relationships_M2_Middle_Navigation_Service is
             
             
             newSL1 := Root_Object.Relationships.objSL1.Create;
-            Root_Object.Relationships.objSL1.Relationships_objSL1_Type(newSL1.all).idSL1 := The_ID;
+            Root_Object.Relationships.objSL1.Relationships_objSL1_Type(newSL1.all).idSL1     := The_ID;
+            Root_Object.Relationships.objSL1.Relationships_objSL1_Type(newSL1.all).idH       := The_ID;
             
             
             newSL2 := Root_Object.Relationships.objSL2.Create;
-            Root_Object.Relationships.objSL2.Relationships_objSL2_Type(newSL2.all).idSL2 := The_ID;
+            Root_Object.Relationships.objSL2.Relationships_objSL2_Type(newSL2.all).idSL2     := The_ID;
+            Root_Object.Relationships.objSL2.Relationships_objSL2_Type(newSL2.all).idH       := The_ID;
             
             
             newSL3 := Root_Object.Relationships.objSL3.Create;
-            Root_Object.Relationships.objSL3.Relationships_objSL3_Type(newSL3.all).idSL3 := The_ID;
+            Root_Object.Relationships.objSL3.Relationships_objSL3_Type(newSL3.all).idSL3     := The_ID;
+            Root_Object.Relationships.objSL3.Relationships_objSL3_Type(newSL3.all).idH       := The_ID;
             
             
             newSSL1 := Root_Object.Relationships.objSSL1.Create;
-            Root_Object.Relationships.objSSL1.Relationships_objSSL1_Type(newSSL1.all).idSSL1 := The_ID;
+            Root_Object.Relationships.objSSL1.Relationships_objSSL1_Type(newSSL1.all).idSSL1    := The_ID;
+            Root_Object.Relationships.objSSL1.Relationships_objSSL1_Type(newSSL1.all).idH       := The_ID;
             
             
             newSSL2 := Root_Object.Relationships.objSSL2.Create;
-            Root_Object.Relationships.objSSL2.Relationships_objSSL2_Type(newSSL2.all).idSSL2 := The_ID;
+            Root_Object.Relationships.objSSL2.Relationships_objSSL2_Type(newSSL2.all).idSSL2    := The_ID;
+            Root_Object.Relationships.objSSL2.Relationships_objSSL2_Type(newSSL2.all).idH       := The_ID;
             
             
             newSSL3 := Root_Object.Relationships.objSSL3.Create;
-            Root_Object.Relationships.objSSL3.Relationships_objSSL3_Type(newSSL3.all).idSSL3 := The_ID;
+            Root_Object.Relationships.objSSL3.Relationships_objSSL3_Type(newSSL3.all).idSSL3    := The_ID;
+            Root_Object.Relationships.objSSL3.Relationships_objSSL3_Type(newSSL3.all).idH       := The_ID;
             
             
             newSSL4 := Root_Object.Relationships.objSSL4.Create;
-            Root_Object.Relationships.objSSL4.Relationships_objSSL4_Type(newSSL4.all).idSSL4 := The_ID;
+            Root_Object.Relationships.objSSL4.Relationships_objSSL4_Type(newSSL4.all).idSSL4    := The_ID;
+            Root_Object.Relationships.objSSL4.Relationships_objSSL4_Type(newSSL4.all).idH       := The_ID;
             
             
             newSSL5 := Root_Object.Relationships.objSSL5.Create;
-            Root_Object.Relationships.objSSL5.Relationships_objSSL5_Type(newSSL5.all).idSSL5 := The_ID;
+            Root_Object.Relationships.objSSL5.Relationships_objSSL5_Type(newSSL5.all).idSSL5    := The_ID;
+            Root_Object.Relationships.objSSL5.Relationships_objSSL5_Type(newSSL5.all).idH       := The_ID;
             
             
             newSSL6 := Root_Object.Relationships.objSSL6.Create;
-            Root_Object.Relationships.objSSL6.Relationships_objSSL6_Type(newSSL6.all).idSSL6 := The_ID;
+            Root_Object.Relationships.objSSL6.Relationships_objSSL6_Type(newSSL6.all).idSSL6    := The_ID;
+            Root_Object.Relationships.objSSL6.Relationships_objSSL6_Type(newSSL6.all).idH       := The_ID;
             
             
             newSSL7 := Root_Object.Relationships.objSSL7.Create;
-            Root_Object.Relationships.objSSL7.Relationships_objSSL7_Type(newSSL7.all).idSSL7 := The_ID;
+            Root_Object.Relationships.objSSL7.Relationships_objSSL7_Type(newSSL7.all).idSSL7    := The_ID;
+            Root_Object.Relationships.objSSL7.Relationships_objSSL7_Type(newSSL7.all).idH       := The_ID;
             
             
             newSSL8 := Root_Object.Relationships.objSSL8.Create;
-            Root_Object.Relationships.objSSL8.Relationships_objSSL8_Type(newSSL8.all).idSSL8 := The_ID;
+            Root_Object.Relationships.objSSL8.Relationships_objSSL8_Type(newSSL8.all).idSSL8    := The_ID;
+            Root_Object.Relationships.objSSL8.Relationships_objSSL8_Type(newSSL8.all).idH       := The_ID;
             
             
             newSSL9 := Root_Object.Relationships.objSSL9.Create;
-            Root_Object.Relationships.objSSL9.Relationships_objSSL9_Type(newSSL9.all).idSSL9 := The_ID;
+            Root_Object.Relationships.objSSL9.Relationships_objSSL9_Type(newSSL9.all).idSSL9    := The_ID;
+            Root_Object.Relationships.objSSL9.Relationships_objSSL9_Type(newSSL9.all).idH       := The_ID;
             
             
             newSSL10 := Root_Object.Relationships.objSSL10.Create;
-            Root_Object.Relationships.objSSL10.Relationships_objSSL10_Type(newSSL10.all).idSSL10 := The_ID;
+            Root_Object.Relationships.objSSL10.Relationships_objSSL10_Type(newSSL10.all).idSSL10   := The_ID;
+            Root_Object.Relationships.objSSL10.Relationships_objSSL10_Type(newSSL10.all).idH       := The_ID;
             
             
             newSSL11 := Root_Object.Relationships.objSSL11.Create;
-            Root_Object.Relationships.objSSL11.Relationships_objSSL11_Type(newSSL11.all).idSSL11 := The_ID;
+            Root_Object.Relationships.objSSL11.Relationships_objSSL11_Type(newSSL11.all).idSSL11   := The_ID;
+            Root_Object.Relationships.objSSL11.Relationships_objSSL11_Type(newSSL11.all).idH       := The_ID;
             
             
             newSSSL1 := Root_Object.Relationships.objSSSL1.Create;
-            Root_Object.Relationships.objSSSL1.Relationships_objSSSL1_Type(newSSSL1.all).idSSSL1 := The_ID;
+            Root_Object.Relationships.objSSSL1.Relationships_objSSSL1_Type(newSSSL1.all).idSSSL1   := The_ID;
+            Root_Object.Relationships.objSSSL1.Relationships_objSSSL1_Type(newSSSL1.all).idH       := The_ID;
             
             
             newSSSL2 := Root_Object.Relationships.objSSSL2.Create;
-            Root_Object.Relationships.objSSSL2.Relationships_objSSSL2_Type(newSSSL2.all).idSSSL2 := The_ID;
+            Root_Object.Relationships.objSSSL2.Relationships_objSSSL2_Type(newSSSL2.all).idSSSL2   := The_ID;
+            Root_Object.Relationships.objSSSL2.Relationships_objSSSL2_Type(newSSSL2.all).idH       := The_ID;
             
             
             newFL := Root_Object.Relationships.FL.Create;
@@ -2622,13 +2647,14 @@ package body Relationships_M2_Middle_Navigation_Service is
             newMR := Root_Object.Relationships.MR.Create;
             Root_Object.Relationships.MR.Relationships_MR_Type(newMR.all).Right_Identifier := The_ID;
             
-            
-            newMA := Root_Object.Relationships.MA.Create;
+            newMA := Root_Object.Relationships.MA.Create_Unique;
             Root_Object.Relationships.MA.Relationships_MA_Type(newMA.all).Above_Data := The_ID;
             
             
             newMRA := Root_Object.Relationships.MRA.Create;
-            Root_Object.Relationships.MRA.Relationships_MRA_Type(newMRA.all).MRA_Identifier := The_ID;
+            Root_Object.Relationships.MRA.Relationships_MRA_Type(newMRA.all).MRA_Identifier      := The_ID;
+            Root_Object.Relationships.MRA.Relationships_MRA_Type(newMRA.all).Right_Identifier        := The_ID;
+            Root_Object.Relationships.MRA.Relationships_MRA_Type(newMRA.all).MFR_Identifier      := The_ID;
             
             
             newMFR := Root_Object.Relationships.MFR.Create;
@@ -5496,6 +5522,7 @@ package body Relationships_M2_Middle_Navigation_Service is
       Root_Object.Object_List.Destroy_List (SetM);
       Root_Object.Object_List.Destroy_List (Set_Of_Left);
       Root_Object.Object_List.Destroy_List (SetRight);
+      Root_Object.Object_List.Destroy_List (Set_Right2);
       Root_Object.Object_List.Destroy_List (SetMRA);
       Root_Object.Object_List.Destroy_List (SetMFR);
       Root_Object.Object_List.Destroy_List (SetAssoc);

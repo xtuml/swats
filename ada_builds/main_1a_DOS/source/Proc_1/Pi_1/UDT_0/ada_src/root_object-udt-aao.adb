@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -200,12 +200,27 @@ package body Root_Object.UDT.AAO is
 --*********************  Object Definition *****************************
 ------------------------------------------------------------------------
 
+   The_Test_Number_Value : Application_Types.Base_Integer_Type := Application_Types.Base_Integer_Type_first;
+--
+--ADATEST IGNORE_ON
+   function Obtain_Subsequent_The_Test_Number return Application_Types.Base_Integer_Type is
+   begin
+      The_Test_Number_Value :=
+         Application_Types.Base_Integer_Type'succ (The_Test_Number_Value);
+      return The_Test_Number_Value;
+   end Obtain_Subsequent_The_Test_Number;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
 --ADATEST IGNORE_ON
    function Get_The_Test_Number (
-      This_Object: Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
+      This_Object : Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
    begin
-      return UDT_AAO_Type (This_Object.all).The_Test_Number;
+       return UDT_AAO_Type (This_Object.all).The_Test_Number;
    end Get_The_Test_Number;
+
 --ADATEST IGNORE_OFF
 
 ------------------------------------------------------------------------
@@ -218,6 +233,7 @@ package body Root_Object.UDT.AAO is
       UDT_AAO_Type (This_Object.all).The_Test_Number :=
          The_Test_Number_Value;
    end Put_The_Test_Number;
+
 --ADATEST IGNORE_OFF
 
 ------------------------------------------------------------------------
@@ -326,9 +342,25 @@ package body Root_Object.UDT.AAO is
 --------------------------------------------------------------------------
 --
 
---------------------------------------------------------------------------
-   -- function Create_Unique is not available for this object as it does
-   -- not have a non referential identifying attribute.
+--ADATEST IGNORE_ON
+   function Create_Unique return Root_Object.Object_Access is
+
+   This_Object: Root_Object.Object_Access;
+
+   begin
+      --
+      -- get hold of a new instance
+      --
+      This_Object := Create;
+
+
+      UDT_AAO_Type(This_Object.all).The_Test_Number :=
+         Obtain_Subsequent_The_Test_Number;
+
+      return This_Object;
+
+   end Create_Unique;
+--ADATEST IGNORE_OFF
 --------------------------------------------------------------------------
 
 --ADATEST IGNORE_ON

@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -175,6 +175,10 @@ package Root_Object.Relationships.objR is
       -- Non initialised identifying non referential
       idR : Application_Types.Base_Integer_Type;
 
+      --
+      -- Non Identifying referential. Thou Shalt Not Use. 
+      -- idP : Application_Types.Base_Integer_Type;
+   
       --
       R21_A : Root_Object.Object_List.List_Header_Access_Type;
       R22_A : Root_Object.Object_Access := null;

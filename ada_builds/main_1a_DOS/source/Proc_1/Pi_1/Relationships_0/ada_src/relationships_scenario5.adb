@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -53,8 +53,8 @@
 -- with list for all objects, relationships, services and types used within this code fragment
 
 -- List of objects used
-with Root_Object.Relationships.MFR;
 with Root_Object.Relationships.MRA;
+with Root_Object.Relationships.MFR;
 with Root_Object.Relationships.MR;
 with Root_Object.Relationships.M;
 with Root_Object.Relationships.FL;
@@ -95,10 +95,10 @@ use type Root_Object.Object_Access;
       One_Right   : Root_Object.Object_Access;
       Two_Right   : Root_Object.Object_Access;
       Three_Right : Root_Object.Object_Access;
-      One_MRA     : Root_Object.Object_Access;
-      Two_MRA     : Root_Object.Object_Access;
       One_MFR     : Root_Object.Object_Access;
       Two_MFR     : Root_Object.Object_Access;
+      One_MRA     : Root_Object.Object_Access;
+      Two_MRA     : Root_Object.Object_Access;
       
       Test         : Application_Types.Base_Integer_Type := 1;
       Failure_Code : Application_Types.Base_Integer_Type := 1;
@@ -155,16 +155,6 @@ use type Root_Object.Object_Access;
       Root_Object.Relationships.MR.Relationships_MR_Type(Three_Right.all).Right_Data        := 0;
       
       
-      One_MRA := Root_Object.Relationships.MRA.Create;
-      Root_Object.Relationships.MRA.Relationships_MRA_Type(One_MRA.all).MRA_Identifier    := 1;
-      Root_Object.Relationships.MRA.Relationships_MRA_Type(One_MRA.all).MRA_Data          := 0;
-      
-      
-      Two_MRA := Root_Object.Relationships.MRA.Create;
-      Root_Object.Relationships.MRA.Relationships_MRA_Type(Two_MRA.all).MRA_Identifier    := 2;
-      Root_Object.Relationships.MRA.Relationships_MRA_Type(Two_MRA.all).MRA_Data          := 0;
-      
-      
       One_MFR := Root_Object.Relationships.MFR.Create;
       Root_Object.Relationships.MFR.Relationships_MFR_Type(One_MFR.all).MFR_Identifier    := 1;
       Root_Object.Relationships.MFR.Relationships_MFR_Type(One_MFR.all).MFR_Data          := 0;
@@ -173,6 +163,20 @@ use type Root_Object.Object_Access;
       Two_MFR := Root_Object.Relationships.MFR.Create;
       Root_Object.Relationships.MFR.Relationships_MFR_Type(Two_MFR.all).MFR_Identifier    := 2;
       Root_Object.Relationships.MFR.Relationships_MFR_Type(Two_MFR.all).MFR_Data          := 0;
+      
+      
+      One_MRA := Root_Object.Relationships.MRA.Create;
+      Root_Object.Relationships.MRA.Relationships_MRA_Type(One_MRA.all).MRA_Identifier    := 1;
+      Root_Object.Relationships.MRA.Relationships_MRA_Type(One_MRA.all).MRA_Data          := 0;
+      Root_Object.Relationships.MRA.Relationships_MRA_Type(One_MRA.all).Right_Identifier  := 1;
+      Root_Object.Relationships.MRA.Relationships_MRA_Type(One_MRA.all).MFR_Identifier    := 1;
+      
+      
+      Two_MRA := Root_Object.Relationships.MRA.Create;
+      Root_Object.Relationships.MRA.Relationships_MRA_Type(Two_MRA.all).MRA_Identifier    := 2;
+      Root_Object.Relationships.MRA.Relationships_MRA_Type(Two_MRA.all).MRA_Data          := 0;
+      Root_Object.Relationships.MRA.Relationships_MRA_Type(Two_MRA.all).Right_Identifier  := 1;
+      Root_Object.Relationships.MRA.Relationships_MRA_Type(Two_MRA.all).MFR_Identifier    := 2;
       
       
       -- --------------------------------------------------------------------

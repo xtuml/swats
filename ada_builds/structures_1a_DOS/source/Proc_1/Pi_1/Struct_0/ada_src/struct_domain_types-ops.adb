@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -96,6 +96,120 @@ use type Application_Types.Base_Text_Type;
 use type Application_Types.Time_Unit;
 
 package body Struct_Domain_Types.Ops is
+    
+   procedure Append (
+      A_A_Defined_IH : in     Root_Object.Object_Access;
+      To_Structure : in out Structure_and_IH_Type) is
+                       
+   Temp_Structure: Structure_and_IH_Type_Node_Access :=
+      new Structure_and_IH_Type_Node'(
+         A_Defined_IH  => A_A_Defined_IH,
+         Next_Structure     => null,
+         Previous_Structure => null);
+   begin
+    
+      if To_Structure.First_Entry = null then
+         To_Structure.Last_Entry := Temp_Structure;
+      else
+         To_Structure.First_Entry.Previous_Structure := Temp_Structure;
+         Temp_Structure.Next_Structure := To_Structure.First_Entry;
+      end if;
+
+      To_Structure.First_Entry := Temp_Structure;
+      To_Structure.Number_Of_Entries := To_Structure.Number_Of_Entries + 1;
+
+   end Append;
+--  --
+--  -------------------------------------------------------------------------------------------
+--  --
+   procedure Extract (
+      A_A_Defined_IH :    out  Root_Object.Object_Access ;
+      From_Structure : in    Structure_and_IH_Type) is
+                            
+   begin
+      -- SRLE100001553
+      -- Remove check on null input parameter, thus if the From_Structure is
+      -- empty, an exception will be raised. We know that in order to get here, the structure
+      -- has at least one entry in it. Any attempt to extract from an empty structure will 
+      -- raise a constraint error exception. You have been warned.
+
+      --
+      -- set output parameter to be oldest entry (in time)
+      --
+      -- extract the parameters
+      A_A_Defined_IH := From_Structure.Iterator.all.A_Defined_IH;
+      From_Structure.Iterator.all := From_Structure.Iterator.all.Previous_Structure;
+
+   end Extract;
+--  --
+--  -------------------------------------------------------------------------------------------
+--  --
+   procedure Go_To_Start (Of_Structure : in Structure_and_IH_Type) is
+   begin
+      if Of_Structure.Last_Entry /= null then
+         Of_Structure.Iterator.all := Of_Structure.Last_Entry;
+      end if;
+   end Go_To_Start;
+--  --
+--  -------------------------------------------------------------------------------------------
+--  --
+   function Not_Empty (In_Structure : Structure_and_IH_Type) return boolean is
+   begin
+      return Count_Of (In_Structure) /= 0;
+   end Not_Empty;
+--  --
+--  -------------------------------------------------------------------------------------------
+--  --
+   function  Count_Of    (In_Structure : Structure_and_IH_Type) return Application_Types.Base_Integer_Type is
+      Temp_Count: Application_Types.Base_Integer_Type := 0;
+   begin
+      Temp_Count := In_Structure.Number_Of_Entries;
+      return Temp_Count;
+   end Count_Of;
+--  --
+--  -------------------------------------------------------------------------------------------
+--  --
+   procedure Initialise (Object : in out Structure_and_IH_Type) is
+
+      Next:     Structure_and_IH_Type_Node_Access;
+      Old_Cell: Structure_and_IH_Type_Node_Access;
+     
+      procedure Free is new Ada.Unchecked_Deallocation (
+         Object => Structure_and_IH_Type_Node, 
+         Name   => Structure_and_IH_Type_Node_Access);
+               
+   begin
+
+      if Not_Empty(Object) then
+
+         -- SRLE100003353
+         -- Belt and braces approach is no longer appropriate.
+         -- First_Entry will always contain data if the structure count is non-zero.
+         -- If it doesn't then the data structure has been corrupted somehow; there
+         -- is no way back from that.
+         -- if Object.First_Entry /= null then
+
+            Next := Object.First_Entry;
+
+            while Next /= null loop
+               Old_Cell := Next;
+               Next := Next.Next_Structure;
+               Free (Old_Cell);
+            end loop;
+
+         -- end if;
+
+         Object.Iterator.all := null;
+         Object.First_Entry  := null;
+         Object.Last_Entry   := null;
+         Object.Number_Of_Entries := 0;
+
+      end if;
+
+   end Initialise;
+--  --
+--  -------------------------------------------------------------------------------------------
+--  --
     
    procedure Append (
       A_Basic_Integer : in    Application_Types.Base_Integer_Type;
@@ -413,120 +527,6 @@ package body Struct_Domain_Types.Ops is
       procedure Free is new Ada.Unchecked_Deallocation (
          Object => UDT_Structure_Type_Node, 
          Name   => UDT_Structure_Type_Node_Access);
-               
-   begin
-
-      if Not_Empty(Object) then
-
-         -- SRLE100003353
-         -- Belt and braces approach is no longer appropriate.
-         -- First_Entry will always contain data if the structure count is non-zero.
-         -- If it doesn't then the data structure has been corrupted somehow; there
-         -- is no way back from that.
-         -- if Object.First_Entry /= null then
-
-            Next := Object.First_Entry;
-
-            while Next /= null loop
-               Old_Cell := Next;
-               Next := Next.Next_Structure;
-               Free (Old_Cell);
-            end loop;
-
-         -- end if;
-
-         Object.Iterator.all := null;
-         Object.First_Entry  := null;
-         Object.Last_Entry   := null;
-         Object.Number_Of_Entries := 0;
-
-      end if;
-
-   end Initialise;
---  --
---  -------------------------------------------------------------------------------------------
---  --
-    
-   procedure Append (
-      A_A_Defined_IH : in     Root_Object.Object_Access;
-      To_Structure : in out Structure_and_IH_Type) is
-                       
-   Temp_Structure: Structure_and_IH_Type_Node_Access :=
-      new Structure_and_IH_Type_Node'(
-         A_Defined_IH  => A_A_Defined_IH,
-         Next_Structure     => null,
-         Previous_Structure => null);
-   begin
-    
-      if To_Structure.First_Entry = null then
-         To_Structure.Last_Entry := Temp_Structure;
-      else
-         To_Structure.First_Entry.Previous_Structure := Temp_Structure;
-         Temp_Structure.Next_Structure := To_Structure.First_Entry;
-      end if;
-
-      To_Structure.First_Entry := Temp_Structure;
-      To_Structure.Number_Of_Entries := To_Structure.Number_Of_Entries + 1;
-
-   end Append;
---  --
---  -------------------------------------------------------------------------------------------
---  --
-   procedure Extract (
-      A_A_Defined_IH :    out  Root_Object.Object_Access ;
-      From_Structure : in    Structure_and_IH_Type) is
-                            
-   begin
-      -- SRLE100001553
-      -- Remove check on null input parameter, thus if the From_Structure is
-      -- empty, an exception will be raised. We know that in order to get here, the structure
-      -- has at least one entry in it. Any attempt to extract from an empty structure will 
-      -- raise a constraint error exception. You have been warned.
-
-      --
-      -- set output parameter to be oldest entry (in time)
-      --
-      -- extract the parameters
-      A_A_Defined_IH := From_Structure.Iterator.all.A_Defined_IH;
-      From_Structure.Iterator.all := From_Structure.Iterator.all.Previous_Structure;
-
-   end Extract;
---  --
---  -------------------------------------------------------------------------------------------
---  --
-   procedure Go_To_Start (Of_Structure : in Structure_and_IH_Type) is
-   begin
-      if Of_Structure.Last_Entry /= null then
-         Of_Structure.Iterator.all := Of_Structure.Last_Entry;
-      end if;
-   end Go_To_Start;
---  --
---  -------------------------------------------------------------------------------------------
---  --
-   function Not_Empty (In_Structure : Structure_and_IH_Type) return boolean is
-   begin
-      return Count_Of (In_Structure) /= 0;
-   end Not_Empty;
---  --
---  -------------------------------------------------------------------------------------------
---  --
-   function  Count_Of    (In_Structure : Structure_and_IH_Type) return Application_Types.Base_Integer_Type is
-      Temp_Count: Application_Types.Base_Integer_Type := 0;
-   begin
-      Temp_Count := In_Structure.Number_Of_Entries;
-      return Temp_Count;
-   end Count_Of;
---  --
---  -------------------------------------------------------------------------------------------
---  --
-   procedure Initialise (Object : in out Structure_and_IH_Type) is
-
-      Next:     Structure_and_IH_Type_Node_Access;
-      Old_Cell: Structure_and_IH_Type_Node_Access;
-     
-      procedure Free is new Ada.Unchecked_Deallocation (
-         Object => Structure_and_IH_Type_Node, 
-         Name   => Structure_and_IH_Type_Node_Access);
                
    begin
 

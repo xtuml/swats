@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -61,11 +61,11 @@ with Root_Object.Function_Calls.TD;
 
 -- List of services used
 with Function_Calls_Function_Calls10_Call_A_Service;
-with Function_Calls_Function_Calls12_Test_IH_Params_Service;
+with Function_Calls_objC1_Test_IH_Params_Service;
 with Function_Calls_objA5_Call_To_Self_Service;
 with Function_Calls_Function_Calls8_Call_To_Self_Service;
 with Function_Calls_Function_Calls6_Receive_Enumeration_Service;
-with Function_Calls_Function_Calls4_Perform_Service_In_Tight_Loop_Service;
+with Function_Calls_ATO1_Perform_Service_In_Tight_Loop_Service;
 
 -- List of bridges used
 with Function_Calls_NTB3_Call_Object_Sync_Service_Bridge;
@@ -109,6 +109,7 @@ use type Root_Object.Object_Access;
       
       Test               : Application_Types.Base_Integer_Type := 1;
       loop_counter       : Application_Types.Base_Integer_Type := 1;
+      ato_counter        : Application_Types.Base_Integer_Type := 1;
       target             : Application_Types.Base_Integer_Type := 1;
       Tight_Return_Value : Application_Types.Base_Integer_Type := 1;
       Expected_Result    : Application_Types.Base_Integer_Type := 1;
@@ -161,10 +162,12 @@ use type Root_Object.Object_Access;
       --  Don't delete the object
       -- -------------------------------------------------------------------------
       loop_counter := 1;
+      ato_counter  := 1;
       
       loop
          
          a_tight_instance := Root_Object.Function_Calls.ATO.Create;
+         Root_Object.Function_Calls.ATO.Function_Calls_ATO_Type(a_tight_instance.all).ato_id          := ato_counter;
          Root_Object.Function_Calls.ATO.Function_Calls_ATO_Type(a_tight_instance.all).Start_Value     := Test;
          Root_Object.Function_Calls.ATO.Function_Calls_ATO_Type(a_tight_instance.all).Increment_Value := 10;
          Root_Object.Function_Calls.ATO.Function_Calls_ATO_Type(a_tight_instance.all).Current_State   := Root_Object.Function_Calls.ATO.Idle;
@@ -185,6 +188,7 @@ use type Root_Object.Object_Access;
          end;
          Test         := Test + 1;
          loop_counter := loop_counter + 1;
+         ato_counter  := ato_counter + 1;
          exit when loop_counter =  6;
       end loop;
       
@@ -198,6 +202,7 @@ use type Root_Object.Object_Access;
       loop
          
          a_tight_instance := Root_Object.Function_Calls.ATO.Create;
+         Root_Object.Function_Calls.ATO.Function_Calls_ATO_Type(a_tight_instance.all).ato_id          := ato_counter;
          Root_Object.Function_Calls.ATO.Function_Calls_ATO_Type(a_tight_instance.all).Start_Value     := Test;
          Root_Object.Function_Calls.ATO.Function_Calls_ATO_Type(a_tight_instance.all).Increment_Value := 10;
          Root_Object.Function_Calls.ATO.Function_Calls_ATO_Type(a_tight_instance.all).Current_State   := Root_Object.Function_Calls.ATO.Idle;
@@ -218,6 +223,7 @@ use type Root_Object.Object_Access;
          end;
          Test         := Test + 1;
          loop_counter := loop_counter + 1;
+         ato_counter  := ato_counter + 1;
          exit when loop_counter =  6;
       end loop;
       
@@ -353,12 +359,13 @@ use type Root_Object.Object_Access;
          
          
          a_tight_instance := Root_Object.Function_Calls.ATO.Create;
+         Root_Object.Function_Calls.ATO.Function_Calls_ATO_Type(a_tight_instance.all).ato_id          := ato_counter;
          Root_Object.Function_Calls.ATO.Function_Calls_ATO_Type(a_tight_instance.all).Start_Value     := Test;
          Root_Object.Function_Calls.ATO.Function_Calls_ATO_Type(a_tight_instance.all).Increment_Value := 10;
          Root_Object.Function_Calls.ATO.Function_Calls_ATO_Type(a_tight_instance.all).Current_State   := Root_Object.Function_Calls.ATO.Idle;
          
          
-         Function_Calls_Function_Calls4_Perform_Service_In_Tight_Loop_Service.Function_Calls_Function_Calls4_Perform_Service_In_Tight_Loop (
+         Function_Calls_ATO1_Perform_Service_In_Tight_Loop_Service.Function_Calls_ATO1_Perform_Service_In_Tight_Loop (
             A_Tight_Input_Parameter  => a_tight_instance,
             This_Test_Number         => Test,
             Testing_For_What         => "Tightly controlled IH           ",
@@ -386,6 +393,7 @@ use type Root_Object.Object_Access;
          
          Test         := Test + 1;
          loop_counter := loop_counter + 1;
+         ato_counter  := ato_counter + 1;
          
          exit when loop_counter =  6;
       end loop;
@@ -619,12 +627,12 @@ use type Root_Object.Object_Access;
       Root_Object.Function_Calls.objC.Function_Calls_objC_Type(InstC.all).RealC           := 99.9;
       
       
-      Function_Calls_Function_Calls12_Test_IH_Params_Service.Function_Calls_Function_Calls12_Test_IH_Params (
+      Function_Calls_objC1_Test_IH_Params_Service.Function_Calls_objC1_Test_IH_Params (
          Input_IH  => InstC,
          Return_IH => ReturnInst);
       
       
-      if Root_Object.Function_Calls.objC.Function_Calls_objC_type(ReturnInst.all).idC =  1000 then
+      if Root_Object.Function_Calls.objC.Function_Calls_objC_type(ReturnInst.all).idC =  100 then
          
          if Root_Object.Function_Calls.objC.Function_Calls_objC_type(ReturnInst.all).IntC =  2000 then
             

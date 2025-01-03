@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -236,6 +236,15 @@ package body Root_Object.Relationships.objR is
 
 --ADATEST IGNORE_OFF
 
+------------------------------------------------------------------------
+   --
+   -- procedure Put_idP and 
+   --
+   -- function Get_idP
+   --
+   -- have not been generated for idP
+   -- as this attribute is non-identifying referential.
+   --
 ------------------------------------------------------------------------
 
 

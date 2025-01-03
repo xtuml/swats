@@ -171,7 +171,7 @@ INSERT INTO O_BATTR_PROXY
 INSERT INTO O_ATTR
 	VALUES ("4250e7da-eb52-47b9-b9ab-2a71779f7b19",
 	"b47e87d0-8b20-47aa-b2d2-6e87ee2e8436",
-	"00000000-0000-0000-0000-000000000000",
+	"364accd4-896c-44be-8022-f43666ceebad",
 	'Domain_Number',
 	'',
 	'',
@@ -180,9 +180,32 @@ INSERT INTO O_ATTR
 	"ba5eda7a-def5-0000-0000-000000000007",
 	'',
 	'');
+INSERT INTO O_NBATTR
+	VALUES ("364accd4-896c-44be-8022-f43666ceebad",
+	"b47e87d0-8b20-47aa-b2d2-6e87ee2e8436");
+INSERT INTO O_BATTR
+	VALUES ("364accd4-896c-44be-8022-f43666ceebad",
+	"b47e87d0-8b20-47aa-b2d2-6e87ee2e8436");
+INSERT INTO O_ATTR
+	VALUES ("364accd4-896c-44be-8022-f43666ceebad",
+	"b47e87d0-8b20-47aa-b2d2-6e87ee2e8436",
+	"00000000-0000-0000-0000-000000000000",
+	'duplicated_id',
+	'',
+	'',
+	'duplicated_id',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000005",
+	'',
+	'');
 INSERT INTO O_ID
 	VALUES (0,
 	"b47e87d0-8b20-47aa-b2d2-6e87ee2e8436");
+INSERT INTO O_OIDA
+	VALUES ("364accd4-896c-44be-8022-f43666ceebad",
+	"b47e87d0-8b20-47aa-b2d2-6e87ee2e8436",
+	0,
+	'duplicated_id');
 INSERT INTO O_ID
 	VALUES (1,
 	"b47e87d0-8b20-47aa-b2d2-6e87ee2e8436");

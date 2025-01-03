@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -53,12 +53,11 @@
 -- with list for all objects, relationships, services and types used within this code fragment
 
 -- List of objects used
-with Root_Object.SBONE.VSD;
 with Root_Object.SBONE.SBD;
 with Root_Object.SBONE.TD;
 
 -- List of bridges used
-with SBONE_ITGWO4_The_IH_Struct_Across_Bridge_Bridge;
+with SBONE_RPT4_Test_Unsupported_Bridge;
 with SBONE_RPT3_Test_Failed_Bridge;
 with SBONE_RPT2_Test_Passed_Bridge;
 with SBONE_ITGWO1_Across_The_Great_Divide_Bridge;
@@ -67,7 +66,6 @@ with SBONE_RPT1_Start_Test_Bridge;
 -- List of domain types used
 with SBONE_Domain_Types;
 with SBONE_Domain_Types.Ops;
-use type SBONE_Domain_Types.VSD_Struct;
 use type SBONE_Domain_Types.Source_Structure_Type;
 use type SBONE_Domain_Types.Colour_Type;
 
@@ -88,9 +86,6 @@ use type Root_Object.Object_Access;
       Object_One   : Root_Object.Object_Access;
       Object_Two   : Root_Object.Object_Access;
       Object_Three : Root_Object.Object_Access;
-      Simple_ObjA  : Root_Object.Object_Access;
-      Simple_ObjB  : Root_Object.Object_Access;
-      Simple_ObjC  : Root_Object.Object_Access;
       
       Source_Structure_One   : SBONE_Domain_Types.Source_Structure_Type;
       Source_Structure_Two   : SBONE_Domain_Types.Source_Structure_Type;
@@ -98,19 +93,10 @@ use type Root_Object.Object_Access;
       Returned_Structure_1   : SBONE_Domain_Types.Source_Structure_Type;
       Returned_Structure_2   : SBONE_Domain_Types.Source_Structure_Type;
       Returned_Structure_3   : SBONE_Domain_Types.Source_Structure_Type;
-      Decomposed_Struct      : SBONE_Domain_Types.VSD_Struct;
-      
-      A_Real : Application_Types.Base_Float_Type := 1.0;
       
       Test                  : Application_Types.Base_Integer_Type := 1;
       Elements_In_Structure : Application_Types.Base_Integer_Type := 1;
       Local_Test            : Application_Types.Base_Integer_Type := 1;
-      ValA                  : Application_Types.Base_Integer_Type := 1;
-      ValB                  : Application_Types.Base_Integer_Type := 1;
-      ValC                  : Application_Types.Base_Integer_Type := 1;
-      ValD                  : Application_Types.Base_Integer_Type := 1;
-      A_Ref                 : Application_Types.Base_Integer_Type := 1;
-      A_Int                 : Application_Types.Base_Integer_Type := 1;
       
       Result : Boolean := Application_Types.Boolean_first;
       
@@ -411,131 +397,73 @@ use type Root_Object.Object_Access;
          Invoking_Object => "Scenario                        ",
          Purpose         => "Struct IH to bridge             ");
       
-      -- {Decomposed_Struct} is VSD_Struct
-      SBONE_Domain_Types.Ops.Initialise (Decomposed_Struct);
       
-      ValA := 0;
-      ValB := 0;
-      ValC := 0;
-      ValD := 0;
+      --    {Decomposed_Struct} is VSD_Struct
+      --    ValA = 0
+      --    ValB = 0
+      --    ValC = 0
+      --    ValD = 0
+      --    Simple_ObjA = create Very_Simple_Data_Object with Object_Reference_VSD  = 1 &\
+      --                                                      Object_Simple_Integer = 1 &\
+      --                                                      Object_Simple_Real    = 1.0
+      --    Simple_ObjB = create Very_Simple_Data_Object with Object_Reference_VSD  = 2 &\
+      --                                                      Object_Simple_Integer = 2 &\
+      --                                                      Object_Simple_Real    = 2.0
+      --    Simple_ObjC = create Very_Simple_Data_Object with Object_Reference_VSD  = 3 &\
+      --                                                      Object_Simple_Integer = 3 &\
+      --                                                      Object_Simple_Real    = 3.0
+      --    [{Decomposed_Struct}] = ITGWO4:The_IH_Struct_Across_Bridge[Simple_ObjA, Simple_ObjB, Simple_ObjC]
+      --    for [A_Ref, A_Int, A_Real] in {Decomposed_Struct} do
+      --       if A_Ref = 1 then
+      --  
+      --          if A_Int = 1 then
+      --             if A_Real = 1.0 then
+      --                ValA = 10
+      --             else
+      --                ValA = -10
+      --             endif
+      --          else
+      --             ValA = -11
+      --          endif
+      --       else
+      --          if A_Ref = 2 then
+      --      
+      --             if A_Int = 2 then
+      --                if A_Real = 2.0 then
+      --                   ValB = 20
+      --                else
+      --                   ValB = -20
+      --                endif
+      --             else
+      --                ValB = -21
+      --             endif
+      --          else
+      --             if A_Ref = 3 then
+      --                if A_Int = 3 then
+      --                   if A_Real = 3.0 then
+      --                      ValC = 30
+      --                   else
+      --                      ValC = -3
+      --                   endif
+      --                else
+      --                   ValC = -31
+      --                endif
+      --             else
+      --                ValD = -40
+      --             endif
+      --          endif
+      --       endif
+      --    endfor
+      --    if ValA = 10 and ValB = 20 and ValC = 30 and ValD = 0 then
+      --       [] = RPT2:Test_Passed["Struct IH to bridge", Test, 0]
+      --    else
+      --       [] = RPT3:Test_Failed["Struct IH to bridge", Test, -10]
+      --    endif
+      --   Note with MASL, instance handle types can only be private.
+      --   Therefore this test is now unsupported and test action code has been commented.
       
-      Simple_ObjA := Root_Object.SBONE.VSD.Create;
-      Root_Object.SBONE.VSD.SBONE_VSD_Type(Simple_ObjA.all).Object_Reference_VSD  := 1;
-      Root_Object.SBONE.VSD.SBONE_VSD_Type(Simple_ObjA.all).Object_Simple_Integer := 1;
-      Root_Object.SBONE.VSD.SBONE_VSD_Type(Simple_ObjA.all).Object_Simple_Real    := 1.0;
-      
-      
-      Simple_ObjB := Root_Object.SBONE.VSD.Create;
-      Root_Object.SBONE.VSD.SBONE_VSD_Type(Simple_ObjB.all).Object_Reference_VSD  := 2;
-      Root_Object.SBONE.VSD.SBONE_VSD_Type(Simple_ObjB.all).Object_Simple_Integer := 2;
-      Root_Object.SBONE.VSD.SBONE_VSD_Type(Simple_ObjB.all).Object_Simple_Real    := 2.0;
-      
-      
-      Simple_ObjC := Root_Object.SBONE.VSD.Create;
-      Root_Object.SBONE.VSD.SBONE_VSD_Type(Simple_ObjC.all).Object_Reference_VSD  := 3;
-      Root_Object.SBONE.VSD.SBONE_VSD_Type(Simple_ObjC.all).Object_Simple_Integer := 3;
-      Root_Object.SBONE.VSD.SBONE_VSD_Type(Simple_ObjC.all).Object_Simple_Real    := 3.0;
-      
-      
-      SBONE_ITGWO4_The_IH_Struct_Across_Bridge_Bridge.SBONE_ITGWO4_The_IH_Struct_Across_Bridge (
-         The_IHA           => Simple_ObjA,
-         The_IHB           => Simple_ObjB,
-         The_IHC           => Simple_ObjC,
-         Decomposed_Struct => Decomposed_Struct);
-      
-      --
-      -- start of unpacking structure
-      
-      declare
-         use type Root_Object.Object_List.Node_Access_Type;
-      begin
-         SBONE_Domain_Types.Ops.Go_To_Start (Decomposed_Struct);
-         for i in 1 .. SBONE_Domain_Types.Ops.Count_Of (In_Structure => Decomposed_Struct) loop
-            SBONE_Domain_Types.Ops.Extract (
-               A_Ref_Type       => A_Ref,
-               A_Int_Type       => A_Int,
-               A_Real_Type      => A_Real,
-               From_Structure   => Decomposed_Struct);
-            
-            
-            if A_Ref =  1 then
-               
-               if A_Int =  1 then
-                  
-                  if A_Real =  1.0 then
-                     ValA := 10;
-                  else
-                     ValA := -10;
-                  end if;
-                  
-               else
-                  ValA := -11;
-               end if;
-               
-            else
-               
-               if A_Ref =  2 then
-                  
-                  if A_Int =  2 then
-                     
-                     if A_Real =  2.0 then
-                        ValB := 20;
-                     else
-                        ValB := -20;
-                     end if;
-                     
-                  else
-                     ValB := -21;
-                  end if;
-                  
-               else
-                  
-                  if A_Ref =  3 then
-                     
-                     if A_Int =  3 then
-                        
-                        if A_Real =  3.0 then
-                           ValC := 30;
-                        else
-                           ValC := -3;
-                        end if;
-                        
-                     else
-                        ValC := -31;
-                     end if;
-                     
-                  else
-                     ValD := -40;
-                  end if;
-                  
-               end if;
-               
-            end if;
-            
-         end loop; -- end of i in 1 .. SBONE_Domain_Types.Ops.Count_Of (In_Structure => Decomposed_Struct) loop
-         
-      end;
-      -- end of unpacking structure
-      --
-      
-      
-      if ValA =  10 and then
-         ValB =  20 and then
-         ValC =  30 and then
-         ValD =  0 then
-         
-         SBONE_RPT2_Test_Passed_Bridge.SBONE_RPT2_Test_Passed (
-            Test_Object_Domain => "Struct IH to bridge             ",
-            Test_Number        => Test,
-            Test_Value         => 0);
-         
-      else
-         SBONE_RPT3_Test_Failed_Bridge.SBONE_RPT3_Test_Failed (
-            Failed_Domain_Object => "Struct IH to bridge             ",
-            Failed_Test_Number   => Test,
-            Failed_Test_Value    => -10);
-         
-      end if;
+      SBONE_RPT4_Test_Unsupported_Bridge.SBONE_RPT4_Test_Unsupported (
+         Unsupported_Test_Number => Test);
       
       Test := Test + 1;
       

@@ -91,8 +91,8 @@ Duplicated Tests For Domain   0
 Test Purpose                 Struct IH to bridge             
 Requirement Identifier(s)    Null Requid                     
 
-Result data                  Struct IH to bridge             
-Test Result                  PASSED                          with  0
+Result data                                                  
+Test Result                  UNSUPPORTED                     with  0
 
 ---------------------------------------------------------------------------
 Domain                       Structure Bridge One            
@@ -110,9 +110,10 @@ Test Result                  PASSED                          with  0
 
 Overall Results for domain Structure Bridge One            
 Total Tests        9
-Passed Tests       9
+Passed Tests       8
 Failed Tests       0
-Unsupported Tests  0
+Unsupported Tests  1
+ test  8 was testing for Struct IH to bridge             
 Total Duplicated Tests   0
 
 ***************************************************************************

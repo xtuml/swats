@@ -802,26 +802,6 @@ INSERT INTO C_EP_PROXY
 	5,
 	'../Shared/TAGS/TAGS.xtuml');
 INSERT INTO SPR_PEP
-	VALUES ("d9b8a542-6565-48de-8eed-e7ab077cd890",
-	"6d011e13-cd51-47bc-a4ab-e0a8cd92a77a",
-	"cfe61873-7d46-4f16-8f92-873d996cfa16");
-INSERT INTO SPR_PO
-	VALUES ("d9b8a542-6565-48de-8eed-e7ab077cd890",
-	'Set_Environment',
-	'',
-	'',
-	3,
-	6,
-	0);
-INSERT INTO C_EP_PROXY
-	VALUES ("6d011e13-cd51-47bc-a4ab-e0a8cd92a77a",
-	"a19b1345-da02-4ec0-affa-9dd9532e229e",
-	0,
-	'Set_Environment',
-	'',
-	6,
-	'../Shared/TAGS/TAGS.xtuml');
-INSERT INTO SPR_PEP
 	VALUES ("6edcaf20-7dff-4c61-b5ec-802557060845",
 	"5ebcb312-30a0-445c-92fb-98146305d072",
 	"cfe61873-7d46-4f16-8f92-873d996cfa16");
@@ -1214,13 +1194,13 @@ INSERT INTO SPR_RO
 	'Test_Failed',
 	'',
 	'
-the_test = Failed_Test_Number
-domain   = Failed_Domain_Object
-fail_value = Failed_Test_Value
+the_test     = Failed_Test_Number
+domain_local = Failed_Domain_Object
+fail_value   = Failed_Test_Value
 
 #$INLINE
 #fprintf(stderr, "Test Number %d has FAILED with %d\n", the_test, fail_value);
-#fprintf(stderr, "Testing for %s\n", domain);
+#fprintf(stderr, "Testing for %s\n", domain_local);
 #$ENDINLINE
 
 

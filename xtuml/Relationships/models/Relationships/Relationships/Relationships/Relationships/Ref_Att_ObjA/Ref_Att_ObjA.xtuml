@@ -40,7 +40,7 @@ INSERT INTO O_REF
 	'',
 	'Ref_Att_ObjA',
 	'RAOA_id',
-	'R23.''has''');
+	'R23.''has_2''');
 INSERT INTO R_RGO_PROXY
 	VALUES ("4be3b22a-50ed-4494-822b-463dc99cd989",
 	"6be21a09-bea9-448f-8d5f-42fa59bca818",
@@ -87,7 +87,7 @@ INSERT INTO O_REF
 	'',
 	'Ref_Att_ObjA',
 	'RAOA_id',
-	'R17.''has''');
+	'R17.''has_2''');
 INSERT INTO R_RGO_PROXY
 	VALUES ("4be3b22a-50ed-4494-822b-463dc99cd989",
 	"400e4a77-6e4e-4696-87e7-529d3e08b6eb",

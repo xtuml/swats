@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -156,7 +156,9 @@ use type Root_Object.Object_Access;
          --  Object_DO
          
          newDO := Root_Object.Relationships.objDO.Create;
-         Root_Object.Relationships.objDO.Relationships_objDO_Type(newDO.all).idDO := Count;
+         Root_Object.Relationships.objDO.Relationships_objDO_Type(newDO.all).idDO        := Count;
+         Root_Object.Relationships.objDO.Relationships_objDO_Type(newDO.all).idO         := 
+            Root_Object.Relationships.objO.Relationships_objO_type(newO.all).idO;
          
          Count := Count - 1;
          

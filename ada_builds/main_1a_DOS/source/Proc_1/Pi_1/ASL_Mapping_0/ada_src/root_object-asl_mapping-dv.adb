@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -200,6 +200,44 @@ package body Root_Object.ASL_Mapping.DV is
 --*********************  Object Definition *****************************
 ------------------------------------------------------------------------
 
+   dv_id_Value : Application_Types.Base_Integer_Type := Application_Types.Base_Integer_Type_first;
+--
+--ADATEST IGNORE_ON
+   function Obtain_Subsequent_dv_id return Application_Types.Base_Integer_Type is
+   begin
+      dv_id_Value :=
+         Application_Types.Base_Integer_Type'succ (dv_id_Value);
+      return dv_id_Value;
+   end Obtain_Subsequent_dv_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
+   function Get_dv_id (
+      This_Object : Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
+   begin
+       return ASL_Mapping_DV_Type (This_Object.all).dv_id;
+   end Get_dv_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
+   procedure Put_dv_id (
+      This_Object : in Root_Object.Object_Access;
+      dv_id_Value : in Application_Types.Base_Integer_Type) is
+   begin
+      ASL_Mapping_DV_Type (This_Object.all).dv_id :=
+         dv_id_Value;
+   end Put_dv_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
 --ADATEST IGNORE_ON
    function Get_The_Integer (
       This_Object: Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
@@ -307,6 +345,7 @@ package body Root_Object.ASL_Mapping.DV is
    
       else
          This_Object := Free_List.First_Entry;
+         ASL_Mapping_DV_Type(This_Object.all).dv_id := Application_Types.Base_Integer_Type_First;
          ASL_Mapping_DV_Type(This_Object.all).The_Integer := Application_Types.Base_Integer_Type_First;
          ASL_Mapping_DV_Type(This_Object.all).The_Real := Application_Types.Base_Float_Type_First;
          ASL_Mapping_DV_Type(This_Object.all).The_Text := Application_Types.Base_Text_Type_First;
@@ -349,9 +388,25 @@ package body Root_Object.ASL_Mapping.DV is
 --------------------------------------------------------------------------
 --
 
---------------------------------------------------------------------------
-   -- function Create_Unique is not available for this object as it does
-   -- not have a non referential identifying attribute.
+--ADATEST IGNORE_ON
+   function Create_Unique return Root_Object.Object_Access is
+
+   This_Object: Root_Object.Object_Access;
+
+   begin
+      --
+      -- get hold of a new instance
+      --
+      This_Object := Create;
+
+
+      ASL_Mapping_DV_Type(This_Object.all).dv_id :=
+         Obtain_Subsequent_dv_id;
+
+      return This_Object;
+
+   end Create_Unique;
+--ADATEST IGNORE_OFF
 --------------------------------------------------------------------------
 
 --ADATEST IGNORE_ON

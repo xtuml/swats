@@ -65,7 +65,7 @@ endif
    # Further attempts to create an object of this sort should be met with
    # complete indifference by WACA.
 
-   # Another_Passive_Object = create A_Passive_Static_Object with Size = 2 & Unique_Identifier = 2
+   # Another_Passive_Object = create unique A_Passive_Static_Object with Size = 2
 
    if The_Passive_Object      = UNDEFINED then
       # Test Failed
@@ -87,7 +87,7 @@ endif
    # Creation of another singleton object will cause unpredictable actions by WACA, therefor this
    # test is unsupported for the moment.
 
-   # Another_Passive_Object = create A_Passive_Static_Object with Size = 2 & Unique_Identifier = 2
+   # Another_Passive_Object = create unique A_Passive_Static_Object with Size = 2
 
 
    [] = RPT4:Test_Unsupported[Local_Test]
@@ -203,7 +203,7 @@ Returned_Test_Number = Local_Test
 
 ',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	2,
 	1);
@@ -324,12 +324,12 @@ endif
 
    [] = RPT1:Start_Test[Local_Test, "1241-0000-01-0128", "TAGGING", "Singleton passive object", "Create one singleton instance"]
 
-   The_Passive_Object = create A_Passive_Static_Object with  Unique_Identifier = 5 & Size = 1
+   The_Passive_Object = create unique A_Passive_Static_Object with Size = 1
 
    # Further attempts to create an object of this sort should be met with
    # complete indifference by WACA.
 
-   # Another_Passive_Object = create A_Passive_Static_Object with Unique_Identifier = 6 & Size = 2
+   # Another_Passive_Object = create unique A_Passive_Static_Object with Size = 2
 
    if The_Passive_Object = UNDEFINED then
       Failure_Code = -5
@@ -347,7 +347,7 @@ endif
 
    [] = RPT1:Start_Test[Local_Test, "Null Requid", "TAGGING", "Singleton passive object", "Create another singleton instance"]
 
-   #Another_Passive_Object = create A_Passive_Static_Object with Unique_Identifier = 6 & Size = 2
+   #Another_Passive_Object = create unique A_Passive_Static_Object with Size = 2
 
    [] = RPT4:Test_Unsupported[Local_Test]
 
@@ -410,7 +410,7 @@ endif
 
    # Having sucessfully deleted the passive static object
    # let''s make the attempt to create a new one
-   A_New_Passive_Object = create A_Passive_Static_Object with Unique_Identifier = 8 & Size = 3
+   A_New_Passive_Object = create unique A_Passive_Static_Object with Size = 3
 
    if A_New_Passive_Object = UNDEFINED then
       Failure_Code = -8
@@ -455,7 +455,7 @@ endif
 
 Returned_Test_Number = Local_Test',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	2,
 	4);
@@ -545,58 +545,6 @@ INSERT INTO S_SPARM
 	'');
 INSERT INTO PE_PE
 	VALUES ("f94ff1a7-fdec-4c7b-b871-2ea8f926e339",
-	1,
-	"5ef6725d-bcd7-4754-ae00-eb6fb13de358",
-	"00000000-0000-0000-0000-000000000000",
-	1);
-INSERT INTO S_SYNC
-	VALUES ("44ac98c2-efa3-48cd-93ee-e48aefb9860e",
-	"00000000-0000-0000-0000-000000000000",
-	'Set_Environment',
-	' C insert to set attribute for I-SIM
- operation
-',
-	'Local_Input = Input_Test_Data
-
-# Call terminator bridge
-[Environment_Variable] = ET2:Env_Number[]
-
-Local_Input.Number = Environment_Variable
-
-Output_Test_Data = Local_Input
-',
-	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
-	'',
-	2,
-	6);
-INSERT INTO S_SPARM
-	VALUES ("1909c5a8-f751-4947-a4ac-4335f4731489",
-	"44ac98c2-efa3-48cd-93ee-e48aefb9860e",
-	'Input_Test_Data',
-	"4a0d0af1-389e-4a59-ab75-1a58a41887c4",
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000",
-	'');
-INSERT INTO S_DT_PROXY
-	VALUES ("4a0d0af1-389e-4a59-ab75-1a58a41887c4",
-	"00000000-0000-0000-0000-000000000000",
-	'inst_ref<Test_Data>',
-	'',
-	'',
-	'../TAGS/TAGS.xtuml');
-INSERT INTO S_SPARM
-	VALUES ("c95c88bb-2345-4d66-b6b8-51f93b909f8a",
-	"44ac98c2-efa3-48cd-93ee-e48aefb9860e",
-	'Output_Test_Data',
-	"4a0d0af1-389e-4a59-ab75-1a58a41887c4",
-	1,
-	'',
-	"1909c5a8-f751-4947-a4ac-4335f4731489",
-	'');
-INSERT INTO PE_PE
-	VALUES ("44ac98c2-efa3-48cd-93ee-e48aefb9860e",
 	1,
 	"5ef6725d-bcd7-4754-ae00-eb6fb13de358",
 	"00000000-0000-0000-0000-000000000000",
@@ -2455,7 +2403,8 @@ supported = TRUE
    [] = RPT1:Start_Test[this_test, "1241-0000-01-0128", "Tagged", "Active Super Sub types", "Active One Super Sub relationship"]
 
    # Create one of one super type objects
-   Super1 = create unique Active_Tagged_Supertype with Supertype_Data = this_test
+   Super1 = create unique Active_Tagged_Supertype with Supertype_Data = this_test & \
+                                                       Current_State = ''Idle''
 
    # create one of two sub type 1 objects
    Index_For_Subtype = this_test + 1
@@ -2464,7 +2413,7 @@ supported = TRUE
    # the polymorphically delivered event, will report a different test number. This is so that the report
    # will be distinguished by the reporter domain as a separate test.
 
-   Sub1_1 = create Active_Tagged_Subtype_One with Subtype_One_Data = this_test & Test_No = Index_For_Subtype 
+   Sub1_1 = create Active_Tagged_Subtype_One with Subtype_One_Data = this_test & Test_No = Index_For_Subtype & Current_State = ''Idle''
 
    link Super1 R6 Sub1_1
 

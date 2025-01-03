@@ -36,7 +36,7 @@ INSERT INTO O_TFR
    Has_Failed = FALSE
 
    loop
-      newFOR = create unique Object_FOR with ResultA = 0
+      newFOR = create Object_FOR with ReferenceFOR = Count & ResultA = 0
       Count = Count + 1
       breakif Count > 5
    endloop

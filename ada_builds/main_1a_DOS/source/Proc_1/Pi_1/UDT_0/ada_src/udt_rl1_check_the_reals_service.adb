@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -63,7 +63,7 @@ with UDT_RPT1_Start_Test_Bridge;
 
 -- List of domain types used
 with UDT_Domain_Types;
-use type UDT_Domain_Types.Mminimum_To_Maximum_Of_Real;
+use type UDT_Domain_Types.Minimum_To_Maximum_Of_Real;
 use type UDT_Domain_Types.Minimum_To_Minus_One_Of_Real;
 use type UDT_Domain_Types.One_To_Maximum_Of_Real;
 use type UDT_Domain_Types.Subset_Zero_Of_Real;
@@ -120,8 +120,8 @@ package body UDT_RL1_Check_The_Reals_Service is
       Local_Real11 : UDT_Domain_Types.One_To_Maximum_Of_Real := UDT_Domain_Types.One_To_Maximum_Of_Real_first;
       Local_Real13 : UDT_Domain_Types.Minimum_To_Minus_One_Of_Real := UDT_Domain_Types.Minimum_To_Minus_One_Of_Real_first;
       Local_Real14 : UDT_Domain_Types.Minimum_To_Minus_One_Of_Real := UDT_Domain_Types.Minimum_To_Minus_One_Of_Real_first;
-      Local_Real16 : UDT_Domain_Types.Mminimum_To_Maximum_Of_Real := UDT_Domain_Types.Mminimum_To_Maximum_Of_Real_first;
-      Local_Real17 : UDT_Domain_Types.Mminimum_To_Maximum_Of_Real := UDT_Domain_Types.Mminimum_To_Maximum_Of_Real_first;
+      Local_Real16 : UDT_Domain_Types.Minimum_To_Maximum_Of_Real := UDT_Domain_Types.Minimum_To_Maximum_Of_Real_first;
+      Local_Real17 : UDT_Domain_Types.Minimum_To_Maximum_Of_Real := UDT_Domain_Types.Minimum_To_Maximum_Of_Real_first;
       
       Test_Has_Passed : Boolean := Application_Types.Boolean_first;
       

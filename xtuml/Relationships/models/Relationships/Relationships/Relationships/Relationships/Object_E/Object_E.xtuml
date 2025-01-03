@@ -1069,8 +1069,10 @@ fifthEF  = find-one Object_EF where idEF = 5
       secondNewE  = create Object_E  with idE = 11
       firstNewF   = create Object_F  with idF = 20
       secondNewF  = create Object_F  with idF = 21
-      firstNewEF  = create Object_EF with idE = 30
-      secondNewEF = create Object_EF with idE = 31
+      firstNewEF  = create Object_EF with idE = 30 & \
+                                          idF = firstNewF.idF
+      secondNewEF = create Object_EF with idE = 31 & \
+                                          idF = secondNewF.idF
 
       link firstNewE  R5 firstNewF  using firstNewEF
       link secondNewE R5 secondNewF using secondNewEF
@@ -1138,7 +1140,7 @@ endif
 #-------------------------------------------------------------------#
 
 ',
-	3,
+	1,
 	'',
 	"f176926f-014f-4bcd-9457-29b308a17b1c",
 	2,

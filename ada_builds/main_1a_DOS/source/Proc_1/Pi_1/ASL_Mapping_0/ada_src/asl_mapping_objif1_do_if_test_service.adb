@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -98,8 +98,10 @@ package body ASL_Mapping_objIF1_do_if_test_Service is
       --  1101-0000-01-0422
       -- -------------------------------------------------------------------------
       --  create an instance to remember to test results
-      newIF := Root_Object.ASL_Mapping.objIF.Create_Unique;
-      Root_Object.ASL_Mapping.objIF.ASL_Mapping_objIF_Type(newIF.all).ResultA := 0;
+      
+      newIF := Root_Object.ASL_Mapping.objIF.Create;
+      Root_Object.ASL_Mapping.objIF.ASL_Mapping_objIF_Type(newIF.all).ReferenceIF  := 1;
+      Root_Object.ASL_Mapping.objIF.ASL_Mapping_objIF_Type(newIF.all).ResultA    := 0;
       
       Test := Test_Start;
       

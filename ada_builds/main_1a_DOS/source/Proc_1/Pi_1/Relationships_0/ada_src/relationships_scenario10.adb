@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -141,7 +141,9 @@ use type Root_Object.Object_Access;
          --  Object_EF
          
          newEF := Root_Object.Relationships.OBJEF.Create;
-         Root_Object.Relationships.OBJEF.Relationships_OBJEF_Type(newEF.all).idEF := Count;
+         Root_Object.Relationships.OBJEF.Relationships_OBJEF_Type(newEF.all).idEF    := Count;
+         Root_Object.Relationships.OBJEF.Relationships_OBJEF_Type(newEF.all).idE     := Count;
+         Root_Object.Relationships.OBJEF.Relationships_OBJEF_Type(newEF.all).idF     := Count;
          
          Count := Count - 1;
          

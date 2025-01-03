@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -111,7 +111,6 @@ with RP_Rel_R1;
 with RP_Rel_R2;
 with RP_Rel_R3;
 with RP_Rel_R4;
-with RP_Rel_R5;
 with RP_Rel_R8;
 with RP_Rel_R6;
 with RP_Rel_R7;
@@ -175,19 +174,6 @@ package body RP_Registration is
       RP_Rel_R4.Register_A_End_Relationship_Read  (Root_Object.RP.DD.Get_R4_B'access);
       RP_Rel_R4.Register_B_End_Relationship_Write (Root_Object.RP.DUPLICATED.Put_R4_A'access);
       RP_Rel_R4.Register_B_End_Relationship_Read  (Root_Object.RP.DUPLICATED.Get_R4_A'access);
-
---==================================================================================
-      -- Relationships for RP domain to register:
-      -- Relationship R5 is Reflexive
-      RP_Rel_R5.Register_A_End_Class (Root_Object.RP.DUPLICATED.RP_DUPLICATED_Type'tag);
-      RP_Rel_R5.Register_A_End_Role ("Has_some");
-      RP_Rel_R5.Register_B_End_Class (Root_Object.RP.DUPLICATED.RP_DUPLICATED_Type'tag);
-      RP_Rel_R5.Register_B_End_Role ("Has_one");
-
-      RP_Rel_R5.Register_A_End_Relationship_Write (Root_Object.RP.DUPLICATED.Put_R5_B'access);
-      RP_Rel_R5.Register_A_End_Relationship_Read  (Root_Object.RP.DUPLICATED.Get_R5_B'access);
-      RP_Rel_R5.Register_B_End_Relationship_Write (Root_Object.RP.DUPLICATED.Put_R5_A'access);
-      RP_Rel_R5.Register_B_End_Relationship_Read  (Root_Object.RP.DUPLICATED.Get_R5_A'access);
 
 --==================================================================================
       -- Relationships for RP domain to register:

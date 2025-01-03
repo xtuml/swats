@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -40,7 +40,7 @@
 --*  BUILD INFORMATION                                                                *
 --*  -----------------                                                                *
 --*                                                                                   *
---*  Project Key Letter : Events_Build_Set
+--*  Project Key Letter : Events_BSet
 --*  Project Version    : 0
 --*  Build Set          : 0
 --*                                                                                   *
@@ -52,15 +52,14 @@
 -- with list for all objects, relationships, services and types used within this code fragment
 
 with Application_Types;
-with Root_Object;
 
 
 package Events_GFB1_Generate_Event_Bridge is
    
    
    procedure Events_GFB1_Generate_Event (
-      Test_No : in     Application_Types.Base_Integer_Type;
-      The_IH  : in     Root_Object.Object_Access);
+      Test_No   : in     Application_Types.Base_Integer_Type;
+      The_IH_ID : in     Application_Types.Base_Integer_Type);
    
 end Events_GFB1_Generate_Event_Bridge;
 

@@ -39,7 +39,8 @@ INSERT INTO S_SYNC
 	'Domain_B_setup',
 	' Domain B setup
 ',
-	'my_test = create Test_Data with This_Test_Number = 1
+	'my_test = create Test_Data with td_id = 1 & \
+                                This_Test_Number = 1
 
 #Create several instances of Object_B
 count = 5
@@ -65,17 +66,17 @@ endloop
 
 Super1 = create Domain_B_Object_Super with idSUPER_B = 1
 Sub_A1 = create Domain_B_Object_SubA with SubA_Attribute = 1 & A_Text = "Sub A1"
-Sub_B1 = create Domain_B_Object_SubB with SubB_Attribute = 1 & B_Text = "Sub B1"
+#Sub_B1 = create Domain_B_Object_SubB with SubB_Attribute = 1 & B_Text = "Sub B1"
 
 link Super1 R4 Sub_A1
 
 Super2 = create Domain_B_Object_Super with idSUPER_B = 2
-Sub_A2 = create Domain_B_Object_SubA with SubA_Attribute = 2 & A_Text = "Sub A2"
+#Sub_A2 = create Domain_B_Object_SubA with SubA_Attribute = 2 & A_Text = "Sub A2"
 Sub_B2 = create Domain_B_Object_SubB with SubB_Attribute = 2 & B_Text = "Sub B2"
 
 link Super2 R4 Sub_B2',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	2,
 	1);

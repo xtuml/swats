@@ -153,46 +153,6 @@ INSERT INTO C_PP
 	'',
 	"7acdddcf-85b6-4da4-bf92-c38730ebcc66");
 INSERT INTO C_EP
-	VALUES ("6d011e13-cd51-47bc-a4ab-e0a8cd92a77a",
-	"a19b1345-da02-4ec0-affa-9dd9532e229e",
-	0,
-	'Set_Environment',
-	'',
-	6);
-INSERT INTO C_IO
-	VALUES ("6d011e13-cd51-47bc-a4ab-e0a8cd92a77a",
-	"ba5eda7a-def5-0000-0000-000000000000",
-	'Set_Environment',
-	'',
-	0,
-	'',
-	"1953c83d-4a00-4807-8938-a515d3baa90e");
-INSERT INTO C_PP
-	VALUES ("053d9229-c040-41d7-ab29-68ccdea01b87",
-	"6d011e13-cd51-47bc-a4ab-e0a8cd92a77a",
-	"4a0d0af1-389e-4a59-ab75-1a58a41887c4",
-	'Input_Test_Data',
-	'',
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO S_DT_PROXY
-	VALUES ("4a0d0af1-389e-4a59-ab75-1a58a41887c4",
-	"00000000-0000-0000-0000-000000000000",
-	'inst_ref<Test_Data>',
-	'',
-	'',
-	'../../TAGS/TAGS/TAGS.xtuml');
-INSERT INTO C_PP
-	VALUES ("bd6c671d-6259-4045-b944-9c525f9443d0",
-	"6d011e13-cd51-47bc-a4ab-e0a8cd92a77a",
-	"4a0d0af1-389e-4a59-ab75-1a58a41887c4",
-	'Output_Test_Data',
-	'',
-	1,
-	'',
-	"053d9229-c040-41d7-ab29-68ccdea01b87");
-INSERT INTO C_EP
 	VALUES ("5ebcb312-30a0-445c-92fb-98146305d072",
 	"a19b1345-da02-4ec0-affa-9dd9532e229e",
 	0,
@@ -206,7 +166,7 @@ INSERT INTO C_IO
 	'',
 	0,
 	'',
-	"6d011e13-cd51-47bc-a4ab-e0a8cd92a77a");
+	"1953c83d-4a00-4807-8938-a515d3baa90e");
 INSERT INTO C_PP
 	VALUES ("f30344a3-e0a0-4473-87db-614ef2c05d3f",
 	"5ebcb312-30a0-445c-92fb-98146305d072",

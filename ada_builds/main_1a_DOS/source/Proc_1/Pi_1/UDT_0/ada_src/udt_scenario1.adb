@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -61,7 +61,7 @@ with UDT_rel_R1;
 -- List of services used
 with UDT_UDT7_Tidy_Up_Test_Data_Service;
 with UDT_UDT1_Check_The_Integers_Service;
-with UDT_UDT6_Create_New_Test_Data_Object_And_Link_It_Service;
+with UDT_TD1_Create_New_Test_Data_Object_And_Link_It_Service;
 
 -- List of bridges used
 with UDT_RPT5_Test_Text_Bridge;
@@ -97,8 +97,7 @@ use type Root_Object.Object_Access;
       New_Object   := True;
       Final_Object := False;
       
-      
-      Dummy_TD := Root_Object.UDT.TD.Create;
+      Dummy_TD := Root_Object.UDT.TD.Create_Unique;
       Root_Object.UDT.TD.UDT_TD_Type(Dummy_TD.all).The_Test_Number  := 99;
       Root_Object.UDT.TD.UDT_TD_Type(Dummy_TD.all).Testing_For_What := "Nothing                         ";
       
@@ -106,7 +105,7 @@ use type Root_Object.Object_Access;
       A_Test_Data_IH := Dummy_TD;
       
       
-      UDT_UDT6_Create_New_Test_Data_Object_And_Link_It_Service.UDT_UDT6_Create_New_Test_Data_Object_And_Link_It (
+      UDT_TD1_Create_New_Test_Data_Object_And_Link_It_Service.UDT_TD1_Create_New_Test_Data_Object_And_Link_It (
          New_Set              => New_Object,
          Previous_IH          => Dummy_TD,
          This_Test_Number     => Test,
@@ -124,7 +123,7 @@ use type Root_Object.Object_Access;
       New_Object := False;
       
       
-      UDT_UDT6_Create_New_Test_Data_Object_And_Link_It_Service.UDT_UDT6_Create_New_Test_Data_Object_And_Link_It (
+      UDT_TD1_Create_New_Test_Data_Object_And_Link_It_Service.UDT_TD1_Create_New_Test_Data_Object_And_Link_It (
          New_Set              => New_Object,
          Previous_IH          => A_Test_Data_IH,
          This_Test_Number     => Test,
@@ -133,7 +132,7 @@ use type Root_Object.Object_Access;
          Returned_IH          => A_Test_Data_IH,
          Returned_Test_Number => Test);
       
-      UDT_UDT6_Create_New_Test_Data_Object_And_Link_It_Service.UDT_UDT6_Create_New_Test_Data_Object_And_Link_It (
+      UDT_TD1_Create_New_Test_Data_Object_And_Link_It_Service.UDT_TD1_Create_New_Test_Data_Object_And_Link_It (
          New_Set              => New_Object,
          Previous_IH          => A_Test_Data_IH,
          This_Test_Number     => Test,
@@ -142,7 +141,7 @@ use type Root_Object.Object_Access;
          Returned_IH          => A_Test_Data_IH,
          Returned_Test_Number => Test);
       
-      UDT_UDT6_Create_New_Test_Data_Object_And_Link_It_Service.UDT_UDT6_Create_New_Test_Data_Object_And_Link_It (
+      UDT_TD1_Create_New_Test_Data_Object_And_Link_It_Service.UDT_TD1_Create_New_Test_Data_Object_And_Link_It (
          New_Set              => New_Object,
          Previous_IH          => A_Test_Data_IH,
          This_Test_Number     => Test,
@@ -151,7 +150,7 @@ use type Root_Object.Object_Access;
          Returned_IH          => A_Test_Data_IH,
          Returned_Test_Number => Test);
       
-      UDT_UDT6_Create_New_Test_Data_Object_And_Link_It_Service.UDT_UDT6_Create_New_Test_Data_Object_And_Link_It (
+      UDT_TD1_Create_New_Test_Data_Object_And_Link_It_Service.UDT_TD1_Create_New_Test_Data_Object_And_Link_It (
          New_Set              => New_Object,
          Previous_IH          => A_Test_Data_IH,
          This_Test_Number     => Test,
@@ -160,7 +159,7 @@ use type Root_Object.Object_Access;
          Returned_IH          => A_Test_Data_IH,
          Returned_Test_Number => Test);
       
-      UDT_UDT6_Create_New_Test_Data_Object_And_Link_It_Service.UDT_UDT6_Create_New_Test_Data_Object_And_Link_It (
+      UDT_TD1_Create_New_Test_Data_Object_And_Link_It_Service.UDT_TD1_Create_New_Test_Data_Object_And_Link_It (
          New_Set              => New_Object,
          Previous_IH          => A_Test_Data_IH,
          This_Test_Number     => Test,
@@ -173,7 +172,7 @@ use type Root_Object.Object_Access;
       Final_Object := True;
       
       
-      UDT_UDT6_Create_New_Test_Data_Object_And_Link_It_Service.UDT_UDT6_Create_New_Test_Data_Object_And_Link_It (
+      UDT_TD1_Create_New_Test_Data_Object_And_Link_It_Service.UDT_TD1_Create_New_Test_Data_Object_And_Link_It (
          New_Set              => New_Object,
          Previous_IH          => A_Test_Data_IH,
          This_Test_Number     => Test,

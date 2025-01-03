@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -199,6 +199,44 @@ package body Root_Object.Relationships.MA is
 ------------------------------------------------------------------------
 --*********************  Object Definition *****************************
 ------------------------------------------------------------------------
+
+   ma_id_Value : Application_Types.Base_Integer_Type := Application_Types.Base_Integer_Type_first;
+--
+--ADATEST IGNORE_ON
+   function Obtain_Subsequent_ma_id return Application_Types.Base_Integer_Type is
+   begin
+      ma_id_Value :=
+         Application_Types.Base_Integer_Type'succ (ma_id_Value);
+      return ma_id_Value;
+   end Obtain_Subsequent_ma_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
+   function Get_ma_id (
+      This_Object : Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
+   begin
+       return Relationships_MA_Type (This_Object.all).ma_id;
+   end Get_ma_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
+   procedure Put_ma_id (
+      This_Object : in Root_Object.Object_Access;
+      ma_id_Value : in Application_Types.Base_Integer_Type) is
+   begin
+      Relationships_MA_Type (This_Object.all).ma_id :=
+         ma_id_Value;
+   end Put_ma_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
    --
    -- procedure Put_Right_Identifier and 
    --
@@ -272,6 +310,7 @@ package body Root_Object.Relationships.MA is
    
       else
          This_Object := Free_List.First_Entry;
+         Relationships_MA_Type(This_Object.all).ma_id := Application_Types.Base_Integer_Type_First;
          Relationships_MA_Type(This_Object.all).Above_Data := Application_Types.Base_Integer_Type_First;
          Free_List.First_Entry := Free_List.First_Entry.Next_Object;
       end if;
@@ -311,9 +350,25 @@ package body Root_Object.Relationships.MA is
 --------------------------------------------------------------------------
 --
 
---------------------------------------------------------------------------
-   -- function Create_Unique is not available for this object as it does
-   -- not have a non referential identifying attribute.
+--ADATEST IGNORE_ON
+   function Create_Unique return Root_Object.Object_Access is
+
+   This_Object: Root_Object.Object_Access;
+
+   begin
+      --
+      -- get hold of a new instance
+      --
+      This_Object := Create;
+
+
+      Relationships_MA_Type(This_Object.all).ma_id :=
+         Obtain_Subsequent_ma_id;
+
+      return This_Object;
+
+   end Create_Unique;
+--ADATEST IGNORE_OFF
 --------------------------------------------------------------------------
 
 --ADATEST IGNORE_ON

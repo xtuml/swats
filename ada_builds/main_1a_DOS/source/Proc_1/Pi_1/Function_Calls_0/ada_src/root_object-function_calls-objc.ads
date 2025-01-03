@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -75,6 +75,7 @@
 --    procedure Put_State
 --    procedure Description
 --    function Create
+--    function Create_Unique 
 --    procedure Delete
 --    function Count_Of
 --    procedure Find
@@ -145,8 +146,8 @@ package Root_Object.Function_Calls.objC is
    --
    --
    --
-   -- Object objC does not have an identifying non-referential attribute and 
-   -- therefore may not be uniquely created.
+   -- Object objC has an identifying non-referential attribute idC 
+   -- and therefore may be uniquely created.
    -- 
    -- Object objC has no TAGS.
    --
@@ -171,8 +172,8 @@ package Root_Object.Function_Calls.objC is
    type Function_Calls_objC_Type is new Function_Calls_Type with record
 
       --
-      -- Initialised Non identifying non referential
-      idC : Application_Types.Base_Integer_Type := Application_Types.Base_Integer_Type_First;
+      -- Non initialised identifying non referential
+      idC : Application_Types.Base_Integer_Type;
 
       --
       -- Initialised Non identifying non referential
@@ -251,9 +252,7 @@ package Root_Object.Function_Calls.objC is
    function  Create 
       return Root_Object.Object_Access;
 
-   -- function Create_Unique 
-   -- is not available for this object as it does not have a non-referential 
-   -- identifying attribute.
+   function Create_Unique return Root_Object.Object_Access;
 
 
    procedure Delete (

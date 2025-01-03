@@ -8,6 +8,125 @@ INSERT INTO O_OBJ
 	' Object containg the test data.
 ',
 	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("209614b3-bfa5-48e0-b416-92ccb86e99d8",
+	"7096328d-5223-4cff-a018-e45848823607",
+	'Create_New_Test_Data_Object_And_Link_It',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'if New_Set = TRUE then
+
+   Returned_IH = create unique Test_Data with The_Test_Number = This_Test_Number & Testing_For_What = Testing_For
+
+   Returned_Test_Number = This_Test_Number + 1
+
+else
+
+   # Add new Test_Data object onto Previous_IH
+
+   local_Test_Data_IH = create unique Test_Data with The_Test_Number = This_Test_Number & \
+      Testing_For_What = Testing_For
+
+   link Previous_IH R1."Has_a" local_Test_Data_IH
+
+   if Final_Entry = TRUE then
+
+      # Final entry shall cause the return of the first set in the sequence.
+
+      loop
+
+         # Bail out of the operation will return an undefined IH
+         Local_Previous_IH = local_Test_Data_IH -> R1."Has_one".Test_Data
+
+         breakif Local_Previous_IH = UNDEFINED
+
+         local_Test_Data_IH = local_Test_Data_IH -> R1."Has_one".Test_Data
+
+      endloop
+
+   endif
+
+   Returned_IH = local_Test_Data_IH
+   Returned_Test_Number = This_Test_Number + 1
+
+endif
+',
+	3,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	2,
+	1);
+INSERT INTO O_TPARM
+	VALUES ("9665fe7e-1daa-422d-8e12-7ede46ec84c2",
+	"209614b3-bfa5-48e0-b416-92ccb86e99d8",
+	'New_Set',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("689c153a-f0f1-4ba2-b7c0-4d153c363e86",
+	"209614b3-bfa5-48e0-b416-92ccb86e99d8",
+	'Previous_IH',
+	"773d7fcd-9b04-4bbb-b3a0-24795c43e749",
+	0,
+	'',
+	"9665fe7e-1daa-422d-8e12-7ede46ec84c2",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("773d7fcd-9b04-4bbb-b3a0-24795c43e749",
+	"00000000-0000-0000-0000-000000000000",
+	'inst_ref<Test_Data>',
+	'',
+	'',
+	'../classes.xtuml');
+INSERT INTO O_TPARM
+	VALUES ("fb8d414b-bc8a-45fd-b6fa-19997bfa546a",
+	"209614b3-bfa5-48e0-b416-92ccb86e99d8",
+	'This_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"689c153a-f0f1-4ba2-b7c0-4d153c363e86",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("93e79c49-0314-48dd-960d-5de05af1d5c3",
+	"209614b3-bfa5-48e0-b416-92ccb86e99d8",
+	'Testing_For',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"fb8d414b-bc8a-45fd-b6fa-19997bfa546a",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("94430a5c-10b6-4eea-8f79-227f9d7cf1ff",
+	"209614b3-bfa5-48e0-b416-92ccb86e99d8",
+	'Final_Entry',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	0,
+	'',
+	"93e79c49-0314-48dd-960d-5de05af1d5c3",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("6e534106-8604-42c1-972a-d773dfb3eb35",
+	"209614b3-bfa5-48e0-b416-92ccb86e99d8",
+	'Returned_IH',
+	"773d7fcd-9b04-4bbb-b3a0-24795c43e749",
+	1,
+	'',
+	"94430a5c-10b6-4eea-8f79-227f9d7cf1ff",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("8c5e74f5-3ce7-41ff-99c2-9881da1be2c6",
+	"209614b3-bfa5-48e0-b416-92ccb86e99d8",
+	'Returned_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"6e534106-8604-42c1-972a-d773dfb3eb35",
+	'');
 INSERT INTO O_NBATTR
 	VALUES ("386298b0-dbe3-4035-952a-c2c6f6a1ff81",
 	"7096328d-5223-4cff-a018-e45848823607");
@@ -17,7 +136,7 @@ INSERT INTO O_BATTR
 INSERT INTO O_ATTR
 	VALUES ("386298b0-dbe3-4035-952a-c2c6f6a1ff81",
 	"7096328d-5223-4cff-a018-e45848823607",
-	"00000000-0000-0000-0000-000000000000",
+	"3fa54201-0f72-4f00-aab6-1b0484557aaa",
 	'Testing_For_What',
 	'',
 	'',
@@ -44,9 +163,32 @@ INSERT INTO O_ATTR
 	"ba5eda7a-def5-0000-0000-000000000002",
 	'',
 	'');
+INSERT INTO O_NBATTR
+	VALUES ("3fa54201-0f72-4f00-aab6-1b0484557aaa",
+	"7096328d-5223-4cff-a018-e45848823607");
+INSERT INTO O_BATTR
+	VALUES ("3fa54201-0f72-4f00-aab6-1b0484557aaa",
+	"7096328d-5223-4cff-a018-e45848823607");
+INSERT INTO O_ATTR
+	VALUES ("3fa54201-0f72-4f00-aab6-1b0484557aaa",
+	"7096328d-5223-4cff-a018-e45848823607",
+	"00000000-0000-0000-0000-000000000000",
+	'td_id',
+	'',
+	'',
+	'td_id',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000005",
+	'',
+	'');
 INSERT INTO O_ID
 	VALUES (0,
 	"7096328d-5223-4cff-a018-e45848823607");
+INSERT INTO O_OIDA
+	VALUES ("3fa54201-0f72-4f00-aab6-1b0484557aaa",
+	"7096328d-5223-4cff-a018-e45848823607",
+	0,
+	'td_id');
 INSERT INTO O_ID
 	VALUES (1,
 	"7096328d-5223-4cff-a018-e45848823607");

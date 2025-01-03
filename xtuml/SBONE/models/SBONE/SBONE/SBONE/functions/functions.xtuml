@@ -72,15 +72,15 @@ INSERT INTO S_SPARM
 	VALUES ("e074ef72-b4d0-45d5-b993-8d9450c9bf5f",
 	"dfaccb76-d4ee-48a5-afc6-0f71481427ee",
 	'Received_Very_Simple_Structure',
-	"7cf3bfaf-1a11-42af-b4a4-5be1e01d6775",
+	"f416edfd-6617-4532-ac37-44ad72f8dcc2",
 	0,
 	'',
 	"00000000-0000-0000-0000-000000000000",
 	'');
 INSERT INTO S_DT_PROXY
-	VALUES ("7cf3bfaf-1a11-42af-b4a4-5be1e01d6775",
+	VALUES ("f416edfd-6617-4532-ac37-44ad72f8dcc2",
 	"00000000-0000-0000-0000-000000000000",
-	'Very_Simple_Structure_Type',
+	'sequence of Very_Simple_Structure_Type',
 	'',
 	'',
 	'../../Shared/Shared.xtuml');
@@ -164,55 +164,6 @@ INSERT INTO S_SYNC
 	3);
 INSERT INTO PE_PE
 	VALUES ("3a262deb-eba7-4f67-bbf0-6b98aab92558",
-	1,
-	"2a8beea4-0110-4f2c-9723-1284b9500de8",
-	"00000000-0000-0000-0000-000000000000",
-	1);
-INSERT INTO S_SYNC
-	VALUES ("14341535-d064-4355-a287-9f674c4ed1b1",
-	"00000000-0000-0000-0000-000000000000",
-	'Append_IH_To_Struct',
-	'',
-	'append [The_IH] to {Returning_Struct}',
-	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
-	'',
-	2,
-	4);
-INSERT INTO S_SPARM
-	VALUES ("4288e700-d000-4cc7-a4f9-300143a83d89",
-	"14341535-d064-4355-a287-9f674c4ed1b1",
-	'The_IH',
-	"9c385ae7-8d11-4b5d-918b-11eee4587ff3",
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000",
-	'');
-INSERT INTO S_DT_PROXY
-	VALUES ("9c385ae7-8d11-4b5d-918b-11eee4587ff3",
-	"00000000-0000-0000-0000-000000000000",
-	'inst_ref<Very_Simple_Data_Object>',
-	'',
-	'',
-	'../SBONE/SBONE.xtuml');
-INSERT INTO S_SPARM
-	VALUES ("e4620a4e-9abc-4530-96ad-0bccb2c9eb8e",
-	"14341535-d064-4355-a287-9f674c4ed1b1",
-	'Returning_Struct',
-	"6542ff41-e2e6-45c1-b796-c28430eb2ff8",
-	1,
-	'',
-	"4288e700-d000-4cc7-a4f9-300143a83d89",
-	'');
-INSERT INTO S_DT_PROXY
-	VALUES ("6542ff41-e2e6-45c1-b796-c28430eb2ff8",
-	"00000000-0000-0000-0000-000000000000",
-	'IH_Struct',
-	'',
-	'',
-	'../../Shared/Shared.xtuml');
-INSERT INTO PE_PE
-	VALUES ("14341535-d064-4355-a287-9f674c4ed1b1",
 	1,
 	"2a8beea4-0110-4f2c-9723-1284b9500de8",
 	"00000000-0000-0000-0000-000000000000",

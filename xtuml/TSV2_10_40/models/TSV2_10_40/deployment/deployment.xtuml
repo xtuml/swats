@@ -1,0 +1,2497 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("ad86ff2d-2203-435e-aede-11ae3f756196",
+	"d61a36ba-d7bd-4aaa-a6f9-d1d7dbf09950",
+	"d61a36ba-d7bd-4aaa-a6f9-d1d7dbf09950",
+	'deployment',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("18b74e54-443c-4702-bd74-9524bbd63986",
+	112,
+	"ad86ff2d-2203-435e-aede-11ae3f756196",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	200,
+	150,
+	0,
+	'4.1.17',
+	'TSV2_10_40::deployment');
+INSERT INTO GD_GE
+	VALUES ("71eb0c7e-4636-4eae-a435-58e22409dc76",
+	"18b74e54-443c-4702-bd74-9524bbd63986",
+	"f3a67fb6-afa4-495f-b990-1775e06d3ca8",
+	209,
+	0,
+	'TSV2_10_40::deployment::OAIB_BSet');
+INSERT INTO GD_SHP
+	VALUES ("71eb0c7e-4636-4eae-a435-58e22409dc76");
+INSERT INTO GD_NCS
+	VALUES ("71eb0c7e-4636-4eae-a435-58e22409dc76");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"71eb0c7e-4636-4eae-a435-58e22409dc76");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"71eb0c7e-4636-4eae-a435-58e22409dc76",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("71eb0c7e-4636-4eae-a435-58e22409dc76",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_GE
+	VALUES ("6488c15d-5c14-4e0f-8b59-77821b061625",
+	"18b74e54-443c-4702-bd74-9524bbd63986",
+	"1d8c2754-8f4d-46ec-ad5f-0fdfd00990f3",
+	108,
+	0,
+	'TSV2_10_40::deployment::Shared');
+INSERT INTO GD_SHP
+	VALUES ("6488c15d-5c14-4e0f-8b59-77821b061625");
+INSERT INTO GD_NCS
+	VALUES ("6488c15d-5c14-4e0f-8b59-77821b061625");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"6488c15d-5c14-4e0f-8b59-77821b061625");
+INSERT INTO DIM_GE
+	VALUES (220.000000,
+	0.000000,
+	"6488c15d-5c14-4e0f-8b59-77821b061625",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("6488c15d-5c14-4e0f-8b59-77821b061625",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_DIA
+	VALUES ("18b74e54-443c-4702-bd74-9524bbd63986",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO D_DEPL
+	VALUES ("f3a67fb6-afa4-495f-b990-1775e06d3ca8",
+	'OAIB_BSet',
+	'',
+	'OAIB_BSet');
+INSERT INTO D_TERM
+	VALUES ("3541a8ae-98a7-4cae-895a-4025d20548bf",
+	"f3a67fb6-afa4-495f-b990-1775e06d3ca8",
+	'OAIBONE::I_Into_The_Great_Wide_Open',
+	'',
+	'OAIBONE',
+	'I_Into_The_Great_Wide_Open',
+	0,
+	'OAIBONE',
+	'IITGWO');
+INSERT INTO D_TSVC
+	VALUES ("b39921ba-576f-4ec3-844a-f78c94ce53cc",
+	"3541a8ae-98a7-4cae-895a-4025d20548bf",
+	'Across_The_Great_Divide',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	1);
+INSERT INTO D_TSPARM
+	VALUES ("4e003191-50ce-48f9-b6bf-1b3a1ea5a76c",
+	"b39921ba-576f-4ec3-844a-f78c94ce53cc",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("8bb4c7de-1520-46bf-99ac-d6a8458eb276",
+	"b39921ba-576f-4ec3-844a-f78c94ce53cc",
+	'A_Structure_To_Send',
+	"13d277e2-d35e-41aa-8d5e-f2c005040984",
+	0,
+	'',
+	"4e003191-50ce-48f9-b6bf-1b3a1ea5a76c",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("13d277e2-d35e-41aa-8d5e-f2c005040984",
+	"00000000-0000-0000-0000-000000000000",
+	'OAIBONE::sequence of Source_Structure_Type',
+	'',
+	'',
+	'./Shared/Shared.xtuml');
+INSERT INTO D_TSPARM
+	VALUES ("1fc84d4c-4b30-458e-b8ce-407ed743d9c3",
+	"b39921ba-576f-4ec3-844a-f78c94ce53cc",
+	'Control_Integer',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"8bb4c7de-1520-46bf-99ac-d6a8458eb276",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("f580a120-4f8d-443e-9b32-79eddd7dab97",
+	"b39921ba-576f-4ec3-844a-f78c94ce53cc",
+	'Control_Real',
+	"ba5eda7a-def5-0000-0000-000000000003",
+	0,
+	'',
+	"1fc84d4c-4b30-458e-b8ce-407ed743d9c3",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("5f510f92-7f96-4420-bea5-b597895aa2a1",
+	"b39921ba-576f-4ec3-844a-f78c94ce53cc",
+	'Control_String',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"f580a120-4f8d-443e-9b32-79eddd7dab97",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("498fa0ba-5f6d-4036-8a53-8bfd8320a3e8",
+	"b39921ba-576f-4ec3-844a-f78c94ce53cc",
+	'Control_Enum',
+	"48011659-cf3c-4c94-a384-7055292809b6",
+	0,
+	'',
+	"5f510f92-7f96-4420-bea5-b597895aa2a1",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("48011659-cf3c-4c94-a384-7055292809b6",
+	"00000000-0000-0000-0000-000000000000",
+	'OAIBONE::Colour_Type',
+	'',
+	'',
+	'./Shared/Shared.xtuml');
+INSERT INTO D_TSPARM
+	VALUES ("c5e5b94c-e3dd-44c8-8655-4645361bcb46",
+	"b39921ba-576f-4ec3-844a-f78c94ce53cc",
+	'Control_Boolean',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	0,
+	'',
+	"498fa0ba-5f6d-4036-8a53-8bfd8320a3e8",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("161971c4-f2cc-4f10-9be4-df0808eaccf0",
+	"b39921ba-576f-4ec3-844a-f78c94ce53cc",
+	'Elements_In_Structure',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"c5e5b94c-e3dd-44c8-8655-4645361bcb46",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("1c21ad3e-4bfb-45ad-8ed2-3028ef19df5c",
+	"b39921ba-576f-4ec3-844a-f78c94ce53cc",
+	'Result',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	1,
+	'',
+	"161971c4-f2cc-4f10-9be4-df0808eaccf0",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("93b5dd45-a91a-4038-b7e3-4dc978d1e4d5",
+	"b39921ba-576f-4ec3-844a-f78c94ce53cc",
+	'A_Structure_To_Return',
+	"13d277e2-d35e-41aa-8d5e-f2c005040984",
+	1,
+	'',
+	"1c21ad3e-4bfb-45ad-8ed2-3028ef19df5c",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("4352048b-f26d-46b9-a4bc-4085c6c763ba",
+	"3541a8ae-98a7-4cae-895a-4025d20548bf",
+	'Wide_Blue_Yonder',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	2);
+INSERT INTO D_TSPARM
+	VALUES ("c3fc0a5e-4e1b-4803-a808-aee947d8926f",
+	"4352048b-f26d-46b9-a4bc-4085c6c763ba",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("b06f991b-a9d0-4c7d-8f60-a6baec39201b",
+	"4352048b-f26d-46b9-a4bc-4085c6c763ba",
+	'Simple_Source_Structure',
+	"8b6ce1f2-3551-451b-88dd-711d2024d099",
+	0,
+	'',
+	"c3fc0a5e-4e1b-4803-a808-aee947d8926f",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("8b6ce1f2-3551-451b-88dd-711d2024d099",
+	"00000000-0000-0000-0000-000000000000",
+	'OAIBONE::sequence of Very_Simple_Structure_Type',
+	'',
+	'',
+	'./Shared/Shared.xtuml');
+INSERT INTO D_TSVC
+	VALUES ("cdefd312-d8c3-4d99-85c1-e55a33092cd6",
+	"3541a8ae-98a7-4cae-895a-4025d20548bf",
+	'Test_Structure_In_Bridge',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	3);
+INSERT INTO D_TSPARM
+	VALUES ("bb6eb123-6d18-4e53-8e46-4f3ce26469c1",
+	"cdefd312-d8c3-4d99-85c1-e55a33092cd6",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("b75db753-f2e7-42a6-820e-06f94fbaaf0b",
+	"cdefd312-d8c3-4d99-85c1-e55a33092cd6",
+	'Input_Structure',
+	"170757e5-f1d6-4c41-9a00-79a2991e04ba",
+	0,
+	'',
+	"bb6eb123-6d18-4e53-8e46-4f3ce26469c1",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("170757e5-f1d6-4c41-9a00-79a2991e04ba",
+	"00000000-0000-0000-0000-000000000000",
+	'OAIBONE::sequence of Structure_Of_UDTs',
+	'',
+	'',
+	'./Shared/Shared.xtuml');
+INSERT INTO D_TSVC
+	VALUES ("7535c0a8-8a07-43af-b466-60fb4d440d07",
+	"3541a8ae-98a7-4cae-895a-4025d20548bf",
+	'The_IH_Struct_Across_Bridge',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	4);
+INSERT INTO D_TSPARM
+	VALUES ("47c7ecb2-03e4-4777-9659-57d82c4e9342",
+	"7535c0a8-8a07-43af-b466-60fb4d440d07",
+	'The_IHA',
+	"786bc14b-b534-46a9-a862-c5cc61ddcfdd",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("786bc14b-b534-46a9-a862-c5cc61ddcfdd",
+	"00000000-0000-0000-0000-000000000000",
+	'inst_ref<Very_Simple_Data_Object>',
+	'',
+	'',
+	'./Shared/Shared.xtuml');
+INSERT INTO D_TSPARM
+	VALUES ("26f62693-b7c8-42b6-8a68-5ae77574e2ab",
+	"7535c0a8-8a07-43af-b466-60fb4d440d07",
+	'The_IHB',
+	"786bc14b-b534-46a9-a862-c5cc61ddcfdd",
+	0,
+	'',
+	"47c7ecb2-03e4-4777-9659-57d82c4e9342",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("47cfa04f-2642-4e65-ad4b-885d26af3b0c",
+	"7535c0a8-8a07-43af-b466-60fb4d440d07",
+	'The_IHC',
+	"786bc14b-b534-46a9-a862-c5cc61ddcfdd",
+	0,
+	'',
+	"26f62693-b7c8-42b6-8a68-5ae77574e2ab",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("8b58fe39-524f-4d94-a7cc-e54ad89a1d0b",
+	"7535c0a8-8a07-43af-b466-60fb4d440d07",
+	'Decomposed_Struct',
+	"ddd4636c-8acb-4b4f-a49d-0cde05e43efc",
+	1,
+	'',
+	"47cfa04f-2642-4e65-ad4b-885d26af3b0c",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("ddd4636c-8acb-4b4f-a49d-0cde05e43efc",
+	"00000000-0000-0000-0000-000000000000",
+	'OAIBONE::sequence of VSD_Struct',
+	'',
+	'',
+	'./Shared/Shared.xtuml');
+INSERT INTO D_TERM
+	VALUES ("62b65be6-3503-4ace-9d65-f309b658005b",
+	"f3a67fb6-afa4-495f-b990-1775e06d3ca8",
+	'OAIBONE::Report',
+	'',
+	'OAIBONE',
+	'Report',
+	0,
+	'OAIBONE',
+	'RPT');
+INSERT INTO D_TSVC
+	VALUES ("11cc69c1-b509-48de-9bf6-fbab0221b41e",
+	"62b65be6-3503-4ace-9d65-f309b658005b",
+	'Start_Test',
+	'',
+	'local_test_number = Test_Number
+local_requid = Requid
+local_invoking_domain = Invoking_Domain
+local_invoking_object = Invoking_Object
+local_purpose = Purpose
+
+# Find the reporter object for this domain, there will be only one.
+
+The_Reporter_Object = find-one Report_Data
+
+
+if The_Reporter_Object = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["ST Calling domain has not created Report_Data"]
+
+   $ENDUSE
+
+else
+
+   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
+
+   $USE RP
+  
+      [] = RP4::Test_Description[local_test_number, local_requid, local_invoking_domain, local_invoking_object, local_purpose, Unique_Domain_ID]
+
+   $ENDUSE
+
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	1);
+INSERT INTO D_TSPARM
+	VALUES ("2bf4d471-3086-402e-9329-cfc04254f27d",
+	"11cc69c1-b509-48de-9bf6-fbab0221b41e",
+	'Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("35352c30-3e4d-49e4-8c54-e0d507b53b37",
+	"11cc69c1-b509-48de-9bf6-fbab0221b41e",
+	'Requid',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"2bf4d471-3086-402e-9329-cfc04254f27d",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("43c77201-3d12-4fd9-ad83-0bef2a2435fd",
+	"11cc69c1-b509-48de-9bf6-fbab0221b41e",
+	'Invoking_Domain',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"35352c30-3e4d-49e4-8c54-e0d507b53b37",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("abb70454-7421-438c-bad2-9f0d0158c665",
+	"11cc69c1-b509-48de-9bf6-fbab0221b41e",
+	'Invoking_Object',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"43c77201-3d12-4fd9-ad83-0bef2a2435fd",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("f00032bf-4d3b-4f4b-a75d-f2f789a51856",
+	"11cc69c1-b509-48de-9bf6-fbab0221b41e",
+	'Purpose',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"abb70454-7421-438c-bad2-9f0d0158c665",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("7bfd7af3-11bb-4ee4-b0b8-709fe578a43d",
+	"62b65be6-3503-4ace-9d65-f309b658005b",
+	'Test_Passed',
+	'',
+	'local_test_number = Test_Number
+local_test_value = Test_Value
+local_object_domain = Test_Object_Domain
+
+# Find the reporter object for this domain, there will be only one.
+
+The_Reporter_Object = find-one Report_Data
+
+
+if The_Reporter_Object = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["TP Calling domain has not created Report_Data"]
+
+   $ENDUSE
+
+else
+
+   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
+ 
+   $USE RP
+
+   [] = RP1::Test_Passed[local_object_domain, local_test_number, local_test_value, Unique_Domain_ID]
+
+   $ENDUSE
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	2);
+INSERT INTO D_TSPARM
+	VALUES ("722d03d2-0038-4494-89df-94ac9e92539d",
+	"7bfd7af3-11bb-4ee4-b0b8-709fe578a43d",
+	'Test_Object_Domain',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("d2d3105f-ebf4-45b7-8065-ecb90c443552",
+	"7bfd7af3-11bb-4ee4-b0b8-709fe578a43d",
+	'Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"722d03d2-0038-4494-89df-94ac9e92539d",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("35855d9a-2cbf-41a7-89b8-16a58754e150",
+	"7bfd7af3-11bb-4ee4-b0b8-709fe578a43d",
+	'Test_Value',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"d2d3105f-ebf4-45b7-8065-ecb90c443552",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("7970bb10-1341-46c2-916f-b384dae93d98",
+	"62b65be6-3503-4ace-9d65-f309b658005b",
+	'Test_Failed',
+	'',
+	'local_test_number = Failed_Test_Number
+local_test_value = Failed_Test_Value
+local_object_domain = Failed_Domain_Object
+
+# Find the reporter object for this domain, there will be only one.
+
+The_Reporter_Object = find-one Report_Data
+
+if The_Reporter_Object = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["TF Calling domain has not created Report_Data"]
+
+   $ENDUSE
+
+else
+
+   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
+
+
+   $USE RP
+
+   [] = RP2::Test_Failed[local_object_domain, local_test_number, local_test_value, Unique_Domain_ID]
+
+   $ENDUSE
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	3);
+INSERT INTO D_TSPARM
+	VALUES ("f9e406ec-0e1c-4f1d-849f-ad3b06c74cbe",
+	"7970bb10-1341-46c2-916f-b384dae93d98",
+	'Failed_Domain_Object',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("4d9f3abe-0391-4b2b-a775-36ece2185835",
+	"7970bb10-1341-46c2-916f-b384dae93d98",
+	'Failed_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"f9e406ec-0e1c-4f1d-849f-ad3b06c74cbe",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("986f2ea1-f417-49c3-baea-36186882ba9c",
+	"7970bb10-1341-46c2-916f-b384dae93d98",
+	'Failed_Test_Value',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"4d9f3abe-0391-4b2b-a775-36ece2185835",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("a30fc7bc-e7cb-44e7-be02-661c5b4280fd",
+	"62b65be6-3503-4ace-9d65-f309b658005b",
+	'Test_Unsupported',
+	'',
+	'local_test_number = Unsupported_Test_Number
+
+
+# Find the reporter object for this domain, there will be only one.
+
+The_Reporter_Object = find-one Report_Data
+
+
+if The_Reporter_Object = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["TU Calling domain has not created Report_Data"]
+
+   $ENDUSE
+else
+
+   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
+
+   $USE RP
+
+   [] = RP3::Test_Unsupported[local_test_number, Unique_Domain_ID]
+
+   $ENDUSE
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	4);
+INSERT INTO D_TSPARM
+	VALUES ("6d1413c5-487c-4236-8e12-cb252bd2770c",
+	"a30fc7bc-e7cb-44e7-be02-661c5b4280fd",
+	'Unsupported_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("df2ed239-aecf-495a-84ac-9d645b5cdd28",
+	"62b65be6-3503-4ace-9d65-f309b658005b",
+	'Test_Text',
+	'',
+	'local_test_number = Test_Number
+local_text = Free_Text
+
+#$USE RP
+
+#   [] = RP5::Test_Text[local_test_number, local_text]
+
+#$ENDUSE
+
+#-----------------------------------------------
+# New stuff
+#-----------------------------------------------
+
+# Find the reporter object for this domain, there will be only one.
+The_Reporter_Object = find-one Report_Data
+
+if The_Reporter_Object = UNDEFINED then
+
+   $USE RP
+      [] = RP7::Report_Run_Time_Error["TP Calling domain has not created Report_Data"]
+   $ENDUSE
+
+else
+
+   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
+ 
+   $USE RP
+      [] = RP5::Test_Text[Unique_Domain_ID, local_test_number, local_text]
+   $ENDUSE
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	5);
+INSERT INTO D_TSPARM
+	VALUES ("88e7a881-11eb-47d0-bbf8-dd6cb920f69d",
+	"df2ed239-aecf-495a-84ac-9d645b5cdd28",
+	'Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("4dc5e236-3987-419f-b599-508af44d99bf",
+	"df2ed239-aecf-495a-84ac-9d645b5cdd28",
+	'Free_Text',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"88e7a881-11eb-47d0-bbf8-dd6cb920f69d",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("ba2880fb-5762-4d29-aab1-6b5e578b05f4",
+	"62b65be6-3503-4ace-9d65-f309b658005b",
+	'Domain_Test_Start',
+	'',
+	'local_text = This_Domain_Name
+
+
+$USE RP
+
+   [New_Domain_Number] = RP6::Create_New_Domain_Test[local_text]
+
+$ENDUSE
+
+
+# Can''t create in a bridge, so find this object and update it. Rely on the invoker
+# domain to have created this object prior to this call.
+
+My_Report = find-one Report_Data
+
+if My_Report = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["DTS Calling domain has not created Report_Data"]
+
+   $ENDUSE
+
+else
+
+   My_Report.Reported_Domain_Number = New_Domain_Number
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	6);
+INSERT INTO D_TSPARM
+	VALUES ("c8e2d476-27f6-4b5b-8ed5-28a436438129",
+	"ba2880fb-5762-4d29-aab1-6b5e578b05f4",
+	'This_Domain_Name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("fa762b1b-0d40-429c-8be1-d86313c943f0",
+	"62b65be6-3503-4ace-9d65-f309b658005b",
+	'Domain_Test_Finished',
+	'',
+	'local_text = This_Domain_Name
+
+My_Report = find-one Report_Data
+
+if My_Report = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["DTF Calling domain has not created Report_Data"]
+
+   $ENDUSE
+
+else
+
+   local_domain_number = My_Report.Reported_Domain_Number
+
+endif
+
+
+$USE RP
+
+   [] = RP8::Domain_Tests_Have_Finished[local_text, local_domain_number]
+
+
+$ENDUSE',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	7);
+INSERT INTO D_TSPARM
+	VALUES ("06ee5ec2-9504-4e16-b7d1-c2ce8c92f664",
+	"fa762b1b-0d40-429c-8be1-d86313c943f0",
+	'This_Domain_Name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TERM
+	VALUES ("fac1333a-319f-4084-94c2-f514276dd78b",
+	"f3a67fb6-afa4-495f-b990-1775e06d3ca8",
+	'OAIBONE',
+	'',
+	'OAIBONE',
+	'',
+	1,
+	'OAIBONE',
+	'Open Architecture Internal Bridge Domain One');
+INSERT INTO D_TSVC
+	VALUES ("da3a21ab-e98c-44ca-acee-59323e4ac11d",
+	"fac1333a-319f-4084-94c2-f514276dd78b",
+	'Receive_A_Very_Simple_Structure',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("8b358271-672c-4d8b-9810-2e02af04fa27",
+	"da3a21ab-e98c-44ca-acee-59323e4ac11d",
+	'Received_Very_Simple_Structure',
+	"ca0026f9-1705-4139-b7c5-2a479a09e91a",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("ca0026f9-1705-4139-b7c5-2a479a09e91a",
+	"00000000-0000-0000-0000-000000000000",
+	'OAIBONE::Very_Simple_Structure_Type',
+	'',
+	'',
+	'./Shared/Shared.xtuml');
+INSERT INTO D_TSPARM
+	VALUES ("8bad2310-1540-40f6-8bf9-de735a8dd99b",
+	"da3a21ab-e98c-44ca-acee-59323e4ac11d",
+	'Received_Control_Integer',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"8b358271-672c-4d8b-9810-2e02af04fa27",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("825b4c3c-37c7-4c39-a10a-b833b74be706",
+	"da3a21ab-e98c-44ca-acee-59323e4ac11d",
+	'Received_Control_Real',
+	"ba5eda7a-def5-0000-0000-000000000003",
+	0,
+	'',
+	"8bad2310-1540-40f6-8bf9-de735a8dd99b",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("ebdc0358-6bfc-4ed0-8ae7-24e5951084a7",
+	"da3a21ab-e98c-44ca-acee-59323e4ac11d",
+	'Received_Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"825b4c3c-37c7-4c39-a10a-b833b74be706",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("94a247fa-51db-4714-ba16-a790ca0f6419",
+	"fac1333a-319f-4084-94c2-f514276dd78b",
+	'Create_Report_Data',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSVC
+	VALUES ("e474a3cc-a6af-4a92-8d6d-06135f33e61d",
+	"fac1333a-319f-4084-94c2-f514276dd78b",
+	'Delete_Report_Data',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TERM
+	VALUES ("c58c7cf8-1a4b-4556-9a51-de9167ef9247",
+	"f3a67fb6-afa4-495f-b990-1775e06d3ca8",
+	'RP',
+	'',
+	'RP',
+	'',
+	1,
+	'RP',
+	'Report');
+INSERT INTO D_TSVC
+	VALUES ("403a9009-0dcd-47bf-a679-03f5b3c1e6f2",
+	"c58c7cf8-1a4b-4556-9a51-de9167ef9247",
+	'Test_Passed',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("1d657c85-9706-4803-8c05-cf0bbca7626c",
+	"403a9009-0dcd-47bf-a679-03f5b3c1e6f2",
+	'Passed_Domain',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("6db51ced-5a56-40a6-8101-8966d886680b",
+	"403a9009-0dcd-47bf-a679-03f5b3c1e6f2",
+	'Passed_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"1d657c85-9706-4803-8c05-cf0bbca7626c",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("5123a241-38e1-4f33-ac26-3195bd6e0705",
+	"403a9009-0dcd-47bf-a679-03f5b3c1e6f2",
+	'Passed_Test_Result_Value',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"6db51ced-5a56-40a6-8101-8966d886680b",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("e6ad7949-8268-4312-aadd-7282f2bc979d",
+	"403a9009-0dcd-47bf-a679-03f5b3c1e6f2",
+	'Passed_Domain_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"5123a241-38e1-4f33-ac26-3195bd6e0705",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("cbd30460-00f4-4e3b-a954-0c6b02776e2d",
+	"c58c7cf8-1a4b-4556-9a51-de9167ef9247",
+	'Test_Failed',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("de182fad-acdd-43a6-8d14-1a982b6e7066",
+	"cbd30460-00f4-4e3b-a954-0c6b02776e2d",
+	'Failed_Domain',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("b24bab0c-1dc2-402b-a2f8-03424915cb1e",
+	"cbd30460-00f4-4e3b-a954-0c6b02776e2d",
+	'the_test_no',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"de182fad-acdd-43a6-8d14-1a982b6e7066",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("770b5cd1-469b-4b78-9610-b68fbad91239",
+	"cbd30460-00f4-4e3b-a954-0c6b02776e2d",
+	'the_test_value',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"b24bab0c-1dc2-402b-a2f8-03424915cb1e",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("3bab5c9c-84c7-447b-b7f0-eecca13762f4",
+	"cbd30460-00f4-4e3b-a954-0c6b02776e2d",
+	'Failed_Domain_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"770b5cd1-469b-4b78-9610-b68fbad91239",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("b9fc2e91-1c1c-4320-b939-362b7858e2b8",
+	"c58c7cf8-1a4b-4556-9a51-de9167ef9247",
+	'Test_Unsupported',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("e8168d15-5a5e-4d6a-b29d-d73c4dfcf125",
+	"b9fc2e91-1c1c-4320-b939-362b7858e2b8",
+	'Unsupported_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("a9b4d640-0a52-47cc-be85-2537a6ea37ae",
+	"b9fc2e91-1c1c-4320-b939-362b7858e2b8",
+	'Unsupported_Domain_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"e8168d15-5a5e-4d6a-b29d-d73c4dfcf125",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("6786ef30-bd97-4342-a3bc-00c045fa56ca",
+	"c58c7cf8-1a4b-4556-9a51-de9167ef9247",
+	'Test_Description',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("248f092e-0d9f-4db9-add8-4926aeca47a4",
+	"6786ef30-bd97-4342-a3bc-00c045fa56ca",
+	'Write_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("bdd0837f-e9e8-42de-bd70-3040f1fdc1c5",
+	"6786ef30-bd97-4342-a3bc-00c045fa56ca",
+	'Write_Requid',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"248f092e-0d9f-4db9-add8-4926aeca47a4",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("4fa9a6ec-99b1-44be-8d28-404bb6f143c6",
+	"6786ef30-bd97-4342-a3bc-00c045fa56ca",
+	'Write_Invoker_Domain_Name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"bdd0837f-e9e8-42de-bd70-3040f1fdc1c5",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("7bc782c4-1c31-451e-b588-92a3205f7993",
+	"6786ef30-bd97-4342-a3bc-00c045fa56ca",
+	'Write_Object',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"4fa9a6ec-99b1-44be-8d28-404bb6f143c6",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("d3579e22-d2f3-49e3-8780-926356d56f1b",
+	"6786ef30-bd97-4342-a3bc-00c045fa56ca",
+	'Write_Test_Purpose',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"7bc782c4-1c31-451e-b588-92a3205f7993",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("567a5ce7-9c61-4226-9375-198ec139e699",
+	"6786ef30-bd97-4342-a3bc-00c045fa56ca",
+	'Write_Invoker_Domain_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"d3579e22-d2f3-49e3-8780-926356d56f1b",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("edd2d82d-8584-447d-a5c0-2d73e944c5f6",
+	"c58c7cf8-1a4b-4556-9a51-de9167ef9247",
+	'Test_Text',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("e7d783cc-ce57-4a56-a371-3ac0fd3983b1",
+	"edd2d82d-8584-447d-a5c0-2d73e944c5f6",
+	'Domain_No',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("d5be7d70-6682-45ca-b9c2-9c5671a0cb20",
+	"edd2d82d-8584-447d-a5c0-2d73e944c5f6",
+	'Text_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"e7d783cc-ce57-4a56-a371-3ac0fd3983b1",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("c6f3d98e-ecb5-4287-8260-754bbb5fb1e0",
+	"edd2d82d-8584-447d-a5c0-2d73e944c5f6",
+	'Free_Text',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"d5be7d70-6682-45ca-b9c2-9c5671a0cb20",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("ef1f93b5-46ba-40d9-a535-d262a2ed8058",
+	"c58c7cf8-1a4b-4556-9a51-de9167ef9247",
+	'Create_New_Domain_Test',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("4e0cd788-7161-4abc-a758-1b61b1aad249",
+	"ef1f93b5-46ba-40d9-a535-d262a2ed8058",
+	'Invoker_Domain_Name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("6aad5bf2-9004-4859-9f89-129de7dfe19e",
+	"ef1f93b5-46ba-40d9-a535-d262a2ed8058",
+	'Domain_Unique_Identifier',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"4e0cd788-7161-4abc-a758-1b61b1aad249",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("a8168808-f7e4-4c75-b36b-301a692d2370",
+	"c58c7cf8-1a4b-4556-9a51-de9167ef9247",
+	'Report_Run_Time_Error',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("8c576585-5b22-4969-b428-a4ccd96a4d3d",
+	"a8168808-f7e4-4c75-b36b-301a692d2370",
+	'Detail',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("e11f2256-02fd-4a8c-82f7-4a1165a5b49a",
+	"c58c7cf8-1a4b-4556-9a51-de9167ef9247",
+	'Domain_Tests_Have_Finished',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("e7e22581-d1a3-4bbd-937c-882c9d70a46c",
+	"e11f2256-02fd-4a8c-82f7-4a1165a5b49a",
+	'Completed_Domain_Name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("620e14fe-0569-4a60-ae01-0c05b6ceae0b",
+	"e11f2256-02fd-4a8c-82f7-4a1165a5b49a",
+	'Domain_Identifer',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"e7e22581-d1a3-4bbd-937c-882c9d70a46c",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("16724e36-a59e-4162-b3ee-c26ea8101b42",
+	"c58c7cf8-1a4b-4556-9a51-de9167ef9247",
+	'Test_Anomalous_Behaviour',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("82c5236f-db0d-40f7-838c-6d45e0bdf7a1",
+	"16724e36-a59e-4162-b3ee-c26ea8101b42",
+	'Anomalous_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("ac8498e9-de60-4f10-9cea-3ab25a774821",
+	"16724e36-a59e-4162-b3ee-c26ea8101b42",
+	'Anomalous_Detail',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"82c5236f-db0d-40f7-838c-6d45e0bdf7a1",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("f31eb5c5-c190-4a68-bf9b-3ace7206247b",
+	"c58c7cf8-1a4b-4556-9a51-de9167ef9247",
+	'Specify_Requid',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("352a4f26-3428-4c82-86e2-0b76e63d6cf3",
+	"f31eb5c5-c190-4a68-bf9b-3ace7206247b",
+	'Requid_Domain_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("a5a914b8-dce3-4ab7-b29e-6be3014e3080",
+	"f31eb5c5-c190-4a68-bf9b-3ace7206247b",
+	'Requid_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"352a4f26-3428-4c82-86e2-0b76e63d6cf3",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("de777e3e-ef8b-49c8-b3c1-3caea0495ec5",
+	"f31eb5c5-c190-4a68-bf9b-3ace7206247b",
+	'Requid_Identifier',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"a5a914b8-dce3-4ab7-b29e-6be3014e3080",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("5c36cd87-ecee-4423-b0a7-d4f503bbbd75",
+	"c58c7cf8-1a4b-4556-9a51-de9167ef9247",
+	'Add_All_Requids',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("aaff339f-8812-43e3-95ae-866ad536366b",
+	"5c36cd87-ecee-4423-b0a7-d4f503bbbd75",
+	'New_Requid',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("7a9edcd1-268c-46c0-9d1d-8de1116ec19a",
+	"c58c7cf8-1a4b-4556-9a51-de9167ef9247",
+	'Requirement_Tracker',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("57766a15-0f6a-460f-92ec-93c0c87c1ef7",
+	"7a9edcd1-268c-46c0-9d1d-8de1116ec19a",
+	'Updated_Domain_ID',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("c8dab8e0-0b91-49dd-8a3a-5264caa4f98f",
+	"7a9edcd1-268c-46c0-9d1d-8de1116ec19a",
+	'Updated_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"57766a15-0f6a-460f-92ec-93c0c87c1ef7",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("d24cf5e0-66ac-4fb2-957c-228090a1fb3d",
+	"7a9edcd1-268c-46c0-9d1d-8de1116ec19a",
+	'Updated_Result',
+	"16239e54-447e-4ef1-97d3-bd1db03e1a1b",
+	0,
+	'',
+	"c8dab8e0-0b91-49dd-8a3a-5264caa4f98f",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("16239e54-447e-4ef1-97d3-bd1db03e1a1b",
+	"00000000-0000-0000-0000-000000000000",
+	'RP::Result_Type',
+	'',
+	'',
+	'./Shared/Shared.xtuml');
+INSERT INTO D_TSVC
+	VALUES ("c2f1e6dc-245e-430f-a072-9edafd3f06b6",
+	"c58c7cf8-1a4b-4556-9a51-de9167ef9247",
+	'Perform_Req_Analysis',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TERM
+	VALUES ("3765f44d-63cd-45c6-842c-2a65148ecf81",
+	"f3a67fb6-afa4-495f-b990-1775e06d3ca8",
+	'OAIBTWO::Report',
+	'',
+	'OAIBTWO',
+	'Report',
+	0,
+	'OAIBTWO',
+	'RPT');
+INSERT INTO D_TSVC
+	VALUES ("6534fe09-4928-455a-a85a-b496b4796abd",
+	"3765f44d-63cd-45c6-842c-2a65148ecf81",
+	'Start_Test',
+	'',
+	'local_test_number = Test_Number
+local_requid = Requid
+local_invoking_domain = Invoking_Domain
+local_invoking_object = Invoking_Object
+local_purpose = Purpose
+
+# Find the reporter object for this domain, there will be only one.
+
+The_Reporter_Object = find-one Report_Data
+
+
+if The_Reporter_Object = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["ST Calling domain has not created Report_Data"]
+
+   $ENDUSE
+
+else
+
+   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
+
+   $USE RP
+  
+      [] = RP4::Test_Description[local_test_number, local_requid, local_invoking_domain, local_invoking_object, local_purpose, Unique_Domain_ID]
+
+   $ENDUSE
+
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	1);
+INSERT INTO D_TSPARM
+	VALUES ("3b8b52e9-1726-450a-baff-980f5713840d",
+	"6534fe09-4928-455a-a85a-b496b4796abd",
+	'Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("05a60f87-b16e-4023-b89d-9049044984e2",
+	"6534fe09-4928-455a-a85a-b496b4796abd",
+	'Requid',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"3b8b52e9-1726-450a-baff-980f5713840d",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("6b17fabb-7fa9-482c-bb2c-84c321d5be7d",
+	"6534fe09-4928-455a-a85a-b496b4796abd",
+	'Invoking_Domain',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"05a60f87-b16e-4023-b89d-9049044984e2",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("245f2454-55ad-4f4b-b79c-c26c94cd6503",
+	"6534fe09-4928-455a-a85a-b496b4796abd",
+	'Invoking_Object',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"6b17fabb-7fa9-482c-bb2c-84c321d5be7d",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("18e5b682-9d92-46f0-9ac1-3b2382d82b8f",
+	"6534fe09-4928-455a-a85a-b496b4796abd",
+	'Purpose',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"245f2454-55ad-4f4b-b79c-c26c94cd6503",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("b767ac58-3a34-4ade-aadc-e811628a7887",
+	"3765f44d-63cd-45c6-842c-2a65148ecf81",
+	'Test_Passed',
+	'',
+	'local_test_number = Test_Number
+local_test_value = Test_Value
+local_object_domain = Test_Object_Domain
+
+# Find the reporter object for this domain, there will be only one.
+
+The_Reporter_Object = find-one Report_Data
+
+
+if The_Reporter_Object = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["TP Calling domain has not created Report_Data"]
+
+   $ENDUSE
+
+else
+
+   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
+ 
+   $USE RP
+
+   [] = RP1::Test_Passed[local_object_domain, local_test_number, local_test_value, Unique_Domain_ID]
+
+   $ENDUSE
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	2);
+INSERT INTO D_TSPARM
+	VALUES ("014fa2e1-454a-4f4a-8e7b-f46ace73bb94",
+	"b767ac58-3a34-4ade-aadc-e811628a7887",
+	'Test_Object_Domain',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("1d24c55d-5ae1-4f02-85c5-83b12aec6b81",
+	"b767ac58-3a34-4ade-aadc-e811628a7887",
+	'Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"014fa2e1-454a-4f4a-8e7b-f46ace73bb94",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("f9f32669-04ee-43b3-9392-b078e20857e7",
+	"b767ac58-3a34-4ade-aadc-e811628a7887",
+	'Test_Value',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"1d24c55d-5ae1-4f02-85c5-83b12aec6b81",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("e55e248c-9f91-4599-b303-b8bdc1bcc635",
+	"3765f44d-63cd-45c6-842c-2a65148ecf81",
+	'Test_Failed',
+	'',
+	'local_test_number = Failed_Test_Number
+local_test_value = Failed_Test_Value
+local_object_domain = Failed_Domain_Object
+
+# Find the reporter object for this domain, there will be only one.
+
+The_Reporter_Object = find-one Report_Data
+
+if The_Reporter_Object = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["TF Calling domain has not created Report_Data"]
+
+   $ENDUSE
+
+else
+
+   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
+
+
+   $USE RP
+
+   [] = RP2::Test_Failed[local_object_domain, local_test_number, local_test_value, Unique_Domain_ID]
+
+   $ENDUSE
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	3);
+INSERT INTO D_TSPARM
+	VALUES ("fd8a3a6d-f782-44d6-8a64-993a593cdb20",
+	"e55e248c-9f91-4599-b303-b8bdc1bcc635",
+	'Failed_Domain_Object',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("b2d7b9bf-54a7-4194-bd64-59ca1de09973",
+	"e55e248c-9f91-4599-b303-b8bdc1bcc635",
+	'Failed_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"fd8a3a6d-f782-44d6-8a64-993a593cdb20",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("408a25ea-8f37-4dde-9478-dbdff1051595",
+	"e55e248c-9f91-4599-b303-b8bdc1bcc635",
+	'Failed_Test_Value',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"b2d7b9bf-54a7-4194-bd64-59ca1de09973",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("480a69e0-3950-4167-bef1-e1feb9b5b58d",
+	"3765f44d-63cd-45c6-842c-2a65148ecf81",
+	'Test_Unsupported',
+	'',
+	'local_test_number = Unsupported_Test_Number
+
+
+# Find the reporter object for this domain, there will be only one.
+
+The_Reporter_Object = find-one Report_Data
+
+
+if The_Reporter_Object = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["TU Calling domain has not created Report_Data"]
+
+   $ENDUSE
+else
+
+   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
+
+   $USE RP
+
+   [] = RP3::Test_Unsupported[local_test_number, Unique_Domain_ID]
+
+   $ENDUSE
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	4);
+INSERT INTO D_TSPARM
+	VALUES ("adaa0d75-07d4-4dad-baaa-810c9b9f03d3",
+	"480a69e0-3950-4167-bef1-e1feb9b5b58d",
+	'Unsupported_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("065fc1b5-86c8-4d93-b57e-f961fcdf38f0",
+	"3765f44d-63cd-45c6-842c-2a65148ecf81",
+	'Test_Text',
+	'',
+	'local_test_number = Test_Number
+local_text = Free_Text
+
+#$USE RP
+
+#   [] = RP5::Test_Text[local_test_number, local_text]
+
+#$ENDUSE
+
+#-----------------------------------------------
+# New stuff
+#-----------------------------------------------
+
+# Find the reporter object for this domain, there will be only one.
+The_Reporter_Object = find-one Report_Data
+
+if The_Reporter_Object = UNDEFINED then
+
+   $USE RP
+      [] = RP7::Report_Run_Time_Error["TP Calling domain has not created Report_Data"]
+   $ENDUSE
+
+else
+
+   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
+ 
+   $USE RP
+      [] = RP5::Test_Text[Unique_Domain_ID, local_test_number, local_text]
+   $ENDUSE
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	5);
+INSERT INTO D_TSPARM
+	VALUES ("35d6ba74-7ec9-45b0-a80d-3459a86fb6e8",
+	"065fc1b5-86c8-4d93-b57e-f961fcdf38f0",
+	'Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("6219632f-15b1-468e-80e3-a3c53403d007",
+	"065fc1b5-86c8-4d93-b57e-f961fcdf38f0",
+	'Free_Text',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"35d6ba74-7ec9-45b0-a80d-3459a86fb6e8",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("25027402-7c58-4e1f-a26b-66f043e2d6a8",
+	"3765f44d-63cd-45c6-842c-2a65148ecf81",
+	'Domain_Test_Start',
+	'',
+	'local_text = This_Domain_Name
+
+
+$USE RP
+
+   [New_Domain_Number] = RP6::Create_New_Domain_Test[local_text]
+
+$ENDUSE
+
+
+# Can''t create in a bridge, so find this object and update it. Rely on the invoker
+# domain to have created this object prior to this call.
+
+My_Report = find-one Report_Data
+
+if My_Report = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["DTS Calling domain has not created Report_Data"]
+
+   $ENDUSE
+
+else
+
+   My_Report.Reported_Domain_Number = New_Domain_Number
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	6);
+INSERT INTO D_TSPARM
+	VALUES ("bffa6924-cdd4-4478-b8c3-f44a4dc24c67",
+	"25027402-7c58-4e1f-a26b-66f043e2d6a8",
+	'This_Domain_Name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("4cdf0cbe-4e8b-4594-98a7-2cb5f0bcb14f",
+	"3765f44d-63cd-45c6-842c-2a65148ecf81",
+	'Domain_Test_Finished',
+	'',
+	'local_text = This_Domain_Name
+
+My_Report = find-one Report_Data
+
+if My_Report = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["DTF Calling domain has not created Report_Data"]
+
+   $ENDUSE
+
+else
+
+   local_domain_number = My_Report.Reported_Domain_Number
+
+endif
+
+
+$USE RP
+
+   [] = RP8::Domain_Tests_Have_Finished[local_text, local_domain_number]
+
+
+$ENDUSE',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	7);
+INSERT INTO D_TSPARM
+	VALUES ("6686f462-4adc-4735-838c-31b53b3c7982",
+	"4cdf0cbe-4e8b-4594-98a7-2cb5f0bcb14f",
+	'This_Domain_Name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TERM
+	VALUES ("bea3b39c-57eb-4933-a36a-588b6c3c7f81",
+	"f3a67fb6-afa4-495f-b990-1775e06d3ca8",
+	'OAIBTWO::Under_The_Bridge',
+	'',
+	'OAIBTWO',
+	'Under_The_Bridge',
+	0,
+	'OAIBTWO',
+	'UTB');
+INSERT INTO D_TSVC
+	VALUES ("1b82b5d1-186f-48d9-8a1f-96b62dbf4fda",
+	"bea3b39c-57eb-4933-a36a-588b6c3c7f81",
+	'Create_A_Structure_In_Target_Domain',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	1,
+	1);
+INSERT INTO D_TSPARM
+	VALUES ("c71408c9-17ae-4dd0-ae95-f2b2f75faecf",
+	"1b82b5d1-186f-48d9-8a1f-96b62dbf4fda",
+	'Source_Very_Simple_Structure',
+	"5475752b-a53f-4481-9329-01f77b52109a",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("5475752b-a53f-4481-9329-01f77b52109a",
+	"00000000-0000-0000-0000-000000000000",
+	'OAIBTWO::sequence of Very_Simple_Source_Structure_Type',
+	'',
+	'',
+	'./Shared/Shared.xtuml');
+INSERT INTO D_TSPARM
+	VALUES ("99a4c8bb-c09c-4109-9e7f-b265e46a9fb2",
+	"1b82b5d1-186f-48d9-8a1f-96b62dbf4fda",
+	'Source_Control_Integer',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"c71408c9-17ae-4dd0-ae95-f2b2f75faecf",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("1f4b6c92-1509-4283-b27e-084615024b6c",
+	"1b82b5d1-186f-48d9-8a1f-96b62dbf4fda",
+	'Source_Control_Real',
+	"ba5eda7a-def5-0000-0000-000000000003",
+	0,
+	'',
+	"99a4c8bb-c09c-4109-9e7f-b265e46a9fb2",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("171e82cb-2400-47c6-92c2-f683c9424b01",
+	"1b82b5d1-186f-48d9-8a1f-96b62dbf4fda",
+	'Source_Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"1f4b6c92-1509-4283-b27e-084615024b6c",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("bcbca6c3-1743-450c-adf7-28ecce495fdb",
+	"1b82b5d1-186f-48d9-8a1f-96b62dbf4fda",
+	'Source_Result',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	1,
+	'',
+	"171e82cb-2400-47c6-92c2-f683c9424b01",
+	'');
+INSERT INTO D_TERM
+	VALUES ("497fe75e-ab82-4add-ace6-daaabf0ab908",
+	"f3a67fb6-afa4-495f-b990-1775e06d3ca8",
+	'OAIBTWO',
+	'',
+	'OAIBTWO',
+	'',
+	1,
+	'OAIBTWO',
+	'Open Architecture Internal Bridge Domain Two');
+INSERT INTO D_TSVC
+	VALUES ("e57db20a-e82c-4f42-b4f8-70beb39a7f4c",
+	"497fe75e-ab82-4add-ace6-daaabf0ab908",
+	'Receive_The_Structure',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("5536f45d-ab38-474e-9167-21e0cfd6e44f",
+	"e57db20a-e82c-4f42-b4f8-70beb39a7f4c",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("c0d0dd10-f9fd-4fde-996c-8dd01eea1064",
+	"e57db20a-e82c-4f42-b4f8-70beb39a7f4c",
+	'The_Structure',
+	"2faf1833-c612-4a67-8d61-40811d1c307e",
+	0,
+	'',
+	"5536f45d-ab38-474e-9167-21e0cfd6e44f",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("2faf1833-c612-4a67-8d61-40811d1c307e",
+	"00000000-0000-0000-0000-000000000000",
+	'OAIBTWO::sequence of Source_Structure_Type',
+	'',
+	'',
+	'./Shared/Shared.xtuml');
+INSERT INTO D_TSPARM
+	VALUES ("ea993a1b-ffc0-4ae2-a371-dc4ce0c97354",
+	"e57db20a-e82c-4f42-b4f8-70beb39a7f4c",
+	'Control_Integer',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"c0d0dd10-f9fd-4fde-996c-8dd01eea1064",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("8ae3ca82-cbcd-4b81-ab49-f3c58e3c94f9",
+	"e57db20a-e82c-4f42-b4f8-70beb39a7f4c",
+	'Control_Real',
+	"ba5eda7a-def5-0000-0000-000000000003",
+	0,
+	'',
+	"ea993a1b-ffc0-4ae2-a371-dc4ce0c97354",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("7169edb4-9077-4573-a13a-d3126ca7e750",
+	"e57db20a-e82c-4f42-b4f8-70beb39a7f4c",
+	'Control_String',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"8ae3ca82-cbcd-4b81-ab49-f3c58e3c94f9",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("a2730fff-d328-4bf2-b927-619343020842",
+	"e57db20a-e82c-4f42-b4f8-70beb39a7f4c",
+	'Control_Enum',
+	"fb14bd5d-65d2-4bde-82ec-b395a19e2d72",
+	0,
+	'',
+	"7169edb4-9077-4573-a13a-d3126ca7e750",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("fb14bd5d-65d2-4bde-82ec-b395a19e2d72",
+	"00000000-0000-0000-0000-000000000000",
+	'OAIBTWO::Colour_Type',
+	'',
+	'',
+	'./Shared/Shared.xtuml');
+INSERT INTO D_TSPARM
+	VALUES ("ae662472-0a5e-4548-81b8-b7ad6eb11ad7",
+	"e57db20a-e82c-4f42-b4f8-70beb39a7f4c",
+	'Control_Boolean',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	0,
+	'',
+	"a2730fff-d328-4bf2-b927-619343020842",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("8c07a6e8-ec66-45ce-987e-deef2fa12842",
+	"e57db20a-e82c-4f42-b4f8-70beb39a7f4c",
+	'Number_Of_Structures_In_Set',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"ae662472-0a5e-4548-81b8-b7ad6eb11ad7",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("e49d47fd-f030-4393-b9e8-d64a813cb43b",
+	"e57db20a-e82c-4f42-b4f8-70beb39a7f4c",
+	'Result',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	1,
+	'',
+	"8c07a6e8-ec66-45ce-987e-deef2fa12842",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("9308c12d-d2ea-4fab-bfea-6edd0d4fc582",
+	"497fe75e-ab82-4add-ace6-daaabf0ab908",
+	'Receive_A_Very_Simple_Structure',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSPARM
+	VALUES ("8d9ed843-87f0-419a-a0f0-36c1f91db6b0",
+	"9308c12d-d2ea-4fab-bfea-6edd0d4fc582",
+	'Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO D_TSPARM
+	VALUES ("bbb86389-03ac-4b46-81e3-e3f2b2535234",
+	"9308c12d-d2ea-4fab-bfea-6edd0d4fc582",
+	'Received_Very_Simple_Structure',
+	"5475752b-a53f-4481-9329-01f77b52109a",
+	0,
+	'',
+	"8d9ed843-87f0-419a-a0f0-36c1f91db6b0",
+	'');
+INSERT INTO D_TSVC
+	VALUES ("f7dac703-4f75-421d-956d-8537ad41dbf0",
+	"497fe75e-ab82-4add-ace6-daaabf0ab908",
+	'Create_Report_Data',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TSVC
+	VALUES ("44557404-2651-4c01-8841-d6691a7cac77",
+	"497fe75e-ab82-4add-ace6-daaabf0ab908",
+	'Delete_Report_Data',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	6,
+	0,
+	0,
+	0);
+INSERT INTO D_TERM
+	VALUES ("a83c3c3a-34a1-49e4-a26f-ecd2cc02219b",
+	"f3a67fb6-afa4-495f-b990-1775e06d3ca8",
+	'OAIB_BSet::Sequence',
+	'',
+	'OAIB_BSet',
+	'Sequence',
+	0,
+	'',
+	'');
+INSERT INTO D_TSVC
+	VALUES ("9c8eb1e6-fa07-4941-a446-b9616befe99f",
+	"a83c3c3a-34a1-49e4-a26f-ecd2cc02219b",
+	'RP::Enable_Screen_Display',
+	'',
+	'
+$INLINE
+   fprintf(stderr,"Turn screen display ON in ADA mode");
+$ENDINLINE
+
+# Turn on screen reporting in an ada run.
+
+#$ADA_INLINE
+#
+#   with Test_Suite_Text_IO;
+#
+#   Test_Suite_Text_IO.Set_Output(Output_Is_On => TRUE);
+#   Test_Suite_Text_IO.Dump_String(Value => "Writing to screen enabled.");
+#
+#$END_ADAINLINE
+
+
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	0,
+	2);
+INSERT INTO D_TSVC
+	VALUES ("74b25c05-5b75-4041-aae3-fd88f952262b",
+	"a83c3c3a-34a1-49e4-a26f-ecd2cc02219b",
+	'OAIBONE::Start_OAIBONE_Tests',
+	'',
+	'my_test = create Test_Data with This_Test_Number = 1
+
+[] = OAIBONE2::Create_Report_Data[]
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	0,
+	4);
+INSERT INTO D_TSVC
+	VALUES ("0fcbcb1b-e56e-4dd2-a464-d275daf441cc",
+	"a83c3c3a-34a1-49e4-a26f-ecd2cc02219b",
+	'OAIBTWO::Start_OAIBTWO_Tests',
+	'',
+	'[] = OAIBTWO4::Create_Report_Data[]
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	0,
+	3);
+INSERT INTO D_TSVC
+	VALUES ("3cfbde42-d4d8-4f13-a2d3-85ce607a7430",
+	"a83c3c3a-34a1-49e4-a26f-ecd2cc02219b",
+	'OAIBONE::First_Set_of_Tests',
+	'',
+	'my_test = find-one Test_Data
+
+# Define a local data structure to be passed via a bridge
+# into a destination domain.
+
+{Source_Structure_One}   is Source_Structure_Type
+{Source_Structure_Two}   is Source_Structure_Type
+{Source_Structure_Three} is Source_Structure_Type
+
+{Returned_Structure_1}   is Source_Structure_Type
+{Returned_Structure_2}   is Source_Structure_Type
+{Returned_Structure_3}   is Source_Structure_Type
+
+Test = my_test.This_Test_Number
+
+#--------------------------------------------------------------------------
+# Test 1
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test,"Null Requid", "OAIBONE", "Scenario", "Send 1 structure to bridge"]
+
+   Object_One = create Source_Bridge_Data with Reference   = Test    &\
+                                               The_Integer = 1       &\
+                                               The_Real    = 2.0     &\
+                                               The_String  = "three" &\ 
+                                               The_Colour  = ''Red''   &\
+                                               The_Boolean = FALSE
+
+   append [Object_One.The_Integer, \
+           Object_One.The_Real,    \
+           Object_One.The_String,  \
+           Object_One.The_Boolean, \
+           Object_One.The_Colour]   to {Source_Structure_One}
+
+   Elements_In_Structure = 1
+
+   # Pass this lot into the bridge.
+   Result = FALSE
+
+   [Result, {Returned_Structure_1} ] = IITGWO1:Across_The_Great_Divide[Test,                   \
+                                                                      {Source_Structure_One}, \
+                                                                      Object_One.The_Integer, \
+                                                                      Object_One.The_Real,    \
+                                                                      Object_One.The_String,  \
+                                                                      Object_One.The_Colour,  \
+                                                                      Object_One.The_Boolean, \
+                                                                      Elements_In_Structure]
+
+   if Result = TRUE then
+      [] = RPT2:Test_Passed["OAIBONE Source 1 Structure sent", Test, 0]
+   else
+      [] = RPT3:Test_Failed["OAIBONE Source 1 Structure sent", Test, -1]
+   endif
+
+   Test = Test + 1
+
+# End Test 1
+
+#--------------------------------------------------------------------------
+# Test 2
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test,"Null Requid", "OAIBONE", "Scenario", "Send 2 structures to bridge"]
+
+   Object_Two = create Source_Bridge_Data with Reference   = Test   &\
+                                               The_Integer = 4      &\
+                                               The_Real    = 5.0    &\
+                                               The_String  = "six"  &\
+                                               The_Colour  = ''Blue'' &\
+                                               The_Boolean = TRUE
+
+   append [Object_One.The_Integer, \
+           Object_One.The_Real,    \
+           Object_One.The_String,  \
+           Object_One.The_Boolean, \
+           Object_One.The_Colour    ]   to {Source_Structure_Two}
+
+
+   append [Object_Two.The_Integer, \
+           Object_Two.The_Real,    \
+           Object_Two.The_String,  \
+           Object_Two.The_Boolean, \
+           Object_Two.The_Colour   ]   to {Source_Structure_Two}
+
+
+   Elements_In_Structure = 2
+
+   # Pass this lot into the bridge.
+   Result = FALSE
+
+   [Result, {Returned_Structure_2} ] = IITGWO1:Across_The_Great_Divide[Test,                   \
+                                                                      {Source_Structure_Two}, \
+                                                                      Object_Two.The_Integer, \
+                                                                      Object_Two.The_Real,    \
+                                                                      Object_Two.The_String,  \
+                                                                      Object_Two.The_Colour,  \
+                                                                      Object_Two.The_Boolean, \
+                                                                      Elements_In_Structure]
+
+   if Result = TRUE then
+      [] = RPT2:Test_Passed["OAIBONE Source 2 Structures sent", Test, 0]
+   else
+      [] = RPT3:Test_Failed["OAIBONE Source 2 Structures sent", Test, -1]
+   endif
+
+   Test = Test + 1
+
+# End Test 2
+
+#--------------------------------------------------------------------------
+# Test 3
+#--------------------------------------------------------------------------
+
+   [] = RPT1:Start_Test[Test,"Null Requid", "OAIBONE", "Scenario", "Send 3 structures to bridge"]
+
+   Object_Three = create Source_Bridge_Data with Reference   = Test   &\
+                                                 The_Integer = 7      &\
+                                                 The_Real    = 8.0    &\
+                                                 The_String  = "nine" &\
+                                                 The_Colour  = ''Blue'' &\
+                                                 The_Boolean = TRUE
+
+   append [Object_One.The_Integer, \
+           Object_One.The_Real,    \
+           Object_One.The_String,  \
+           Object_One.The_Boolean, \
+           Object_One.The_Colour  ]   to {Source_Structure_Three}
+
+   append [Object_Two.The_Integer, \
+           Object_Two.The_Real,    \
+           Object_Two.The_String,  \
+           Object_Two.The_Boolean, \
+           Object_Two.The_Colour   ]   to {Source_Structure_Three}
+
+   append [Object_Three.The_Integer, \
+           Object_Three.The_Real,    \
+           Object_Three.The_String,  \
+           Object_Three.The_Boolean, \
+           Object_Three.The_Colour  ]   to {Source_Structure_Three}
+
+   Elements_In_Structure = 3
+
+   # Pass this lot into the bridge.
+   Result = FALSE
+
+   [Result, {Returned_Structure_3} ] = IITGWO1:Across_The_Great_Divide[Test,                     \
+                                                                      {Source_Structure_Three}, \
+                                                                      Object_Three.The_Integer, \
+                                                                      Object_Three.The_Real,    \
+                                                                      Object_Three.The_String,  \ 
+                                                                      Object_Three.The_Colour,  \
+                                                                      Object_Three.The_Boolean, \
+                                                                      Elements_In_Structure]
+
+   if Result = TRUE then
+      [] = RPT2:Test_Passed["OAIBONE Source 3 Structures sent", Test, 0]
+   else
+      [] = RPT3:Test_Failed["OAIBONE Source 3 Structures sent", Test, -1]
+   endif
+
+   Test = Test + 1
+
+# End Test 3
+
+#--------------------------------------------------------------------------
+# Test 4
+#--------------------------------------------------------------------------
+
+   # [] = RPT1:Start_Test[Test,"Null Requid", "OAIBONE", "Scenario", "Struct IH to bridge"]
+
+   # {Decomposed_Struct} is VSD_Struct
+
+   # ValA = 0
+   # ValB = 0
+   # ValC = 0
+   # ValD = 0
+
+   # Simple_ObjA = create Very_Simple_Data_Object with Object_Reference_VSD  = 1 &\
+                                                     # Object_Simple_Integer = 1 &\
+                                                     # Object_Simple_Real    = 1.0
+
+   # Simple_ObjB = create Very_Simple_Data_Object with Object_Reference_VSD  = 2 &\
+                                                     # Object_Simple_Integer = 2 &\
+                                                     # Object_Simple_Real    = 2.0
+
+   # Simple_ObjC = create Very_Simple_Data_Object with Object_Reference_VSD  = 3 &\
+                                                     # Object_Simple_Integer = 3 &\
+                                                     # Object_Simple_Real    = 3.0
+
+   # [{Decomposed_Struct}] = IITGWO4:The_IH_Struct_Across_Bridge[Simple_ObjA, Simple_ObjB, Simple_ObjC]
+
+   # for [A_Ref, A_Int, A_Real] in {Decomposed_Struct} do
+
+      # if A_Ref = 1 then
+  
+         # if A_Int = 1 then
+
+            # if A_Real = 1.0 then
+               # ValA = 10
+            # else
+               # ValA = -10
+            # endif
+
+         # else
+            # ValA = -11
+         # endif
+
+      # else
+
+         # if A_Ref = 2 then
+     
+            # if A_Int = 2 then
+
+               # if A_Real = 2.0 then
+                  # ValB = 20
+               # else
+                  # ValB = -20
+               # endif
+
+            # else
+               # ValB = -21
+            # endif
+
+         # else
+
+            # if A_Ref = 3 then
+
+               # if A_Int = 3 then
+
+                  # if A_Real = 3.0 then
+                     # ValC = 30
+                  # else
+                     # ValC = -3
+                  # endif
+
+               # else
+                  # ValC = -31
+               # endif
+
+            # else
+               # ValD = -40
+            # endif
+
+         # endif
+
+      # endif
+
+   # endfor
+
+
+   # if ValA = 10 and ValB = 20 and ValC = 30 and ValD = 0 then
+      # [] = RPT2:Test_Passed["OAIBONE Struct IH to bridge", Test, 0]
+   # else
+      # [] = RPT3:Test_Failed["OAIBONE Struct IH to bridge", Test, -10]
+   # endif
+
+   # Test = Test + 1
+
+# End Test 4
+
+#--------------------------------------------------------------------------
+
+my_test.This_Test_Number = Test',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	0,
+	2);
+INSERT INTO D_TSVC
+	VALUES ("c6cb7ae6-0ced-4276-b5dc-6d9f7a5b24c6",
+	"a83c3c3a-34a1-49e4-a26f-ecd2cc02219b",
+	'OAIBONE::Finish_OAIBONE_Tests',
+	'',
+	'[] = OAIBONE3::Delete_Report_Data[]
+
+my_test = find-one Test_Data
+
+delete my_test',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	0,
+	5);
+INSERT INTO D_TSVC
+	VALUES ("310ebbcf-7dec-43ef-b3ba-a73d4a9cd3d2",
+	"a83c3c3a-34a1-49e4-a26f-ecd2cc02219b",
+	'OAIBTWO::Finish_OAIBTWO_Tests',
+	'',
+	'[] = OAIBTWO5::Delete_Report_Data[]
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	0,
+	4);
+INSERT INTO D_TSVC
+	VALUES ("0573d4ca-1f6a-430d-9c12-8aea9e2fbcb9",
+	"a83c3c3a-34a1-49e4-a26f-ecd2cc02219b",
+	'OAIBONE::GetTime_Statements',
+	'',
+	'# GetTime Statements do not appear anywhere in SWATS
+# This Scenario doesn''t do anything but just adds these statements
+
+time_real_local = 0.0
+#$ASL_TIME time_real_local := GETTIME.get_time;
+
+time_int_local = 0
+#$ASL_TIME time_int_local := GETTIME.get_time;
+
+time_int_local = 0
+#$ASL_TIME time_int_local := GETTIME.get_tickcount;
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	0,
+	0,
+	6);
+INSERT INTO D_TSS
+	VALUES ("604a2107-6443-47d5-9603-ef719b5bd5fe",
+	"a83c3c3a-34a1-49e4-a26f-ecd2cc02219b");
+INSERT INTO D_SIS
+	VALUES ("9c8eb1e6-fa07-4941-a446-b9616befe99f",
+	"604a2107-6443-47d5-9603-ef719b5bd5fe",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO D_SIS
+	VALUES ("74b25c05-5b75-4041-aae3-fd88f952262b",
+	"604a2107-6443-47d5-9603-ef719b5bd5fe",
+	"9c8eb1e6-fa07-4941-a446-b9616befe99f");
+INSERT INTO D_SIS
+	VALUES ("0fcbcb1b-e56e-4dd2-a464-d275daf441cc",
+	"604a2107-6443-47d5-9603-ef719b5bd5fe",
+	"74b25c05-5b75-4041-aae3-fd88f952262b");
+INSERT INTO D_SIS
+	VALUES ("3cfbde42-d4d8-4f13-a2d3-85ce607a7430",
+	"604a2107-6443-47d5-9603-ef719b5bd5fe",
+	"0fcbcb1b-e56e-4dd2-a464-d275daf441cc");
+INSERT INTO D_SIS
+	VALUES ("c6cb7ae6-0ced-4276-b5dc-6d9f7a5b24c6",
+	"604a2107-6443-47d5-9603-ef719b5bd5fe",
+	"0573d4ca-1f6a-430d-9c12-8aea9e2fbcb9");
+INSERT INTO D_SIS
+	VALUES ("310ebbcf-7dec-43ef-b3ba-a73d4a9cd3d2",
+	"604a2107-6443-47d5-9603-ef719b5bd5fe",
+	"c6cb7ae6-0ced-4276-b5dc-6d9f7a5b24c6");
+INSERT INTO D_SIS
+	VALUES ("0573d4ca-1f6a-430d-9c12-8aea9e2fbcb9",
+	"604a2107-6443-47d5-9603-ef719b5bd5fe",
+	"3cfbde42-d4d8-4f13-a2d3-85ce607a7430");
+INSERT INTO PE_PE
+	VALUES ("f3a67fb6-afa4-495f-b990-1775e06d3ca8",
+	1,
+	"ad86ff2d-2203-435e-aede-11ae3f756196",
+	"00000000-0000-0000-0000-000000000000",
+	25);
+INSERT INTO PE_PE
+	VALUES ("ad86ff2d-2203-435e-aede-11ae3f756196",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	7);
+INSERT INTO S_SYS_PROXY
+	VALUES ("d61a36ba-d7bd-4aaa-a6f9-d1d7dbf09950",
+	'TSV2_10_40',
+	1,
+	'../TSV2_10_40.xtuml');

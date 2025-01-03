@@ -32,7 +32,7 @@ INSERT INTO GD_GE
 	"700b716e-79ef-44e0-955e-a22d8be3d20d",
 	209,
 	0,
-	'TSV2_10_13::deployment::User_Defined_Types_Build_Set');
+	'TSV2_10_13::deployment::UDT_BSet');
 INSERT INTO GD_SHP
 	VALUES ("d3974b47-488c-4991-8872-31869672623b");
 INSERT INTO GD_NCS
@@ -83,9 +83,9 @@ INSERT INTO DIM_DIA
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO D_DEPL
 	VALUES ("700b716e-79ef-44e0-955e-a22d8be3d20d",
-	'User_Defined_Types_Build_Set',
+	'UDT_BSet',
 	'',
-	'User_Defined_Types_Build_Set');
+	'UDT_BSet');
 INSERT INTO D_TERM
 	VALUES ("6dcd40f6-4e13-4b39-8959-572230e54cb5",
 	"700b716e-79ef-44e0-955e-a22d8be3d20d",
@@ -1216,89 +1216,6 @@ INSERT INTO D_TSVC
 	0,
 	0);
 INSERT INTO D_TSVC
-	VALUES ("8ceb38d5-1651-4df5-80fc-962595fe4a9b",
-	"52a349b4-ca6a-4f95-8d8a-d1ca948087c4",
-	'Create_New_Test_Data_Object_And_Link_It',
-	'',
-	'',
-	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
-	'',
-	6,
-	0,
-	0,
-	0);
-INSERT INTO D_TSPARM
-	VALUES ("34a18bba-9c1a-460b-ab73-ad9213ac0243",
-	"8ceb38d5-1651-4df5-80fc-962595fe4a9b",
-	'New_Set',
-	"ba5eda7a-def5-0000-0000-000000000001",
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000",
-	'');
-INSERT INTO D_TSPARM
-	VALUES ("f7b7414a-f76a-4c26-9544-bcc416d3a0b6",
-	"8ceb38d5-1651-4df5-80fc-962595fe4a9b",
-	'Previous_IH',
-	"b1b1421b-75bf-410f-9592-7f1526e89de5",
-	0,
-	'',
-	"34a18bba-9c1a-460b-ab73-ad9213ac0243",
-	'');
-INSERT INTO S_DT_PROXY
-	VALUES ("b1b1421b-75bf-410f-9592-7f1526e89de5",
-	"00000000-0000-0000-0000-000000000000",
-	'inst_ref<Test_Data>',
-	'',
-	'',
-	'./Shared/Shared.xtuml');
-INSERT INTO D_TSPARM
-	VALUES ("0d9a8a91-d4b1-47d2-8e9b-c4c23845f4ec",
-	"8ceb38d5-1651-4df5-80fc-962595fe4a9b",
-	'This_Test_Number',
-	"ba5eda7a-def5-0000-0000-000000000002",
-	0,
-	'',
-	"f7b7414a-f76a-4c26-9544-bcc416d3a0b6",
-	'');
-INSERT INTO D_TSPARM
-	VALUES ("b1553915-d02b-4d89-8058-6e8fa6ddda04",
-	"8ceb38d5-1651-4df5-80fc-962595fe4a9b",
-	'Testing_For',
-	"ba5eda7a-def5-0000-0000-000000000004",
-	0,
-	'',
-	"0d9a8a91-d4b1-47d2-8e9b-c4c23845f4ec",
-	'');
-INSERT INTO D_TSPARM
-	VALUES ("e146cd72-0608-4e20-babb-e5e389a44506",
-	"8ceb38d5-1651-4df5-80fc-962595fe4a9b",
-	'Final_Entry',
-	"ba5eda7a-def5-0000-0000-000000000001",
-	0,
-	'',
-	"b1553915-d02b-4d89-8058-6e8fa6ddda04",
-	'');
-INSERT INTO D_TSPARM
-	VALUES ("c99f3e07-b6b5-4cd8-a8a9-66d48627344e",
-	"8ceb38d5-1651-4df5-80fc-962595fe4a9b",
-	'Returned_IH',
-	"b1b1421b-75bf-410f-9592-7f1526e89de5",
-	1,
-	'',
-	"e146cd72-0608-4e20-babb-e5e389a44506",
-	'');
-INSERT INTO D_TSPARM
-	VALUES ("e81b429e-4db1-4fc5-abd1-b21f317b183b",
-	"8ceb38d5-1651-4df5-80fc-962595fe4a9b",
-	'Returned_Test_Number',
-	"ba5eda7a-def5-0000-0000-000000000002",
-	1,
-	'',
-	"c99f3e07-b6b5-4cd8-a8a9-66d48627344e",
-	'');
-INSERT INTO D_TSVC
 	VALUES ("68c598a3-da03-4f5c-a16c-7cb79e517040",
 	"52a349b4-ca6a-4f95-8d8a-d1ca948087c4",
 	'Tidy_Up_Test_Data',
@@ -1374,44 +1291,6 @@ INSERT INTO D_TSPARM
 	"b8f8e069-f43e-4c07-a390-00b961eda746",
 	'');
 INSERT INTO D_TSVC
-	VALUES ("2899aa90-bb77-4d1d-a477-a425ded2a38e",
-	"52a349b4-ca6a-4f95-8d8a-d1ca948087c4",
-	'Create_An_Active_Object',
-	'',
-	'',
-	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
-	'',
-	6,
-	0,
-	0,
-	0);
-INSERT INTO D_TSPARM
-	VALUES ("912804e7-cc99-4fc9-8097-b79021c3a3ec",
-	"2899aa90-bb77-4d1d-a477-a425ded2a38e",
-	'This_Test',
-	"ba5eda7a-def5-0000-0000-000000000002",
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000",
-	'');
-INSERT INTO D_TSPARM
-	VALUES ("d969409a-402b-4bc8-955a-3e1d27221e06",
-	"2899aa90-bb77-4d1d-a477-a425ded2a38e",
-	'Returned_IH',
-	"23b9214f-5fdc-4176-baf3-ff4995f2213b",
-	1,
-	'',
-	"912804e7-cc99-4fc9-8097-b79021c3a3ec",
-	'');
-INSERT INTO S_DT_PROXY
-	VALUES ("23b9214f-5fdc-4176-baf3-ff4995f2213b",
-	"00000000-0000-0000-0000-000000000000",
-	'inst_ref<An_Active_Object>',
-	'',
-	'',
-	'./Shared/Shared.xtuml');
-INSERT INTO D_TSVC
 	VALUES ("d257f6df-a7dd-426a-8d23-b1298ad5fe11",
 	"52a349b4-ca6a-4f95-8d8a-d1ca948087c4",
 	'Create_A_Timer_Enumeration',
@@ -1428,7 +1307,7 @@ INSERT INTO D_TSPARM
 	VALUES ("1378c3e2-3783-449e-8081-c3c136960d26",
 	"d257f6df-a7dd-426a-8d23-b1298ad5fe11",
 	'The_Timer_Enum',
-	"2b516d29-ccff-41df-805f-8ca4c42f0ad4",
+	"ba5eda7a-def5-0000-0000-000000000002",
 	0,
 	'',
 	"00000000-0000-0000-0000-000000000000",
@@ -2067,9 +1946,9 @@ INSERT INTO D_TSVC
 INSERT INTO D_TERM
 	VALUES ("17c8198f-7537-4151-9c4c-3279a38d42c7",
 	"700b716e-79ef-44e0-955e-a22d8be3d20d",
-	'User_Defined_Types_Build_Set::Sequence',
+	'UDT_BSet::Sequence',
 	'',
-	'User_Defined_Types_Build_Set',
+	'UDT_BSet',
 	'Sequence',
 	0,
 	'',
@@ -2080,23 +1959,7 @@ INSERT INTO D_TSVC
 	'RP::Disable_Screen_Display',
 	' Disable_Screen_Display
 ',
-	'$INLINE
-   fprintf(stderr,"Turn screen display OFF in ADA mode");
-$ENDINLINE
-
-# Turn off screen reporting in an ada run.
-
-#$ADA_INLINE
-#
-#   with Test_Suite_Text_IO;
-#
-#   Test_Suite_Text_IO.Dump_String(Value => "Writing to screen disabled.");
-#   Test_Suite_Text_IO.Set_Output(Output_Is_On => FALSE);
-#
-#$END_ADAINLINE
-
-
-',
+	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	3,
 	'',
@@ -2110,24 +1973,7 @@ INSERT INTO D_TSVC
 	'FTE::Establish_The_Environment',
 	' Establish_The_Environment
 ',
-	'This_Environment = create unique The_Environment with Where_Are_We = "WACA"
-
-Test_Data = 0
-
-$INLINE
-
-   Test_Data = 1;
-
-   fprintf(stderr,"***** Setting I-SIM environment *****\n");
-
-$ENDINLINE
-
-if Test_Data = 1 then
-   This_Environment.Where_Are_We = "ISIM"
-endif
-
-
-',
+	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	3,
 	'',
@@ -2141,11 +1987,7 @@ INSERT INTO D_TSVC
 	'UDT::Start_UDT_Tests',
 	' Start_UDT_Tests
 ',
-	'[] = UDT3::Create_Report_Data[]
-
-This_Final_Test = create Final_Test_Data with Final_Test_Number = 0
-
-',
+	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	3,
 	'',
@@ -2159,73 +2001,7 @@ INSERT INTO D_TSVC
 	'UDT::Integer_Number_Scenarios',
 	' Integer_Number_Scenarios
 ',
-	'#--------------------------------------------------------------------------
-#Call domain based synchronous service
-#--------------------------------------------------------------------------
-
-# Create test data, stashed in a specially created object
-Test = 1
-
-New_Object = TRUE
-Final_Object = FALSE
-
-Dummy_TD = create Test_Data with The_Test_Number = 99 & Testing_For_What = "Nothing"
-
-A_Test_Data_IH = Dummy_TD
-
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, Dummy_TD,     Test, "Object data assignment", Final_Object]
-
-# Don''t need this beasty any more, it was only ever a dummy.
-delete Dummy_TD
-
-New_Object = FALSE
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Max value assignment", Final_Object]
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Min value assignment", Final_Object]
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Common local assignment", Final_Object]
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Unique local assignment", Final_Object]
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Unique local assignment", Final_Object]
-
-Final_Object = TRUE
-
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Min plus max", Final_Object]
-
-local_counter = 1
-
-if A_Test_Data_IH != UNDEFINED then
-  
-   [] = UDT1::Check_The_Integers[local_counter, A_Test_Data_IH.Testing_For_What, "1241-0000-01-0112"]
-
-   loop
-
-      breakif local_counter = Test
-      local_counter = local_counter + 1
- 
-      A_Test_Data_IH = A_Test_Data_IH -> R1."Has_a".Test_Data   
-
-      if A_Test_Data_IH != UNDEFINED then
-
-         if local_counter = 7 then
-            [] = UDT1::Check_The_Integers[local_counter, A_Test_Data_IH.Testing_For_What, "Null Requid"]
-         else
-            [] = UDT1::Check_The_Integers[local_counter, A_Test_Data_IH.Testing_For_What, "1241-0000-01-0112"]
-         endif
-
-      else
-         # Oops
-         break
-      endif
-
-   endloop
-
-else
-   [] = RPT5:Test_Text[local_counter, "First Test Data object corrupt"]
-endif
-
-# Tidy up the test data objects starting at the final one
-
-[] = UDT7::Tidy_Up_Test_Data[]
-
-',
+	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	3,
 	'',
@@ -2239,80 +2015,7 @@ INSERT INTO D_TSVC
 	'UDT::Real_Numbers_Scenario',
 	' Real_Numbers_Scenario
 ',
-	'#Call object based synchronous service
-
-my_final_test = find-one Final_Test_Data
-
-Test = my_final_test.Final_Test_Number
-
-New_Object   = TRUE
-Final_Object = FALSE
-
-Dummy_TD = create Test_Data with The_Test_Number = 99 & Testing_For_What = "Nothing"
-
-A_Test_Data_IH = Dummy_TD
-
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, Dummy_TD,     Test, "Object data assignment", Final_Object]
-
-# Don''t need this beasty any more, it was only ever a dummy.
-delete Dummy_TD
-
-New_Object = FALSE
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Max value assignment", Final_Object]
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Min value assignment", Final_Object]
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Common local assignment", Final_Object]
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Unique local assignment", Final_Object]
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Unique local assignment", Final_Object]
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Min plus max", Final_Object]
-
-Final_Object = TRUE
-
-[A_Test_Data_IH, Test] = UDT6::Create_New_Test_Data_Object_And_Link_It[New_Object, A_Test_Data_IH, Test, "Report Number Of UDTs", Final_Object]
-
-local_counter = 8
-
-if A_Test_Data_IH != UNDEFINED then
-  
-   [] = RL1:Check_The_Reals[local_counter, A_Test_Data_IH.Testing_For_What, "1241-0000-01-0111"]
-
-   loop
-
-      breakif local_counter = Test
-      local_counter = local_counter + 1
- 
-      A_Test_Data_IH = A_Test_Data_IH -> R1."Has_a".Test_Data   
-
-      if A_Test_Data_IH != UNDEFINED then
-
-         if local_counter = 14 then
-            [] = RL1:Check_The_Reals[local_counter, A_Test_Data_IH.Testing_For_What, "Null Requid"]
-         endif
-
-         if local_counter != 14 and local_counter !=15 then
-            [] = RL1:Check_The_Reals[local_counter, A_Test_Data_IH.Testing_For_What,"1241-0000-01-0111"]
-         endif
-
-         if local_counter = 15 then
-            [] = UDT5::Report_No_UDT_Used[local_counter, A_Test_Data_IH.Testing_For_What]
-         endif
-
-      else
-         # Oops
-         break
-      endif
-
-   endloop
-
-else
-   [] = RPT5:Test_Text[local_counter, "First Test Data object corrupt"]
-endif
-
-# Tidy up the test data objects starting at the final one
-
-[] = UDT7::Tidy_Up_Test_Data[]
-
-
-',
+	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	3,
 	'',
@@ -2326,36 +2029,7 @@ INSERT INTO D_TSVC
 	'UDT::Events_UDT_Scenario',
 	' Events_UDT_Scenario
 ',
-	'my_test = find-one Final_Test_Data
-
-This_Test_Number = my_test.Final_Test_Number
-
-#--------------------------------------------------------------------------
-# Test 1
-#--------------------------------------------------------------------------
-
-   this_object = create An_Active_Object with The_Test_Number = This_Test_Number & Why = ''Not_Tested'' & Current_State = ''Idle''
-
-   generate AAO1:Go(''One'') to this_object
-
-   This_Test_Number = This_Test_Number + 1
-
-# End Test 1
-
-#--------------------------------------------------------------------------
-# Test 2
-#--------------------------------------------------------------------------
-
-   [] = BTF4:Local_Bridge[This_Test_Number]
-
-   This_Test_Number = This_Test_Number + 1
-
-# End Test 2
-
-#--------------------------------------------------------------------------
-
-my_test.Final_Test_Number = This_Test_Number
-',
+	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	3,
 	'',
@@ -2369,92 +2043,7 @@ INSERT INTO D_TSVC
 	'UDT::Terminator_Type_Scenario',
 	' Terminator_Type_Scenario
 ',
-	'
-#--------------------------------------------------------------------------
-# This scenario shall prove that a data object instance handle passed into
-# a terminator shall have its'' attribute types passed in correctly.
-#
-# The locally defined data objects in the terminator should not have any 
-# defined type assinged to them by the code generator, ie. they should be 
-# base types. 
-#
-# A secondary test has been defined where the data attributes of the object
-# are passed in directly. This too should prove that locally defined 
-# objects do not inherit the type of the attribute or object that they are 
-# being assigned. 
-#
-# Given the difference in the way I-SIM and WACA deal with UDT''s, the tests
-# will always pass in I-SIM, and cause a run-time error in WACA if ranges 
-# are exceeded.
-#
-# The thrust of the tests will be to force a range overflow in the UDT 
-# defined object in the terminator. If there are no UDT types associated 
-# with the local object in the terminator, then the test will pass, if the
-# object has inherited the type, then the test will crash spectacularly.
-#--------------------------------------------------------------------------
-
-my_test = find-one Final_Test_Data
-
-the_test_number = my_test.Final_Test_Number
-
-the_result = FALSE
-
-#--------------------------------------------------------------------------
-# Test 1 
-#--------------------------------------------------------------------------
-
-   [] = RPT1:Start_Test[the_test_number, "1103-0000-01-0311", "UDT", "Terminator typing", "Pass in object IH, decode types"]
-
-   the_IH = create unique Object_Into_Bridge with Current_State = ''Idle''
-
-   the_IH.A_Number = 10
-   the_IH.Some_Enumeration = ''Four''
-
-   # with 101, ''Four''
-
-   [the_result, result_value] = BTF1:I_H_Type_Across[the_IH]
-
-   if the_result = TRUE then 
-      [] = RPT2:Test_Passed["Decode IH", the_test_number, result_value]
-   else
-      [] = RPT3:Test_Failed["Decode IH", the_test_number, result_value]
-   endif
-
-   the_test_number = the_test_number + 1
-
-# End Test 1
-
-#--------------------------------------------------------------------------
-# Test 2
-#--------------------------------------------------------------------------
-
-   [] = RPT1:Start_Test[the_test_number, "1103-0000-01-0311", "UDT", "Terminator typing", "Pass in UDT data, decode types"]
-
-   [the_result, result_value, result_subtype] = BTF2:User_Defined_Types_Across[the_IH.A_Number, the_IH.Some_Enumeration]
-
-   if the_result = TRUE then
-      [] = RPT2:Test_Passed["Decode object", the_test_number, result_value]
-   else
-      [] = RPT3:Test_Failed["Decode object", the_test_number, result_value]
-   endif
-
-   the_test_number = the_test_number + 1
-
-# End Test 2
-
-#--------------------------------------------------------------------------
-# Test 3
-#--------------------------------------------------------------------------
-
-   generate OIB1:Start_To_Test(the_test_number) to the_IH
-
-# End Test 3
-
-#--------------------------------------------------------------------------
-
-   the_test_number = the_test_number + 1
-
-   my_test.Final_Test_Number = the_test_number',
+	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	3,
 	'',
@@ -2468,24 +2057,7 @@ INSERT INTO D_TSVC
 	'UDT::Timer_Enum_Scenario',
 	' Timer_Enum_Scenario
 ',
-	'my_test = find-one Final_Test_Data
-
-Test = my_test.Final_Test_Number
-
-#--------------------------------------------------------------------------
-# Test 1
-#--------------------------------------------------------------------------
-
-   [] = BTF5:Timer_Enum_Across_Bridge[Test]
-
-   Test = Test + 1
-
-# End Test 1
-
-#--------------------------------------------------------------------------
-
-my_test.Final_Test_Number = Test
-',
+	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	3,
 	'',
@@ -2499,24 +2071,7 @@ INSERT INTO D_TSVC
 	'UDT::Enum_Scenario',
 	' Enum_Scenario
 ',
-	'my_final_test = find-one Final_Test_Data
-
-Test = my_final_test.Final_Test_Number
-
-#--------------------------------------------------------------------------
-# Test 1
-#--------------------------------------------------------------------------
-
-   [] = UDT10::Check_The_Enumerators[Test, ''Five'', ''Blue'', ''Freezing'']
-
-   Test = Test + 1
-
-# End Test 1
-
-#--------------------------------------------------------------------------
-
-my_final_test.Final_Test_Number = Test 
-',
+	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	3,
 	'',
@@ -2530,17 +2085,7 @@ INSERT INTO D_TSVC
 	'UDT::Finish_UDT_Tests',
 	' Finish_UDT_Tests
 ',
-	'[] = UDT4::Delete_Report_Data[]
-
-FTD_To_Delete = find-one Final_Test_Data
-
-if FTD_To_Delete != UNDEFINED then
-
-   delete FTD_To_Delete
-
-endif
-
-',
+	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	3,
 	'',
@@ -2553,23 +2098,7 @@ INSERT INTO D_TSVC
 	"17c8198f-7537-4151-9c4c-3279a38d42c7",
 	'UDT::Check_Constraint_Type',
 	'',
-	'my_final_test = find-one Final_Test_Data
-
-Test = my_final_test.Final_Test_Number
-
-#--------------------------------------------------------------------------
-# Test 1
-#--------------------------------------------------------------------------
-
-   [] = UDT11::Check_Constraint[Test]
-
-   Test = Test + 1
-
-# End Test 1
-
-#--------------------------------------------------------------------------
-
-my_final_test.Final_Test_Number = Test ',
+	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	3,
 	'',

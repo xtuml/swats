@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -209,7 +209,9 @@ package body Creation_Deletion_coloured2_Regression_Tests_Service is
       
       
       a_red_chicken := Root_Object.Creation_Deletion.fandc.Create;
-      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(a_red_chicken.all).Dish_Number := 201;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(a_red_chicken.all).Dish_Number          := 201;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(a_red_chicken.all).Coloured             := Creation_Deletion_Domain_Types.red;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(a_red_chicken.all).Flavoured            := Creation_Deletion_Domain_Types.chicken;
       
       
       --  Set attribute using instance handle
@@ -389,7 +391,9 @@ package body Creation_Deletion_coloured2_Regression_Tests_Service is
       
       
       a_new_blue_fish := Root_Object.Creation_Deletion.fandc.Create;
-      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(a_new_blue_fish.all).Dish_Number := 202;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(a_new_blue_fish.all).Dish_Number          := 202;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(a_new_blue_fish.all).Coloured             := Creation_Deletion_Domain_Types.blue;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(a_new_blue_fish.all).Flavoured            := Creation_Deletion_Domain_Types.fish;
       
       
       --  link the relationship
@@ -549,39 +553,57 @@ package body Creation_Deletion_coloured2_Regression_Tests_Service is
       --  Create associative objects to use when linking flavoured and coloured objects
       
       blue_chicken := Root_Object.Creation_Deletion.fandc.Create;
-      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(blue_chicken.all).Dish_Number := the_blue_chicken_dish;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(blue_chicken.all).Dish_Number          := the_blue_chicken_dish;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(blue_chicken.all).Coloured             := Creation_Deletion_Domain_Types.blue;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(blue_chicken.all).Flavoured            := Creation_Deletion_Domain_Types.chicken;
       
       
       red_chicken := Root_Object.Creation_Deletion.fandc.Create;
-      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(red_chicken.all).Dish_Number := the_red_chicken_dish;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(red_chicken.all).Dish_Number          := the_red_chicken_dish;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(red_chicken.all).Coloured             := Creation_Deletion_Domain_Types.red;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(red_chicken.all).Flavoured            := Creation_Deletion_Domain_Types.chicken;
       
       
       green_chicken := Root_Object.Creation_Deletion.fandc.Create;
-      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(green_chicken.all).Dish_Number := the_green_chicken_dish;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(green_chicken.all).Dish_Number          := the_green_chicken_dish;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(green_chicken.all).Coloured             := Creation_Deletion_Domain_Types.green;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(green_chicken.all).Flavoured            := Creation_Deletion_Domain_Types.chicken;
       
       
       blue_coffee := Root_Object.Creation_Deletion.fandc.Create;
-      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(blue_coffee.all).Dish_Number := the_blue_coffee_dish;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(blue_coffee.all).Dish_Number          := the_blue_coffee_dish;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(blue_coffee.all).Coloured             := Creation_Deletion_Domain_Types.blue;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(blue_coffee.all).Flavoured            := Creation_Deletion_Domain_Types.coffee;
       
       
       red_coffee := Root_Object.Creation_Deletion.fandc.Create;
-      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(red_coffee.all).Dish_Number := the_red_coffee_dish;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(red_coffee.all).Dish_Number          := the_red_coffee_dish;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(red_coffee.all).Coloured             := Creation_Deletion_Domain_Types.red;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(red_coffee.all).Flavoured            := Creation_Deletion_Domain_Types.coffee;
       
       
       green_coffee := Root_Object.Creation_Deletion.fandc.Create;
-      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(green_coffee.all).Dish_Number := the_green_coffee_dish;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(green_coffee.all).Dish_Number          := the_green_coffee_dish;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(green_coffee.all).Coloured             := Creation_Deletion_Domain_Types.green;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(green_coffee.all).Flavoured            := Creation_Deletion_Domain_Types.coffee;
       
       
       blue_fish := Root_Object.Creation_Deletion.fandc.Create;
-      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(blue_fish.all).Dish_Number := the_blue_fish_dish;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(blue_fish.all).Dish_Number          := the_blue_fish_dish;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(blue_fish.all).Coloured             := Creation_Deletion_Domain_Types.blue;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(blue_fish.all).Flavoured            := Creation_Deletion_Domain_Types.fish;
       
       
       red_fish := Root_Object.Creation_Deletion.fandc.Create;
-      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(red_fish.all).Dish_Number := the_red_fish_dish;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(red_fish.all).Dish_Number          := the_red_fish_dish;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(red_fish.all).Coloured             := Creation_Deletion_Domain_Types.red;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(red_fish.all).Flavoured            := Creation_Deletion_Domain_Types.fish;
       
       
       green_fish := Root_Object.Creation_Deletion.fandc.Create;
-      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(green_fish.all).Dish_Number := the_green_fish_dish;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(green_fish.all).Dish_Number          := the_green_fish_dish;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(green_fish.all).Coloured             := Creation_Deletion_Domain_Types.green;
+      Root_Object.Creation_Deletion.fandc.Creation_Deletion_fandc_Type(green_fish.all).Flavoured            := Creation_Deletion_Domain_Types.fish;
       
       
       --  many to many
