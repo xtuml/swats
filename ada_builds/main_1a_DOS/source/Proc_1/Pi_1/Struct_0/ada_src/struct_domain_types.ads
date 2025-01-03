@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -108,15 +108,15 @@ with Root_Object;
 package Struct_Domain_Types is
    pragma Elaborate_Body (Struct_Domain_Types);
 
-   subtype UDT_Real_Type is Application_Types.Base_Float_Type 
-      range Application_Types.Base_Float_Type(0.0) .. Application_Types.Base_Float_Type(100.0);
-
-   UDT_Real_Type_First : constant UDT_Real_Type := UDT_Real_Type'first;
-
    subtype UDT_Integer_Type is Application_Types.Base_Integer_Type 
       range Application_Types.Base_Integer_Type(0) .. Application_Types.Base_Integer_Type(100);
 
    UDT_Integer_Type_First : constant UDT_Integer_Type := UDT_Integer_Type'first;
+
+   subtype UDT_Real_Type is Application_Types.Base_Float_Type 
+      range Application_Types.Base_Float_Type(0.0) .. Application_Types.Base_Float_Type(100.0);
+
+   UDT_Real_Type_First : constant UDT_Real_Type := UDT_Real_Type'first;
 
 
 

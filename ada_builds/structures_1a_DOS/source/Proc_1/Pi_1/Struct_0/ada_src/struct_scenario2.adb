@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -66,8 +66,8 @@ with Struct_Domain_Types.Ops;
 use type Struct_Domain_Types.UDT_Structure_Type;
 use type Struct_Domain_Types.Complex_UDT_Structure_Type;
 use type Struct_Domain_Types.Colour_Type;
-use type Struct_Domain_Types.UDT_Real_Type;
 use type Struct_Domain_Types.UDT_Integer_Type;
+use type Struct_Domain_Types.UDT_Real_Type;
 
 with Application_Types;
 use type Application_Types.Base_Integer_Type;

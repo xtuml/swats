@@ -32,7 +32,7 @@ INSERT INTO GD_GE
 	"1ad574dd-aa0b-4af8-b336-16f42aa00b40",
 	209,
 	0,
-	'TSV2_10_14::deployment::Tagged_and_Bagged_Build_Set');
+	'TSV2_10_14::deployment::Tags_BSet');
 INSERT INTO GD_SHP
 	VALUES ("ad7c974e-fd46-4d4a-a09a-8c2f2fcd384e");
 INSERT INTO GD_NCS
@@ -83,9 +83,9 @@ INSERT INTO DIM_DIA
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO D_DEPL
 	VALUES ("1ad574dd-aa0b-4af8-b336-16f42aa00b40",
-	'Tagged_and_Bagged_Build_Set',
+	'Tags_BSet',
 	'',
-	'Tagged_and_Bagged_Build_Set');
+	'Tags_BSet');
 INSERT INTO D_TERM
 	VALUES ("f3130ed6-cd96-4f91-9690-6669fbdead9e",
 	"1ad574dd-aa0b-4af8-b336-16f42aa00b40",
@@ -1117,44 +1117,6 @@ INSERT INTO D_TSPARM
 	"9edef5a1-f687-49f1-8434-cce5a1fadbfa",
 	'');
 INSERT INTO D_TSVC
-	VALUES ("9faac7ac-6fd4-4d4d-9e80-237bfddc6254",
-	"873ca7ac-9356-4fbb-9777-2e7e94ad2111",
-	'Set_Environment',
-	'',
-	'',
-	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
-	'',
-	6,
-	1,
-	0,
-	0);
-INSERT INTO D_TSPARM
-	VALUES ("d4eb6a3d-ba6a-4e54-b08f-e67c4c34eb67",
-	"9faac7ac-6fd4-4d4d-9e80-237bfddc6254",
-	'Input_Test_Data',
-	"5f0a77fd-c189-4823-b8e3-52b38c2a4403",
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000",
-	'');
-INSERT INTO S_DT_PROXY
-	VALUES ("5f0a77fd-c189-4823-b8e3-52b38c2a4403",
-	"00000000-0000-0000-0000-000000000000",
-	'inst_ref<Test_Data>',
-	'',
-	'',
-	'./Shared/Shared.xtuml');
-INSERT INTO D_TSPARM
-	VALUES ("ed2b7165-3562-49ee-8f5d-dfdfb45262f9",
-	"9faac7ac-6fd4-4d4d-9e80-237bfddc6254",
-	'Output_Test_Data',
-	"5f0a77fd-c189-4823-b8e3-52b38c2a4403",
-	1,
-	'',
-	"d4eb6a3d-ba6a-4e54-b08f-e67c4c34eb67",
-	'');
-INSERT INTO D_TSVC
 	VALUES ("7f40a8ae-20d6-4feb-b0ed-e758d517e95c",
 	"873ca7ac-9356-4fbb-9777-2e7e94ad2111",
 	'Perform_Passive_Array_of_3_Objects_Tests',
@@ -1310,19 +1272,6 @@ INSERT INTO D_TSVC
 	'',
 	6,
 	0,
-	0,
-	0);
-INSERT INTO D_TSVC
-	VALUES ("c95521ad-7574-478d-a495-b89aeca33f8a",
-	"873ca7ac-9356-4fbb-9777-2e7e94ad2111",
-	'Perform_Static_Tests',
-	'',
-	'',
-	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
-	'',
-	6,
-	1,
 	0,
 	0);
 INSERT INTO D_TSVC
@@ -1824,9 +1773,9 @@ INSERT INTO D_TSVC
 INSERT INTO D_TERM
 	VALUES ("fdf2fa5f-6de3-4c6a-8bd1-26d7934e7b70",
 	"1ad574dd-aa0b-4af8-b336-16f42aa00b40",
-	'Tagged_and_Bagged_Build_Set::Sequence',
+	'Tags_BSet::Sequence',
 	'',
-	'Tagged_and_Bagged_Build_Set',
+	'Tags_BSet',
 	'Sequence',
 	0,
 	'',

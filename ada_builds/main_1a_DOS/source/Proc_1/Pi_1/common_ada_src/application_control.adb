@@ -7,7 +7,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -71,9 +71,9 @@
 --     db       12/03/02         SRLE100002792     Exception_Reporter added.
 --
 --     db        5/04/02         SRLE100000001     Rename Multi_Domain_Scenario_Scheduler to be
---                                                 Main_Build_Set_Scenario_Scheduler
+--                                                 Main_BSet_Scenario_Scheduler
 --
---     db       16/05/02         SRLE100003156     Rename filename to remove Main_Build_Set
+--     db       16/05/02         SRLE100003156     Rename filename to remove Main_BSet
 --
 --    ANF     04/07/06        001798 9SR056        Software Architecture Changes for Open Architecture
 --

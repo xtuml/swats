@@ -1,0 +1,9 @@
+<SYSTEM_CONSTRUCTION>
+   <PROCESSOR Processor_Id="1">
+      <PROCESS Process_Id="1" Implementation_Language="ada">
+         <DOMAIN Domain_Key_Letter="NXUML_TIM">
+            <INTERFACE Fullname="Clock" Design_Tool="UNDEFINED" Direction="REALISES" Type="ip" Identifier="1" Filename_Reference="Clock.xml" />
+         </DOMAIN>
+	 </PROCESS>
+   </PROCESSOR>
+</SYSTEM_CONSTRUCTION>

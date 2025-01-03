@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -181,42 +181,61 @@ use type Root_Object.Object_Access;
       Root_Object.Relationships.objRM.Relationships_objRM_Type(newRightMany.all).idRM := 12;
       
       
-      --  Create Associative Instances
+      --  Create Associative Instances.
+      --  Note this takes consiscence of how they will be linked in LM1:Create_Relationships
       
       newLMRM := Root_Object.Relationships.objLMRM.Create;
-      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idLMRM := 2;
-      
-      
-      newLMRM := Root_Object.Relationships.objLMRM.Create;
-      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idLMRM := 3;
-      
-      
-      newLMRM := Root_Object.Relationships.objLMRM.Create;
-      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idLMRM := 4;
+      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idLMRM  := 2;
+      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idLM    := 1;
+      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idRM    := 1;
       
       
       newLMRM := Root_Object.Relationships.objLMRM.Create;
-      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idLMRM := 5;
+      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idLMRM  := 3;
+      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idLM    := 1;
+      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idRM    := 3;
       
       
       newLMRM := Root_Object.Relationships.objLMRM.Create;
-      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idLMRM := 8;
+      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idLMRM  := 4;
+      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idLM    := 3;
+      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idRM    := 1;
       
       
       newLMRM := Root_Object.Relationships.objLMRM.Create;
-      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idLMRM := 9;
+      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idLMRM  := 5;
+      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idLM    := 2;
+      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idRM    := 2;
       
       
       newLMRM := Root_Object.Relationships.objLMRM.Create;
-      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idLMRM := 10;
+      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idLMRM  := 8;
+      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idLM    := 11;
+      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idRM    := 11;
       
       
       newLMRM := Root_Object.Relationships.objLMRM.Create;
-      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idLMRM := 11;
+      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idLMRM  := 9;
+      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idLM    := 12;
+      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idRM    := 11;
       
       
       newLMRM := Root_Object.Relationships.objLMRM.Create;
-      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idLMRM := 12;
+      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idLMRM  := 10;
+      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idLM    := 10;
+      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idRM    := 10;
+      
+      
+      newLMRM := Root_Object.Relationships.objLMRM.Create;
+      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idLMRM  := 11;
+      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idLM    := 10;
+      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idRM    := 11;
+      
+      
+      newLMRM := Root_Object.Relationships.objLMRM.Create;
+      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idLMRM  := 12;
+      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idLM    := 10;
+      Root_Object.Relationships.objLMRM.Relationships_objLMRM_Type(newLMRM.all).idRM    := 12;
       
       
       --  Create Bottom_Many Instance

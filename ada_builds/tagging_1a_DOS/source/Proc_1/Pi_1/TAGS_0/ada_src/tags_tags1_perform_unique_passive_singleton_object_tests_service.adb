@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -129,7 +129,7 @@ package body TAGS_TAGS1_Perform_Unique_Passive_Singleton_Object_Tests_Service is
       
       --  Further attempts to create an object of this sort should be met with
       --  complete indifference by WACA.
-      --  Another_Passive_Object = create A_Passive_Static_Object with Size = 2 & Unique_Identifier = 2
+      --  Another_Passive_Object = create unique A_Passive_Static_Object with Size = 2
       
       if The_Passive_Object =  Null then
          
@@ -164,7 +164,7 @@ package body TAGS_TAGS1_Perform_Unique_Passive_Singleton_Object_Tests_Service is
       
       --  Creation of another singleton object will cause unpredictable actions by WACA, therefor this
       --  test is unsupported for the moment.
-      --  Another_Passive_Object = create A_Passive_Static_Object with Size = 2 & Unique_Identifier = 2
+      --  Another_Passive_Object = create unique A_Passive_Static_Object with Size = 2
       
       TAGS_RPT4_Test_Unsupported_Bridge.TAGS_RPT4_Test_Unsupported (
          Unsupported_Test_Number => Local_Test);

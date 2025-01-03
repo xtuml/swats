@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -1307,31 +1307,37 @@ use type Root_Object.Object_Access;
       
       
       SubA1 := Root_Object.Events.sbA.Create;
+      Root_Object.Events.sbA.Events_sbA_Type(SubA1.all).idA                   := The_Test_Number;
       Root_Object.Events.sbA.Events_sbA_Type(SubA1.all).Value_To_Add          := 10;
       Root_Object.Events.sbA.Events_sbA_Type(SubA1.all).Current_State         := Root_Object.Events.sbA.Idle;
       
       
       SubB1 := Root_Object.Events.sbB.Create;
+      Root_Object.Events.sbB.Events_sbB_Type(SubB1.all).idA                   := The_Test_Number;
       Root_Object.Events.sbB.Events_sbB_Type(SubB1.all).Value_To_Add          := 5;
       Root_Object.Events.sbB.Events_sbB_Type(SubB1.all).Current_State         := Root_Object.Events.sbB.Idle;
       
       
       SubC1 := Root_Object.Events.sbC.Create;
+      Root_Object.Events.sbC.Events_sbC_Type(SubC1.all).idA                   := The_Test_Number;
       Root_Object.Events.sbC.Events_sbC_Type(SubC1.all).Value_To_Add          := 6;
       Root_Object.Events.sbC.Events_sbC_Type(SubC1.all).Current_State         := Root_Object.Events.sbC.Idle;
       
       
       subD1 := Root_Object.Events.sbD.Create;
+      Root_Object.Events.sbD.Events_sbD_Type(subD1.all).idA                   := The_Test_Number;
       Root_Object.Events.sbD.Events_sbD_Type(subD1.all).Value_To_Add          := 20;
       Root_Object.Events.sbD.Events_sbD_Type(subD1.all).Current_State         := Root_Object.Events.sbD.Idle;
       
       
       subE1 := Root_Object.Events.sbE.Create;
+      Root_Object.Events.sbE.Events_sbE_Type(subE1.all).idA                   := The_Test_Number;
       Root_Object.Events.sbE.Events_sbE_Type(subE1.all).Value_To_Add          := 30;
       Root_Object.Events.sbE.Events_sbE_Type(subE1.all).Current_State         := Root_Object.Events.sbE.Idle;
       
       
       subF1 := Root_Object.Events.sbF.Create;
+      Root_Object.Events.sbF.Events_sbF_Type(subF1.all).idA                   := The_Test_Number;
       Root_Object.Events.sbF.Events_sbF_Type(subF1.all).Value_To_Add          := 40;
       Root_Object.Events.sbF.Events_sbF_Type(subF1.all).Current_State         := Root_Object.Events.sbF.Idle;
       
@@ -1402,31 +1408,37 @@ use type Root_Object.Object_Access;
       
       
       SubA2 := Root_Object.Events.sbA.Create;
+      Root_Object.Events.sbA.Events_sbA_Type(SubA2.all).idA                   := The_Test_Number;
       Root_Object.Events.sbA.Events_sbA_Type(SubA2.all).Value_To_Add          := 5;
       Root_Object.Events.sbA.Events_sbA_Type(SubA2.all).Current_State         := Root_Object.Events.sbA.Idle;
       
       
       SubB2 := Root_Object.Events.sbB.Create;
+      Root_Object.Events.sbB.Events_sbB_Type(SubB2.all).idA                   := The_Test_Number;
       Root_Object.Events.sbB.Events_sbB_Type(SubB2.all).Value_To_Add          := 0;
       Root_Object.Events.sbB.Events_sbB_Type(SubB2.all).Current_State         := Root_Object.Events.sbB.Idle;
       
       
       SubC2 := Root_Object.Events.sbC.Create;
+      Root_Object.Events.sbC.Events_sbC_Type(SubC2.all).idA                   := The_Test_Number;
       Root_Object.Events.sbC.Events_sbC_Type(SubC2.all).Value_To_Add          := 6;
       Root_Object.Events.sbC.Events_sbC_Type(SubC2.all).Current_State         := Root_Object.Events.sbC.Idle;
       
       
       subD2 := Root_Object.Events.sbD.Create;
+      Root_Object.Events.sbD.Events_sbD_Type(subD2.all).idA                   := The_Test_Number;
       Root_Object.Events.sbD.Events_sbD_Type(subD2.all).Value_To_Add          := 0;
       Root_Object.Events.sbD.Events_sbD_Type(subD2.all).Current_State         := Root_Object.Events.sbD.Idle;
       
       
       subE2 := Root_Object.Events.sbE.Create;
+      Root_Object.Events.sbE.Events_sbE_Type(subE2.all).idA                   := The_Test_Number;
       Root_Object.Events.sbE.Events_sbE_Type(subE2.all).Value_To_Add          := 0;
       Root_Object.Events.sbE.Events_sbE_Type(subE2.all).Current_State         := Root_Object.Events.sbE.Idle;
       
       
       subF2 := Root_Object.Events.sbF.Create;
+      Root_Object.Events.sbF.Events_sbF_Type(subF2.all).idA                   := The_Test_Number;
       Root_Object.Events.sbF.Events_sbF_Type(subF2.all).Value_To_Add          := 0;
       Root_Object.Events.sbF.Events_sbF_Type(subF2.all).Current_State         := Root_Object.Events.sbF.Idle;
       

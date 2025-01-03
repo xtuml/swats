@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -104,10 +104,10 @@ with Ada.Unchecked_Conversion;
 with Root_Object;
 
 package UDT_Domain_Types is
-   subtype Mminimum_To_Maximum_Of_Real is Application_Types.Base_Float_Type 
+   subtype Minimum_To_Maximum_Of_Real is Application_Types.Base_Float_Type 
       range Application_Types.Base_Float_Type(-32768.0) .. Application_Types.Base_Float_Type(32767.0);
 
-   Mminimum_To_Maximum_Of_Real_First : constant Mminimum_To_Maximum_Of_Real := Mminimum_To_Maximum_Of_Real'first;
+   Minimum_To_Maximum_Of_Real_First : constant Minimum_To_Maximum_Of_Real := Minimum_To_Maximum_Of_Real'first;
 
    subtype Minimum_To_Minus_One_Of_Real is Application_Types.Base_Float_Type 
       range Application_Types.Base_Float_Type(-32768.0) .. Application_Types.Base_Float_Type(-1.0);

@@ -1,0 +1,26 @@
+<INTERFACE Fullname="I_Into_The_Great_Wide_Open" Shortname="IITGWO" Version="1">
+   <TYPE Type="ENUMERATION" Name="Colour_Type">
+      <MEMBER Value="0" Name="Red" />
+      <MEMBER Value="1" Name="Green" />
+      <MEMBER Value="2" Name="Blue" />
+   </TYPE>
+   <TYPE Type="STRUCTURE" Name="Source_Structure_Type">
+      <MEMBER Value="0" Name="Source_Integer" Type="Base_Integer_Type"/>
+      <MEMBER Value="1" Name="Source_Real" Type="Base_Float_Type"/>
+      <MEMBER Value="2" Name="Source_Text" Type="Base_Text_Type"/>
+      <MEMBER Value="3" Name="Source_Boolean" Type="Base_Boolean_Type"/>
+      <MEMBER Value="4" Name="Source_Colour" Type="Colour_Type"/>
+   </TYPE>
+   <OPERATION Identifier="1" Name="Across_The_Great_Divide" Contract_Type="SYNCHRONOUS">
+      <INPUT_PARAMETER Identifier="1" Name="Test" Type="Base_Integer_Type" />
+      <INPUT_PARAMETER Identifier="2" Name="A_Structure_To_Send" Type="Source_Structure_Type" />
+      <INPUT_PARAMETER Identifier="3" Name="Control_Integer" Type="Base_Integer_Type" />
+      <INPUT_PARAMETER Identifier="4" Name="Control_Real" Type="Base_Float_Type" />
+      <INPUT_PARAMETER Identifier="5" Name="Control_String" Type="Base_Text_Type" />
+      <INPUT_PARAMETER Identifier="6" Name="Control_Enum" Type="Colour_Type" />
+      <INPUT_PARAMETER Identifier="7" Name="Control_Boolean" Type="Base_Boolean_Type" />
+      <INPUT_PARAMETER Identifier="8" Name="Elements_In_Structure" Type="Base_Integer_Type" />
+      <OUTPUT_PARAMETER Identifier="9" Name="Result" Type="Base_Boolean_Type" />
+      <OUTPUT_PARAMETER Identifier="10" Name="A_Structure_To_Return" Type="Source_Structure_Type" />
+   </OPERATION>
+</INTERFACE>

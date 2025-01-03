@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -350,7 +350,7 @@ package body Root_Object.UDT.RL is
 
 --ADATEST IGNORE_ON
    function Get_Sixth_Real (
-      This_Object: Root_Object.Object_Access) return UDT_Domain_Types.Mminimum_To_Maximum_Of_Real is
+      This_Object: Root_Object.Object_Access) return UDT_Domain_Types.Minimum_To_Maximum_Of_Real is
    begin
       return UDT_RL_Type (This_Object.all).Sixth_Real;
    end Get_Sixth_Real;
@@ -361,7 +361,7 @@ package body Root_Object.UDT.RL is
 --ADATEST IGNORE_ON
    procedure Put_Sixth_Real (
       This_Object : in Root_Object.Object_Access;
-      Sixth_Real_Value : in UDT_Domain_Types.Mminimum_To_Maximum_Of_Real) is
+      Sixth_Real_Value : in UDT_Domain_Types.Minimum_To_Maximum_Of_Real) is
    begin
       UDT_RL_Type (This_Object.all).Sixth_Real :=
          Sixth_Real_Value;
@@ -395,7 +395,7 @@ package body Root_Object.UDT.RL is
          UDT_RL_Type(This_Object.all).Third_Real := UDT_Domain_Types.Subset_Zero_Of_Real_First;
          UDT_RL_Type(This_Object.all).Fourth_Real := UDT_Domain_Types.One_To_Maximum_Of_Real_First;
          UDT_RL_Type(This_Object.all).Fifth_Real := UDT_Domain_Types.Minimum_To_Minus_One_Of_Real_First;
-         UDT_RL_Type(This_Object.all).Sixth_Real := UDT_Domain_Types.Mminimum_To_Maximum_Of_Real_First;
+         UDT_RL_Type(This_Object.all).Sixth_Real := UDT_Domain_Types.Minimum_To_Maximum_Of_Real_First;
          Free_List.First_Entry := Free_List.First_Entry.Next_Object;
       end if;
 

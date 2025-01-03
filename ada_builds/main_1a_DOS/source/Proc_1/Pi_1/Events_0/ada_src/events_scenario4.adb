@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -420,7 +420,7 @@ use type Root_Object.Object_Access;
       
       Events_Events3_Generate_From_Service_Service.Events_Events3_Generate_From_Service (
          Test_No          => The_Test_Number,
-         The_IH           => firstX);
+         The_IH_ID        => Root_Object.Events.objX.Events_objX_type(firstX.all).objX_id);
       
       The_Test_Number := The_Test_Number + 1;
       
@@ -484,8 +484,8 @@ use type Root_Object.Object_Access;
          The_Requid_Itself  => "1241-0000-01-0402               ");
       
       Events_GFB1_Generate_Event_Bridge.Events_GFB1_Generate_Event (
-         Test_No => The_Test_Number,
-         The_IH  => firstX);
+         Test_No   => The_Test_Number,
+         The_IH_ID => Root_Object.Events.objX.Events_objX_type(firstX.all).objX_id);
       
       The_Test_Number := The_Test_Number + 1;
       
@@ -676,6 +676,7 @@ use type Root_Object.Object_Access;
       Root_Object.Events.objZ.Events_objZ_Type(firstZ.all).Int_Att         := 1000;
       Root_Object.Events.objZ.Events_objZ_Type(firstZ.all).Real_Att        := 1000.0;
       Root_Object.Events.objZ.Events_objZ_Type(firstZ.all).Text_Att        := "Test_Data                       ";
+      Root_Object.Events.objZ.Events_objZ_Type(firstZ.all).Current_State   := Root_Object.Events.objZ.Idle;
       
       
       declare
@@ -713,6 +714,7 @@ use type Root_Object.Object_Access;
       Root_Object.Events.objZ.Events_objZ_Type(secondZ.all).Int_Att         := 0;
       Root_Object.Events.objZ.Events_objZ_Type(secondZ.all).Real_Att        := 0.0;
       Root_Object.Events.objZ.Events_objZ_Type(secondZ.all).Text_Att        := "                                ";
+      Root_Object.Events.objZ.Events_objZ_Type(secondZ.all).Current_State   := Root_Object.Events.objZ.Idle;
       
       
       declare

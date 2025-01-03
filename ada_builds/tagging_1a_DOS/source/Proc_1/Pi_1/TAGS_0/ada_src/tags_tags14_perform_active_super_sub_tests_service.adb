@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -118,6 +118,7 @@ package body TAGS_TAGS14_Perform_Active_Super_Sub_Tests_Service is
       --  Create one of one super type objects
       Super1 := Root_Object.TAGS.ATSUPER.Create_Unique;
       Root_Object.TAGS.ATSUPER.TAGS_ATSUPER_Type(Super1.all).Supertype_Data := this_test;
+      Root_Object.TAGS.ATSUPER.TAGS_ATSUPER_Type(Super1.all).Current_State  := Root_Object.TAGS.ATSUPER.Idle;
       
       
       --  create one of two sub type 1 objects
@@ -132,6 +133,7 @@ package body TAGS_TAGS14_Perform_Active_Super_Sub_Tests_Service is
       Sub1_1 := Root_Object.TAGS.ATSUBONE.Create;
       Root_Object.TAGS.ATSUBONE.TAGS_ATSUBONE_Type(Sub1_1.all).Subtype_One_Data := this_test;
       Root_Object.TAGS.ATSUBONE.TAGS_ATSUBONE_Type(Sub1_1.all).Test_No          := Index_For_Subtype;
+      Root_Object.TAGS.ATSUBONE.TAGS_ATSUBONE_Type(Sub1_1.all).Current_State    := Root_Object.TAGS.ATSUBONE.Idle;
       
       TAGS_Rel_R6.Link (
          A_Instance => Super1,

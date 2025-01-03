@@ -1,0 +1,17 @@
+<opt>
+  <PROCESSOR Processor_Id="1">
+    <PROCESS Filename_Reference="connection_specification.xml" Implementation_Language="ada" Process_Id="1">
+      <DOMAIN Domain_Key_Letter="OAIBONE">
+        <INTERFACE Design_Tool="IUML" Direction="USES" Filename_Reference="i_into_the_great_wide_open.xml" Fullname="I_Into_The_Great_Wide_Open" Identifier="1" Type="internal" />
+      </DOMAIN>
+      <DOMAIN Domain_Key_Letter="OAIBTWO">
+        <INTERFACE Design_Tool="IUML" Direction="REALISES" Filename_Reference="i_into_the_great_wide_open.xml" Fullname="I_Into_The_Great_Wide_Open" Identifier="1" Type="internal" />
+      </DOMAIN>
+      <DOMAIN Domain_Key_Letter="NXUML_TIM">
+        <INTERFACE Design_Tool="UNDEFINED" Direction="REALISES" Filename_Reference="Clock.xml" Fullname="Clock" Identifier="1" Type="ip" />
+      </DOMAIN>
+    </PROCESS>
+    <PROCESS Implementation_Language="delphi" Process_Id="2">
+    </PROCESS>
+  </PROCESSOR>
+</opt>

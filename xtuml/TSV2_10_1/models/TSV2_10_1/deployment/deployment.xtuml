@@ -32,7 +32,7 @@ INSERT INTO GD_GE
 	"4763dcfa-2672-4f83-917a-ca8d07f8f968",
 	209,
 	0,
-	'TSV2_10_1::deployment::Creation_Deletion_Build_Set');
+	'TSV2_10_1::deployment::CD_BSet');
 INSERT INTO GD_SHP
 	VALUES ("7bd432b1-1b20-4106-ac27-ccf77cc02cc3");
 INSERT INTO GD_NCS
@@ -83,9 +83,9 @@ INSERT INTO DIM_DIA
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO D_DEPL
 	VALUES ("4763dcfa-2672-4f83-917a-ca8d07f8f968",
-	'Creation_Deletion_Build_Set',
+	'CD_BSet',
 	'',
-	'Creation_Deletion_Build_Set');
+	'CD_BSet');
 INSERT INTO D_TERM
 	VALUES ("44a628b2-df54-4c5f-a0b5-7a2e3519b4ad",
 	"4763dcfa-2672-4f83-917a-ca8d07f8f968",
@@ -1179,9 +1179,9 @@ INSERT INTO D_TSPARM
 INSERT INTO D_TERM
 	VALUES ("af528e24-37d1-4b5a-81b3-eccf944acdda",
 	"4763dcfa-2672-4f83-917a-ca8d07f8f968",
-	'Creation_Deletion_Build_Set::Sequence',
+	'CD_BSet::Sequence',
 	'',
-	'Creation_Deletion_Build_Set',
+	'CD_BSet',
 	'Sequence',
 	0,
 	'',

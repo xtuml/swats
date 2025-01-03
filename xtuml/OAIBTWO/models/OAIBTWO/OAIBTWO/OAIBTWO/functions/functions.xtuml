@@ -1,0 +1,369 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("804c492b-e827-4e53-b574-d8ac065a603c",
+	"00000000-0000-0000-0000-000000000000",
+	"615c0d8e-8b60-40c8-be40-cf93df1d0de2",
+	'functions',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("7942ec35-cabe-48bb-b45e-01b65972bca6",
+	112,
+	"804c492b-e827-4e53-b574-d8ac065a603c",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'OAIBTWO::OAIBTWO::OAIBTWO::functions');
+INSERT INTO DIM_DIA
+	VALUES ("7942ec35-cabe-48bb-b45e-01b65972bca6",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_SYNC
+	VALUES ("821b8901-12a5-48f5-9b96-ea1cb8f0fb28",
+	"00000000-0000-0000-0000-000000000000",
+	'Receive_The_Structure',
+	'',
+	'#--------------------------------------------------------------------------
+# Receive a structure and the control data from the other domain.
+#--------------------------------------------------------------------------
+
+[] = RPT1:Start_Test[Test, "Null Requid", "OAIBTWO", "DBSS Receive_The_Structure", "Decode received structure"]
+
+Has_Passed = FALSE
+Failure_Code = 0
+
+How_Many_Sets = countof{The_Structure}
+
+
+if How_Many_Sets = Number_Of_Structures_In_Set then
+
+   Count = 1
+
+   for [local_integer, local_real, local_string, local_boolean, local_colour] in {The_Structure} do
+
+      # Look at the last entry only.
+      if Count = How_Many_Sets then 
+
+         if local_integer = Control_Integer then
+
+            if local_real = Control_Real then
+
+               if local_string = Control_String then
+
+                  if local_colour = Control_Enum then
+
+                     if local_boolean = Control_Boolean then
+
+                        Has_Passed = TRUE
+                        [] = RPT2:Test_Passed ["OAIBTWO Destination Structure correctly received", Test, 0]
+
+                     else
+                        # Boolean incorrectly decoded
+                        Has_Passed = TRUE
+                        Failure_Code = -6
+                     endif
+
+                  else
+                     # Enumeration incorrectly decoded
+                     Has_Passed = FALSE
+                     Failure_Code = -5
+                  endif
+
+               else
+                  # String incorrectly decoded
+                  Has_Passed = FALSE
+                  Failure_Code = -4
+               endif
+
+            else
+               # Real incorrectly decoded
+               Has_Passed = FALSE
+               Failure_Code = -3
+            endif
+
+         else
+            # Integer incorrectly decoded
+            Has_Passed = FALSE
+            Failure_Code = -2
+         endif
+
+      else
+         # Not interested in this entry. Control data will only match up with the 
+         # last entry in the set.
+         Count        = Count + 1
+         Has_Passed   = FALSE
+         Failure_Code = 0
+      endif
+
+   # Loop around the entries in the set of structures.
+   endfor
+
+else
+   # Conflict in the number of sets found and the number
+   # specified by the source domain.
+   Has_Passed = FALSE
+   Failure_Code = -1
+endif
+
+if Has_Passed = FALSE then
+   [] = RPT3:Test_Failed["OAIBTWO Destination Structure corrupted", Test, Failure_Code]
+endif
+
+Result = Has_Passed',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	1);
+INSERT INTO S_SPARM
+	VALUES ("44bd9c75-8d69-4a2d-b66f-11de3e2ac6b9",
+	"821b8901-12a5-48f5-9b96-ea1cb8f0fb28",
+	'Test',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("1af642be-3c4e-46f5-9810-f02b200c9180",
+	"821b8901-12a5-48f5-9b96-ea1cb8f0fb28",
+	'The_Structure',
+	"099fc960-2b31-4d33-af11-7fe2f00c73ca",
+	0,
+	'',
+	"44bd9c75-8d69-4a2d-b66f-11de3e2ac6b9",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("099fc960-2b31-4d33-af11-7fe2f00c73ca",
+	"00000000-0000-0000-0000-000000000000",
+	'sequence of Source_Structure_Type',
+	'',
+	'',
+	'../../Shared/Shared.xtuml');
+INSERT INTO S_SPARM
+	VALUES ("984e969d-4140-42e2-9d5e-7111abf5fee2",
+	"821b8901-12a5-48f5-9b96-ea1cb8f0fb28",
+	'Control_Integer',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"1af642be-3c4e-46f5-9810-f02b200c9180",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("f87e6b15-5b5b-4980-858e-2e63a188ddf1",
+	"821b8901-12a5-48f5-9b96-ea1cb8f0fb28",
+	'Control_Real',
+	"ba5eda7a-def5-0000-0000-000000000003",
+	0,
+	'',
+	"984e969d-4140-42e2-9d5e-7111abf5fee2",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("24449118-27fa-44dc-a0fd-d072374c9fc4",
+	"821b8901-12a5-48f5-9b96-ea1cb8f0fb28",
+	'Control_String',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"f87e6b15-5b5b-4980-858e-2e63a188ddf1",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("e6f7be1c-de11-4d66-bb0e-a4a42a874e01",
+	"821b8901-12a5-48f5-9b96-ea1cb8f0fb28",
+	'Control_Enum',
+	"5123827b-79e6-48ee-bd11-21c99f0d4d64",
+	0,
+	'',
+	"24449118-27fa-44dc-a0fd-d072374c9fc4",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("5123827b-79e6-48ee-bd11-21c99f0d4d64",
+	"00000000-0000-0000-0000-000000000000",
+	'Colour_Type',
+	'',
+	'',
+	'../../Shared/Shared.xtuml');
+INSERT INTO S_SPARM
+	VALUES ("09228e33-165b-47e0-829d-c6cef9d5e893",
+	"821b8901-12a5-48f5-9b96-ea1cb8f0fb28",
+	'Control_Boolean',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	0,
+	'',
+	"e6f7be1c-de11-4d66-bb0e-a4a42a874e01",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("e19fa36f-0f2e-4726-97c7-0ae47a2534ec",
+	"821b8901-12a5-48f5-9b96-ea1cb8f0fb28",
+	'Number_Of_Structures_In_Set',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"09228e33-165b-47e0-829d-c6cef9d5e893",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("40f58cb5-2414-4613-a338-90f9abb0d9d8",
+	"821b8901-12a5-48f5-9b96-ea1cb8f0fb28",
+	'Result',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	1,
+	'',
+	"e19fa36f-0f2e-4726-97c7-0ae47a2534ec",
+	'');
+INSERT INTO PE_PE
+	VALUES ("821b8901-12a5-48f5-9b96-ea1cb8f0fb28",
+	1,
+	"804c492b-e827-4e53-b574-d8ac065a603c",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("ccd546c0-356c-44bd-ac47-9a45e53e0b9c",
+	"00000000-0000-0000-0000-000000000000",
+	'Receive_A_Very_Simple_Structure',
+	'',
+	'
+[] = RPT1:Start_Test[Test_Number, "Null Requid", "OAIBTWO", "Receive simple structure", "RX from SBONE"]
+
+Total_Integer = 0
+Total_Real    = 0.0
+
+for [local_simple_integer, local_simple_real] in {Received_Very_Simple_Structure} do
+
+   Total_Integer = Total_Integer + local_simple_integer
+
+   Total_Real = Total_Real + local_simple_real
+
+endfor
+
+if Total_Integer = 1530 then 
+   [] = RPT2:Test_Passed["OAIBTWO Receive v simple structure", Test_Number, Total_Integer]
+else
+   [] = RPT3:Test_Failed["OAIBTWO Receive v simple structure", Test_Number, Total_Integer]
+endif
+
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	3);
+INSERT INTO S_SPARM
+	VALUES ("423d4494-c3a5-4b06-a373-3fc3ed5fe2bc",
+	"ccd546c0-356c-44bd-ac47-9a45e53e0b9c",
+	'Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("2495ebfc-1044-47b7-abbe-d0d5145b8204",
+	"ccd546c0-356c-44bd-ac47-9a45e53e0b9c",
+	'Received_Very_Simple_Structure',
+	"05d2f164-a2d2-4ef6-b564-de44ba019300",
+	0,
+	'',
+	"423d4494-c3a5-4b06-a373-3fc3ed5fe2bc",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("05d2f164-a2d2-4ef6-b564-de44ba019300",
+	"00000000-0000-0000-0000-000000000000",
+	'sequence of Very_Simple_Source_Structure_Type',
+	'',
+	'',
+	'../../Shared/Shared.xtuml');
+INSERT INTO PE_PE
+	VALUES ("ccd546c0-356c-44bd-ac47-9a45e53e0b9c",
+	1,
+	"804c492b-e827-4e53-b574-d8ac065a603c",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("e59d260b-1ed3-4cff-9fd3-668b3c502432",
+	"00000000-0000-0000-0000-000000000000",
+	'Create_Report_Data',
+	'',
+	'# Find out of there already is one of these.
+# It is not inconceivable that a report object still exists from a previous run.
+# Report objects are not deleted at the end of a run, as certain events may
+# still be en-queued.
+
+old_report = find-one Report_Data
+
+if old_report != UNDEFINED then
+   delete old_report
+endif
+
+My_Report = create unique Report_Data with Reported_Domain_Number = 0
+
+[] = RPT6:Domain_Test_Start["OA Internal Bridge Domain Two"]
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	4);
+INSERT INTO PE_PE
+	VALUES ("e59d260b-1ed3-4cff-9fd3-668b3c502432",
+	1,
+	"804c492b-e827-4e53-b574-d8ac065a603c",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("3f673e95-f0a7-4e39-a5f7-9cf51f97dbe8",
+	"00000000-0000-0000-0000-000000000000",
+	'Delete_Report_Data',
+	'',
+	'[] = RPT7:Domain_Test_Finished["OA Internal Bridge Domain Two"]
+
+# Do not delete the Report_Data object, as there may be still events in
+# the queue.',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	5);
+INSERT INTO PE_PE
+	VALUES ("3f673e95-f0a7-4e39-a5f7-9cf51f97dbe8",
+	1,
+	"804c492b-e827-4e53-b574-d8ac065a603c",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO PE_PE
+	VALUES ("804c492b-e827-4e53-b574-d8ac065a603c",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"0b6924fd-7747-44de-96c4-17257144a249",
+	7);
+INSERT INTO C_C_PROXY
+	VALUES ("0b6924fd-7747-44de-96c4-17257144a249",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'OAIBTWO',
+	'',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Open Architecture Internal Bridge Domain Two',
+	'../OAIBTWO.xtuml');
+INSERT INTO S_SYS_PROXY
+	VALUES ("615c0d8e-8b60-40c8-be40-cf93df1d0de2",
+	'OAIBTWO',
+	1,
+	'../../../OAIBTWO.xtuml');

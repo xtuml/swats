@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -77,9 +77,7 @@ use type Root_Object.Object_Access;
       newA    : Root_Object.Object_Access;
       Super1  : Root_Object.Object_Access;
       Sub_A1  : Root_Object.Object_Access;
-      Sub_B1  : Root_Object.Object_Access;
       Super2  : Root_Object.Object_Access;
-      Sub_A2  : Root_Object.Object_Access;
       Sub_B2  : Root_Object.Object_Access;
       
       count : Application_Types.Base_Integer_Type := 1;
@@ -116,10 +114,7 @@ use type Root_Object.Object_Access;
       Root_Object.DomainA.DOMAIN_A_SUBA.DomainA_DOMAIN_A_SUBA_Type(Sub_A1.all).A_Text           := "Sub A1                          ";
       
       
-      Sub_B1 := Root_Object.DomainA.DOMAIN_A_SUBB.Create;
-      Root_Object.DomainA.DOMAIN_A_SUBB.DomainA_DOMAIN_A_SUBB_Type(Sub_B1.all).SubB_Attribute   := 1;
-      Root_Object.DomainA.DOMAIN_A_SUBB.DomainA_DOMAIN_A_SUBB_Type(Sub_B1.all).B_Text           := "Sub B1                          ";
-      
+      -- Sub_B1 = create Domain_A_Object_SubB with SubB_Attribute = 1 & B_Text = "Sub B1"
       DomainA_Rel_R4.Link (
          A_Instance => Super1,
          B_Instance => Sub_A1);
@@ -129,10 +124,7 @@ use type Root_Object.Object_Access;
       Root_Object.DomainA.DOMAIN_A_SUPER.DomainA_DOMAIN_A_SUPER_Type(Super2.all).idSUPER := 2;
       
       
-      Sub_A2 := Root_Object.DomainA.DOMAIN_A_SUBA.Create;
-      Root_Object.DomainA.DOMAIN_A_SUBA.DomainA_DOMAIN_A_SUBA_Type(Sub_A2.all).SubA_Attribute   := 2;
-      Root_Object.DomainA.DOMAIN_A_SUBA.DomainA_DOMAIN_A_SUBA_Type(Sub_A2.all).A_Text           := "Sub A2                          ";
-      
+      -- Sub_A2 = create Domain_A_Object_SubA with SubA_Attribute = 2 & A_Text = "Sub A2"
       
       Sub_B2 := Root_Object.DomainA.DOMAIN_A_SUBB.Create;
       Root_Object.DomainA.DOMAIN_A_SUBB.DomainA_DOMAIN_A_SUBB_Type(Sub_B2.all).SubB_Attribute   := 2;

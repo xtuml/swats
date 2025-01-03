@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -467,9 +467,9 @@ package body Relationships_Registration is
       -- Relationships for Relationships domain to register:
       -- Relationship R17 is Reflexive
       Relationships_Rel_R17.Register_A_End_Class (Root_Object.Relationships.RAOA.Relationships_RAOA_Type'tag);
-      Relationships_Rel_R17.Register_A_End_Role ("has");
+      Relationships_Rel_R17.Register_A_End_Role ("has_2");
       Relationships_Rel_R17.Register_B_End_Class (Root_Object.Relationships.RAOA.Relationships_RAOA_Type'tag);
-      Relationships_Rel_R17.Register_B_End_Role ("has");
+      Relationships_Rel_R17.Register_B_End_Role ("has_1");
 
       Relationships_Rel_R17.Register_A_End_Relationship_Write (Root_Object.Relationships.RAOA.Put_R17_B'access);
       Relationships_Rel_R17.Register_A_End_Relationship_Read  (Root_Object.Relationships.RAOA.Get_R17_B'access);
@@ -479,9 +479,9 @@ package body Relationships_Registration is
       -- Relationships for Relationships domain to register:
       -- Relationship R23 is Reflexive
       Relationships_Rel_R23.Register_A_End_Class (Root_Object.Relationships.RAOA.Relationships_RAOA_Type'tag);
-      Relationships_Rel_R23.Register_A_End_Role ("has");
+      Relationships_Rel_R23.Register_A_End_Role ("has_2");
       Relationships_Rel_R23.Register_B_End_Class (Root_Object.Relationships.RAOA.Relationships_RAOA_Type'tag);
-      Relationships_Rel_R23.Register_B_End_Role ("has");
+      Relationships_Rel_R23.Register_B_End_Role ("has_1");
 
       Relationships_Rel_R23.Register_A_End_Relationship_Write (Root_Object.Relationships.RAOA.Put_R23_B'access);
       Relationships_Rel_R23.Register_A_End_Relationship_Read  (Root_Object.Relationships.RAOA.Get_R23_B'access);

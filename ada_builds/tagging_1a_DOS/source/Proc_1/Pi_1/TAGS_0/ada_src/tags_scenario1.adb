@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -56,7 +56,7 @@
 with Root_Object.TAGS.TD;
 
 -- List of services used
-with TAGS_TAGS6_Set_Environment_Service;
+with TAGS_TD2_Set_Environment_Service;
 with TAGS_TAGS2_Create_Report_Data_Service;
 
 -- List of domain types used
@@ -97,7 +97,7 @@ use type Root_Object.Object_Access;
          --  Use this function to set the test number to 1 using a 'C' insert
          --  if it returns set, then this must be I-SIM else WACA.
          
-         TAGS_TAGS6_Set_Environment_Service.TAGS_TAGS6_Set_Environment (
+         TAGS_TD2_Set_Environment_Service.TAGS_TD2_Set_Environment (
             Input_Test_Data  => Test_Details,
             Output_Test_Data => Test_Details);
          

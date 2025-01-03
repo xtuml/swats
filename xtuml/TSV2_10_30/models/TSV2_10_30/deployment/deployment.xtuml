@@ -32,7 +32,7 @@ INSERT INTO GD_GE
 	"28138fb1-78bd-42c1-9525-b9bc382a792a",
 	209,
 	0,
-	'TSV2_10_30::deployment::Main_Build_Set');
+	'TSV2_10_30::deployment::Main_BSet');
 INSERT INTO GD_SHP
 	VALUES ("4443bc95-9d4c-4c17-bd38-978cd9852e9a");
 INSERT INTO GD_NCS
@@ -83,9 +83,9 @@ INSERT INTO DIM_DIA
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO D_DEPL
 	VALUES ("28138fb1-78bd-42c1-9525-b9bc382a792a",
-	'Main_Build_Set',
+	'Main_BSet',
 	'',
-	'Main_Build_Set');
+	'Main_BSet');
 INSERT INTO D_TERM
 	VALUES ("44952691-994e-4d0e-9da1-8a07fcdd647d",
 	"28138fb1-78bd-42c1-9525-b9bc382a792a",
@@ -11384,7 +11384,8 @@ INSERT INTO D_TSVC
 	"30a65cc4-6e4d-49f9-a960-47168ce62cae",
 	'Generate_Event',
 	'',
-	'generate objX1:Check_ASL(Test_No, "Bridge") to The_IH',
+	'the_objX = find-only Object_X where objX_id = The_IH_ID
+generate objX1:Check_ASL(Test_No, "Bridge") to the_objX',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	3,
 	'',
@@ -14417,9 +14418,9 @@ INSERT INTO D_TSPARM
 INSERT INTO D_TERM
 	VALUES ("e0f50b12-6386-4db1-b31d-32cf7a380ce1",
 	"28138fb1-78bd-42c1-9525-b9bc382a792a",
-	'Main_Build_Set::Sequence',
+	'Main_BSet::Sequence',
 	'',
-	'Main_Build_Set',
+	'Main_BSet',
 	'Sequence',
 	0,
 	'',

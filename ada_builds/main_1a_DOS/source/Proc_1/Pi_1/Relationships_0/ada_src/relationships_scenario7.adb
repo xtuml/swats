@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -119,7 +119,6 @@ use type Root_Object.Object_Access;
       secondMRA : Root_Object.Object_Access;
       thirdMRA  : Root_Object.Object_Access;
       fourthMRA : Root_Object.Object_Access;
-      fifthMRA  : Root_Object.Object_Access;
       InstM     : Root_Object.Object_Access;
       InstMFR   : Root_Object.Object_Access;
       InstMA    : Root_Object.Object_Access;
@@ -256,30 +255,36 @@ use type Root_Object.Object_Access;
       
       
       firstMRA := Root_Object.Relationships.MRA.Create;
-      Root_Object.Relationships.MRA.Relationships_MRA_Type(firstMRA.all).MRA_Data       := 1;
-      Root_Object.Relationships.MRA.Relationships_MRA_Type(firstMRA.all).MRA_Identifier := 1;
+      Root_Object.Relationships.MRA.Relationships_MRA_Type(firstMRA.all).MRA_Data         := 1;
+      Root_Object.Relationships.MRA.Relationships_MRA_Type(firstMRA.all).MRA_Identifier   := 1;
+      Root_Object.Relationships.MRA.Relationships_MRA_Type(firstMRA.all).Right_Identifier := 1;
+      Root_Object.Relationships.MRA.Relationships_MRA_Type(firstMRA.all).MFR_Identifier   := 1;
       
       
       secondMRA := Root_Object.Relationships.MRA.Create;
-      Root_Object.Relationships.MRA.Relationships_MRA_Type(secondMRA.all).MRA_Data       := 2;
-      Root_Object.Relationships.MRA.Relationships_MRA_Type(secondMRA.all).MRA_Identifier := 2;
+      Root_Object.Relationships.MRA.Relationships_MRA_Type(secondMRA.all).MRA_Data         := 2;
+      Root_Object.Relationships.MRA.Relationships_MRA_Type(secondMRA.all).MRA_Identifier   := 2;
+      Root_Object.Relationships.MRA.Relationships_MRA_Type(secondMRA.all).Right_Identifier := 3;
+      Root_Object.Relationships.MRA.Relationships_MRA_Type(secondMRA.all).MFR_Identifier   := 1;
       
       
       thirdMRA := Root_Object.Relationships.MRA.Create;
-      Root_Object.Relationships.MRA.Relationships_MRA_Type(thirdMRA.all).MRA_Data       := 3;
-      Root_Object.Relationships.MRA.Relationships_MRA_Type(thirdMRA.all).MRA_Identifier := 3;
+      Root_Object.Relationships.MRA.Relationships_MRA_Type(thirdMRA.all).MRA_Data         := 3;
+      Root_Object.Relationships.MRA.Relationships_MRA_Type(thirdMRA.all).MRA_Identifier   := 3;
+      Root_Object.Relationships.MRA.Relationships_MRA_Type(thirdMRA.all).Right_Identifier := 3;
+      Root_Object.Relationships.MRA.Relationships_MRA_Type(thirdMRA.all).MFR_Identifier   := 3;
       
       
       fourthMRA := Root_Object.Relationships.MRA.Create;
-      Root_Object.Relationships.MRA.Relationships_MRA_Type(fourthMRA.all).MRA_Data       := 4;
-      Root_Object.Relationships.MRA.Relationships_MRA_Type(fourthMRA.all).MRA_Identifier := 4;
+      Root_Object.Relationships.MRA.Relationships_MRA_Type(fourthMRA.all).MRA_Data         := 4;
+      Root_Object.Relationships.MRA.Relationships_MRA_Type(fourthMRA.all).MRA_Identifier   := 4;
+      Root_Object.Relationships.MRA.Relationships_MRA_Type(fourthMRA.all).Right_Identifier := 4;
+      Root_Object.Relationships.MRA.Relationships_MRA_Type(fourthMRA.all).MFR_Identifier   := 4;
       
       
-      fifthMRA := Root_Object.Relationships.MRA.Create;
-      Root_Object.Relationships.MRA.Relationships_MRA_Type(fifthMRA.all).MRA_Data       := 5;
-      Root_Object.Relationships.MRA.Relationships_MRA_Type(fifthMRA.all).MRA_Identifier := 5;
-      
-      
+      --  Not sure it this one is required - it isn't used in the linking.
+      --    fifthMRA  = create Many_Right_Assoc with MRA_Data = 5 and MRA_Identifier = 5 and \
+      --                                             Right_Identifier  = ? and MFR_Identifier    = ?
       -- --------------------------------------------------------------------
       --  Link
       -- --------------------------------------------------------------------

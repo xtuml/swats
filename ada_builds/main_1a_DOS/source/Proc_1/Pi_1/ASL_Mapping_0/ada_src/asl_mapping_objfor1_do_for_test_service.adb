@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -105,8 +105,10 @@ package body ASL_Mapping_objFOR1_do_for_test_Service is
       
       
       loop
-         newFOR := Root_Object.ASL_Mapping.objFOR.Create_Unique;
-         Root_Object.ASL_Mapping.objFOR.ASL_Mapping_objFOR_Type(newFOR.all).ResultA := 0;
+         
+         newFOR := Root_Object.ASL_Mapping.objFOR.Create;
+         Root_Object.ASL_Mapping.objFOR.ASL_Mapping_objFOR_Type(newFOR.all).ReferenceFOR   := Count;
+         Root_Object.ASL_Mapping.objFOR.ASL_Mapping_objFOR_Type(newFOR.all).ResultA    := 0;
          
          
          Count := Count + 1;

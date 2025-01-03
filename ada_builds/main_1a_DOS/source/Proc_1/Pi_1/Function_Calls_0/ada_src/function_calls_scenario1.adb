@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -632,7 +632,7 @@ use type Root_Object.Object_Access;
          Return_IH => ReturnInst);
       
       
-      if Root_Object.Function_Calls.objC.Function_Calls_objC_type(ReturnInst.all).idC =  1000 then
+      if Root_Object.Function_Calls.objC.Function_Calls_objC_type(ReturnInst.all).idC =  100 then
          
          if Root_Object.Function_Calls.objC.Function_Calls_objC_type(ReturnInst.all).IntC =  2000 then
             

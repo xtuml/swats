@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -63,6 +63,7 @@ with Struct_RPT1_Start_Test_Bridge;
 with Struct_Domain_Types;
 with Struct_Domain_Types.Ops;
 use type Struct_Domain_Types.Name_and_Type_Linked_Simple_Structure_Type;
+use type Struct_Domain_Types.Colour_Type;
 
 with Application_Types;
 use type Application_Types.Base_Integer_Type;
@@ -77,9 +78,10 @@ use type Root_Object.Object_Access;
 package body Struct_Struct6_Decode_Simple_NTL_Structure_Service is
    
    procedure Struct_Struct6_Decode_Simple_NTL_Structure (
-      Test                   : in     Application_Types.Base_Integer_Type;
-      Simple_Structure       : in out Struct_Domain_Types.Name_and_Type_Linked_Simple_Structure_Type;
-      Object_Instance_Handle : in     Root_Object.Object_Access) is
+      Test             : in     Application_Types.Base_Integer_Type;
+      Simple_Structure : in out Struct_Domain_Types.Name_and_Type_Linked_Simple_Structure_Type) is
+      
+      struct_5 : Root_Object.Object_Access;
       
       the_real   : Application_Types.Base_Float_Type := 1.0;
       local_real : Application_Types.Base_Float_Type := 1.0;
@@ -141,11 +143,22 @@ package body Struct_Struct6_Decode_Simple_NTL_Structure_Service is
             if Count =  How_Many then
                
                --  This is the position in the set that we are interested in
+               struct_5 := Root_Object.Struct.SO.Conditional_Find_One;
+               while (struct_5 /= null) and then (not (Root_Object.Struct.SO.Struct_SO_Type(struct_5.all).Reference_SO =  Test and then
+                                                          Root_Object.Struct.SO.Struct_SO_Type(struct_5.all).Some_Text    =  "Domain based synch service      " and then
+                                                          Root_Object.Struct.SO.Struct_SO_Type(struct_5.all).An_Integer   =  Test and then
+                                                          Root_Object.Struct.SO.Struct_SO_Type(struct_5.all).A_Real       =  2.0 and then
+                                                          Root_Object.Struct.SO.Struct_SO_Type(struct_5.all).A_Boolean    =  True and then
+                                                          Root_Object.Struct.SO.Struct_SO_Type(struct_5.all).A_Colour     =  Struct_Domain_Types.Blue) ) loop
+                  
+                  struct_5 := struct_5.Next_Object;
+               end loop;
                
-               if local_integer =  Root_Object.Struct.SO.Struct_SO_type(Object_Instance_Handle.all).An_Integer and then
-                  local_real    =  Root_Object.Struct.SO.Struct_SO_type(Object_Instance_Handle.all).A_Real and then
-                  local_text    =  Root_Object.Struct.SO.Struct_SO_type(Object_Instance_Handle.all).Some_Text and then
-                  local_boolean =  Root_Object.Struct.SO.Struct_SO_type(Object_Instance_Handle.all).A_Boolean then
+               
+               if local_integer =  Root_Object.Struct.SO.Struct_SO_type(struct_5.all).An_Integer and then
+                  local_real    =  Root_Object.Struct.SO.Struct_SO_type(struct_5.all).A_Real and then
+                  local_text    =  Root_Object.Struct.SO.Struct_SO_type(struct_5.all).Some_Text and then
+                  local_boolean =  Root_Object.Struct.SO.Struct_SO_type(struct_5.all).A_Boolean then
                   
                   Struct_RPT2_Test_Passed_Bridge.Struct_RPT2_Test_Passed (
                      Test_Object_Domain => "Structures                      ",

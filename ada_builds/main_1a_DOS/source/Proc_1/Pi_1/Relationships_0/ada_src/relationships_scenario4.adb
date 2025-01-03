@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -176,19 +176,23 @@ use type Root_Object.Object_Access;
       --  MR_Assoc
       
       newMR := Root_Object.Relationships.assMR.Create;
-      Root_Object.Relationships.assMR.Relationships_assMR_Type(newMR.all).idMR := 1;
+      Root_Object.Relationships.assMR.Relationships_assMR_Type(newMR.all).idMR    := 1;
+      Root_Object.Relationships.assMR.Relationships_assMR_Type(newMR.all).idMO    := 1;
       
       
       newMR := Root_Object.Relationships.assMR.Create;
-      Root_Object.Relationships.assMR.Relationships_assMR_Type(newMR.all).idMR := 2;
+      Root_Object.Relationships.assMR.Relationships_assMR_Type(newMR.all).idMR    := 2;
+      Root_Object.Relationships.assMR.Relationships_assMR_Type(newMR.all).idMO    := 3;
       
       
       newMR := Root_Object.Relationships.assMR.Create;
-      Root_Object.Relationships.assMR.Relationships_assMR_Type(newMR.all).idMR := 3;
+      Root_Object.Relationships.assMR.Relationships_assMR_Type(newMR.all).idMR    := 3;
+      Root_Object.Relationships.assMR.Relationships_assMR_Type(newMR.all).idMO    := 4;
       
       
       newMR := Root_Object.Relationships.assMR.Create;
-      Root_Object.Relationships.assMR.Relationships_assMR_Type(newMR.all).idMR := 5;
+      Root_Object.Relationships.assMR.Relationships_assMR_Type(newMR.all).idMR    := 5;
+      Root_Object.Relationships.assMR.Relationships_assMR_Type(newMR.all).idMO    := 5;
       
       
       -- --------------------------------------------------------------------

@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -200,6 +200,44 @@ package body Root_Object.UDT.FTD is
 --*********************  Object Definition *****************************
 ------------------------------------------------------------------------
 
+   ftd_id_Value : Application_Types.Base_Integer_Type := Application_Types.Base_Integer_Type_first;
+--
+--ADATEST IGNORE_ON
+   function Obtain_Subsequent_ftd_id return Application_Types.Base_Integer_Type is
+   begin
+      ftd_id_Value :=
+         Application_Types.Base_Integer_Type'succ (ftd_id_Value);
+      return ftd_id_Value;
+   end Obtain_Subsequent_ftd_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
+   function Get_ftd_id (
+      This_Object : Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
+   begin
+       return UDT_FTD_Type (This_Object.all).ftd_id;
+   end Get_ftd_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
+--ADATEST IGNORE_ON
+   procedure Put_ftd_id (
+      This_Object : in Root_Object.Object_Access;
+      ftd_id_Value : in Application_Types.Base_Integer_Type) is
+   begin
+      UDT_FTD_Type (This_Object.all).ftd_id :=
+         ftd_id_Value;
+   end Put_ftd_id;
+
+--ADATEST IGNORE_OFF
+
+------------------------------------------------------------------------
+
 --ADATEST IGNORE_ON
    function Get_Final_Test_Number (
       This_Object: Root_Object.Object_Access) return Application_Types.Base_Integer_Type is
@@ -241,6 +279,7 @@ package body Root_Object.UDT.FTD is
    
       else
          This_Object := Free_List.First_Entry;
+         UDT_FTD_Type(This_Object.all).ftd_id := Application_Types.Base_Integer_Type_First;
          UDT_FTD_Type(This_Object.all).Final_Test_Number := Application_Types.Base_Integer_Type_First;
          Free_List.First_Entry := Free_List.First_Entry.Next_Object;
       end if;
@@ -280,9 +319,25 @@ package body Root_Object.UDT.FTD is
 --------------------------------------------------------------------------
 --
 
---------------------------------------------------------------------------
-   -- function Create_Unique is not available for this object as it does
-   -- not have a non referential identifying attribute.
+--ADATEST IGNORE_ON
+   function Create_Unique return Root_Object.Object_Access is
+
+   This_Object: Root_Object.Object_Access;
+
+   begin
+      --
+      -- get hold of a new instance
+      --
+      This_Object := Create;
+
+
+      UDT_FTD_Type(This_Object.all).ftd_id :=
+         Obtain_Subsequent_ftd_id;
+
+      return This_Object;
+
+   end Create_Unique;
+--ADATEST IGNORE_OFF
 --------------------------------------------------------------------------
 
 --ADATEST IGNORE_ON

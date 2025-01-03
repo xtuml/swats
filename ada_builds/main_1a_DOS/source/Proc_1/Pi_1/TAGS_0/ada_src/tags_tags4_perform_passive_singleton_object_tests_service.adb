@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -125,15 +125,13 @@ package body TAGS_TAGS4_Perform_Passive_Singleton_Object_Tests_Service is
          Invoking_Object => "Singleton passive object        ",
          Purpose         => "Create one singleton instance   ");
       
-      
-      The_Passive_Object := Root_Object.TAGS.APSO.Create;
-      Root_Object.TAGS.APSO.TAGS_APSO_Type(The_Passive_Object.all).Unique_Identifier    := 5;
-      Root_Object.TAGS.APSO.TAGS_APSO_Type(The_Passive_Object.all).Size                 := 1;
+      The_Passive_Object := Root_Object.TAGS.APSO.Create_Unique;
+      Root_Object.TAGS.APSO.TAGS_APSO_Type(The_Passive_Object.all).Size := 1;
       
       
       --  Further attempts to create an object of this sort should be met with
       --  complete indifference by WACA.
-      --  Another_Passive_Object = create A_Passive_Static_Object with Unique_Identifier = 6 & Size = 2
+      --  Another_Passive_Object = create unique A_Passive_Static_Object with Size = 2
       
       if The_Passive_Object =  Null then
          
@@ -164,7 +162,7 @@ package body TAGS_TAGS4_Perform_Passive_Singleton_Object_Tests_Service is
          Purpose         => "Create another singleton instanc");
       
       
-      -- Another_Passive_Object = create A_Passive_Static_Object with Unique_Identifier = 6 & Size = 2
+      -- Another_Passive_Object = create unique A_Passive_Static_Object with Size = 2
       
       TAGS_RPT4_Test_Unsupported_Bridge.TAGS_RPT4_Test_Unsupported (
          Unsupported_Test_Number => Local_Test);
@@ -276,10 +274,8 @@ package body TAGS_TAGS4_Perform_Passive_Singleton_Object_Tests_Service is
       
       --  Having sucessfully deleted the passive static object
       --  let's make the attempt to create a new one
-      
-      A_New_Passive_Object := Root_Object.TAGS.APSO.Create;
-      Root_Object.TAGS.APSO.TAGS_APSO_Type(A_New_Passive_Object.all).Unique_Identifier    := 8;
-      Root_Object.TAGS.APSO.TAGS_APSO_Type(A_New_Passive_Object.all).Size                 := 3;
+      A_New_Passive_Object := Root_Object.TAGS.APSO.Create_Unique;
+      Root_Object.TAGS.APSO.TAGS_APSO_Type(A_New_Passive_Object.all).Size := 3;
       
       
       if A_New_Passive_Object =  Null then

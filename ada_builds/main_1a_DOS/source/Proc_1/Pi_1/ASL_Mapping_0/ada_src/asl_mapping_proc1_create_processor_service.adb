@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -84,21 +84,19 @@ package body ASL_Mapping_PROC1_Create_Processor_Service is
       my_processor : Root_Object.Object_Access;
       my_object    : Root_Object.Object_Access;
       
-      This_Test         : Application_Types.Base_Integer_Type := 1;
-      my_timer_id_local : Application_Types.Base_Integer_Type := 1;
-      Failure_Code      : Application_Types.Base_Integer_Type := 1;
+      This_Test    : Application_Types.Base_Integer_Type := 1;
+      Failure_Code : Application_Types.Base_Integer_Type := 1;
       
    begin
    -- start of PROC1_Create_Processor
       This_Test := Test_Start;
       
-      Timer.Create_Timer (Timer_ID => my_timer_id_local);
       
       my_processor := Root_Object.ASL_Mapping.PROC.Create;
       Root_Object.ASL_Mapping.PROC.ASL_Mapping_PROC_Type(my_processor.all).Processor_Id       := Processor_Id_Local;
-      Root_Object.ASL_Mapping.PROC.ASL_Mapping_PROC_Type(my_processor.all).Background_Processing_Timer_Id             := my_timer_id_local;
       Root_Object.ASL_Mapping.PROC.ASL_Mapping_PROC_Type(my_processor.all).Communications_Enabled     := False;
       
+      Timer.Create_Timer (Timer_ID       => Root_Object.ASL_Mapping.PROC.ASL_Mapping_PROC_type(my_processor.all).Background_Processing_Timer_Id);
       
       ASL_Mapping_RPT1_Start_Test_Bridge.ASL_Mapping_RPT1_Start_Test (
          Test_Number     => This_Test,
@@ -118,18 +116,19 @@ package body ASL_Mapping_PROC1_Create_Processor_Service is
       
       if my_object /= Null then
          
-         if Root_Object.ASL_Mapping.PROC.ASL_Mapping_PROC_type(my_object.all).Background_Processing_Timer_Id =  my_timer_id_local then
-            
-            if Root_Object.ASL_Mapping.PROC.ASL_Mapping_PROC_type(my_object.all).Communications_Enabled =  False then
-               Failure_Code := 0;
-            else
-               Failure_Code := -3;
-            end if;
-            
+         --  my_timer_id_local removed making next test redundant.
+         --    if my_object.Background_Processing_Timer_Id = my_timer_id_local then
+         
+         if Root_Object.ASL_Mapping.PROC.ASL_Mapping_PROC_type(my_object.all).Communications_Enabled =  False then
+            Failure_Code := 0;
          else
-            Failure_Code := -2;
+            Failure_Code := -3;
          end if;
          
+         
+         --    else
+         --       Failure_Code = -2
+         --    endif
          
          Root_Object.ASL_Mapping.PROC.Delete (
             Old_Instance => my_object);

@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -372,7 +372,9 @@ use type Root_Object.Object_Access;
       Number_Of_Iterations := 10000;
       Number_Of_Appends    := 50;
       
-      A_Structured_Object_IH := Root_Object.Struct.SO.Create_Unique;
+      
+      A_Structured_Object_IH := Root_Object.Struct.SO.Create;
+      Root_Object.Struct.SO.Struct_SO_Type(A_Structured_Object_IH.all).Reference_SO  := Test_Number;
       Root_Object.Struct.SO.Struct_SO_Type(A_Structured_Object_IH.all).An_Integer    := Test_Number;
       Root_Object.Struct.SO.Struct_SO_Type(A_Structured_Object_IH.all).A_Real        := 99.99;
       Root_Object.Struct.SO.Struct_SO_Type(A_Structured_Object_IH.all).Some_Text     := "Some Text                       ";

@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -73,6 +73,7 @@ use type Root_Object.Object_Access;
    begin
       
       My_Test_Data := Root_Object.Struct.TD.Create;
+      Root_Object.Struct.TD.Struct_TD_Type(My_Test_Data.all).td_id           := 1;
       Root_Object.Struct.TD.Struct_TD_Type(My_Test_Data.all).The_Test_Number := 1;
       
       

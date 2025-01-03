@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -157,8 +157,7 @@ package body RP_RP5_Test_Text_Service is
          
          
          if The_Domain_Details /= Null then
-            
-            The_Supporting_Comment := Root_Object.RP.SC.Create;
+            The_Supporting_Comment := Root_Object.RP.SC.Create_Unique;
             Root_Object.RP.SC.RP_SC_Type(The_Supporting_Comment.all).Comment_ID       := Domain_No;
             Root_Object.RP.SC.RP_SC_Type(The_Supporting_Comment.all).The_Comment      := the_text;
             Root_Object.RP.SC.RP_SC_Type(The_Supporting_Comment.all).The_Test_No      := the_test_number;

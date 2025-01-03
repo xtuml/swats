@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -83,7 +83,9 @@ package body DomainA_objA2_do_ptp_closed_blocking_Service is
    -- start of objA2_do_ptp_closed_blocking
       
       --  create an instance to use for the test
-      newA := Root_Object.DomainA.objA.Create_Unique;
+      
+      newA := Root_Object.DomainA.objA.Create;
+      Root_Object.DomainA.objA.DomainA_objA_Type(newA.all).idA           := 21;
       Root_Object.DomainA.objA.DomainA_objA_Type(newA.all).ResultA       := 0;
       Root_Object.DomainA.objA.DomainA_objA_Type(newA.all).Current_State := Root_Object.DomainA.objA.Idle;
       

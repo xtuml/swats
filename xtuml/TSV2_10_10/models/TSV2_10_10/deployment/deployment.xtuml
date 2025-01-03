@@ -32,7 +32,7 @@ INSERT INTO GD_GE
 	"9def5655-8169-48e6-947a-0cf9dd1631df",
 	209,
 	0,
-	'TSV2_10_10::deployment::Structures_Build_Set');
+	'TSV2_10_10::deployment::Struct_BSet');
 INSERT INTO GD_SHP
 	VALUES ("61b3a976-f380-413d-99a3-ea531ffff3a5");
 INSERT INTO GD_NCS
@@ -83,9 +83,9 @@ INSERT INTO DIM_DIA
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO D_DEPL
 	VALUES ("9def5655-8169-48e6-947a-0cf9dd1631df",
-	'Structures_Build_Set',
+	'Struct_BSet',
 	'',
-	'Structures_Build_Set');
+	'Struct_BSet');
 INSERT INTO D_TERM
 	VALUES ("d8fc8eb0-0efd-4fa3-aaee-de42661bb08c",
 	"9def5655-8169-48e6-947a-0cf9dd1631df",
@@ -1495,136 +1495,6 @@ INSERT INTO D_TSVC
 	0,
 	0);
 INSERT INTO D_TSVC
-	VALUES ("4b69c7c9-955a-4d19-ae61-a455e5a30d1e",
-	"b904faad-822d-44c6-b22c-bf831f34972d",
-	'Receive_Structure_IH',
-	'',
-	'',
-	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
-	'',
-	6,
-	1,
-	0,
-	0);
-INSERT INTO D_TSPARM
-	VALUES ("e5f43afe-fbe3-4c8f-a0ae-5a15de39b56d",
-	"4b69c7c9-955a-4d19-ae61-a455e5a30d1e",
-	'This_Test_Number',
-	"ba5eda7a-def5-0000-0000-000000000002",
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000",
-	'');
-INSERT INTO D_TSPARM
-	VALUES ("ee7a5383-17b4-468e-a8ec-abd8f7a627f3",
-	"4b69c7c9-955a-4d19-ae61-a455e5a30d1e",
-	'Input_Structure',
-	"22158979-3081-4e0c-8be2-d87f601fc3ea",
-	0,
-	'',
-	"e5f43afe-fbe3-4c8f-a0ae-5a15de39b56d",
-	'');
-INSERT INTO S_DT_PROXY
-	VALUES ("22158979-3081-4e0c-8be2-d87f601fc3ea",
-	"00000000-0000-0000-0000-000000000000",
-	'Struct::Structure_and_IH_Type',
-	'',
-	'',
-	'./Shared/Shared.xtuml');
-INSERT INTO D_TSPARM
-	VALUES ("62adc6a6-2626-4a7f-992a-193899f50c7a",
-	"4b69c7c9-955a-4d19-ae61-a455e5a30d1e",
-	'Number_Of_Elements',
-	"ba5eda7a-def5-0000-0000-000000000002",
-	0,
-	'',
-	"ee7a5383-17b4-468e-a8ec-abd8f7a627f3",
-	'');
-INSERT INTO D_TSPARM
-	VALUES ("231edef3-15f6-4e0e-bd84-f504fa3b6881",
-	"4b69c7c9-955a-4d19-ae61-a455e5a30d1e",
-	'Unique_Identifier_Of_IH',
-	"ba5eda7a-def5-0000-0000-000000000002",
-	0,
-	'',
-	"62adc6a6-2626-4a7f-992a-193899f50c7a",
-	'');
-INSERT INTO D_TSPARM
-	VALUES ("2360be2e-c2b9-4bc3-af4b-8e6f24253409",
-	"4b69c7c9-955a-4d19-ae61-a455e5a30d1e",
-	'Testing_For',
-	"ba5eda7a-def5-0000-0000-000000000004",
-	0,
-	'',
-	"231edef3-15f6-4e0e-bd84-f504fa3b6881",
-	'');
-INSERT INTO D_TSVC
-	VALUES ("2315b66c-6660-4938-a56b-f2843a0f1311",
-	"b904faad-822d-44c6-b22c-bf831f34972d",
-	'Receive_Empty_Structure_IH',
-	'',
-	'',
-	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
-	'',
-	6,
-	1,
-	0,
-	0);
-INSERT INTO D_TSPARM
-	VALUES ("b9d46cc3-1634-4b23-a004-20a56c626598",
-	"2315b66c-6660-4938-a56b-f2843a0f1311",
-	'Test_Number',
-	"ba5eda7a-def5-0000-0000-000000000002",
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000",
-	'');
-INSERT INTO D_TSPARM
-	VALUES ("31235d5b-a3c7-443d-b884-9a0ff44e098a",
-	"2315b66c-6660-4938-a56b-f2843a0f1311",
-	'Empty_Structure',
-	"22158979-3081-4e0c-8be2-d87f601fc3ea",
-	0,
-	'',
-	"b9d46cc3-1634-4b23-a004-20a56c626598",
-	'');
-INSERT INTO D_TSPARM
-	VALUES ("12eefae4-a2f2-40e1-ac37-cd8cd57a3f71",
-	"2315b66c-6660-4938-a56b-f2843a0f1311",
-	'Inserted_IH',
-	"6c240ae5-d212-4acc-aa94-3d7a14d26d05",
-	0,
-	'',
-	"31235d5b-a3c7-443d-b884-9a0ff44e098a",
-	'');
-INSERT INTO S_DT_PROXY
-	VALUES ("6c240ae5-d212-4acc-aa94-3d7a14d26d05",
-	"00000000-0000-0000-0000-000000000000",
-	'inst_ref<Structured_Object>',
-	'',
-	'',
-	'./Shared/Shared.xtuml');
-INSERT INTO D_TSPARM
-	VALUES ("a1a97d8b-71ef-4ef8-9e26-c600ba90505f",
-	"2315b66c-6660-4938-a56b-f2843a0f1311",
-	'Testing_For',
-	"ba5eda7a-def5-0000-0000-000000000004",
-	0,
-	'',
-	"12eefae4-a2f2-40e1-ac37-cd8cd57a3f71",
-	'');
-INSERT INTO D_TSPARM
-	VALUES ("bf627c7c-a945-4a9a-867f-a1bbdc81552c",
-	"2315b66c-6660-4938-a56b-f2843a0f1311",
-	'Filled_Structure',
-	"22158979-3081-4e0c-8be2-d87f601fc3ea",
-	1,
-	'',
-	"a1a97d8b-71ef-4ef8-9e26-c600ba90505f",
-	'');
-INSERT INTO D_TSVC
 	VALUES ("ff79cddb-55fa-43bc-9063-9eabf19ff042",
 	"b904faad-822d-44c6-b22c-bf831f34972d",
 	'Test_The_Structure',
@@ -1739,9 +1609,9 @@ INSERT INTO S_DT_PROXY
 INSERT INTO D_TERM
 	VALUES ("94f9b561-2aa0-497d-b702-030b79fe76be",
 	"9def5655-8169-48e6-947a-0cf9dd1631df",
-	'Structures_Build_Set::Sequence',
+	'Struct_BSet::Sequence',
 	'',
-	'Structures_Build_Set',
+	'Struct_BSet',
 	'Sequence',
 	0,
 	'',

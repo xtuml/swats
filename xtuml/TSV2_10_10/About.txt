@@ -1,0 +1,5 @@
+Structures Build Set
+
+xtUML Project Name        : TSV2_10_10
+Deployment Component Name : Struct_BSet
+

@@ -6,7 +6,7 @@
 --*          Export Control Restrictions: NONE                                        *
 --*************************************************************************************
 --*                                                                                   *
---*               Copyright 2023 BAE Systems. All Rights Reserved.                    *
+--*               Copyright 2024 BAE Systems. All Rights Reserved.                    *
 --*                                                                                   *
 --*************************************************************************************
 --*                                                                                   *
@@ -76,6 +76,7 @@ package body Struct_Struct5_Test_The_Structure_Service is
       
       the_color   : Struct_Domain_Types.Colour_Type       := Struct_Domain_Types.Colour_Type_first;
       local_color : Struct_Domain_Types.Colour_Type       := Struct_Domain_Types.Colour_Type_first;
+      test_colour : Struct_Domain_Types.Colour_Type       := Struct_Domain_Types.Colour_Type_first;
       
    begin
    -- start of Struct5_Test_The_Structure
@@ -94,8 +95,9 @@ package body Struct_Struct5_Test_The_Structure_Service is
             
             local_integer := the_integer;
             local_color   := the_color;
+            test_colour := Struct_Domain_Types.Red;
             
-            if local_color =  Struct_Domain_Types.Red then
+            if local_color =  test_colour then
                local_integer := 200;
                
                local_color := Struct_Domain_Types.Blue;
