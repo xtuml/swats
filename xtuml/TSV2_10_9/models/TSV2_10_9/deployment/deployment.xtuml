@@ -101,37 +101,7 @@ INSERT INTO D_TSVC
 	"48d3a82d-54ce-40f8-8844-e9897af78e8a",
 	'Start_Test',
 	'',
-	'local_test_number = Test_Number
-local_requid = Requid
-local_invoking_domain = Invoking_Domain
-local_invoking_object = Invoking_Object
-local_purpose = Purpose
-
-# Find the reporter object for this domain, there will be only one.
-
-The_Reporter_Object = find-one Report_Data
-
-
-if The_Reporter_Object = UNDEFINED then
-
-   $USE RP
-
-      [] = RP7::Report_Run_Time_Error["ST Calling domain has not created Report_Data"]
-
-   $ENDUSE
-
-else
-
-   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
-
-   $USE RP
-  
-      [] = RP4::Test_Description[local_test_number, local_requid, local_invoking_domain, local_invoking_object, local_purpose, Unique_Domain_ID]
-
-   $ENDUSE
-
-
-endif',
+	'[] = Events16::Report_Start_Test[Test_Number, Requid, Invoking_Domain, Invoking_Object, Purpose]',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	3,
 	'',
@@ -189,34 +159,7 @@ INSERT INTO D_TSVC
 	"48d3a82d-54ce-40f8-8844-e9897af78e8a",
 	'Test_Passed',
 	'',
-	'local_test_number = Test_Number
-local_test_value = Test_Value
-local_object_domain = Test_Object_Domain
-
-# Find the reporter object for this domain, there will be only one.
-
-The_Reporter_Object = find-one Report_Data
-
-
-if The_Reporter_Object = UNDEFINED then
-
-   $USE RP
-
-      [] = RP7::Report_Run_Time_Error["TP Calling domain has not created Report_Data"]
-
-   $ENDUSE
-
-else
-
-   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
- 
-   $USE RP
-
-   [] = RP1::Test_Passed[local_object_domain, local_test_number, local_test_value, Unique_Domain_ID];
-
-   $ENDUSE
-
-endif',
+	'[] = Events18::Report_Test_Passed[Test_Object_Domain, Test_Number, Test_Value]',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	3,
 	'',
@@ -256,34 +199,7 @@ INSERT INTO D_TSVC
 	"48d3a82d-54ce-40f8-8844-e9897af78e8a",
 	'Test_Failed',
 	'',
-	'local_test_number = Failed_Test_Number
-local_test_value = Failed_Test_Value
-local_object_domain = Failed_Domain_Object
-
-# Find the reporter object for this domain, there will be only one.
-
-The_Reporter_Object = find-one Report_Data
-
-if The_Reporter_Object = UNDEFINED then
-
-   $USE RP
-
-      [] = RP7::Report_Run_Time_Error["TF Calling domain has not created Report_Data"]
-
-   $ENDUSE
-
-else
-
-   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
-
-
-   $USE RP
-
-   [] = RP2::Test_Failed[local_object_domain, local_test_number, local_test_value, Unique_Domain_ID];
-
-   $ENDUSE
-
-endif',
+	'[] = Events17::Report_Test_Failed[Failed_Domain_Object, Failed_Test_Number, Failed_Test_Value]',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	3,
 	'',
@@ -323,32 +239,7 @@ INSERT INTO D_TSVC
 	"48d3a82d-54ce-40f8-8844-e9897af78e8a",
 	'Test_Unsupported',
 	'',
-	'local_test_number = Unsupported_Test_Number
-
-
-# Find the reporter object for this domain, there will be only one.
-
-The_Reporter_Object = find-one Report_Data
-
-
-if The_Reporter_Object = UNDEFINED then
-
-   $USE RP
-
-      [] = RP7::Report_Run_Time_Error["TU Calling domain has not created Report_Data"]
-
-   $ENDUSE
-else
-
-   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
-
-   $USE RP
-
-   [] = RP3::Test_Unsupported[local_test_number, Unique_Domain_ID];
-
-   $ENDUSE
-
-endif',
+	'[] = Events20::Report_Test_Unsupported[Unsupported_Test_Number]',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	3,
 	'',
@@ -370,37 +261,7 @@ INSERT INTO D_TSVC
 	"48d3a82d-54ce-40f8-8844-e9897af78e8a",
 	'Test_Text',
 	'',
-	'local_test_number = Test_Number
-local_text = Free_Text
-
-#$USE RP
-
-#   [] = RP5::Test_Text[local_test_number, local_text]
-
-#$ENDUSE
-
-#-----------------------------------------------
-# New stuff
-#-----------------------------------------------
-
-# Find the reporter object for this domain, there will be only one.
-The_Reporter_Object = find-one Report_Data
-
-if The_Reporter_Object = UNDEFINED then
-
-   $USE RP
-      [] = RP7::Report_Run_Time_Error["TP Calling domain has not created Report_Data"]
-   $ENDUSE
-
-else
-
-   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
- 
-   $USE RP
-      [] = RP5::Test_Text[Unique_Domain_ID, local_test_number, local_text]
-   $ENDUSE
-
-endif',
+	'[] = Events19::Report_Test_Text[Test_Number, Free_Text]',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	3,
 	'',
@@ -431,34 +292,7 @@ INSERT INTO D_TSVC
 	"48d3a82d-54ce-40f8-8844-e9897af78e8a",
 	'Domain_Test_Start',
 	'',
-	'local_text = This_Domain_Name
-
-
-$USE RP
-
-   [New_Domain_Number] = RP6::Create_New_Domain_Test[local_text]
-
-$ENDUSE
-
-
-# Can''t create in a bridge, so find this object and update it. Rely on the invoker
-# domain to have created this object prior to this call.
-
-My_Report = find-one Report_Data
-
-if My_Report = UNDEFINED then
-
-   $USE RP
-
-      [] = RP7::Report_Run_Time_Error["DTS Calling domain has not created Report_Data"]
-
-   $ENDUSE
-
-else
-
-   My_Report.Reported_Domain_Number = New_Domain_Number
-
-endif',
+	'[] = Events13::Report_Domain_Test_Start[This_Domain_Name]',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	3,
 	'',
@@ -480,31 +314,7 @@ INSERT INTO D_TSVC
 	"48d3a82d-54ce-40f8-8844-e9897af78e8a",
 	'Domain_Test_Finished',
 	'',
-	'local_text = This_Domain_Name
-
-My_Report = find-one Report_Data
-
-if My_Report = UNDEFINED then
-
-   $USE RP
-
-      [] = RP7::Report_Run_Time_Error["DTF Calling domain has not created Report_Data"]
-
-   $ENDUSE
-
-else
-
-   local_domain_number = My_Report.Reported_Domain_Number
-
-endif
-
-
-$USE RP
-
-   [] = RP8::Domain_Tests_Have_Finished[local_text, local_domain_number]
-
-
-$ENDUSE',
+	'[] = Events12::Report_Domain_Test_Finished[This_Domain_Name]',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	3,
 	'',
@@ -526,33 +336,7 @@ INSERT INTO D_TSVC
 	"48d3a82d-54ce-40f8-8844-e9897af78e8a",
 	'Specify_Requid',
 	'',
-	'local_test_number = Requid_Test_Number
-local_requid_value = The_Requid_Itself
-
-# Find the reporter object for this domain, there will be only one.
-
-The_Reporter_Object = find-one Report_Data
-
-
-if The_Reporter_Object = UNDEFINED then
-
-   $USE RP
-
-      [] = RP7::Report_Run_Time_Error["TP Calling domain has not created Report_Data"]
-
-   $ENDUSE
-
-else
-
-   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
- 
-   $USE RP
-
-   [] = RP10::Specify_Requid [Unique_Domain_ID, local_test_number, local_requid_value]
-
-   $ENDUSE
-
-endif',
+	'[] = Events15::Report_Specify_Requid[Requid_Test_Number, The_Requid_Itself]',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	3,
 	'',
@@ -583,9 +367,7 @@ INSERT INTO D_TSVC
 	"48d3a82d-54ce-40f8-8844-e9897af78e8a",
 	'Perform_Req_Anal',
 	'',
-	'$USE RP
-   [] = RP11::Perform_Req_Analysis[]
-$ENDUSE',
+	'[] = Events14::Report_Perform_Req_Anal[]',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	3,
 	'',
@@ -608,8 +390,7 @@ INSERT INTO D_TSVC
 	"33a1bc78-1b28-4b4a-9025-6c3380e7306a",
 	'Generate_Event',
 	'',
-	'the_objX = find-only Object_X where objX_id = The_IH_ID
-generate objX1:Check_ASL(Test_No, "Bridge") to the_objX',
+	'[] = Events11::Generate_From_Bridge_Generate_Event[Test_No, The_IH_ID]',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	3,
 	'',
@@ -650,15 +431,7 @@ INSERT INTO D_TSVC
 	"3a23c552-2371-4715-9281-bc83c038754c",
 	'What_Env',
 	'',
-	'Local_Env_Text = " "
-
-$USE FTE
-
-   [Local_Env_Text] = FTE1::Environment_String[]
-
-$ENDUSE
-
-Env_Text = Local_Env_Text',
+	'[] = Events21::Where_Are_We_What_Env[Local_Env_Text]',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	3,
 	'',

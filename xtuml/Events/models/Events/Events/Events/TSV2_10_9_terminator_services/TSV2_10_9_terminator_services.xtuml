@@ -1,0 +1,662 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("9643a26f-07ae-4191-a1ee-a899f8214ad3",
+	"00000000-0000-0000-0000-000000000000",
+	"9b3c9b37-3527-4c3a-8648-5c925cc26549",
+	'TSV2_10_9_terminator_services',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("2bc26f96-8759-4868-8341-a2474e0c00bc",
+	112,
+	"9643a26f-07ae-4191-a1ee-a899f8214ad3",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'Events::Events::Events::TSV2_10_9_terminator_services');
+INSERT INTO DIM_DIA
+	VALUES ("2bc26f96-8759-4868-8341-a2474e0c00bc",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_SYNC
+	VALUES ("007935de-a223-4c3d-83c1-372a5ce4095a",
+	"00000000-0000-0000-0000-000000000000",
+	'Generate_From_Bridge_Generate_Event',
+	'',
+	'the_objX = find-only Object_X where objX_id = The_IH_ID
+generate objX1:Check_ASL(Test_No, "Bridge") to the_objX',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	11);
+INSERT INTO S_SPARM
+	VALUES ("0024aeae-5aa3-4a0d-b584-776a381975e5",
+	"007935de-a223-4c3d-83c1-372a5ce4095a",
+	'Test_No',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("42e136b8-435b-4c60-9e62-f86ab492de59",
+	"007935de-a223-4c3d-83c1-372a5ce4095a",
+	'The_IH_ID',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"0024aeae-5aa3-4a0d-b584-776a381975e5",
+	'');
+INSERT INTO PE_PE
+	VALUES ("007935de-a223-4c3d-83c1-372a5ce4095a",
+	1,
+	"9643a26f-07ae-4191-a1ee-a899f8214ad3",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("a920fd40-fb0a-42ac-b5d0-70c545058381",
+	"00000000-0000-0000-0000-000000000000",
+	'Report_Domain_Test_Finished',
+	'',
+	'local_text = This_Domain_Name
+
+My_Report = find-one Report_Data
+
+if My_Report = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["DTF Calling domain has not created Report_Data"]
+
+   $ENDUSE
+
+else
+
+   local_domain_number = My_Report.Reported_Domain_Number
+
+endif
+
+
+$USE RP
+
+   [] = RP8::Domain_Tests_Have_Finished[local_text, local_domain_number]
+
+
+$ENDUSE',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	2,
+	12);
+INSERT INTO S_SPARM
+	VALUES ("671ca4ee-70ea-461d-9d4b-f4610bf277ba",
+	"a920fd40-fb0a-42ac-b5d0-70c545058381",
+	'This_Domain_Name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO PE_PE
+	VALUES ("a920fd40-fb0a-42ac-b5d0-70c545058381",
+	1,
+	"9643a26f-07ae-4191-a1ee-a899f8214ad3",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("091b7c5c-bdcb-4817-a50a-16f634a2d19c",
+	"00000000-0000-0000-0000-000000000000",
+	'Report_Domain_Test_Start',
+	'',
+	'local_text = This_Domain_Name
+
+
+$USE RP
+
+   [New_Domain_Number] = RP6::Create_New_Domain_Test[local_text]
+
+$ENDUSE
+
+
+# Can''t create in a bridge, so find this object and update it. Rely on the invoker
+# domain to have created this object prior to this call.
+
+My_Report = find-one Report_Data
+
+if My_Report = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["DTS Calling domain has not created Report_Data"]
+
+   $ENDUSE
+
+else
+
+   My_Report.Reported_Domain_Number = New_Domain_Number
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	2,
+	13);
+INSERT INTO S_SPARM
+	VALUES ("0fe0fc6c-c7bd-4196-83c0-8934de9d784c",
+	"091b7c5c-bdcb-4817-a50a-16f634a2d19c",
+	'This_Domain_Name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO PE_PE
+	VALUES ("091b7c5c-bdcb-4817-a50a-16f634a2d19c",
+	1,
+	"9643a26f-07ae-4191-a1ee-a899f8214ad3",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("c4a4325b-62c3-495f-b8ca-dfc4795590d5",
+	"00000000-0000-0000-0000-000000000000",
+	'Report_Test_Failed',
+	'',
+	'local_test_number = Failed_Test_Number
+local_test_value = Failed_Test_Value
+local_object_domain = Failed_Domain_Object
+
+# Find the reporter object for this domain, there will be only one.
+
+The_Reporter_Object = find-one Report_Data
+
+if The_Reporter_Object = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["TF Calling domain has not created Report_Data"]
+
+   $ENDUSE
+
+else
+
+   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
+
+
+   $USE RP
+
+   [] = RP2::Test_Failed[local_object_domain, local_test_number, local_test_value, Unique_Domain_ID]
+
+   $ENDUSE
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	2,
+	17);
+INSERT INTO S_SPARM
+	VALUES ("25bd2579-2158-4af9-a0f2-f587d55eddd7",
+	"c4a4325b-62c3-495f-b8ca-dfc4795590d5",
+	'Failed_Domain_Object',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("7dfef8c0-e1fd-4db6-b678-9b4b1425d909",
+	"c4a4325b-62c3-495f-b8ca-dfc4795590d5",
+	'Failed_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"25bd2579-2158-4af9-a0f2-f587d55eddd7",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("8dda1434-d29b-4236-a271-fc0b86b98b12",
+	"c4a4325b-62c3-495f-b8ca-dfc4795590d5",
+	'Failed_Test_Value',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"7dfef8c0-e1fd-4db6-b678-9b4b1425d909",
+	'');
+INSERT INTO PE_PE
+	VALUES ("c4a4325b-62c3-495f-b8ca-dfc4795590d5",
+	1,
+	"9643a26f-07ae-4191-a1ee-a899f8214ad3",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("cbdd13ab-8802-4224-b9ec-f09a594a776e",
+	"00000000-0000-0000-0000-000000000000",
+	'Report_Perform_Req_Anal',
+	'',
+	'$USE RP
+   [] = RP11::Perform_Req_Analysis[]
+$ENDUSE',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	2,
+	14);
+INSERT INTO PE_PE
+	VALUES ("cbdd13ab-8802-4224-b9ec-f09a594a776e",
+	1,
+	"9643a26f-07ae-4191-a1ee-a899f8214ad3",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("0378e2f7-a04c-4d13-9f3c-95064ee69544",
+	"00000000-0000-0000-0000-000000000000",
+	'Report_Test_Text',
+	'',
+	'local_test_number = Test_Number
+local_text = Free_Text
+
+#$USE RP
+
+#   [] = RP5::Test_Text[local_test_number, local_text]
+
+#$ENDUSE
+
+#-----------------------------------------------
+# New stuff
+#-----------------------------------------------
+
+# Find the reporter object for this domain, there will be only one.
+The_Reporter_Object = find-one Report_Data
+
+if The_Reporter_Object = UNDEFINED then
+
+   $USE RP
+      [] = RP7::Report_Run_Time_Error["TP Calling domain has not created Report_Data"]
+   $ENDUSE
+
+else
+
+   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
+ 
+   $USE RP
+      [] = RP5::Test_Text[Unique_Domain_ID, local_test_number, local_text]
+   $ENDUSE
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	2,
+	19);
+INSERT INTO S_SPARM
+	VALUES ("6ed2eabb-a61f-495f-8e91-a6be084c1fcb",
+	"0378e2f7-a04c-4d13-9f3c-95064ee69544",
+	'Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("288b6950-0413-48cb-8831-716df20f0c9d",
+	"0378e2f7-a04c-4d13-9f3c-95064ee69544",
+	'Free_Text',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"6ed2eabb-a61f-495f-8e91-a6be084c1fcb",
+	'');
+INSERT INTO PE_PE
+	VALUES ("0378e2f7-a04c-4d13-9f3c-95064ee69544",
+	1,
+	"9643a26f-07ae-4191-a1ee-a899f8214ad3",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("f6322b25-919b-43c9-b0b3-af93f6911389",
+	"00000000-0000-0000-0000-000000000000",
+	'Report_Start_Test',
+	'',
+	'local_test_number = Test_Number
+local_requid = Requid
+local_invoking_domain = Invoking_Domain
+local_invoking_object = Invoking_Object
+local_purpose = Purpose
+
+# Find the reporter object for this domain, there will be only one.
+
+The_Reporter_Object = find-one Report_Data
+
+
+if The_Reporter_Object = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["ST Calling domain has not created Report_Data"]
+
+   $ENDUSE
+
+else
+
+   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
+
+   $USE RP
+  
+      [] = RP4::Test_Description[local_test_number, local_requid, local_invoking_domain, local_invoking_object, local_purpose, Unique_Domain_ID]
+
+   $ENDUSE
+
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	2,
+	16);
+INSERT INTO S_SPARM
+	VALUES ("0eddd8e6-64c6-46bf-afc3-570c9300ecf4",
+	"f6322b25-919b-43c9-b0b3-af93f6911389",
+	'Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("9a75a562-86c7-4e4a-8ecd-11efc8c7596d",
+	"f6322b25-919b-43c9-b0b3-af93f6911389",
+	'Requid',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"0eddd8e6-64c6-46bf-afc3-570c9300ecf4",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("7c62e2f6-1d3a-46e8-b264-f6a967502c85",
+	"f6322b25-919b-43c9-b0b3-af93f6911389",
+	'Invoking_Domain',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"9a75a562-86c7-4e4a-8ecd-11efc8c7596d",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("49a09389-15c4-4a46-8694-810c8170a9fb",
+	"f6322b25-919b-43c9-b0b3-af93f6911389",
+	'Invoking_Object',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"7c62e2f6-1d3a-46e8-b264-f6a967502c85",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("d67ffc36-cba8-4072-9c82-aa84de74b4e6",
+	"f6322b25-919b-43c9-b0b3-af93f6911389",
+	'Purpose',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"49a09389-15c4-4a46-8694-810c8170a9fb",
+	'');
+INSERT INTO PE_PE
+	VALUES ("f6322b25-919b-43c9-b0b3-af93f6911389",
+	1,
+	"9643a26f-07ae-4191-a1ee-a899f8214ad3",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("64a6e5e9-511e-4f06-8166-df796b2471c5",
+	"00000000-0000-0000-0000-000000000000",
+	'Report_Specify_Requid',
+	'',
+	'local_test_number = Requid_Test_Number
+local_requid_value = The_Requid_Itself
+
+# Find the reporter object for this domain, there will be only one.
+
+The_Reporter_Object = find-one Report_Data
+
+
+if The_Reporter_Object = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["TP Calling domain has not created Report_Data"]
+
+   $ENDUSE
+
+else
+
+   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
+ 
+   $USE RP
+
+   [] = RP10::Specify_Requid [Unique_Domain_ID, local_test_number, local_requid_value]
+
+   $ENDUSE
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	2,
+	15);
+INSERT INTO S_SPARM
+	VALUES ("7575a061-8df2-4074-b270-e70107966232",
+	"64a6e5e9-511e-4f06-8166-df796b2471c5",
+	'Requid_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("1b51245d-7443-445f-b449-11c5cc2abd78",
+	"64a6e5e9-511e-4f06-8166-df796b2471c5",
+	'The_Requid_Itself',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"7575a061-8df2-4074-b270-e70107966232",
+	'');
+INSERT INTO PE_PE
+	VALUES ("64a6e5e9-511e-4f06-8166-df796b2471c5",
+	1,
+	"9643a26f-07ae-4191-a1ee-a899f8214ad3",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("559f250a-dd1c-48b2-8f0b-7e52828f7435",
+	"00000000-0000-0000-0000-000000000000",
+	'Report_Test_Passed',
+	'',
+	'local_test_number = Test_Number
+local_test_value = Test_Value
+local_object_domain = Test_Object_Domain
+
+# Find the reporter object for this domain, there will be only one.
+
+The_Reporter_Object = find-one Report_Data
+
+
+if The_Reporter_Object = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["TP Calling domain has not created Report_Data"]
+
+   $ENDUSE
+
+else
+
+   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
+ 
+   $USE RP
+
+   [] = RP1::Test_Passed[local_object_domain, local_test_number, local_test_value, Unique_Domain_ID]
+
+   $ENDUSE
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	2,
+	18);
+INSERT INTO S_SPARM
+	VALUES ("3ec3f53e-6b28-4be0-9deb-9609521db83a",
+	"559f250a-dd1c-48b2-8f0b-7e52828f7435",
+	'Test_Object_Domain',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("602422ff-768b-4f68-bc9f-3353fb459b3a",
+	"559f250a-dd1c-48b2-8f0b-7e52828f7435",
+	'Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"3ec3f53e-6b28-4be0-9deb-9609521db83a",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("0b685396-030b-4060-992c-295656ec405b",
+	"559f250a-dd1c-48b2-8f0b-7e52828f7435",
+	'Test_Value',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"602422ff-768b-4f68-bc9f-3353fb459b3a",
+	'');
+INSERT INTO PE_PE
+	VALUES ("559f250a-dd1c-48b2-8f0b-7e52828f7435",
+	1,
+	"9643a26f-07ae-4191-a1ee-a899f8214ad3",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("125c9817-b5da-458c-b06d-db7db7c00a6c",
+	"00000000-0000-0000-0000-000000000000",
+	'Report_Test_Unsupported',
+	'',
+	'local_test_number = Unsupported_Test_Number
+
+
+# Find the reporter object for this domain, there will be only one.
+
+The_Reporter_Object = find-one Report_Data
+
+
+if The_Reporter_Object = UNDEFINED then
+
+   $USE RP
+
+      [] = RP7::Report_Run_Time_Error["TU Calling domain has not created Report_Data"]
+
+   $ENDUSE
+else
+
+   Unique_Domain_ID =  The_Reporter_Object.Reported_Domain_Number
+
+   $USE RP
+
+   [] = RP3::Test_Unsupported[local_test_number, Unique_Domain_ID]
+
+   $ENDUSE
+
+endif',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	2,
+	20);
+INSERT INTO S_SPARM
+	VALUES ("53d17636-cd3f-4dc2-b5bc-d525fa4cceb6",
+	"125c9817-b5da-458c-b06d-db7db7c00a6c",
+	'Unsupported_Test_Number',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO PE_PE
+	VALUES ("125c9817-b5da-458c-b06d-db7db7c00a6c",
+	1,
+	"9643a26f-07ae-4191-a1ee-a899f8214ad3",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("f9191db8-ada1-44db-98e2-a5d94b6843eb",
+	"00000000-0000-0000-0000-000000000000",
+	'Where_Are_We_What_Env',
+	'',
+	'Local_Env_Text = " "
+
+$USE FTE
+
+   [Local_Env_Text] = FTE1::Environment_String[]
+
+$ENDUSE
+
+Env_Text = Local_Env_Text',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	2,
+	21);
+INSERT INTO S_SPARM
+	VALUES ("e4b4e56a-ca85-4f3e-9008-aefa006b0be6",
+	"f9191db8-ada1-44db-98e2-a5d94b6843eb",
+	'Local_Env_Text',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO PE_PE
+	VALUES ("f9191db8-ada1-44db-98e2-a5d94b6843eb",
+	1,
+	"9643a26f-07ae-4191-a1ee-a899f8214ad3",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO PE_PE
+	VALUES ("9643a26f-07ae-4191-a1ee-a899f8214ad3",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"478b4801-6957-46b9-b0ad-8e6f7f283fe9",
+	7);
+INSERT INTO C_C_PROXY
+	VALUES ("478b4801-6957-46b9-b0ad-8e6f7f283fe9",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'Events',
+	' Tests the various forms of event transmission, in particular polymorphic events and event data.
+',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Events',
+	'../Events.xtuml');
+INSERT INTO S_SYS_PROXY
+	VALUES ("9b3c9b37-3527-4c3a-8648-5c925cc26549",
+	'Events',
+	1,
+	'../../../Events.xtuml');
