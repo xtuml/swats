@@ -382,7 +382,7 @@ the_result = FALSE
 
    # with 101, ''Four''
 
-   [the_result, result_value] = BTF1:I_H_Type_Across[the_IH]
+   [the_result, result_value] = BTF1:I_H_Type_Across[the_IH.Unique_Identifier]
 
    if the_result = TRUE then 
       [] = RPT2:Test_Passed["Decode IH", the_test_number, result_value]
@@ -426,7 +426,7 @@ the_result = FALSE
 
    my_test.Final_Test_Number = the_test_number',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	2,
 	6);

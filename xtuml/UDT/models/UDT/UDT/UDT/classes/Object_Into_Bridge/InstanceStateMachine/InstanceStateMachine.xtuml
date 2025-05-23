@@ -101,14 +101,14 @@ INSERT INTO SM_AH
 INSERT INTO SM_ACT
 	VALUES ("0d3115bc-64c2-4445-917f-3fc6f7524718",
 	"ffae1b17-223a-4a34-b520-4a0a13768558",
-	3,
+	1,
 	'#--------------------------------------------------------------------------
 # pass the ''this'' IH to a bridge for dereferencing.
 #--------------------------------------------------------------------------
 
 [] = RPT1:Start_Test[Where_To_Start, "1103-0000-01-0311", "UDT", "Terminator typing", "Pass in this IH, decode types"]
 
-[the_result, result_value] = BTF1:I_H_Type_Across[this]
+[the_result, result_value] = BTF1:I_H_Type_Across[this.Unique_Identifier]
 
 if the_result = TRUE then
 
