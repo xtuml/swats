@@ -3658,14 +3658,15 @@ Success = FALSE
 
 Success_Value = -1
 
-Local_Result = Param1_IH.A_Number 
+Param1 = find-one Object_Into_Bridge where Unique_Identifier = Param1_IH
+Local_Result = Param1.A_Number 
 
 # Comment out post WACA 5.0.0
 # Local_Result = Local_Result * Local_Result
 
 # Still alive, then the test passed
 
-if Param1_IH.Some_Enumeration = ''Four'' then
+if Param1.Some_Enumeration = ''Four'' then
 
    Success = TRUE
 
@@ -3687,18 +3688,11 @@ INSERT INTO D_TSPARM
 	VALUES ("df4fb367-0184-48a1-b80c-d6af3e2bd558",
 	"021e9f7c-1b58-4544-93ec-1d6cd58406c5",
 	'Param1_IH',
-	"082b46e1-99dc-41c0-97a4-e219503ad0ad",
+	"ba5eda7a-def5-0000-0000-000000000002",
 	0,
 	'',
 	"00000000-0000-0000-0000-000000000000",
 	'');
-INSERT INTO S_DT_PROXY
-	VALUES ("082b46e1-99dc-41c0-97a4-e219503ad0ad",
-	"00000000-0000-0000-0000-000000000000",
-	'inst_ref<Object_Into_Bridge>',
-	'',
-	'',
-	'./Shared/Shared.xtuml');
 INSERT INTO D_TSPARM
 	VALUES ("996f4622-aa5e-4e79-834c-cfa0e66346c6",
 	"021e9f7c-1b58-4544-93ec-1d6cd58406c5",
@@ -8371,18 +8365,11 @@ INSERT INTO D_TSPARM
 	VALUES ("69246aad-dc92-4c30-84dd-2c07ac6545d3",
 	"6a8cc22a-c2df-4c62-a90b-ae775ee98d3e",
 	'The_IH',
-	"9324679d-f5b3-445b-87c7-8952c62f745b",
+	"ba5eda7a-def5-0000-0000-000000000002",
 	0,
 	'',
 	"f0c5f3ce-0c45-45bc-87b3-c75df9f44f43",
 	'');
-INSERT INTO S_DT_PROXY
-	VALUES ("9324679d-f5b3-445b-87c7-8952c62f745b",
-	"00000000-0000-0000-0000-000000000000",
-	'inst_ref<Object_A>',
-	'',
-	'',
-	'./Shared/Shared.xtuml');
 INSERT INTO D_TSVC
 	VALUES ("03466ce2-45d9-4c9e-8a46-5268083e24db",
 	"b2c8716c-fc42-43b6-b7cb-4b733a5473ac",
