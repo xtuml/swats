@@ -662,14 +662,15 @@ Success = FALSE
 
 Success_Value = -1
 
-Local_Result = Param1_IH.A_Number 
+Param1 = find-one Object_Into_Bridge where Unique_Identifier = Param1_IH
+Local_Result = Param1.A_Number 
 
 # Comment out post WACA 5.0.0
 # Local_Result = Local_Result * Local_Result
 
 # Still alive, then the test passed
 
-if Param1_IH.Some_Enumeration = ''Four'' then
+if Param1.Some_Enumeration = ''Four'' then
 
    Success = TRUE
 
@@ -691,18 +692,11 @@ INSERT INTO D_TSPARM
 	VALUES ("26eb1ded-2cc6-4acc-a469-9b7bece4a00e",
 	"2bc3d670-26b0-48ce-a3b1-e042ae704bf7",
 	'Param1_IH',
-	"068402a0-1eea-41e0-b68c-97f0a9735fd1",
+	"ba5eda7a-def5-0000-0000-000000000002",
 	0,
 	'',
 	"00000000-0000-0000-0000-000000000000",
 	'');
-INSERT INTO S_DT_PROXY
-	VALUES ("068402a0-1eea-41e0-b68c-97f0a9735fd1",
-	"00000000-0000-0000-0000-000000000000",
-	'inst_ref<Object_Into_Bridge>',
-	'',
-	'',
-	'./Shared/Shared.xtuml');
 INSERT INTO D_TSPARM
 	VALUES ("721c72c7-8949-45b2-8a44-a79ed26fe2d9",
 	"2bc3d670-26b0-48ce-a3b1-e042ae704bf7",
