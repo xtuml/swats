@@ -228,7 +228,7 @@ Test = my_test.This_Test_Number
                                                      # Object_Simple_Integer = 3 &\
                                                      # Object_Simple_Real    = 3.0
 
-   # [{Decomposed_Struct}] = IITGWO4:The_IH_Struct_Across_Bridge[Simple_ObjA, Simple_ObjB, Simple_ObjC]
+   # [{Decomposed_Struct}] = IITGWO4:The_IH_Struct_Across_Bridge[Simple_ObjA.Object_Reference_VSD, Simple_ObjB.Object_Reference_VSD, Simple_ObjC.Object_Reference_VSD]
 
    # for [A_Ref, A_Int, A_Real] in {Decomposed_Struct} do
 
@@ -303,7 +303,7 @@ Test = my_test.This_Test_Number
 
 my_test.This_Test_Number = Test',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	2,
 	2);

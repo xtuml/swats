@@ -257,19 +257,12 @@ INSERT INTO C_PP
 INSERT INTO C_PP
 	VALUES ("4618da36-f520-412e-ae41-3d313894c827",
 	"debe00aa-200e-4dad-b750-34ad539788c8",
-	"13c82d18-5d54-4556-87f2-483a5dade2c6",
+	"ba5eda7a-def5-0000-0000-000000000002",
 	'The_IH',
 	'',
 	0,
 	'',
 	"e495f008-d6a9-4c24-9ae9-09283f04b93b");
-INSERT INTO S_DT_PROXY
-	VALUES ("13c82d18-5d54-4556-87f2-483a5dade2c6",
-	"00000000-0000-0000-0000-000000000000",
-	'inst_ref<Object_A>',
-	'',
-	'',
-	'../../DomainA/DomainA/DomainA.xtuml');
 INSERT INTO C_EP
 	VALUES ("3f125059-20a0-4281-9d95-e95ca79c15e7",
 	"e87dcb82-9b3a-4a2b-b4cc-d7f053a04e94",

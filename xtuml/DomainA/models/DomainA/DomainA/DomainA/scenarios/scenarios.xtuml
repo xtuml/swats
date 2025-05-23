@@ -680,14 +680,14 @@ INSERT INTO S_SYNC
                                           ResultA       = 100 &\ 
                                           Current_State = ''Sync_service_invocation_to_event'' 
 
-   [] = NAV9:Pass_IH[Test, IH_To_Be_Passed]
+   [] = NAV9:Pass_IH[Test, IH_To_Be_Passed.idA]
 
 #------------------------------------------------------------------------#
 
    Test = Test + 1
    my_test.This_Test_Number = Test',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	2,
 	14);
