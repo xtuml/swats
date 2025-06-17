@@ -212,7 +212,7 @@ else
  
    $USE RP
 
-   [] = RP1::Test_Passed[local_object_domain, local_test_number, local_test_value, Unique_Domain_ID];
+   [] = RP1::Test_Passed[local_object_domain, local_test_number, local_test_value, Unique_Domain_ID]
 
    $ENDUSE
 
@@ -279,7 +279,7 @@ else
 
    $USE RP
 
-   [] = RP2::Test_Failed[local_object_domain, local_test_number, local_test_value, Unique_Domain_ID];
+   [] = RP2::Test_Failed[local_object_domain, local_test_number, local_test_value, Unique_Domain_ID]
 
    $ENDUSE
 
@@ -344,7 +344,7 @@ else
 
    $USE RP
 
-   [] = RP3::Test_Unsupported[local_test_number, Unique_Domain_ID];
+   [] = RP3::Test_Unsupported[local_test_number, Unique_Domain_ID]
 
    $ENDUSE
 
