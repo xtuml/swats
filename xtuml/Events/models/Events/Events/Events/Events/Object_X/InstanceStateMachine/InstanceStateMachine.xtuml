@@ -1007,6 +1007,10 @@ if The_Test = "Check_New_Inst_Attributes" then
 
    temp_Inst = find-one Object_X where The_Test_No = Test_No
 
+   # TODO LPS: the next two lines are included to assure the "find-only" call is generated in the domain
+   The_IH_ID = Test_No
+	 the_objX = find-only Object_X where objX_id = The_IH_ID
+
    if temp_Inst.Integer_Att = 300 then
 
       if temp_Inst.Real_Att = 299.9 then
