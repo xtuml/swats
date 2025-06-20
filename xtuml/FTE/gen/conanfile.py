@@ -8,6 +8,10 @@ class ConanFile(conan.ConanFile):
     python_requires = 'xtuml_masl_conan/[>=5.0 <6]@xtuml'
     python_requires_extend = 'xtuml_masl_conan.MaslConanHelper'
 
+    def requirements(self):
+        super().requirements()
+        self.requires('masl_logger/[>=1.0 <2]@xtuml', transitive_libs=True, transitive_headers=True)
+
     def omit_requirements(self):
         return ['nlohmann_json', 'boost']
 

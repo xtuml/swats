@@ -19,6 +19,5 @@ class ConanFile(conan.ConanFile):
 
     def config_options(self):
         self.options.sqlite = False
-        self.options.metadata = False
         self.options.inspector = False
         self.options.idm = False
