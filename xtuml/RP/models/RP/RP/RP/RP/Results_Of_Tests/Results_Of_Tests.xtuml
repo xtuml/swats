@@ -232,6 +232,52 @@ INSERT INTO O_ATTR
 	"ba5eda7a-def5-0000-0000-000000000005",
 	'',
 	'');
+INSERT INTO O_REF
+	VALUES ("247719b7-e386-49a4-98b3-9dc39b09d984",
+	"8aafe371-6950-4209-b885-1fc13837ee40",
+	0,
+	"9d9fa023-cdaf-4036-8a8d-193f51f331f5",
+	"133e7949-a9de-45cf-bc08-3ba67019a170",
+	"7520688e-2f18-4b6b-9a2b-dc5e685d87bf",
+	"1ba5d860-8003-4c2e-a651-3558e1cac59f",
+	"f94cc1b8-8cc8-4bb1-a5eb-69cf342bcf2f",
+	"f33523b3-f883-4a73-9334-f75129d0aa26",
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Test_Details',
+	'The_Test_No',
+	'R6.''has''');
+INSERT INTO O_RTIDA_PROXY
+	VALUES ("9d9fa023-cdaf-4036-8a8d-193f51f331f5",
+	"8aafe371-6950-4209-b885-1fc13837ee40",
+	0,
+	"133e7949-a9de-45cf-bc08-3ba67019a170",
+	"1ba5d860-8003-4c2e-a651-3558e1cac59f",
+	'../RP.xtuml');
+INSERT INTO O_RATTR
+	VALUES ("f94cc1b8-8cc8-4bb1-a5eb-69cf342bcf2f",
+	"247719b7-e386-49a4-98b3-9dc39b09d984",
+	"9d9fa023-cdaf-4036-8a8d-193f51f331f5",
+	"8aafe371-6950-4209-b885-1fc13837ee40",
+	1,
+	'The_Test_No');
+INSERT INTO O_BATTR_PROXY
+	VALUES ("9d9fa023-cdaf-4036-8a8d-193f51f331f5",
+	"8aafe371-6950-4209-b885-1fc13837ee40",
+	'../Test_Details/Test_Details.xtuml');
+INSERT INTO O_ATTR
+	VALUES ("f94cc1b8-8cc8-4bb1-a5eb-69cf342bcf2f",
+	"247719b7-e386-49a4-98b3-9dc39b09d984",
+	"7558dc2d-fafe-448d-b938-11f65f483012",
+	'The_Test_No',
+	'',
+	'',
+	'The_Test_No',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000007",
+	'',
+	'');
 INSERT INTO O_ID
 	VALUES (0,
 	"247719b7-e386-49a4-98b3-9dc39b09d984");

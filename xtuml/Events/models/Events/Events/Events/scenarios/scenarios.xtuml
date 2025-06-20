@@ -1278,7 +1278,7 @@ INSERT INTO S_SYNC
    [] = RPT8:Specify_Requid[The_Test_Number, "1241-0000-01-0205"]
    [] = RPT8:Specify_Requid[The_Test_Number, "1241-0000-01-0209"]
 
-   secondSC = create State_Check with The_ID          = 0               &\
+   secondSC = create State_Check with The_ID          = 1               &\
                                       The_Test_No     = The_Test_Number &\
                                       Whats_The_State = " "             &\
                                       Current_State   = ''Idle''
