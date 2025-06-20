@@ -53,6 +53,9 @@ $INLINE
 fprintf(stderr, "Test Number %d %s has PASSED with  %d\n",
         the_test, the_domain, the_val);
 $ENDINLINE
+$MASLINLINE
+Logger::log(Logger::Error, "RP", "Test Number " & the_test''image & " " & the_domain & " has PASSED with  " & the_val''image & "");
+$ENDMASLINLINE
 
 
 # $ADA_INLINE
@@ -132,6 +135,9 @@ $INLINE
 fprintf(stderr, "Test Number %d has **** FAILED **** with %d\n",
         the_test, the_val);
 $ENDINLINE
+$MASLINLINE
+Logger::log(Logger::Error, "RP", "Test Number " & the_test''image & " has **** FAILED **** with " & the_val''image & "");
+$ENDMASLINLINE
 
 #$ADA_INLINE
 # with Ada.Text_IO;
@@ -209,6 +215,9 @@ $INLINE
 fprintf(stderr, "Test Number %d is UNSUPPORTED\n",
         the_test);
 $ENDINLINE
+$MASLINLINE
+Logger::log(Logger::Error, "RP", "Test Number " & the_test''image & " is UNSUPPORTED");
+$ENDMASLINLINE
 
 
 #$ADA_INLINE
@@ -330,6 +339,16 @@ if The_Domain_Details != UNDEFINED then
        fprintf(stderr, "Testing for           : %s\n", the_purpose);
        fprintf(stderr, " \n");
       $ENDINLINE
+      $MASLINLINE
+       Logger::log(Logger::Error, "RP", " ");
+       Logger::log(Logger::Error, "RP", "***************************************************************************");
+       Logger::log(Logger::Error, "RP", "Test Number           : " & the_test_number''image & "");
+       Logger::log(Logger::Error, "RP", "Requirment identifier : " & the_requid & "");
+       Logger::log(Logger::Error, "RP", "Domain                : " & the_domain & "");
+       Logger::log(Logger::Error, "RP", "Invoker object        : " & the_object & "");
+       Logger::log(Logger::Error, "RP", "Testing for           : " & the_purpose & "");
+       Logger::log(Logger::Error, "RP", " ");
+      $ENDMASLINLINE
 
    endif
 
@@ -421,6 +440,12 @@ fprintf(stderr, "TEXT NOTE\n");
 fprintf(stderr, "Test Number %d  %s\n", the_test_number, the_text);
 fprintf(stderr, " \n");
 $ENDINLINE
+$MASLINLINE
+Logger::log(Logger::Error, "RP", " ");
+Logger::log(Logger::Error, "RP", "TEXT NOTE");
+Logger::log(Logger::Error, "RP", "Test Number " & the_test_number''image & "  " & the_text & "");
+Logger::log(Logger::Error, "RP", " ");
+$ENDMASLINLINE
 
 #$ADA_INLINE
 # with Ada.Text_IO;
@@ -590,6 +615,15 @@ $INLINE
  fprintf(stderr,"======================= ************************** =======================\n");
  fprintf(stderr, "\n");
 $ENDINLINE
+$MASLINLINE
+ Logger::log(Logger::Error, "RP", "");
+ Logger::log(Logger::Error, "RP", "======================= RUN TIME ERROR ENCOUNTERED =======================");
+ Logger::log(Logger::Error, "RP", "");
+ Logger::log(Logger::Error, "RP", "Report : " & the_detail & "");
+ Logger::log(Logger::Error, "RP", " ");
+ Logger::log(Logger::Error, "RP", "======================= ************************** =======================");
+ Logger::log(Logger::Error, "RP", "");
+$ENDMASLINLINE
 
 
 #$ADA_INLINE
@@ -701,6 +735,15 @@ $INLINE
  fprintf(stderr,"**************************** \n");
  fprintf(stderr, "\n");
 $ENDINLINE
+$MASLINLINE
+ Logger::log(Logger::Error, "RP", "");
+ Logger::log(Logger::Error, "RP", "ANOMALOUS BEHAVIOUR DETECTED ");
+ Logger::log(Logger::Error, "RP", "");
+ Logger::log(Logger::Error, "RP", "Test Number " & the_test_number''image & " Report : " & the_detail & "");
+ Logger::log(Logger::Error, "RP", " ");
+ Logger::log(Logger::Error, "RP", "**************************** ");
+ Logger::log(Logger::Error, "RP", "");
+$ENDMASLINLINE
 
 
 
@@ -909,6 +952,9 @@ if this_suite != UNDEFINED then
    $INLINE
    fprintf(stderr,"Adding the following requirement   %s\n", New_Requid);
    $ENDINLINE
+   $MASLINLINE
+   Logger::log(Logger::Error, "RP", "Adding the following requirement   " & New_Requid & "");
+   $ENDMASLINLINE
 
 endif',
 	"ba5eda7a-def5-0000-0000-000000000000",
@@ -1045,6 +1091,9 @@ INSERT INTO S_SYNC
 $INLINE
 fprintf(stderr,"Captured requirements analysis started\n");
 $ENDINLINE
+$MASLINLINE
+Logger::log(Logger::Error, "RP", "Captured requirements analysis started");
+$ENDMASLINLINE
 
 #$ADA_INLINE
 #

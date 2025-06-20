@@ -45,6 +45,9 @@ INSERT INTO S_SYNC
 $INLINE
 fprintf(stderr,"Requirements capture enabled\n");
 $ENDINLINE
+$MASLINLINE
+Logger::log(Logger::Error, "RP","Requirements capture enabled");
+$ENDMASLINLINE
 
 #$ADA_INLINE
 #
@@ -130,6 +133,9 @@ INSERT INTO S_SYNC
 $INLINE
    fprintf(stderr,"Turn screen display ON in ADA mode");
 $ENDINLINE
+$MASLINLINE
+   Logger::log(Logger::Error, "RP","Turn screen display ON in ADA mode");
+$ENDMASLINLINE
 
 # Turn on screen reporting in an ada run.
 
@@ -164,6 +170,9 @@ INSERT INTO S_SYNC
 	'$INLINE
    fprintf(stderr,"Turn screen display OFF in ADA mode");
 $ENDINLINE
+$MASLINLINE
+   Logger::log(Logger::Error, "RP","Turn screen display OFF in ADA mode");
+$ENDMASLINLINE
 
 # Turn off screen reporting in an ada run.
 
@@ -199,6 +208,9 @@ INSERT INTO S_SYNC
 $INLINE
 fprintf(stderr,"Captured requirements analysis started\n");
 $ENDINLINE
+$MASLINLINE
+Logger::log(Logger::Error, "RP","Captured requirements analysis started");
+$ENDMASLINLINE
 
 #$ADA_INLINE
 #

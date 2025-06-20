@@ -194,6 +194,9 @@ INSERT INTO S_SYNC
 	'   $INLINE
       fprintf(stderr,"%s\n", The_Text);
    $ENDINLINE
+   $MASLINLINE
+      Logger::log(Logger::Error, "Events", The_Text);
+   $ENDMASLINLINE
 
    #$ADA_INLINE
    # with Test_Suite_Text_IO;

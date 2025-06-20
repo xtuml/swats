@@ -50,6 +50,13 @@ $INLINE
    fprintf(stderr,"***** Setting I-SIM environment *****\n");
 
 $ENDINLINE
+$MASLINLINE
+
+   Test_Data := 1;
+
+   Logger::log(Logger::Error, "FTE", "***** Setting I-SIM environment *****");
+
+$ENDMASLINLINE
 
 if Test_Data = 1 then
    This_Environment.Where_Are_We = "ISIM"

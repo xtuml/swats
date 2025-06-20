@@ -759,12 +759,26 @@ if The_Domain != UNDEFINED then
                   fprintf(stderr, "Test Purpose                %s\n", Local_Test_Purpose);
                   
                $ENDINLINE
+               $MASLINLINE
+
+                  Logger::log(Logger::Error, "RP", " ");
+                  Logger::log(Logger::Error, "RP", "---------------------------------------------------------------------------");
+                  Logger::log(Logger::Error, "RP", "Domain                      " & Local_Test_Domain_Name & "");
+                  Logger::log(Logger::Error, "RP", "Test Number                 " & Local_Test_Number''image & "");
+                  Logger::log(Logger::Error, "RP", "Object                      " & Local_The_Object & "");
+                  Logger::log(Logger::Error, "RP", "Duplicated Results          " & Local_Duplicated_Result_Count''image & "");
+                  Logger::log(Logger::Error, "RP", "Test Purpose                " & Local_Test_Purpose & "");
+                  
+               $ENDMASLINLINE
 
                for Next_Comment in {Local_Comments} do
                   A_Comment = Next_Comment.The_Comment
                   $INLINE
                      fprintf(stderr, "Comments -                  %s\n", A_Comment);
                   $ENDINLINE
+                  $MASLINLINE
+                     Logger::log(Logger::Error, "RP", "Comments -                  " & A_Comment & "");
+                  $ENDMASLINLINE
                endfor
 
                #$ADA_INLINE
@@ -800,6 +814,9 @@ if The_Domain != UNDEFINED then
                          $INLINE
                            fprintf(stderr, "Requirement Identifier(s)   %s\n", Local_Test_Req_ID );
                          $ENDINLINE
+                         $MASLINLINE
+                           Logger::log(Logger::Error, "RP", "Requirement Identifier(s)   " & Local_Test_Req_ID & "");
+                         $ENDMASLINLINE
 
                          
                          #$ADA_INLINE
@@ -811,6 +828,9 @@ if The_Domain != UNDEFINED then
                          $INLINE
                            fprintf(stderr, "                            %s\n", Local_Test_Req_ID );
                          $ENDINLINE
+                         $MASLINLINE
+                           Logger::log(Logger::Error, "RP", "                            " & Local_Test_Req_ID & "");
+                         $ENDMASLINLINE
 
                          
                          #$ADA_INLINE
@@ -831,6 +851,11 @@ if The_Domain != UNDEFINED then
                   fprintf(stderr, "Result data                 %s\n", Local_Test_Details );
                   fprintf(stderr, "Test Result                 %s with %d\n", Local_Test_Result, Local_Result_Value);
                $ENDINLINE
+               $MASLINLINE
+                  Logger::log(Logger::Error, "RP", "");
+                  Logger::log(Logger::Error, "RP", "Result data                 " & Local_Test_Details & "");
+                  Logger::log(Logger::Error, "RP", "Test Result                 " & Local_Test_Result & " with " & Local_Result_Value''image & "");
+               $ENDMASLINLINE
  
                #$ADA_INLINE
                   #Test_Suite_Text_IO.Dump_String("");
@@ -878,6 +903,17 @@ if The_Domain != UNDEFINED then
       fprintf(stderr, "Passed Tests      %d\n", Local_Passed);
       fprintf(stderr, "Failed Tests      %d\n", Local_Failed);
    $ENDINLINE
+   $MASLINLINE
+      Logger::log(Logger::Error, "RP", " ");
+      Logger::log(Logger::Error, "RP","***************************************************************************");
+      Logger::log(Logger::Error, "RP","***************************************************************************");
+      Logger::log(Logger::Error, "RP", " ");
+      Logger::log(Logger::Error, "RP", "Overall Results for domain      " & Local_The_Domain_Name & "");
+      Logger::log(Logger::Error, "RP", "Total  Tests      " & Total_Number_Of_Tests_Attempted''image & "");
+      Logger::log(Logger::Error, "RP", "Passed Tests      " & Local_Passed''image & "");
+      Logger::log(Logger::Error, "RP", "Failed Tests      " & Local_Failed''image & "");
+   $ENDMASLINLINE
+
 
    #$ADA_INLINE
       #Test_Suite_Text_IO.Dump_String("");
@@ -896,6 +932,9 @@ if The_Domain != UNDEFINED then
          $INLINE
             fprintf(stderr, " failure found in test %d\n", Local_Failed_Test_Number);
          $ENDINLINE
+         $MASLINLINE
+            Logger::log(Logger::Error, "RP", " failure found in test " & Local_Failed_Test_Number''image & "");
+         $ENDMASLINLINE
 
          #$ADA_INLINE
             #Test_Suite_Text_IO.Dump_String(" failure found in test " & 
@@ -908,6 +947,9 @@ if The_Domain != UNDEFINED then
    $INLINE
    fprintf(stderr, "Unsupported Tests %d\n", Local_Unsupported);
    $ENDINLINE
+   $MASLINLINE
+   Logger::log(Logger::Error, "RP", "Unsupported Tests " & Local_Unsupported''image & "");
+   $ENDMASLINLINE
 
    #$ADA_INLINE
    #Test_Suite_Text_IO.Dump_String("Unsupported Tests " & 
@@ -921,6 +963,9 @@ if The_Domain != UNDEFINED then
          $INLINE
             fprintf(stderr, " test %d was testing for %s\n", This_Unsupported_Test_Number, This_Test_Details_Text  );
          $ENDINLINE
+         $MASLINLINE
+            Logger::log(Logger::Error, "RP", " test " & This_Unsupported_Test_Number''image & " was testing for " & This_Test_Details_Text & "");
+         $ENDMASLINLINE
 
          #$ADA_INLINE
             #Test_Suite_Text_IO.Dump_String(" test " & integer''image(integer( This_Unsupported_Test_Number )) & 
@@ -935,6 +980,9 @@ if The_Domain != UNDEFINED then
    $INLINE
       fprintf(stderr, "Total Duplicated Tests  %d\n", Local_Total_Duplicated_Count);
    $ENDINLINE
+   $MASLINLINE
+      Logger::log(Logger::Error, "RP", "Total Duplicated Tests  " & Local_Total_Duplicated_Count''image & "");
+   $ENDMASLINLINE
 
    #$ADA_INLINE
    #Test_Suite_Text_IO.Dump_String("Total Duplicated Tests  " & 
@@ -950,6 +998,9 @@ if The_Domain != UNDEFINED then
             $INLINE
                fprintf(stderr, " test %d had %d duplicated results\n", This_Duplicated_Test_Number, Number_Of_Duplicated_Results );
             $ENDINLINE
+            $MASLINLINE
+               Logger::log(Logger::Error, "RP", " test " & This_Duplicated_Test_Number''image & " had " & Number_Of_Duplicated_Results''image & " duplicated results");
+            $ENDMASLINLINE
 
             #$ADA_INLINE
                #Test_Suite_Text_IO.Dump_String(" test " & integer''image(integer( This_Duplicated_Test_Number )) & " had " & 
@@ -960,6 +1011,9 @@ if The_Domain != UNDEFINED then
             $INLINE
                fprintf(stderr, " test %d had %d duplicated result\n", This_Duplicated_Test_Number, Number_Of_Duplicated_Results );
             $ENDINLINE
+            $MASLINLINE
+               Logger::log(Logger::Error, "RP", " test " & This_Duplicated_Test_Number''image & " had " & Number_Of_Duplicated_Results''image & " duplicated result");
+            $ENDMASLINLINE
 
             #$ADA_INLINE
                #Test_Suite_Text_IO.Dump_String(" test " & integer''image(integer( This_Duplicated_Test_Number )) & " had " & 
@@ -979,6 +1033,12 @@ if The_Domain != UNDEFINED then
       fprintf(stderr,"***************************************************************************\n");
       fprintf(stderr, " \n");
    $ENDINLINE
+   $MASLINLINE
+      Logger::log(Logger::Error, "RP", " ");
+      Logger::log(Logger::Error, "RP","***************************************************************************");
+      Logger::log(Logger::Error, "RP","***************************************************************************");
+      Logger::log(Logger::Error, "RP", " ");
+   $ENDMASLINLINE
 
 
    #$ADA_INLINE

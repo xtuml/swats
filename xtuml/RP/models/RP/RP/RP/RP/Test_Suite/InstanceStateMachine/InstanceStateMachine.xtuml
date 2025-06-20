@@ -303,6 +303,10 @@ if How_Many_Requirements > 0 then
          fprintf(stderr,"------------------------------------------------------------\n");
          fprintf(stderr,"Requirement  %s has ", Current_Reqid ); 
       $ENDINLINE
+      $MASLINLINE
+         Logger::log(Logger::Error, "RP","------------------------------------------------------------");
+         Logger::log(Logger::Error, "RP","Requirement  " & Current_Reqid & " has "); 
+      $ENDMASLINLINE
 
 
 
@@ -312,6 +316,9 @@ if How_Many_Requirements > 0 then
          $INLINE
             fprintf(stderr,"been tested by the following \n" );
          $ENDINLINE
+         $MASLINLINE
+            Logger::log(Logger::Error, "RP","been tested by the following " );
+         $ENDMASLINLINE
 
 
 
@@ -335,12 +342,18 @@ if How_Many_Requirements > 0 then
             $INLINE
                fprintf(stderr,"Domain %s Test Number %d ", The_Domain, The_Test );
             $ENDINLINE
+            $MASLINLINE
+               Logger::log(Logger::Error, "RP","Domain " & The_Domain & " Test Number " & The_Test''image & " ");
+            $ENDMASLINLINE
 
 
             if The_Result = ''Passed'' then
                $INLINE
                   fprintf(stderr,"Passed\n");
                $ENDINLINE
+               $MASLINLINE
+                  Logger::log(Logger::Error, "RP","Passed");
+               $ENDMASLINLINE
 
                #$ADA_INLINE
                   # Test_Suite_Text_IO.Dump_String("Domain " & The_Domain & "Test Number " & Application_Types.Base_Integer_Type''image(The_Test) & ", Passed" );
@@ -352,6 +365,9 @@ if How_Many_Requirements > 0 then
                   $INLINE
                      fprintf(stderr,"Failed\n");
                   $ENDINLINE
+                  $MASLINLINE
+                     Logger::log(Logger::Error, "RP","Failed");
+                  $ENDMASLINLINE
 
                   #$ADA_INLINE
                      # Test_Suite_Text_IO.Dump_String("Domain " & The_Domain & "Test Number " & Application_Types.Base_Integer_Type''image(The_Test) & ", Failed" );
@@ -363,6 +379,9 @@ if How_Many_Requirements > 0 then
                      $INLINE
                         fprintf(stderr,"was Unsupported\n");
                      $ENDINLINE
+                     $MASLINLINE
+                        Logger::log(Logger::Error, "RP","was Unsupported");
+                     $ENDMASLINLINE
 
 
                      #$ADA_INLINE
@@ -373,6 +392,9 @@ if How_Many_Requirements > 0 then
                      $INLINE
                         fprintf(stderr,"has an Unknown result reported\n");
                      $ENDINLINE
+                     $MASLINLINE
+                        Logger::log(Logger::Error, "RP","has an Unknown result reported");
+                     $ENDMASLINLINE
 
                      #$ADA_INLINE
                         # Test_Suite_Text_IO.Dump_String("Domain " & The_Domain & "Test Number " & Application_Types.Base_Integer_Type''image(The_Test) & ", Unknown" );
@@ -394,6 +416,9 @@ if How_Many_Requirements > 0 then
          $INLINE
             fprintf(stderr,"not been tested in this run\n" );
          $ENDINLINE
+         $MASLINLINE
+            Logger::log(Logger::Error, "RP","not been tested in this run" );
+         $ENDMASLINLINE
 
 
          #$ADA_INLINE
@@ -405,6 +430,9 @@ if How_Many_Requirements > 0 then
       $INLINE
          fprintf(stderr,"------------------------------------------------------------\n");
       $ENDINLINE
+      $MASLINLINE
+         Logger::log(Logger::Error, "RP","------------------------------------------------------------");
+      $ENDMASLINLINE
 
       #$ADA_INLINE
          # Test_Suite_Text_IO.Dump_String("------------------------------------------------------------");
