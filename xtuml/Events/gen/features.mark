@@ -1,2 +1,4 @@
 Component,version
+Component,ignore_duplicates
 Function,scenario
+Model Class,ignore_duplicates

@@ -5,3 +5,4 @@ Events::Events::scenarios::void Basic_Events,scenario,Function,4
 Events::Events::scenarios::void Polymorphism,scenario,Function,3
 Events::Events::scenarios::void Start_Events_Tests,scenario,Function,2
 Events::Events::scenarios::void Events_Scenario,scenario,Function,1
+Events::Events,ignore_duplicates,Component,true
