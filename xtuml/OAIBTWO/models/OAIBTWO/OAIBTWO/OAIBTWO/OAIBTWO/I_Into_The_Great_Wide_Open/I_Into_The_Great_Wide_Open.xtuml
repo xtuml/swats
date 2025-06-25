@@ -152,15 +152,15 @@ INSERT INTO O_TPARM
 	VALUES ("c3e8b729-cf52-4001-bea8-e4b927995f7e",
 	"caa8ea37-a93a-43ab-850d-fd0df7bdb337",
 	'A_Structure_To_Send',
-	"9208c538-4b35-4c65-95bc-e8d48c494f6c",
+	"099fc960-2b31-4d33-af11-7fe2f00c73ca",
 	0,
 	'',
 	"30738002-1bf1-4c81-99e1-10ea627dd56e",
 	'');
 INSERT INTO S_DT_PROXY
-	VALUES ("9208c538-4b35-4c65-95bc-e8d48c494f6c",
+	VALUES ("099fc960-2b31-4d33-af11-7fe2f00c73ca",
 	"00000000-0000-0000-0000-000000000000",
-	'Source_Structure_Type',
+	'sequence of Source_Structure_Type',
 	'',
 	'',
 	'../../../Shared/Shared.xtuml');
@@ -238,7 +238,7 @@ INSERT INTO O_TPARM
 	VALUES ("f9354aa6-bf5a-4499-ae3b-3d6155382603",
 	"caa8ea37-a93a-43ab-850d-fd0df7bdb337",
 	'A_Structure_To_Return',
-	"9208c538-4b35-4c65-95bc-e8d48c494f6c",
+	"099fc960-2b31-4d33-af11-7fe2f00c73ca",
 	1,
 	'',
 	"af1687fc-86aa-432d-b5bc-5fed88600d62",
