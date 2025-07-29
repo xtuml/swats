@@ -23,19 +23,12 @@ INSERT INTO C_IO
 INSERT INTO C_PP
 	VALUES ("f7d87302-756c-4172-96c6-7e765a59d689",
 	"424c88cf-5de8-40b6-8bb8-2a9d0574e004",
-	"27267681-a2fd-4ccd-804b-bd73a09efd80",
+	"ba5eda7a-def5-0000-0000-000000000002",
 	'Param1_IH',
 	'',
 	0,
 	'',
 	"00000000-0000-0000-0000-000000000000");
-INSERT INTO S_DT_PROXY
-	VALUES ("27267681-a2fd-4ccd-804b-bd73a09efd80",
-	"00000000-0000-0000-0000-000000000000",
-	'inst_ref<Object_Into_Bridge>',
-	'',
-	'',
-	'../../UDT/classes/classes.xtuml');
 INSERT INTO C_PP
 	VALUES ("d8331b6c-dcd2-4c9b-9033-ec8fdb47a0a9",
 	"424c88cf-5de8-40b6-8bb8-2a9d0574e004",
